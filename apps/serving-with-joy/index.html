@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serving with Joy | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="The heart behind serving in the church. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Serving with Joy</h1>
+<p class="intro">The heart behind serving in the church.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Discover Where You Fit</h2>
+<p style="color:#6b6250;margin-bottom:8px">Check the gifts and interests that sound like you:</p>
+<div id="giftQuiz"></div>
+<button class="btn" id="matchBtn" style="margin-top:14px">Show Me Serving Areas</button>
+<div id="matches" style="margin-top:16px"></div>
+<hr style="border:none;border-top:1px solid #e5d9b8;margin:24px 0">
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">My Serving Pledge</h2>
+<div id="pledge"></div>
+<p style="color:#6b6250;margin-top:16px;font-style:italic">"And whatsoever ye do, do it heartily, as to the Lord, and not unto men." — Colossians 3:23 (KJV)</p>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-serving-with-joy-v1';
+let S={gifts:{},pledge:{}};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const GIFTS=[
+["teach","Teaching / explaining"],["music","Music / singing"],["kids","Kids / youth"],["cook","Cooking / hospitality"],["tech","Tech / sound / media"],["pray","Prayer / encouragement"],["visit","Visiting the sick / elderly"],["organize","Organizing / admin"]
+];
+const AREAS=[
+{t:"Kids Ministry",d:"Teach or assist in children's church or nursery.",m:["kids","teach"]},
+{t:"Worship Team",d:"Sing or play an instrument on the worship team.",m:["music"]},
+{t:"Hospitality Team",d:"Greet guests, serve coffee, cook for events.",m:["cook"]},
+{t:"Tech & Media",d:"Run sound, slides, or livestream.",m:["tech","organize"]},
+{t:"Prayer Team",d:"Pray with people after services and during the week.",m:["pray"]},
+{t:"Care Ministry",d:"Visit the sick, elderly, and homebound.",m:["visit","pray"]},
+{t:"Small Group Leader",d:"Facilitate discussion and shepherd a group.",m:["teach","organize"]},
+{t:"Welcome Team",d:"Be the friendly face that helps newcomers belong.",m:["visit","kids"]}
+];
+const PLEDGE=["I will serve with a cheerful heart, not out of duty","I will pray for the team I serve with","I will show up consistently and communicate when I can't","I will do even small tasks as unto the Lord"];
+const $=id=>document.getElementById(id);
+$('giftQuiz').innerHTML=GIFTS.map(g=>'<label class="checkrow"><input type="checkbox" data-k="'+g[0]+'" '+(S.gifts[g[0]]?'checked':'')+'><span>'+g[1]+'</span></label>').join('');
+document.querySelectorAll('#giftQuiz input').forEach(c=>c.onchange=()=>{S.gifts[c.dataset.k]=c.checked;save();});
+$('matchBtn').onclick=()=>{
+  const scored=AREAS.map(a=>({a,s:a.m.filter(k=>S.gifts[k]).length})).filter(x=>x.s>0).sort((x,y)=>y.s-x.s).slice(0,3);
+  $('matches').innerHTML=scored.length?'<h3 style="font-family:Georgia,serif;margin-bottom:8px">Great fits for you:</h3>'+scored.map(x=>'<div style="background:#f7f1de;border-radius:8px;padding:14px;margin-bottom:10px"><strong>'+x.a.t+'</strong><p style="color:#6b6250">'+x.a.d+'</p></div>').join(''):'<p style="color:#8a7a4a">Check a few gifts above first.</p>';
+};
+$('pledge').innerHTML=PLEDGE.map((p,i)=>'<label class="checkrow"><input type="checkbox" data-i="'+i+'" '+(S.pledge[i]?'checked':'')+'><span>'+p+'</span></label>').join('');
+document.querySelectorAll('#pledge input').forEach(c=>c.onchange=()=>{S.pledge[c.dataset.i]=c.checked;save();});
+
+</script>
+</body>
+</html>

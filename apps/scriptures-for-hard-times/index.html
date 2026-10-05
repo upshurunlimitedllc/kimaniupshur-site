@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scriptures for Hard Times | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Bible verses for difficult seasons, organized by need. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+#cats .btn.ghost{background:transparent}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Scriptures for Hard Times</h1>
+<p class="intro">Bible verses for difficult seasons, organized by need.</p>
+<div class="appcard">
+<p style="margin-bottom:14px">Choose what you are facing. A set of Scriptures (KJV) will appear below.</p>
+<div id="cats" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px"></div>
+<div id="verses"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-scriptures-for-hard-times-v1";
+var DATA={
+"Fear & Anxiety":[
+["Isaiah 41:10","Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness."],
+["2 Timothy 1:7","For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind."],
+["Philippians 4:6","Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."],
+["1 Peter 5:7","Casting all your care upon him; for he careth for you."]],
+"Grief & Loss":[
+["Matthew 5:4","Blessed are they that mourn: for they shall be comforted."],
+["Psalm 34:18","The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit."],
+["Psalm 46:1","God is our refuge and strength, a very present help in trouble."],
+["Revelation 21:4","And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away."]],
+"Loneliness":[
+["Deuteronomy 31:6","Be strong and of a good courage, fear not, nor be afraid of them: for the LORD thy God, he it is that doth go with thee; he will not fail thee, nor forsake thee."],
+["Psalm 68:6","God setteth the solitary in families."],
+["Matthew 28:20","Lo, I am with you alway, even unto the end of the world. Amen."]],
+"Waiting on God":[
+["Isaiah 40:31","But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."],
+["Psalm 27:14","Wait on the LORD: be of good courage, and he shall strengthen thine heart: wait, I say, on the LORD."],
+["Lamentations 3:22-23","It is of the LORD's mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness."]],
+"Anger":[
+["James 1:19","Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath."],
+["Ephesians 4:26","Be ye angry, and sin not: let not the sun go down upon your wrath."],
+["Proverbs 15:1","A soft answer turneth away wrath: but grievous words stir up anger."]],
+"When You're Sick":[
+["Psalm 103:2-3","Bless the LORD, O my soul, and forget not all his benefits: who forgiveth all thine iniquities; who healeth all thy diseases."],
+["Jeremiah 30:17","But I will restore health unto thee, and I will heal thee of thy wounds, saith the LORD."],
+["Exodus 15:26","I am the LORD that healeth thee."]],
+"Needing Hope":[
+["Jeremiah 29:11","For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end."],
+["Romans 15:13","Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost."],
+["Romans 8:28","And we know that all things work together for good to them that love God, to them who are the called according to his purpose."]],
+"Financial Need":[
+["Philippians 4:19","But my God shall supply all your need according to his riches in glory by Christ Jesus."],
+["Matthew 6:33","But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you."],
+["Proverbs 3:9","Honour the LORD with thy substance, and with the firstfruits of all thine increase."],
+["Luke 6:38","Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom."]]};
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function show(cat){
+  localStorage.setItem(KEY,cat);
+  var box=document.getElementById("verses");
+  var h="<h2 style='font-family:Georgia,serif;margin-bottom:12px'>"+esc(cat)+"</h2>";
+  DATA[cat].forEach(function(v){
+    h+="<div style='background:#fff;border-left:4px solid #c9a227;padding:14px 16px;margin-bottom:12px;border-radius:0 8px 8px 0'><p style='font-style:italic'>&ldquo;"+esc(v[1])+"&rdquo;</p><p style='font-weight:bold;margin-top:6px;color:#8a6d1c'>"+esc(v[0])+" (KJV)</p></div>";
+  });
+  box.innerHTML=h;
+  Array.prototype.forEach.call(document.querySelectorAll("#cats .btn"),function(b){
+    b.classList.toggle("ghost", b.textContent!==cat);
+  });
+}
+(function(){
+  var cats=document.getElementById("cats");
+  Object.keys(DATA).forEach(function(c){
+    var b=document.createElement("button");
+    b.className="btn ghost"; b.style.padding="10px 18px"; b.style.minHeight="44px";
+    b.textContent=c;
+    b.addEventListener("click",function(){show(c);});
+    cats.appendChild(b);
+  });
+  show(localStorage.getItem(KEY)||"Fear & Anxiety");
+})();
+</script>
+</body>
+</html>

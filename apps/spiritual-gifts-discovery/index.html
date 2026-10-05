@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spiritual Gifts Discovery | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Short quiz revealing likely spiritual gifts, with Scriptures. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Spiritual Gifts Discovery</h1>
+<p class="intro">Short quiz revealing likely spiritual gifts, with Scriptures.</p>
+<div class="appcard">
+<div id="qintro">
+<p style="margin-bottom:12px">Answer 20 quick questions honestly. For each, rate how true it is of you from 1 (not like me) to 5 (very like me).</p>
+<p style="margin-bottom:14px"><em>"As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God." &mdash; 1 Peter 4:10 (KJV)</em></p>
+<button class="btn" id="qbegin">Begin the Quiz</button>
+</div>
+<div id="qbody" style="display:none">
+<p id="qq" style="font-weight:bold;margin-bottom:10px"></p>
+<div id="qopts" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+<p id="qprog2" style="color:#8a6d1c;margin-top:12px"></p>
+</div>
+<div id="qres" style="display:none"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-spiritual-gifts-discovery-v1";
+var GIFTS={
+"Teaching":{d:"You help others understand God's Word clearly.",v:"2 Timothy 2:2"},
+"Serving":{d:"You joyfully meet practical needs behind the scenes.",v:"Galatians 5:13"},
+"Encouragement":{d:"You lift others up and spur them toward faith.",v:"1 Thessalonians 5:11"},
+"Giving":{d:"You generously share resources for God's work.",v:"2 Corinthians 9:7"},
+"Leadership":{d:"You guide others with vision and direction.",v:"Romans 12:8"},
+"Mercy":{d:"You show deep compassion to the hurting.",v:"Romans 12:8"},
+"Evangelism":{d:"You naturally share the gospel with others.",v:"2 Timothy 4:5"},
+"Hospitality":{d:"You warmly welcome people into your life and home.",v:"1 Peter 4:9"},
+"Prayer":{d:"You intercede faithfully for others.",v:"1 Thessalonians 5:17"},
+"Wisdom":{d:"You offer godly counsel and discernment.",v:"James 1:5"}};
+var QUESTIONS=[
+["I enjoy studying the Bible deeply and explaining it to others.","Teaching"],
+["People say my explanations of Scripture make sense.","Teaching"],
+["I notice practical needs and quietly meet them.","Serving"],
+["I would rather serve unnoticed than be recognized.","Serving"],
+["Friends come to me when they need encouragement.","Encouragement"],
+["I can usually find the hopeful angle in a hard situation.","Encouragement"],
+["I give cheerfully, even sacrificially, to God's work.","Giving"],
+["I look for needs I can meet with my resources.","Giving"],
+["Others naturally follow my lead on projects.","Leadership"],
+["I can organize people toward a shared goal.","Leadership"],
+["I feel deep compassion for people who are suffering.","Mercy"],
+["I am moved to act when I see someone hurting.","Mercy"],
+["I look for chances to talk about Jesus with others.","Evangelism"],
+["Sharing my faith feels natural, not forced.","Evangelism"],
+["I love hosting people and making them feel welcome.","Hospitality"],
+["My home is open to guests often.","Hospitality"],
+["I pray regularly and specifically for others.","Prayer"],
+["People ask me to pray for them.","Prayer"],
+["Others seek my advice for difficult decisions.","Wisdom"],
+["I can usually see the wise path in a confusing situation.","Wisdom"]];
+var qi=0,scores={};
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function ask(){
+  document.getElementById("qintro").style.display="none";
+  document.getElementById("qbody").style.display="block";
+  document.getElementById("qres").style.display="none";
+  var q=QUESTIONS[qi];
+  document.getElementById("qq").textContent=(qi+1)+". "+q[0];
+  document.getElementById("qprog2").textContent="Question "+(qi+1)+" of "+QUESTIONS.length;
+  var box=document.getElementById("qopts");box.innerHTML="";
+  for(var v=1;v<=5;v++){
+    (function(val){
+      var b=document.createElement("button");b.className="btn ghost";
+      b.style.cssText="min-width:56px;min-height:48px;padding:10px";
+      b.textContent=val;
+      b.addEventListener("click",function(){
+        scores[q[1]]=(scores[q[1]]||0)+val;qi++;
+        if(qi<QUESTIONS.length)ask();else results();
+      });
+      box.appendChild(b);
+    })(v);
+  }
+}
+function results(){
+  document.getElementById("qbody").style.display="none";
+  var res=document.getElementById("qres");res.style.display="block";
+  var ranked=Object.keys(scores).sort(function(a,b){return scores[b]-scores[a];});
+  var top=ranked.slice(0,3);
+  try{localStorage.setItem(KEY,JSON.stringify({date:new Date().toLocaleDateString(),top:top,scores:scores}));}catch(e){}
+  var h="<h2 style='font-family:Georgia,serif;margin-bottom:10px'>Your likely gifts</h2>";
+  top.forEach(function(g,i){
+    h+="<div style='background:#fff;border:2px solid #c9a227;border-radius:8px;padding:16px;margin-bottom:12px'><h3 style='font-family:Georgia,serif'>"+(i+1)+". "+esc(g)+"</h3><p>"+esc(GIFTS[g].d)+"</p><p style='color:#8a6d1c;margin-top:6px'>See also: "+esc(GIFTS[g].v)+" (KJV)</p></div>";
+  });
+  h+="<p style='color:#6b6250'>Gifts are given to serve others, not to rank ourselves. Ask God how He wants you to use these this week. (See Romans 12:6-8 and 1 Corinthians 12.)</p>";
+  h+="<button class='btn ghost' id='qretake' style='margin-top:12px'>Retake Quiz</button>";
+  res.innerHTML=h;
+  document.getElementById("qretake").addEventListener("click",function(){qi=0;scores={};ask();});
+}
+document.getElementById("qbegin").addEventListener("click",function(){qi=0;scores={};ask();});
+(function(){
+  try{var last=JSON.parse(localStorage.getItem(KEY));
+    if(last&&last.top){
+      var h="<p style='color:#8a6d1c;margin-top:14px'>Your last result ("+last.top.join(", ")+") is saved. Retake anytime.</p>";
+      document.getElementById("qintro").insertAdjacentHTML("beforeend",h);
+    }}catch(e){}
+})();
+</script>
+</body>
+</html>

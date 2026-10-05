@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maps of the Bible | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="The Exodus, Jesus' ministry, and Paul's journeys mapped simply. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.verse{background:#f6efdb;border-left:4px solid #c9a227;padding:14px 16px;margin:14px 0;font-style:italic;border-radius:0 8px 8px 0}
+.verse cite{display:block;font-style:normal;font-weight:bold;color:#8a6d1c;margin-top:8px;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:16px 0}
+.card{background:#fff;border:2px solid #e5d9b8;border-radius:10px;padding:16px;cursor:pointer;min-height:48px}
+.card:hover{border-color:#c9a227}
+.card.active{border-color:#c9a227;background:#fffbe9;box-shadow:0 2px 8px rgba(201,162,39,.25)}
+.card h3{font-family:Georgia,serif;font-size:1.05rem;margin-bottom:4px;color:#141210}
+.pill{display:inline-block;background:#efe6c8;color:#6b5d22;border-radius:20px;padding:4px 12px;font-size:.8rem;margin:2px 4px 2px 0}
+.progress{height:12px;background:#eee3c2;border-radius:6px;overflow:hidden;margin:12px 0}
+.progress>div{height:100%;background:#c9a227;width:0;transition:width .3s}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.tab{background:#f1e8cd;border:2px solid #e5d9b8;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:bold;color:#6b5d22;min-height:44px;font-size:1rem}
+.tab.active{background:#c9a227;color:#141210;border-color:#c9a227}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.big{font-size:1.15rem}
+.muted{color:#6b6250;font-size:.92rem}
+.out{background:#f6efdb;border-radius:10px;padding:18px;margin:14px 0;white-space:pre-wrap}
+details{margin:10px 0;border:1px solid #e5d9b8;border-radius:8px;padding:10px 14px;background:#fff}
+summary{cursor:pointer;font-weight:bold;color:#6b5d22;min-height:44px;display:flex;align-items:center;font-size:1rem}
+.stepdots{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.stepdot{width:14px;height:14px;border-radius:50%;background:#e5d9b8}
+.stepdot.done{background:#c9a227}
+.stepdot.now{background:#8a6d1c;transform:scale(1.25)}
+textarea{min-height:110px}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #eee}
+.kv b{color:#6b5d22}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Maps of the Bible</h1>
+<p class="intro">The Exodus, Jesus' ministry, and Paul's journeys mapped simply.</p>
+<div class="appcard">
+<p class="muted">Simplified diagrams — not to scale. Tap a numbered stop to read its story.</p>
+<div class="tabs" id="tabs"></div>
+<svg id="map" viewBox="0 0 600 300" style="width:100%;height:auto;background:#f6efdb;border:2px solid #c9a227;border-radius:12px" role="img" aria-label="Simplified Bible map"></svg>
+<div class="out" id="stop" style="min-height:150px"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY="app-maps-of-the-bible-v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+function save(d){try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+var MAPS=[
+["The Exodus",[
+["Egypt \u2014 Bondage","God's people are enslaved for 400 years. They cry out, and God hears. (Exodus 1-2)"],
+["Red Sea \u2014 Deliverance","God parts the sea: \u201cThe LORD shall fight for you, and ye shall hold your peace.\u201d (Exodus 14:14)"],
+["Mount Sinai \u2014 The Law","God gives the Ten Commandments and meets Moses on the mountain. (Exodus 19-20)"],
+["Kadesh Barnea \u2014 Unbelief","Fearful spies turn the people back; a generation wanders 40 years. (Numbers 13-14)"],
+["Jordan River \u2014 Crossing","God stops the river and a new generation enters the land. (Joshua 3-4)"],
+["Canaan \u2014 Promise","The land flowing with milk and honey \u2014 God's promise kept. (Joshua 21:45)"]
+]],
+["Jesus' Ministry",[
+["Bethlehem \u2014 Born","\u201cFor unto you is born this day in the city of David a Saviour, which is Christ the Lord.\u201d (Luke 2:11)"],
+["Nazareth \u2014 Hometown","Jesus grows up here, \u201cthe carpenter's son,\u201d before His ministry begins. (Matthew 13:55)"],
+["Capernaum \u2014 Base","His ministry headquarters on the Sea of Galilee; many miracles happen here. (Mark 2)"],
+["Sea of Galilee \u2014 Miracles","He calms the storm, walks on water, and calls fishermen to follow Him. (Mark 4-6)"],
+["Samaria \u2014 The Outcast","Jesus offers living water to the Samaritan woman at the well. (John 4)"],
+["Jerusalem \u2014 Cross and Crown","He dies for sin, rises on the third day, and ascends \u2014 then sends the Spirit. (Luke 24)"]
+]],
+["Paul's Journeys",[
+["Antioch \u2014 Sent","The church lays hands on Paul and Barnabas and sends them out. (Acts 13)"],
+["Cyprus \u2014 First stop","Paul preaches to the Roman governor Sergius Paulus. (Acts 13)"],
+["Galatia \u2014 Churches planted","Paul founds churches and later writes them the letter of Galatians. (Acts 14)"],
+["Philippi \u2014 Europe","Lydia believes; Paul and Silas sing in prison at midnight. (Acts 16)"],
+["Corinth \u2014 Long stay","Eighteen months of ministry; two letters to this troubled church. (Acts 18)"],
+["Ephesus \u2014 Revival","The gospel shakes a city; the silversmiths riot. (Acts 19)"],
+["Rome \u2014 The Capital","Under house arrest, Paul preaches \u201cwith all confidence, no man forbidding him.\u201d (Acts 28)"]
+]]
+];
+var st=load(); st.m=st.m||0; st.s=st.s||0;
+var tabs=document.getElementById("tabs"),svg=document.getElementById("map"),stopEl=document.getElementById("stop");
+function renderTabs(){
+  tabs.innerHTML=MAPS.map(function(m,i){return '<button class="tab'+(i===st.m?" active":"")+'" data-m="'+i+'">'+esc(m[0])+'</button>'}).join("");
+  tabs.querySelectorAll("[data-m]").forEach(function(b){b.onclick=function(){st.m=+b.getAttribute("data-m");st.s=0;save(st);render()}});
+}
+function render(){
+  renderTabs();
+  var stops=MAPS[st.m][1],n=stops.length;
+  var pts=stops.map(function(_,i){
+    var x=60+i*(480/(n-1));
+    var y=150+Math.sin(i*1.1)*70;
+    return [x,y];
+  });
+  var d="M"+pts[0][0]+" "+pts[0][1];
+  for(var i=1;i<pts.length;i++){
+    var mx=(pts[i-1][0]+pts[i][0])/2;
+    d+=" C"+mx+" "+pts[i-1][1]+","+mx+" "+pts[i][1]+","+pts[i][0]+" "+pts[i][1];
+  }
+  var html='<path d="'+d+'" fill="none" stroke="#c9a227" stroke-width="4" stroke-dasharray="10,6"/>';
+  pts.forEach(function(p,i){
+    var active=i===st.s;
+    html+='<g data-s="'+i+'" style="cursor:pointer" tabindex="0" role="button" aria-label="'+esc(stops[i][0])+'">'
+      +'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+(active?20:15)+'" fill="'+(active?"#c9a227":"#fffdf7")+'" stroke="#8a6d1c" stroke-width="3"/>'
+      +'<text x="'+p[0]+'" y="'+(p[1]+6)+'" text-anchor="middle" font-size="14" font-weight="bold" fill="#141210">'+(i+1)+'</text>'
+      +'<text x="'+p[0]+'" y="'+(p[1]+(p[1]>150?38:-26))+'" text-anchor="middle" font-size="12" fill="#6b5d22">'+esc(stops[i][0].split(" \u2014 ")[0])+'</text></g>';
+  });
+  svg.innerHTML=html;
+  svg.querySelectorAll("[data-s]").forEach(function(g){
+    function pick(){st.s=+g.getAttribute("data-s");save(st);render()}
+    g.addEventListener("click",pick);
+    g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pick()}});
+  });
+  var s=stops[st.s];
+  stopEl.innerHTML="<b>Stop "+(st.s+1)+": "+esc(s[0])+"</b><br><br>"+esc(s[1]);
+  save(st);
+}
+render();
+})();
+</script>
+</body>
+</html>

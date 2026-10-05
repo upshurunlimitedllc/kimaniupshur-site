@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greek Word Explorer | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Agape, charis, logos — key Greek words unpacked. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:18px}
+.wbtn{background:#fffdf7;border:2px solid #c9a227;border-radius:10px;padding:12px 8px;cursor:pointer;font-size:1rem;min-height:56px;color:#141210}
+.wbtn:hover{background:#f7ecd0}
+.wbtn.active{background:#c9a227;font-weight:bold}
+.wbtn .done{color:#2e7d32;font-weight:bold}
+.gk{font-family:Georgia,serif;font-size:2rem;color:#141210}
+.verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+.prog{margin-top:14px;font-size:.95rem;color:#6b6250}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Greek Word Explorer</h1>
+<p class="intro">Agape, charis, logos — key Greek words unpacked.</p>
+<div class="appcard">
+<div class="wgrid" id="wgrid"></div>
+<div id="detail"><p style="color:#6b6250">Tap a Greek word above to explore its meaning.</p></div>
+<div class="prog" id="prog"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-greek-word-explorer-v1';
+var WORDS=[
+{t:"Agape",g:"\u1F00\u03B3\u03AC\u03C0\u03B7",p:"ah-GAH-pay",m:"Selfless, sacrificial love \u2014 love that gives without expecting anything back.",u:"The New Testament's richest word for love: God's love for us, and the love believers show one another.",v:"John 3:16",vt:"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."},
+{t:"Charis",g:"\u03C7\u03AC\u03C1\u03B9\u03C2",p:"KHAH-ris",m:"Grace \u2014 undeserved favor; a gift you could never earn.",u:"Used over 150 times in the New Testament, most often of God's free gift of salvation.",v:"Ephesians 2:8",vt:"For by grace are ye saved through faith; and that not of yourselves: it is the gift of God:"},
+{t:"Logos",g:"\u03BB\u03CC\u03B3\u03BF\u03C2",p:"LOH-gos",m:"Word, message, divine reason \u2014 God's self-expression.",u:"John calls Jesus the eternal Logos: God's Word made flesh.",v:"John 1:1",vt:"In the beginning was the Word, and the Word was with God, and the Word was God."},
+{t:"Pistis",g:"\u03C0\u03AF\u03C3\u03C4\u03B9\u03C2",p:"PIS-tis",m:"Faith \u2014 active trust and confident belief.",u:"The word behind 'faith' and 'believe' throughout the New Testament.",v:"Hebrews 11:1",vt:"Now faith is the substance of things hoped for, the evidence of things not seen."},
+{t:"Koinonia",g:"\u03BA\u03BF\u03B9\u03BD\u03C9\u03BD\u03AF\u03B1",p:"koy-noh-NEE-ah",m:"Fellowship \u2014 deep, shared life together.",u:"Describes the early church's shared life: teaching, meals, prayer, and generosity.",v:"Acts 2:42",vt:"And they continued stedfastly in the apostles' doctrine and fellowship, and in breaking of bread, and in prayers."},
+{t:"Metanoia",g:"\u03BC\u03B5\u03C4\u03AC\u03BD\u03BF\u03B9\u03B1",p:"meh-tah-NOY-ah",m:"Repentance \u2014 literally a change of mind that turns your whole direction.",u:"More than feeling sorry; it is turning away from sin and toward God.",v:"Acts 3:19",vt:"Repent ye therefore, and be converted, that your sins may be blotted out."},
+{t:"Soteria",g:"\u03C3\u03C9\u03C4\u03B7\u03C1\u03AF\u03B1",p:"soh-tay-REE-ah",m:"Salvation \u2014 rescue, deliverance, being made whole.",u:"The word for what Jesus came to give: rescue from sin and its penalty.",v:"Romans 10:9",vt:"That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved."},
+{t:"Eirene",g:"\u03B5\u1F30\u03C1\u03AE\u03BD\u03B7",p:"ay-RAY-nay",m:"Peace \u2014 wholeness, calm, everything as it should be.",u:"The peace Jesus leaves with His followers is deeper than the world's calm.",v:"John 14:27",vt:"Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid."},
+{t:"Elpis",g:"\u03B5\u03BB\u03C0\u03AF\u03C2",p:"el-PIS",m:"Hope \u2014 confident expectation of good to come.",u:"Biblical hope is not wishful thinking; it is certain because God promised.",v:"Romans 15:13",vt:"Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost."}
+];
+var studied={};
+try{studied=JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){studied={};}
+var grid=document.getElementById('wgrid'),detail=document.getElementById('detail'),prog=document.getElementById('prog');
+function save(){localStorage.setItem(KEY,JSON.stringify(studied));}
+function renderProg(){var n=Object.keys(studied).length;prog.innerHTML='<strong>'+n+' of '+WORDS.length+'</strong> words explored.';}
+function show(i){
+var w=WORDS[i];
+studied[w.t]=true;save();renderProg();
+Array.prototype.forEach.call(grid.children,function(b,j){b.classList.toggle('active',j===i);if(studied[WORDS[j].t]&&!b.querySelector('.done')){b.innerHTML+=' <span class="done">\u2713</span>';}});
+detail.innerHTML='<div class="gk">'+w.g+'</div><h2 style="font-family:Georgia,serif;margin:6px 0">'+w.t+'</h2>'
++'<p><em>Pronounced:</em> '+w.p+'</p>'
++'<p style="margin-top:10px"><strong>Meaning:</strong> '+w.m+'</p>'
++'<p style="margin-top:8px"><strong>In the New Testament:</strong> '+w.u+'</p>'
++'<div class="verse">\u201C'+w.vt+'\u201D<br><strong>\u2014 '+w.v+'</strong> (KJV)</div>';
+}
+WORDS.forEach(function(w,i){
+var b=document.createElement('button');b.className='wbtn';b.type='button';
+b.innerHTML=w.t+(studied[w.t]?' <span class="done">\u2713</span>':'');
+b.addEventListener('click',function(){show(i);});grid.appendChild(b);
+});
+renderProg();
+})();
+</script>
+</body>
+</html>

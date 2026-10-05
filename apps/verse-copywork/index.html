@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verse Copywork | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Slow down and write out Scripture, word by word. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Verse Copywork</h1>
+<p class="intro">Slow down and write out Scripture, word by word.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">1. Choose a Verse</h2>
+<div id="vPicker" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"></div>
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">2. Write It Out</h2>
+<p style="color:#6b6250;margin-bottom:8px">Read the verse, then type it from memory below — slowly, word by word. Then check your work.</p>
+<div id="vShow" style="background:#f7f1de;border-radius:8px;padding:18px;margin-bottom:12px;font-family:Georgia,serif;font-size:1.1rem"></div>
+<button class="btn ghost" id="hideV">Hide Verse &amp; Write from Memory</button>
+<textarea id="copy" rows="5" placeholder="Type the verse here..." aria-label="Copy the verse" style="margin-top:12px"></textarea>
+<button class="btn" id="check">Check My Copywork</button>
+<div id="result" style="margin-top:16px"></div>
+<p style="margin-top:12px">✍️ Verses completed: <strong id="doneCount">0</strong></p>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-verse-copywork-v1';
+let S={vi:0,done:{}};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const VERSES=[
+["John 3:16","For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."],
+["Psalm 23:1","The LORD is my shepherd; I shall not want."],
+["Philippians 4:13","I can do all things through Christ which strengtheneth me."],
+["Proverbs 3:5","Trust in the LORD with all thine heart; and lean not unto thine own understanding."],
+["Genesis 1:1","In the beginning God created the heaven and the earth."],
+["Psalm 119:105","Thy word is a lamp unto my feet, and a light unto my path."]
+];
+const $=id=>document.getElementById(id);
+const norm=w=>w.toLowerCase().replace(/[^a-z]/g,'');
+function renderPicker(){
+  $('vPicker').innerHTML=VERSES.map((v,i)=>'<button class="btn'+(i===S.vi?'':' ghost')+'" data-i="'+i+'" style="min-height:48px">'+v[0]+'</button>').join('');
+  document.querySelectorAll('#vPicker button').forEach(b=>b.onclick=()=>{S.vi=+b.dataset.i;save();renderPicker();showV();});
+}
+function showV(){$('vShow').innerHTML='<strong>'+VERSES[S.vi][0]+' (KJV)</strong><br>'+VERSES[S.vi][1];$('vShow').style.display='';}
+$('hideV').onclick=()=>{$('vShow').style.display='none';};
+function renderDone(){$('doneCount').textContent=Object.keys(S.done).length;}
+$('check').onclick=()=>{
+  const target=VERSES[S.vi][1].split(' ');
+  const typed=$('copy').value.trim().split(/\s+/).filter(Boolean);
+  if(!typed.length){$('result').innerHTML='<p style="color:#8a7a4a">Type the verse first.</p>';return;}
+  let correct=0;const max=Math.max(target.length,typed.length);
+  let html='<p style="margin-bottom:8px"><strong>Word-by-word check</strong> (green = correct):</p><p style="font-size:1.1rem;line-height:2">';
+  for(let i=0;i<max;i++){
+    const t=target[i]||'',y=typed[i]||'';
+    const ok=t&&y&&norm(t)===norm(y);
+    if(ok)correct++;
+    html+='<span style="background:'+(ok?'#dff0d8':'#f8d7da')+';border-radius:4px;padding:2px 6px;margin:2px;display:inline-block" title="Should be: '+t.replace(/"/g,'&quot;')+'">'+(y||'___')+'</span> ';
+  }
+  html+='</p>';
+  const pct=Math.round(correct/target.length*100);
+  html+='<p style="font-size:1.2rem;margin-top:8px"><strong>'+pct+'% accurate</strong> ('+correct+' of '+target.length+' words)</p>';
+  if(pct===100){S.done[S.vi]=true;save();renderDone();html+='<p style="font-size:1.2rem;margin-top:6px">🎉 Perfect! Verse completed.</p>';}
+  else html+='<p style="color:#6b6250">Keep practicing — slow and steady.</p>';
+  $('result').innerHTML=html;
+};
+renderPicker();showV();renderDone();
+
+</script>
+</body>
+</html>

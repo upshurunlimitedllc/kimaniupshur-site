@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tithe &amp; Offering Tracker | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Track your giving with a joyful heart. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Tithe &amp; Offering Tracker</h1>
+<p class="intro">Track your giving with a joyful heart.</p>
+<div class="appcard">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px">
+<div style="background:#f7f1de;border-radius:8px;padding:14px;text-align:center"><div style="font-size:.8rem;color:#8a7a4a">TOTAL GIVEN</div><div id="tTotal" style="font-size:1.5rem;font-weight:bold;color:#8a6d1c">$0.00</div></div>
+<div style="background:#f7f1de;border-radius:8px;padding:14px;text-align:center"><div style="font-size:.8rem;color:#8a7a4a">TITHE</div><div id="tTithe" style="font-size:1.5rem;font-weight:bold;color:#8a6d1c">$0.00</div></div>
+<div style="background:#f7f1de;border-radius:8px;padding:14px;text-align:center"><div style="font-size:.8rem;color:#8a7a4a">OFFERINGS</div><div id="tOff" style="font-size:1.5rem;font-weight:bold;color:#8a6d1c">$0.00</div></div>
+</div>
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">Log Giving</h2>
+<input type="number" id="gAmt" placeholder="Amount (e.g., 50.00)" min="0" step="0.01" aria-label="Amount">
+<select id="gType" aria-label="Giving type"><option>Tithe</option><option>Offering</option><option>Missions</option><option>Other</option></select>
+<input type="text" id="gNote" placeholder="Note (optional)" aria-label="Note">
+<button class="btn" id="gAdd">Add Giving</button>
+<h2 style="font-family:Georgia,serif;margin:24px 0 8px">History</h2>
+<div id="gList"></div>
+<p style="color:#6b6250;margin-top:16px;font-style:italic">"Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver." — 2 Corinthians 9:7 (KJV)</p>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-tithe-offering-tracker-v1';
+let S={entries:[]};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const $=id=>document.getElementById(id);
+const money=n=>'$'+Number(n).toFixed(2);
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function render(){
+  let tot=0,tithe=0,off=0;
+  S.entries.forEach(e=>{tot+=e.amt;if(e.type==='Tithe')tithe+=e.amt;else off+=e.amt;});
+  $('tTotal').textContent=money(tot);$('tTithe').textContent=money(tithe);$('tOff').textContent=money(off);
+  $('gList').innerHTML=S.entries.length?S.entries.slice().reverse().map((e,i)=>'<div class="checkrow"><span style="flex:1"><strong>'+money(e.amt)+'</strong> — '+escapeHtml(e.type)+(e.note?' <span style="color:#8a7a4a">('+escapeHtml(e.note)+')</span>':'')+'<br><span style="font-size:.85rem;color:#8a7a4a">'+escapeHtml(e.date)+'</span></span><button class="btn ghost" data-i="'+(S.entries.length-1-i)+'" style="padding:8px 14px;min-height:44px">×</button></div>').join(''):'<p style="color:#8a7a4a">No giving logged yet.</p>';
+  document.querySelectorAll('#gList button').forEach(b=>b.onclick=()=>{S.entries.splice(+b.dataset.i,1);save();render();});
+}
+$('gAdd').onclick=()=>{
+  const amt=parseFloat($('gAmt').value);
+  if(!amt||amt<=0){alert('Enter an amount greater than zero.');return;}
+  S.entries.push({amt:Math.round(amt*100)/100,type:$('gType').value,note:$('gNote').value.trim(),date:new Date().toLocaleDateString()});
+  $('gAmt').value='';$('gNote').value='';save();render();
+};
+render();
+
+</script>
+</body>
+</html>

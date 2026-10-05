@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assurance of Salvation | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="How you can know for sure that you are saved. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .qcard{background:#fff;border:1px solid #e5d9b8;border-radius:10px;padding:16px;margin-bottom:10px}
+.qbtns{display:flex;gap:10px;margin-top:10px}
+.qbtns button{flex:1;padding:12px;border-radius:8px;border:2px solid #c9a227;background:#fffdf7;font-size:1rem;cursor:pointer;min-height:48px}
+.verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic;display:none}
+#result{background:#fffdf7;border:2px solid #c9a227;border-radius:10px;padding:18px;margin-top:14px;display:none}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Assurance of Salvation</h1>
+<p class="intro">How you can know for sure that you are saved.</p>
+<div class="appcard">
+<p style="color:#6b6250;margin-bottom:16px">Answer honestly. Each \u201Cyes\u201D unlocks what Scripture says.</p>
+<div id="quiz"></div>
+<div id="result"></div>
+<div class="verse" id="doubt" style="display:block;margin-top:16px">\u201CThere is therefore now no condemnation to them which are in Christ Jesus.\u201D<br><strong>\u2014 Romans 8:1</strong> (KJV)<br><br>Still doubting? Feelings change; God's Word does not. Rest on what He said, not on how you feel.</div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-assurance-of-salvation-v1';
+var QS=[
+{q:"Do you believe that Jesus is the Son of God?",v:"John 3:16",vt:"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."},
+{q:"Have you confessed Jesus as Lord and believed God raised Him from the dead?",v:"Romans 10:9",vt:"That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved."},
+{q:"Are you trusting His grace \u2014 not your goodness \u2014 to save you?",v:"Ephesians 2:8",vt:"For by grace are ye saved through faith; and that not of yourselves: it is the gift of God:"},
+{q:"Do you believe Jesus gives eternal life that cannot be lost?",v:"John 10:28",vt:"And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand."},
+{q:"Do you want to know \u2014 for sure \u2014 that you have eternal life?",v:"1 John 5:13",vt:"These things have I written unto you that believe on the name of the Son of God; that ye may know that ye have eternal life."}
+];
+var box=document.getElementById('quiz'),res=document.getElementById('result'),yes=0,answered=0;
+var saved=null;try{saved=JSON.parse(localStorage.getItem(KEY)||"null");}catch(e){}
+QS.forEach(function(item,i){
+var d=document.createElement('div');d.className='qcard';
+var pre=saved&&saved[i]!=null?saved[i]:null;
+d.innerHTML='<p><strong>'+(i+1)+'.</strong> '+item.q+'</p><div class="qbtns"><button type="button" data-v="y">Yes</button><button type="button" data-v="n">No / Not sure</button></div><div class="verse">\u201C'+item.vt+'\u201D<br><strong>\u2014 '+item.v+'</strong> (KJV)</div>';
+var btns=d.querySelectorAll('button'),verse=d.querySelector('.verse');
+function answer(val){
+if(d.dataset.done)return;d.dataset.done="1";
+verse.style.display='block';
+saved=saved||{};saved[i]=val;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}
+if(val==='y'){yes++;}answered++;
+Array.prototype.forEach.call(btns,function(b){b.disabled=true;b.style.opacity=.6;});
+if(answered===QS.length){finish();}
+}
+Array.prototype.forEach.call(btns,function(b){b.addEventListener('click',function(){answer(b.dataset.v);});});
+if(pre){answer(pre);}
+box.appendChild(d);
+});
+function finish(){
+res.style.display='block';
+if(yes===QS.length){res.innerHTML='<h3 style="font-family:Georgia,serif">You can know \u2014 for sure.</h3><p>God\u2019s Word says believers <em>may know</em> they have eternal life (1 John 5:13). Your salvation rests on Christ\u2019s finished work, not your feelings. When doubt comes, return to these verses.</p>';}
+else if(yes>=3){res.innerHTML='<h3 style="font-family:Georgia,serif">Almost there.</h3><p>If you have never truly trusted Christ, you can right now: confess Him as Lord and believe God raised Him from the dead (Romans 10:9). Then these promises are yours.</p>';}
+else{res.innerHTML='<h3 style="font-family:Georgia,serif">The door is open.</h3><p>Salvation is a gift received by faith. Read <a href="/apps/what-is-the-gospel/" style="color:#8a6d1c">What Is the Gospel?</a> and consider trusting Jesus today.</p>';}
+}
+})();
+</script>
+</body>
+</html>

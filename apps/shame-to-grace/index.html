@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shame to Grace | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="For believers carrying shame they can't shake. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+.stepdots{display:flex;gap:8px;margin-bottom:18px;justify-content:center}
+.dot{width:14px;height:14px;border-radius:50%;background:#e5d9b8}
+.dot.on{background:#c9a227}
+.nav{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+#shredzone{background:#fff;border:2px dashed #c9a227;border-radius:10px;padding:18px;margin-top:12px;text-align:center;display:none}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Shame to Grace</h1>
+<p class="intro">For believers carrying shame they can't shake.</p>
+<div class="appcard">
+<p style="color:#6b6250;margin-bottom:14px">Shame says \u201Cyou <em>are</em> your failure.\u201D Grace says \u201Cyou are forgiven and loved.\u201D Walk these four steps slowly.</p>
+<div class="stepdots" id="dots"></div>
+<div id="step"></div>
+<div class="nav"><button class="btn ghost" id="back" type="button">&larr; Back</button><button class="btn" id="next" type="button">Next &rarr;</button></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-shame-to-grace-v1';
+var STEPS=[
+{t:"1 \u2014 Name it",b:"Shame grows in the dark. Write down what you are carrying \u2014 honestly, privately. It stays on your device, and you can destroy it in step 4.",v:null,field:true,ph:"Write what you are ashamed of..."},
+{t:"2 \u2014 Confess it",b:"Confession is agreeing with God about your sin \u2014 and His promise is immediate: faithful forgiveness and full cleansing.",v:"1 John 1:9",vt:"If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.",field:false},
+{t:"3 \u2014 Believe you are forgiven",b:"Your feelings may lag behind the fact. The fact: there is no condemnation for those in Christ Jesus. You do not have to feel forgiven to BE forgiven.",v:"Romans 8:1",vt:"There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.",field:false},
+{t:"4 \u2014 Walk in grace",b:"God casts our sins into the depths of the sea. As a final act, you may shred what you wrote in step 1 \u2014 a small picture of a great truth.",v:"Micah 7:19",vt:"Thou wilt cast all their sins into the depths of the sea.",field:false,shred:true}
+];
+var i=0,note="";
+try{note=localStorage.getItem(KEY)||"";}catch(e){}
+var dots=document.getElementById('dots'),step=document.getElementById('step');
+STEPS.forEach(function(){var d=document.createElement('div');d.className='dot';dots.appendChild(d);});
+function render(){
+Array.prototype.forEach.call(dots.children,function(d,j){d.classList.toggle('on',j===i);});
+var s=STEPS[i],h='<h2 style="font-family:Georgia,serif;margin-bottom:8px">'+s.t+'</h2><p>'+s.b+'</p>';
+if(s.v){h+='<div class="verse">\u201C'+s.vt+'\u201D<br><strong>\u2014 '+s.v+'</strong> (KJV)</div>';}
+if(s.field){h+='<textarea id="shamenote" rows="4" placeholder="'+s.ph+'">'+note.replace(/</g,'&lt;')+'</textarea>';}
+if(s.shred){
+h+='<div id="shredzone" style="display:block"><p>What you wrote is still here. When you are ready, let it go:</p><p style="margin-top:10px"><button class="btn" id="shred" type="button">Shred it \u2014 my sin is cast into the sea</button></p><p id="shreddone" style="display:none;color:#2e7d32;font-weight:bold;margin-top:10px">\u2713 Gone. \u201CAs far as the east is from the west, so far hath he removed our transgressions from us.\u201D (Psalm 103:12)</p></div>';
+}
+step.innerHTML=h;
+var ta=document.getElementById('shamenote');
+if(ta){ta.addEventListener('input',function(){note=ta.value;try{localStorage.setItem(KEY,note);}catch(e){}});}
+var sh=document.getElementById('shred');
+if(sh){sh.addEventListener('click',function(){note="";try{localStorage.removeItem(KEY);}catch(e){}document.getElementById('shreddone').style.display='block';sh.style.display='none';});}
+document.getElementById('back').style.visibility=i===0?'hidden':'visible';
+document.getElementById('next').textContent=i===STEPS.length-1?'Finish':'Next \u2192';
+}
+document.getElementById('back').addEventListener('click',function(){if(i>0){i--;render();}});
+document.getElementById('next').addEventListener('click',function(){if(i<STEPS.length-1){i++;render();}});
+render();
+})();
+</script>
+</body>
+</html>

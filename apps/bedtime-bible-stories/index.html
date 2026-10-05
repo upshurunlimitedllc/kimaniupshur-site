@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bedtime Bible Stories | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Short, gentle Bible stories for little ones. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Bedtime Bible Stories</h1>
+<p class="intro">Short, gentle Bible stories for little ones.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Tonight's Story</h2>
+<button class="btn" id="pickStory">Pick a Story for Tonight</button>
+<div id="storyBox" style="margin-top:16px"></div>
+<hr style="border:none;border-top:1px solid #e5d9b8;margin:24px 0">
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">All Stories</h2>
+<div id="storyList"></div>
+<p style="margin-top:12px">🌙 Stories read: <strong id="readCount">0</strong></p>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-bedtime-bible-stories-v1';
+let S={read:{}};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const STORIES=[
+["Creation","Genesis 1","In the beginning, there was only God. Then God spoke, and light appeared! God made the sun, the moon, and the twinkling stars. He made the oceans, the mountains, the trees, and every animal — from tiny ants to giant elephants. Last of all, God made people, and He said they were very good. Then God rested. Everything God made was wonderful.","Thank You, God, for making such a beautiful world — and for making me."],
+["Noah's Ark","Genesis 6-8","Noah loved God with all his heart. God told Noah to build a big boat called an ark, because a great flood was coming. Noah obeyed, even though it had never rained! Two of every animal came — lions, zebras, birds, and bunnies. God kept Noah and the animals safe inside. After the flood, God put a rainbow in the sky as a promise of His love.","Thank You, God, for keeping Noah safe — and for keeping me safe too."],
+["Baby Moses","Exodus 2","Long ago, a baby boy named Moses was born. His mother loved him so much that she placed him in a little basket in the river to keep him safe. The princess found him and raised him as her own. God had a special plan for Moses: one day he would help God's people. God watches over little ones, just like He watched over Moses.","Thank You, God, for watching over me, just like You watched over baby Moses."],
+["David and Goliath","1 Samuel 17","Goliath was a giant — nine feet tall! Everyone was afraid. But young David trusted God. He picked up five smooth stones and his sling. With one stone, David defeated the giant! David knew the battle belonged to the Lord. When we trust God, we can be brave, no matter how big our problems seem.","Thank You, God, for making me brave when I trust in You."],
+["Jesus Calms the Storm","Mark 4","Jesus and His friends were in a boat when a great storm came. The waves were huge! But Jesus was sleeping. His friends woke Him, afraid. Jesus stood up and said, 'Peace, be still!' And the wind stopped. Jesus takes care of us even in scary times. We never have to be afraid when Jesus is near.","Thank You, Jesus, for calming every storm and watching over me tonight."],
+["The Lost Sheep","Luke 15","A shepherd had one hundred sheep, but one little sheep wandered away and got lost. The shepherd left the ninety-nine to find the one! When he found it, he carried it home on his shoulders, rejoicing. Jesus is like that shepherd — He loves each one of us so much that He comes to find us.","Thank You, Jesus, for loving me and always finding me."]
+];
+const $=id=>document.getElementById(id);
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function showStory(i){
+  const s=STORIES[i];
+  $('storyBox').innerHTML='<div style="background:#f7f1de;border-radius:8px;padding:22px"><h3 style="font-family:Georgia,serif;font-size:1.4rem">'+s[0]+'</h3><p style="color:#8a6d1c;font-size:.9rem;margin-bottom:10px">'+s[1]+'</p><p style="font-size:1.08rem;line-height:1.8">'+s[2]+'</p><p style="margin-top:14px;font-style:italic;color:#6b6250">Bedtime prayer: &ldquo;'+s[3]+'&rdquo;</p><button class="btn" id="markRead" style="margin-top:12px">We Read It 🌙</button></div>';
+  $('markRead').onclick=()=>{S.read[i]=true;save();renderList();$('storyBox').innerHTML+='<p style="color:#8a6d1c;margin-top:8px">Sweet dreams! God loves you.</p>';};
+  $('storyBox').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function renderList(){
+  $('storyList').innerHTML=STORIES.map((s,i)=>'<div class="checkrow"><span style="flex:1"><strong>'+s[0]+'</strong> <span style="color:#8a7a4a">('+s[1]+')</span>'+(S.read[i]?' 🌙':'')+'</span><button class="btn ghost" data-i="'+i+'" style="padding:8px 16px;min-height:44px">Read</button></div>').join('');
+  document.querySelectorAll('#storyList button').forEach(b=>b.onclick=()=>showStory(+b.dataset.i));
+  $('readCount').textContent=Object.keys(S.read).length;
+}
+$('pickStory').onclick=()=>showStory(Math.floor(Math.random()*STORIES.length));
+renderList();
+
+</script>
+</body>
+</html>

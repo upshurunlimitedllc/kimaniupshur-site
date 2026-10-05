@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heroes of Faith | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Hebrews 11 biographies with takeaways. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+.verse{background:#f7f0dc;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-style:italic}
+.verse .ref{display:block;margin-top:8px;font-style:normal;font-weight:bold;color:#8a6d1c;font-size:.9rem}
+.bar{background:#ece4cc;border-radius:8px;height:16px;overflow:hidden;margin:8px 0}
+.bar>i{display:block;height:100%;background:#c9a227;border-radius:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+.tcard{background:#fff;border:1px solid #e7dcae;border-radius:10px;padding:16px;margin:10px 0}
+.tcard h3{font-family:Georgia,serif;margin-bottom:6px;color:#141210}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.muted{color:#6b6250;font-size:.92rem}
+.pill{display:inline-block;background:#f3ead0;border:1px solid #c9a227;border-radius:20px;padding:6px 14px;margin:4px 6px 4px 0;font-size:.9rem}
+.acc{border:1px solid #e7dcae;border-radius:10px;margin:10px 0;overflow:hidden;background:#fff}
+.acc>button{width:100%;text-align:left;background:#fbf6e9;border:none;padding:16px;font-size:1rem;font-weight:bold;cursor:pointer;color:#141210;min-height:52px}
+.acc>button:hover{background:#f5ecd4}
+.acc .panel{display:none;padding:4px 16px 16px;border-top:1px solid #eee}
+.acc.open .panel{display:block}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.tabs button{background:#f3ead0;border:2px solid #c9a227;border-radius:20px;padding:10px 18px;cursor:pointer;font-size:.95rem;min-height:44px;color:#222}
+.tabs button.on{background:#c9a227;color:#141210;font-weight:bold}
+.big-verse{font-family:Georgia,serif;font-size:1.3rem;line-height:1.7}
+.hidden{display:none!important}
+.stepdots{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.stepdots span{width:36px;height:36px;border-radius:50%;background:#ece4cc;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:.9rem;cursor:pointer}
+.stepdots span.done{background:#c9a227;color:#141210}
+.stepdots span.cur{outline:3px solid #c9a227}
+label.checkrow{cursor:pointer}
+h3.sec{font-family:Georgia,serif;margin:26px 0 6px;color:#141210;font-size:1.2rem}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Heroes of Faith</h1>
+<p class="intro">Hebrews 11 biographies with takeaways.</p>
+<div class="appcard">
+<div class="verse">"Now faith is the substance of things hoped for, the evidence of things not seen."<span class="ref">Hebrews 11:1 (KJV)</span></div>
+<div style="text-align:center"><button class="btn" id="random">Meet a Random Hero</button></div>
+<div class="tcard" id="hero" style="margin-top:16px"></div>
+<h3 class="sec">All Heroes</h3>
+<div class="stepdots" id="dots" style="gap:10px"></div>
+<h3 class="sec">My Takeaways</h3>
+<div id="notes"><p class="muted">Write a takeaway for any hero above - they'll be saved here.</p></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+const K="app-heroes-of-faith-v1";
+const HEROES=[
+["Abel","Hebrews 11:4; Genesis 4","Abel offered God the best of his flock, in faith. God accepted his worship because Abel came God's way, not his own.","Worship God His way - with your best, not your leftovers."],
+["Enoch","Hebrews 11:5; Genesis 5:24","Enoch walked with God so closely that God simply took him. Three hundred years of daily walking, one step at a time.","Faith is a daily walk, not a single leap."],
+["Noah","Hebrews 11:7; Genesis 6","Noah built an ark for a flood no one had ever seen, preaching righteousness for 120 years. He obeyed before he understood.","Obey God even when the 'rain' makes no sense yet."],
+["Abraham","Hebrews 11:8-10; Genesis 12","Abraham left home for a land God would show him, and believed God's promise of countless descendants when he had no children.","Follow God before you see the map."],
+["Sarah","Hebrews 11:11; Genesis 18","Sarah laughed at God's promise - then believed. Though past childbearing age, she judged Him faithful who had promised.","It's never too late for God's promise."],
+["Joseph","Hebrews 11:22; Genesis 50:20","Betrayed by his brothers and forgotten in prison, Joseph forgave and trusted God's bigger plan.","What others meant for evil, God can mean for good."],
+["Moses","Hebrews 11:24-26; Exodus 3","Moses gave up Egypt's palace to suffer with God's people, choosing eternal reward over temporary pleasure.","Choose God's people and God's plan over comfort."],
+["Rahab","Hebrews 11:31; Joshua 2","A Gentile woman in Jericho hid Israel's spies and joined God's people. Her past didn't disqualify her - her faith rewrote her future.","Your past doesn't disqualify you from God's story."],
+["David","Hebrews 11:32; Acts 13:22","A shepherd boy who faced giants and a king who fell hard - yet God called him a man after His own heart, because he always came back to God.","A heart after God repents quickly and worships deeply."]];
+function $(id){return document.getElementById(id)}
+function load(){try{return JSON.parse(localStorage.getItem(K))||{notes:{}}}catch(e){return{notes:{}}}}
+function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
+let st=load();let cur=0;
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function renderDots(){
+ $("dots").innerHTML=HEROES.map(function(h,i){
+  return '<span data-i="'+i+'" class="'+(i===cur?"cur":"")+'" style="width:auto;padding:0 16px;border-radius:18px">'+h[0]+'</span>'}).join("");
+ document.querySelectorAll("#dots span").forEach(function(d){d.addEventListener("click",function(){cur=parseInt(d.getAttribute("data-i"),10);render()})});
+}
+function render(){
+ const h=HEROES[cur];
+ $("hero").innerHTML="<h3>"+h[0]+"</h3><p class='muted'><strong>Read:</strong> "+h[1]+"</p><p>"+h[2]+"</p>"+
+ '<div class="tcard" style="background:#fbf6e9"><strong>Takeaway:</strong> '+h[3]+'</div>'+
+ '<label class="muted">My takeaway from '+h[0]+'</label><textarea id="nt" rows="2" placeholder="What does '+h[0]+' teach me?">'+esc(st.notes[cur]||"")+'</textarea>';
+ $("nt").addEventListener("input",function(){st.notes[cur]=$("nt").value;save();renderNotes()});
+ renderDots();
+}
+$("random").addEventListener("click",function(){cur=Math.floor(Math.random()*HEROES.length);render();$("hero").scrollIntoView({behavior:"smooth",block:"center"})});
+function renderNotes(){
+ const keys=Object.keys(st.notes).filter(function(k){return st.notes[k]&&st.notes[k].trim()});
+ if(!keys.length){$("notes").innerHTML='<p class="muted">Write a takeaway for any hero above - they will be saved here.</p>';return}
+ $("notes").innerHTML=keys.map(function(k){
+  return '<div class="tcard"><strong>'+HEROES[k][0]+':</strong> '+esc(st.notes[k])+'</div>';
+ }).join("");
+}
+render();renderNotes();
+</script>
+</body>
+</html>

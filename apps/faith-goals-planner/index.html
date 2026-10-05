@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faith Goals Planner | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Set God-honoring goals with a biblical framework. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.fggrid{grid-template-columns:1fr !important}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Faith Goals Planner</h1>
+<p class="intro">Set God-honoring goals with a biblical framework.</p>
+<div class="appcard">
+<div style="background:#fff;border:1px solid #e3d5a8;border-radius:8px;padding:16px;margin-bottom:16px">
+<label><strong>Goal</strong><input type="text" id="fgtitle" placeholder="e.g. Read the New Testament in 90 days"></label>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0 12px" class="fggrid">
+<label><strong>Area</strong><select id="fgcat"><option>Spiritual Growth</option><option>Family</option><option>Health</option><option>Work &amp; Calling</option><option>Finances</option><option>Service</option></select></label>
+<label><strong>Target date</strong><input type="text" id="fgdate" placeholder="e.g. Dec 31, 2026"></label>
+</div>
+<label><strong>Anchoring Scripture</strong><select id="fgverse">
+<option value="Proverbs 16:3|Commit thy works unto the LORD, and thy thoughts shall be established.">Proverbs 16:3</option>
+<option value="Jeremiah 29:11|For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.">Jeremiah 29:11</option>
+<option value="Philippians 4:13|I can do all things through Christ which strengtheneth me.">Philippians 4:13</option>
+<option value="Matthew 6:33|But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.">Matthew 6:33</option>
+<option value="Galatians 6:9|And let us not be weary in well doing: for in due season we shall reap, if we faint not.">Galatians 6:9</option>
+<option value="1 Corinthians 10:31|Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God.">1 Corinthians 10:31</option>
+<option value="Colossians 3:23|And whatsoever ye do, do it heartily, as to the Lord, and not unto men.">Colossians 3:23</option>
+</select></label>
+<button class="btn" id="fgadd">Add Goal</button>
+</div>
+<div id="fglist"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-faith-goals-planner-v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function render(){
+  var d=load(),box=document.getElementById("fglist");
+  if(!d.length){box.innerHTML="<p style='color:#8a6d1c'>No goals yet. Set your first God-honoring goal above.</p>";return;}
+  box.innerHTML="";
+  d.forEach(function(g,i){
+    var card=document.createElement("div");
+    card.style.cssText="background:#fff;border:2px solid #c9a227;border-radius:8px;padding:16px;margin-bottom:12px";
+    var parts=g.verse.split("|");
+    card.innerHTML="<h3 style='font-family:Georgia,serif'>"+esc(g.title)+"</h3>"+
+      "<p style='color:#8a6d1c;font-size:.9rem'>"+esc(g.cat)+(g.date?" &mdash; by "+esc(g.date):"")+"</p>"+
+      "<p style='font-style:italic;margin:8px 0'>&ldquo;"+esc(parts[1]||"")+"&rdquo; <strong>("+esc(parts[0]||"")+", KJV)</strong></p>"+
+      "<label style='display:flex;align-items:center;gap:10px'>Progress: <input type='range' min='0' max='100' value='"+g.prog+"' style='flex:1;accent-color:#c9a227' data-r='"+i+"'> <strong data-p='"+i+"'>"+g.prog+"%</strong></label>"+
+      "<div style='margin-top:10px;display:flex;gap:8px'><button class='btn ghost' style='padding:8px 14px;min-height:40px;font-size:.85rem' data-d='"+i+"'>"+(g.prog>=100?"Reopen":"Complete")+"</button><button class='btn ghost' style='padding:8px 14px;min-height:40px;font-size:.85rem' data-x='"+i+"'>Delete</button></div>";
+    box.appendChild(card);
+  });
+  Array.prototype.forEach.call(box.querySelectorAll("[data-r]"),function(r){
+    r.addEventListener("input",function(){
+      var dd=load(),i=+r.getAttribute("data-r");dd[i].prog=+r.value;save(dd);
+      box.querySelector("[data-p='"+i+"']").textContent=r.value+"%";
+    });
+  });
+  Array.prototype.forEach.call(box.querySelectorAll("[data-d]"),function(b){
+    b.addEventListener("click",function(){var dd=load(),i=+b.getAttribute("data-d");dd[i].prog=dd[i].prog>=100?0:100;save(dd);render();});
+  });
+  Array.prototype.forEach.call(box.querySelectorAll("[data-x]"),function(b){
+    b.addEventListener("click",function(){var dd=load();dd.splice(+b.getAttribute("data-x"),1);save(dd);render();});
+  });
+}
+document.getElementById("fgadd").addEventListener("click",function(){
+  var t=document.getElementById("fgtitle").value.trim();
+  if(!t){alert("Give your goal a name first.");return;}
+  var d=load();
+  d.push({title:t,cat:document.getElementById("fgcat").value,date:document.getElementById("fgdate").value.trim(),verse:document.getElementById("fgverse").value,prog:0});
+  save(d);document.getElementById("fgtitle").value="";document.getElementById("fgdate").value="";render();
+});
+render();
+</script>
+</body>
+</html>

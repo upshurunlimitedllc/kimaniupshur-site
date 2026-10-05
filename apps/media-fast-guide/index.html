@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Fast Guide | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="A practical plan for fasting from screens and social. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Media Fast Guide</h1>
+<p class="intro">A practical plan for fasting from screens and social.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Build Your Fast</h2>
+<label style="display:block;color:#6b6250;margin-bottom:4px">How long?</label>
+<select id="fLen" aria-label="Fast length"><option value="1">1 day</option><option value="3">3 days</option><option value="7" selected>7 days</option><option value="21">21 days</option></select>
+<p style="color:#6b6250;margin:12px 0 4px">I will fast from:</p>
+<div id="fastFrom"></div>
+<p style="color:#6b6250;margin:12px 0 4px">I will replace it with:</p>
+<div id="replaceWith"></div>
+<button class="btn" id="startFast" style="margin-top:16px">Start My Fast</button>
+<div id="fastPlan" style="margin-top:20px"></div>
+<p style="color:#6b6250;margin-top:16px;font-style:italic">"Set your affection on things above, not on things on the earth." — Colossians 3:2 (KJV)</p>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-media-fast-guide-v1';
+let S={len:7,from:{},rep:{},active:false,days:{},start:''};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const FROM=['Social media','News feeds','TV / streaming','Video games','Phone after 9pm','YouTube rabbit holes'];
+const REP=['A morning prayer walk','Reading one Psalm a day','Calling an encouraging friend','Journaling with God','Serving someone daily','Memorizing a verse'];
+const $=id=>document.getElementById(id);
+function renderChoices(){
+  $('fLen').value=String(S.len);
+  $('fastFrom').innerHTML=FROM.map((f,i)=>'<label class="checkrow"><input type="checkbox" data-g="from" data-i="'+i+'" '+(S.from[i]?'checked':'')+'><span>'+f+'</span></label>').join('');
+  $('replaceWith').innerHTML=REP.map((f,i)=>'<label class="checkrow"><input type="checkbox" data-g="rep" data-i="'+i+'" '+(S.rep[i]?'checked':'')+'><span>'+f+'</span></label>').join('');
+  document.querySelectorAll('#fastFrom input, #replaceWith input').forEach(c=>c.onchange=()=>{S[c.dataset.g][c.dataset.i]=c.checked;save();});
+}
+$('fLen').onchange=e=>{S.len=+e.target.value;save();};
+function renderPlan(){
+  if(!S.active){$('fastPlan').innerHTML='';return;}
+  const reps=REP.filter((_,i)=>S.rep[i]);
+  let html='<h3 style="font-family:Georgia,serif;margin-bottom:8px">Your '+S.len+'-Day Fast (started '+S.start+')</h3>';
+  for(let d=1;d<=S.len;d++){
+    html+='<label class="checkrow"><input type="checkbox" data-d="'+d+'" '+(S.days[d]?'checked':'')+'><span><strong>Day '+d+'</strong> — '+(reps.length?reps[(d-1)%reps.length]:'spend the time with God')+'</span></label>';
+  }
+  html+='<button class="btn ghost" id="endFast" style="margin-top:12px">End Fast</button>';
+  $('fastPlan').innerHTML=html;
+  document.querySelectorAll('#fastPlan input').forEach(c=>c.onchange=()=>{S.days[c.dataset.d]=c.checked;save();});
+  $('endFast').onclick=()=>{S.active=false;S.days={};save();renderPlan();};
+}
+$('startFast').onclick=()=>{
+  if(!Object.values(S.from).some(Boolean)){alert('Choose at least one thing to fast from.');return;}
+  S.active=true;S.days={};S.start=new Date().toLocaleDateString();save();renderPlan();
+  $('fastPlan').scrollIntoView({behavior:'smooth',block:'nearest'});
+};
+renderChoices();renderPlan();
+
+</script>
+</body>
+</html>

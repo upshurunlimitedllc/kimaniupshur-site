@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confession & Repentance Walk | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="1 John 1:9 steps with prayers. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.cfstep{border:1px solid #e3d5a8;border-radius:8px;margin:10px 0;padding:16px;background:#fff}.cfstep h3{font-family:Georgia,serif}.cfstep.done{border-color:#c9a227;background:#fbf6e6}.cfhead{display:flex;align-items:center;gap:12px}.cfhead input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}.prayer{font-style:italic;background:#f7f1de;border-radius:8px;padding:14px 16px;margin-top:10px}</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Confession & Repentance Walk</h1>
+<p class="intro">1 John 1:9 steps with prayers.</p>
+<div class="appcard">
+<p class="bverse" style="font-family:Georgia,serif;font-style:italic;background:#f7f1de;border-radius:8px;padding:18px;margin-bottom:14px">“If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.”<br>— 1 John 1:9 (KJV)</p><p>Walk through these five steps slowly and honestly. Your journal below stays private on this device.</p><div id="cfSteps"></div><h3 style="font-family:Georgia,serif;margin:16px 0 6px">Private journal</h3><textarea id="cfJournal" rows="5" placeholder="Pour out your heart here — only you and God see this…" aria-label="Private confession journal"></textarea><button class="btn" id="cfSave">Save journal</button> <span id="cfSaved" style="color:#8a6d1c;font-size:.9rem"></span><div id="cfDone" style="display:none;margin-top:16px;background:#f4ecd4;border-radius:8px;padding:16px"><strong>You are forgiven.</strong> “As far as the east is from the west, so far hath he removed our transgressions from us.” (Psalm 103:12) Walk in the freedom of a clean conscience today.</div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem(k);return r?JSON.parse(r):null;}localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
+var K43="app-confession-repentance-walk-v1";var KJ43="app-confession-repentance-walk-journal";var CFS=[["1. Admit it honestly","Name the sin specifically before God — no excuses, no minimizing. Honesty is where healing starts.","Lord, I admit that I have sinned. I won’t hide it or excuse it anymore."],["2. Agree with God","Confession means agreeing with God that it was sin. See it the way He sees it — serious, but forgivable.","Father, You call this sin, and I agree with You. It was wrong, and I’m sorry."],["3. Ask for forgiveness","Ask — don’t beg as if He’s reluctant. He is faithful and just to forgive.","Lord Jesus, please forgive me and wash me clean, because of what You did on the cross."],["4. Turn from it","Repentance means turning around. Name one practical step away from this sin.","Holy Spirit, show me the way out. I turn from this sin today and choose Your way instead."],["5. Receive cleansing","Don’t carry what God has removed. Thank Him and walk forward clean.","Thank You, Father, for forgiving me completely. I receive Your cleansing and walk in freedom. Amen."]];function renderCF(){var done=store(K43)||{};var html="";var c=0;for(var i=0;i<CFS.length;i++){var s=CFS[i];var isDone=!!done[i];if(isDone)c++;html+="<div class='cfstep"+(isDone?" done":"")+"'><label class='cfhead'><input type='checkbox' data-i='"+i+"'"+(isDone?" checked":"")+" aria-label='Mark step "+(i+1)+" complete'><h3>"+s[0]+"</h3></label><p style='margin-top:8px'>"+s[1]+"</p><p class='prayer'>"+s[2]+"</p></div>";}document.getElementById("cfSteps").innerHTML=html;document.getElementById("cfDone").style.display=(c===CFS.length?"block":"none");var boxes=document.querySelectorAll("#cfSteps input");for(var b=0;b<boxes.length;b++){boxes[b].addEventListener("change",function(){var d=store(K43)||{};var i=this.getAttribute("data-i");if(this.checked){d[i]=1;}else{delete d[i];}store(K43,d);renderCF();});}}document.getElementById("cfJournal").value=store(KJ43)||"";document.getElementById("cfSave").addEventListener("click",function(){store(KJ43,document.getElementById("cfJournal").value);document.getElementById("cfSaved").textContent="Saved privately on this device.";setTimeout(function(){document.getElementById("cfSaved").textContent="";},2500);});renderCF();</script>
+</body>
+</html>

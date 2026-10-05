@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peer Pressure God&#x27;s Way | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Standing firm when friends pull the other way. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Peer Pressure God&#x27;s Way</h1>
+<p class="intro">Standing firm when friends pull the other way.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">What Would You Do?</h2>
+<p style="color:#6b6250;margin-bottom:12px">Read each scenario and choose. There's no judgment here — just practice for real life.</p>
+<div id="scenBox"></div>
+<p style="margin-top:12px">💪 Times you stood firm: <strong id="firmCount">0</strong></p>
+<hr style="border:none;border-top:1px solid #e5d9b8;margin:24px 0">
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">"Say It" Scripts</h2>
+<p style="color:#6b6250;margin-bottom:8px">Having the words ready makes it easier. Borrow these:</p>
+<div id="scripts"></div>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-peer-pressure-god-s-way-v1';
+let S={firm:0,idx:0};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const SCEN=[
+["At a party, someone offers you a drink. Everyone is watching.","Go along — it's just one drink.","Say no thanks, and suggest something else to do.","Standing firm protects your witness and your future. Real friends respect a clear no. 'Be not conformed to this world' (Romans 12:2)."],
+["Friends are gossiping about another student who isn't there.","Join in — you don't want to seem weird.","Change the subject or walk away.","Refusing gossip shows character. 'Let no corrupt communication proceed out of your mouth' (Ephesians 4:29)."],
+["A friend wants you to help cheat on a test.","Help — that's what friends do.","Say you can't, and offer to study together instead.","Integrity matters more than one grade. 'The integrity of the upright shall guide them' (Proverbs 11:3)."],
+["Everyone is laughing at cruel jokes about a classmate.","Laugh along to fit in.","Don't laugh — and check on the classmate later.","Courage is quiet sometimes. 'Thou shalt love thy neighbour as thyself' (Matthew 22:39)."],
+["Friends pressure you to skip youth group for the game.","Skip — God will understand.","Keep your commitment.","Keeping promises to God builds a faith that lasts. 'Let no man despise thy youth; but be thou an example' (1 Timothy 4:12)."]
+];
+const SCRIPTS=[
+"No thanks, I'm good.",
+"That's not really my thing, but you do you.",
+"I promised myself I wouldn't — want to do something else instead?",
+"I'm sitting this one out.",
+"My faith matters to me, so I'll pass."
+];
+const $=id=>document.getElementById(id);
+function show(){
+  const s=SCEN[S.idx%$SCEN.length];
+  $('scenBox').innerHTML='<div style="background:#f7f1de;border-radius:8px;padding:20px"><p style="font-size:.85rem;color:#8a6d1c;font-weight:bold">SCENARIO '+(S.idx+1)+' OF '+SCEN.length+'</p><p style="font-size:1.1rem;margin:10px 0">'+s[0]+'</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn ghost" id="cA">'+s[1]+'</button><button class="btn" id="cB">'+s[2]+'</button></div><div id="fb" style="margin-top:12px"></div></div>';
+  $('cA').onclick=()=>{$('fb').innerHTML='<p><strong>Going along feels easier in the moment</strong> — but it usually costs more later. Here\u2019s the godly way:</p><p style="margin-top:6px;color:#6b6250">'+s[2]+'</p><p style="margin-top:6px;font-style:italic">'+s[3]+'</p>';};
+  $('cB').onclick=()=>{S.firm++;save();$('firmCount').textContent=S.firm;$('fb').innerHTML='<p style="font-size:1.1rem">💪 <strong>You stood firm!</strong></p><p style="margin-top:6px;font-style:italic">'+s[3]+'</p><button class="btn" id="nextS" style="margin-top:10px">Next Scenario →</button>';$('nextS').onclick=()=>{S.idx++;save();show();};};
+  $('firmCount').textContent=S.firm;
+}
+$('scripts').innerHTML=SCRIPTS.map(s=>'<div class="checkrow"><span style="flex:1;font-style:italic">&ldquo;'+s+'&rdquo;</span></div>').join('');
+show();
+
+</script>
+</body>
+</html>

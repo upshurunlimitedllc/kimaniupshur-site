@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fasting Tracker | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Plan and track a fast with Scriptures for each stage. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Fasting Tracker</h1>
+<p class="intro">Plan and track a fast with Scriptures for each stage.</p>
+<div class="appcard">
+<div id="fsetup">
+<label><strong>Type of fast</strong><select id="ftype">
+<option value="12">Sunrise to Sunset (about 12 hours)</option>
+<option value="24">24 Hours</option>
+<option value="72">3 Days</option>
+<option value="168">7 Days</option>
+</select></label>
+<label><strong>My intention for this fast</strong><input type="text" id="fintent" placeholder="e.g. Seeking God's direction for..."></label>
+<button class="btn" id="fstart">Begin Fast</button>
+</div>
+<div id="factive" style="display:none;text-align:center">
+<p style="color:#8a6d1c;font-weight:bold" id="flabel"></p>
+<div id="ftime" style="font-size:3rem;font-family:Georgia,serif;margin:8px 0"></div>
+<div style="background:#eee;border-radius:8px;height:12px;margin-bottom:14px"><div id="fbar" style="background:#c9a227;height:12px;border-radius:8px;width:0%"></div></div>
+<div id="fstage" style="background:#fff;border-left:4px solid #c9a227;padding:14px 16px;margin:0 auto 14px;max-width:560px;border-radius:0 8px 8px 0;text-align:left"></div>
+<button class="btn ghost" id="fend">End Fast</button>
+</div>
+<h3 style="font-family:Georgia,serif;margin:20px 0 8px">Completed fasts</h3>
+<div id="flog"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-fasting-tracker-v1";
+var STAGES=[
+["Beginning: Turn to God","Joel 2:12 — Therefore also now, saith the LORD, turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning."],
+["Middle: Watch and Pray","Matthew 26:41 — Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak."],
+["End: Renewed Strength","Isaiah 40:31 — But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."]];
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{log:[]}}catch(e){return{log:[]}}}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function fmt(ms){
+  var s=Math.max(0,Math.floor(ms/1000));
+  var d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);
+  return (d>0?d+"d ":"")+String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+}
+function render(){
+  var d=load(),active=d.active;
+  document.getElementById("fsetup").style.display=active?"none":"block";
+  document.getElementById("factive").style.display=active?"block":"none";
+  var log=document.getElementById("flog");
+  if(!d.log.length)log.innerHTML="<p style='color:#8a6d1c'>No completed fasts yet.</p>";
+  else{var h="";d.log.forEach(function(f){h+="<div class='checkrow'><span style='flex:1'><strong>"+esc(f.hours)+" hour fast</strong> &mdash; "+esc(f.intent||"No intention recorded")+" <span style='color:#8a6d1c;font-size:.85rem'>("+esc(f.date)+")</span></span></div>";});log.innerHTML=h;}
+}
+function tick(){
+  var d=load(),a=d.active;if(!a)return;
+  var total=a.hours*3600000,elapsed=Date.now()-a.start,remain=total-elapsed;
+  document.getElementById("flabel").textContent=(a.intent||"Fasting")+" — "+a.hours+" hour fast";
+  document.getElementById("ftime").textContent=remain>0?fmt(remain):"Complete!";
+  document.getElementById("fbar").style.width=Math.min(100,elapsed/total*100)+"%";
+  var st=STAGES[Math.min(2,Math.floor(elapsed/total*3))];
+  document.getElementById("fstage").innerHTML="<strong>"+st[0]+"</strong><p style='font-style:italic;margin-top:6px'>&ldquo;"+st[1]+"&rdquo; (KJV)</p>";
+  if(remain<=0){clearInterval(window._ft);finish();}
+}
+function finish(){
+  var d=load(),a=d.active;if(!a)return;
+  d.log.unshift({hours:a.hours,intent:a.intent,date:new Date().toLocaleDateString()});
+  d.active=null;save(d);render();
+  alert("Fast complete. Well done — take time to pray and reflect.");
+}
+document.getElementById("fstart").addEventListener("click",function(){
+  var d=load();
+  d.active={hours:+document.getElementById("ftype").value,start:Date.now(),intent:document.getElementById("fintent").value.trim()};
+  save(d);render();tick();
+  window._ft=setInterval(tick,1000);
+});
+document.getElementById("fend").addEventListener("click",function(){
+  if(confirm("End this fast now?")){clearInterval(window._ft);finish();}
+});
+render();
+(function(){var d=load();if(d.active){tick();window._ft=setInterval(tick,1000);}})();
+</script>
+</body>
+</html>

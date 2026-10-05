@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pray for Your Spouse | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="30 days of targeted prayer prompts. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}@media(max-width:500px){.pgrid{grid-template-columns:repeat(3,1fr)}}.pday{aspect-ratio:1;border:2px solid #c9a227;border-radius:8px;background:#fff;font-weight:bold;color:#8a6d1c;cursor:pointer;font-size:.95rem;min-height:48px}.pday.done{background:#c9a227;color:#141210}.pprompt{background:#f7f1de;border-radius:8px;padding:18px;margin:12px 0;min-height:110px}.pprompt h3{font-family:Georgia,serif}.pbar{height:14px;background:#eee;border-radius:8px;overflow:hidden;margin:10px 0}.pbar div{height:100%;background:#c9a227;width:0}</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Pray for Your Spouse</h1>
+<p class="intro">30 days of targeted prayer prompts.</p>
+<div class="appcard">
+<p>One focused prayer a day for 30 days. Tap a day to see its prompt, then check it off after you pray.</p><div class="pbar"><div id="psProgress"></div></div><p id="psProgText" style="color:#6b6250;font-size:.9rem"></p><div class="pprompt" id="psPrompt" aria-live="polite"><p style="color:#6b6250">Select a day below to reveal its prayer.</p></div><div class="pgrid" id="psGrid"></div><button class="btn ghost" id="psReset" style="margin-top:10px">Start 30 days over</button>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem(k);return r?JSON.parse(r):null;}localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
+var K54="app-pray-for-your-spouse-v1";var PS=["Their walk with God — pray they’d know Christ more deeply this week.","Their work — pray for diligence, favour, and integrity on the job.","Their health — body, mind, and rest. Pray they’d steward their strength well.","Their friendships — godly friends who sharpen and encourage them.","Their fears — pray God replaces anxiety with His perfect peace.","Their dreams — pray God’s purposes for their life unfold.","Their purity — pray for holiness in thought, word, and action.","Their joy — pray they’d overflow with gladness in the Lord.","Their wisdom — pray for discernment in decisions big and small.","Their patience — especially with you! Pray they’d be slow to anger.","Their leadership — pray they’d lead your home with humility and love.","Their past wounds — pray God heals old hurts completely.","Their future — pray they’d trust God’s timing and plan.","Their speech — pray their words build up and give grace.","Their generosity — pray for an open, cheerful heart toward others.","Their protection — pray God guards them from harm and temptation.","Their purpose — pray they’d use their gifts for God’s glory.","Their rest — pray they’d truly sabbath and be renewed.","Their courage — pray they’d stand for truth with love.","Their humility — pray pride finds no foothold.","Your marriage — pray your love deepens and your unity strengthens.","Their relationship with your kids (or future kids).","Their parents and family — pray blessing over them.","Their influence — pray their life points others to Jesus.","Their struggles you can see — pray specifically and persistently.","Their secret battles — pray God meets them where you can’t.","Their gratitude — pray thankfulness fills their heart.","Their legacy — pray their life echoes into eternity.","Your love for them — pray God grows your affection and admiration.","Thanksgiving — spend today thanking God for your spouse by name."];var psSel=0;function renderPS(){var done=store(K54)||{};var c=0;var gh="";for(var i=0;i<30;i++){var isDone=!!done[i];if(isDone)c++;gh+="<button class='pday"+(isDone?" done":"")+"' data-i='"+i+"' aria-label='Day "+(i+1)+(isDone?", prayed":"")+"'>"+(i+1)+"</button>";}document.getElementById("psGrid").innerHTML=gh;document.getElementById("psProgress").style.width=(c/30*100)+"%";document.getElementById("psProgText").textContent=c+" of 30 days prayed"+(c===30?" — 30 days of covering your spouse in prayer. Beautiful work!":"");var btns=document.querySelectorAll("#psGrid .pday");for(var b=0;b<btns.length;b++){btns[b].addEventListener("click",function(){psSel=parseInt(this.getAttribute("data-i"),10);showPSPrompt();});}showPSPrompt();}function showPSPrompt(){var done=store(K54)||{};var isDone=!!done[psSel];document.getElementById("psPrompt").innerHTML="<h3>Day "+(psSel+1)+"</h3><p>"+PS[psSel]+"</p><button class='btn' id='psToggle' style='margin-top:10px'>"+(isDone?"✓ Prayed — tap to undo":"Mark as prayed")+"</button>";document.getElementById("psToggle").addEventListener("click",function(){var s=store(K54)||{};if(s[psSel]){delete s[psSel];}else{s[psSel]=1;}store(K54,s);renderPS();});}document.getElementById("psReset").addEventListener("click",function(){store(K54,{});renderPS();});renderPS();</script>
+</body>
+</html>

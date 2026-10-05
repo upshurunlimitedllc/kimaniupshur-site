@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engaged Couples Prep | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Premarital questions rooted in Scripture. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab{background:#fffdf7;border:2px solid #c9a227;border-radius:8px;padding:10px 14px;cursor:pointer;font-size:.95rem;min-height:44px;color:#141210}
+.tab.active{background:#c9a227;font-weight:bold}
+.verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+.pbar{height:12px;background:#e9e0c8;border-radius:6px;overflow:hidden;margin:10px 0}
+.pbar>div{height:100%;background:#c9a227;width:0%}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Engaged Couples Prep</h1>
+<p class="intro">Premarital questions rooted in Scripture.</p>
+<div class="appcard">
+<div class="verse">\u201CCan two walk together, except they be agreed?\u201D<br><strong>\u2014 Amos 3:3</strong> (KJV)</div>
+<p style="color:#6b6250;margin-bottom:14px">The best time to talk about hard things is before the wedding. Discuss each question honestly, then check it off.</p>
+<div class="tabs" id="tabs"></div>
+<div id="cat"></div>
+<div class="pbar"><div id="pfill"></div></div>
+<p id="ptext" style="font-size:.95rem;color:#6b6250"></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-engaged-couples-prep-v1';
+var CATS=[
+{t:"Faith & Church",v:"Ecclesiastes 4:12",vt:"A threefold cord is not quickly broken.",qs:["What does following Jesus look like for each of us, day to day?","How will we pray and read Scripture together as a couple?","What church will we join \u2014 and how will we serve there?","How will we handle it if one of us drifts spiritually?"]},
+{t:"Communication",v:"James 1:19",vt:"Let every man be swift to hear, slow to speak, slow to wrath.",qs:["How do each of us handle anger and disagreement?","What does a 'fair fight' look like for us?","How will we make big decisions together?","Is there anything we are afraid to tell each other?"]},
+{t:"Finances",v:"Proverbs 21:20",vt:"There is treasure to be desired and oil in the dwelling of the wise; but a foolish man spendeth it up.",qs:["What debts do we each bring into the marriage?","Will we budget together? Who handles the bills?","How much will we give, save, and spend?","What does financial faithfulness look like to each of us?"]},
+{t:"Family & In-laws",v:"Genesis 2:24",vt:"Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.",qs:["What does 'leaving and cleaving' mean for holidays and boundaries?","How will we handle in-law disagreements?","What family traditions do we want to keep or start?","How many children do we hope for, and when?"]},
+{t:"Conflict & Forgiveness",v:"Ephesians 4:32",vt:"Forgiving one another, even as God for Christ's sake hath forgiven you.",qs:["How quickly do we each forgive after a hurt?","Are there past wounds we still need to address before the wedding?","What would make each of us feel truly heard?","Will we commit to never using divorce as a threat?"]},
+{t:"Future Dreams",v:"Habakkuk 2:2",vt:"Write the vision, and make it plain.",qs:["Where do we want to live in five years?","What careers and callings are we pursuing?","What kind of home and lifestyle do we want?","How will we keep Christ at the center when life gets busy?"]}
+];
+var done={};try{done=JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){done={};}
+var tabs=document.getElementById('tabs'),cat=document.getElementById('cat'),cur=0;
+function save(){localStorage.setItem(KEY,JSON.stringify(done));}
+function total(){var n=0;CATS.forEach(function(c,ci){c.qs.forEach(function(_,qi){if(done[ci+'-'+qi])n++;});});return n;}
+function all(){var n=0;CATS.forEach(function(c){n+=c.qs.length;});return n;}
+function progress(){var n=total(),a=all();document.getElementById('pfill').style.width=(n/a*100)+'%';document.getElementById('ptext').textContent=n+' of '+a+' questions discussed.';}
+function show(i){
+cur=i;var c=CATS[i];
+Array.prototype.forEach.call(tabs.children,function(b,j){b.classList.toggle('active',j===i);});
+var h='<h2 style="font-family:Georgia,serif;margin-bottom:6px">'+c.t+'</h2>'
++'<div class="verse">\u201C'+c.vt+'\u201D<br><strong>\u2014 '+c.v+'</strong> (KJV)</div>';
+c.qs.forEach(function(q,qi){
+var k=i+'-'+qi;
+h+='<label class="checkrow"><input type="checkbox" data-k="'+k+'" '+(done[k]?'checked':'')+'> <span>'+q+'</span></label>';
+});
+cat.innerHTML=h;
+Array.prototype.forEach.call(cat.querySelectorAll('input'),function(cb){
+cb.addEventListener('change',function(){if(cb.checked){done[cb.dataset.k]=true;}else{delete done[cb.dataset.k];}save();progress();});
+});
+}
+CATS.forEach(function(c,i){var b=document.createElement('button');b.className='tab';b.type='button';b.textContent=c.t;b.addEventListener('click',function(){show(i);});tabs.appendChild(b);});
+progress();show(0);
+})();
+</script>
+</body>
+</html>

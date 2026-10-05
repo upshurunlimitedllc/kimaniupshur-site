@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prayer List Keeper | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="In-session list of people and requests to pray through, with an answered-prayer list. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Prayer List Keeper</h1>
+<p class="intro">In-session list of people and requests to pray through, with an answered-prayer list.</p>
+<div class="appcard">
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+<input type="text" id="plname" placeholder="Name" style="flex:1;min-width:140px">
+<input type="text" id="plreq" placeholder="Prayer request" style="flex:2;min-width:200px">
+<button class="btn" id="pladd">Add</button>
+</div>
+<h3 style="font-family:Georgia,serif;margin-bottom:8px">Praying for (<span id="plcount">0</span>)</h3>
+<div id="pllist"></div>
+<h3 style="font-family:Georgia,serif;margin:20px 0 8px">Answered prayers (<span id="pacount">0</span>)</h3>
+<div id="palist"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-prayer-list-keeper-v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{active:[],answered:[]}}catch(e){return{active:[],answered:[]}}}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function render(){
+  var d=load();
+  document.getElementById("plcount").textContent=d.active.length;
+  document.getElementById("pacount").textContent=d.answered.length;
+  var box=document.getElementById("pllist");
+  if(!d.active.length)box.innerHTML="<p style='color:#8a6d1c'>Your prayer list is empty. Add someone above.</p>";
+  else{box.innerHTML="";d.active.forEach(function(p,i){
+    var row=document.createElement("div");row.className="checkrow";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!p.prayed;cb.title="Prayed today";
+    cb.addEventListener("change",function(){var dd=load();dd.active[i].prayed=cb.checked;save(dd);render();});
+    var sp=document.createElement("span");sp.style.flex="1";
+    sp.innerHTML="<strong>"+esc(p.name)+"</strong> &mdash; "+esc(p.req)+(p.prayed?" <span style='color:#2e7d32'>&#10003; prayed</span>":"");
+    if(p.prayed)sp.style.opacity="0.6";
+    var ab=document.createElement("button");ab.className="btn ghost";ab.style.cssText="padding:8px 14px;min-height:40px;font-size:.85rem";ab.textContent="Answered!";
+    ab.addEventListener("click",function(){var dd=load();var it=dd.active.splice(i,1)[0];it.date=new Date().toLocaleDateString();dd.answered.unshift(it);save(dd);render();});
+    var db=document.createElement("button");db.className="btn ghost";db.style.cssText="padding:8px 14px;min-height:40px;font-size:.85rem";db.textContent="Remove";
+    db.addEventListener("click",function(){var dd=load();dd.active.splice(i,1);save(dd);render();});
+    row.appendChild(cb);row.appendChild(sp);row.appendChild(ab);row.appendChild(db);box.appendChild(row);
+  });}
+  var abox=document.getElementById("palist");
+  if(!d.answered.length)abox.innerHTML="<p style='color:#8a6d1c'>Answered prayers will appear here. Praise God!</p>";
+  else{var h="";d.answered.forEach(function(p,i){
+    h+="<div class='checkrow' style='border-bottom:1px solid #eee'><span style='flex:1'><strong>"+esc(p.name)+"</strong> &mdash; "+esc(p.req)+" <span style='color:#2e7d32;font-size:.85rem'>Answered "+esc(p.date||"")+"</span></span><button class='btn ghost' style='padding:8px 14px;min-height:40px;font-size:.85rem' data-ai='"+i+"'>Remove</button></div>";
+  });abox.innerHTML=h;
+  Array.prototype.forEach.call(abox.querySelectorAll("[data-ai]"),function(b){
+    b.addEventListener("click",function(){var dd=load();dd.answered.splice(+b.getAttribute("data-ai"),1);save(dd);render();});
+  });}
+}
+document.getElementById("pladd").addEventListener("click",function(){
+  var n=document.getElementById("plname").value.trim(),r=document.getElementById("plreq").value.trim();
+  if(!n||!r){alert("Please enter both a name and a request.");return;}
+  var d=load();d.active.push({name:n,req:r,prayed:false});save(d);
+  document.getElementById("plname").value="";document.getElementById("plreq").value="";render();
+});
+render();
+</script>
+</body>
+</html>

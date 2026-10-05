@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infertility &amp; Hope | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Scriptures for couples waiting for children. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Infertility &amp; Hope</h1>
+<p class="intro">Scriptures for couples waiting for children.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Scriptures of Hope</h2>
+<div id="verseCard" style="background:#f7f1de;border-radius:8px;padding:22px;min-height:150px;text-align:center"></div>
+<div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+<button class="btn ghost" id="vPrev">← Previous</button>
+<button class="btn ghost" id="vNext">Next →</button>
+</div>
+<hr style="border:none;border-top:1px solid #e5d9b8;margin:24px 0">
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Prayer Journal</h2>
+<p style="color:#6b6250;margin-bottom:8px">Pour out your heart here. Entries are saved on this device only.</p>
+<textarea id="jEntry" rows="4" placeholder="Lord, today I am feeling..." aria-label="Journal entry"></textarea>
+<button class="btn" id="jSave">Save Entry</button>
+<div id="jList" style="margin-top:16px"></div>
+<p style="color:#6b6250;margin-top:16px;font-style:italic">"Lo, children are an heritage of the LORD: and the fruit of the womb is his reward." — Psalm 127:3 (KJV)</p>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-infertility-hope-v1';
+let S={idx:0,entries:[]};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const VERSES=[
+["For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.","Jeremiah 29:11"],
+["And we know that all things work together for good to them that love God, to them who are the called according to his purpose.","Romans 8:28"],
+["Delight thyself also in the LORD; and he shall give thee the desires of thine heart.","Psalm 37:4"],
+["But they that wait upon the LORD shall renew their strength.","Isaiah 40:31"],
+["The LORD is my shepherd; I shall not want.","Psalm 23:1"],
+["Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.","Philippians 4:6"]
+];
+const $=id=>document.getElementById(id);
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function showV(){$('verseCard').innerHTML='<p style="font-size:1.2rem;font-family:Georgia,serif">&ldquo;'+VERSES[S.idx][0]+'&rdquo;</p><p style="margin-top:10px;color:#8a6d1c;font-weight:bold">'+VERSES[S.idx][1]+' (KJV)</p><p style="color:#8a7a4a;font-size:.85rem;margin-top:6px">'+(S.idx+1)+' of '+VERSES.length+'</p>';save();}
+$('vPrev').onclick=()=>{S.idx=(S.idx-1+VERSES.length)%VERSES.length;showV();};
+$('vNext').onclick=()=>{S.idx=(S.idx+1)%VERSES.length;showV();};
+function renderJ(){
+  $('jList').innerHTML=S.entries.length?S.entries.slice().reverse().map((e,i)=>'<div style="background:#f7f1de;border-radius:8px;padding:14px;margin-bottom:10px"><p style="font-size:.85rem;color:#8a7a4a">'+escapeHtml(e.date)+'</p><p style="white-space:pre-wrap">'+escapeHtml(e.text)+'</p><button class="btn ghost" data-i="'+(S.entries.length-1-i)+'" style="padding:6px 14px;min-height:40px;margin-top:8px">Delete</button></div>').join(''):'<p style="color:#8a7a4a">No entries yet.</p>';
+  document.querySelectorAll('#jList button').forEach(b=>b.onclick=()=>{S.entries.splice(+b.dataset.i,1);save();renderJ();});
+}
+$('jSave').onclick=()=>{const v=$('jEntry').value.trim();if(!v)return;S.entries.push({date:new Date().toLocaleDateString(),text:v});$('jEntry').value='';save();renderJ();};
+showV();renderJ();
+
+</script>
+</body>
+</html>

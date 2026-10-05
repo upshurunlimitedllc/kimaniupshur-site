@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verse Card Maker | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn any verse into a beautiful shareable card. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Verse Card Maker</h1>
+<p class="intro">Turn any verse into a beautiful shareable card.</p>
+<div class="appcard">
+<label><strong>Verse text</strong><textarea id="ctext" rows="4" placeholder="Type or paste the verse text...">For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.</textarea></label>
+<label><strong>Reference</strong><input type="text" id="cref" value="John 3:16 (KJV)"></label>
+<label><strong>Design</strong><select id="ctheme">
+<option value="0">Golden Sunrise</option>
+<option value="1">Deep Night</option>
+<option value="2">Olive Garden</option>
+<option value="3">Royal Purple</option>
+<option value="4">Desert Sand</option>
+<option value="5">Crimson Dawn</option>
+</select></label>
+<div id="cpreview" style="border-radius:12px;padding:40px 28px;margin:18px 0;min-height:280px;display:flex;flex-direction:column;justify-content:center;text-align:center"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn" id="cdown">Download as PNG</button>
+</div>
+<p style="color:#8a6d1c;font-size:.9rem;margin-top:10px">The card downloads as an image you can share or save.</p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-verse-card-maker-v1";
+var THEMES=[
+[["#f6d365","#c9a227"],"#141210"],
+[["#141210","#3a3226"],"#f5efdd"],
+[["#5a7d4f","#2f4a2a"],"#fdf8e7"],
+[["#4b2e6b","#241536"],"#f5efdd"],
+[["#e8d5a3","#c9a86a"],"#3a2c14"],
+[["#8f2d2d","#3d1414"],"#fdf3e0"]];
+function cdraw(){
+  var t=THEMES[+document.getElementById("ctheme").value];
+  var pv=document.getElementById("cpreview");
+  pv.style.background="linear-gradient(135deg,"+t[0][0]+","+t[0][1]+")";
+  pv.style.color=t[1];
+  var txt=document.getElementById("ctext").value.trim()||"Your verse here";
+  var ref=document.getElementById("cref").value.trim();
+  pv.innerHTML="<p style='font-family:Georgia,serif;font-size:1.35rem;line-height:1.6'>&ldquo;"+txt.replace(/&/g,"&amp;").replace(/</g,"&lt;")+"&rdquo;</p>"+
+    (ref?"<p style='margin-top:16px;font-weight:bold;letter-spacing:2px'>"+ref.replace(/&/g,"&amp;").replace(/</g,"&lt;")+"</p>":"");
+}
+function wrapText(ctx,text,x,y,maxW,lh){
+  var words=text.split(" "),line="",yy=y;
+  words.forEach(function(w){
+    var test=line?line+" "+w:w;
+    if(ctx.measureText(test).width>maxW&&line){ctx.fillText(line,x,yy);line=w;yy+=lh;}
+    else line=test;
+  });
+  ctx.fillText(line,x,yy);return yy+lh;
+}
+function csave(){try{localStorage.setItem(KEY,JSON.stringify({t:document.getElementById("ctext").value,r:document.getElementById("cref").value,th:document.getElementById("ctheme").value}));}catch(e){}}
+document.getElementById("ctext").addEventListener("input",function(){cdraw();csave();});
+document.getElementById("cref").addEventListener("input",function(){cdraw();csave();});
+document.getElementById("ctheme").addEventListener("change",function(){cdraw();csave();});
+document.getElementById("cdown").addEventListener("click",function(){
+  var t=THEMES[+document.getElementById("ctheme").value];
+  var c=document.createElement("canvas");c.width=1080;c.height=1080;
+  var ctx=c.getContext("2d");
+  var g=ctx.createLinearGradient(0,0,1080,1080);
+  g.addColorStop(0,t[0][0]);g.addColorStop(1,t[0][1]);
+  ctx.fillStyle=g;ctx.fillRect(0,0,1080,1080);
+  ctx.fillStyle=t[1];ctx.textAlign="center";
+  ctx.font="italic 44px Georgia,serif";
+  var txt="“"+(document.getElementById("ctext").value.trim()||"Your verse here")+"”";
+  var y=wrapText(ctx,txt,540,380,880,62);
+  var ref=document.getElementById("cref").value.trim();
+  if(ref){ctx.font="bold 34px Georgia,serif";ctx.fillText(ref,540,y+60);}
+  var a=document.createElement("a");
+  a.download="verse-card.png";a.href=c.toDataURL("image/png");a.click();
+});
+(function(){try{var _c=JSON.parse(localStorage.getItem(KEY));if(_c){document.getElementById("ctext").value=_c.t||"";document.getElementById("cref").value=_c.r||"";document.getElementById("ctheme").value=_c.th||"0";}}catch(e){}})();
+cdraw();
+</script>
+</body>
+</html>

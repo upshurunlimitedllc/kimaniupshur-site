@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topical Verse Finder | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Type a topic or feeling, get matching Scriptures. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Topical Verse Finder</h1>
+<p class="intro">Type a topic or feeling, get matching Scriptures.</p>
+<div class="appcard">
+<label><strong>What are you looking for?</strong>
+<input type="text" id="tq" placeholder="Try: fear, peace, gratitude, strength..."></label>
+<button class="btn" id="tgo">Find Verses</button>
+<div id="tres" style="margin-top:18px"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-topical-verse-finder-v1";
+var TOPICS={
+"fear":[["Isaiah 41:10","Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness."],["2 Timothy 1:7","For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind."],["Joshua 1:9","Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest."]],
+"afraid":[["Isaiah 41:10","Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness."],["Deuteronomy 31:6","Be strong and of a good courage, fear not, nor be afraid of them: for the LORD thy God, he it is that doth go with thee; he will not fail thee, nor forsake thee."]],
+"anxiety":[["Philippians 4:6","Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."],["1 Peter 5:7","Casting all your care upon him; for he careth for you."]],
+"worry":[["Philippians 4:6","Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."],["Matthew 6:33","But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you."]],
+"peace":[["John 14:27","Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid."],["Philippians 4:7","And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus."]],
+"strength":[["Philippians 4:13","I can do all things through Christ which strengtheneth me."],["Isaiah 40:31","But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."]],
+"weak":[["Philippians 4:13","I can do all things through Christ which strengtheneth me."],["2 Corinthians 12:9","My grace is sufficient for thee: for my strength is made perfect in weakness."]],
+"gratitude":[["1 Thessalonians 5:18","In every thing give thanks: for this is the will of God in Christ Jesus concerning you."],["Psalm 107:1","O give thanks unto the LORD, for he is good: for his mercy endureth for ever."],["Psalm 100:4","Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name."]],
+"thankful":[["1 Thessalonians 5:18","In every thing give thanks: for this is the will of God in Christ Jesus concerning you."],["Psalm 107:1","O give thanks unto the LORD, for he is good: for his mercy endureth for ever."]],
+"love":[["1 John 4:19","We love him, because he first loved us."],["John 3:16","For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."],["1 Corinthians 13:4","Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up."]],
+"hope":[["Jeremiah 29:11","For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end."],["Romans 15:13","Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost."]],
+"trust":[["Proverbs 3:5-6","Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."]],
+"guidance":[["Proverbs 3:5-6","Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."],["Psalm 119:105","Thy word is a lamp unto my feet, and a light unto my path."]],
+"wisdom":[["James 1:5","If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him."],["Proverbs 3:5-6","Trust in the LORD with all thine heart; and lean not unto thine own understanding."]],
+"grief":[["Matthew 5:4","Blessed are they that mourn: for they shall be comforted."],["Psalm 34:18","The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit."],["Revelation 21:4","And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away."]],
+"sad":[["Matthew 5:4","Blessed are they that mourn: for they shall be comforted."],["Psalm 34:18","The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit."]],
+"lonely":[["Deuteronomy 31:6","Be strong and of a good courage, fear not, nor be afraid of them: for the LORD thy God, he it is that doth go with thee; he will not fail thee, nor forsake thee."],["Matthew 28:20","Lo, I am with you alway, even unto the end of the world. Amen."]],
+"forgiveness":[["1 John 1:9","If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness."]],
+"sin":[["1 John 1:9","If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness."],["Romans 3:23","For all have sinned, and come short of the glory of God."],["Romans 6:23","For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord."]],
+"salvation":[["Ephesians 2:8-9","For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast."],["Romans 10:9","That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved."],["John 3:16","For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."]],
+"prayer":[["Philippians 4:6","Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."],["Matthew 7:7","Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you."],["1 Thessalonians 5:17","Pray without ceasing."]],
+"rest":[["Matthew 11:28","Come unto me, all ye that labour and are heavy laden, and I will give you rest."],["Psalm 46:10","Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth."]],
+"tired":[["Matthew 11:28","Come unto me, all ye that labour and are heavy laden, and I will give you rest."],["Isaiah 40:31","But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."]],
+"waiting":[["Isaiah 40:31","But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."],["Psalm 27:14","Wait on the LORD: be of good courage, and he shall strengthen thine heart: wait, I say, on the LORD."]],
+"patience":[["Isaiah 40:31","But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."],["Galatians 6:9","And let us not be weary in well doing: for in due season we shall reap, if we faint not."]],
+"money":[["Philippians 4:19","But my God shall supply all your need according to his riches in glory by Christ Jesus."],["Matthew 6:33","But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you."]],
+"need":[["Philippians 4:19","But my God shall supply all your need according to his riches in glory by Christ Jesus."],["Psalm 23:1","The LORD is my shepherd; I shall not want."]],
+"giving":[["2 Corinthians 9:7","Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver."],["Luke 6:38","Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom."],["Proverbs 3:9","Honour the LORD with thy substance, and with the firstfruits of all thine increase."]],
+"kindness":[["Ephesians 4:32","And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you."],["Proverbs 19:17","He that hath pity upon the poor lendeth unto the LORD; and that which he hath given will he pay him again."]],
+"anger":[["James 1:19","Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath."],["Proverbs 15:1","A soft answer turneth away wrath: but grievous words stir up anger."],["Ephesians 4:26","Be ye angry, and sin not: let not the sun go down upon your wrath."]],
+"temptation":[["Matthew 26:41","Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak."],["1 Corinthians 10:13","There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it."]],
+"courage":[["Joshua 1:9","Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest."],["Deuteronomy 31:6","Be strong and of a good courage, fear not, nor be afraid of them: for the LORD thy God, he it is that doth go with thee; he will not fail thee, nor forsake thee."]],
+"faith":[["Hebrews 11:1","Now faith is the substance of things hoped for, the evidence of things not seen."],["Ephesians 2:8-9","For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast."]],
+"grace":[["Ephesians 2:8-9","For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast."],["2 Corinthians 12:9","My grace is sufficient for thee: for my strength is made perfect in weakness."]],
+"joy":[["Psalm 118:24","This is the day which the LORD hath made; we will rejoice and be glad in it."],["Galatians 5:22-23","But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance: against such there is no law."]],
+"healing":[["Psalm 103:2-3","Bless the LORD, O my soul, and forget not all his benefits: who forgiveth all thine iniquities; who healeth all thy diseases."],["Jeremiah 30:17","But I will restore health unto thee, and I will heal thee of thy wounds, saith the LORD."],["Exodus 15:26","I am the LORD that healeth thee."]],
+"sick":[["Psalm 103:2-3","Bless the LORD, O my soul, and forget not all his benefits: who forgiveth all thine iniquities; who healeth all thy diseases."],["Jeremiah 30:17","But I will restore health unto thee, and I will heal thee of thy wounds, saith the LORD."]],
+"marriage":[["Ephesians 5:25","Husbands, love your wives, even as Christ also loved the church, and gave himself for it."],["1 Corinthians 13:4","Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up."]],
+"children":[["Proverbs 22:6","Train up a child in the way he should go: and when he is old, he will not depart from it."],["Psalm 127:3","Lo, children are an heritage of the LORD: and the fruit of the womb is his reward."]],
+"work":[["Colossians 3:23","And whatsoever ye do, do it heartily, as to the Lord, and not unto men."],["Proverbs 16:3","Commit thy works unto the LORD, and thy thoughts shall be established."]],
+"goals":[["Proverbs 16:3","Commit thy works unto the LORD, and thy thoughts shall be established."],["Jeremiah 29:11","For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end."]],
+"truth":[["John 14:6","Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me."],["John 8:32","And ye shall know the truth, and the truth shall make you free."]],
+"jesus":[["John 14:6","Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me."],["John 3:16","For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."]],
+"holy spirit":[["John 14:26","But the Comforter, which is the Holy Ghost, whom the Father will send in my name, he shall teach you all things, and bring all things to your remembrance, whatsoever I have said unto you."],["Acts 1:8","But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth."]],
+"eternal life":[["John 3:16","For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."],["Romans 6:23","For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord."]],
+"heaven":[["John 14:2","In my Father's house are many mansions: if it were not so, I would have told you. I go to prepare a place for you."],["Revelation 21:4","And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away."]]};
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function find(){
+  var q=document.getElementById("tq").value.trim().toLowerCase();
+  try{localStorage.setItem(KEY,document.getElementById("tq").value.trim());}catch(e){}
+  var box=document.getElementById("tres");
+  if(!q){box.innerHTML="<p style='color:#8a6d1c'>Type a topic above, then press Find Verses.</p>";return;}
+  var hits=[],seen={};
+  Object.keys(TOPICS).forEach(function(k){
+    if(k.indexOf(q)>=0||q.indexOf(k)>=0){
+      TOPICS[k].forEach(function(v){if(!seen[v[0]]){seen[v[0]]=1;hits.push(v);}});
+    }
+  });
+  q.split(/\s+/).forEach(function(w){
+    Object.keys(TOPICS).forEach(function(k){
+      if(k.indexOf(w)>=0&&w.length>2){
+        TOPICS[k].forEach(function(v){if(!seen[v[0]]){seen[v[0]]=1;hits.push(v);}});
+      }
+    });
+  });
+  if(!hits.length){
+    box.innerHTML="<p><strong>No exact match.</strong> Try one of these topics:</p><p style='margin-top:8px'>"+Object.keys(TOPICS).slice(0,20).join(", ")+"...</p>";
+    return;
+  }
+  var h="<p style='margin-bottom:10px'><strong>"+hits.length+" verse"+(hits.length>1?"s":"")+" for &ldquo;"+esc(document.getElementById("tq").value.trim())+"&rdquo;:</strong></p>";
+  hits.forEach(function(v){
+    h+="<div style='background:#fff;border-left:4px solid #c9a227;padding:14px 16px;margin-bottom:12px;border-radius:0 8px 8px 0'><p style='font-style:italic'>&ldquo;"+esc(v[1])+"&rdquo;</p><p style='font-weight:bold;margin-top:6px;color:#8a6d1c'>"+esc(v[0])+" (KJV)</p></div>";
+  });
+  box.innerHTML=h;
+}
+document.getElementById("tgo").addEventListener("click",find);
+document.getElementById("tq").addEventListener("keydown",function(e){if(e.key==="Enter")find();});
+(function(){try{var _q=localStorage.getItem(KEY);if(_q){document.getElementById("tq").value=_q;find();}}catch(e){}})();
+</script>
+</body>
+</html>

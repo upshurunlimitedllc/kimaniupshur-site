@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praying for Prodigals | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Hope and prayers for parents of wayward children. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+.nlist{list-style:none;margin:10px 0}
+.nlist li{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #eee}
+.nlist button{margin-left:auto;background:none;border:none;color:#a33;cursor:pointer;font-size:1.2rem;min-width:44px;min-height:44px}
+#pbox{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:20px;margin-top:12px}
+.streak{display:inline-block;background:#c9a227;border-radius:20px;padding:4px 16px;font-weight:bold;margin-top:8px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Praying for Prodigals</h1>
+<p class="intro">Hope and prayers for parents of wayward children.</p>
+<div class="appcard">
+<div class="verse">\u201CBut when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.\u201D<br><strong>\u2014 Luke 15:20</strong> (KJV)</div>
+<p>The father in Jesus' parable never stopped watching the road. Neither should we stop praying.</p>
+<h2 style="font-family:Georgia,serif;margin:16px 0 8px">Who are you praying for?</h2>
+<p><input type="text" id="nin" placeholder="Name" aria-label="Name of prodigal"></p>
+<p><button class="btn ghost" id="nadd" type="button">Add name</button></p>
+<ul class="nlist" id="nlist"></ul>
+<h2 style="font-family:Georgia,serif;margin:20px 0 8px">Today's prayer</h2>
+<div id="pbox"></div>
+<p><button class="btn" id="prayed" type="button">\u2713 I prayed today</button> <span class="streak" id="streak"></span></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-praying-for-prodigals-v1';
+var PRAYERS=[
+{t:"The Father is watching the road",b:"Lord, like the father in Luke 15, I will keep watching the road. Give me patient, hopeful love that never gives up.",v:"Luke 15:20"},
+{t:"God is not willing that any perish",b:"Father, You are not willing that any should perish. Draw {N} by Your Spirit; make their heart tender toward You.",v:"2 Peter 3:9",vt:"The Lord is not slack concerning his promise... but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance."},
+{t:"Everlasting love",b:"Lord, You have loved {N} with an everlasting love. Let them feel the pull of that love today, even in the far country.",v:"Jeremiah 31:3",vt:"I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee."},
+{t:"Come to themselves",b:"Father, the prodigal 'came to himself' in the pig pen. Bring {N} to that moment of clarity \u2014 and give them courage to come home.",v:"Luke 15:17",vt:"And when he came to himself, he said, How many hired servants of my father's have bread enough and to spare, and I perish with hunger!"},
+{t:"A new heart",b:"Lord, only You can change a heart. Give {N} a new heart and put a new spirit within them.",v:"Ezekiel 36:26",vt:"A new heart also will I give you, and a new spirit will I put within you."},
+{t:"Bring them home",b:"Father, orchestrate the circumstances, the conversations, the conviction. Run to meet {N} like the father ran \u2014 I am trusting You for the homecoming.",v:"Luke 15:24",vt:"For this my son was dead, and is alive again; he was lost, and is found."},
+{t:"Strength for the waiting parent",b:"Lord, waiting is hard. Strengthen my faith, guard my heart from despair, and help me love {N} well while I wait.",v:"Isaiah 40:31",vt:"But they that wait upon the LORD shall renew their strength."}
+];
+var names=[],streak=0,lastPrayed="",pidx=0;
+try{var s=JSON.parse(localStorage.getItem(KEY)||"{}");names=s.names||[];streak=s.streak||0;lastPrayed=s.lastPrayed||"";pidx=s.pidx||0;}catch(e){}
+function save(){localStorage.setItem(KEY,JSON.stringify({names:names,streak:streak,lastPrayed:lastPrayed,pidx:pidx}));}
+var list=document.getElementById('nlist'),nin=document.getElementById('nin');
+function renderNames(){list.innerHTML='';
+names.forEach(function(n,i){
+var li=document.createElement('li');
+li.innerHTML='<span>🙏 '+n+'</span><button type="button" aria-label="Remove">\u00D7</button>';
+li.querySelector('button').addEventListener('click',function(){names.splice(i,1);save();renderNames();});
+list.appendChild(li);
+});}
+document.getElementById('nadd').addEventListener('click',function(){
+var t=nin.value.trim();if(!t)return;
+names.push(t.replace(/</g,'&lt;'));nin.value='';save();renderNames();
+});
+function todayStr(){var d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+function renderPrayer(){
+var p=PRAYERS[pidx%PRAYERS.length];
+var n=names.length?names.join(', '):'my loved one';
+var b=p.b.replace(/\{N\}/g,n);
+document.getElementById('pbox').innerHTML='<h3 style="font-family:Georgia,serif;margin-bottom:8px">'+p.t+'</h3><p>'+b+'</p>'
++(p.vt?'<div class="verse">\u201C'+p.vt+'\u201D<br><strong>\u2014 '+p.v+'</strong> (KJV)</div>':'<p style="color:#8a6d1c;font-size:.95rem;margin-top:8px"><strong>\u2014 '+p.v+'</strong> (KJV)</p>');
+document.getElementById('streak').textContent=streak>0?('Day streak: '+streak):'';
+}
+document.getElementById('prayed').addEventListener('click',function(){
+var t=todayStr();
+if(lastPrayed!==t){
+var y=new Date();y.setDate(y.getDate()-1);
+var ys=y.getFullYear()+'-'+(y.getMonth()+1)+'-'+y.getDate();
+streak=(lastPrayed===ys)?streak+1:1;
+lastPrayed=t;pidx++;save();renderPrayer();
+document.getElementById('prayed').textContent='\u2713 Prayed today \u2014 see you tomorrow';
+}else{alert('Already counted today. Come back tomorrow \u2014 faithful prayer is a daily rhythm.');}
+});
+renderNames();renderPrayer();
+if(lastPrayed===todayStr()){document.getElementById('prayed').textContent='\u2713 Prayed today \u2014 see you tomorrow';}
+})();
+</script>
+</body>
+</html>

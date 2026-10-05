@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books of the Bible Explorer | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="All 66 books: author, theme, key verse, one-line summary. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.verse{background:#f6efdb;border-left:4px solid #c9a227;padding:14px 16px;margin:14px 0;font-style:italic;border-radius:0 8px 8px 0}
+.verse cite{display:block;font-style:normal;font-weight:bold;color:#8a6d1c;margin-top:8px;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:16px 0}
+.card{background:#fff;border:2px solid #e5d9b8;border-radius:10px;padding:16px;cursor:pointer;min-height:48px}
+.card:hover{border-color:#c9a227}
+.card.active{border-color:#c9a227;background:#fffbe9;box-shadow:0 2px 8px rgba(201,162,39,.25)}
+.card h3{font-family:Georgia,serif;font-size:1.05rem;margin-bottom:4px;color:#141210}
+.pill{display:inline-block;background:#efe6c8;color:#6b5d22;border-radius:20px;padding:4px 12px;font-size:.8rem;margin:2px 4px 2px 0}
+.progress{height:12px;background:#eee3c2;border-radius:6px;overflow:hidden;margin:12px 0}
+.progress>div{height:100%;background:#c9a227;width:0;transition:width .3s}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.tab{background:#f1e8cd;border:2px solid #e5d9b8;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:bold;color:#6b5d22;min-height:44px;font-size:1rem}
+.tab.active{background:#c9a227;color:#141210;border-color:#c9a227}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.big{font-size:1.15rem}
+.muted{color:#6b6250;font-size:.92rem}
+.out{background:#f6efdb;border-radius:10px;padding:18px;margin:14px 0;white-space:pre-wrap}
+details{margin:10px 0;border:1px solid #e5d9b8;border-radius:8px;padding:10px 14px;background:#fff}
+summary{cursor:pointer;font-weight:bold;color:#6b5d22;min-height:44px;display:flex;align-items:center;font-size:1rem}
+.stepdots{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.stepdot{width:14px;height:14px;border-radius:50%;background:#e5d9b8}
+.stepdot.done{background:#c9a227}
+.stepdot.now{background:#8a6d1c;transform:scale(1.25)}
+textarea{min-height:110px}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #eee}
+.kv b{color:#6b5d22}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Books of the Bible Explorer</h1>
+<p class="intro">All 66 books: author, theme, key verse, one-line summary.</p>
+<div class="appcard">
+<div class="row">
+<div style="flex:2;min-width:200px"><input type="text" id="q" placeholder="Search books..." aria-label="Search books"></div>
+<div class="tabs" style="margin:0">
+<button class="tab active" data-f="all">All 66</button>
+<button class="tab" data-f="OT">Old Testament</button>
+<button class="tab" data-f="NT">New Testament</button>
+</div></div>
+<div class="grid" id="grid"></div>
+<div id="detail"></div>
+<p class="muted">Authors shown are the traditional attributions.</p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY="app-books-of-the-bible-explorer-v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+function save(d){try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+var B=[
+["Genesis","OT",50,"Moses","Beginnings","Genesis 1:1","In the beginning God created the heaven and the earth.","How the world, sin, and God's promise began."],
+["Exodus","OT",40,"Moses","Deliverance","Exodus 14:14","The LORD shall fight for you, and ye shall hold your peace.","God rescues Israel from Egypt and gives the law."],
+["Leviticus","OT",27,"Moses","Holiness","Leviticus 19:18","thou shalt love thy neighbour as thyself: I am the LORD.","How a holy God dwells among His people."],
+["Numbers","OT",36,"Moses","Wandering","Numbers 6:24","The LORD bless thee, and keep thee:","Israel's forty years in the wilderness."],
+["Deuteronomy","OT",34,"Moses","Remember","Deuteronomy 6:5","And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might.","Moses' farewell speeches before the promised land."],
+["Joshua","OT",24,"Joshua","Conquest","Joshua 24:15","but as for me and my house, we will serve the LORD.","Taking the land God promised."],
+["Judges","OT",21,"Samuel (trad.)","Cycles","","Judges 21:25","Israel's downward spiral with no king."],
+["Ruth","OT",4,"Samuel (trad.)","Redemption","Ruth 1:16","And Ruth said, Intreat me not to leave thee, or to return from following after thee: for whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God:","A love story in the family line of Christ."],
+["1 Samuel","OT",31,"Samuel","Kingdom begins","1 Samuel 16:7","for man looketh on the outward appearance, but the LORD looketh on the heart.","Saul's rise and fall; David's anointing."],
+["2 Samuel","OT",24,"Nathan / Gad","David's reign","","2 Samuel 7:16","David's triumphs and tragic failures."],
+["1 Kings","OT",22,"Jeremiah (trad.)","Divided","","1 Kings 8:27","Solomon's glory and the kingdom's split."],
+["2 Kings","OT",25,"Jeremiah (trad.)","Exile","","2 Kings 17:7","Israel and Judah carried into exile."],
+["1 Chronicles","OT",29,"Ezra (trad.)","Retold","1 Chronicles 16:34","O give thanks unto the LORD; for he is good; for his mercy endureth for ever.","David's story retold for the returned exiles."],
+["2 Chronicles","OT",36,"Ezra (trad.)","Kings","2 Chronicles 7:14","If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land.","Judah's kings and the temple."],
+["Ezra","OT",10,"Ezra","Return","","Ezra 7:10","Rebuilding the temple after exile."],
+["Nehemiah","OT",13,"Nehemiah","Rebuild","Nehemiah 8:10","the joy of the LORD is your strength.","Rebuilding Jerusalem's walls in 52 days."],
+["Esther","OT",10,"Mordecai (trad.)","Providence","Esther 4:14","and who knoweth whether thou art come to the kingdom for such a time as this?","God saves His people through a queen."],
+["Job","OT",42,"Unknown","Suffering","Job 19:25","For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth:","Why do the righteous suffer?"],
+["Psalms","OT",150,"David and others","Worship","Psalm 23:1","The LORD is my shepherd; I shall not want.","Israel's songbook of prayer."],
+["Proverbs","OT",31,"Solomon","Wisdom","Proverbs 3:5-6","Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.","Skill for living God's way."],
+["Ecclesiastes","OT",12,"Solomon","Meaning","Ecclesiastes 3:1","To every thing there is a season, and a time to every purpose under the heaven:","Life apart from God is vapor \u2014 find meaning in Him."],
+["Song of Solomon","OT",8,"Solomon","Love","Song of Solomon 8:7","Many waters cannot quench love, neither can the floods drown it.","Married love as a picture of God's love."],
+["Isaiah","OT",66,"Isaiah","Salvation","Isaiah 9:6","For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, The Prince of Peace.","The coming Messiah amid judgment and hope."],
+["Jeremiah","OT",52,"Jeremiah","Warning","Jeremiah 29:11","For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.","The weeping prophet warns Judah and promises a new covenant."],
+["Lamentations","OT",5,"Jeremiah","Grief","Lamentations 3:22-23","It is of the LORD'S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.","Tears over fallen Jerusalem \u2014 and hope."],
+["Ezekiel","OT",48,"Ezekiel","Glory","Ezekiel 36:26","A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.","Visions of God's glory in exile."],
+["Daniel","OT",12,"Daniel","Kingdoms","","Daniel 2:21","Faithfulness in Babylon; God's kingdom wins."],
+["Hosea","OT",14,"Hosea","Faithful love","Hosea 6:6","For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings.","God's unfailing love for an unfaithful people."],
+["Joel","OT",3,"Joel","Day of the LORD","Joel 2:13","And rend your heart, and not your garments, and turn unto the LORD your God: for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.","Repent \u2014 God will pour out His Spirit."],
+["Amos","OT",9,"Amos","Justice","Amos 5:24","But let judgment run down as waters, and righteousness as a mighty stream.","Justice for the poor; judgment for oppressors."],
+["Obadiah","OT",1,"Obadiah","Edom","","Obadiah 1:15","Pride goes before a fall \u2014 Edom's story."],
+["Jonah","OT",4,"Jonah","Mercy","Jonah 2:9","But I will sacrifice unto thee with the voice of thanksgiving; I will pay that that I have vowed. Salvation is of the LORD.","A runaway prophet learns God's mercy."],
+["Micah","OT",7,"Micah","Justice and mercy","Micah 6:8","He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?","What God requires: justice, mercy, humility."],
+["Nahum","OT",3,"Nahum","Nineveh falls","Nahum 1:7","The LORD is good, a strong hold in the day of trouble; and he knoweth them that trust in him.","God judges violent Nineveh."],
+["Habakkuk","OT",3,"Habakkuk","Faith","Habakkuk 2:4","the just shall live by his faith.","Trusting God when life doesn't make sense."],
+["Zephaniah","OT",3,"Zephaniah","Day of the LORD","Zephaniah 3:17","The LORD thy God in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing.","Judgment is coming \u2014 and God sings over His people."],
+["Haggai","OT",2,"Haggai","Rebuild","","Haggai 1:8","Put God's house first."],
+["Zechariah","OT",14,"Zechariah","Hope","Zechariah 4:6","Not by might, nor by power, but by my spirit, saith the LORD of hosts.","Visions of the coming King."],
+["Malachi","OT",4,"Malachi","Return","","Malachi 3:10","A last call before four hundred years of silence."],
+["Matthew","NT",28,"Matthew","King","Matthew 6:33","But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.","Jesus the promised King."],
+["Mark","NT",16,"Mark","Servant","Mark 10:45","For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.","Jesus the Servant \u2014 the fast-paced gospel."],
+["Luke","NT",24,"Luke","Savior of all","Luke 2:11","For unto you is born this day in the city of David a Saviour, which is Christ the Lord.","Jesus for every nation and every outcast."],
+["John","NT",21,"John","Believe","John 3:16","For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.","Jesus is God the Son \u2014 believe and live."],
+["Acts","NT",28,"Luke","Church","Acts 1:8","But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.","The Spirit launches the church."],
+["Romans","NT",16,"Paul","Gospel","Romans 8:28","And we know that all things work together for good to them that love God, to them who are the called according to his purpose.","The gospel: righteous by faith."],
+["1 Corinthians","NT",16,"Paul","Unity","1 Corinthians 13:13","And now abideth faith, hope, charity, these three; but the greatest of these is charity.","Fixing a divided church."],
+["2 Corinthians","NT",13,"Paul","Comfort","2 Corinthians 4:17-18","For our light affliction, which is but for a moment, worketh for us a far more exceeding and eternal weight of glory; While we look not at the things which are seen, but at the things which are not seen: for the things which are seen are temporal; but the things which are not seen are eternal.","Strength in weakness; comfort in trouble."],
+["Galatians","NT",6,"Paul","Freedom","Galatians 5:1","Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.","Saved by faith, not by works."],
+["Ephesians","NT",6,"Paul","In Christ","Ephesians 2:8-9","For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.","Who you are in Christ."],
+["Philippians","NT",4,"Paul","Joy","Philippians 4:13","I can do all things through Christ which strengtheneth me.","Joy in every circumstance."],
+["Colossians","NT",4,"Paul","Supreme Christ","Colossians 1:17","And he is before all things, and by him all things consist.","Christ is enough."],
+["1 Thessalonians","NT",5,"Paul","Return","1 Thessalonians 5:16-18","Rejoice evermore. Pray without ceasing. In every thing give thanks: for this is the will of God in Christ Jesus concerning you.","Live ready for Christ's return."],
+["2 Thessalonians","NT",3,"Paul","Stand firm","2 Thessalonians 3:3","But the Lord is faithful, who shall stablish you, and keep you from evil.","Don't quit before He comes."],
+["1 Timothy","NT",6,"Paul","Lead well","1 Timothy 6:6","But godliness with contentment is great gain.","How to lead the church."],
+["2 Timothy","NT",4,"Paul","Finish","2 Timothy 4:7","I have fought a good fight, I have finished my course, I have kept the faith:","Paul's last words: finish strong."],
+["Titus","NT",3,"Paul","Good works","Titus 2:11","For the grace of God that bringeth salvation hath appeared to all men,","Sound doctrine, godly living."],
+["Philemon","NT",1,"Paul","Forgive","","Philemon 1:16","Forgiveness in action."],
+["Hebrews","NT",13,"Unknown","Better","Hebrews 11:1","Now faith is the substance of things hoped for, the evidence of things not seen.","Jesus is better than everything."],
+["James","NT",5,"James","Do it","James 1:22","But be ye doers of the word, and not hearers only, deceiving your own selves.","Faith that works."],
+["1 Peter","NT",5,"Peter","Hope","1 Peter 5:7","Casting all your care upon him; for he careth for you.","Hope for suffering believers."],
+["2 Peter","NT",3,"Peter","Watch out","2 Peter 3:9","The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.","Beware false teachers \u2014 He will return."],
+["1 John","NT",5,"John","Love","1 John 4:19","We love him, because he first loved us.","Know that you have eternal life."],
+["2 John","NT",1,"John","Truth","","2 John 1:6","Walk in truth and love."],
+["3 John","NT",1,"John","Hospitality","3 John 1:11","Beloved, follow not that which is evil, but that which is good.","Support faithful workers."],
+["Jude","NT",1,"Jude","Contend","Jude 24-25","Now unto him that is able to keep you from falling, and to present you faultless before the presence of his glory with exceeding joy, To the only wise God our Saviour, be glory and majesty, dominion and power, both now and ever. Amen.","Fight for the faith."],
+["Revelation","NT",22,"John","Victory","Revelation 22:20","He which testifieth these things saith, Surely I come quickly. Amen. Even so, come, Lord Jesus.","Jesus wins \u2014 the end of the story."]
+];
+var st=load(); st.f=st.f||"all"; st.read=st.read||{};
+var grid=document.getElementById("grid"),detail=document.getElementById("detail"),q=document.getElementById("q");
+document.querySelectorAll(".tab").forEach(function(t){
+  if(t.getAttribute("data-f")===st.f){document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("active")});t.classList.add("active")}
+  t.onclick=function(){
+    document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("active")});
+    t.classList.add("active");st.f=t.getAttribute("data-f");save(st);render();
+  };
+});
+function render(){
+  var term=q.value.trim().toLowerCase();
+  var list=B.filter(function(b){
+    return (st.f==="all"||b[1]===st.f)&&(!term||b[0].toLowerCase().indexOf(term)>-1||b[4].toLowerCase().indexOf(term)>-1);
+  });
+  grid.innerHTML=list.map(function(b){
+    return '<div class="card" data-n="'+esc(b[0])+'" tabindex="0" role="button"><h3>'+esc(b[0])+(st.read[b[0]]?" \u2713":"")+'</h3><span class="pill">'+(b[1]==="OT"?"Old Testament":"New Testament")+'</span> <span class="pill">'+b[2]+' ch.</span><br><span class="muted">'+esc(b[4])+'</span></div>';
+  }).join("")||'<p class="muted">No books match your search.</p>';
+}
+function show(name){
+  var b=B.filter(function(x){return x[0]===name})[0];if(!b)return;
+  var done=!!st.read[b[0]];
+  detail.innerHTML='<div class="verse" style="font-style:normal"><h3 style="font-family:Georgia,serif">'+esc(b[0])+'</h3>'
+    +'<div class="kv"><span>Testament</span><b>'+(b[1]==="OT"?"Old Testament":"New Testament")+'</b></div>'
+    +'<div class="kv"><span>Chapters</span><b>'+b[2]+'</b></div>'
+    +'<div class="kv"><span>Author</span><b>'+esc(b[3])+'</b></div>'
+    +'<div class="kv"><span>Theme</span><b>'+esc(b[4])+'</b></div>'
+    +'<p style="margin-top:10px"><b>Key verse \u2014 '+esc(b[5])+(b[5]?" (KJV)":"")+'</b></p>'
+    +(b[6]?'<p><i>\u201c'+esc(b[6])+'\u201d</i></p>':'')
+    +'<p style="margin-top:8px">'+esc(b[7])+'</p>'
+    +'<div class="row"><button class="btn ghost" id="mk">'+(done?"\u2713 Read \u2014 unmark":"Mark as read")+'</button></div></div>';
+  document.getElementById("mk").onclick=function(){st.read[b[0]]=!st.read[b[0]];save(st);render();show(b[0])};
+  detail.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+grid.addEventListener("click",function(e){var c=e.target.closest(".card");if(c)show(c.getAttribute("data-n"))});
+grid.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var c=e.target.closest(".card");if(c){e.preventDefault();show(c.getAttribute("data-n"))}}});
+q.addEventListener("input",render);
+render();
+})();
+</script>
+</body>
+</html>

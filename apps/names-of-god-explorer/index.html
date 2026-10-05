@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Names of God Explorer | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="30 names of God, each with meaning and Scripture. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Names of God Explorer</h1>
+<p class="intro">30 names of God, each with meaning and Scripture.</p>
+<div class="appcard">
+<label><strong>Search names</strong><input type="text" id="nq" placeholder="e.g. shepherd, peace, healer..."></label>
+<div style="text-align:center">
+<div id="ncard" style="background:#141210;color:#f5efdd;border-radius:12px;padding:36px 24px;min-height:260px;display:flex;flex-direction:column;justify-content:center"></div>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px">
+<button class="btn ghost" id="nprev">&larr; Previous</button>
+<button class="btn ghost" id="nnext">Next &rarr;</button>
+</div>
+<p id="nprog" style="color:#8a6d1c;margin-top:10px"></p>
+</div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var NAMES=[
+["El Shaddai","God Almighty — the all-sufficient One","Genesis 17:1","I am the Almighty God; walk before me, and be thou perfect."],
+["El Elyon","God Most High — sovereign over all","Genesis 14:18-20",""],
+["El Olam","The Everlasting God","Genesis 21:33",""],
+["Elohim","God the Creator — mighty and strong","Genesis 1:1","In the beginning God created the heaven and the earth."],
+["Yahweh (Jehovah)","LORD — the self-existent, covenant God","Exodus 3:14","I AM THAT I AM."],
+["Jehovah Jireh","The LORD will provide","Genesis 22:14",""],
+["Jehovah Rapha","The LORD who heals","Exodus 15:26","I am the LORD that healeth thee."],
+["Jehovah Nissi","The LORD my banner — victory in battle","Exodus 17:15",""],
+["Jehovah Shalom","The LORD is peace","Judges 6:24",""],
+["Jehovah Raah","The LORD my shepherd","Psalm 23:1","The LORD is my shepherd; I shall not want."],
+["Jehovah Tsidkenu","The LORD our righteousness","Jeremiah 23:6",""],
+["Jehovah Shammah","The LORD is there — His abiding presence","Ezekiel 48:35",""],
+["Adonai","Lord and Master","Genesis 15:2",""],
+["Abba, Father","Daddy — intimate Father","Romans 8:15",""],
+["El Roi","The God who sees me","Genesis 16:13",""],
+["The I AM","The eternal, self-existent One","Exodus 3:14","I AM THAT I AM."],
+["Emmanuel","God with us","Matthew 1:23","They shall call his name Emmanuel, which being interpreted is, God with us."],
+["The Word","God's eternal self-expression","John 1:1","In the beginning was the Word, and the Word was with God, and the Word was God."],
+["The Good Shepherd","The One who lays down His life for the sheep","John 10:11","I am the good shepherd: the good shepherd giveth his life for the sheep."],
+["The Bread of Life","The One who satisfies our deepest hunger","John 6:35","I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst."],
+["The Light of the World","The One who dispels our darkness","John 8:12","I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life."],
+["The Way, the Truth, and the Life","The only path to the Father","John 14:6","I am the way, the truth, and the life: no man cometh unto the Father, but by me."],
+["The Resurrection and the Life","Victory over death itself","John 11:25","I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live."],
+["The True Vine","Our source of spiritual life and fruit","John 15:5","I am the vine, ye are the branches."],
+["The Door","The entrance into salvation","John 10:9","I am the door: by me if any man enter in, he shall be saved."],
+["The Lamb of God","The sacrifice who takes away sin","John 1:29","Behold the Lamb of God, which taketh away the sin of the world."],
+["King of Kings","Supreme ruler over every authority","Revelation 19:16","KING OF KINGS, AND LORD OF LORDS."],
+["LORD of Hosts","Commander of heaven's armies","Psalm 24:10","The LORD of hosts, he is the King of glory."],
+["Alpha and Omega","The beginning and the end","Revelation 22:13","I am Alpha and Omega, the beginning and the end, the first and the last."],
+["Wonderful Counselor, Mighty God, Prince of Peace","The promised Messiah in His glory","Isaiah 9:6","For unto us a child is born, unto us a son is given: and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, The Prince of Peace."]];
+var KEY="app-names-of-god-explorer-v1";
+var ni=0,filtered=null;
+try{ni=parseInt(localStorage.getItem(KEY))||0;}catch(e){}
+if(ni>=NAMES.length)ni=0;
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function list(){return filtered||NAMES;}
+function render(){
+  var L=list(),n=L[ni%L.length];
+  document.getElementById("ncard").innerHTML=
+    "<p style='color:#e8c84a;letter-spacing:3px;font-size:.8rem;margin-bottom:10px'>NAME OF GOD</p>"+
+    "<h2 style='font-family:Georgia,serif;font-size:2rem;margin-bottom:8px'>"+esc(n[0])+"</h2>"+
+    "<p style='color:#cbbf9a;font-size:1.1rem;margin-bottom:14px'>"+esc(n[1])+"</p>"+
+    (n[3]?"<p style='font-style:italic'>&ldquo;"+esc(n[3])+"&rdquo;</p>":"")+
+    "<p style='margin-top:10px;color:#e8c84a;font-weight:bold'>"+esc(n[2])+" (KJV)</p>";
+  document.getElementById("nprog").textContent=(ni%L.length+1)+" of "+L.length+(filtered?" (filtered)":"");
+}
+document.getElementById("nprev").addEventListener("click",function(){var L=list();ni=(ni-1+L.length)%L.length;localStorage.setItem(KEY,ni);render();});
+document.getElementById("nnext").addEventListener("click",function(){var L=list();ni=(ni+1)%L.length;localStorage.setItem(KEY,ni);render();});
+document.getElementById("nq").addEventListener("input",function(){
+  var q=this.value.trim().toLowerCase();
+  filtered=q?NAMES.filter(function(n){return (n[0]+" "+n[1]+" "+n[2]).toLowerCase().indexOf(q)>=0;}):null;
+  ni=0;render();
+});
+render();
+</script>
+</body>
+</html>

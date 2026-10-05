@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kindness Challenge | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="30 days of small acts of kindness with verses. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Kindness Challenge</h1>
+<p class="intro">30 days of small acts of kindness with verses.</p>
+<div class="appcard">
+<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px">
+<strong id="kprog">0 / 30 acts complete</strong>
+<div style="flex:1;min-width:160px;background:#eee;border-radius:8px;height:14px"><div id="kbar" style="background:#c9a227;height:14px;border-radius:8px;width:0%"></div></div>
+</div>
+<div style="text-align:center;margin-bottom:16px">
+<button class="btn" id="ksurprise">Surprise Me: Pick Today's Act</button>
+<p id="kpick" style="margin-top:10px;font-weight:bold;color:#8a6d1c"></p>
+</div>
+<div style="background:#fff;border-left:4px solid #c9a227;padding:12px 14px;margin-bottom:14px;border-radius:0 8px 8px 0"><em>&ldquo;And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you.&rdquo;</em><br><strong style="color:#8a6d1c">Ephesians 4:32 (KJV)</strong></div>
+<div id="klist"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-kindness-challenge-v1";
+var ACTS=[
+"Write a thank-you note to someone who helped you.",
+"Pay for the coffee of the person behind you.",
+"Call a family member just to encourage them.",
+"Leave an encouraging comment online instead of scrolling past.",
+"Donate gently used clothes or household items.",
+"Bring a meal or snack to a neighbor.",
+"Pray specifically for a coworker today.",
+"Compliment three people sincerely.",
+"Let someone go ahead of you in line.",
+"Send a verse of encouragement to a friend by text.",
+"Volunteer an hour of your time somewhere.",
+"Forgive someone who hurt you, and tell God about it.",
+"Help a neighbor with yard work or a chore.",
+"Tip generously and thank your server by name.",
+"Visit or call someone who is lonely.",
+"Share your lunch with someone.",
+"Write a kind review for a small business.",
+"Offer to babysit for a tired parent.",
+"Donate to a food bank.",
+"Apologize to someone you wronged.",
+"Listen fully to someone without checking your phone.",
+"Leave a kind note on a coworker's desk.",
+"Invite someone to church or for coffee.",
+"Clean up a public space you did not mess up.",
+"Encourage a young person about their future.",
+"Give away something you value.",
+"Ask a cashier how their day is going, and mean it.",
+"Write down three things you love about your spouse or close friend, and share them.",
+"Spend an hour serving at your church.",
+"Celebrate someone else's good news as if it were your own."];
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function render(){
+  var done=load();
+  document.getElementById("kprog").textContent=done.length+" / 30 acts complete";
+  document.getElementById("kbar").style.width=(done.length/30*100)+"%";
+  var box=document.getElementById("klist");box.innerHTML="";
+  ACTS.forEach(function(a,i){
+    var day=i+1;
+    var lab=document.createElement("label");lab.className="checkrow";lab.style.alignItems="flex-start";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=done.indexOf(day)>=0;cb.style.marginTop="4px";
+    cb.addEventListener("change",function(){
+      var dd=load(),ix=dd.indexOf(day);
+      if(cb.checked&&ix<0)dd.push(day);if(!cb.checked&&ix>=0)dd.splice(ix,1);
+      save(dd);render();
+    });
+    var sp=document.createElement("span");
+    sp.innerHTML="<strong>Day "+day+":</strong> "+esc(a);
+    if(cb.checked)sp.style.textDecoration="line-through";
+    lab.appendChild(cb);lab.appendChild(sp);box.appendChild(lab);
+  });
+  if(done.length===30)document.getElementById("kpick").textContent="Challenge complete! You are a kindness machine. Start again anytime.";
+}
+document.getElementById("ksurprise").addEventListener("click",function(){
+  var done=load(),remaining=[];
+  ACTS.forEach(function(a,i){if(done.indexOf(i+1)<0)remaining.push([i+1,a]);});
+  var pick=remaining.length?remaining[Math.floor(Math.random()*remaining.length)]:[0,"All 30 acts are done!"];
+  document.getElementById("kpick").textContent="Day "+pick[0]+": "+pick[1];
+});
+render();
+</script>
+</body>
+</html>

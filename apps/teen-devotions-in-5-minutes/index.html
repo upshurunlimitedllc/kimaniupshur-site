@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teen Devotions in 5 Minutes | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Quick daily devotions written for teens. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Teen Devotions in 5 Minutes</h1>
+<p class="intro">Quick daily devotions written for teens.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Today's 5-Minute Devotion</h2>
+<div id="devBox" style="background:#f7f1de;border-radius:8px;padding:22px"></div>
+<label class="checkrow" style="margin-top:12px"><input type="checkbox" id="doneToday"><span>I've done today's devotion</span></label>
+<p style="margin-top:12px">🔥 Day streak: <strong id="streak">0</strong></p>
+<hr style="border:none;border-top:1px solid #e5d9b8;margin:24px 0">
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Browse All 7</h2>
+<div id="devList"></div>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-teen-devotions-in-5-minutes-v1';
+let S={done:{},streak:0,lastDay:''};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const DEVS=[
+["You Are Known","The LORD is my shepherd; I shall not want. — Psalm 23:1","Before your teachers, coaches, or followers know your name, God already knows you completely — and He still chose you. You are not a number to Him; you are His. When you feel invisible, remember: the Shepherd never loses track of His sheep.","Lord, thank You for knowing me fully and loving me anyway."],
+["Strength for Today","I can do all things through Christ which strengtheneth me. — Philippians 4:13","This verse isn't about winning every game — it's about Christ's strength in every situation: the hard class, the awkward lunch table, the temptation. His strength, your day.","Jesus, be my strength in the hard parts of today."],
+["Anxiety Offload","Casting all your care upon him; for he careth for you. — 1 Peter 5:7","Anxiety grows when you carry everything alone. God invites you to hand it over — every worry, big or small. Picture yourself literally giving each worry to Him, one by one.","Father, I give You my worries about ______. I trust You with them."],
+["Your Words Matter","Let no corrupt communication proceed out of your mouth, but that which is good. — Ephesians 4:29","Your words can build someone up or tear them down — at school, in group chats, at home. Today, try to say one thing that makes someone's day better. Words are powerful; use yours well.","God, help my words bring life today."],
+["Stand Out","Let no man despise thy youth; but be thou an example of the believers. — 1 Timothy 4:12","You don't have to wait until you're older to make a difference. Your age is not a limitation — it's an opportunity. Be the example right where you are.","Lord, use me right now, right where I am."],
+["Trust the Plan","Trust in the LORD with all thine heart; and lean not unto thine own understanding. — Proverbs 3:5","You don't have to have your whole life figured out today. Trust means moving forward even when you can't see the whole path. God sees it — follow His lead one step at a time.","God, I trust You with what I can't see yet."],
+["Shine Bright","Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven. — Matthew 5:16","You don't need a spotlight to shine. Kindness, honesty, and courage in ordinary moments point people to Jesus. Someone is watching your life — make it count.","Jesus, help me shine for You today."]
+];
+const $=id=>document.getElementById(id);
+const today=new Date().toISOString().slice(0,10);
+const di=Math.floor((Date.now()/86400000))%7;
+function show(){
+  const d=DEVS[di];
+  $('devBox').innerHTML='<p style="font-size:.85rem;color:#8a6d1c;font-weight:bold;letter-spacing:1px">DAY '+(di+1)+' — '+d[0].toUpperCase()+'</p><p style="font-size:1.15rem;font-family:Georgia,serif;margin:12px 0">&ldquo;'+d[1]+'&rdquo; (KJV)</p><p>'+d[2]+'</p><p style="margin-top:12px;font-style:italic;color:#6b6250">Pray: '+d[3]+'</p>';
+  $('doneToday').checked=!!S.done[today];
+  $('streak').textContent=S.streak;
+  $('devList').innerHTML=DEVS.map((x,i)=>'<div class="checkrow"><span style="flex:1"><strong>Day '+(i+1)+': '+x[0]+'</strong><br><span style="color:#8a7a4a;font-size:.9rem">'+x[1].split(' — ')[1]+'</span></span><button class="btn ghost" data-i="'+i+'" style="padding:8px 16px;min-height:44px">Read</button></div>').join('');
+  document.querySelectorAll('#devList button').forEach(b=>b.onclick=()=>{
+    const x=DEVS[+b.dataset.i];
+    $('devBox').innerHTML='<p style="font-size:.85rem;color:#8a6d1c;font-weight:bold;letter-spacing:1px">DAY '+(+b.dataset.i+1)+' — '+x[0].toUpperCase()+'</p><p style="font-size:1.15rem;font-family:Georgia,serif;margin:12px 0">&ldquo;'+x[1]+'&rdquo; (KJV)</p><p>'+x[2]+'</p><p style="margin-top:12px;font-style:italic;color:#6b6250">Pray: '+x[3]+'</p>';
+    $('devBox').scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+}
+$('doneToday').onchange=e=>{
+  if(e.target.checked&&!S.done[today]){
+    S.done[today]=true;
+    const y=new Date(Date.now()-86400000).toISOString().slice(0,10);
+    S.streak=(S.lastDay===y)?S.streak+1:1;S.lastDay=today;
+  }else if(!e.target.checked){delete S.done[today];}
+  save();$('streak').textContent=S.streak;
+};
+show();
+
+</script>
+</body>
+</html>

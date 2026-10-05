@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teen Faith Foundations | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Big questions, biblical answers, written for teens. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Teen Faith Foundations</h1>
+<p class="intro">Big questions, biblical answers, written for teens.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Big Questions, Real Answers</h2>
+<p style="color:#6b6250;margin-bottom:12px">Honest questions deserve honest answers. Tap a question to explore it.</p>
+<div id="qa"></div>
+<hr style="border:none;border-top:1px solid #e5d9b8;margin:24px 0">
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Verse to Hold Onto</h2>
+<button class="btn" id="verseBtn">Give Me a Verse</button>
+<div id="verseBox" style="margin-top:12px;background:#f7f1de;border-radius:8px;padding:18px;min-height:80px"><p style="color:#8a7a4a">Tap for a verse to carry into your week.</p></div>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-teen-faith-foundations-v1';
+let S={open:-1,vi:-1};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const QA=[
+["Is the Bible actually true?","Yes — and it's not blind faith. The Bible is a collection of 66 books written over 1,500 years that tell one connected story. Jesus Himself treated Scripture as true and authoritative. 'Thy word is truth' (John 17:17). Start with the Gospels and see for yourself."],
+["Does God care about my problems?","Absolutely. God isn't distant — He notices every detail of your life. 'Casting all your care upon him; for he careth for you' (1 Peter 5:7). Your stress about school, friends, and the future matters to Him."],
+["What about science?","Real science and real faith aren't enemies — God made the world scientists study. 'In the beginning God created the heaven and the earth' (Genesis 1:1). Many great scientists have been Christians. Ask questions; truth can handle it."],
+["Why do bad things happen to good people?","The Bible doesn't give a simple answer, but it gives a real one: we live in a broken world, God is still good, and He entered our suffering Himself through Jesus. 'And we know that all things work together for good to them that love God' (Romans 8:28)."],
+["How do I know God's will for my life?","Start with what's clear: love God, love people, live pure, use your gifts. 'Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths' (Proverbs 3:5-6). The details get clearer as you walk."],
+["Is it okay to doubt?","Yes. Doubt isn't the opposite of faith — it's often part of growing faith. Even John the Baptist had questions. Bring your doubts to God honestly instead of hiding them. 'Lord, I believe; help thou mine unbelief' (Mark 9:24)."],
+["How do I stand up for my faith at school?","You don't need all the answers — you need love and courage. 'Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity' (1 Timothy 4:12). Live it first; speak when asked."],
+["What if my friends don't believe?","Love them anyway. Be the friend who listens, who shows up, who lives differently without being judgmental. Your life might be the only Bible they ever read."]
+];
+const VERSES=[
+"I can do all things through Christ which strengtheneth me. — Philippians 4:13",
+"Trust in the LORD with all thine heart; and lean not unto thine own understanding. — Proverbs 3:5",
+"Be strong and of a good courage; be not afraid... for the LORD thy God is with thee whithersoever thou goest. — Joshua 1:9",
+"Delight thyself also in the LORD; and he shall give thee the desires of thine heart. — Psalm 37:4",
+"Thy word is a lamp unto my feet, and a light unto my path. — Psalm 119:105"
+];
+const $=id=>document.getElementById(id);
+$('qa').innerHTML=QA.map((q,i)=>'<div style="border:1px solid #e5d9b8;border-radius:8px;margin-bottom:10px;overflow:hidden"><button data-i="'+i+'" style="width:100%;text-align:left;background:#f7f1de;border:none;padding:16px;font-size:1.05rem;font-weight:bold;cursor:pointer;min-height:56px;color:#141210">'+q[0]+' <span style="float:right;color:#8a6d1c">+</span></button><div class="ans" style="display:none;padding:16px;background:#fff">'+q[1]+' <span style="color:#8a7a4a">(KJV)</span></div></div>').join('');
+document.querySelectorAll('#qa button').forEach((b,bi)=>b.onclick=()=>{
+  const a=b.parentElement.querySelector('.ans');const open=a.style.display!=='none';
+  document.querySelectorAll('#qa .ans').forEach(x=>x.style.display='none');
+  document.querySelectorAll('#qa button span').forEach(x=>x.textContent='+');
+  if(!open){a.style.display='block';b.querySelector('span').textContent='−';S.open=bi;}
+  else{S.open=-1;}
+  save();
+});
+$('verseBtn').onclick=()=>{S.vi=Math.floor(Math.random()*VERSES.length);save();$('verseBox').innerHTML='<p style="font-size:1.05rem">&ldquo;'+VERSES[S.vi]+'&rdquo; (KJV)</p>';};
+if(S.vi>=0)$('verseBtn').click();
+if(S.open>=0)document.querySelectorAll('#qa button')[S.open].click();
+
+</script>
+</body>
+</html>
