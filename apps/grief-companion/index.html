@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grief Companion | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Walk through loss with the psalms of lament. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.gstep{display:none}.gstep.on{display:block}.gverse{font-family:Georgia,serif;font-size:1.2rem;font-style:italic;background:#f7f1de;border-radius:8px;padding:20px;margin:14px 0;line-height:1.7}.gdots{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.gdot{width:36px;height:36px;border-radius:50%;border:2px solid #c9a227;background:#fff;cursor:pointer;font-weight:bold;color:#8a6d1c}.gdot.on{background:#c9a227;color:#141210}.gnav{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Grief Companion</h1>
+<p class="intro">Walk through loss with the psalms of lament.</p>
+<div class="appcard">
+<p>Grief has no timetable, and God is not in a hurry. Walk through these laments slowly — one at a time, on your own schedule.</p><div class="gdots" id="gDots"></div><div id="gBody"></div><div class="gnav"><button class="btn ghost" id="gPrev">← Back</button><button class="btn" id="gNext">Next →</button></div><h3 style="font-family:Georgia,serif;margin:20px 0 6px">Grief journal (private)</h3><textarea id="gJournal" rows="5" placeholder="Write your lament, your memories, your questions for God…" aria-label="Private grief journal"></textarea><button class="btn" id="gSave">Save journal</button> <span id="gSaved" style="color:#8a6d1c;font-size:.9rem"></span>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem(k);return r?JSON.parse(r):null;}localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
+var KG51="app-grief-companion-journal";var GRIEF=[["Lament honestly","Why art thou cast down, O my soul? and why art thou disquieted within me? hope thou in God: for I shall yet praise him, who is the health of my countenance, and my God.","Psalm 42:11 (KJV)","The psalmist argues with his own soul — and still chooses hope. You can grieve and hope at the same time."],["You are not alone in the valley","Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.","Psalm 23:4 (KJV)","Notice: you walk THROUGH the valley. It is a passage, not a home — and the Shepherd walks it with you."],["Mourning has God’s blessing","Blessed are they that mourn: for they shall be comforted.","Matthew 5:4 (KJV)","Jesus calls mourners blessed. Your tears are not a lack of faith — they are the language of love and loss."],["Night is not forever","For his anger endureth but a moment; in his favour is life: weeping may endure for a night, but joy cometh in the morning.","Psalm 30:5 (KJV)","Grief comes in waves, and mornings do come. Hold on through this night."],["The end of all tears","And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.","Revelation 21:4 (KJV)","This is where the story ends: God Himself wiping every tear. Sorrow has an expiration date."]];var K51="app-grief-companion-v1";var gi=store(K51)||0;if(gi>=GRIEF.length){gi=0;}function renderGrief(){store(K51,gi);var g=GRIEF[gi];document.getElementById("gBody").innerHTML="<div class='gstep on'><h3 style='font-family:Georgia,serif'>"+g[0]+"</h3><div class='gverse'>“"+g[1]+"”<div style='font-size:.9rem;font-style:normal;margin-top:6px'>— "+g[2]+"</div></div><p>"+g[3]+"</p></div>";var dh="";for(var i=0;i<GRIEF.length;i++){dh+="<button class='gdot"+(i===gi?" on":"")+"' data-i='"+i+"' aria-label='Step "+(i+1)+"'>"+(i+1)+"</button>";}document.getElementById("gDots").innerHTML=dh;var dots=document.querySelectorAll("#gDots .gdot");for(var d=0;d<dots.length;d++){dots[d].addEventListener("click",function(){gi=parseInt(this.getAttribute("data-i"),10);renderGrief();});}document.getElementById("gPrev").disabled=(gi===0);document.getElementById("gNext").textContent=(gi===GRIEF.length-1?"Finish":"Next →");}document.getElementById("gPrev").addEventListener("click",function(){if(gi>0){gi--;renderGrief();}});document.getElementById("gNext").addEventListener("click",function(){if(gi<GRIEF.length-1){gi++;renderGrief();}});renderGrief();document.getElementById("gJournal").value=store(KG51)||"";document.getElementById("gSave").addEventListener("click",function(){store(KG51,document.getElementById("gJournal").value);document.getElementById("gSaved").textContent="Saved privately on this device.";setTimeout(function(){document.getElementById("gSaved").textContent="";},2500);});</script>
+</body>
+</html>

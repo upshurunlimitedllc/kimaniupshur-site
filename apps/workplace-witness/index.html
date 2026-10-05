@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workplace Witness | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Faith-at-work scenarios with verse-backed responses. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.wsc{background:#fff;border:1px solid #e3d5a8;border-radius:8px;padding:18px;margin:12px 0}.wsc h3{font-family:Georgia,serif}.wopt{display:block;width:100%;text-align:left;background:#f7f1de;border:2px solid #e3d5a8;border-radius:8px;padding:12px 14px;margin:8px 0;cursor:pointer;font-size:.95rem;min-height:48px}.wopt:hover{border-color:#c9a227}.wopt.right{border-color:#3e7d3e;background:#eef6ee}.wopt.wrong{border-color:#b3402e;background:#f9e9e6}.wfb{display:none;margin-top:10px;background:#f4ecd4;border-radius:8px;padding:12px 14px}.wfb.show{display:block}.wscore{font-family:Georgia,serif;font-size:1.2rem;text-align:center;margin:10px 0}</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Workplace Witness</h1>
+<p class="intro">Faith-at-work scenarios with verse-backed responses.</p>
+<div class="appcard">
+<p>Five everyday work situations. Choose the response you’d give — then see the verse-backed wisdom.</p><div class="wscore" id="wwScore"></div><div id="wwList"></div><button class="btn ghost" id="wwReset" style="margin-top:10px">Try again</button>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem(k);return r?JSON.parse(r):null;}localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
+var K62="app-workplace-witness-v1";var WW=[["A coworker asks you to cover for their mistake to the boss.",["Agree — loyalty to coworkers comes first.","Refuse harshly and report them immediately.","Decline gently: ‘I can’t lie for you, but I’ll help you tell the boss yourself.’"],2,"And whatsoever ye do, do it heartily, as to the Lord, and not unto men. — Colossians 3:23 (KJV)","Work for an audience of One. Integrity at work is worship — refuse to lie, but offer real help."],["During lunch, coworkers mock a Christian belief you hold.",["Laugh along to keep the peace.","Lash out and call them persecutors.","Smile and say calmly: ‘I see it differently — happy to talk about it sometime.’"],2,"But sanctify the Lord God in your hearts: and be ready always to give an answer to every man that asketh you a reason of the hope that is in you with meekness and fear. — 1 Peter 3:15 (KJV)","Be ready and be gentle. Meekness with conviction opens doors that anger slams shut."],["Your boss praises your work publicly. A coworker seems jealous.",["Brag a little — you earned it.","Downplay it falsely and feel guilty.","Thank your boss sincerely, then privately encourage your coworker."],2,"Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven. — Matthew 5:16 (KJV)","Shine without showing off. Gratitude upward and encouragement outward reflect Christ."],["A frustrated client yells at you over the phone.",["Yell back — they started it.","Go silent and hang up.","Listen, stay calm, and answer softly: ‘I hear you — let’s fix this together.’"],2,"A soft answer turneth away wrath: but grievous words stir up anger. — Proverbs 15:1 (KJV)","Soft answers defuse wrath. Calm professionalism under pressure is a powerful witness."],["You’re tempted to cut corners when no one is watching.",["Cut them — everyone does it.","Do the minimum to avoid getting caught.","Do it right anyway — God sees, and excellence honours Him."],2,"And whatsoever ye do, do it heartily, as to the Lord, and not unto men. — Colossians 3:23 (KJV)","Character is who you are in the dark. Work heartily for the Lord, especially when no one checks."]];var wwAns=store(K62)||{};function renderWW(){var html="";var score=0,answered=0;for(var i=0;i<WW.length;i++){var w=WW[i];var a=(wwAns[i]!==undefined?wwAns[i]:-1);if(a>=0){answered++;if(a===w[3])score++;}html+="<div class='wsc'><h3>Scenario "+(i+1)+"</h3><p>"+w[0]+"</p>";for(var o=0;o<w[1].length;o++){var cls="wopt";if(a>=0){if(o===w[3])cls+=" right";else if(o===a)cls+=" wrong";}html+="<button class='"+cls+"' data-i='"+i+"' data-o='"+o+"'"+(a>=0?" disabled":"")+">"+w[1][o]+"</button>";}html+="<div class='wfb"+(a>=0?" show":"")+"'>"+(a>=0?(a===w[3]?"<strong>✓ Well chosen.</strong> ":"<strong>The wiser response is highlighted.</strong> "):"")+(a>=0?"“"+w[4]+"”<br>"+w[5]:"")+"</div></div>";}document.getElementById("wwList").innerHTML=html;document.getElementById("wwScore").textContent=answered===WW.length?("You chose wisely in "+score+" of "+WW.length+" scenarios."):(answered+" of "+WW.length+" answered");var opts=document.querySelectorAll("#wwList .wopt");for(var b=0;b<opts.length;b++){opts[b].addEventListener("click",function(){wwAns[parseInt(this.getAttribute("data-i"),10)]=parseInt(this.getAttribute("data-o"),10);store(K62,wwAns);renderWW();});}}document.getElementById("wwReset").addEventListener("click",function(){wwAns={};store(K62,wwAns);renderWW();});renderWW();</script>
+</body>
+</html>

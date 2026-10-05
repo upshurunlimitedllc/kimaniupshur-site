@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sabbath Rest Planner | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Plan a true 24-hour Sabbath with Scripture rhythms. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Sabbath Rest Planner</h1>
+<p class="intro">Plan a true 24-hour Sabbath with Scripture rhythms.</p>
+<div class="appcard">
+<p style="margin-bottom:12px"><em>"Remember the sabbath day, to keep it holy." &mdash; Exodus 20:8 (KJV)</em></p>
+<h3 style="font-family:Georgia,serif;margin-bottom:8px">Friday preparation</h3>
+<div id="sbprep"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 8px">Sabbath day rhythms</h3>
+<div id="sbday"></div>
+<label><strong>My Sabbath notes</strong><textarea id="sbnotes" rows="3" placeholder="What will rest look like for you this week?"></textarea></label>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:center">
+<button class="btn" id="sbsave">Save Plan</button>
+<button class="btn ghost" id="sbbegin">Begin 24-Hour Sabbath</button>
+</div>
+<p id="sbtimer" style="text-align:center;font-size:1.6rem;font-family:Georgia,serif;margin-top:14px;color:#8a6d1c"></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-sabbath-rest-planner-v1";
+var PREP=["Tidy the home so Saturday feels restful","Prepare meals or simple food ahead","Finish urgent work and silence notifications","Set out your Bible and journal","Tell family or housemates your Sabbath plan"];
+var DAY=[
+["Worship","Begin with praise and Scripture.","Psalm 118:24 — This is the day which the LORD hath made; we will rejoice and be glad in it."],
+["Rest","Nap, linger, and be unhurried. The Sabbath was made for you.","Mark 2:27 — The sabbath was made for man, and not man for the sabbath."],
+["Reflection","Read, journal, and remember God's faithfulness.","Genesis 2:2 — And on the seventh day God ended his work which he had made; and he rested on the seventh day."],
+["Relationships","Share an unhurried meal and real conversation.","Matthew 11:28 — Come unto me, all ye that labour and are heavy laden, and I will give you rest."],
+["Nature","Take a slow walk and notice God's creation.","Psalm 19:1 — The heavens declare the glory of God; and the firmament sheweth his handywork."]];
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function render(){
+  var d=load();
+  var pp=document.getElementById("sbprep");pp.innerHTML="";
+  PREP.forEach(function(p,i){
+    var lab=document.createElement("label");lab.className="checkrow";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!(d.prep&&d.prep[i]);
+    cb.addEventListener("change",function(){var dd=load();if(!dd.prep)dd.prep=[];dd.prep[i]=cb.checked;save(dd);});
+    var sp=document.createElement("span");sp.textContent=p;
+    lab.appendChild(cb);lab.appendChild(sp);pp.appendChild(lab);
+  });
+  var dy=document.getElementById("sbday");dy.innerHTML="";
+  DAY.forEach(function(r,i){
+    var lab=document.createElement("label");lab.className="checkrow";lab.style.alignItems="flex-start";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!(d.day&&d.day[i]);cb.style.marginTop="6px";
+    cb.addEventListener("change",function(){var dd=load();if(!dd.day)dd.day=[];dd.day[i]=cb.checked;save(dd);});
+    var sp=document.createElement("span");
+    sp.innerHTML="<strong>"+r[0]+"</strong> — "+r[1]+"<br><em style='color:#8a6d1c'>"+esc(r[2])+" (KJV)</em>";
+    lab.appendChild(cb);lab.appendChild(sp);dy.appendChild(lab);
+  });
+  document.getElementById("sbnotes").value=d.notes||"";
+  if(d.sabbathStart)startCountdown(d.sabbathStart);
+}
+function startCountdown(start){
+  var el=document.getElementById("sbtimer");
+  function upd(){
+    var remain=start+86400000-Date.now();
+    if(remain<=0){el.textContent="Sabbath complete. Amen.";var d=load();d.sabbathStart=null;save(d);clearInterval(window._sb);return;}
+    var h=Math.floor(remain/3600000),m=Math.floor(remain%3600000/60000),s=Math.floor(remain%60000/1000);
+    el.textContent="Sabbath rest: "+h+"h "+String(m).padStart(2,"0")+"m "+String(s).padStart(2,"0")+"s remaining";
+  }
+  clearInterval(window._sb);upd();window._sb=setInterval(upd,1000);
+}
+document.getElementById("sbsave").addEventListener("click",function(){
+  var d=load();d.notes=document.getElementById("sbnotes").value;save(d);alert("Sabbath plan saved.");
+});
+document.getElementById("sbbegin").addEventListener("click",function(){
+  var d=load();d.sabbathStart=Date.now();save(d);startCountdown(d.sabbathStart);
+});
+render();
+</script>
+</body>
+</html>

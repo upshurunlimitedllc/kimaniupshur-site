@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commute Prayers | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Redeem your drive time with guided prayer prompts. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Commute Prayers</h1>
+<p class="intro">Redeem your drive time with guided prayer prompts.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">How Long Is Your Commute?</h2>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+<button class="btn ghost cbtn" data-n="4">~10 min</button>
+<button class="btn ghost cbtn" data-n="7">~20 min</button>
+<button class="btn ghost cbtn" data-n="10">~30 min</button>
+<button class="btn ghost cbtn" data-n="14">~45 min</button>
+</div>
+<div id="prayerFlow" style="background:#f7f1de;border-radius:8px;padding:24px;min-height:180px;text-align:center">
+<p style="color:#8a7a4a">Choose your commute length above, then begin.</p>
+</div>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px">
+<button class="btn" id="pStart">Begin Prayer Time</button>
+<button class="btn ghost" id="pNext" style="display:none">Next Prompt →</button>
+</div>
+<div style="background:#e5d9b8;border-radius:6px;height:10px;margin-top:14px"><div id="pBar" style="background:#c9a227;height:10px;border-radius:6px;width:0%"></div></div>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-commute-prayers-v1';
+let S={count:7};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const PROMPTS=[
+["Praise","Thank God for three specific things about today. Say them out loud."],
+["Family","Pray for each family member by name — their needs, their day, their faith."],
+["Gratitude","Remember one way God provided for you recently. Thank Him for it."],
+["Church","Pray for your pastor, your church's leaders, and this Sunday's gathering."],
+["Friends","Pray for one friend who doesn't know Jesus yet."],
+["Work","Commit your workday to God: your tasks, your coworkers, your attitude."],
+["Nation","Pray for your city and nation — for leaders, peace, and revival."],
+["Forgiveness","Is there anyone to forgive? Release them to God right now."],
+["Guidance","Ask God for wisdom about one decision you're facing. Then listen quietly."],
+["Needs","Tell God what you need today — honestly and specifically."],
+["Others","Pray for someone who is suffering that you know or have heard about."],
+["Listening","Be quiet for the rest of the drive. Let God speak to your heart."],
+["Worship","Sing or speak a worship song you love. End with praise."],
+["Amen","Close by praying the Lord's Prayer slowly, meaning every line."]
+];
+const $=id=>document.getElementById(id);
+let count=S.count,idx=-1;
+document.querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.cbtn').forEach(x=>{x.classList.remove('btn');x.classList.add('btn','ghost');});
+  b.classList.remove('ghost');count=+b.dataset.n;S.count=count;save();idx=-1;$('pNext').style.display='none';$('pStart').style.display='';
+  $('prayerFlow').innerHTML='<p style="color:#8a7a4a">Ready: '+count+' prayer prompts for your drive.</p>';$('pBar').style.width='0%';
+});
+document.querySelectorAll('.cbtn').forEach(b=>{if(+b.dataset.n===S.count)b.click();});
+$('pStart').onclick=()=>{idx=0;show();$('pStart').style.display='none';$('pNext').style.display='';};
+$('pNext').onclick=()=>{idx++;if(idx>=count){$('prayerFlow').innerHTML='<p style="font-size:1.3rem">🙏 Amen.</p><p style="color:#6b6250;margin-top:8px">Your commute became an altar. Drive safe!</p>';$('pBar').style.width='100%';$('pNext').style.display='none';$('pStart').style.display='';$('pStart').textContent='Begin Again';idx=-1;return;}show();};
+function show(){
+  const p=PROMPTS[idx%PROMPTS.length];
+  $('prayerFlow').innerHTML='<p style="font-size:.85rem;color:#8a6d1c;font-weight:bold;letter-spacing:1px">'+(idx+1)+' OF '+count+' — '+p[0].toUpperCase()+'</p><p style="font-size:1.25rem;font-family:Georgia,serif;margin-top:12px">'+p[1]+'</p>';
+  $('pBar').style.width=Math.round((idx+1)/count*100)+'%';
+}
+
+</script>
+</body>
+</html>

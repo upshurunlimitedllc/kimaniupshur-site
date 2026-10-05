@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newlywed First Year | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Twelve months of devotional prompts for newlyweds. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:16px}
+.mbtn{background:#fffdf7;border:2px solid #c9a227;border-radius:8px;padding:12px 4px;cursor:pointer;min-height:56px;color:#141210;font-size:.95rem}
+.mbtn.active{background:#c9a227;font-weight:bold}
+#mcard{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:20px;display:none}
+.verse{background:#f7f1de;border-left:4px solid #c9a227;padding:10px 14px;margin:10px 0;font-style:italic}
+.pbar{height:12px;background:#e9e0c8;border-radius:6px;overflow:hidden;margin:10px 0}
+.pbar>div{height:100%;background:#c9a227;width:0%}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Newlywed First Year</h1>
+<p class="intro">Twelve months of devotional prompts for newlyweds.</p>
+<div class="appcard">
+<div class="verse">\u201CAnd they twain shall be one flesh: so then they are no more twain, but one flesh.\u201D<br><strong>\u2014 Mark 10:8</strong> (KJV)</div>
+<div class="mgrid" id="mgrid"></div>
+<div id="mcard"></div>
+<div class="pbar"><div id="pfill"></div></div>
+<p id="ptext" style="font-size:.95rem;color:#6b6250"></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-newlywed-first-year-v1';
+var M=[
+{t:"Begin with God",p:"Set one daily rhythm of prayer together \u2014 even five minutes. A marriage that prays together stays together.",a:"Pray together every day this month.",v:"Matthew 18:20",vt:"For where two or three are gathered together in my name, there am I in the midst of them."},
+{t:"Communication",p:"Learn to listen twice as much as you speak. Understanding must come before being understood.",a:"Each share one feeling daily \u2014 no fixing, just listening.",v:"James 1:19",vt:"Let every man be swift to hear, slow to speak, slow to wrath."},
+{t:"Money & stewardship",p:"Two become one \u2014 including the bank account. Talk openly about spending, saving, and giving.",a:"Build your first budget together.",v:"Proverbs 21:20",vt:"There is treasure to be desired and oil in the dwelling of the wise; but a foolish man spendeth it up."},
+{t:"Forgiveness",p:"You will hurt each other \u2014 probably this month. Forgive quickly, the way Christ forgave you.",a:"Practice saying 'I was wrong, please forgive me' this week.",v:"Ephesians 4:32",vt:"Forgiving one another, even as God for Christ's sake hath forgiven you."},
+{t:"Serving together",p:"Look outward. Couples who serve together grow together \u2014 love multiplies when it is given away.",a:"Serve somewhere together once this month.",v:"Galatians 5:13",vt:"By love serve one another."},
+{t:"Rest together",p:"Busyness is a marriage-killer. Protect a weekly rest day and a regular date night.",a:"Schedule \u2014 and keep \u2014 one date night.",v:"Mark 6:31",vt:"Come ye yourselves apart into a desert place, and rest a while."},
+{t:"Dreams & goals",p:"Where are you headed? Write down your shared dreams \u2014 big and small \u2014 and pray over them.",a:"Write a one-page vision for your first five years.",v:"Habakkuk 2:2",vt:"Write the vision, and make it plain upon tables."},
+{t:"Handling conflict",p:"Every couple fights; wise couples fight fair. No yelling, no stonewalling, no bringing up the past.",a:"Agree on three 'fair fight' rules together.",v:"Ephesians 4:26",vt:"Be ye angry, and sin not: let not the sun go down upon your wrath."},
+{t:"Hospitality",p:"Open your home and your table. Some of your sweetest memories will be made hosting others.",a:"Invite one couple or friend over for a meal.",v:"Romans 12:13",vt:"Distributing to the necessity of saints; given to hospitality."},
+{t:"Gratitude",p:"Thankfulness is marriage glue. Notice what your spouse does right \u2014 and say so, daily.",a:"Thank your spouse for one specific thing every day.",v:"1 Thessalonians 5:18",vt:"In every thing give thanks."},
+{t:"Faith rhythms",p:"Church, Scripture, prayer \u2014 build the habits now that will carry you through hard seasons later.",a:"Choose one faith rhythm to start together.",v:"Hebrews 10:25",vt:"Not forsaking the assembling of ourselves together."},
+{t:"Looking ahead",p:"One year down! Celebrate God's faithfulness, dream about year two, and keep Christ at the center.",a:"Write each other a letter about year one.",v:"Jeremiah 29:11",vt:"For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end."}
+];
+var done={};try{done=JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){done={};}
+var grid=document.getElementById('mgrid'),card=document.getElementById('mcard');
+function save(){localStorage.setItem(KEY,JSON.stringify(done));}
+function progress(){var n=Object.keys(done).length;document.getElementById('pfill').style.width=(n/12*100)+'%';document.getElementById('ptext').textContent=n+' of 12 months complete.';}
+M.forEach(function(m,i){
+var b=document.createElement('button');b.className='mbtn';b.type='button';b.textContent='Month '+(i+1);
+b.title=m.t;
+b.addEventListener('click',function(){
+Array.prototype.forEach.call(grid.children,function(x){x.classList.remove('active');});
+b.classList.add('active');card.style.display='block';
+card.innerHTML='<h3 style="font-family:Georgia,serif">Month '+(i+1)+': '+m.t+'</h3><p style="margin-top:8px">'+m.p+'</p>'
++'<div class="verse">\u201C'+m.vt+'\u201D<br><strong>\u2014 '+m.v+'</strong> (KJV)</div>'
++'<p><strong>This month\u2019s practice:</strong> '+m.a+'</p>'
++'<p style="margin-top:10px"><label class="checkrow" style="border:none"><input type="checkbox" id="md" '+(done[i]?'checked':'')+'> <span>Month '+(i+1)+' complete</span></label></p>';
+document.getElementById('md').addEventListener('change',function(e){if(e.target.checked){done[i]=true;}else{delete done[i];}save();progress();});
+});
+grid.appendChild(b);
+});
+progress();
+})();
+</script>
+</body>
+</html>

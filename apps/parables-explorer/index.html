@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parables Explorer | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="All the parables of Jesus with setting, meaning, takeaway. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.par{border:1px solid #e3d5a8;border-radius:8px;margin:10px 0;overflow:hidden}.par-head{padding:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff}.par-head:hover{background:#faf3df}.par-head h3{font-family:Georgia,serif;font-size:1.05rem}.par-ref{font-size:.85rem;color:#8a6d1c}.par-body{display:none;padding:0 14px 14px}.par.open .par-body{display:block}.par p{margin:6px 0}.par .lbl{font-weight:bold;color:#8a6d1c}.stud{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:.9rem}.stud input{width:20px;height:20px;accent-color:#c9a227}</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Parables Explorer</h1>
+<p class="intro">All the parables of Jesus with setting, meaning, takeaway.</p>
+<div class="appcard">
+<input type="text" id="parSearch" placeholder="Search parables (e.g. lost, kingdom, prayer)…" aria-label="Search parables"><p id="parCount" style="color:#6b6250;font-size:.9rem;margin-bottom:6px"></p><div id="parList"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem(k);return r?JSON.parse(r):null;}localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
+var K33="app-parables-explorer-v1";var PAR=[["The Sower","Matthew 13:3–9","Jesus teaches a great crowd from a boat on the Sea of Galilee.","How different hearts respond to God’s word — the path, rocky soil, thorns, and good soil.","Cultivate a receptive heart: hear the word, hold it, and let it bear fruit."],["The Mustard Seed","Matthew 13:31–32","Taught to the crowds in Galilee.","The kingdom starts tiny but grows beyond all expectation.","Never despise small beginnings of faith."],["The Leaven","Matthew 13:33","Taught alongside the mustard seed.","The kingdom spreads quietly through the whole of life.","Let God’s truth work through every corner of your life."],["The Hidden Treasure","Matthew 13:44","Taught to the disciples.","A man finds treasure and joyfully sells all to gain it.","The kingdom is worth everything you have."],["The Pearl of Great Price","Matthew 13:45–46","Taught to the disciples.","A merchant finds one priceless pearl and gives all for it.","Knowing Christ outweighs every other treasure."],["The Dragnet","Matthew 13:47–50","Taught to the disciples.","A net gathers all kinds; the good are kept at the end.","Live ready — a final sorting is coming."],["The Unforgiving Servant","Matthew 18:23–35","Answering Peter’s question about forgiving ‘seven times’.","A servant forgiven a huge debt refuses to forgive a small one.","Forgive others as freely as God forgave you."],["Workers in the Vineyard","Matthew 20:1–16","Taught on the road to Jerusalem.","All-day and last-hour workers receive the same pay.","God’s grace is generous, not earned by hours."],["The Two Sons","Matthew 21:28–32","Spoken to the chief priests in the temple.","One son says no but obeys; the other says yes but doesn’t.","Actions speak louder than promises."],["The Wedding Feast","Matthew 22:1–14","Spoken to the religious leaders.","Invited guests refuse the king’s feast; others are gathered in.","Respond to God’s invitation — don’t make excuses."],["The Ten Virgins","Matthew 25:1–13","The Olivet Discourse, near Jerusalem.","Five wise virgins keep oil ready; five foolish do not.","Stay spiritually prepared — Christ will return."],["The Talents","Matthew 25:14–30","The Olivet Discourse.","Servants invest their master’s money; one buries his.","Use what God gave you faithfully, however much it is."],["The Sheep and the Goats","Matthew 25:31–46","The Olivet Discourse.","Nations are separated by how they treated ‘the least of these’.","Serving the needy is serving Christ."],["Wise and Foolish Builders","Matthew 7:24–27","Closing the Sermon on the Mount.","Two houses: one on rock stands, one on sand falls.","Hear Christ’s words AND do them."],["The Good Samaritan","Luke 10:25–37","Answering ‘who is my neighbour?’","A Samaritan shows mercy across deep cultural divides.","Be a neighbour: show mercy to anyone in need."],["The Friend at Midnight","Luke 11:5–8","Teaching on prayer.","A man keeps knocking until his friend gets up to help.","Pray with bold persistence."],["The Rich Fool","Luke 12:16–21","After a dispute over inheritance.","A rich man stores up goods, then dies that night.","Be rich toward God, not just toward yourself."],["The Great Banquet","Luke 14:15–24","At a Pharisee’s dinner table.","Invited guests make excuses; the poor and broken are brought in.","Don’t miss God’s invitation for lesser things."],["The Lost Sheep","Luke 15:3–7","To Pharisees grumbling that Jesus welcomes sinners.","A shepherd leaves 99 to find one lost sheep.","Every single person matters deeply to God."],["The Lost Coin","Luke 15:8–10","With the lost sheep and lost son.","A woman sweeps the house until the lost coin is found.","Heaven rejoices over one sinner who repents."],["The Prodigal Son","Luke 15:11–32","To Pharisees and scribes.","A runaway son returns; his father runs to meet him.","No matter how far you’ve run, you can come home."],["The Rich Man and Lazarus","Luke 16:19–31","To the Pharisees who loved money.","A rich man ignores poor Lazarus; eternity reverses their fates.","How you live now echoes into eternity."],["The Persistent Widow","Luke 18:1–8","Teaching that we ought always to pray.","A widow keeps pleading until an unjust judge helps her.","Keep praying — God hears and answers."],["The Pharisee and the Tax Collector","Luke 18:9–14","To those confident of their own righteousness.","The humble tax collector goes home justified, not the proud Pharisee.","God honours humble, honest prayer."]];function renderPar(){var q=document.getElementById("parSearch").value.toLowerCase();var st=store(K33)||{};var html="";var n=0;for(var i=0;i<PAR.length;i++){var p=PAR[i];if(q&&p[0].toLowerCase().indexOf(q)<0&&p[1].toLowerCase().indexOf(q)<0&&p[2].toLowerCase().indexOf(q)<0&&p[3].toLowerCase().indexOf(q)<0&&p[4].toLowerCase().indexOf(q)<0)continue;n++;html+="<div class='par'><div class='par-head' onclick='this.parentNode.classList.toggle(\"open\")'><div><h3>"+p[0]+"</h3><div class='par-ref'>"+p[1]+"</div></div><span aria-hidden='true'>+</span></div><div class='par-body'><p><span class='lbl'>Setting:</span> "+p[2]+"</p><p><span class='lbl'>Meaning:</span> "+p[3]+"</p><p><span class='lbl'>Takeaway:</span> "+p[4]+"</p><label class='stud'><input type='checkbox' data-i='"+i+"'"+(st[i]?" checked":"")+"> Studied</label></div></div>";}document.getElementById("parList").innerHTML=html||"<p>No parables match your search.</p>";document.getElementById("parCount").textContent=n+" of "+PAR.length+" parables";var boxes=document.querySelectorAll("#parList .stud input");for(var b=0;b<boxes.length;b++){boxes[b].addEventListener("change",function(){var s=store(K33)||{};if(this.checked){s[this.getAttribute("data-i")]=1;}else{delete s[this.getAttribute("data-i")];}store(K33,s);});}}document.getElementById("parSearch").addEventListener("input",renderPar);renderPar();</script>
+</body>
+</html>

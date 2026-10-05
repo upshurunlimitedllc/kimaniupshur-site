@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conflict to Reconciliation | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Biblical peacemaking for couples and families. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+.stepdots{display:flex;gap:8px;margin-bottom:18px;justify-content:center}
+.dot{width:14px;height:14px;border-radius:50%;background:#e5d9b8}
+.dot.on{background:#c9a227}
+.nav{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.q{background:#f7f1de;border-radius:8px;padding:12px 16px;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Conflict to Reconciliation</h1>
+<p class="intro">Biblical peacemaking for couples and families.</p>
+<div class="appcard">
+<div class="verse">\u201CBlessed are the peacemakers: for they shall be called the children of God.\u201D<br><strong>\u2014 Matthew 5:9</strong> (KJV)</div>
+<div class="stepdots" id="dots"></div>
+<div id="step"></div>
+<div class="nav"><button class="btn ghost" id="back" type="button">&larr; Back</button><button class="btn" id="next" type="button">Next &rarr;</button></div>
+<h2 style="font-family:Georgia,serif;margin:24px 0 8px">My conversation plan</h2>
+<p style="color:#6b6250">Plan what you will say before you go. Gentle words open hearts.</p>
+<textarea id="plan" rows="5" placeholder="When we talk, I want to say..."></textarea>
+<p><button class="btn ghost" id="psave" type="button">Save my plan</button> <span id="psaved" style="color:#2e7d32;display:none">\u2713 Saved</span></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-conflict-to-reconciliation-v1';
+var STEPS=[
+{t:"1 \u2014 Pray first",b:"Before you confront, get wisdom. Ask God to show you your own heart and to prepare the other person's.",v:"James 1:5",vt:"If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.",q:"Have you prayed about this conflict more than you have rehearsed it?"},
+{t:"2 \u2014 Own your part",b:"Check the log in your own eye before the speck in theirs. Confessing your part first disarms defensiveness.",v:"Matthew 7:5",vt:"Thou hypocrite, first cast out the beam out of thine own eye; and then shalt thou see clearly to cast out the mote out of thy brother's eye.",q:"What is YOUR part in this conflict \u2014 even 5%?"},
+{t:"3 \u2014 Go directly and privately",b:"Jesus' way: go to the person alone first. No triangulation, no venting to everyone else \u2014 just the two of you.",v:"Matthew 18:15",vt:"Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother.",q:"Who do you need to talk to directly instead of talking about?"},
+{t:"4 \u2014 Speak truth in love",b:"Honesty without love is harsh; love without honesty is hollow. Aim for both: clear about the issue, gentle with the person.",v:"Ephesians 4:15",vt:"Speaking the truth in love, may grow up into him in all things.",q:"How can you say what needs saying in a way they can actually hear?"},
+{t:"5 \u2014 Forgive fully",b:"Forgiveness is not forgetting or excusing \u2014 it is releasing the debt, as God in Christ released yours. Do it even if they never apologize.",v:"Ephesians 4:32",vt:"And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you.",q:"Is there a debt you are still holding that you need to release?"}
+];
+var i=0,box=document.getElementById('step'),dots=document.getElementById('dots');
+STEPS.forEach(function(){var d=document.createElement('div');d.className='dot';dots.appendChild(d);});
+function render(){
+Array.prototype.forEach.call(dots.children,function(d,j){d.classList.toggle('on',j===i);});
+var s=STEPS[i];
+box.innerHTML='<h2 style="font-family:Georgia,serif;margin-bottom:8px">'+s.t+'</h2><p>'+s.b+'</p>'
++'<div class="verse">\u201C'+s.vt+'\u201D<br><strong>\u2014 '+s.v+'</strong> (KJV)</div>'
++'<div class="q"><strong>Ask yourself:</strong> '+s.q+'</div>';
+document.getElementById('back').style.visibility=i===0?'hidden':'visible';
+document.getElementById('next').textContent=i===STEPS.length-1?'Finish':'Next \u2192';
+}
+document.getElementById('back').addEventListener('click',function(){if(i>0){i--;render();}});
+document.getElementById('next').addEventListener('click',function(){if(i<STEPS.length-1){i++;render();}});
+render();
+var ta=document.getElementById('plan');
+try{ta.value=localStorage.getItem(KEY)||"";}catch(e){}
+document.getElementById('psave').addEventListener('click',function(){
+try{localStorage.setItem(KEY,ta.value);}catch(e){}
+var s=document.getElementById('psaved');s.style.display='inline';setTimeout(function(){s.style.display='none';},2000);
+});
+})();
+</script>
+</body>
+</html>

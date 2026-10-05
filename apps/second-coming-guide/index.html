@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Second Coming Guide | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="What Scripture says about Christ's return. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .tl{position:relative;margin:10px 0 20px;padding-left:26px;border-left:3px solid #c9a227}
+.ev{margin-bottom:8px;background:#fff;border:1px solid #e5d9b8;border-radius:10px;overflow:hidden}
+.evhead{display:block;width:100%;background:none;border:none;text-align:left;padding:14px 16px;cursor:pointer;font-size:1rem;color:#141210;min-height:56px}
+.evhead .n{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;margin-right:10px;font-size:.9rem}
+.evbody{display:none;padding:0 16px 16px;color:#444}
+.ev.open .evbody{display:block}
+.verse{background:#f7f1de;border-left:4px solid #c9a227;padding:10px 14px;margin:10px 0;font-style:italic}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Second Coming Guide</h1>
+<p class="intro">What Scripture says about Christ's return.</p>
+<div class="appcard">
+<p style="color:#6b6250;margin-bottom:16px">The return of Christ is the church's great hope. Walk through what Scripture says, in order.</p>
+<div class="tl" id="tl"></div>
+<h2 style="font-family:Georgia,serif;margin:20px 0 8px">Are you ready?</h2>
+<p style="color:#6b6250">Since no one knows the day or hour, readiness is a daily decision.</p>
+<div id="ready"></div>
+<p><button class="btn ghost" id="reset" type="button">Reset checklist</button></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-second-coming-guide-v1';
+var EV=[
+{t:"Jesus will return personally and visibly",b:"The angels told the disciples that Jesus will come back the same way He ascended \u2014 bodily, visibly, in the clouds.",v:"Acts 1:11",vt:"This same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven."},
+{t:"No one knows the day or hour",b:"Not the angels, not even the Son in His earthly ministry \u2014 only the Father. Date-setting is always wrong.",v:"Matthew 24:36",vt:"But of that day and hour knoweth no man, no, not the angels of heaven, but my Father only."},
+{t:"The trumpet and the resurrection",b:"The Lord Himself will descend with a shout and the trumpet of God, and the dead in Christ will rise first.",v:"1 Thessalonians 4:16",vt:"For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: and the dead in Christ shall rise first:"},
+{t:"Every eye will see Him",b:"His coming will not be secret. Every eye will see Him \u2014 the whole world at once.",v:"Revelation 1:7",vt:"Behold, he cometh with clouds; and every eye shall see him."},
+{t:"A new heaven and a new earth",b:"After judgment, God makes all things new: a new heaven, a new earth, and the holy city \u2014 with no more curse.",v:"Revelation 21:1",vt:"And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away."},
+{t:"His promise: \u201CI come quickly\u201D",b:"Jesus closes the Bible with a promise and the church answers with a prayer: Even so, come, Lord Jesus.",v:"Revelation 22:20",vt:"He which testifieth these things saith, Surely I come quickly. Amen. Even so, come, Lord Jesus."}
+];
+var tl=document.getElementById('tl');
+EV.forEach(function(e,i){
+var d=document.createElement('div');d.className='ev';
+d.innerHTML='<button type="button" class="evhead"><span class="n">'+(i+1)+'</span><strong>'+e.t+'</strong></button><div class="evbody"><p>'+e.b+'</p><div class="verse">\u201C'+e.vt+'\u201D<br><strong>\u2014 '+e.v+'</strong> (KJV)</div></div>';
+d.querySelector('.evhead').addEventListener('click',function(){d.classList.toggle('open');});
+tl.appendChild(d);
+});
+var ITEMS=["I have trusted Jesus as my Savior (Romans 10:9)","I am living ready \u2014 watching and praying (Mark 13:33)","I have made peace with others where I can (Romans 12:18)","I am telling others about His return","I long for His coming: \u201CEven so, come, Lord Jesus\u201D"];
+var done={};try{done=JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){done={};}
+var box=document.getElementById('ready');
+function save(){localStorage.setItem(KEY,JSON.stringify(done));}
+ITEMS.forEach(function(t,i){
+var l=document.createElement('label');l.className='checkrow';
+l.innerHTML='<input type="checkbox" '+(done[i]?'checked':'')+'> <span>'+t+'</span>';
+l.querySelector('input').addEventListener('change',function(e){if(e.target.checked){done[i]=true;}else{delete done[i];}save();});
+box.appendChild(l);
+});
+document.getElementById('reset').addEventListener('click',function(){done={};save();Array.prototype.forEach.call(box.querySelectorAll('input'),function(c){c.checked=false;});});
+})();
+</script>
+</body>
+</html>

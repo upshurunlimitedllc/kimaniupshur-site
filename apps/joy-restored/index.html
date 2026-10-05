@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joy Restored | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Reclaiming joy when life feels flat. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+#vcard{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:20px;margin-bottom:16px;text-align:center}
+.jlist{list-style:none;margin-top:10px}
+.jlist li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #eee}
+.jlist input{width:22px;height:22px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.jlist li.done span{text-decoration:line-through;color:#8a8a8a}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Joy Restored</h1>
+<p class="intro">Reclaiming joy when life feels flat.</p>
+<div class="appcard">
+<div id="vcard"></div>
+<p><button class="btn ghost" id="newv" type="button">Another joy verse</button></p>
+<h2 style="font-family:Georgia,serif;margin:20px 0 8px">Joy practices</h2>
+<p style="color:#6b6250">Joy is a fruit of the Spirit \u2014 but it also grows through practice. Check off today's practices:</p>
+<ul class="jlist" id="jlist"></ul>
+<p><button class="btn ghost" id="reset" type="button">Start a new day</button></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-joy-restored-v1';
+var V=[
+{v:"Nehemiah 8:10",vt:"The joy of the LORD is your strength."},
+{v:"Psalm 16:11",vt:"Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore."},
+{v:"Psalm 51:12",vt:"Restore unto me the joy of thy salvation; and uphold me with thy free spirit."},
+{v:"Philippians 4:4",vt:"Rejoice in the Lord alway: and again I say, Rejoice."},
+{v:"John 15:11",vt:"These things have I spoken unto you, that my joy might remain in you, and that your joy might be full."},
+{v:"Romans 15:13",vt:"Now the God of hope fill you with all joy and peace in believing."},
+{v:"Psalm 118:24",vt:"This is the day which the LORD hath made; we will rejoice and be glad in it."}
+];
+var P=["Thank God for three specific things out loud","Sing or listen to one worship song","Read one Psalm slowly","Do one kind thing for someone else","Get outside for 10 minutes and notice God's creation","Tell someone what God has done for you","Laugh \u2014 on purpose. Joy is holy."];
+var vi=0,done={};
+try{var s=JSON.parse(localStorage.getItem(KEY)||"{}");vi=s.vi||0;done=s.done||{};}catch(e){}
+var card=document.getElementById('vcard'),list=document.getElementById('jlist');
+function save(){localStorage.setItem(KEY,JSON.stringify({vi:vi,done:done}));}
+function showV(){var x=V[vi%V.length];card.innerHTML='<div class="verse" style="border:none;background:none;font-size:1.15rem">\u201C'+x.vt+'\u201D<br><strong>\u2014 '+x.v+'</strong> (KJV)</div>';}
+function render(){
+list.innerHTML='';
+P.forEach(function(p,i){
+var li=document.createElement('li');if(done[i])li.className='done';
+li.innerHTML='<input type="checkbox" '+(done[i]?'checked':'')+' aria-label="Done"><span>'+p+'</span>';
+li.querySelector('input').addEventListener('change',function(e){if(e.target.checked){done[i]=true;}else{delete done[i];}save();render();});
+list.appendChild(li);
+});
+}
+document.getElementById('newv').addEventListener('click',function(){vi++;save();showV();});
+document.getElementById('reset').addEventListener('click',function(){done={};save();render();});
+showV();render();
+})();
+</script>
+</body>
+</html>

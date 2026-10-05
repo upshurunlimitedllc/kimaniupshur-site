@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Devotional | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="A fresh Scripture and short reflection every day. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Daily Devotional</h1>
+<p class="intro">A fresh Scripture and short reflection every day.</p>
+<div class="appcard">
+<p id="ddate" style="color:#8a6d1c;font-weight:bold;margin-bottom:10px"></p>
+<h2 id="dtitle" style="font-family:Georgia,serif;margin-bottom:8px"></h2>
+<div id="dverse" style="background:#fff;border-left:4px solid #c9a227;padding:14px 16px;margin:14px 0;border-radius:0 8px 8px 0"></div>
+<h3 style="font-family:Georgia,serif;margin:14px 0 6px">Reflection</h3>
+<p id="dreflect"></p>
+<h3 style="font-family:Georgia,serif;margin:14px 0 6px">Prayer</h3>
+<p id="dpray" style="font-style:italic"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+<button class="btn ghost" id="dprev">&larr; Previous day</button>
+<button class="btn ghost" id="dtoday">Today</button>
+<button class="btn ghost" id="dnext">Next day &rarr;</button>
+</div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var DEVS=[
+["New Mercies Every Morning","Lamentations 3:22-23","It is of the LORD's mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.","Yesterday's failures do not get the final word. God's mercy is not recycled; it is brand new with the sunrise. Whatever today holds, you start it forgiven, loved, and carried.","Lord, thank You for mercies that are new this morning. Help me walk in them today. Amen."],
+["Be Still","Psalm 46:10","Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth.","Stillness is not laziness; it is trust. Before you fix, strive, or scroll, pause and remember who is actually in charge. Knowing God begins where hurrying ends.","Father, quiet my heart. Teach me to know You in the stillness. Amen."],
+["Trust Beyond Understanding","Proverbs 3:5-6","Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.","Your understanding is a good servant but a poor master. Trust means obeying God even when the map is unclear, because the Guide is good.","Lord, I trust You with what I cannot understand. Direct my paths today. Amen."],
+["Strength for Today","Philippians 4:13","I can do all things through Christ which strengtheneth me.","This verse is not about winning championships; it is about contentment in every circumstance. Christ's strength meets you in the ordinary, hard, unglamorous middle of the day.","Jesus, be my strength in every task today, big or small. Amen."],
+["Peace That Stays","John 14:27","Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.","The world's peace depends on circumstances. Christ's peace survives them. It is a gift, not an achievement, received by a heart that refuses to be troubled.","Prince of Peace, guard my heart today. Let Your peace rule me. Amen."],
+["Give Thanks Always","1 Thessalonians 5:18","In every thing give thanks: for this is the will of God in Christ Jesus concerning you.","Thankfulness is not denial of hardship; it is defiance of despair. God's will for you today is simpler than you think: notice His goodness and say thank you.","Father, open my eyes to Your goodness. I thank You for today. Amen."],
+["God's Good Plans","Jeremiah 29:11","For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.","God spoke these words to people in exile, not in comfort. His good plans do not require your good circumstances. He is thinking thoughts of peace toward you right now.","Lord, I rest in Your good plans for me, even when I cannot see them. Amen."],
+["All Things for Good","Romans 8:28","And we know that all things work together for good to them that love God, to them who are the called according to his purpose.","God does not waste pain. He weaves even the tangled threads into a pattern of good for those who love Him. You can trust the Weaver with the threads you cannot untangle.","Father, work all things in my life together for good today. Amen."],
+["Rest for the Weary","Matthew 11:28","Come unto me, all ye that labour and are heavy laden, and I will give you rest.","Jesus does not say 'try harder'; He says 'come.' Rest is found in a Person, not a schedule change. Bring Him your heaviness today and leave lighter.","Jesus, I come to You weary. Give me Your rest. Amen."],
+["Courage for the Day","Joshua 1:9","Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.","Courage is not the absence of fear; it is obedience in the presence of fear, powered by the promise of God's presence. He goes with you into every room today.","Lord, make me strong and courageous, for You go with me. Amen."],
+["A Lamp for Your Path","Psalm 119:105","Thy word is a lamp unto my feet, and a light unto my path.","God's Word rarely gives you the whole map; it gives you the next step. That is enough light for today. Take the step you can see.","Father, light my next step with Your Word today. Amen."],
+["Loved First","1 John 4:19","We love him, because he first loved us.","You did not earn God's love and you cannot lose it by a bad day. His love came first, before your performance, and it remains. Love others today out of that fullness.","Father, thank You for loving me first. Fill me to love others. Amen."],
+["Grace, Not Works","Ephesians 2:8-9","For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.","Salvation is a gift, not a paycheck. You cannot earn it and you cannot un-earn it. Rest today in what Christ has finished, not in what you must finish.","Jesus, thank You for the gift of salvation. I rest in Your finished work. Amen."],
+["Pray About Everything","Philippians 4:6","Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.","Worry is prayer to the wrong god. Turn every anxious thought into a conversation with the Father who cares. Nothing is too small to bring to Him.","Father, I bring You every care today, with thanksgiving. Amen."],
+["Abounding Hope","Romans 15:13","Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.","Hope is not wishful thinking; it is confidence in the God of hope. As you believe, He fills you, until hope overflows to others.","God of hope, fill me with joy and peace as I believe today. Amen."],
+["Let Your Light Shine","Matthew 5:16","Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.","Your good works are not the spotlight; they are the window. People should see through your kindness straight to your Father in heaven.","Father, let my life point others to You today. Amen."]];
+var KEY="app-daily-devotional-v1";
+var offset=0;
+try{offset=parseInt(localStorage.getItem(KEY))||0;}catch(e){offset=0;}
+function dayIndex(off){
+  var d=new Date(); d.setDate(d.getDate()+off);
+  var start=new Date(d.getFullYear(),0,0);
+  var doy=Math.floor((d-start)/86400000);
+  return {idx:((doy%DEVS.length)+DEVS.length)%DEVS.length, date:d};
+}
+function render(){
+  var r=dayIndex(offset), dv=DEVS[r.idx];
+  document.getElementById("ddate").textContent=r.date.toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+  document.getElementById("dtitle").textContent=dv[0];
+  document.getElementById("dverse").innerHTML="<p style='font-style:italic'>&ldquo;"+dv[2]+"&rdquo;</p><p style='font-weight:bold;margin-top:6px;color:#8a6d1c'>"+dv[1]+" (KJV)</p>";
+  document.getElementById("dreflect").textContent=dv[3];
+  document.getElementById("dpray").textContent=dv[4];
+}
+document.getElementById("dprev").addEventListener("click",function(){offset--;try{localStorage.setItem(KEY,offset);}catch(e){}render();});
+document.getElementById("dnext").addEventListener("click",function(){offset++;try{localStorage.setItem(KEY,offset);}catch(e){}render();});
+document.getElementById("dtoday").addEventListener("click",function(){offset=0;try{localStorage.setItem(KEY,offset);}catch(e){}render();});
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hope After Miscarriage | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Tender Scriptures for grieving parents. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .verse{background:#f7f1de;border-left:4px solid #c9a227;padding:14px 16px;margin:12px 0;font-style:italic}
+.vcard{background:#fff;border:1px solid #e5d9b8;border-radius:10px;padding:18px;margin-bottom:10px}
+#letter{background:#fffdf7;border:2px solid #c9a227;border-radius:10px;padding:20px;margin-top:16px;display:none}
+#candle{text-align:center;padding:24px;display:none}
+.flame{font-size:3rem;animation:flick 1.6s ease-in-out infinite}
+@keyframes flick{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.85}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Hope After Miscarriage</h1>
+<p class="intro">Tender Scriptures for grieving parents.</p>
+<div class="appcard">
+<p style="color:#6b6250">Your baby mattered. Your grief matters. God holds you both with infinite tenderness.</p>
+<div id="verses"></div>
+<p style="text-align:center;margin:18px 0"><button class="btn ghost" id="candlebtn" type="button">Light a candle of remembrance</button></p>
+<div id="candle"><div class="flame">🕯️</div><p style="margin-top:10px;color:#6b6250"><em>\u201CI shall go to him, but he shall not return to me.\u201D \u2014 2 Samuel 12:23</em></p><p style="margin-top:6px">Held in love. Remembered always.</p></div>
+<h2 style="font-family:Georgia,serif;margin:20px 0 8px">A love letter</h2>
+<p style="color:#6b6250">Write to your baby \u2014 what you want them to know, what you feel. Private, saved on your device.</p>
+<p><button class="btn" id="openletter" type="button">Write my letter</button></p>
+<div id="letter"><textarea id="ltext" rows="7" placeholder="My precious little one..."></textarea>
+<p><button class="btn" id="lsave" type="button">Save my letter</button> <span id="lsaved" style="color:#2e7d32;display:none">\u2713 Saved</span></p></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-hope-after-miscarriage-v1';
+var V=[
+{v:"2 Samuel 12:23",vt:"I shall go to him, but he shall not return to me.",n:"David's confident hope: you will see your child again."},
+{v:"Psalm 139:13",vt:"For thou hast possessed my reins: thou hast covered me in my mother's womb.",n:"God knew and formed your baby \u2014 every life is His handiwork."},
+{v:"Psalm 34:18",vt:"The LORD is nigh unto them that are of a broken heart.",n:"He is close \u2014 especially now."},
+{v:"Matthew 19:14",vt:"Suffer little children, and forbid them not, to come unto me: for of such is the kingdom of heaven.",n:"Jesus' heart for little ones is unmistakable."},
+{v:"Revelation 21:4",vt:"And God shall wipe away all tears from their eyes.",n:"One day, every tear \u2014 including these \u2014 will be wiped away."}
+];
+var box=document.getElementById('verses');
+V.forEach(function(x){
+var d=document.createElement('div');d.className='vcard';
+d.innerHTML='<div class="verse" style="margin:0 0 8px">\u201C'+x.vt+'\u201D<br><strong>\u2014 '+x.v+'</strong> (KJV)</div><p style="color:#6b6250;font-size:.95rem">'+x.n+'</p>';
+box.appendChild(d);
+});
+document.getElementById('candlebtn').addEventListener('click',function(){
+var c=document.getElementById('candle');c.style.display=c.style.display==='block'?'none':'block';
+});
+document.getElementById('openletter').addEventListener('click',function(){
+var l=document.getElementById('letter');l.style.display=l.style.display==='block'?'none':'block';
+});
+var ta=document.getElementById('ltext');
+try{ta.value=localStorage.getItem(KEY)||"";}catch(e){}
+document.getElementById('lsave').addEventListener('click',function(){
+try{localStorage.setItem(KEY,ta.value);}catch(e){}
+var s=document.getElementById('lsaved');s.style.display='inline';setTimeout(function(){s.style.display='none';},2000);
+});
+})();
+</script>
+</body>
+</html>

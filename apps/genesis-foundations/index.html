@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genesis Foundations | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Creation, fall, and promise in Genesis 1–11. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .chgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px;margin-bottom:18px}
+.chbtn{background:#fffdf7;border:2px solid #c9a227;border-radius:8px;padding:12px 4px;cursor:pointer;font-weight:bold;min-height:48px;color:#141210}
+.chbtn.active{background:#c9a227}
+.q{background:#f7f1de;border-radius:8px;padding:12px 16px;margin-top:12px}
+.verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+.pbar{height:12px;background:#e9e0c8;border-radius:6px;overflow:hidden;margin:10px 0}
+.pbar>div{height:100%;background:#c9a227;width:0%}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Genesis Foundations</h1>
+<p class="intro">Creation, fall, and promise in Genesis 1–11.</p>
+<div class="appcard">
+<div class="verse">“In the beginning God created the heaven and the earth.”<br><strong>— Genesis 1:1</strong> (KJV)</div>
+<div class="chgrid" id="chgrid"></div>
+<div id="chdetail"><p style="color:#6b6250">Choose a chapter to study it.</p></div>
+<div class="pbar"><div id="pfill"></div></div>
+<p id="ptext" style="font-size:.95rem;color:#6b6250"></p>
+<p><button class="btn ghost" id="reset" type="button">Reset progress</button></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-genesis-foundations-v1';
+var CH=[
+{n:1,t:"Creation",s:"In six days God creates light, sky, land, plants, sun and moon, sea creatures, birds, animals, and finally mankind in His own image. He calls it all good.",why:"Everything begins with God. You are made in His image \u2014 that is the foundation of your worth.",q:"What does being made 'in the image of God' mean for how you see yourself and others?"},
+{n:2,t:"The Garden",s:"God forms man from the dust, breathes life into him, plants the Garden of Eden, and creates woman from Adam's rib. Marriage is instituted: the two become one flesh.",why:"God designed rest, work, and marriage before sin ever entered the world.",q:"God gave Adam meaningful work before the fall. How do you view your daily work?"},
+{n:3,t:"The Fall",s:"The serpent tempts Eve; Adam and Eve eat the forbidden fruit. Sin, shame, blame, and death enter the world \u2014 but God promises a coming offspring who will crush the serpent.",why:"This chapter explains why the world is broken \u2014 and points to the first promise of Jesus.",q:"Where do you see the pattern of temptation, shame, and blame in your own life?"},
+{n:4,t:"Cain and Abel",s:"Cain murders his brother Abel out of jealousy. Sin spreads quickly, yet God marks Cain with mercy and gives Adam and Eve another son, Seth.",why:"Sin always grows when left unchecked \u2014 but God's mercy keeps reaching.",q:"Is there a jealousy or anger you need to deal with before it grows?"},
+{n:5,t:"Adam to Noah",s:"The genealogy from Adam to Noah traces ten generations. Enoch 'walked with God: and he was not; for God took him' \u2014 a bright light in a darkening line.",why:"God remembers His people by name, generation after generation.",q:"What kind of spiritual legacy do you want to leave for the next generation?"},
+{n:6,t:"Wickedness and Noah",s:"The earth fills with violence and every imagination of man's heart is evil. But Noah finds grace in the eyes of the LORD, and God commands him to build the ark.",why:"Even in the darkest days, grace finds a way \u2014 Noah's story foreshadows rescue through judgment.",q:"What does it mean to 'find grace' in a corrupt generation?"},
+{n:7,t:"The Flood",s:"The waters rise and cover the earth. Everything outside the ark perishes; Noah, his family, and the animals are saved through the water.",why:"God judges sin seriously \u2014 and saves completely those who trust Him.",q:"The ark is a picture of Christ. How does that shape your view of salvation?"},
+{n:8,t:"Waters Recede",s:"God remembers Noah. The waters dry up, the dove finds no rest until land appears, and Noah leaves the ark and builds an altar to worship.",why:"God never forgets His own. Waiting on God ends in worship.",q:"What are you waiting on God for right now?"},
+{n:9,t:"God's Covenant",s:"God sets the rainbow in the cloud as the sign of His covenant: never again to destroy the earth with a flood. Human government and the nations begin.",why:"The rainbow is God's signed promise \u2014 grace after judgment.",q:"What promise of God do you need to remember like a rainbow today?"},
+{n:10,t:"Table of Nations",s:"The descendants of Shem, Ham, and Japheth spread out and fill the earth, forming the nations.",why:"Every nation on earth traces back to one family \u2014 all people share one blood and one Creator.",q:"How does our shared ancestry change the way you see people who are different from you?"},
+{n:11,t:"Babel and Abram",s:"At Babel, proud men build a tower to heaven; God confuses their language and scatters them. The chapter ends with the genealogy leading to Abram \u2014 the father of faith.",why:"Human pride scatters; God's promise gathers. The story pivots from judgment to the coming blessing.",q:"Where might pride be building a 'tower' in your life?"}
+];
+var read={};try{read=JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){read={};}
+var grid=document.getElementById('chgrid'),detail=document.getElementById('chdetail');
+function save(){localStorage.setItem(KEY,JSON.stringify(read));}
+function progress(){var n=Object.keys(read).length;document.getElementById('pfill').style.width=(n/11*100)+'%';document.getElementById('ptext').textContent=n+' of 11 chapters studied.';}
+function show(i){
+var c=CH[i];
+detail.innerHTML='<h2 style="font-family:Georgia,serif">Chapter '+c.n+': '+c.t+'</h2>'
++'<p style="margin-top:10px">'+c.s+'</p>'
++'<p style="margin-top:10px"><strong>Why it matters:</strong> '+c.why+'</p>'
++'<div class="q"><strong>Reflect:</strong> '+c.q+'</div>'
++'<p style="margin-top:14px"><label class="checkrow" style="border:none"><input type="checkbox" id="mkread" '+(read[c.n]?'checked':'')+'> <span>Mark chapter '+c.n+' as studied</span></label></p>';
+document.getElementById('mkread').addEventListener('change',function(e){
+if(e.target.checked){read[c.n]=true;}else{delete read[c.n];}
+save();progress();paint();
+});
+}
+function paint(){Array.prototype.forEach.call(grid.children,function(b,j){b.classList.toggle('active',!!read[CH[j].n]);});}
+CH.forEach(function(c,i){var b=document.createElement('button');b.className='chbtn';b.type='button';b.textContent=c.n;b.title='Chapter '+c.n+': '+c.t;b.addEventListener('click',function(){show(i);});grid.appendChild(b);});
+document.getElementById('reset').addEventListener('click',function(){read={};save();progress();paint();detail.innerHTML='<p style="color:#6b6250">Choose a chapter to study it.</p>';});
+progress();paint();
+})();
+</script>
+</body>
+</html>

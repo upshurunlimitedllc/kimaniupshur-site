@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Armor of God for Kids | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="The Ephesians 6 armor, sized for children. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Armor of God for Kids</h1>
+<p class="intro">The Ephesians 6 armor, sized for children.</p>
+<div class="appcard">
+
+<p style="color:#6b6250;margin-bottom:12px">"Put on the whole armour of God, that ye may be able to stand against the wiles of the devil." — Ephesians 6:11 (KJV)</p>
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Tap Each Piece to Suit Up!</h2>
+<div id="armorGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px"></div>
+<button class="btn" id="suitUp">Suit Up! (Select All)</button>
+<div id="armorDetail" style="margin-top:16px;background:#f7f1de;border-radius:8px;padding:18px;min-height:120px"><p style="color:#8a7a4a">Tap a piece of armor to learn what it means.</p></div>
+<hr style="border:none;border-top:1px solid #e5d9b8;margin:24px 0">
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Armor Quiz</h2>
+<button class="btn ghost" id="quizBtn">Quiz Me!</button>
+<div id="quizBox" style="margin-top:12px"></div>
+<p style="margin-top:12px">🛡️ Pieces suited up: <strong id="suitCount">0</strong> / 6</p>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-armor-of-god-for-kids-v1';
+let S={suited:{}};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const PIECES=[
+["🎽","Belt of Truth","God's truth holds everything together, like a belt holds up your pants. When you tell the truth, you are wearing it!","I will tell the truth today."],
+["🛡️","Breastplate of Righteousness","This protects your heart. Doing what is right guards your heart from wrong choices.","I will choose what is right."],
+["👟","Shoes of Peace","Shoes help you go places. These shoes carry the good news of Jesus and help you bring peace, not fights.","I will be a peacemaker."],
+["🛡","Shield of Faith","Faith is trusting God even when you can't see Him. Your shield blocks doubts and fears.","I trust God no matter what."],
+["⛑️","Helmet of Salvation","A helmet protects your head — your thoughts! Remembering Jesus saved you guards your mind.","Jesus saved me, and I belong to Him."],
+["⚔️","Sword of the Spirit","This sword is God's Word, the Bible. When Jesus was tempted, He answered with Scripture. You can too!","I will hide God's Word in my heart."]
+];
+const $=id=>document.getElementById(id);
+function render(){
+  $('armorGrid').innerHTML=PIECES.map((p,i)=>'<button data-i="'+i+'" style="border:2px solid '+(S.suited[i]?'#c9a227':'#e5d9b8')+';background:'+(S.suited[i]?'#f7f1de':'#fff')+';border-radius:10px;padding:18px;cursor:pointer;min-height:110px;font-size:1rem"><div style="font-size:2rem">'+p[0]+'</div><strong>'+p[1]+'</strong>'+(S.suited[i]?'<div style="color:#8a6d1c">✓ suited up</div>':'')+'</button>').join('');
+  document.querySelectorAll('#armorGrid button').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;S.suited[i]=!S.suited[i];save();render();showDetail(i);});
+  $('suitCount').textContent=Object.values(S.suited).filter(Boolean).length;
+}
+function showDetail(i){const p=PIECES[i];$('armorDetail').innerHTML='<h3 style="font-family:Georgia,serif">'+p[0]+' '+p[1]+'</h3><p style="margin:8px 0">'+p[2]+'</p><p style="font-style:italic;color:#8a6d1c">Say it: &ldquo;'+p[3]+'&rdquo;</p>';}
+$('suitUp').onclick=()=>{for(let i=0;i<6;i++)S.suited[i]=true;save();render();$('armorDetail').innerHTML='<h3 style="font-family:Georgia,serif">Fully suited up! 🎉</h3><p>You are ready to stand strong today. &ldquo;Wherefore take unto you the whole armour of God, that ye may be able to withstand in the evil day, and having done all, to stand.&rdquo; — Ephesians 6:13 (KJV)</p>';};
+$('quizBtn').onclick=()=>{
+  const i=Math.floor(Math.random()*PIECES.length);const correct=PIECES[i][1];
+  const opts=[correct];const others=PIECES.map(p=>p[1]).filter(n=>n!==correct);
+  while(opts.length<3){opts.push(others.splice(Math.floor(Math.random()*others.length),1)[0]);}
+  opts.sort(()=>Math.random()-.5);
+  $('quizBox').innerHTML='<p style="margin-bottom:8px"><strong>Which piece is this?</strong> '+PIECES[i][0]+' '+PIECES[i][2].split('.')[0]+'.</p>'+opts.map(o=>'<button class="btn ghost" data-o="'+o+'" style="margin:4px;min-height:48px">'+o+'</button>').join('');
+  document.querySelectorAll('#quizBox button').forEach(b=>b.onclick=()=>{$('quizBox').innerHTML=b.dataset.o===correct?'<p style="font-size:1.2rem">🎉 Correct! The '+correct+'!</p>':'<p>Not quite — it was the <strong>'+correct+'</strong>.</p>';});
+};
+render();
+
+</script>
+</body>
+</html>

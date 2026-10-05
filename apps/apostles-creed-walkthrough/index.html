@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apostles' Creed Walkthrough | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="The ancient confession of faith, line by line. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .line{border:1px solid #e5d9b8;border-radius:10px;margin-bottom:10px;background:#fff;overflow:hidden}
+.linehead{display:flex;gap:12px;align-items:center;width:100%;background:none;border:none;text-align:left;padding:14px 16px;cursor:pointer;font-size:1rem;color:#141210;min-height:56px}
+.linehead input{width:22px;height:22px;accent-color:#c9a227;flex-shrink:0}
+.linehead .lt{flex:1;font-family:Georgia,serif}
+.linebody{display:none;padding:0 16px 16px 50px;color:#444}
+.line.open .linebody{display:block}
+.verse{background:#f7f1de;border-left:4px solid #c9a227;padding:10px 14px;margin:10px 0;font-style:italic;font-size:.95rem}
+.pbar{height:12px;background:#e9e0c8;border-radius:6px;overflow:hidden;margin:14px 0 6px}
+.pbar>div{height:100%;background:#c9a227;width:0%}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Apostles' Creed Walkthrough</h1>
+<p class="intro">The ancient confession of faith, line by line.</p>
+<div class="appcard">
+<p style="color:#6b6250;margin-bottom:16px">Tap any line of the creed to see what it means. Check off each line as you learn it.</p>
+<div id="lines"></div>
+<div class="pbar"><div id="pfill"></div></div>
+<p id="ptext" style="font-size:.95rem;color:#6b6250"></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-apostles-creed-walkthrough-v1';
+var L=[
+{t:"I believe in God the Father Almighty, Maker of heaven and earth.",e:"We start with God Himself: one God, our Father, all-powerful, the Creator of everything that exists.",v:"Genesis 1:1",vt:"In the beginning God created the heaven and the earth."},
+{t:"And in Jesus Christ, His only Son, our Lord;",e:"Jesus is not merely a teacher or prophet. He is God's only Son and our Lord \u2014 fully God and fully man.",v:"John 1:1",vt:"In the beginning was the Word, and the Word was with God, and the Word was God."},
+{t:"who was conceived by the Holy Spirit, born of the Virgin Mary;",e:"Jesus entered history through a virgin birth: conceived by the Spirit, born of Mary. He is truly human, yet without sin.",v:"Luke 1:35",vt:"The Holy Ghost shall come upon thee, and the power of the Highest shall overshadow thee."},
+{t:"suffered under Pontius Pilate, was crucified, dead, and buried;",e:"This really happened, in real history, under a real Roman governor. Jesus truly suffered and truly died for our sins.",v:"Romans 5:8",vt:"But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."},
+{t:"He descended into hell; the third day He rose again from the dead;",e:"Jesus fully entered death \u2014 and conquered it. His resurrection on the third day proves He is who He claimed to be.",v:"1 Corinthians 15:4",vt:"And that he was buried, and that he rose again the third day according to the scriptures."},
+{t:"He ascended into heaven, and sitteth at the right hand of God the Father Almighty;",e:"The risen Jesus ascended to heaven, where He reigns and intercedes for us at the Father's right hand.",v:"Acts 1:11",vt:"This same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven."},
+{t:"from thence He shall come to judge the quick and the dead.",e:"Jesus will return to judge the living and the dead. History is heading somewhere \u2014 toward His righteous judgment.",v:"Revelation 22:12",vt:"And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be."},
+{t:"I believe in the Holy Spirit;",e:"The Holy Spirit is fully God \u2014 our Comforter, Teacher, and the power for holy living.",v:"John 14:26",vt:"But the Comforter, which is the Holy Ghost, whom the Father will send in my name, he shall teach you all things."},
+{t:"the holy catholic church; the communion of saints;",e:"'Catholic' here means universal: all true believers, in every place and time, united as one body with real fellowship.",v:"Ephesians 4:4",vt:"There is one body, and one Spirit, even as ye are called in one hope of your calling."},
+{t:"the forgiveness of sins;",e:"Through Jesus' death, every sin can be fully forgiven \u2014 past, present, and future.",v:"1 John 1:9",vt:"If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness."},
+{t:"the resurrection of the body;",e:"We believe in a real, bodily resurrection \u2014 just as Christ rose, so will His people.",v:"1 Corinthians 15:42",vt:"So also is the resurrection of the dead. It is sown in corruption; it is raised in incorruption."},
+{t:"and the life everlasting. Amen.",e:"The story ends in unending life with God. 'Amen' means: this is true, and I stand on it.",v:"John 3:16",vt:"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."}
+];
+var done={};try{done=JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){done={};}
+var box=document.getElementById('lines');
+function save(){localStorage.setItem(KEY,JSON.stringify(done));}
+function progress(){var n=Object.keys(done).length;document.getElementById('pfill').style.width=(n/L.length*100)+'%';document.getElementById('ptext').textContent=n+' of '+L.length+' lines learned.';}
+L.forEach(function(l,i){
+var d=document.createElement('div');d.className='line';
+d.innerHTML='<button type="button" class="linehead"><input type="checkbox" '+(done[i]?'checked':'')+' aria-label="Mark learned"><span class="lt">'+l.t+'</span><span>\u25BE</span></button>'
++'<div class="linebody"><p>'+l.e+'</p><div class="verse">\u201C'+l.vt+'\u201D<br><strong>\u2014 '+l.v+'</strong> (KJV)</div></div>';
+var head=d.querySelector('.linehead'),cb=d.querySelector('input');
+head.addEventListener('click',function(e){if(e.target!==cb){d.classList.toggle('open');}});
+cb.addEventListener('click',function(e){e.stopPropagation();});
+cb.addEventListener('change',function(){if(cb.checked){done[i]=true;}else{delete done[i];}save();progress();});
+box.appendChild(d);
+});
+progress();
+})();
+</script>
+</body>
+</html>

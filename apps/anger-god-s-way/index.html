@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anger, God's Way | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="What Scripture says when you're angry, with calming steps. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.agverse{font-family:Georgia,serif;font-style:italic;background:#f7f1de;border-radius:8px;padding:14px 16px;margin:10px 0}.coolbox{text-align:center;background:#f2ecdc;border-radius:12px;padding:24px;margin:16px 0}.cooltimer{font-family:Georgia,serif;font-size:3rem;color:#8a6d1c}</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Anger, God's Way</h1>
+<p class="intro">What Scripture says when you're angry, with calming steps.</p>
+<div class="appcard">
+<p>Anger itself isn’t always sin — but what we do with it matters. Start here:</p><div class="agverse">“Be ye angry, and sin not: let not the sun go down upon your wrath.”<br>— Ephesians 4:26 (KJV)</div><div class="agverse">“Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath.”<br>— James 1:19 (KJV)</div><div class="agverse">“A soft answer turneth away wrath: but grievous words stir up anger.”<br>— Proverbs 15:1 (KJV)</div><div class="coolbox"><h3 style="font-family:Georgia,serif">Cool-down minute</h3><p>Breathe slowly. With each breath, pray: “Lord, give me Your calm.”</p><div class="cooltimer" id="agTimer">1:00</div><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px"><button class="btn" id="agStart">Start calming</button><button class="btn ghost" id="agStop">Stop</button></div></div><h3 style="font-family:Georgia,serif;margin:14px 0 6px">God’s way through anger</h3><div id="agSteps"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem(k);return r?JSON.parse(r):null;}localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
+var K47="app-anger-god-s-way-v1";var AGS=["Pause before you speak — swift to hear, slow to speak.","Pray first: tell God exactly how you feel, honestly.","Ask what’s underneath: hurt, fear, exhaustion, or injustice?","Speak softly and specifically — attack the problem, not the person.","Resolve it quickly: don’t let the sun go down on it if you can help it.","Forgive and release — don’t rehearse the offense on repeat."];function renderAG(){var done=store(K47)||{};var html="";for(var i=0;i<AGS.length;i++){html+="<label class='checkrow'><input type='checkbox' data-i='"+i+"'"+(done[i]?" checked":"")+"><span>"+AGS[i]+"</span></label>";}document.getElementById("agSteps").innerHTML=html;var boxes=document.querySelectorAll("#agSteps input");for(var b=0;b<boxes.length;b++){boxes[b].addEventListener("change",function(){var s=store(K47)||{};var i=this.getAttribute("data-i");if(this.checked){s[i]=1;}else{delete s[i];}store(K47,s);});}}renderAG();var agInt=null;function agFmt(s){return Math.floor(s/60)+":"+("0"+(s%60)).slice(-2);}document.getElementById("agStart").addEventListener("click",function(){if(agInt)clearInterval(agInt);var left=60;document.getElementById("agTimer").textContent=agFmt(left);agInt=setInterval(function(){left--;if(left<0){clearInterval(agInt);document.getElementById("agTimer").textContent="At peace.";return;}document.getElementById("agTimer").textContent=agFmt(left);},1000);});document.getElementById("agStop").addEventListener("click",function(){if(agInt)clearInterval(agInt);document.getElementById("agTimer").textContent="1:00";});</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Scripture Start | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="5-minute morning routine: verse, reflection, prayer. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Morning Scripture Start</h1>
+<p class="intro">5-minute morning routine: verse, reflection, prayer.</p>
+<div class="appcard">
+<div style="text-align:center">
+<div id="mtime" style="font-size:3.5rem;font-family:Georgia,serif">5:00</div>
+<div style="background:#eee;border-radius:8px;height:12px;margin:10px 0 18px"><div id="mbar" style="background:#c9a227;height:12px;border-radius:8px;width:0%"></div></div>
+<div id="msteps" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px"></div>
+<div id="mcontent" style="background:#fff;border:1px solid #e3d5a8;border-radius:8px;padding:20px;text-align:left;min-height:180px"></div>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px">
+<button class="btn" id="mstart">Start My Morning</button>
+<button class="btn ghost" id="mreset">Reset</button>
+</div>
+</div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-morning-scripture-start-v1";
+var VERSES=[
+["Lamentations 3:22-23","It is of the LORD's mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness."],
+["Psalm 118:24","This is the day which the LORD hath made; we will rejoice and be glad in it."],
+["Psalm 5:3","My voice shalt thou hear in the morning, O LORD; in the morning will I direct my prayer unto thee, and will look up."],
+["Proverbs 3:5-6","Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."],
+["Isaiah 40:31","But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."],
+["Matthew 6:33","But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you."],
+["Psalm 143:8","Cause me to hear thy lovingkindness in the morning; for in thee do I trust."]];
+var STEPS=[
+["1. Read the Verse","Read the verse below slowly, twice. Let one word or phrase catch your attention."],
+["2. Reflect","Ask: What is God saying to me this morning? What do I need to surrender, trust, or obey today?"],
+["3. Pray","Turn the verse into a prayer. Commit your day, your work, and your worries to the Lord."]];
+var total=300,left=300,timer=null,audio=null;
+var dayIdx=Math.floor(Date.now()/86400000)%VERSES.length;
+function fmt(s){return Math.floor(s/60)+":"+String(s%60).padStart(2,"0");}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function chime(){try{audio=audio||new (window.AudioContext||window.webkitAudioContext)();
+  var o=audio.createOscillator(),g=audio.createGain();o.connect(g);g.connect(audio.destination);
+  o.frequency.value=587;o.type="sine";g.gain.setValueAtTime(0.001,audio.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.35,audio.currentTime+0.05);
+  g.gain.exponentialRampToValueAtTime(0.001,audio.currentTime+1.2);
+  o.start();o.stop(audio.currentTime+1.3);}catch(e){}}
+function stage(){
+  var el=total-left;
+  if(el<120)return 0; if(el<210)return 1; return 2;
+}
+function render(){
+  var st=stage(),v=VERSES[dayIdx];
+  document.getElementById("mtime").textContent=fmt(left);
+  document.getElementById("mbar").style.width=((total-left)/total*100)+"%";
+  var dots=document.getElementById("msteps");dots.innerHTML="";
+  STEPS.forEach(function(s,i){
+    var d=document.createElement("span");
+    d.textContent=s[0];
+    d.style.cssText="padding:10px 16px;border-radius:20px;border:2px solid #c9a227;font-size:.85rem;font-weight:bold;"+(i===st?"background:#c9a227;color:#141210;":"color:#8a6d1c;background:transparent;");
+    dots.appendChild(d);
+  });
+  var h="<h3 style='font-family:Georgia,serif;margin-bottom:8px'>"+STEPS[st][0]+"</h3><p style='color:#6b6250;margin-bottom:12px'>"+STEPS[st][1]+"</p>";
+  if(st===0)h+="<div style='border-left:4px solid #c9a227;padding:12px 14px;background:#faf7ef;border-radius:0 8px 8px 0'><p style='font-style:italic'>&ldquo;"+esc(v[1])+"&rdquo;</p><p style='font-weight:bold;margin-top:6px;color:#8a6d1c'>"+esc(v[0])+" (KJV)</p></div>";
+  if(st===2)h+="<p style='font-style:italic;color:#8a6d1c'>Example: “Father, Your mercies are new this morning. I trust You with [name your concern] today. Amen.”</p>";
+  document.getElementById("mcontent").innerHTML=h;
+}
+function tick(){left--;if(left<=0){clearInterval(timer);timer=null;chime();left=0;render();
+  try{var _n=parseInt(localStorage.getItem(KEY))||0;localStorage.setItem(KEY,_n+1);}catch(e){}
+  document.getElementById("mcontent").innerHTML="<h3 style='font-family:Georgia,serif'>Amen. Go with God.</h3><p>Your 5 minutes are complete. Carry today's verse with you.</p>";
+  document.getElementById("mstart").textContent="Start My Morning";return;}render();}
+document.getElementById("mstart").addEventListener("click",function(){
+  if(timer){clearInterval(timer);timer=null;this.textContent="Resume";return;}
+  if(left<=0)left=total;
+  chime();timer=setInterval(tick,1000);this.textContent="Pause";
+});
+document.getElementById("mreset").addEventListener("click",function(){
+  clearInterval(timer);timer=null;left=total;document.getElementById("mstart").textContent="Start My Morning";render();
+});
+(function(){try{var _n=parseInt(localStorage.getItem(KEY))||0;if(_n>0){var p=document.createElement("p");p.style.cssText="color:#8a6d1c;font-size:.9rem;margin-top:10px";p.textContent="Mornings completed: "+_n;document.getElementById("mreset").insertAdjacentElement("afterend",p);}}catch(e){}})();
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peaceful Mind Toolkit | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Taking every thought captive (2 Corinthians 10:5). Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+#capture{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:18px;margin-top:12px;display:none}
+.tlist{list-style:none;margin-top:14px}
+.tlist li{border:1px solid #e5d9b8;border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#fff}
+.tlist .tag{display:inline-block;background:#f7f1de;border:1px solid #c9a227;border-radius:20px;padding:2px 12px;font-size:.8rem;margin-right:8px}
+.tlist button{background:none;border:none;color:#a33;cursor:pointer;float:right;font-size:1.2rem;min-width:44px;min-height:44px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Peaceful Mind Toolkit</h1>
+<p class="intro">Taking every thought captive (2 Corinthians 10:5).</p>
+<div class="appcard">
+<div class="verse">\u201CCasting down imaginations, and every high thing that exalteth itself against the knowledge of God, and bringing into captivity every thought to the obedience of Christ.\u201D<br><strong>\u2014 2 Corinthians 10:5</strong> (KJV)</div>
+<p style="color:#6b6250">Write the troubling thought, name what kind it is, then take it captive.</p>
+<textarea id="thought" rows="3" placeholder="The thought looping in my mind is..."></textarea>
+<label for="cat" style="font-weight:bold">What kind of thought is it?</label>
+<select id="cat"><option>Worry</option><option>Fear</option><option>Lie about myself</option><option>Complaint</option><option>Temptation</option><option>Other</option></select>
+<p><button class="btn" id="capbtn" type="button">Take it captive</button></p>
+<div id="capture"></div>
+<ul class="tlist" id="tlist"></ul>
+<p id="count" style="color:#6b6250;margin-top:10px"></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-peaceful-mind-toolkit-v1';
+var REPLIES={
+"Worry":"\u201CBe careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.\u201D (Philippians 4:6)",
+"Fear":"\u201CFor God hath not given us the spirit of fear; but of power, and of love, and of a sound mind.\u201D (2 Timothy 1:7)",
+"Lie about myself":"\u201CThere is therefore now no condemnation to them which are in Christ Jesus.\u201D (Romans 8:1)",
+"Complaint":"\u201CIn every thing give thanks: for this is the will of God in Christ Jesus concerning you.\u201D (1 Thessalonians 5:18)",
+"Temptation":"\u201CThere hath no temptation taken you but such as is common to man: but God is faithful.\u201D (1 Corinthians 10:13)",
+"Other":"\u201CThou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.\u201D (Isaiah 26:3)"
+};
+var items=[];try{items=JSON.parse(localStorage.getItem(KEY)||"[]");}catch(e){items=[];}
+var list=document.getElementById('tlist'),cap=document.getElementById('capture');
+function save(){localStorage.setItem(KEY,JSON.stringify(items));}
+function render(){
+list.innerHTML='';
+items.forEach(function(t,i){
+var li=document.createElement('li');
+li.innerHTML='<button type="button" aria-label="Remove">\u00D7</button><span class="tag">'+t.cat+'</span><span>'+t.text+'</span><p style="font-size:.85rem;color:#6b6250;margin-top:6px">Captured '+t.when+'</p>';
+li.querySelector('button').addEventListener('click',function(){items.splice(i,1);save();render();});
+list.appendChild(li);
+});
+document.getElementById('count').textContent=items.length?('Thoughts taken captive: '+items.length):'';
+}
+document.getElementById('capbtn').addEventListener('click',function(){
+var th=document.getElementById('thought').value.trim();
+if(!th){alert('Write the thought first.');return;}
+var cat=document.getElementById('cat').value;
+cap.style.display='block';
+cap.innerHTML='<h3 style="font-family:Georgia,serif;margin-bottom:8px">Now run it through the filter</h3>'
++'<p>\u201CWhatsoever things are <strong>true</strong>, whatsoever things are <strong>honest</strong>, whatsoever things are <strong>just</strong>, whatsoever things are <strong>pure</strong>, whatsoever things are <strong>lovely</strong>... <strong>think on these things</strong>.\u201D (Philippians 4:8)</p>'
++'<p style="margin-top:10px">Is this thought true, noble, and from God? If not \u2014 release it and replace it:</p>'
++'<div class="verse">'+REPLIES[cat]+'</div>'
++'<p><button class="btn" id="keepbtn" type="button">\u2713 Captured \u2014 I release this thought</button></p>';
+document.getElementById('keepbtn').addEventListener('click',function(){
+items.unshift({text:th.replace(/</g,'&lt;'),cat:cat,when:new Date().toLocaleDateString()});
+save();render();cap.style.display='none';
+document.getElementById('thought').value='';
+});
+});
+render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fear to Faith | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="A verse toolkit for fearful moments. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:18px}
+.fbtn{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:14px 8px;cursor:pointer;min-height:56px;color:#141210;font-size:1rem}
+.fbtn.active{background:#c9a227;font-weight:bold}
+.verse{background:#f7f1de;border-left:4px solid #c9a227;padding:14px 16px;margin:12px 0;font-style:italic;font-size:1.05rem}
+#prayerbox{background:#fff;border:1px solid #e5d9b8;border-radius:10px;padding:16px;margin-top:12px;display:none}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Fear to Faith</h1>
+<p class="intro">A verse toolkit for fearful moments.</p>
+<div class="appcard">
+<p style="color:#6b6250;margin-bottom:14px">What are you afraid of right now? Tap it \u2014 then turn the verse into a prayer.</p>
+<div class="fgrid" id="fgrid"></div>
+<div id="vbox"></div>
+<div id="prayerbox"></div>
+<p id="count" style="margin-top:14px;color:#6b6250"></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-fear-to-faith-v1';
+var F=[
+{f:"The unknown future",v:"Jeremiah 29:11",vt:"For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",pr:"Lord, my future feels uncertain, but You say Your thoughts toward me are peace. I trust Your plans over my fears."},
+{f:"Being alone",v:"Hebrews 13:5",vt:"I will never leave thee, nor forsake thee.",pr:"Father, I feel alone, but You promise You will never leave me. Be near to me right now."},
+{f:"Failure",v:"Philippians 4:13",vt:"I can do all things through Christ which strengtheneth me.",pr:"Jesus, I am afraid of failing, but Your strength is in me. I will step forward trusting You."},
+{f:"Overwhelm",v:"1 Peter 5:7",vt:"Casting all your care upon him; for he careth for you.",pr:"Lord, I am carrying too much. I cast every care on You now, because You care for me."},
+{f:"Darkness and death",v:"Psalm 23:4",vt:"Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.",pr:"Shepherd, even in this dark valley I will not fear, because You are with me. Comfort me."},
+{f:"Panic and dread",v:"Isaiah 41:10",vt:"Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.",pr:"God, my heart is racing, but You say: fear not, for You are with me. Strengthen me and hold me up."},
+{f:"A troubled mind",v:"2 Timothy 1:7",vt:"For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind.",pr:"Father, fear is not from You. Fill me instead with Your power, love, and a sound mind."},
+{f:"Worry",v:"Philippians 4:6",vt:"Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.",pr:"Lord, I hand You this worry with thanksgiving. Replace my anxiety with Your peace."}
+];
+var count=0;try{count=parseInt(localStorage.getItem(KEY)||"0",10)||0;}catch(e){}
+var grid=document.getElementById('fgrid'),vbox=document.getElementById('vbox'),pbox=document.getElementById('prayerbox');
+function paintCount(){document.getElementById('count').textContent=count>0?('You have prayed through fear '+count+(count===1?' time.':' times.')):'';}
+F.forEach(function(item){
+var b=document.createElement('button');b.className='fbtn';b.type='button';b.textContent=item.f;
+b.addEventListener('click',function(){
+Array.prototype.forEach.call(grid.children,function(x){x.classList.remove('active');});
+b.classList.add('active');
+vbox.innerHTML='<div class="verse">\u201C'+item.vt+'\u201D<br><strong>\u2014 '+item.v+'</strong> (KJV)</div><p><button class="btn" id="mkprayer" type="button">Make it my prayer</button></p>';
+pbox.style.display='none';
+document.getElementById('mkprayer').addEventListener('click',function(){
+pbox.style.display='block';
+pbox.innerHTML='<h3 style="font-family:Georgia,serif;margin-bottom:8px">Pray it back</h3><p>'+item.pr+'</p><p style="margin-top:12px"><button class="btn ghost" id="prayed" type="button">\u2713 I prayed this</button></p>';
+document.getElementById('prayed').addEventListener('click',function(){
+count++;try{localStorage.setItem(KEY,String(count));}catch(e){}
+paintCount();pbox.innerHTML='<p style="color:#2e7d32;font-weight:bold">\u2713 Amen. \u201CThou wilt keep him in perfect peace, whose mind is stayed on thee.\u201D (Isaiah 26:3)</p>';
+});
+});
+});
+grid.appendChild(b);
+});
+paintCount();
+})();
+</script>
+</body>
+</html>

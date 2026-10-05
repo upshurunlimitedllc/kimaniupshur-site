@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bible in a Year Checklist | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Full 365-day reading checklist tracker. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Bible in a Year Checklist</h1>
+<p class="intro">Full 365-day reading checklist tracker.</p>
+<div class="appcard">
+<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px">
+<strong id="byp">0 / 365 days complete</strong>
+<div style="flex:1;min-width:160px;background:#eee;border-radius:8px;height:14px"><div id="bybar" style="background:#c9a227;height:14px;border-radius:8px;width:0%"></div></div>
+<button class="btn ghost" id="byreset" style="padding:8px 16px;min-height:40px;font-size:.85rem">Reset</button>
+</div>
+<div id="bymonths" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"></div>
+<div id="bydays" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-bible-in-a-year-checklist-v1";
+var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+var MDAYS=[31,28,31,30,31,30,31,31,30,31,30,31];
+var cur=0;
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function render(){
+  var done=load();
+  document.getElementById("byp").textContent=done.length+" / 365 days complete";
+  document.getElementById("bybar").style.width=(done.length/365*100)+"%";
+  var mb=document.getElementById("bymonths");mb.innerHTML="";
+  MONTHS.forEach(function(m,i){
+    var b=document.createElement("button");b.className="btn"+(i===cur?"":" ghost");
+    b.style.cssText="padding:8px 14px;min-height:44px;font-size:.85rem";
+    b.textContent=m;
+    b.addEventListener("click",function(){cur=i;render();});
+    mb.appendChild(b);
+  });
+  var start=0;for(var i=0;i<cur;i++)start+=MDAYS[i];
+  var box=document.getElementById("bydays");box.innerHTML="";
+  for(var d=1;d<=MDAYS[cur];d++){
+    (function(day){
+      var lab=document.createElement("label");lab.className="checkrow";lab.style.border="1px solid #e3d5a8";lab.style.borderRadius="8px";lab.style.padding="8px 10px";
+      var cb=document.createElement("input");cb.type="checkbox";cb.checked=done.indexOf(day)>=0;
+      cb.addEventListener("change",function(){
+        var dd=load(),ix=dd.indexOf(day);
+        if(cb.checked&&ix<0)dd.push(day);if(!cb.checked&&ix>=0)dd.splice(ix,1);
+        save(dd);render();
+      });
+      var sp=document.createElement("span");sp.textContent="Day "+day;
+      if(cb.checked)sp.style.textDecoration="line-through";
+      lab.appendChild(cb);lab.appendChild(sp);box.appendChild(lab);
+    })(start+d);
+  }
+}
+document.getElementById("byreset").addEventListener("click",function(){
+  if(confirm("Reset all 365 days?")){save([]);render();}
+});
+render();
+</script>
+</body>
+</html>

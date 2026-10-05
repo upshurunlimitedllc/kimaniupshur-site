@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scripture Memory Sprint | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Memorize one whole passage in seven days. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Scripture Memory Sprint</h1>
+<p class="intro">Memorize one whole passage in seven days.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">1. Choose Your Passage</h2>
+<div id="pPicker" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"></div>
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">2. Practice</h2>
+<div style="background:#f7f1de;border-radius:8px;padding:20px;margin-bottom:12px">
+<div id="pRef" style="font-weight:bold;color:#8a6d1c;margin-bottom:8px"></div>
+<div id="pText" style="font-size:1.1rem;font-family:Georgia,serif;line-height:1.8"></div>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+<button class="btn ghost" id="showFull">Show Full Text</button>
+<button class="btn ghost" id="showFirst">First Letters Only</button>
+<button class="btn ghost" id="showHide">Hide Every Other Word</button>
+</div>
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">3. Seven-Day Plan</h2>
+<div id="dayPlan"></div>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-scripture-memory-sprint-v1';
+let S={pi:0,done:{}};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const PASSAGES=[
+["Psalm 23:1-6","The LORD is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake. Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me. Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over. Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the LORD for ever."],
+["Proverbs 3:5-6","Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."],
+["Philippians 4:4-7","Rejoice in the Lord alway: and again I say, Rejoice. Let your moderation be known unto all men. The Lord is at hand. Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God. And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus."]
+];
+const DAYSPLAN=[
+"Day 1 — Read: Read the passage aloud 5 times, slowly.",
+"Day 2 — First letters: Use the First Letters Only view and recite 3 times.",
+"Day 3 — Hide words: Use the hidden-words view and fill in the blanks.",
+"Day 4 — Recite: Say it from memory twice. Peek only if stuck.",
+"Day 5 — Write it: Write the passage out by hand once.",
+"Day 6 — Teach it: Say it to someone else (or a mirror).",
+"Day 7 — Test: Recite the whole passage from memory. Celebrate!"
+];
+const $=id=>document.getElementById(id);
+function text(){return PASSAGES[S.pi][1];}
+function renderPicker(){
+  $('pPicker').innerHTML=PASSAGES.map((p,i)=>'<button class="btn'+(i===S.pi?'':' ghost')+'" data-i="'+i+'" style="min-height:48px">'+p[0]+'</button>').join('');
+  document.querySelectorAll('#pPicker button').forEach(b=>b.onclick=()=>{S.pi=+b.dataset.i;save();renderPicker();showFull();});
+}
+function renderDays(){
+  $('dayPlan').innerHTML=DAYSPLAN.map((d,i)=>'<label class="checkrow"><input type="checkbox" data-i="'+i+'" '+(S.done[S.pi+'-'+i]?'checked':'')+'><span>'+d+'</span></label>').join('');
+  document.querySelectorAll('#dayPlan input').forEach(c=>c.onchange=()=>{S.done[S.pi+'-'+c.dataset.i]=c.checked;save();});
+}
+function showFull(){$('pRef').textContent=PASSAGES[S.pi][0]+' (KJV)';$('pText').textContent=text();}
+$('showFull').onclick=showFull;
+$('showFirst').onclick=()=>{$('pRef').textContent=PASSAGES[S.pi][0]+' (KJV)';$('pText').innerHTML=text().split(' ').map(w=>'<span style="cursor:pointer" title="'+w.replace(/"/g,'&quot;')+'">'+w[0]+'_ </span>').join('');document.querySelectorAll('#pText span').forEach(sp=>sp.onclick=()=>{sp.textContent=sp.title+' ';});};
+$('showHide').onclick=()=>{$('pRef').textContent=PASSAGES[S.pi][0]+' (KJV)';$('pText').innerHTML=text().split(' ').map((w,i)=>i%2?'<span style="background:#c9a227;border-radius:4px;padding:0 8px">&nbsp;&nbsp;&nbsp;</span>':w).join(' ');};
+renderPicker();renderDays();showFull();
+
+</script>
+</body>
+</html>

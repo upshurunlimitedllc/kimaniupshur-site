@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journaling with God | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Guided faith-journaling prompts for every season. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Journaling with God</h1>
+<p class="intro">Guided faith-journaling prompts for every season.</p>
+<div class="appcard">
+
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Today's Prompt</h2>
+<div id="promptBox" style="background:#f7f1de;border-radius:8px;padding:18px;margin-bottom:12px;min-height:80px"></div>
+<button class="btn ghost" id="newPrompt">New Prompt</button>
+<textarea id="entry" rows="6" placeholder="Write honestly — God can handle it..." aria-label="Journal entry" style="margin-top:12px"></textarea>
+<button class="btn" id="saveEntry">Save Entry</button>
+<hr style="border:none;border-top:1px solid #e5d9b8;margin:24px 0">
+<h2 style="font-family:Georgia,serif;margin-bottom:12px">Past Entries (<span id="eCount">0</span>)</h2>
+<div id="entries"></div>
+
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+
+const KEY='app-journaling-with-god-v1';
+let S={entries:[]};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>localStorage.setItem(KEY,JSON.stringify(S));
+const PROMPTS=[
+"Gratitude: List three gifts from God you noticed this week. Thank Him for each one.",
+"Honesty: What is weighing on your heart today? Write it out as a prayer.",
+"Scripture: Read Psalm 23:1 slowly. Which phrase stands out, and why?",
+"Decisions: What decision are you facing? Ask God for wisdom (James 1:5) and write what you sense.",
+"Joy: When did you last feel deep joy? What was God doing in that moment?",
+"Grief: Bring your sadness to God honestly. He collects your tears (Psalm 56:8).",
+"Growth: Where do you want to grow spiritually this month? Name one small step.",
+"People: Who needs your prayers or encouragement today? Write their names.",
+"Remembering: Write about a time God clearly answered prayer. Let it build your faith.",
+"Confession: Is there anything to make right with God or others? Write it, then receive His forgiveness.",
+"Hope: What are you hoping for? Anchor it in Jeremiah 29:11.",
+"Listening: Sit quietly for two minutes, then write anything you sense God impressing on your heart."
+];
+const $=id=>document.getElementById(id);
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function newPrompt(){$('promptBox').innerHTML='<p style="font-size:1.05rem">'+PROMPTS[Math.floor(Math.random()*PROMPTS.length)]+'</p>';}
+$('newPrompt').onclick=newPrompt;newPrompt();
+function render(){
+  $('eCount').textContent=S.entries.length;
+  $('entries').innerHTML=S.entries.length?S.entries.slice().reverse().map((e,i)=>'<div style="background:#f7f1de;border-radius:8px;padding:14px;margin-bottom:10px"><p style="font-size:.85rem;color:#8a7a4a">'+escapeHtml(e.date)+(e.prompt?' — '+escapeHtml(e.prompt.slice(0,40))+'…':'')+'</p><p style="white-space:pre-wrap">'+escapeHtml(e.text)+'</p><button class="btn ghost" data-i="'+(S.entries.length-1-i)+'" style="padding:6px 14px;min-height:40px;margin-top:8px">Delete</button></div>').join(''):'<p style="color:#8a7a4a">No entries yet. Your journal is waiting.</p>';
+  document.querySelectorAll('#entries button').forEach(b=>b.onclick=()=>{if(confirm('Delete this entry?')){S.entries.splice(+b.dataset.i,1);save();render();}});
+}
+$('saveEntry').onclick=()=>{const v=$('entry').value.trim();if(!v){return;}S.entries.push({date:new Date().toLocaleString(),text:v,prompt:$('promptBox').textContent});$('entry').value='';save();render();newPrompt();};
+render();
+
+</script>
+</body>
+</html>

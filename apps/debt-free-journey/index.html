@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debt-Free Journey | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Payoff tracker with Scriptures on stewardship. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+.verse{background:#f7f0dc;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-style:italic}
+.verse .ref{display:block;margin-top:8px;font-style:normal;font-weight:bold;color:#8a6d1c;font-size:.9rem}
+.bar{background:#ece4cc;border-radius:8px;height:16px;overflow:hidden;margin:8px 0}
+.bar>i{display:block;height:100%;background:#c9a227;border-radius:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+.tcard{background:#fff;border:1px solid #e7dcae;border-radius:10px;padding:16px;margin:10px 0}
+.tcard h3{font-family:Georgia,serif;margin-bottom:6px;color:#141210}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.muted{color:#6b6250;font-size:.92rem}
+.pill{display:inline-block;background:#f3ead0;border:1px solid #c9a227;border-radius:20px;padding:6px 14px;margin:4px 6px 4px 0;font-size:.9rem}
+.acc{border:1px solid #e7dcae;border-radius:10px;margin:10px 0;overflow:hidden;background:#fff}
+.acc>button{width:100%;text-align:left;background:#fbf6e9;border:none;padding:16px;font-size:1rem;font-weight:bold;cursor:pointer;color:#141210;min-height:52px}
+.acc>button:hover{background:#f5ecd4}
+.acc .panel{display:none;padding:4px 16px 16px;border-top:1px solid #eee}
+.acc.open .panel{display:block}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.tabs button{background:#f3ead0;border:2px solid #c9a227;border-radius:20px;padding:10px 18px;cursor:pointer;font-size:.95rem;min-height:44px;color:#222}
+.tabs button.on{background:#c9a227;color:#141210;font-weight:bold}
+.big-verse{font-family:Georgia,serif;font-size:1.3rem;line-height:1.7}
+.hidden{display:none!important}
+.stepdots{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.stepdots span{width:36px;height:36px;border-radius:50%;background:#ece4cc;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:.9rem;cursor:pointer}
+.stepdots span.done{background:#c9a227;color:#141210}
+.stepdots span.cur{outline:3px solid #c9a227}
+label.checkrow{cursor:pointer}
+h3.sec{font-family:Georgia,serif;margin:26px 0 6px;color:#141210;font-size:1.2rem}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Debt-Free Journey</h1>
+<p class="intro">Payoff tracker with Scriptures on stewardship.</p>
+<div class="appcard">
+<div class="verse"><span id="vtext"></span><span class="ref" id="vref"></span></div>
+<div style="text-align:center"><button class="btn ghost" id="newverse">Another Verse</button></div>
+<h3 class="sec">Add a Debt</h3>
+<label class="muted">Debt name</label>
+<input type="text" id="dname" placeholder="e.g. Credit card">
+<div class="grid2">
+<div><label class="muted">Balance ($)</label><input type="number" id="dbal" min="0" step="0.01" placeholder="2500"></div>
+<div><label class="muted">APR (%)</label><input type="number" id="dapr" min="0" step="0.1" placeholder="19.9"></div>
+</div>
+<button class="btn" id="add">Add Debt</button>
+<h3 class="sec">Payoff Plan (highest APR first)</h3>
+<div id="list"><p class="muted">No debts added yet. Add your first one above.</p></div>
+<div id="totals" style="margin-top:16px"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+const K="app-debt-free-journey-v1";
+const VERSES=[
+["Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.","Romans 13:8"],
+["The rich ruleth over the poor, and the borrower is servant to the lender.","Proverbs 22:7"],
+["The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.","Psalm 37:21"]];
+function $(id){return document.getElementById(id)}
+function load(){try{return JSON.parse(localStorage.getItem(K))||{debts:[],paid:0}}catch(e){return{debts:[],paid:0}}}
+function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
+let st=load();
+function money(n){return "$"+n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function render(){
+ const box=$("list");
+ if(!st.debts.length){box.innerHTML='<p class="muted">No debts added yet. Add your first one above.</p>'}
+ else{
+  const order=st.debts.slice().sort(function(a,b){return b.apr-a.apr});
+  box.innerHTML=order.map(function(d){
+   const i=st.debts.indexOf(d);
+   return '<div class="tcard"><h3>#'+(order.indexOf(d)+1)+' '+esc(d.name)+'</h3>'+
+   '<div class="row" style="margin:4px 0"><span>Balance: <strong>'+money(d.bal)+'</strong></span><span class="muted">APR '+d.apr+'%</span></div>'+
+   '<div class="bar"><i style="width:'+(d.orig>0?Math.max(0,Math.min(100,(1-d.bal/d.orig)*100)):0)+'%"></i></div>'+
+   '<div class="row"><input type="number" id="pay'+i+'" min="0" step="0.01" placeholder="Payment $" style="max-width:180px;margin:0">'+
+   '<button class="btn" data-pay="'+i+'" style="padding:10px 18px;min-height:44px">Record Payment</button>'+
+   '<button class="btn ghost" data-del="'+i+'" style="padding:10px 18px;min-height:44px">Remove</button></div></div>';
+  }).join("");
+ }
+ const total=st.debts.reduce(function(s,d){return s+d.bal},0);
+ const orig=st.debts.reduce(function(s,d){return s+(d.orig||d.bal)},0);
+ const pct=orig>0?Math.round(st.paid/orig*100):0;
+ $("totals").innerHTML='<div class="tcard"><h3>Your Progress</h3>'+
+  '<div class="row" style="margin:4px 0"><span>Total remaining: <strong>'+money(total)+'</strong></span><span>Total paid off: <strong>'+money(st.paid)+'</strong></span></div>'+
+  '<div class="bar"><i style="width:'+pct+'%"></i></div><p class="muted">'+pct+'% of original debt paid. Keep going - steady plodding wins.</p></div>';
+ box.querySelectorAll("[data-pay]").forEach(function(b){b.addEventListener("click",function(){
+  const i=parseInt(b.getAttribute("data-pay"),10);
+  const amt=parseFloat($("pay"+i).value)||0;
+  if(amt<=0)return;
+  st.debts[i].bal=Math.max(0,st.debts[i].bal-amt);st.paid+=amt;save();render();})});
+ box.querySelectorAll("[data-del]").forEach(function(b){b.addEventListener("click",function(){
+  st.debts.splice(parseInt(b.getAttribute("data-del"),10),1);save();render();})});
+}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+$("add").addEventListener("click",function(){
+ const n=$("dname").value.trim(),b=parseFloat($("dbal").value)||0,a=parseFloat($("dapr").value)||0;
+ if(!n||b<=0){alert("Enter a debt name and a balance greater than zero.");return}
+ st.debts.push({name:n,bal:b,orig:b,apr:a});
+ $("dname").value="";$("dbal").value="";$("dapr").value="";save();render();});
+function showVerse(i){$("vtext").textContent="\u201C"+VERSES[i][0]+"\u201D";$("vref").textContent=VERSES[i][1]+" (KJV)"}
+$("newverse").addEventListener("click",function(){showVerse(Math.floor(Math.random()*VERSES.length))});
+showVerse(0);render();
+</script>
+</body>
+</html>

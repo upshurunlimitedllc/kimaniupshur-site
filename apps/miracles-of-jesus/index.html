@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miracles of Jesus | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Every miracle, where it happened, what it reveals. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.mcat{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.mcat .btn{padding:10px 16px;min-height:44px;font-size:.88rem}.mir{border:1px solid #e3d5a8;border-radius:8px;margin:10px 0}.mir-head{padding:13px;cursor:pointer;background:#fff;border-radius:8px}.mir-head:hover{background:#faf3df}.mir-head h3{font-family:Georgia,serif;font-size:1.02rem}.mir-meta{font-size:.83rem;color:#8a6d1c}.mir-body{display:none;padding:0 13px 13px}.mir.open .mir-body{display:block}.tag{display:inline-block;background:#f0e6c8;color:#8a6d1c;font-size:.75rem;padding:2px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Miracles of Jesus</h1>
+<p class="intro">Every miracle, where it happened, what it reveals.</p>
+<div class="appcard">
+<div class="mcat" role="group" aria-label="Filter by type"><button class="btn" data-cat="all">All</button><button class="btn ghost" data-cat="Healing">Healing</button><button class="btn ghost" data-cat="Nature">Nature</button><button class="btn ghost" data-cat="Provision">Provision</button><button class="btn ghost" data-cat="Deliverance">Deliverance</button><button class="btn ghost" data-cat="Resurrection">Resurrection</button></div><p id="mirCount" style="color:#6b6250;font-size:.9rem"></p><div id="mirList"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem(k);return r?JSON.parse(r):null;}localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
+var MIR=[["Water into wine","Cana","Provision","Jesus’ first sign: He brings joy and abundance, revealing His glory to His disciples."],["Healing the nobleman’s son","Cana (son in Capernaum)","Healing","Healed by a word from miles away — faith doesn’t need Jesus physically present."],["Miraculous catch of fish","Sea of Galilee","Provision","Obedience to His word fills empty nets — and calls fishermen to follow Him."],["Calming the storm","Sea of Galilee","Nature","‘Even the wind and the sea obey him’ — He has authority over chaos and fear."],["Walking on water","Sea of Galilee","Nature","He comes to His frightened disciples in the dark — ‘It is I; be not afraid.’"],["Feeding the 5,000","Near Bethsaida","Provision","Five loaves feed thousands with baskets left over — He is the Bread of Life."],["Feeding the 4,000","Decapolis region","Provision","His compassion feeds the crowd again — no need is too big or too repeated."],["Healing a leper","Galilee","Healing","He touches the untouchable — His compassion overcomes every barrier."],["Healing the paralytic","Capernaum","Healing","‘Thy sins be forgiven thee’ — He proves His authority to forgive by healing the body."],["Healing the centurion’s servant","Capernaum","Healing","Great faith is found in an outsider — Jesus marvels and the servant is healed."],["Raising the widow’s son","Nain","Resurrection","Moved with compassion for a grieving mother, He stops the funeral procession."],["Healing the bleeding woman","On the road in Galilee","Healing","Twelve years of suffering end with one touch of faith — ‘thy faith hath made thee whole.’"],["Raising Jairus’ daughter","Capernaum","Resurrection","To Him death is only sleep — ‘Talitha cumi’: little girl, arise."],["Healing two blind men","Galilee","Healing","‘According to your faith be it unto you’ — persistent faith opens blind eyes."],["Healing blind Bartimaeus","Jericho","Healing","He cries out louder when told to be quiet — bold, persistent faith is rewarded."],["Casting out Legion","The Gadarenes","Deliverance","No darkness is too deep — He sets the tormented man free and in his right mind."],["Freeing the demon-possessed boy","Near Caesarea Philippi","Deliverance","‘This kind’ yields to prayer-backed faith — all things are possible to him that believeth."],["Healing ten lepers","Border of Samaria and Galilee","Healing","Ten are cleansed, one returns to give thanks — gratitude completes the healing."],["Raising Lazarus","Bethany","Resurrection","‘I am the resurrection, and the life’ — even four days dead is not too late for Jesus."],["Healing Malchus’ ear","Gethsemane","Healing","Betrayed and arrested, He still heals — mercy flows even toward His enemies."],["The great catch (risen Lord)","Sea of Galilee","Provision","After the resurrection He fills their nets again — and restores Peter over breakfast."]];var K34="app-miracles-of-jesus-v1";var curCat=store(K34)||"all";function renderMir(){var html="";var n=0;for(var i=0;i<MIR.length;i++){var m=MIR[i];if(curCat!=="all"&&m[2]!==curCat)continue;n++;html+="<div class='mir'><div class='mir-head' onclick='this.parentNode.classList.toggle(\"open\")'><h3>"+m[0]+"<span class='tag'>"+m[2]+"</span></h3><div class='mir-meta'>"+m[1]+"</div></div><div class='mir-body'><p><strong>What it reveals:</strong> "+m[3]+"</p></div></div>";}document.getElementById("mirList").innerHTML=html;document.getElementById("mirCount").textContent="Showing "+n+" of "+MIR.length+" miracles";}var cbtns=document.querySelectorAll(".mcat .btn");for(var c=0;c<cbtns.length;c++){cbtns[c].addEventListener("click",function(){curCat=this.getAttribute("data-cat");for(var j=0;j<cbtns.length;j++){cbtns[j].className="btn ghost";}this.className="btn";store(K34,curCat);renderMir();});}for(var ic=0;ic<cbtns.length;ic++){cbtns[ic].className=(cbtns[ic].getAttribute("data-cat")===curCat?"btn":"btn ghost");}renderMir();</script>
+</body>
+</html>

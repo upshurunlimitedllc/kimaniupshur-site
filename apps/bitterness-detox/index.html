@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitterness Detox | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Uproot bitterness before it spreads (Hebrews 12:15). Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+.day{border:1px solid #e5d9b8;border-radius:10px;margin-bottom:10px;background:#fff;overflow:hidden}
+.dayhead{display:flex;gap:12px;align-items:center;width:100%;background:none;border:none;text-align:left;padding:14px 16px;cursor:pointer;font-size:1rem;color:#141210;min-height:56px}
+.dayhead input{width:22px;height:22px;accent-color:#c9a227;flex-shrink:0}
+.dayhead .dt{flex:1}
+.daybody{display:none;padding:0 16px 16px;color:#444}
+.day.open .daybody{display:block}
+.day.done .dt{text-decoration:line-through;color:#8a8a8a}
+.pbar{height:12px;background:#e9e0c8;border-radius:6px;overflow:hidden;margin:14px 0 6px}
+.pbar>div{height:100%;background:#c9a227;width:0%}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Bitterness Detox</h1>
+<p class="intro">Uproot bitterness before it spreads (Hebrews 12:15).</p>
+<div class="appcard">
+<div class="verse">\u201CLooking diligently lest any man fail of the grace of God; lest any root of bitterness springing up trouble you, and thereby many be defiled.\u201D<br><strong>\u2014 Hebrews 12:15</strong> (KJV)</div>
+<p style="color:#6b6250;margin-bottom:14px">Bitterness is a root \u2014 it grows underground and poisons everything. Five days, five steps, one detox.</p>
+<div id="days"></div>
+<div class="pbar"><div id="pfill"></div></div>
+<p id="ptext" style="font-size:.95rem;color:#6b6250"></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-bitterness-detox-v1';
+var DAYS=[
+{t:"Day 1 \u2014 Admit it",b:"Name the hurt honestly before God. Write who hurt you and what happened. Bitterness denied is bitterness fed.",v:"Psalm 62:8",vt:"Pour out your heart before him: God is a refuge for us."},
+{t:"Day 2 \u2014 Pray for them",b:"This is the hard one: pray blessing \u2014 not harm \u2014 over the person who hurt you. Prayer melts what nursing the wound hardens.",v:"Matthew 5:44",vt:"Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you."},
+{t:"Day 3 \u2014 Forgive as forgiven",b:"Forgiveness is not excusing what they did \u2014 it is releasing your claim to punish. You forgive because Christ forgave you.",v:"Ephesians 4:32",vt:"And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you."},
+{t:"Day 4 \u2014 Release the debt",b:"Say it out loud: 'I release [name] from what they owe me.' The debt is cancelled. You are free whether they apologize or not.",v:"Colossians 3:13",vt:"Forbearing one another, and forgiving one another, if any man have a quarrel against any: even as Christ forgave you, so also do ye."},
+{t:"Day 5 \u2014 Replace with blessing",b:"Do not just uproot bitterness \u2014 plant something better. Do one kind thing, speak one blessing, and refuse to be overcome by evil.",v:"Romans 12:21",vt:"Be not overcome of evil, but overcome evil with good."}
+];
+var done={};try{done=JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){done={};}
+var box=document.getElementById('days');
+function save(){localStorage.setItem(KEY,JSON.stringify(done));}
+function progress(){var n=Object.keys(done).length;document.getElementById('pfill').style.width=(n/DAYS.length*100)+'%';document.getElementById('ptext').textContent=n===DAYS.length?'\u2713 Detox complete. Stay free \u2014 do not pick the root back up.':(n+' of '+DAYS.length+' days complete.');}
+DAYS.forEach(function(d,i){
+var el=document.createElement('div');el.className='day'+(done[i]?' done':'');
+el.innerHTML='<button type="button" class="dayhead"><input type="checkbox" '+(done[i]?'checked':'')+' aria-label="Mark day complete"><span class="dt"><strong>'+d.t+'</strong></span><span>\u25BE</span></button>'
++'<div class="daybody"><p>'+d.b+'</p><div class="verse">\u201C'+d.vt+'\u201D<br><strong>\u2014 '+d.v+'</strong> (KJV)</div></div>';
+var head=el.querySelector('.dayhead'),cb=el.querySelector('input');
+head.addEventListener('click',function(e){if(e.target!==cb)el.classList.toggle('open');});
+cb.addEventListener('click',function(e){e.stopPropagation();});
+cb.addEventListener('change',function(){if(cb.checked){done[i]=true;el.classList.add('done');}else{delete done[i];el.classList.remove('done');}save();progress();});
+box.appendChild(el);
+});
+progress();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jealousy & Comparison Cure | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Scripture for the envy trap. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+#reframe{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:18px;margin-top:12px;display:none}
+.glist{list-style:none;margin-top:10px}
+.glist li{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #eee}
+.glist button{margin-left:auto;background:none;border:none;color:#a33;cursor:pointer;font-size:1.2rem;min-width:44px;min-height:44px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Jealousy & Comparison Cure</h1>
+<p class="intro">Scripture for the envy trap.</p>
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">The comparison thought-swapper</h2>
+<p style="color:#6b6250">Type the envious thought exactly as it sounds in your head. Then swap it for truth.</p>
+<textarea id="envy" rows="3" placeholder="e.g., Everyone else's life looks better than mine..."></textarea>
+<p><button class="btn" id="swap" type="button">Swap it for truth</button></p>
+<div id="reframe"></div>
+<div class="verse">\u201CA sound heart is the life of the flesh: but envy the rottenness of the bones.\u201D<br><strong>\u2014 Proverbs 14:30</strong> (KJV)</div>
+<h2 style="font-family:Georgia,serif;margin:20px 0 8px">Gratitude antidote</h2>
+<p style="color:#6b6250">Envy starves where gratitude feeds. List three good things in <em>your</em> life:</p>
+<p><input type="text" id="gin" placeholder="I am grateful for..." aria-label="Gratitude item"></p>
+<p><button class="btn ghost" id="gadd" type="button">Add gratitude</button></p>
+<ul class="glist" id="glist"></ul>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-jealousy-comparison-cure-v1';
+var TRUTHS=[
+{v:"Psalm 37:4",vt:"Delight thyself also in the LORD; and he shall give thee the desires of thine heart.",r:"Their highlight reel is not your story. Delight in the Lord, and trust Him with your desires."},
+{v:"Exodus 20:17",vt:"Thou shalt not covet thy neighbour's house... nor any thing that is thy neighbour's.",r:"God names coveting as sin because He knows it poisons us. Name it, confess it, and let it go."},
+{v:"Galatians 6:4",vt:"But let every man prove his own work, and then shall he have rejoicing in himself alone, and not in another.",r:"Stop measuring your life against theirs. Run your own race \u2014 God grades on faithfulness, not comparison."},
+{v:"1 Timothy 6:6",vt:"But godliness with contentment is great gain.",r:"Contentment is not settling \u2014 it is the quiet confidence that God has given you enough for today."}
+];
+var ti=0;
+document.getElementById('swap').addEventListener('click',function(){
+var thought=document.getElementById('envy').value.trim();
+if(!thought){alert('Type the thought first \u2014 honesty is the first step.');return;}
+var t=TRUTHS[ti%TRUTHS.length];ti++;
+var box=document.getElementById('reframe');box.style.display='block';
+box.innerHTML='<p style="color:#8a6d1c"><em>Your thought:</em> \u201C'+thought.replace(/</g,'&lt;')+'\u201D</p>'
++'<p style="margin-top:10px"><strong>Truth swap:</strong> '+t.r+'</p>'
++'<div class="verse">\u201C'+t.vt+'\u201D<br><strong>\u2014 '+t.v+'</strong> (KJV)</div>';
+});
+var items=[];try{items=JSON.parse(localStorage.getItem(KEY)||"[]");}catch(e){items=[];}
+var list=document.getElementById('glist'),gin=document.getElementById('gin');
+function save(){localStorage.setItem(KEY,JSON.stringify(items));}
+function render(){list.innerHTML='';
+items.forEach(function(g,i){
+var li=document.createElement('li');
+li.innerHTML='<span>\u2764\uFE0F '+g+'</span><button type="button" aria-label="Remove">\u00D7</button>';
+li.querySelector('button').addEventListener('click',function(){items.splice(i,1);save();render();});
+list.appendChild(li);
+});}
+document.getElementById('gadd').addEventListener('click',function(){
+var t=gin.value.trim();if(!t)return;
+items.push(t.replace(/</g,'&lt;'));gin.value='';save();render();
+});
+render();
+})();
+</script>
+</body>
+</html>

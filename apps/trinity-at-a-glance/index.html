@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trinity at a Glance | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Father, Son, and Holy Spirit in one clear visual guide. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.tri-node{cursor:pointer}.tri-node circle{fill:#fffdf7;stroke:#c9a227;stroke-width:3}.tri-node:hover circle{fill:#f7ecd0}.tri-node text{font-family:Georgia,serif;font-size:15px;fill:#141210}.tri-center circle{fill:#c9a227}.tri-center text{fill:#141210;font-weight:bold}#triPanel{background:#f7f1de;border-radius:8px;padding:18px;margin-top:16px;min-height:150px}.tri-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.tri-btns .btn{padding:10px 18px;min-height:44px;font-size:.9rem}</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Trinity at a Glance</h1>
+<p class="intro">Father, Son, and Holy Spirit in one clear visual guide.</p>
+<div class="appcard">
+<p style="margin-bottom:10px">One God, three Persons. Tap each part of the diagram to explore.</p><svg viewBox="0 0 320 270" width="100%" style="max-width:420px;display:block;margin:0 auto" role="img" aria-label="Trinity diagram"><line x1="160" y1="42" x2="70" y2="212" stroke="#c9a227" stroke-width="2"/><line x1="160" y1="42" x2="250" y2="212" stroke="#c9a227" stroke-width="2"/><line x1="70" y1="212" x2="250" y2="212" stroke="#c9a227" stroke-width="2"/><g class="tri-node" onclick="showTri('father')"><circle cx="160" cy="42" r="38"/><text x="160" y="48" text-anchor="middle">Father</text></g><g class="tri-node" onclick="showTri('son')"><circle cx="70" cy="212" r="38"/><text x="70" y="218" text-anchor="middle">Son</text></g><g class="tri-node" onclick="showTri('spirit')"><circle cx="250" cy="212" r="38"/><text x="250" y="218" text-anchor="middle">Spirit</text></g><g class="tri-node tri-center" onclick="showTri('one')"><circle cx="160" cy="150" r="40"/><text x="160" y="157" text-anchor="middle">GOD</text></g></svg><div class="tri-btns"><button class="btn ghost" onclick="showTri('father')">Father</button><button class="btn ghost" onclick="showTri('son')">Son</button><button class="btn ghost" onclick="showTri('spirit')">Holy Spirit</button><button class="btn ghost" onclick="showTri('one')">One God</button></div><div id="triPanel" aria-live="polite"></div><h3 style="font-family:Georgia,serif;margin:22px 0 8px">The Trinity, made simple</h3><p><strong>What it IS:</strong> One God, three distinct Persons &mdash; Father, Son, and Holy Spirit. Each one is fully God, eternal, and equal. They love one another and work together.</p><p style="margin-top:10px"><strong>What it is NOT:</strong> It is not three gods. It is not one Person wearing three masks. The Son and the Spirit are not lesser than the Father.</p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem(k);return r?JSON.parse(r):null;}localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
+var TRI={father:{t:"God the Father",d:"The Creator and loving Father who planned our rescue and sent His Son. He adopts believers as His own children.",v:"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",r:"John 3:16 (KJV)"},son:{t:"God the Son — Jesus Christ",d:"Fully God and fully man. The Word who became flesh, died for our sins, and rose again. Everything the Father is, the Son is.",v:"In the beginning was the Word, and the Word was with God, and the Word was God.",r:"John 1:1 (KJV)"},spirit:{t:"God the Holy Spirit",d:"The Comforter sent by the Father in Jesus’ name. He lives in every believer — teaching, reminding, and guiding into truth.",v:"But the Comforter, which is the Holy Ghost, whom the Father will send in my name, he shall teach you all things, and bring all things to your remembrance, whatsoever I have said unto you.",r:"John 14:26 (KJV)"},one:{t:"One God",d:"Three Persons, one divine being — united in love, purpose, and glory from before time began.",v:"Hear, O Israel: The LORD our God is one LORD.",r:"Deuteronomy 6:4 (KJV)"}};var K32="app-trinity-at-a-glance-v1";function showTri(k){store(K32,k);var t=TRI[k];document.getElementById("triPanel").innerHTML="<h3 style='font-family:Georgia,serif;margin-bottom:6px'>"+t.t+"</h3><p>"+t.d+"</p><p style='margin-top:10px;font-style:italic'>“"+t.v+"”<br><strong>— "+t.r+"</strong></p>";}showTri(store(K32)||"one");</script>
+</body>
+</html>

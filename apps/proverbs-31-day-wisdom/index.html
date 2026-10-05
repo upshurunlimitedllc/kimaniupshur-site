@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proverbs 31-Day Wisdom | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="A chapter of Proverbs a day on a monthly cycle. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Proverbs 31-Day Wisdom</h1>
+<p class="intro">A chapter of Proverbs a day on a monthly cycle.</p>
+<div class="appcard">
+<div style="text-align:center;margin-bottom:16px">
+<p style="color:#8a6d1c;font-weight:bold" id="pvdate"></p>
+<h2 style="font-family:Georgia,serif">Today: Proverbs <span id="pvchap"></span></h2>
+<div id="pvverse" style="background:#fff;border-left:4px solid #c9a227;padding:14px 16px;margin:14px auto;max-width:560px;border-radius:0 8px 8px 0;text-align:left"></div>
+<p id="pvnote" style="color:#6b6250"></p>
+</div>
+<h3 style="font-family:Georgia,serif;margin:16px 0 8px">This month's progress</h3>
+<div id="pvgrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px"></div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+var KEY="app-proverbs-31-day-wisdom-v1";
+var PROVERBS={
+3:["Proverbs 3:5-6","Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."],
+9:["Proverbs 3:9","Honour the LORD with thy substance, and with the firstfruits of all thine increase."],
+15:["Proverbs 15:1","A soft answer turneth away wrath: but grievous words stir up anger."],
+16:["Proverbs 16:3","Commit thy works unto the LORD, and thy thoughts shall be established."],
+18:["Proverbs 18:21","Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof."],
+22:["Proverbs 22:6","Train up a child in the way he should go: and when he is old, he will not depart from it."],
+27:["Proverbs 27:17","Iron sharpeneth iron; so a man sharpeneth the countenance of his friend."]};
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function mkey(){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1);}
+(function(){
+  var now=new Date(),day=now.getDate(),chap=Math.min(day,31);
+  document.getElementById("pvdate").textContent=now.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"});
+  document.getElementById("pvchap").textContent=chap;
+  var v=PROVERBS[chap],box=document.getElementById("pvverse");
+  if(v)box.innerHTML="<p style='font-style:italic'>&ldquo;"+v[1]+"&rdquo;</p><p style='font-weight:bold;margin-top:6px;color:#8a6d1c'>"+v[0]+" (KJV)</p>";
+  else box.innerHTML="<p>Open your Bible and read the whole chapter slowly. Write down one verse that stands out.</p>";
+  document.getElementById("pvnote").textContent="Proverbs has 31 chapters — one for each day of the month. Read chapter "+chap+" today, then check it off below.";
+  var data=load(),mk=mkey();
+  if(!data[mk])data[mk]=[];
+  var grid=document.getElementById("pvgrid");grid.innerHTML="";
+  for(var d=1;d<=31;d++){
+    (function(dd){
+      var b=document.createElement("button");
+      var on=data[mk].indexOf(dd)>=0;
+      b.className="btn"+(on?"":" ghost");
+      b.style.cssText="padding:10px 0;min-height:48px;min-width:60px";
+      b.textContent=dd;
+      b.title="Proverbs "+dd+(on?" ✓":"");
+      b.addEventListener("click",function(){
+        var dt=load();if(!dt[mk])dt[mk]=[];
+        var ix=dt[mk].indexOf(dd);
+        if(ix>=0)dt[mk].splice(ix,1);else dt[mk].push(dd);
+        save(dt);location.reload();
+      });
+      grid.appendChild(b);
+    })(d);
+  }
+})();
+</script>
+</body>
+</html>

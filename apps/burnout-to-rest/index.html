@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burnout to Rest | Free Faith App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Recovery for the weary and overloaded. Free faith app by Kimani Upshur, M.Ed.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+ .verse{background:#f7f1de;border-left:4px solid #c9a227;padding:12px 16px;margin:12px 0;font-style:italic}
+.qcard{background:#fff;border:1px solid #e5d9b8;border-radius:10px;padding:14px 16px;margin-bottom:8px}
+.qbtns{display:flex;gap:10px;margin-top:8px}
+.qbtns button{flex:1;padding:10px;border-radius:8px;border:2px solid #c9a227;background:#fffdf7;font-size:1rem;cursor:pointer;min-height:48px}
+.qbtns button.sel{background:#c9a227;font-weight:bold}
+#plan{display:none}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Burnout to Rest</h1>
+<p class="intro">Recovery for the weary and overloaded.</p>
+<div class="appcard">
+<div class="verse">\u201CCome unto me, all ye that labour and are heavy laden, and I will give you rest.\u201D<br><strong>\u2014 Matthew 11:28</strong> (KJV)</div>
+<div id="quizsec">
+<h2 style="font-family:Georgia,serif;margin-bottom:10px">Burnout check \u2014 answer honestly</h2>
+<div id="quiz"></div>
+<p><button class="btn" id="seeres" type="button">See my result</button></p>
+</div>
+<div id="plan">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">Your rest plan</h2>
+<p id="resmsg"></p>
+<p style="color:#6b6250;margin:10px 0">Choose <strong>3</strong> rest actions to commit to this week:</p>
+<div id="actions"></div>
+<p id="actmsg" style="margin-top:10px;font-weight:bold"></p>
+<p style="margin-top:12px"><button class="btn ghost" id="retake" type="button">Retake the check</button></p>
+</div>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Faith Apps</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Every app is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+<script>
+(function(){
+var KEY='app-burnout-to-rest-v1';
+var QS=["I wake up already exhausted.","I dread the start of most days.","I feel irritable over small things.","I feel guilty when I rest.","I am running on empty spiritually.","I have been neglecting sleep, food, or health."];
+var ACTS=["Take one full hour of Sabbath rest \u2014 no phone","Go for a slow walk and pray out loud","Get to bed 30 minutes earlier for 7 nights","Say no to one commitment this week","Read Matthew 11:28\u201330 slowly, twice","Call a trusted friend and be honest","Sit quietly with God for 10 minutes each morning","Write down everything weighing on you, then pray over the list"];
+var box=document.getElementById('quiz'),ans=new Array(QS.length).fill(null);
+QS.forEach(function(q,i){
+var d=document.createElement('div');d.className='qcard';
+d.innerHTML='<p>'+(i+1)+'. '+q+'</p><div class="qbtns"><button type="button" data-v="1">Yes</button><button type="button" data-v="0">No</button></div>';
+var btns=d.querySelectorAll('button');
+Array.prototype.forEach.call(btns,function(b){b.addEventListener('click',function(){
+Array.prototype.forEach.call(btns,function(x){x.classList.remove('sel');});
+b.classList.add('sel');ans[i]=parseInt(b.dataset.v,10);
+});});
+box.appendChild(d);
+});
+var saved=null;try{saved=JSON.parse(localStorage.getItem(KEY)||"null");}catch(e){}
+function showPlan(picks){
+document.getElementById('quizsec').style.display='none';
+var plan=document.getElementById('plan');plan.style.display='block';
+var n=saved?saved.score:0,msg;
+if(n>=5){msg='Your tank is <strong>empty</strong>. Jesus invites the heavy-laden first \u2014 start with rest, not more effort.';}
+else if(n>=3){msg='You are <strong>running low</strong>. Small, steady rhythms of rest will refill you.';}
+else{msg='You are <strong>holding steady</strong>. Protect your rest before burnout arrives.';}
+document.getElementById('resmsg').innerHTML=msg+'<div class="verse">\u201CTake my yoke upon you, and learn of me... and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.\u201D<br><strong>\u2014 Matthew 11:29\u201330</strong> (KJV)</div>';
+var abox=document.getElementById('actions');abox.innerHTML='';
+var chosen=picks||[];
+ACTS.forEach(function(a,i){
+var l=document.createElement('label');l.className='checkrow';
+l.innerHTML='<input type="checkbox" '+(chosen.indexOf(i)>-1?'checked':'')+'> <span>'+a+'</span>';
+abox.appendChild(l);
+});
+function count(){var c=abox.querySelectorAll('input:checked').length;
+document.getElementById('actmsg').textContent=c===3?'\u2713 Rest plan set. Guard these three like appointments.':('Selected '+c+' of 3.');
+if(c===3){var arr=[];Array.prototype.forEach.call(abox.querySelectorAll('input'),function(cb,j){if(cb.checked)arr.push(j);});
+try{localStorage.setItem(KEY,JSON.stringify({score:saved?saved.score:n,picks:arr}));}catch(e){}}
+}
+Array.prototype.forEach.call(abox.querySelectorAll('input'),function(cb){cb.addEventListener('change',count);});
+count();
+}
+document.getElementById('seeres').addEventListener('click',function(){
+if(ans.indexOf(null)>-1){alert('Please answer every question first.');return;}
+var n=ans.reduce(function(a,b){return a+b;},0);
+saved={score:n,picks:[]};try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}
+showPlan([]);
+});
+document.getElementById('retake').addEventListener('click',function(){
+try{localStorage.removeItem(KEY);}catch(e){}
+document.getElementById('plan').style.display='none';
+document.getElementById('quizsec').style.display='block';
+ans=new Array(QS.length).fill(null);
+Array.prototype.forEach.call(box.querySelectorAll('.sel'),function(b){b.classList.remove('sel');});
+});
+if(saved&&saved.score!=null){showPlan(saved.picks||[]);}
+})();
+</script>
+</body>
+</html>
