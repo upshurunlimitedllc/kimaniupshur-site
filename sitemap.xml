@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://kimaniupshur.com/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/about.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/ai.html</loc><changefreq>weekly</changefreq></url>
@@ -799,7 +799,6 @@
   <url><loc>https://kimaniupshur.com/books/titus-made-simple/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/books/tradeoffs-made-simple/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/books/trauma-made-simple/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/books/travel-made-simple/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/books/trials-made-simple/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/books/trust-made-simple/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/books/truth-made-simple/</loc><changefreq>weekly</changefreq></url>
@@ -870,20 +869,6 @@
   <url><loc>https://kimaniupshur.com/categories/business-leadership/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/categories/christian-living/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/categories/church-ministry/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/ai-collection/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/box-set-collection/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/commercial-psychology/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/commercial-collection/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/communication-collection/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/decision-strategy/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/fiction-collection/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/finance-collection/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/foundations-collection/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/future-queue/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/complete-catalog/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/health-collection/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/psychology-collection/</loc><changefreq>weekly</changefreq></url>
-  <url><loc>https://kimaniupshur.com/categories/systems-collection/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/categories/faith-doctrine/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/categories/family-relationships/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/categories/fiction/</loc><changefreq>weekly</changefreq></url>
@@ -893,20 +878,6 @@
   <url><loc>https://kimaniupshur.com/categories/prayer-worship/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/categories/tech-ai/</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://kimaniupshur.com/contact.html</loc><changefreq>weekly</changefreq></url>
-<url><loc>https://kimaniupshur.com/categories/ai-collection/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/box-set-collection/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/commercial-collection/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/commercial-psychology/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/communication-collection/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/decision-strategy/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/fiction-collection/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/finance-collection/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/foundations-collection/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/future-queue/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/complete-catalog/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/health-collection/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/psychology-collection/</loc></url>
-<url><loc>https://kimaniupshur.com/categories/systems-collection/</loc></url>
 <url><loc>https://kimaniupshur.com/categories/cluster-ai/</loc></url>
 <url><loc>https://kimaniupshur.com/categories/cluster-box-set/</loc></url>
 <url><loc>https://kimaniupshur.com/categories/cluster-commercial/</loc></url>
