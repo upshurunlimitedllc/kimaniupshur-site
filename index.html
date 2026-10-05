@@ -86,6 +86,13 @@ footer.site a:hover{text-decoration:underline}
 .fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
 .bread{font-size:.85rem;color:#8a7a4a;margin-bottom:14px}
 .bread a{color:#8a6d1c}
+.devotional{max-width:720px;margin:0 auto;background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:30px 32px;text-align:left}
+.devotional .ddate{font-size:.82rem;color:#8a7a4a;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.devotional .dverse{font-family:Georgia,serif;font-size:1.25rem;font-style:italic;color:#141210;line-height:1.6;margin-bottom:8px}
+.devotional .dref{font-weight:bold;color:#8a6d1c;margin-bottom:16px}
+.devotional .dreflect{font-size:1rem;color:#222;margin-bottom:16px}
+.devotional .dprayer{font-size:.95rem;color:#6b6250;border-top:1px solid #e5dcc2;padding-top:14px}
+.devotional .dprayer b{color:#8a6d1c}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Person", "name": "Kimani Upshur, M.Ed.", "jobTitle": "Christian Author", "description": "Christian author of 859+ Made Simple books — short, Scripture-rooted, practical ebooks published by Upshur Unlimited, LLC.", "url": "https://kimaniupshur.com/", "sameAs": ["https://www.youtube.com/@KimaniUpshur", "https://muse.ai/s/made-simple-apps-directory-lj6xolxsxgxilxkn", "https://made-simple-ai.fly.dev"], "worksFor": {"@type": "Organization", "name": "Upshur Unlimited, LLC"}}
@@ -158,6 +165,35 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
 <a class="btn ghost" href="https://www.youtube.com/@KimaniUpshur">YouTube Channel</a>
 </div></section>
 </div></main>
+<section class="block" id="daily-devotional"><div class="wrap" style="text-align:center">
+<h2 class="sec">Today's Daily Devotional</h2>
+<p class="sec-sub">A fresh word from Scripture every day — a different devotional each day of the year.</p>
+<div class="devotional">
+<p class="ddate" id="d-date"></p>
+<p class="dverse" id="d-verse"></p>
+<p class="dref" id="d-ref"></p>
+<p class="dreflect" id="d-reflection"></p>
+<p class="dprayer"><b>Prayer:</b> <span id="d-prayer"></span></p>
+</div>
+</div></section>
+<script>
+(function(){
+  var now = new Date();
+  var start = new Date(now.getFullYear(), 0, 0);
+  var doy = Math.floor((now - start) / 86400000);
+  fetch('devotionals.json')
+    .then(function(r){ return r.json(); })
+    .then(function(all){
+      var d = all[(doy - 1) % all.length];
+      document.getElementById('d-date').textContent = now.toLocaleDateString(undefined, {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+      document.getElementById('d-verse').textContent = '\u201C' + d.verse + '\u201D';
+      document.getElementById('d-ref').textContent = d.reference + ' (KJV)';
+      document.getElementById('d-reflection').textContent = d.reflection;
+      document.getElementById('d-prayer').textContent = d.prayer;
+    })
+    .catch(function(){ document.getElementById('daily-devotional').style.display = 'none'; });
+})();
+</script>
 <section class="block"><div class="wrap" style="text-align:center">
 <div class="ml-embedded" data-form="91hYnJ"></div>
 <p style="font-size:.8rem;color:#8a7a4a;margin-top:10px">Join readers growing in faith one simple truth at a time.</p>
