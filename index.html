@@ -25,8 +25,9 @@ header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
 .brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
 .brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+.brand-logo{height:56px;width:56px;display:block;border-radius:10px}
 nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
-nav.main a:hover{color:#e8c84a}@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+nav.main a:hover{color:#e8c84a}@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}.brand-logo{height:44px;width:44px}}
 .hero{background:linear-gradient(135deg,#141210 0%,#2a2118 60%,#3a2f16 100%);color:#f5efdd;padding:64px 0;text-align:center;border-bottom:4px solid #c9a227}
 .hero h1{font-family:Georgia,serif;font-size:2.6rem;color:#e8c84a;margin-bottom:10px;line-height:1.2}
 .hero .sub{font-size:1.25rem;color:#f5efdd;margin-bottom:8px}
@@ -120,7 +121,7 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
 </head>
 <body>
 <header class="site"><div class="wrap topbar">
-<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<a class="brand" href="/"><img src="/logo.jpg" alt="Upshur Unlimited, LLC" class="brand-logo"><small>THE MADE SIMPLE FRAMEWORK</small></a>
 <nav class="main" aria-label="Main">
 <a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="https://www.youtube.com/@KimaniUpshur" target="_blank" rel="noopener">YouTube</a>
 </nav></div></header>
