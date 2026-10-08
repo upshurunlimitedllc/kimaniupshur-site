@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First Principles Thinker | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Break any problem down to its fundamental truths and reason back up to a fresh solution. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/first-principles-thinker/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="First Principles Thinker | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Break any problem down to its fundamental truths and reason back up to a fresh solution. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/first-principles-thinker/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+/* app-specific */
+.dots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.dots button{width:44px;height:44px;border-radius:50%;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer;font-size:.78rem}
+.dots button.cur{background:#c9a227;color:#141210}
+.dots button:disabled{opacity:.35;cursor:default}
+.cardhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+.cardhead h2{font-family:Georgia,serif;font-size:1.35rem;color:#141210}
+.resetlink{background:none;border:none;color:#8a6d1c;text-decoration:underline;cursor:pointer;font-size:.85rem;min-height:44px;padding:10px}
+.stepnum{color:#8a6d1c;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.itemrow{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #eee}
+.itemrow .txt{flex:1;padding:10px 0}
+.xbtn{width:44px;height:44px;flex-shrink:0;background:transparent;border:2px solid #c9a227;border-radius:8px;color:#8a6d1c;font-size:1.1rem;cursor:pointer;font-weight:bold}
+.xbtn:hover{background:#f3e6bd}
+.err{color:#b3261e;font-weight:bold;margin:10px 0}
+.hint{color:#6b6250;font-size:.92rem;margin:8px 0}
+.field label{font-weight:bold;display:block;margin:12px 0 2px}
+.navrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.seg{display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0}
+.seg button{padding:10px 16px;min-height:44px;border-radius:8px;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer}
+.seg button.sel{background:#c9a227;color:#141210}
+.seg button:hover{background:#f3e6bd}
+.seg button.sel:hover{background:#e8c84a}
+.badge{display:inline-block;font-size:.75rem;font-weight:bold;padding:4px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.badge.a{background:#f3e6bd;color:#8a6d1c}
+.badge.f{background:#dcebd8;color:#2e5d26}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.rankrow{display:flex;gap:10px;align-items:center;padding:12px;border:2px solid #e5d9b5;border-radius:8px;margin-bottom:10px;background:#fff}
+.ranknum{font-family:Georgia,serif;font-size:1.5rem;color:#8a6d1c;min-width:40px;text-align:center}
+.rankrow .rtxt{flex:1}
+.ranksel{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.ranksel label{font-size:.85rem;font-weight:bold;color:#6b6250}
+.ranksel select{width:auto;margin:2px 0}
+.result{background:#fff;border:2px solid #c9a227;border-radius:12px;padding:24px;margin-top:20px}
+.result h3{font-family:Georgia,serif;color:#141210;margin:16px 0 6px}
+.result h3:first-child{margin-top:0}
+.result ol,.result ul{margin:6px 0 6px 22px}
+.result li{margin-bottom:6px}
+.solcard{border:2px solid #e5d9b5;border-radius:8px;padding:14px;margin:10px 0;background:#fffdf7}
+.solcard strong{font-size:1.05rem}
+.nextsteps{background:#f7f1de;border-radius:8px;padding:16px;margin-top:14px}
+@media print{header.site,footer.site,.navrow,.noprint,.dots,.resetlink{display:none!important}main.app{max-width:100%;padding:0}.appcard{border:none;padding:0}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>First Principles Thinker</h1>
+<p class="intro">Break any problem down to its fundamental truths, then reason back up to a fresh solution. Strip out assumptions, keep only what is verifiably true, and rebuild from there.</p>
+<div class="appcard">
+<div class="cardhead">
+<div><div class="stepnum" id="stepnum"></div><h2 id="steptitle"></h2></div>
+<button class="resetlink noprint" id="resetTop" type="button">Start over</button>
+</div>
+<div class="dots noprint" id="dots" role="navigation" aria-label="Steps"></div>
+<div id="err" class="err" role="alert" style="display:none"></div>
+<div id="stepbody"></div>
+<div class="navrow noprint" id="navrow"></div>
+</div>
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p><em>First Principles Thinking Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same method — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/first-principles-thinking-made-simple/">Get First Principles Thinking Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-first-principles-thinker-v1";
+var STEPS=["Problem","Beliefs","Classify","Fundamentals","Solutions","Test & Plan"];
+var state=loadState();
+var maxStep=(typeof state.maxStep==="number")?state.maxStep:0;
+if(state.step>maxStep)state.step=maxStep;
+
+function freshState(){return{step:0,maxStep:0,problem:"",items:[],factsKept:[],restatement:"",restatementSeeded:false,lastAuto:"",solutions:[],ratings:{}};}
+function loadState(){
+  try{var raw=localStorage.getItem(KEY);
+    if(raw){var s=JSON.parse(raw);
+      if(s&&typeof s==="object"){
+        var d=freshState();
+        if(typeof s.problem==="string")d.problem=s.problem;
+        if(Array.isArray(s.items))d.items=s.items.filter(function(it){return it&&typeof it.t==="string";}).map(function(it){return{t:it.t,k:(it.k==="a"||it.k==="f")?it.k:null};});
+        if(Array.isArray(s.factsKept))d.factsKept=s.factsKept.filter(function(x){return x===true||x===false;});
+        if(typeof s.restatement==="string")d.restatement=s.restatement;
+        if(s.restatementSeeded===true)d.restatementSeeded=true;
+        if(typeof s.lastAuto==="string")d.lastAuto=s.lastAuto;
+        if(Array.isArray(s.solutions))d.solutions=s.solutions.filter(function(x){return x&&typeof x.t==="string";}).map(function(x){return{t:x.t,d:typeof x.d==="string"?x.d:""};});
+        if(s.ratings&&typeof s.ratings==="object")d.ratings=s.ratings;
+        if(typeof s.step==="number")d.step=Math.max(0,Math.min(5,Math.floor(s.step)));
+        if(typeof s.maxStep==="number")d.maxStep=Math.max(0,Math.min(5,Math.floor(s.maxStep)));
+        return d;
+      }
+    }
+  }catch(e){}
+  return freshState();
+}
+function save(){state.maxStep=maxStep;try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function el(tag,cls,text){var d=document.createElement(tag);if(cls)d.className=cls;if(text!==undefined&&text!==null)d.textContent=text;return d;}
+function showErr(msg){var e=document.getElementById("err");if(msg){e.textContent=msg;e.style.display="block";}else{e.textContent="";e.style.display="none";}}
+function assumptions(){var out=[];state.items.forEach(function(it,i){if(it.k==="a")out.push({i:i,t:it.t});});return out;}
+function facts(){var out=[];state.items.forEach(function(it,i){if(it.k==="f")out.push({i:i,t:it.t});});return out;}
+
+function drawDots(){
+  var dots=document.getElementById("dots");dots.innerHTML="";
+  STEPS.forEach(function(name,i){
+    var b=el("button",i===state.step?"cur":"",String(i+1));
+    b.type="button";b.title=name;b.setAttribute("aria-label","Step "+(i+1)+": "+name);
+    if(i>maxStep)b.disabled=true;
+    b.addEventListener("click",function(){go(i);});
+    dots.appendChild(b);
+  });
+  document.getElementById("stepnum").textContent="Step "+(state.step+1)+" of "+STEPS.length;
+  document.getElementById("steptitle").textContent=STEPS[state.step];
+}
+function go(i){showErr("");state.step=i;if(i>maxStep)maxStep=i;save();render();}
+function resetAll(){
+  if(!window.confirm("Clear everything and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  state=freshState();maxStep=0;save();render();
+}
+
+/* ---------- step renderers ---------- */
+function renderProblem(body){
+  var f=el("div","field");
+  f.appendChild(el("label",null,"What problem are you trying to solve?"));
+  var ta=el("textarea");ta.id="problem";ta.rows=4;ta.value=state.problem;
+  ta.setAttribute("aria-label","Describe the problem you are trying to solve");
+  ta.placeholder="Example: Our small bakery keeps losing money on custom cake orders.";
+  ta.addEventListener("input",function(){state.problem=ta.value;save();});
+  f.appendChild(ta);
+  f.appendChild(el("p","hint","Be specific. One clear sentence beats a paragraph of background — you can add detail in the next steps."));
+  body.appendChild(f);
+}
+function renderBeliefs(body){
+  body.appendChild(el("p","hint","List everything you \"know\" about this problem — facts, hunches, what people say, what has been tried. One per line; you will sort them in the next step."));
+  var f=el("div","field");
+  var lab=el("label",null,"Add a belief");lab.setAttribute("for","beliefInput");f.appendChild(lab);
+  var row=el("div");row.style.display="flex";row.style.gap="10px";
+  var inp=el("input");inp.type="text";inp.id="beliefInput";inp.placeholder="Type one thing you believe about the problem…";
+  inp.setAttribute("aria-label","Type one belief about the problem");
+  var add=el("button","btn","Add");add.type="button";
+  add.style.minHeight="48px";add.style.padding="12px 20px";
+  function doAdd(){
+    var v=inp.value.trim();
+    if(!v){inp.focus();return;}
+    state.items.push({t:v,k:null});save();render();
+  }
+  add.addEventListener("click",doAdd);
+  inp.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();doAdd();}});
+  row.appendChild(inp);row.appendChild(add);f.appendChild(row);body.appendChild(f);
+  if(state.items.length===0){
+    body.appendChild(el("p","hint","Nothing listed yet. Aim for at least 3–5 — include things you are sure of and things you only suspect."));
+  }else{
+    var list=el("div");list.setAttribute("role","list");
+    state.items.forEach(function(it,i){
+      var r=el("div","itemrow");r.setAttribute("role","listitem");
+      r.appendChild(el("div","txt",it.t));
+      var x=el("button","xbtn","\u00D7");x.type="button";x.setAttribute("aria-label","Remove: "+it.t);
+      x.addEventListener("click",function(){state.items.splice(i,1);save();render();});
+      r.appendChild(x);list.appendChild(r);
+    });
+    body.appendChild(list);
+  }
+}
+function renderClassify(body){
+  body.appendChild(el("p","hint","For each item, decide honestly: is it a verified fact (you have evidence), or an assumption (you believe it but cannot prove it)?"));
+  var list=el("div");
+  state.items.forEach(function(it,i){
+    var r=el("div","itemrow");
+    var txt=el("div","txt",it.t);
+    if(it.k==="a"){var b1=el("span","badge a","assumption");txt.appendChild(b1);}
+    else if(it.k==="f"){var b2=el("span","badge f","verified fact");txt.appendChild(b2);}
+    r.appendChild(txt);
+    var seg=el("div","seg");seg.setAttribute("role","group");seg.setAttribute("aria-label","Classify: "+it.t);
+    var ba=el("button",it.k==="a"?"sel":"","Assumption");ba.type="button";ba.setAttribute("aria-pressed",it.k==="a"?"true":"false");
+    var bf=el("button",it.k==="f"?"sel":"","Verified fact");bf.type="button";bf.setAttribute("aria-pressed",it.k==="f"?"true":"false");
+    ba.addEventListener("click",function(){it.k="a";save();render();});
+    bf.addEventListener("click",function(){it.k="f";save();render();});
+    seg.appendChild(ba);seg.appendChild(bf);r.appendChild(seg);
+    list.appendChild(r);
+  });
+  body.appendChild(list);
+  var un=state.items.filter(function(it){return !it.k;}).length;
+  if(un>0)body.appendChild(el("p","hint",un+" item"+(un===1?"":"s")+" still need"+(un===1?"s":"")+" a label before you continue."));
+}
+function renderFundamentals(body){
+  var fs=facts();
+  while(state.factsKept.length<fs.length)state.factsKept.push(true);
+  state.factsKept=state.factsKept.slice(0,fs.length);
+  body.appendChild(el("p","hint","Your irreducible facts — the solid ground you rebuild from. Uncheck anything that does not hold up on a second look."));
+  if(fs.length===0){
+    body.appendChild(el("p","hint","Everything you listed is an assumption. That is useful information — but you have no verified foundation yet. Either go back and reclassify anything you can prove, or write below what you would need to verify before deciding."));
+  }else{
+    fs.forEach(function(f,idx){
+      var r=el("div","checkrow");
+      var cb=el("input");cb.type="checkbox";cb.checked=state.factsKept[idx]===true;
+      cb.id="factkeep"+idx;cb.setAttribute("aria-label","Keep this fact: "+f.t);
+      cb.addEventListener("change",function(){state.factsKept[idx]=cb.checked;save();seedRestatement();});
+      var lab=el("label",null,f.t);lab.setAttribute("for","factkeep"+idx);lab.style.fontWeight="normal";
+      r.appendChild(cb);r.appendChild(lab);body.appendChild(r);
+    });
+  }
+  var fl=el("div","field");
+  var lab=el("label",null,"Restate the fundamentals in your own words");lab.setAttribute("for","restatement");fl.appendChild(lab);
+  var ta=el("textarea");ta.id="restatement";ta.rows=4;
+  if(!state.restatementSeeded){seedRestatement();state.restatementSeeded=true;save();}
+  ta.value=state.restatement;
+  ta.placeholder="Strip it to what is undeniably true. Example: Custom cakes take 6 hours each. Ingredients cost $18. We charge $45.";
+  ta.setAttribute("aria-label","Restate the irreducible facts in your own words");
+  ta.addEventListener("input",function(){state.restatement=ta.value;save();});
+  fl.appendChild(ta);body.appendChild(fl);
+}
+function seedRestatement(){
+  var kept=[];
+  facts().forEach(function(f,idx){if(state.factsKept[idx])kept.push(f.t);});
+  var auto=kept.join(" ");
+  if(!state.restatementSeeded||state.restatement.trim()===""||state.restatement===state.lastAuto)state.restatement=auto;
+  state.lastAuto=auto;
+  var ta=document.getElementById("restatement");if(ta)ta.value=state.restatement;
+}
+function renderSolutions(body){
+  body.appendChild(el("p","hint","Now rebuild from the fundamentals only. Sketch possible solutions that follow from the facts — forget \"how we have always done it.\""));
+  var f=el("div","field");
+  var l1=el("label",null,"Solution title");l1.setAttribute("for","solTitle");f.appendChild(l1);
+  var t=el("input");t.type="text";t.id="solTitle";t.placeholder="Example: Minimum order of 2 cakes, price $65";
+  t.setAttribute("aria-label","Solution title");f.appendChild(t);
+  var l2=el("label",null,"How it works (from the facts)");l2.setAttribute("for","solDesc");f.appendChild(l2);
+  var d=el("textarea");d.id="solDesc";d.rows=3;d.placeholder="Which facts support it? What changes?";
+  d.setAttribute("aria-label","How the solution works, based on the facts");f.appendChild(d);
+  var add=el("button","btn","Add solution");add.type="button";add.style.marginTop="8px";
+  function doAdd(){
+    var tv=t.value.trim(),dv=d.value.trim();
+    if(!tv&&!dv){t.focus();showErr("Give the solution a title, or a short description, before adding it.");return;}
+    showErr("");
+    state.solutions.push({t:tv||"(untitled)",d:dv});save();render();
+  }
+  add.addEventListener("click",doAdd);f.appendChild(add);body.appendChild(f);
+  if(state.solutions.length===0){
+    body.appendChild(el("p","hint","No solutions sketched yet."));
+  }else{
+    state.solutions.forEach(function(s,i){
+      var c=el("div","solcard");
+      var head=el("div");head.style.display="flex";head.style.gap="10px";head.style.alignItems="flex-start";
+      var tt=el("div");tt.style.flex="1";tt.appendChild(el("strong",null,s.t));
+      if(s.d)tt.appendChild(el("p",null,s.d));
+      head.appendChild(tt);
+      var x=el("button","xbtn","\u00D7");x.type="button";x.setAttribute("aria-label","Remove solution: "+s.t);
+      x.addEventListener("click",function(){state.solutions.splice(i,1);save();render();});
+      head.appendChild(x);c.appendChild(head);body.appendChild(c);
+    });
+  }
+}
+function renderTest(body){
+  var as=assumptions();
+  body.appendChild(el("p","hint","Not all assumptions are equal. Rate each one: how uncertain are you, and how much rides on it? Test the highest-scoring ones first."));
+  if(as.length===0){
+    body.appendChild(el("p","hint","No assumptions to test — everything was classified as verified fact. Strong foundation."));
+  }else{
+    as.forEach(function(a){
+      var r=el("div","rankrow");
+      var rt=state.ratings[a.i]||{u:"",s:""};
+      var txt=el("div","rtxt",a.t);
+      var sels=el("div","ranksel");
+      var lu=el("label",null,"Uncertainty");lu.setAttribute("for","u"+a.i);
+      var su=el("select");su.id="u"+a.i;su.setAttribute("aria-label","How uncertain are you about: "+a.t);
+      su.appendChild(new Option("—", ""));
+      for(var k=1;k<=5;k++)su.appendChild(new Option(k+" - "+["","very sure","fairly sure","unsure","very unsure","complete guess"][k],String(k)));
+      su.value=rt.u===""?"":String(rt.u);
+      var ls=el("label",null,"Stakes");ls.setAttribute("for","s"+a.i);
+      var ss=el("select");ss.id="s"+a.i;ss.setAttribute("aria-label","How much rides on: "+a.t);
+      ss.appendChild(new Option("—", ""));
+      for(var j=1;j<=5;j++)ss.appendChild(new Option(j+" - "+["","trivial","minor","moderate","major","decisive"][j],String(j)));
+      ss.value=rt.s===""?"":String(rt.s);
+      function upd(){
+        var u=parseInt(su.value,10),s2=parseInt(ss.value,10);
+        state.ratings[a.i]={u:isNaN(u)?"":u,s:isNaN(s2)?"":s2};save();renderRanked();renderPlan(document.getElementById("planCard"));
+      }
+      su.addEventListener("change",upd);ss.addEventListener("change",upd);
+      sels.appendChild(lu);sels.appendChild(su);sels.appendChild(ls);sels.appendChild(ss);
+      txt.appendChild(sels);r.appendChild(txt);body.appendChild(r);
+    });
+  }
+  var rankedWrap=el("div");rankedWrap.id="rankedWrap";body.appendChild(rankedWrap);
+  renderRanked();
+  var plan=el("div","result");plan.id="planCard";body.appendChild(plan);renderPlan(plan);
+  var row=el("div","navrow");
+  var copy=el("button","btn ghost","Copy plan");copy.type="button";
+  copy.addEventListener("click",copyPlan);
+  var pr=el("button","btn ghost","Print");pr.type="button";
+  pr.addEventListener("click",function(){window.print();});
+  row.appendChild(copy);row.appendChild(pr);body.appendChild(row);
+}
+function rankedList(){
+  return assumptions().map(function(a){
+    var rt=state.ratings[a.i]||{u:"",s:""};
+    var u=parseInt(rt.u,10),s=parseInt(rt.s,10);
+    var score=(isNaN(u)?0:u)*(isNaN(s)?0:s);
+    return{t:a.t,score:score,rated:!(isNaN(u)||isNaN(s))};
+  }).sort(function(x,y){return y.score-x.score;});
+}
+function renderRanked(){
+  var w=document.getElementById("rankedWrap");if(!w)return;w.innerHTML="";
+  w.appendChild(el("h3",null,"Assumptions to test first"));
+  w.querySelector("h3").style.fontFamily="Georgia,serif";
+  var rl=rankedList();
+  if(rl.length===0){w.appendChild(el("p","hint","Nothing ranked yet."));return;}
+  var ol=el("ol");ol.style.margin="6px 0 6px 22px";
+  rl.forEach(function(r){
+    var li=el("li",null,r.t+(r.rated?" — test priority "+r.score+" of 25":" — not rated yet"));
+    ol.appendChild(li);
+  });
+  w.appendChild(ol);
+}
+function planText(){
+  var L=[];
+  L.push("FIRST PRINCIPLES PLAN");
+  L.push("Problem: "+state.problem.trim());
+  L.push("");
+  L.push("IRREDUCIBLE FACTS:");
+  var kept=[];facts().forEach(function(f,idx){if(state.factsKept[idx])kept.push(f.t);});
+  if(kept.length)L.push("- "+kept.join("\n- "));else L.push("- (none verified yet — verify before deciding)");
+  if(state.restatement.trim()){L.push("");L.push("Restatement: "+state.restatement.trim());}
+  L.push("");
+  L.push("SOLUTION SKETCHES (from the facts):");
+  if(state.solutions.length)state.solutions.forEach(function(s,i){L.push((i+1)+". "+s.t+(s.d?" — "+s.d:""));});
+  else L.push("(none sketched yet)");
+  L.push("");
+  L.push("ASSUMPTIONS TO TEST FIRST:");
+  rankedList().forEach(function(r,i){L.push((i+1)+". "+r.t+(r.rated?" [priority "+r.score+"/25]":" [not rated]"));});
+  L.push("");
+  L.push("NEXT STEPS:");
+  L.push("1. Run the cheapest, fastest test on assumption #1 before doing anything else.");
+  L.push("2. Prototype the top solution sketch at small scale.");
+  L.push("3. Revisit this plan as facts change; reclassify beliefs you can now prove.");
+  return L.join("\n");
+}
+function renderPlan(card){
+  card.innerHTML="";
+  card.appendChild(el("h3",null,"Your from-first-principles plan"));
+  var p=el("p",null,"");p.innerHTML="<strong>Problem:</strong> ";
+  p.appendChild(document.createTextNode(state.problem.trim()||"(not stated)"));
+  card.appendChild(p);
+  var kept=[];facts().forEach(function(f,idx){if(state.factsKept[idx])kept.push(f.t);});
+  card.appendChild(el("h3",null,"Irreducible facts"));
+  if(kept.length){var ul=el("ul");kept.forEach(function(k){ul.appendChild(el("li",null,k));});card.appendChild(ul);}
+  else card.appendChild(el("p","hint","None verified yet — verify before deciding."));
+  if(state.restatement.trim()){var rs=el("p",null,"");rs.innerHTML="<strong>Restatement:</strong> ";rs.appendChild(document.createTextNode(state.restatement.trim()));card.appendChild(rs);}
+  card.appendChild(el("h3",null,"Solution sketches"));
+  if(state.solutions.length){state.solutions.forEach(function(s){var c=el("div","solcard");c.appendChild(el("strong",null,s.t));if(s.d)c.appendChild(el("p",null,s.d));card.appendChild(c);});}
+  else card.appendChild(el("p","hint","No solutions sketched yet — go back a step and rebuild from the facts."));
+  card.appendChild(el("h3",null,"Assumptions to test first"));
+  var rl=rankedList();
+  if(rl.length){var ol=el("ol");rl.forEach(function(r){ol.appendChild(el("li",null,r.t+(r.rated?" — priority "+r.score+" of 25":" — not rated yet")));});card.appendChild(ol);}
+  else card.appendChild(el("p","hint","No assumptions identified."));
+  var ns=el("div","nextsteps");
+  ns.appendChild(el("strong",null,"Clear next steps"));
+  var nol=el("ol");
+  nol.appendChild(el("li",null,"Run the cheapest, fastest test on your #1 assumption before doing anything else."));
+  nol.appendChild(el("li",null,"Prototype your top solution sketch at small scale."));
+  nol.appendChild(el("li",null,"Revisit this plan as facts change — reclassify beliefs you can now prove."));
+  ns.appendChild(nol);card.appendChild(ns);
+}
+function copyPlan(){
+  var t=planText();
+  function done(){var e=document.getElementById("err");showErr("");alert("Plan copied to clipboard.");}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(done,function(){fallbackCopy(t);});
+  }else fallbackCopy(t);
+  function fallbackCopy(txt){
+    var ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");alert("Plan copied to clipboard.");}
+    catch(e){alert("Copy failed — select the text manually.");}
+    document.body.removeChild(ta);
+  }
+}
+
+/* ---------- validation + nav ---------- */
+function validate(){
+  if(state.step===0&&state.problem.trim()==="")return "Describe the problem first — one clear sentence is enough.";
+  if(state.step===1&&state.items.length===0)return "List at least one thing you believe about the problem before continuing.";
+  if(state.step===2){
+    var un=state.items.filter(function(it){return !it.k;}).length;
+    if(un>0)return "Label every item as an assumption or a verified fact ("+un+" remaining).";
+  }
+  return "";
+}
+function renderNav(){
+  var nav=document.getElementById("navrow");nav.innerHTML="";
+  if(state.step>0){
+    var back=el("button","btn ghost","Back");back.type="button";
+    back.addEventListener("click",function(){go(state.step-1);});nav.appendChild(back);
+  }
+  if(state.step<STEPS.length-1){
+    var next=el("button","btn","Next \u2192");next.type="button";
+    next.addEventListener("click",function(){
+      var v=validate();
+      if(v){showErr(v);return;}
+      showErr("");go(state.step+1);
+    });
+    nav.appendChild(next);
+  }
+}
+var RENDERERS=[renderProblem,renderBeliefs,renderClassify,renderFundamentals,renderSolutions,renderTest];
+function render(){
+  drawDots();showErr("");
+  var body=document.getElementById("stepbody");body.innerHTML="";
+  RENDERERS[state.step](body);
+  renderNav();
+}
+document.getElementById("resetTop").addEventListener("click",resetAll);
+render();
+</script>
+</body>
+</html>

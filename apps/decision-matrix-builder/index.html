@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision Matrix Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Compare options side by side with weighted criteria so the best choice is visible, not just felt. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/decision-matrix-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Decision Matrix Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Compare options side by side with weighted criteria so the best choice is visible, not just felt. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/decision-matrix-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.rowitem{display:flex;gap:8px;align-items:center;margin:6px 0}
+.rowitem input{margin:0;flex:1}
+.rowitem .rm{flex-shrink:0}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+table.grid th,table.grid td{border:1px solid #e0d6b8;padding:8px;text-align:center}
+table.grid th{background:#141210;color:#e8c84a}
+table.grid td.l{text-align:left;background:#fffdf7;font-weight:bold;max-width:180px;word-wrap:break-word}
+table.grid input{margin:0;padding:10px;text-align:center}
+.twrap{overflow-x:auto}
+.bar{height:14px;background:#c9a227;border-radius:7px;min-width:2px}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.win{background:#eef6ee}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.radio-row{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0}
+.radio-row label{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}
+.radio-row input[type=radio]{width:22px;height:22px;accent-color:#c9a227}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Decision Matrix Builder</h1>
+<p class="intro">Compare options side by side with weighted criteria so the best choice is visible, not just felt. List options, weight what matters, score each one — the math ranks them.</p>
+
+<div class="appcard">
+<label class="lbl" for="decision">What are you deciding?</label>
+<input type="text" id="decision" placeholder="e.g., Which car to buy, where to move, which vendor to hire">
+
+<h2 style="font-family:Georgia,serif;margin:18px 0 4px;font-size:1.25rem">Step 1 — Your options</h2>
+<p class="hint">Add at least two options to compare.</p>
+<div id="options"></div>
+<button class="btn ghost small" id="addOpt">+ Add option</button>
+
+<h2 style="font-family:Georgia,serif;margin:18px 0 4px;font-size:1.25rem">Step 2 — Your criteria and weights</h2>
+<p class="hint">Weights are <b>relative importance</b> — any numbers work (1–10, percentages, anything). They are normalized automatically. A weight of 0 means the criterion is ignored.</p>
+<div id="criteria"></div>
+<button class="btn ghost small" id="addCrit">+ Add criterion</button>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Step 3 — Score each option</h2>
+<p class="hint">Score every option on every criterion (e.g., 1–10, where 10 is best). Any number works — decimals and negatives are fine. Blank scores count as 0.</p>
+<div class="twrap" id="scoreTable"></div>
+<p class="note" id="normNote"></p>
+<p class="err" id="err" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="compute">Rank my options</button>
+<button class="btn ghost" id="reset">Reset (clear saved work)</button>
+</div>
+</div>
+
+<div class="appcard" id="results" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Results</h2>
+<div id="resultBody" aria-live="polite"></div>
+</div>
+
+<div class="appcard" id="gutcard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Gut check</h2>
+<p class="hint">The math is a flashlight, not the decision-maker. Does the winner feel right?</p>
+<div class="radio-row" role="radiogroup" aria-label="Does the winner feel right?">
+<label><input type="radio" name="gut" value="yes"> Yes, that feels right</label>
+<label><input type="radio" name="gut" value="no"> No, something feels off</label>
+</div>
+<div id="gutOut" aria-live="polite"></div>
+<label class="lbl" for="offWhat">If something feels off, what is it?</label>
+<select id="offWhat">
+<option value="">Choose one…</option>
+<option value="score">One of my scores is probably wrong</option>
+<option value="weight">A weight doesn't reflect what I truly value</option>
+<option value="missing">A criterion is missing from the matrix</option>
+<option value="other">Something else</option>
+</select>
+<div id="offAdvice"></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>For bigger life decisions, the <b>Made Simple</b> book collection covers critical thinking, decision-making, and strategy in plain English, by Kimani Upshur, M.Ed.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/">Browse the Books</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-decision-matrix-builder-v1";
+var TIE_EPS=0.01;
+var S={decision:"",options:["",""],criteria:[{name:"",weight:""},{name:"",weight:""}],scores:{},gut:"",offWhat:""};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function num(v,def){var n=parseFloat(v);return isFinite(n)?n:def;}
+function fmt(n){if(!isFinite(n))return "—";return (Math.round(n*100)/100).toString();}
+
+function drawOptions(){
+  var box=document.getElementById("options");box.innerHTML="";
+  S.options.forEach(function(name,i){
+    var row=document.createElement("div");row.className="rowitem";
+    var inp=document.createElement("input");inp.type="text";inp.value=name;
+    inp.placeholder="Option "+(i+1);inp.setAttribute("aria-label","Option "+(i+1)+" name");
+    inp.addEventListener("input",function(){S.options[i]=inp.value;save();});
+    row.appendChild(inp);
+    if(S.options.length>2){var rm=document.createElement("button");rm.className="btn danger small rm";rm.textContent="Remove";
+      rm.setAttribute("aria-label","Remove option "+(i+1));
+      rm.addEventListener("click",function(){S.options.splice(i,1);save();drawOptions();drawScoreTable();});
+      row.appendChild(rm);}
+    box.appendChild(row);
+  });
+}
+function drawCriteria(){
+  var box=document.getElementById("criteria");box.innerHTML="";
+  S.criteria.forEach(function(c,i){
+    var row=document.createElement("div");row.className="rowitem";
+    var inp=document.createElement("input");inp.type="text";inp.value=c.name;
+    inp.placeholder="Criterion "+(i+1)+" (e.g., Cost)";inp.setAttribute("aria-label","Criterion "+(i+1)+" name");
+    inp.style.flex="2";
+    inp.addEventListener("input",function(){S.criteria[i].name=inp.value;save();});
+    var w=document.createElement("input");w.type="number";w.value=c.weight;w.min="0";w.step="any";
+    w.placeholder="Weight";w.setAttribute("aria-label","Weight for criterion "+(i+1));w.style.flex="1";
+    w.addEventListener("input",function(){S.criteria[i].weight=w.value;save();drawNormNote();});
+    row.appendChild(inp);row.appendChild(w);
+    if(S.criteria.length>1){var rm=document.createElement("button");rm.className="btn danger small rm";rm.textContent="Remove";
+      rm.setAttribute("aria-label","Remove criterion "+(i+1));
+      rm.addEventListener("click",function(){S.criteria.splice(i,1);save();drawCriteria();drawScoreTable();});
+      row.appendChild(rm);}
+    box.appendChild(row);
+  });
+  drawNormNote();
+}
+function normWeights(){
+  var ws=S.criteria.map(function(c){return {name:c.name,raw:num(c.weight,NaN),w:num(c.weight,0)};});
+  var sum=ws.reduce(function(a,x){return a+x.w;},0);
+  var norm=ws.map(function(x){return sum>0?x.w/sum:0;});
+  return {ws:ws,sum:sum,norm:norm};
+}
+function drawNormNote(){
+  var n=normWeights();
+  var el=document.getElementById("normNote");
+  var named=S.criteria.filter(function(c){return c.name.trim();}).length;
+  if(named&&n.sum>0){
+    el.textContent="Weights normalize to: "+S.criteria.map(function(c,i){
+      return (c.name.trim()||("Criterion "+(i+1)))+" "+Math.round(n.norm[i]*100)+"%";
+    }).join(" · ");
+  }else el.textContent="";
+}
+function drawScoreTable(){
+  var box=document.getElementById("scoreTable");
+  var opts=S.options.map(function(o,i){return o.trim()||("Option "+(i+1));});
+  var crits=S.criteria.map(function(c,i){return c.name.trim()||("Criterion "+(i+1));});
+  var h='<table class="grid" aria-label="Score table"><tr><th>Criterion</th>';
+  opts.forEach(function(o){h+='<th>'+esc(o)+'</th>';});
+  h+='</tr>';
+  crits.forEach(function(cn,ci){
+    h+='<tr><td class="l">'+esc(cn)+'</td>';
+    opts.forEach(function(o,oi){
+      var key=oi+":"+ci;var v=S.scores[key];if(v===undefined)v="";
+      h+='<td><input type="number" step="any" data-key="'+key+'" value="'+esc(v)+'" aria-label="Score for '+esc(o)+' on '+esc(cn)+'"></td>';
+    });
+    h+='</tr>';
+  });
+  h+='</table>';
+  box.innerHTML=h;
+  box.querySelectorAll("input[data-key]").forEach(function(inp){
+    inp.addEventListener("input",function(){S.scores[inp.getAttribute("data-key")]=inp.value;save();});
+  });
+}
+
+function compute(){
+  var errEl=document.getElementById("err");errEl.textContent="";
+  var optNames=S.options.map(function(o){return o.trim();}).filter(function(o){return o;});
+  var critIdx=S.criteria.map(function(c,i){return i;}).filter(function(i){return S.criteria[i].name.trim();});
+  if(S.decision.trim()===""){/* decision name optional */}
+  if(optNames.length<2){errEl.textContent="Add at least two named options.";return null;}
+  if(critIdx.length<1){errEl.textContent="Add at least one named criterion.";return null;}
+  for(var k=0;k<critIdx.length;k++){
+    var cw=num(S.criteria[critIdx[k]].weight,NaN);
+    if(isNaN(cw)){errEl.textContent="Every criterion needs a numeric weight.";return null;}
+    if(cw<0){errEl.textContent="Weights can't be negative — use 0 to ignore a criterion.";return null;}
+  }
+  var sum=critIdx.reduce(function(a,i){return a+num(S.criteria[i].weight,0);},0);
+  if(sum<=0){errEl.textContent="All weights are zero — the math can't rank anything. Give at least one criterion a positive weight.";return null;}
+  var norm=critIdx.map(function(i){return num(S.criteria[i].weight,0)/sum;});
+  var totals=[],notes=[];
+  optNames.forEach(function(on,oi){
+    var t=0,raw=0;
+    critIdx.forEach(function(ci,j){
+      var key=oi+":"+ci;var s=num(S.scores[key],0);
+      if(S.scores[key]===undefined||S.scores[key]==="")notes.push("Blank score for \""+on+"\" on \""+S.criteria[ci].name.trim()+"\" counted as 0.");
+      else if(isNaN(num(S.scores[key],NaN))){notes.push("Non-numeric score for \""+on+"\" on \""+S.criteria[ci].name.trim()+"\" counted as 0.");}
+      t+=norm[j]*s;raw+=num(S.criteria[ci].weight,0)*s;
+    });
+    totals.push({name:on,total:t,raw:raw,idx:oi});
+  });
+  totals.sort(function(a,b){return b.total-a.total;});
+  return {optNames:optNames,critIdx:critIdx,norm:norm,totals:totals,notes:notes,sum:sum};
+}
+
+function renderResults(r){
+  var box=document.getElementById("results");box.hidden=false;
+  var b=document.getElementById("resultBody");
+  var max=Math.max.apply(null,r.totals.map(function(t){return Math.abs(t.total);}));
+  var h='<table class="grid" aria-label="Ranking"><tr><th>Rank</th><th>Option</th><th>Weighted score</th><th></th></tr>';
+  r.totals.forEach(function(t,i){
+    var cls=i===0?"win":"";
+    h+='<tr class="'+cls+'"><td><b>'+(i+1)+'</b></td><td class="l">'+esc(t.name)+'</td><td><b>'+fmt(t.total)+'</b></td><td style="min-width:80px"><div class="bar" style="width:'+(max>0?Math.max(2,Math.abs(t.total)/max*100):0)+'%"></div></td></tr>';
+  });
+  h+='</table>';
+  var first=r.totals[0],second=r.totals[1];
+  var tie=second&&(Math.abs(first.total-second.total)<TIE_EPS);
+  if(tie){
+    var tied=r.totals.filter(function(t){return Math.abs(t.total-first.total)<TIE_EPS;}).map(function(t){return '"'+t.name+'"';});
+    h+='<div class="flag"><b>It\'s a tie</b> between '+tied.join(" and ")+' (within '+TIE_EPS+' points). The math can\'t separate them — this is exactly what the gut check below is for. Consider: which option would you pick if the other vanished tomorrow?</div>';
+  }else{
+    h+='<div class="flag good"><b>Winner: '+esc(first.name)+'</b> with a weighted score of '+fmt(first.total)+' vs. '+fmt(second.total)+' for '+esc(second.name)+' (margin: '+fmt(first.total-second.total)+').</div>';
+    var ci=r.critIdx,ns=r.norm;
+    var bestJ=0,bestC=-Infinity;
+    ci.forEach(function(cidx,j){
+      var sW=num(S.scores[first.idx+":"+cidx],0),sR=num(S.scores[second.idx+":"+cidx],0);
+      var contrib=ns[j]*(sW-sR);
+      if(contrib>bestC){bestC=contrib;bestJ=j;}
+    });
+    var critName=S.criteria[ci[bestJ]].name.trim();
+    h+='<div class="flag"><b>The deciding criterion: '+esc(critName)+'</b> — it contributed '+fmt(bestC)+' points of the margin (weight '+Math.round(ns[bestJ]*100)+'%). ';
+    if(bestC>0&&ns[bestJ]>0){
+      var drop=(first.total-second.total)/ns[bestJ];
+      h+='If '+esc(first.name)+'\'s score on '+esc(critName)+' dropped by '+fmt(drop)+' points, '+esc(second.name)+' would tie it. That\'s your swing factor — double-check that score.</div>';
+    }else h+='</div>';
+    var halfIdx=ci[bestJ];
+    var w2=S.criteria.map(function(c,i){return critIdxContains(r,i)?num(c.weight,0):0;});
+    function critIdxContains(rr,i){return rr.critIdx.indexOf(i)>=0;}
+    w2[halfIdx]=w2[halfIdx]/2;
+    var sum2=w2.reduce(function(a,x){return a+x;},0);
+    if(sum2>0){
+      var t2=r.optNames.map(function(on,oi){
+        var t=0;ci.forEach(function(cidx,j){t+=(w2[cidx]/sum2)*num(S.scores[oi+":"+cidx],0);});return {name:on,total:t};
+      }).sort(function(a,c){return c.total-a.total;});
+      if(t2[0].name!==first.name){h+='<div class="flag"><b>Sensitivity check:</b> if '+esc(critName)+' mattered half as much, <b>'+esc(t2[0].name)+'</b> would win instead. Your weights are doing real work here — make sure they reflect what you truly value.</div>';}
+      else{h+='<div class="flag good"><b>Sensitivity check:</b> even if '+esc(critName)+' mattered half as much, <b>'+esc(first.name)+'</b> would still win. That\'s a robust result.</div>';}
+    }
+  }
+  var seen={};
+  r.notes.forEach(function(n){if(!seen[n]){seen[n]=1;h+='<p class="note">'+esc(n)+'</p>';}});
+  h+='<p class="note">How it\'s computed: each score is multiplied by its criterion\'s normalized weight (weight ÷ total of all weights), then summed. Higher is better.</p>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 6px">Next steps</h3><ol style="margin-left:22px">'+
+    '<li>Do the gut check below — if the winner surprises you, your weights or scores need adjusting, not the math.</li>'+
+    '<li>Sleep on it, then re-score once. If the same option wins twice, you have your answer.</li>'+
+    '<li>Write down the choice and why (one sentence) so you can review it later.</li></ol>';
+  b.innerHTML=h;
+  var gc=document.getElementById("gutcard");gc.hidden=false;
+}
+
+document.getElementById("addOpt").addEventListener("click",function(){
+  if(S.options.length>=10){document.getElementById("err").textContent="Ten options is the practical limit — if you have more, drop the weakest first.";return;}
+  S.options.push("");save();drawOptions();drawScoreTable();
+});
+document.getElementById("addCrit").addEventListener("click",function(){
+  if(S.criteria.length>=10){document.getElementById("err").textContent="Ten criteria is the practical limit — merge or drop the least important.";return;}
+  S.criteria.push({name:"",weight:""});save();drawCriteria();drawScoreTable();
+});
+document.getElementById("compute").addEventListener("click",function(){
+  var r=compute();
+  if(r)renderResults(r);
+});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={decision:"",options:["",""],criteria:[{name:"",weight:""},{name:"",weight:""}],scores:{},gut:"",offWhat:""};
+  document.getElementById("decision").value="";
+  document.getElementById("results").hidden=true;document.getElementById("gutcard").hidden=true;
+  document.getElementById("err").textContent="";
+  drawOptions();drawCriteria();drawScoreTable();
+});
+document.getElementById("decision").addEventListener("input",function(){S.decision=this.value;save();});
+
+document.querySelectorAll('input[name="gut"]').forEach(function(r){
+  r.addEventListener("change",function(){
+    S.gut=this.value;save();
+    var out=document.getElementById("gutOut");
+    if(this.value==="yes"){out.innerHTML='<div class="flag good"><b>Locked in.</b> The math and your gut agree — that\'s the strongest signal this tool can give. Make the call and move on.</div>';}
+    else{out.innerHTML='<div class="flag"><b>Trust the signal, not the spreadsheet.</b> A "no" usually means a weight is wrong, a score is inflated, or a criterion is missing. Pick what feels off below, adjust the matrix, and re-rank.</div>';}
+  });
+});
+document.getElementById("offWhat").addEventListener("change",function(){
+  S.offWhat=this.value;save();
+  var a=document.getElementById("offAdvice");
+  var tips={"score":"Re-examine that score: would you defend it out loud to a friend? Scores made while tired or rushed are usually the culprit.",
+    "weight":"Ask yourself: if you could only keep ONE criterion, which would it be? Give that one the biggest weight and re-rank.",
+    "missing":"Add the missing criterion now with an honest weight, score every option on it, and re-rank. Missing criteria are the #1 cause of gut-check failures.",
+    "other":"Talk it through with someone you trust, or sleep on it and re-score tomorrow. Then re-rank and compare."};
+  a.innerHTML=this.value?'<div class="flag">'+esc(tips[this.value])+'</div>':"";
+});
+
+load();
+document.getElementById("decision").value=S.decision||"";
+drawOptions();drawCriteria();drawScoreTable();
+if(S.gut){var g=document.querySelector('input[name="gut"][value="'+S.gut+'"]');if(g){g.checked=true;g.dispatchEvent(new Event("change"));}}
+if(S.offWhat){document.getElementById("offWhat").value=S.offWhat;document.getElementById("offWhat").dispatchEvent(new Event("change"));}
+</script>
+</body>
+</html>

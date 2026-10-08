@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision Tree Simulator | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Sketch choices, chance events, and payoffs as a tree and let expected-value math point to the strongest path. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/decision-tree-simulator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Decision Tree Simulator | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Sketch choices, chance events, and payoffs as a tree and let expected-value math point to the strongest path. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/decision-tree-simulator/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],input[type=range],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+input[type=range]{padding:0;accent-color:#c9a227;min-height:44px}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.choicecard{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:14px 0}
+.choicecard h3{font-family:Georgia,serif;margin-bottom:4px}
+.orow{display:flex;gap:8px;align-items:center;margin:6px 0;flex-wrap:wrap}
+.orow input{margin:0}
+.orow .on{flex:3;min-width:140px}
+.orow .op{flex:1;min-width:90px}
+.orow .ov{flex:1;min-width:110px}
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+table.grid th,table.grid td{border:1px solid #e0d6b8;padding:8px;text-align:center}
+table.grid th{background:#141210;color:#e8c84a}
+table.grid td.l{text-align:left;font-weight:bold}
+.twrap{overflow-x:auto}
+.bar{height:14px;background:#c9a227;border-radius:7px;min-width:2px}
+.win{background:#eef6ee}
+.radio-row{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0}
+.radio-row label{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}
+.radio-row input[type=radio]{width:22px;height:22px;accent-color:#c9a227}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Decision Tree Simulator</h1>
+<p class="intro">Sketch your choices, the chance events under each, and the payoffs — then let expected-value math point to the strongest path. Probabilities that don't add to 100% are normalized for you.</p>
+<p class="hint" style="margin-bottom:16px"><b>Educational tool only.</b> Expected values describe averages over many repeats, not guarantees for a single decision — and payoffs here are your estimates, not predictions.</p>
+
+<div class="appcard">
+<label class="lbl" for="decision">What are you deciding?</label>
+<input type="text" id="decision" placeholder="e.g., Take the job offer or stay put?">
+<h2 style="font-family:Georgia,serif;margin:18px 0 4px;font-size:1.25rem">Your choices (branches)</h2>
+<p class="hint">Each choice gets its own chance outcomes: a name, your estimated probability (%), and the payoff in dollars (negative for losses). One outcome at 100% = a certain payoff.</p>
+<div id="choices"></div>
+<button class="btn ghost small" id="addChoice">+ Add choice</button>
+<p class="err" id="err" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="compute">Run the numbers</button>
+<button class="btn ghost" id="reset">Reset (clear saved work)</button>
+</div>
+</div>
+
+<div class="appcard" id="results" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Results</h2>
+<div id="warnings"></div>
+<div class="twrap" id="evTable"></div>
+<div id="reco" aria-live="polite"></div>
+<div id="sens"></div>
+<div id="gutWrap" style="margin-top:16px">
+<h3 style="font-family:Georgia,serif;margin-bottom:4px">Gut check</h3>
+<p class="hint">Expected value is the long-run average. Does the recommended path feel right for <i>one</i> real decision?</p>
+<div class="radio-row" role="radiogroup" aria-label="Does the recommendation feel right?">
+<label><input type="radio" name="gut" value="yes"> Yes</label>
+<label><input type="radio" name="gut" value="no"> No — feels too risky / too safe</label>
+</div>
+<div id="gutOut" aria-live="polite"></div>
+</div>
+<h3 style="font-family:Georgia,serif;margin:16px 0 6px">Next steps</h3>
+<ol style="margin-left:22px" id="nextsteps"></ol>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>For more tools on decisions, risk, and strategy, browse the <b>Made Simple</b> book collection, by Kimani Upshur, M.Ed.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/">Browse the Books</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-decision-tree-simulator-v1";
+var S={decision:"",choices:[{name:"",outcomes:[{name:"",prob:"",payoff:""},{name:"",prob:"",payoff:""}]},{name:"",outcomes:[{name:"",prob:"",payoff:""}]}]};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function money(n){
+  if(n===null||n===undefined||!isFinite(n))return "—";
+  var neg=n<0;var a=Math.abs(n);
+  var s=a.toLocaleString("en-US",{maximumFractionDigits:2});
+  return (neg?"−$":"$")+s;
+}
+function strictNum(v){
+  var t=String(v).trim().replace(/[$,%\s]/g,"");
+  if(!/^-?(\d+(\.\d+)?|\.\d+)$/.test(t))return NaN;
+  var n=parseFloat(t);return isFinite(n)?n:NaN;
+}
+
+function drawChoices(){
+  var box=document.getElementById("choices");box.innerHTML="";
+  S.choices.forEach(function(ch,ci){
+    var card=document.createElement("div");card.className="choicecard";
+    var h=document.createElement("h3");h.textContent="Choice "+(ci+1);card.appendChild(h);
+    var top=document.createElement("div");top.className="orow";
+    var nm=document.createElement("input");nm.type="text";nm.value=ch.name;nm.style.flex="1";
+    nm.placeholder="Choice name (e.g., Accept the offer)";nm.setAttribute("aria-label","Choice "+(ci+1)+" name");
+    nm.addEventListener("input",function(){S.choices[ci].name=nm.value;save();});
+    top.appendChild(nm);
+    if(S.choices.length>2){
+      var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove choice";
+      rm.setAttribute("aria-label","Remove choice "+(ci+1));
+      rm.addEventListener("click",function(){S.choices.splice(ci,1);save();drawChoices();});
+      top.appendChild(rm);
+    }
+    card.appendChild(top);
+    ch.outcomes.forEach(function(oc,oi){
+      var row=document.createElement("div");row.className="orow";
+      var on=document.createElement("input");on.type="text";on.className="on";on.value=oc.name;
+      on.placeholder="Outcome "+(oi+1)+" (e.g., It works out)";on.setAttribute("aria-label","Outcome "+(oi+1)+" name for choice "+(ci+1));
+      on.addEventListener("input",function(){S.choices[ci].outcomes[oi].name=on.value;save();});
+      var op=document.createElement("input");op.type="number";op.className="op";op.value=oc.prob;op.min="0";op.step="any";
+      op.placeholder="%";op.setAttribute("aria-label","Probability percent for outcome "+(oi+1)+" of choice "+(ci+1));
+      op.addEventListener("input",function(){S.choices[ci].outcomes[oi].prob=op.value;save();});
+      var ov=document.createElement("input");ov.type="text";ov.className="ov";ov.value=oc.payoff;ov.inputMode="decimal";
+      ov.placeholder="$ payoff";ov.setAttribute("aria-label","Payoff in dollars for outcome "+(oi+1)+" of choice "+(ci+1));
+      ov.addEventListener("input",function(){S.choices[ci].outcomes[oi].payoff=ov.value;save();});
+      row.appendChild(on);row.appendChild(op);row.appendChild(ov);
+      if(ch.outcomes.length>1){
+        var orm=document.createElement("button");orm.className="btn danger small";orm.textContent="✕";
+        orm.setAttribute("aria-label","Remove outcome "+(oi+1)+" from choice "+(ci+1));
+        orm.addEventListener("click",function(){S.choices[ci].outcomes.splice(oi,1);save();drawChoices();});
+        row.appendChild(orm);
+      }
+      card.appendChild(row);
+    });
+    var add=document.createElement("button");add.className="btn ghost small";add.textContent="+ Add outcome";
+    add.setAttribute("aria-label","Add outcome to choice "+(ci+1));
+    add.addEventListener("click",function(){
+      if(S.choices[ci].outcomes.length>=8){document.getElementById("err").textContent="Eight outcomes per choice is plenty — merge the smallest ones.";return;}
+      S.choices[ci].outcomes.push({name:"",prob:"",payoff:""});save();drawChoices();
+    });
+    card.appendChild(add);
+    box.appendChild(card);
+  });
+}
+
+function compute(){
+  var errEl=document.getElementById("err");errEl.textContent="";
+  var warns=[];
+  var named=S.choices.filter(function(c){return c.name.trim();});
+  if(named.length<2){errEl.textContent="Name at least two choices.";return null;}
+  var data=[];
+  for(var ci=0;ci<S.choices.length;ci++){
+    var ch=S.choices[ci];if(!ch.name.trim())continue;
+    var outs=ch.outcomes.map(function(o,oi){
+      return {name:o.name.trim()||("Outcome "+(oi+1)),probRaw:o.prob,payoffRaw:o.payoff};
+    });
+    if(!outs.length){errEl.textContent="\""+ch.name.trim()+"\" needs at least one outcome.";return null;}
+    var probs=[],payoffs=[];
+    for(var k=0;k<outs.length;k++){
+      var pRaw=String(outs[k].probRaw).trim();
+      var p;
+      if(pRaw===""&&outs.length===1){p=100;warns.push("\""+ch.name.trim()+"\": single outcome with no probability — treated as 100% certain.");}
+      else if(pRaw===""){p=0;}
+      else{p=strictNum(pRaw);if(isNaN(p)){errEl.textContent="Probability \""+outs[k].probRaw+"\" for \""+ch.name.trim()+"\" isn't a number.";return null;}}
+      if(p<0){errEl.textContent="Probabilities can't be negative (\""+ch.name.trim()+"\").";return null;}
+      var vRaw=String(outs[k].payoffRaw).trim();
+      var v;
+      if(vRaw===""){v=0;warns.push("\""+ch.name.trim()+"\" → \""+outs[k].name+"\": blank payoff counted as $0.");}
+      else{v=strictNum(vRaw);if(isNaN(v)){errEl.textContent="Payoff \""+outs[k].payoffRaw+"\" for \""+ch.name.trim()+"\" isn't a plain number (no \"k\" or commas).";return null;}}
+      probs.push(p);payoffs.push(v);
+    }
+    var sum=probs.reduce(function(a,x){return a+x;},0);
+    if(sum<=0){errEl.textContent="\""+ch.name.trim()+"\": probabilities sum to zero — assign at least one positive probability.";return null;}
+    if(Math.abs(sum-100)>0.001){
+      warns.push("\""+ch.name.trim()+"\": probabilities summed to "+(Math.round(sum*100)/100)+"% — normalized to 100%.");
+    }
+    var nprobs=probs.map(function(p){return p/sum;});
+    var ev=0,best=-Infinity,worst=Infinity,bi=0,wi=0;
+    for(var j=0;j<outs.length;j++){
+      ev+=nprobs[j]*payoffs[j];
+      if(payoffs[j]>best){best=payoffs[j];bi=j;}
+      if(payoffs[j]<worst){worst=payoffs[j];wi=j;}
+    }
+    data.push({name:ch.name.trim(),ev:ev,best:payoffs[bi],worst:payoffs[wi],bestName:outs[bi].name,worstName:outs[wi].name,range:best-worst,nprobs:nprobs,payoffs:payoffs,outNames:outs.map(function(o){return o.name;})});
+  }
+  return {data:data,warns:warns};
+}
+
+function tieEps(evs){
+  var m=Math.max.apply(null,evs.map(Math.abs).concat([1]));
+  return Math.max(0.01,0.005*m);
+}
+
+function winnerOf(evs){
+  var eps=tieEps(evs);
+  var order=evs.map(function(v,i){return i;}).sort(function(a,b){return evs[b]-evs[a];});
+  var top=order[0];
+  var tied=order.filter(function(i){return Math.abs(evs[i]-evs[top])<=eps;});
+  return {idx:top,tied:tied,eps:eps};
+}
+
+function renderResults(r){
+  document.getElementById("results").hidden=false;
+  var wEl=document.getElementById("warnings");wEl.innerHTML="";
+  r.warns.forEach(function(x){wEl.innerHTML+='<p class="note">⚠ '+esc(x)+'</p>';});
+  var data=r.data;
+  var evs=data.map(function(d){return d.ev;});
+  var w=winnerOf(evs);
+  var maxA=Math.max.apply(null,evs.map(Math.abs).concat([0.0001]));
+  var h='<table class="grid" aria-label="Expected values"><tr><th>Choice</th><th>Expected value</th><th>Best case</th><th>Worst case</th><th></th></tr>';
+  var order=evs.map(function(v,i){return i;}).sort(function(a,b){return evs[b]-evs[a];});
+  order.forEach(function(i){
+    var d=data[i];var cls=(i===w.idx)?"win":"";
+    h+='<tr class="'+cls+'"><td class="l">'+esc(d.name)+(i===w.idx&&w.tied.length===1?" ★":"")+'</td><td><b>'+money(d.ev)+'</b></td><td>'+money(d.best)+'<br><span class="hint">'+esc(d.bestName)+'</span></td><td>'+money(d.worst)+'<br><span class="hint">'+esc(d.worstName)+'</span></td><td style="min-width:70px"><div class="bar" style="width:'+Math.max(2,Math.abs(d.ev)/maxA*100)+'%"></div></td></tr>';
+  });
+  h+='</table><p class="note">Expected value = Σ (probability × payoff) for each choice\'s outcomes, with probabilities normalized to 100%.</p>';
+  document.getElementById("evTable").innerHTML=h;
+
+  var reco=document.getElementById("reco");
+  var rh="";
+  if(w.tied.length>1){
+    rh+='<div class="flag"><b>It\'s a tie</b> between '+w.tied.map(function(i){return '"'+esc(data[i].name)+'"';}).join(" and ")+' (within '+money(w.eps)+'). The math can\'t separate them — pick by risk tolerance: which worst case could you live with?</div>';
+  }else{
+    var runner=order[1];
+    var margin=data[w.idx].ev-data[runner].ev;
+    rh+='<div class="flag good"><b>Recommended: '+esc(data[w.idx].name)+'</b> — expected value '+money(data[w.idx].ev)+' vs. '+money(data[runner].ev)+' for '+esc(data[runner].name)+' (margin: '+money(margin)+').</div>';
+    if(evs.every(function(v){return v<0;})){
+      rh+='<div class="flag"><b>Note:</b> every option has a negative expected value — this is damage control. The recommendation minimizes expected loss.</div>';
+    }
+  }
+  reco.innerHTML=rh;
+
+  renderSensitivity(r,w);
+  var ns=document.getElementById("nextsteps");
+  ns.innerHTML='<li>Sanity-check your two most uncertain numbers (the key probability above and the biggest payoff) — they drive the whole answer.</li>'+
+    '<li>If the recommendation feels wrong, adjust one number at a time and re-run. The model follows your inputs; it can\'t fix bad estimates.</li>'+
+    '<li>For a one-shot decision you can\'t repeat, weigh the worst case more heavily than the average — expected value assumes you get to play many times.</li>';
+}
+
+function evsWithOverride(r,ci,oi,newProbPct){
+  return r.data.map(function(d,di){
+    if(di!==ci)return d.ev;
+    var p=newProbPct/100;
+    var sumOthers=0;
+    for(var j=0;j<d.nprobs.length;j++){if(j!==oi)sumOthers+=d.nprobs[j];}
+    if(sumOthers<=0)return d.payoffs[oi];
+    var ev=p*d.payoffs[oi];
+    for(var k=0;k<d.payoffs.length;k++){
+      if(k===oi)continue;
+      ev+=((1-p)*d.nprobs[k]/sumOthers)*d.payoffs[k];
+    }
+    return ev;
+  });
+}
+
+function renderSensitivity(r,w){
+  var sEl=document.getElementById("sens");
+  if(w.tied.length>1){sEl.innerHTML="";return;}
+  var win=w.idx;
+  var bestCI=win,bestOI=0,bestRange=-1,bestName="";
+  r.data.forEach(function(d,ci){
+    d.nprobs.forEach(function(p,oi){
+      var ev0=evsWithOverride(r,ci,oi,0)[ci];
+      var ev100=evsWithOverride(r,ci,oi,100)[ci];
+      var range=Math.abs(ev100-ev0);
+      if(range>bestRange){bestRange=range;bestCI=ci;bestOI=oi;bestName=d.outNames[oi];}
+    });
+  });
+  var wd=r.data[bestCI];
+  var oname=bestName;
+  var curPct=Math.round(wd.nprobs[bestOI]*100);
+  var h='<h3 style="font-family:Georgia,serif;margin:16px 0 6px">Sensitivity — the number that matters most</h3>';
+  h+='<p class="hint">Across all your choices, the outcome <b>"'+esc(oname)+'"</b> (under <b>'+esc(wd.name)+'</b>) moves its expected value the most. Drag the slider to see how the recommendation shifts:</p>';
+  h+='<label class="lbl" for="sensSlider">Chance of "'+esc(oname)+'": <span id="sensVal">'+curPct+'%</span></label>';
+  h+='<input type="range" id="sensSlider" min="0" max="100" step="1" value="'+curPct+'" aria-label="Probability of '+esc(oname)+'">';
+  h+='<div id="sensOut" aria-live="polite"></div>';
+  sEl.innerHTML=h;
+  var lo=100,hi=0;
+  var baseWinner=winnerOf(evsWithOverride(r,bestCI,bestOI,curPct)).idx;
+  for(var p=0;p<=100;p++){
+    var evs=evsWithOverride(r,bestCI,bestOI,p);
+    if(evs.some(function(v){return isNaN(v);}))continue;
+    var wi=winnerOf(evs).idx;
+    if(wi===baseWinner){if(p<lo)lo=p;if(p>hi)hi=p;}
+  }
+  var holdMsg;
+  if(lo===0&&hi===100){holdMsg='<div class="flag good"><b>Rock solid:</b> the recommendation holds no matter what this probability is (0–100%).</div>';}
+  else{holdMsg='<div class="flag"><b>Flip point:</b> "'+esc(r.data[win].name)+'" stays recommended while the chance of "'+esc(oname)+'" is between <b>'+lo+'%</b> and <b>'+hi+'%</b> (currently '+curPct+'%). Outside that range, another choice wins.</div>';}
+  var out=document.getElementById("sensOut");out.innerHTML=holdMsg;
+  document.getElementById("sensSlider").addEventListener("input",function(){
+    var p=parseInt(this.value,10);
+    document.getElementById("sensVal").textContent=p+"%";
+    var evs=evsWithOverride(r,bestCI,bestOI,p);
+    var ww=winnerOf(evs);
+    var m='<table class="grid" aria-label="Sensitivity table"><tr><th>Choice</th><th>Expected value at '+p+'%</th></tr>';
+    r.data.forEach(function(d,i){
+      m+='<tr class="'+(i===ww.idx?"win":"")+'"><td class="l">'+esc(d.name)+(i===ww.idx?" ★":"")+'</td><td><b>'+money(evs[i])+'</b></td></tr>';
+    });
+    m+='</table>'+holdMsg;
+    out.innerHTML=m;
+  });
+}
+
+document.getElementById("addChoice").addEventListener("click",function(){
+  if(S.choices.length>=6){document.getElementById("err").textContent="Six choices is plenty — drop the weakest first.";return;}
+  S.choices.push({name:"",outcomes:[{name:"",prob:"",payoff:""}]});save();drawChoices();
+});
+document.getElementById("compute").addEventListener("click",function(){
+  var r=compute();
+  if(r)renderResults(r);
+});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={decision:"",choices:[{name:"",outcomes:[{name:"",prob:"",payoff:""}]},{name:"",outcomes:[{name:"",prob:"",payoff:""}]}]};
+  document.getElementById("decision").value="";
+  document.getElementById("results").hidden=true;document.getElementById("err").textContent="";
+  drawChoices();
+});
+document.getElementById("decision").addEventListener("input",function(){S.decision=this.value;save();});
+document.querySelectorAll('input[name="gut"]').forEach(function(r){
+  r.addEventListener("change",function(){
+    var out=document.getElementById("gutOut");
+    if(this.value==="yes"){out.innerHTML='<div class="flag good"><b>Good.</b> The math and your gut agree — act on it.</div>';}
+    else{out.innerHTML='<div class="flag"><b>Listen to that.</b> Expected value is a long-run average; for a one-time, can\'t-repeat decision, a scary worst case matters more than the average. Re-run with extra weight on what you can actually live with — or pick the safer path deliberately.</div>';}
+  });
+});
+
+load();
+document.getElementById("decision").value=S.decision||"";
+drawChoices();
+</script>
+</body>
+</html>

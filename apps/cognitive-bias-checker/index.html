@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cognitive Bias Checker | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Answer diagnostic questions about your decision and get a bias-risk report flagging the mental traps most likely distorting your thinking. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/cognitive-bias-checker/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cognitive Bias Checker | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Answer diagnostic questions about your decision and get a bias-risk report flagging the mental traps most likely distorting your thinking. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/cognitive-bias-checker/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;color:#141210;margin-bottom:10px}
+.appcard h3{font-size:1.05rem;color:#141210;margin:14px 0 6px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.danger{background:transparent;color:#8a2b1c;border:2px solid #a04432}
+label.f{display:block;margin:12px 0 2px;font-weight:bold;font-size:.95rem}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:80px;resize:vertical}
+.q{border:2px solid #e4d9b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.q p.qtext{font-weight:bold;margin-bottom:10px}
+.opts{display:flex;gap:10px;flex-wrap:wrap}
+.opts label{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:2px solid #c9a227;border-radius:8px;cursor:pointer;min-height:48px;font-size:.95rem}
+.opts input{width:20px;height:20px;accent-color:#c9a227}
+.meter{height:14px;background:#eee4c8;border-radius:8px;overflow:hidden;margin:8px 0}
+.meter i{display:block;height:100%;background:#c9a227}
+.brow{border-bottom:1px solid #e4d9b8;padding:12px 0}
+.brow:last-child{border-bottom:none}
+.risk{display:inline-block;font-size:.75rem;font-weight:bold;border-radius:20px;padding:4px 12px;margin-left:8px}
+.risk.low{background:#e2e8d5;color:#4a5a2b}
+.risk.mod{background:#f4e9c8;color:#8a6d1c}
+.risk.high{background:#f0d5c8;color:#8a2b1c}
+.result{background:#f4e9c8;border-radius:8px;padding:16px;margin-top:12px}
+.note{font-size:.88rem;color:#6b6250}
+.hcard{border:2px solid #c9a227;border-radius:10px;padding:16px;margin:12px 0;background:#fffdf7}
+.hcard h4{font-family:Georgia,serif;font-size:1.1rem;margin-bottom:6px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Cognitive Bias Checker</h1>
+<p class="intro">Describe the decision on your mind, answer 10 diagnostic questions, and get a bias-risk report: the mental traps most likely distorting this specific decision, with concrete actions to counter each one.</p>
+
+<div class="appcard">
+<h2>Step 1: The Decision</h2>
+<label class="f" for="cb-title">What are you deciding?</label>
+<input type="text" id="cb-title" placeholder="e.g., Whether to switch careers this year">
+<label class="f" for="cb-desc">Brief description (optional)</label>
+<textarea id="cb-desc" placeholder="A few sentences about the situation and the options."></textarea>
+</div>
+
+<div class="appcard">
+<h2>Step 2: Answer 10 Questions</h2>
+<p class="note">Answer honestly about where you are right now &mdash; not where you wish you were. There are no trick questions.</p>
+<div id="cb-questions"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn" id="cb-score">Get My Bias Report</button>
+</div>
+<p class="note" id="cb-msg" role="status"></p>
+</div>
+
+<div class="appcard" id="cb-report-card" style="display:none">
+<h2>Bias-Risk Report</h2>
+<div id="cb-report"></div>
+</div>
+
+<div class="appcard">
+<h2>Start Over</h2>
+<p class="note">Clears your answers and report from this device.</p>
+<button class="btn danger" id="cb-reset">Clear Answers &amp; Report</button>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Cognitive Bias Checker is just the start. <em>Decision Biases Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic &mdash; the most common thinking traps, how to recognize them, and how to keep them out of your decisions.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/decision-biases-made-simple/">Get Decision Biases Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-cognitive-bias-checker-v1";
+
+var BIASES=[
+ {id:"confirmation",name:"Confirmation Bias",
+  what:"You favor information that supports what you already want to believe, and discount or avoid what contradicts it.",
+  selftest:"What evidence would change my mind — and have I honestly looked for it?",
+  action:"Write down the strongest argument AGAINST your preferred option before deciding. Ask one person who disagrees with you and listen without defending."},
+ {id:"anchoring",name:"Anchoring Bias",
+  what:"The first number, fact, or impression you encounter sets the range for everything after it — even when it is irrelevant.",
+  selftest:"If the first piece of information had been different, would my conclusion change?",
+  action:"Deliberately seek a second, independent starting point. Ask: what would I conclude if I had heard the other number first?"},
+ {id:"sunkcost",name:"Sunk Cost Fallacy",
+  what:"You keep going because of what you already spent — time, money, effort — even when the future looks poor.",
+  selftest:"If I were starting fresh today with no past investment, would I still choose this?",
+  action:"Evaluate the decision only on future costs and benefits. Write the past investment on a separate page and judge the option without it."},
+ {id:"statusquo",name:"Status Quo Bias",
+  what:"You favor the option that changes the least, mistaking familiarity for safety.",
+  selftest:"Am I choosing this because it is best, or because it is what I already have?",
+  action:"Force-rank all options — including doing nothing — on expected outcome alone, ignoring which one is current."},
+ {id:"overconfidence",name:"Overconfidence Effect",
+  what:"You overestimate how much you know and how likely your plan is to work.",
+  selftest:"What is my honest base rate — how often do plans like mine succeed for people like me?",
+  action:"Do a pre-mortem: imagine it is a year later and the decision failed. Write three reasons why. Then plan for each."},
+ {id:"availability",name:"Availability Bias",
+  what:"You judge likelihood by how easily examples come to mind — vivid or recent stories outweigh boring statistics.",
+  selftest:"Am I reacting to data, or to one memorable story?",
+  action:"Replace the story with numbers. Look up the actual base rate or ask: how many times has this really happened versus how often it is talked about?"},
+ {id:"recency",name:"Recency Bias",
+  what:"You give recent events too much weight and forget the longer track record.",
+  selftest:"Would I think the same thing if this had happened a year ago instead of last week?",
+  action:"Zoom out to a longer time window before deciding. Chart or list what happened over the full period, not just the last chapter."},
+ {id:"lossaversion",name:"Loss Aversion",
+  what:"Losing feels roughly twice as bad as winning feels good, so you avoid sensible risks and cling to weak positions.",
+  selftest:"Am I avoiding this because the risk is real, or because the loss would sting?",
+  action:"Reframe as a gain question: if someone offered me this outcome as a fresh opportunity, would I take it?"},
+ {id:"groupthink",name:"Groupthink",
+  what:"When everyone around you agrees, your own doubts go quiet — and bad ideas survive because no one pushes back.",
+  selftest:"Does anyone in this group disagree? If not, why not — is the case really airtight?",
+  action:"Assign one person (or yourself) the role of devil's advocate. Ask the group: what are we not saying?"},
+ {id:"authority",name:"Authority Bias",
+  what:"You accept a claim because an expert, celebrity, or title said it — without checking the reasoning.",
+  selftest:"Do I believe this because of the argument, or because of who said it?",
+  action:"Separate the claim from the speaker. Ask: what is their evidence, and does it hold up on its own?"}
+];
+
+var QUESTIONS=[
+ {q:"Have you already invested significant time, money, or effort in one of the options?",map:{sunkcost:2,statusquo:1,lossaversion:1}},
+ {q:"Are you mostly looking for information that supports the option you prefer?",map:{confirmation:2,availability:1}},
+ {q:"Did the first number, fact, or impression you heard set your expectations?",map:{anchoring:2,confirmation:1}},
+ {q:"Is time pressure pushing you to decide faster than you would like?",map:{availability:1,overconfidence:1,anchoring:1}},
+ {q:"Are the people around you all leaning the same way?",map:{groupthink:2,authority:1}},
+ {q:"How certain are you that things will go the way you expect?",special:"certainty",map:{overconfidence:2,availability:1}},
+ {q:"Would losing on this decision feel worse than winning would feel good?",map:{lossaversion:2,statusquo:1}},
+ {q:"Are you favoring the option that changes the least?",map:{statusquo:2,lossaversion:1}},
+ {q:"Is your view driven mainly by a recent or especially memorable example?",map:{availability:2,recency:2,confirmation:1}},
+ {q:"Are you going along with an expert or authority without checking their reasoning?",map:{authority:2,groupthink:1}}
+];
+
+var el=function(id){return document.getElementById(id);};
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function load(){try{var d=JSON.parse(localStorage.getItem(KEY));return d||{};}catch(e){return{};}}
+function save(st){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+
+var state=load();
+state.answers=state.answers||{};
+
+function renderQuestions(){
+  var box=el("cb-questions");
+  var html="";
+  QUESTIONS.forEach(function(Q,i){
+    var cur=state.answers["q"+i];
+    var opts=Q.special==="certainty"
+      ?[["2","Very certain"],["1","Fairly certain"],["0","Not very certain"]]
+      :[["2","Yes"],["1","Partly / sometimes"],["0","No"]];
+    html+='<div class="q"><p class="qtext">'+(i+1)+'. '+esc(Q.q)+'</p><div class="opts" role="radiogroup" aria-label="'+esc(Q.q)+'">';
+    opts.forEach(function(o){
+      var checked=(String(cur)===o[0])?" checked":"";
+      html+='<label><input type="radio" name="q'+i+'" value="'+o[0]+'"'+checked+">"+esc(o[1])+"</label>";
+    });
+    html+="</div></div>";
+  });
+  box.innerHTML=html;
+  box.querySelectorAll('input[type=radio]').forEach(function(r){
+    r.addEventListener("change",function(){
+      state.answers[this.name]=this.value;
+      save(state);
+      el("cb-msg").textContent="";
+    });
+  });
+  if(state.title)el("cb-title").value=state.title;
+  if(state.desc)el("cb-desc").value=state.desc;
+}
+
+function riskBand(pct){
+  if(pct>66)return["high","High risk"];
+  if(pct>=34)return["mod","Moderate risk"];
+  return["low","Low risk"];
+}
+
+function computeScores(){
+  var pts={},max={};
+  BIASES.forEach(function(b){pts[b.id]=0;max[b.id]=0;});
+  QUESTIONS.forEach(function(Q,i){
+    var a=state.answers["q"+i];
+    if(a==null)return;
+    var v=parseInt(a,10);
+    for(var id in Q.map){
+      if(!Q.map.hasOwnProperty(id))continue;
+      max[id]+=2*Q.map[id];
+      pts[id]+=v*Q.map[id];
+    }
+  });
+  return BIASES.map(function(b){
+    var pct=max[b.id]>0?(100*pts[b.id]/max[b.id]):0;
+    return {bias:b,pct:pct};
+  }).sort(function(a,b){return b.pct-a.pct;});
+}
+
+function renderReport(results){
+  var title=state.title||"Your decision";
+  var h='<p class="note">Decision: <strong>'+esc(title)+"</strong></p>";
+  h+='<h3>All 10 biases, ranked</h3>';
+  results.forEach(function(r){
+    var band=riskBand(r.pct);
+    h+='<div class="brow"><strong>'+esc(r.bias.name)+'</strong><span class="risk '+band[0]+'">'+band[1]+"</span>";
+    h+='<div class="meter"><i style="width:'+Math.round(r.pct)+'%"></i></div>';
+    h+='<span class="note">Risk score: '+Math.round(r.pct)+"%</span></div>";
+  });
+  var top=results.filter(function(r){return r.pct>=34;}).slice(0,3);
+  h+="<h3>Your top flags — what to do about them</h3>";
+  if(top.length===0){
+    h+='<p class="note">No bias scored above moderate. Your thinking looks reasonably clear on this one — still, re-run the check if new information arrives.</p>';
+  }else{
+    top.forEach(function(r,i){
+      var band=riskBand(r.pct);
+      h+='<div class="hcard"><h4>#'+(i+1)+' '+esc(r.bias.name)+' <span class="risk '+band[0]+'">'+band[1]+"</span></h4>";
+      h+="<p>"+esc(r.bias.what)+"</p>";
+      h+='<p style="margin-top:8px"><strong>Self-test:</strong> '+esc(r.bias.selftest)+"</p>";
+      h+='<p style="margin-top:8px"><strong>Debiasing action:</strong> '+esc(r.bias.action)+"</p></div>";
+    });
+  }
+  h+='<div class="result"><h3>Next steps</h3><ul style="margin-left:20px">';
+  h+="<li>Do the debiasing action for your top flag <em>before</em> you commit.</li>";
+  h+="<li>Write your decision and reasoning down today — review it in 30 days and see whether the flag was right.</li>";
+  h+="<li>Run the check again if the decision changes or new pressure appears.</li>";
+  h+="</ul></div>";
+  el("cb-report").innerHTML=h;
+  el("cb-report-card").style.display="block";
+  el("cb-report-card").scrollIntoView();
+}
+
+el("cb-score").addEventListener("click",function(){
+  var answered=0;
+  for(var i=0;i<QUESTIONS.length;i++){if(state.answers["q"+i]!=null)answered++;}
+  state.title=el("cb-title").value.trim();
+  state.desc=el("cb-desc").value.trim();
+  if(answered<QUESTIONS.length){
+    el("cb-msg").textContent="Please answer all 10 questions first ("+answered+" of 10 answered).";
+    return;
+  }
+  save(state);state.reportDone=true;save(state);
+  renderReport(computeScores());
+});
+
+el("cb-reset").addEventListener("click",function(){
+  if(window.confirm("Clear your answers and report from this device?")){
+    state={answers:{}};
+    try{localStorage.removeItem(KEY);}catch(e){}
+    el("cb-title").value="";el("cb-desc").value="";
+    el("cb-report-card").style.display="none";
+    renderQuestions();
+  }
+});
+
+renderQuestions();
+if(state.reportDone){
+  var ok=true;
+  for(var i=0;i<QUESTIONS.length;i++){if(state.answers["q"+i]==null)ok=false;}
+  if(ok)renderReport(computeScores());
+}
+})();
+</script>
+</body>
+</html>

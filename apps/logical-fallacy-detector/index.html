@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logical Fallacy Finder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Take any argument apart with a guided 12-fallacy checklist and get a soundness report naming exactly where the reasoning breaks. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/logical-fallacy-detector/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Logical Fallacy Finder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Take any argument apart with a guided 12-fallacy checklist and get a soundness report naming exactly where the reasoning breaks. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/logical-fallacy-detector/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;color:#141210;margin-bottom:10px}
+.appcard h3{font-size:1.05rem;color:#141210;margin:14px 0 6px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.danger{background:transparent;color:#8a2b1c;border:2px solid #a04432}
+label.f{display:block;margin:12px 0 2px;font-weight:bold;font-size:.95rem}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:110px;resize:vertical}
+.fcard{border:2px solid #e4d9b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.fcard h4{font-family:Georgia,serif;font-size:1.05rem;margin-bottom:4px}
+.fcard .ex{font-size:.9rem;color:#6b6250;font-style:italic;margin:6px 0}
+.fcard .opts{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.fcard .opts label{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:2px solid #c9a227;border-radius:8px;cursor:pointer;min-height:48px;font-size:.95rem}
+.fcard .opts input{width:20px;height:20px;accent-color:#c9a227}
+.fcard input.notebox{width:100%;padding:10px;font-size:.92rem;border:1px solid #c9a227;border-radius:8px;margin-top:10px}
+.verdict{border-radius:8px;padding:16px;margin:12px 0}
+.verdict.solid{background:#e2e8d5;border:2px solid #8a8a4a}
+.verdict.weak{background:#f4e9c8;border:2px solid #c9a227}
+.verdict.broken{background:#f0d5c8;border:2px solid #a04432}
+.verdict .big{font-size:1.4rem;font-family:Georgia,serif;color:#141210}
+.note{font-size:.88rem;color:#6b6250}
+.acard{border:2px solid #e4d9b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.acard .meta{font-size:.85rem;color:#6b6250;margin:4px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Logical Fallacy Finder</h1>
+<p class="intro">Paste in a claim or argument, work through a guided checklist of 12 common reasoning flaws, and get a soundness report naming exactly where the argument breaks.</p>
+
+<div class="appcard">
+<h2>Step 1: The Argument</h2>
+<label class="f" for="lf-claim">The claim or argument</label>
+<textarea id="lf-claim" placeholder="Paste the argument here — from an article, a debate, a sales pitch, your own reasoning&#8230;"></textarea>
+<label class="f" for="lf-source">Where did you hear it? (optional)</label>
+<input type="text" id="lf-source" placeholder="e.g., news article, a friend, an ad">
+</div>
+
+<div class="appcard">
+<h2>Step 2: Check All 12 Fallacies</h2>
+<p class="note">For each one, read the plain-English definition and decide: does this flaw appear in the argument? <span id="lf-progress"></span></p>
+<div id="lf-checklist"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn" id="lf-report-btn">Get My Fallacy Report</button>
+</div>
+<p class="note" id="lf-msg" role="status"></p>
+</div>
+
+<div class="appcard" id="lf-report-card" style="display:none">
+<h2>Fallacy Report</h2>
+<div id="lf-report"></div>
+</div>
+
+<div class="appcard">
+<h2>My Saved Analyses</h2>
+<div id="lf-saved"></div>
+</div>
+
+<div class="appcard">
+<h2>Start Over</h2>
+<p class="note">Clears the current checklist and all saved analyses from this device.</p>
+<button class="btn danger" id="lf-reset">Clear Everything</button>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Logical Fallacy Finder is just the start. <em>Critical Thinking Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic &mdash; how to evaluate claims, spot weak reasoning, and think clearly when it matters.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/critical-thinking-made-simple/">Get Critical Thinking Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-logical-fallacy-detector-v1";
+
+var FALLACIES=[
+ {id:"strawman",name:"Straw Man",
+  def:"Misrepresenting someone's position to make it easier to attack — arguing against a weaker version than they actually hold.",
+  ex:"“So you think we should just never defend ourselves?” (when they never said that)",
+  fix:"Restate the other side's argument in its strongest form, then argue against that."},
+ {id:"adhominem",name:"Ad Hominem",
+  def:"Attacking the person making the argument instead of the argument itself.",
+  ex:"“Of course she supports that policy — she failed economics.”",
+  fix:"Separate the claim from the speaker. Ask: is the argument itself true or false, regardless of who said it?"},
+ {id:"falsedilemma",name:"False Dilemma",
+  def:"Presenting only two options when more exist — forcing a choice between extremes.",
+  ex:"“You're either with us or against us.”",
+  fix:"List the options that were left out. Ask: what is the third option nobody mentioned?"},
+ {id:"slipperyslope",name:"Slippery Slope",
+  def:"Claiming one step will inevitably cause a chain of extreme consequences, without showing the links hold.",
+  ex:"“If we allow this small change, next thing you know everything will collapse.”",
+  fix:"Demand the mechanism: what exactly causes each step to lead to the next, and what is the evidence?"},
+ {id:"hasty",name:"Hasty Generalization",
+  def:"Drawing a broad conclusion from too little evidence — a few examples treated as proof of a rule.",
+  ex:"“My two friends hated that school, so it must be terrible.”",
+  fix:"Ask for the sample size and whether it represents the whole. One or two stories are not data."},
+ {id:"posthoc",name:"False Cause (Post Hoc)",
+  def:"Assuming that because B followed A, A caused B.",
+  ex:"“I wore my lucky socks and we won — the socks did it.”",
+  fix:"Ask for the causal link and consider alternatives: what else could explain B? Would B happen without A?"},
+ {id:"authority",name:"Appeal to Authority",
+  def:"Treating an expert's (or celebrity's) word as proof, without checking their evidence or whether the field is theirs.",
+  ex:"“A famous actor says this treatment works, so it must.”",
+  fix:"Check the evidence behind the claim, not the title in front of it. Is the authority speaking inside their expertise?"},
+ {id:"bandwagon",name:"Bandwagon (Appeal to Popularity)",
+  def:"Claiming something is right because many people believe or do it.",
+  ex:"“Everyone is buying it — it must be the right choice.”",
+  fix:"Popularity is not evidence. Ask: what reasons do the crowd have, and are those reasons sound?"},
+ {id:"circular",name:"Circular Reasoning",
+  def:"The conclusion is hidden inside the premises — the argument assumes what it is trying to prove.",
+  ex:"“This book is true because it says it is true.”",
+  fix:"Strip the conclusion out and see what is left. Demand an independent reason for the claim."},
+ {id:"redherring",name:"Red Herring",
+  def:"Introducing an irrelevant side topic to distract from the real issue.",
+  ex:"“Why worry about this policy when other countries have bigger problems?”",
+  fix:"Name the distraction and return to the original question: does this point actually answer it?"},
+ {id:"equivocation",name:"Equivocation",
+  def:"Using a word with two different meanings, switching between them mid-argument.",
+  ex:"“Laws are enforced by force; forcing your view is wrong — therefore laws are wrong.” (force = authority vs. violence)",
+  fix:"Pin down one definition and hold the argument to it. Ask: does the key word mean the same thing all the way through?"},
+ {id:"ignorance",name:"Appeal to Ignorance",
+  def:"Claiming something is true because it has not been proven false (or false because not proven true).",
+  ex:"“No one has disproven it, so it must be real.”",
+  fix:"Shift the burden correctly: whoever makes the claim supplies the evidence. Absence of disproof is not proof."}
+];
+
+var el=function(id){return document.getElementById(id);};
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function load(){try{var d=JSON.parse(localStorage.getItem(KEY));return d||{};}catch(e){return{};}}
+function save(st){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+function uid(){return "a"+Date.now().toString(36)+Math.floor(Math.random()*10000).toString(36);}
+
+var state=load();
+state.marks=state.marks||{};
+state.notes=state.notes||{};
+state.saved=Array.isArray(state.saved)?state.saved:[];
+
+function progress(){
+  var n=0;FALLACIES.forEach(function(f){if(state.marks[f.id])n++;});
+  el("lf-progress").textContent="Checked "+n+" of "+FALLACIES.length+".";
+}
+
+function renderChecklist(){
+  var html="";
+  FALLACIES.forEach(function(f,i){
+    var m=state.marks[f.id]||"";
+    html+='<div class="fcard"><h4>'+(i+1)+". "+esc(f.name)+"</h4>";
+    html+="<p>"+esc(f.def)+"</p>";
+    html+='<p class="ex">Example: '+esc(f.ex)+"</p>";
+    html+='<div class="opts" role="radiogroup" aria-label="'+esc(f.name)+' present?">';
+    html+='<label><input type="radio" name="lf-'+f.id+'" value="yes"'+(m==="yes"?" checked":"")+">Yes — I see it</label>";
+    html+='<label><input type="radio" name="lf-'+f.id+'" value="unsure"'+(m==="unsure"?" checked":"")+">Not sure</label>";
+    html+='<label><input type="radio" name="lf-'+f.id+'" value="no"'+(m==="no"?" checked":"")+">No</label>";
+    html+="</div>";
+    html+='<input class="notebox" type="text" id="lfn-'+f.id+'" placeholder="Where does it appear? (optional note)" value="'+esc(state.notes[f.id]||"")+'">';
+    html+="</div>";
+  });
+  el("lf-checklist").innerHTML=html;
+  el("lf-checklist").querySelectorAll('input[type=radio]').forEach(function(r){
+    r.addEventListener("change",function(){
+      var id=this.name.slice(3);
+      state.marks[id]=this.value;save(state);progress();el("lf-msg").textContent="";
+    });
+  });
+  el("lf-checklist").querySelectorAll("input.notebox").forEach(function(t){
+    t.addEventListener("change",function(){
+      var id=this.id.slice(4);
+      state.notes[id]=this.value.trim();save(state);
+    });
+  });
+  if(state.claim)el("lf-claim").value=state.claim;
+  if(state.source)el("lf-source").value=state.source;
+  progress();
+}
+
+function buildReport(claim,source,marks,notes){
+  var found=FALLACIES.filter(function(f){return marks[f.id]==="yes";});
+  var unsure=FALLACIES.filter(function(f){return marks[f.id]==="unsure";});
+  var n=found.length;
+  var band,cls,head;
+  if(n===0){cls="solid";head="No fallacies flagged — the argument appears sound.";}
+  else if(n<=2){cls="weak";head="Caution — "+n+" reasoning flaw"+(n>1?"s":"")+" found.";}
+  else{cls="broken";head="Unsound — "+n+" reasoning flaws found. The conclusion cannot rest on this argument.";}
+  var h='<div class="verdict '+cls+'"><p class="big">'+esc(head)+"</p>";
+  h+='<p class="note">Claim: '+esc(claim||"(none entered)")+(source?" · Source: "+esc(source):"")+"</p>";
+  h+='<p class="note">Checked '+FALLACIES.length+' fallacies: '+n+' found, '+unsure.length+' unsure, '+(FALLACIES.length-n-unsure.length)+' absent.</p></div>';
+  if(n>0){
+    h+="<h3>Where the reasoning breaks</h3>";
+    found.forEach(function(f,i){
+      h+='<div class="fcard"><h4>#'+(i+1)+' '+esc(f.name)+"</h4>";
+      h+="<p>"+esc(f.def)+"</p>";
+      if(notes[f.id])h+='<p class="note">In this argument: '+esc(notes[f.id])+"</p>";
+      h+='<p style="margin-top:8px"><strong>What to do about it:</strong> '+esc(f.fix)+"</p></div>";
+    });
+  }
+  if(unsure.length>0){
+    h+='<h3>Worth a second look</h3><p class="note">'+unsure.map(function(f){return esc(f.name);}).join(", ")+" — marked unsure. Re-read the argument with these definitions in mind.</p>";
+  }
+  h+='<div class="verdict weak" style="margin-top:16px"><h3>Next steps</h3><ul style="margin-left:20px" class="note">';
+  if(n===0){
+    h+="<li>The argument survived the checklist. Ask the one remaining question: are its starting facts actually true?</li>";
+    h+="<li>Save this analysis — if new information appears, run it through the checklist again.</li>";
+  }else{
+    h+="<li>Ask the person making the argument to fix the flagged flaw and restate their case — judge the repaired version.</li>";
+    h+="<li>Steel-man it first: state their best version fairly before pointing out the flaw. That keeps the conversation honest.</li>";
+    h+="<li>Do not share or act on this argument until its reasoning holds up without the flagged fallacies.</li>";
+  }
+  h+="</ul></div>";
+  return h;
+}
+
+function renderSaved(){
+  var box=el("lf-saved");
+  if(state.saved.length===0){
+    box.innerHTML='<p class="note">No saved analyses yet. After you run the checklist, your report is saved here automatically.</p>';
+    return;
+  }
+  var html="";
+  state.saved.forEach(function(a){
+    var fcount=FALLACIES.filter(function(f){return a.marks[f.id]==="yes";}).length;
+    html+='<div class="acard" data-id="'+esc(a.id)+'">';
+    html+="<h3>"+esc(a.claim||"Untitled analysis")+"</h3>";
+    html+='<p class="meta">'+esc(a.date)+(a.source?" · "+esc(a.source):"")+" · "+fcount+" fallac"+(fcount===1?"y":"ies")+" flagged</p>";
+    html+='<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">';
+    html+='<button class="btn ghost" data-act="view">View Report</button>';
+    html+='<button class="btn ghost" data-act="reload">Load into Checklist</button>';
+    html+='<button class="btn danger" data-act="del">Delete</button>';
+    html+="</div></div>";
+  });
+  box.innerHTML=html;
+}
+
+el("lf-report-btn").addEventListener("click",function(){
+  var checked=FALLACIES.filter(function(f){return state.marks[f.id];}).length;
+  state.claim=el("lf-claim").value.trim();
+  state.source=el("lf-source").value.trim();
+  el("lf-checklist").querySelectorAll("input.notebox").forEach(function(t){
+    var id=t.id.slice(4);
+    state.notes[id]=t.value.trim();
+  });
+  if(checked<FALLACIES.length){
+    el("lf-msg").textContent="Check all 12 fallacies first ("+checked+" of 12 checked).";
+    return;
+  }
+  if(!state.claim){
+    el("lf-msg").textContent="Paste the argument in Step 1 first.";
+    el("lf-claim").focus();
+    return;
+  }
+  var d=new Date();
+  state.saved.unshift({id:uid(),claim:state.claim,source:state.source,
+    marks:JSON.parse(JSON.stringify(state.marks)),notes:JSON.parse(JSON.stringify(state.notes)),
+    date:(d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear()});
+  if(state.saved.length>25)state.saved=state.saved.slice(0,25);
+  save(state);
+  el("lf-report").innerHTML=buildReport(state.claim,state.source,state.marks,state.notes);
+  el("lf-report-card").style.display="block";
+  el("lf-report-card").scrollIntoView();
+  renderSaved();
+});
+
+el("lf-saved").addEventListener("click",function(ev){
+  var btn=ev.target.closest("button");if(!btn)return;
+  var card=ev.target.closest(".acard");if(!card)return;
+  var id=card.getAttribute("data-id");
+  var a=null;state.saved.forEach(function(x){if(x.id===id)a=x;});
+  if(!a)return;
+  var act=btn.getAttribute("data-act");
+  if(act==="del"){
+    if(window.confirm("Delete this saved analysis?")){
+      state.saved=state.saved.filter(function(x){return x.id!==id;});
+      save(state);renderSaved();
+    }
+  }else if(act==="view"){
+    el("lf-report").innerHTML=buildReport(a.claim,a.source,a.marks,a.notes);
+    el("lf-report-card").style.display="block";
+    el("lf-report-card").scrollIntoView();
+  }else if(act==="reload"){
+    state.claim=a.claim;state.source=a.source;
+    state.marks=JSON.parse(JSON.stringify(a.marks));
+    state.notes=JSON.parse(JSON.stringify(a.notes));
+    save(state);renderChecklist();
+    window.scrollTo(0,0);
+  }
+});
+
+el("lf-reset").addEventListener("click",function(){
+  if(window.confirm("Clear the current checklist and ALL saved analyses from this device?")){
+    state={marks:{},notes:{},saved:[]};
+    try{localStorage.removeItem(KEY);}catch(e){}
+    el("lf-claim").value="";el("lf-source").value="";
+    el("lf-report-card").style.display="none";
+    renderChecklist();renderSaved();
+  }
+});
+
+renderChecklist();
+renderSaved();
+})();
+</script>
+</body>
+</html>
