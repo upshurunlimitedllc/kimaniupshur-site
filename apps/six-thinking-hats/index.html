@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Six Thinking Hats | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Examine any topic from six angles — facts, feelings, risks, benefits, ideas, and process — and get a balanced decision brief. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/six-thinking-hats/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Six Thinking Hats | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Examine any topic from six angles — facts, feelings, risks, benefits, ideas, and process — and get a balanced decision brief. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/six-thinking-hats/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+/* app-specific */
+.dots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.dots button{width:44px;height:44px;border-radius:50%;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer;font-size:.78rem}
+.dots button.cur{background:#c9a227;color:#141210}
+.dots button:disabled{opacity:.35;cursor:default}
+.cardhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+.resetlink{background:none;border:none;color:#8a6d1c;text-decoration:underline;cursor:pointer;font-size:.85rem;min-height:44px;padding:10px}
+.stepnum{color:#8a6d1c;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.err{color:#b3261e;font-weight:bold;margin:10px 0}
+.hint{color:#6b6250;font-size:.92rem;margin:8px 0}
+.navrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.hatcard{border-radius:12px;padding:20px;margin:14px 0;border:2px solid #c9a227}
+.hatcard h3{font-family:Georgia,serif;margin-bottom:6px}
+.hatcard .prompts{margin:6px 0 12px 20px}
+.hatcard .prompts li{margin-bottom:4px}
+.noteitem{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.08)}
+.noteitem .txt{flex:1;padding:10px 0}
+.xbtn{width:44px;height:44px;flex-shrink:0;background:rgba(255,255,255,.6);border:2px solid currentColor;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:bold}
+.field label{font-weight:bold;display:block;margin:12px 0 2px}
+.countchip{display:inline-block;font-size:.8rem;font-weight:bold;padding:4px 12px;border-radius:20px;background:#f3e6bd;color:#8a6d1c;margin:6px 0}
+.brief{background:#fff;border:2px solid #c9a227;border-radius:12px;padding:24px;margin-top:20px}
+.brief h3{font-family:Georgia,serif;color:#141210;margin:18px 0 6px;padding-bottom:4px;border-bottom:2px solid #f3e6bd}
+.brief h3:first-child{margin-top:0}
+.brief ul{margin:6px 0 6px 22px}
+.brief li{margin-bottom:6px}
+.brief .hatlabel{font-size:.8rem;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#8a6d1c}
+.nextsteps{background:#f7f1de;border-radius:8px;padding:16px;margin-top:14px}
+@media print{header.site,footer.site,.navrow,.noprint,.dots,.resetlink{display:none!important}main.app{max-width:100%;padding:0}.appcard{border:none;padding:0}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Six Thinking Hats</h1>
+<p class="intro">Examine any topic from six distinct angles — facts, feelings, risks, benefits, ideas, and process. Wear one hat at a time, capture your thinking under each, and finish with a balanced one-page brief.</p>
+<div class="appcard">
+<div class="cardhead">
+<div><div class="stepnum" id="stepnum"></div><h2 id="steptitle" style="font-family:Georgia,serif;font-size:1.35rem;color:#141210"></h2></div>
+<button class="resetlink noprint" id="resetTop" type="button">Start over</button>
+</div>
+<div class="dots noprint" id="dots" role="navigation" aria-label="Hats"></div>
+<div id="err" class="err" role="alert" style="display:none"></div>
+<div id="stepbody"></div>
+<div class="navrow noprint" id="navrow"></div>
+</div>
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Want more tools like this? Browse the full Made Simple library — practical books on thinking, decisions, work, money, and life.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/">Browse All Books</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-six-thinking-hats-v1";
+var HATS=[
+ {id:"white",name:"White Hat — Facts",bg:"#ffffff",fg:"#141210",border:"#c9a227",
+  tag:"Neutral. Just the facts.",
+  prompts:["What do you know for sure about this topic?","What data, evidence, or numbers do you have?","What important facts are you still missing?"]},
+ {id:"red",name:"Red Hat — Feelings",bg:"#fdecea",fg:"#7a1f1a",border:"#e53935",
+  tag:"Gut reactions. No justification needed.",
+  prompts:["What is your gut telling you about this?","What emotions are involved — yours and other people's?","What does your instinct say that the facts do not?"]},
+ {id:"black",name:"Black Hat — Risks",bg:"#eceff1",fg:"#263238",border:"#455a64",
+  tag:"Caution. What could go wrong?",
+  prompts:["What are the weaknesses, costs, or obstacles?","What is the worst realistic case?","Why might this fail — be brutally honest?"]},
+ {id:"yellow",name:"Yellow Hat — Benefits",bg:"#fff8e1",fg:"#6d4c00",border:"#f9a825",
+  tag:"Optimism. What is the upside?",
+  prompts:["What are the benefits if this works?","What is the best realistic case?","Who gains, and how?"]},
+ {id:"green",name:"Green Hat — Ideas",bg:"#e8f5e9",fg:"#1b5e20",border:"#43a047",
+  tag:"Creativity. New possibilities.",
+  prompts:["What are creative alternatives or workarounds?","If the main constraint disappeared, what would you try?","What has worked in a similar situation elsewhere?"]},
+ {id:"blue",name:"Blue Hat — Process & Summary",bg:"#e3f2fd",fg:"#0d3b66",border:"#1e88e5",
+  tag:"Control. Pull it all together.",
+  prompts:["What is the decision, or the next step?","What remains unresolved or needs more information?","Looking at all five hats, where does the weight of evidence sit?"]}
+];
+var STEP_NAMES=["Topic","White","Red","Black","Yellow","Green","Blue","Brief"];
+var state=loadState();
+var maxStep=(typeof state.maxStep==="number")?state.maxStep:0;
+if(state.step>maxStep)state.step=maxStep;
+
+function freshState(){return{step:0,maxStep:0,topic:"",notes:{white:[],red:[],black:[],yellow:[],green:[],blue:[]},nextStep:"",unresolved:""};}
+function loadState(){
+  try{var raw=localStorage.getItem(KEY);
+    if(raw){var s=JSON.parse(raw);
+      if(s&&typeof s==="object"){
+        var d=freshState();
+        if(typeof s.topic==="string")d.topic=s.topic;
+        if(s.notes&&typeof s.notes==="object"){
+          HATS.forEach(function(h){
+            if(Array.isArray(s.notes[h.id]))d.notes[h.id]=s.notes[h.id].filter(function(x){return typeof x==="string";});
+          });
+        }
+        if(typeof s.nextStep==="string")d.nextStep=s.nextStep;
+        if(typeof s.unresolved==="string")d.unresolved=s.unresolved;
+        if(typeof s.step==="number")d.step=Math.max(0,Math.min(7,Math.floor(s.step)));
+        if(typeof s.maxStep==="number")d.maxStep=Math.max(0,Math.min(7,Math.floor(s.maxStep)));
+        return d;
+      }
+    }
+  }catch(e){}
+  return freshState();
+}
+function save(){state.maxStep=maxStep;try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function el(tag,cls,text){var d=document.createElement(tag);if(cls)d.className=cls;if(text!==undefined&&text!==null)d.textContent=text;return d;}
+function showErr(msg){var e=document.getElementById("err");if(msg){e.textContent=msg;e.style.display="block";}else{e.textContent="";e.style.display="none";}}
+function go(i){showErr("");state.step=i;if(i>maxStep)maxStep=i;save();render();}
+function resetAll(){
+  if(!window.confirm("Clear everything and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  state=freshState();maxStep=0;save();render();
+}
+function drawDots(){
+  var dots=document.getElementById("dots");dots.innerHTML="";
+  STEP_NAMES.forEach(function(name,i){
+    var b=el("button",i===state.step?"cur":"",String(i+1));
+    b.type="button";b.title=name;b.setAttribute("aria-label","Step "+(i+1)+": "+name);
+    if(i>maxStep)b.disabled=true;
+    b.addEventListener("click",function(){go(i);});
+    dots.appendChild(b);
+  });
+  document.getElementById("stepnum").textContent="Step "+(state.step+1)+" of "+STEP_NAMES.length;
+  document.getElementById("steptitle").textContent=STEP_NAMES[state.step];
+}
+
+function renderTopic(body){
+  body.appendChild(el("p","hint","Name the decision, idea, or situation you want to examine. You will look at it through all six hats."));
+  var f=el("div","field");
+  var lab=el("label",null,"Your topic");lab.setAttribute("for","topic");f.appendChild(lab);
+  var inp=el("input");inp.type="text";inp.id="topic";inp.value=state.topic;
+  inp.placeholder="Example: Should I accept the job offer in Austin?";
+  inp.setAttribute("aria-label","The topic to examine with the six hats");
+  inp.addEventListener("input",function(){state.topic=inp.value;save();});
+  f.appendChild(inp);
+  f.appendChild(el("p","hint","One sentence is enough. Tip: phrase it as a question you need to answer."));
+  body.appendChild(f);
+}
+function renderHat(body,hat){
+  var card=el("div","hatcard");
+  card.style.background=hat.bg;card.style.color=hat.fg;card.style.borderColor=hat.border;
+  card.appendChild(el("h3",null,hat.name));
+  card.appendChild(el("p",null,hat.tag));
+  var ul=el("ul","prompts");
+  hat.prompts.forEach(function(p){ul.appendChild(el("li",null,p));});
+  card.appendChild(ul);
+  var f=el("div","field");
+  var lab=el("label",null,"Add a note under the "+hat.name.split(" — ")[0].toLowerCase());
+  lab.setAttribute("for","note-"+hat.id);lab.style.color=hat.fg;f.appendChild(lab);
+  var row=el("div");row.style.display="flex";row.style.gap="10px";
+  var inp=el("input");inp.type="text";inp.id="note-"+hat.id;inp.placeholder="Type one point, then press Add…";
+  inp.setAttribute("aria-label","Add a note under the "+hat.name);
+  var add=el("button","btn","Add");add.type="button";
+  add.style.minHeight="48px";add.style.padding="12px 20px";
+  function doAdd(){
+    var v=inp.value.trim();
+    if(!v){inp.focus();return;}
+    state.notes[hat.id].push(v);save();render();
+  }
+  add.addEventListener("click",doAdd);
+  inp.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();doAdd();}});
+  row.appendChild(inp);row.appendChild(add);f.appendChild(row);card.appendChild(f);
+  var notes=state.notes[hat.id];
+  if(notes.length===0){
+    var p=el("p","hint","No notes yet under this hat.");p.style.color=hat.fg;card.appendChild(p);
+  }else{
+    var chip=el("span","countchip",notes.length+" note"+(notes.length===1?"":"s"));card.appendChild(chip);
+    notes.forEach(function(n,i){
+      var r=el("div","noteitem");
+      r.appendChild(el("div","txt",n));
+      var x=el("button","xbtn","\u00D7");x.type="button";x.style.color=hat.fg;x.setAttribute("aria-label","Remove note: "+n);
+      x.addEventListener("click",function(){state.notes[hat.id].splice(i,1);save();render();});
+      r.appendChild(x);card.appendChild(r);
+    });
+  }
+  body.appendChild(card);
+  if(hat.id==="blue"){
+    body.appendChild(el("p","hint","The Blue Hat runs the process. Use it to summarize and decide."));
+    var f2=el("div","field");
+    var l1=el("label",null,"Recommended next step");l1.setAttribute("for","nextStep");f2.appendChild(l1);
+    var t1=el("textarea");t1.id="nextStep";t1.rows=3;t1.value=state.nextStep;
+    t1.placeholder="Based on all six hats, what should happen next?";
+    t1.setAttribute("aria-label","Recommended next step");
+    t1.addEventListener("input",function(){state.nextStep=t1.value;save();});
+    f2.appendChild(t1);
+    var l2=el("label",null,"Still unresolved");l2.setAttribute("for","unresolved");f2.appendChild(l2);
+    var t2=el("textarea");t2.id="unresolved";t2.rows=3;t2.value=state.unresolved;
+    t2.placeholder="What questions are still open? What information is missing?";
+    t2.setAttribute("aria-label","What is still unresolved");
+    t2.addEventListener("input",function(){state.unresolved=t2.value;save();});
+    f2.appendChild(t2);body.appendChild(f2);
+  }
+}
+function renderBrief(body){
+  body.appendChild(el("p","hint","Your balanced brief — everything you captured, organized by hat, with your recommended next step."));
+  var b=el("div","brief");
+  var h=el("h3",null,"Decision brief");b.appendChild(h);
+  var tp=el("p",null,"");tp.innerHTML="<strong>Topic:</strong> ";
+  tp.appendChild(document.createTextNode(state.topic.trim()||"(not stated)"));
+  b.appendChild(tp);
+  HATS.forEach(function(hat){
+    var sec=el("h3",null,"");var lab=el("span","hatlabel",hat.name);sec.appendChild(lab);b.appendChild(sec);
+    var notes=state.notes[hat.id];
+    if(notes.length===0){b.appendChild(el("p","hint","Nothing captured under this hat."));}
+    else{var ul=el("ul");notes.forEach(function(n){ul.appendChild(el("li",null,n));});b.appendChild(ul);}
+  });
+  var ns=el("div","nextsteps");
+  ns.appendChild(el("strong",null,"Recommended next step"));
+  if(state.nextStep.trim()){var p1=el("p",null,state.nextStep.trim());ns.appendChild(p1);}
+  else ns.appendChild(el("p","hint","No next step written yet — go back to the Blue Hat and commit to one."));
+  ns.appendChild(el("strong",null,"Still unresolved"));
+  if(state.unresolved.trim()){ns.appendChild(el("p",null,state.unresolved.trim()));}
+  else ns.appendChild(el("p","hint","Nothing flagged as unresolved."));
+  var counts=HATS.map(function(hat){return hat.name.split(" — ")[0]+" "+state.notes[hat.id].length;}).join(" · ");
+  ns.appendChild(el("p","hint","Coverage: "+counts+". A hat with zero notes is a blind spot — consider revisiting it."));
+  b.appendChild(ns);
+  body.appendChild(b);
+  var row=el("div","navrow");
+  var copy=el("button","btn ghost","Copy brief");copy.type="button";
+  copy.addEventListener("click",copyBrief);
+  var pr=el("button","btn ghost","Print");pr.type="button";
+  pr.addEventListener("click",function(){window.print();});
+  row.appendChild(copy);row.appendChild(pr);body.appendChild(row);
+}
+function briefText(){
+  var L=["SIX THINKING HATS — DECISION BRIEF","Topic: "+state.topic.trim(),""];
+  HATS.forEach(function(hat){
+    L.push(hat.name.toUpperCase()+":");
+    var notes=state.notes[hat.id];
+    if(notes.length)L.push("- "+notes.join("\n- "));else L.push("(nothing captured)");
+    L.push("");
+  });
+  L.push("RECOMMENDED NEXT STEP:");
+  L.push(state.nextStep.trim()||"(not written)");
+  L.push("");
+  L.push("STILL UNRESOLVED:");
+  L.push(state.unresolved.trim()||"(nothing flagged)");
+  return L.join("\n");
+}
+function copyBrief(){
+  var t=briefText();
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(function(){alert("Brief copied to clipboard.");},function(){fallbackCopy(t);});
+  }else fallbackCopy(t);
+  function fallbackCopy(txt){
+    var ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");alert("Brief copied to clipboard.");}
+    catch(e){alert("Copy failed — select the text manually.");}
+    document.body.removeChild(ta);
+  }
+}
+function validate(){
+  if(state.step===0&&state.topic.trim()==="")return "Name your topic first — one sentence is enough.";
+  return "";
+}
+function renderNav(){
+  var nav=document.getElementById("navrow");nav.innerHTML="";
+  if(state.step>0){
+    var back=el("button","btn ghost","Back");back.type="button";
+    back.addEventListener("click",function(){go(state.step-1);});nav.appendChild(back);
+  }
+  if(state.step<STEP_NAMES.length-1){
+    var next=el("button","btn","Next \u2192");next.type="button";
+    next.addEventListener("click",function(){
+      var v=validate();
+      if(v){showErr(v);return;}
+      showErr("");go(state.step+1);
+    });
+    nav.appendChild(next);
+  }
+}
+function render(){
+  drawDots();showErr("");
+  var body=document.getElementById("stepbody");body.innerHTML="";
+  if(state.step===0)renderTopic(body);
+  else if(state.step<=6)renderHat(body,HATS[state.step-1]);
+  else renderBrief(body);
+  renderNav();
+}
+document.getElementById("resetTop").addEventListener("click",resetAll);
+render();
+</script>
+</body>
+</html>

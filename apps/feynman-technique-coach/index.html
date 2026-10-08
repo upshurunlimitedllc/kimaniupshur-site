@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feynman Technique Coach | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Learn anything faster by explaining it simply — a guided teach-it-back loop that exposes exactly what you don't understand. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/feynman-technique-coach/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Feynman Technique Coach | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Learn anything faster by explaining it simply — a guided teach-it-back loop that exposes exactly what you don't understand. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/feynman-technique-coach/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:140px;resize:vertical}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.stepdots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.stepdots span{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;border:2px solid #c9a227;font-size:.85rem}
+.stepdots span.cur{background:#c9a227;color:#141210}
+.stepdots span.done{background:#141210;color:#e8c84a;border-color:#141210}
+.stepdots span.todo{background:transparent;color:#8a6d1c}
+.navrow{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:20px}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag b{color:#141210}
+.score{font-family:Georgia,serif;font-size:2.6rem;color:#8a6d1c}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.gapitem{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #eee}
+.gapitem input[type=checkbox]{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.qbox{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:16px;margin:12px 0}
+.qbox .q{font-weight:bold;color:#141210;margin-bottom:6px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Feynman Technique Coach</h1>
+<p class="intro">Learn anything faster by explaining it simply. Write your explanation as if teaching a 12-year-old — the coach flags jargon, asks "but why?", and turns your weak spots into a study checklist.</p>
+
+<div class="stepdots" id="dots" aria-label="Progress"></div>
+
+<div class="appcard" id="step1">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 1 — Name the concept</h2>
+<label class="lbl" for="concept">What concept are you learning?</label>
+<input type="text" id="concept" placeholder="e.g., Photosynthesis, compound interest, supply and demand">
+<label class="lbl" for="why">Why do you need to learn it? <span class="hint">(optional — a test, a job, curiosity)</span></label>
+<input type="text" id="why" placeholder="e.g., Biology exam next Friday">
+<p class="err" id="err1" role="alert"></p>
+<div class="navrow"><span></span><button class="btn" id="to2">Teach it &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step2" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 2 — Teach it back</h2>
+<p class="hint">Pretend <b id="who2">a 12-year-old</b> knows nothing about <b id="what2">your concept</b>. Explain it in your own words. Use short sentences and everyday words. No pressure — rough drafts reveal the gaps.</p>
+<label class="lbl" for="teach">Your explanation</label>
+<textarea id="teach" placeholder="Write it here, as if you're the teacher..."></textarea>
+<button class="btn" id="analyze">Analyze my explanation</button>
+<p class="err" id="err2" role="alert"></p>
+<div id="analysis" aria-live="polite"></div>
+<div class="navrow"><button class="btn ghost" id="back1">&larr; Back</button><button class="btn" id="to3" disabled>Answer "but why?" &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step3" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 3 — "But why?"</h2>
+<p class="hint">The coach picked the sentences that need a deeper explanation. Answer each one in plain words — or be honest and mark it a <b>knowledge gap</b>. Gaps are the whole point: they tell you exactly what to re-study.</p>
+<div id="whyqs"></div>
+<p class="err" id="err3" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back2">&larr; Back</button><button class="btn" id="to4">Try an analogy &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step4" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 4 — Make an analogy</h2>
+<p class="hint">An analogy sticks when a familiar thing shares the same <i>mechanism</i> as the concept — not just the same vibe. Fill in both parts.</p>
+<label class="lbl" for="analogyLike"><span id="what4">Your concept</span> is like&hellip;</label>
+<input type="text" id="analogyLike" placeholder="e.g., a kitchen, a relay race, a bank account">
+<label class="lbl" for="analogyBecause">because&hellip;</label>
+<textarea id="analogyBecause" style="min-height:80px" placeholder="e.g., ...in both, inputs go in, work happens in the middle, and something useful comes out."></textarea>
+<button class="btn small" id="checkAnalogy">Check my analogy</button>
+<div id="analogyOut" aria-live="polite"></div>
+<p class="err" id="err4" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back3">&larr; Back</button><button class="btn" id="to5">Write the polished version &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step5" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 5 — Rewrite it simply</h2>
+<p class="hint">Now rewrite your explanation from scratch, using what you learned: plain words, the answers to "but why?", and your analogy. Then score it.</p>
+<label class="lbl" for="rewrite">Your polished explanation</label>
+<textarea id="rewrite" placeholder="The plain-English version..."></textarea>
+<button class="btn" id="rescore">Score my rewrite</button>
+<div id="rescoreOut" aria-live="polite"></div>
+<p class="err" id="err5" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back4">&larr; Back</button><button class="btn" id="to6">See my results &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step6" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your learning summary</h2>
+<div id="summary" aria-live="polite"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Knowledge gaps — your re-study checklist</h3>
+<div id="gaplist"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Next steps</h3>
+<ol style="margin-left:22px" id="nextsteps"></ol>
+<div class="navrow"><button class="btn ghost" id="back5">&larr; Back</button><button class="btn ghost" id="reset">Start over (clear saved work)</button></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Want a full library of plain-English explainers? Browse the <b>Made Simple</b> book collection — hundreds of topics explained clearly, by Kimani Upshur, M.Ed.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/">Browse the Books</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-feynman-technique-coach-v1";
+var STEPS=["Name it","Teach it","But why?","Analogy","Rewrite","Results"];
+var S={step:1,concept:"",why:"",teach:"",whyqs:[],analogyLike:"",analogyBecause:"",rewrite:"",gaps:[],score1:null,score2:null,analyzed:false};
+
+var FILLER={"basically":"(cut it — just say the thing)","in order to":"use \"to\"","utilize":"use \"use\"","utilizes":"use \"uses\"","facilitate":"use \"help\"","facilitates":"use \"helps\"","methodology":"use \"method\"","paradigm":"use \"model\" or \"pattern\"","comprehensive":"use \"complete\"","demonstrate":"use \"show\"","significant":"use \"big\" or \"important\"","approximately":"use \"about\"","consequently":"use \"so\"","furthermore":"use \"also\"","however,":"\"but\" is usually simpler","nevertheless":"\"but\" is usually simpler","you know":"(cut it)","stuff":"name the actual things","things":"name the actual things","sort of":"be specific","kind of":"be specific"};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}}}catch(e){}}
+
+function sentences(t){return t.replace(/\s+/g," ").split(/(?<=[.!?])\s+/).map(function(s){return s.trim();}).filter(function(s){return s.length>0;});}
+function words(t){return t.replace(/[^A-Za-z0-9'\- ]/g," ").split(/\s+/).filter(function(w){return w.length>0;});}
+function syllables(w){w=w.toLowerCase().replace(/[^a-z]/g,"");if(w.length<=3)return 1;
+  var m=w.replace(/e$/,"").match(/[aeiouy]+/g);var n=m?m.length:1;return Math.max(1,n);}
+function fkGrade(t){var s=sentences(t),w=words(t);if(!s.length||!w.length)return null;
+  var syl=w.reduce(function(a,x){return a+syllables(x);},0);
+  return 0.39*(w.length/s.length)+11.8*(syl/w.length)-15.59;}
+
+function analyze(text){
+  var s=sentences(text),w=words(text);
+  var flags=[];
+  var jargon=0;
+  w.forEach(function(tok){
+    var clean=tok.replace(/^['\-]+|['\-.,!?;:()"]+$/g,"");
+    if(/^[A-Z]{2,}$/.test(clean)&&clean.length<=5){flags.push({t:"acronym",msg:"\""+clean+"\" is an acronym — spell it out on first use so a 12-year-old isn't lost."});}
+    else if(clean.replace(/[^A-Za-z]/g,"").length>=10&&!(clean.toLowerCase() in FILLER)){jargon++;flags.push({t:"jargon",msg:"\""+clean+"\" is a long word a 12-year-old may not know — swap it for a shorter everyday word."});}
+  });
+  s.forEach(function(sn){
+    var n=words(sn).length;
+    if(n>22){flags.push({t:"long",msg:"This sentence has "+n+" words — split it in two: \""+sn.slice(0,60)+"...\""});}
+  });
+  var low=text.toLowerCase();
+  Object.keys(FILLER).forEach(function(ph){
+    if(low.indexOf(ph)>=0){flags.push({t:"filler",msg:"\""+ph+"\" "+FILLER[ph]+"."});}
+  });
+  var grade=fkGrade(text);
+  var score=100-4*jargon-3*flags.filter(function(f){return f.t==="long";}).length-3*flags.filter(function(f){return f.t==="filler";}).length-5*flags.filter(function(f){return f.t==="acronym";}).length;
+  if(grade!==null&&grade>8)score-=10;
+  score=Math.max(0,Math.round(score));
+  return {flags:flags,grade:grade,score:score,wordCount:w.length,sentCount:s.length,jargon:jargon};
+}
+
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function drawDots(){
+  var d=document.getElementById("dots");d.innerHTML="";
+  STEPS.forEach(function(name,i){
+    var sp=document.createElement("span");
+    var n=i+1;sp.textContent=n;
+    sp.title=name;
+    sp.className=n===S.step?"cur":(n<S.step?"done":"todo");
+    d.appendChild(sp);
+  });
+}
+function goto(n){
+  S.step=n;save();drawDots();
+  for(var i=1;i<=6;i++){document.getElementById("step"+i).hidden=(i!==n);}
+  if(n===2){document.getElementById("what2").textContent=S.concept||"your concept";}
+  if(n===4){document.getElementById("what4").textContent=S.concept||"Your concept";}
+  if(n===6){renderSummary();}
+  window.scrollTo(0,0);
+}
+
+function showAnalysis(boxId,btnId,res){
+  var box=document.getElementById(boxId);
+  var h='<h3 style="font-family:Georgia,serif;margin:16px 0 6px">Clarity score: <span class="score">'+res.score+'</span> / 100</h3>';
+  h+='<p class="hint">'+res.wordCount+' words, '+res.sentCount+' sentences';
+  if(res.grade!==null)h+=' — reading level ~grade '+Math.max(0,res.grade).toFixed(1)+(res.grade>8?' (aim for grade 8 or below for a 12-year-old)':' (good for a 12-year-old)');
+  h+='.</p>';
+  if(res.score>=85){h+='<div class="flag good"><b>Excellent.</b> This reads like plain English. Keep this clarity in the final version.</div>';}
+  else if(res.score>=65){h+='<div class="flag"><b>Good start.</b> A few fixes below will make it much clearer.</div>';}
+  else{h+='<div class="flag"><b>Worth a rewrite.</b> If you can\'t say it simply, you don\'t understand it yet — and that\'s exactly what this tool is for. Fix the flags below, then move on.</div>';}
+  if(res.flags.length===0){h+='<div class="flag good"><b>No flags.</b> No jargon, long sentences, or filler detected.</div>';}
+  else{res.flags.forEach(function(f){h+='<div class="flag">'+esc(f.msg)+'</div>';});}
+  box.innerHTML=h;
+  var b=document.getElementById(btnId);if(b)b.disabled=false;
+}
+
+document.getElementById("analyze").addEventListener("click",function(){
+  var t=document.getElementById("teach").value.trim();
+  var e=document.getElementById("err2");
+  if(t.length<30){e.textContent="Write at least a couple of sentences (30+ characters) so the coach has something to analyze.";return;}
+  e.textContent="";S.teach=t;S.score1=analyze(t);S.analyzed=true;save();
+  showAnalysis("analysis","to3",S.score1);
+  buildWhyQs();
+});
+
+function buildWhyQs(){
+  var s=sentences(S.teach).filter(function(x){return words(x).length>=6;});
+  s.sort(function(a,b){return words(b).length-words(a).length;});
+  var picks=s.slice(0,3);
+  S.whyqs=picks.map(function(q){return {q:q,answer:"",isGap:false};});
+  save();
+  var box=document.getElementById("whyqs");box.innerHTML="";
+  if(!S.whyqs.length){box.innerHTML='<p class="hint">Not enough sentences to probe — add more to your explanation in step 2.</p>';}
+  S.whyqs.forEach(function(item,i){
+    var div=document.createElement("div");div.className="qbox";
+    div.innerHTML='<div class="q">You wrote: &ldquo;'+esc(item.q)+'&rdquo;</div>'+
+      '<p class="hint">But <b>why</b> is that true? What causes it? Answer in one plain sentence — or mark it a gap.</p>'+
+      '<label class="lbl" for="wq'+i+'" style="position:absolute;left:-9999px">Answer to but-why question '+(i+1)+'</label>'+
+      '<textarea id="wq'+i+'" style="min-height:70px" placeholder="Because..."></textarea>'+
+      '<button class="btn ghost small" data-gap="'+i+'">I don\'t know this yet — mark as gap</button>';
+    box.appendChild(div);
+  });
+  box.querySelectorAll("button[data-gap]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var i=parseInt(b.getAttribute("data-gap"),10);
+      S.whyqs[i].isGap=true;S.whyqs[i].answer="";
+      document.getElementById("wq"+i).value="";document.getElementById("wq"+i).disabled=true;
+      b.disabled=true;b.textContent="Marked as a knowledge gap ✓";
+      collectGaps();save();
+    });
+  });
+  box.querySelectorAll("textarea").forEach(function(ta,ix){
+    ta.addEventListener("input",function(){S.whyqs[ix].answer=ta.value;S.whyqs[ix].isGap=false;save();});
+  });
+}
+
+function collectGaps(){
+  S.gaps=[];
+  S.whyqs.forEach(function(item){
+    if(item.isGap||(!item.answer.trim())){S.gaps.push({text:"\"But why?\" — "+item.q,answer:item.answer.trim(),unknown:true,done:false});}
+  });
+  if(S.score1&&S.score1.flags.length){
+    S.score1.flags.slice(0,6).forEach(function(f){
+      S.gaps.push({text:"Simplify flagged wording: "+f.msg,answer:"",unknown:false,done:false});
+    });
+  }
+}
+
+document.getElementById("checkAnalogy").addEventListener("click",function(){
+  var like=document.getElementById("analogyLike").value.trim();
+  var bc=document.getElementById("analogyBecause").value.trim();
+  var out=document.getElementById("analogyOut");var e=document.getElementById("err4");
+  if(!like||!bc){e.textContent="Fill in both parts — the familiar thing AND the shared mechanism.";return;}
+  e.textContent="";S.analogyLike=like;S.analogyBecause=bc;save();
+  var mech=/because|same way|both|works by|process|convert|flow|move|change/i.test(bc);
+  out.innerHTML=mech
+    ?'<div class="flag good"><b>Strong analogy.</b> "'+esc(S.concept||"It")+' is like '+esc(like)+' because '+esc(bc)+'" — the shared mechanism makes this memorable. Use it in your rewrite.</div>'
+    :'<div class="flag"><b>Almost.</b> Your "because" should name the <i>mechanism</i> both things share — how it works step by step — not just a feeling. Try again: what process do they have in common?</div>';
+});
+
+document.getElementById("rescore").addEventListener("click",function(){
+  var t=document.getElementById("rewrite").value.trim();
+  var e=document.getElementById("err5");
+  if(t.length<30){e.textContent="Write your polished version first (30+ characters).";return;}
+  e.textContent="";S.rewrite=t;S.score2=analyze(t);save();
+  showAnalysis("rescoreOut",null,S.score2);
+  if(S.score1){document.getElementById("rescoreOut").innerHTML+='<p class="hint">First draft scored '+S.score1.score+' — this version scores '+S.score2.score+'. '+(S.score2.score>=S.score1.score?'Improvement!':'Consider simplifying further before finishing.')+'</p>';}
+});
+
+function renderSummary(){
+  collectGaps();save();
+  var h="";
+  h+='<p><b>Concept:</b> '+esc(S.concept||"(unnamed)")+'</p>';
+  if(S.score2!==null){h+='<p><b>Final clarity score:</b> <span class="score">'+S.score2.score+'</span> / 100'+(S.score1!==null?' (first draft: '+S.score1.score+')':'')+'</p>';}
+  else if(S.score1!==null){h+='<p><b>First-draft clarity score:</b> <span class="score">'+S.score1.score+'</span> / 100</p>';}
+  if(S.rewrite){h+='<h3 style="font-family:Georgia,serif;margin:16px 0 6px">Your polished explanation</h3><div class="flag good">'+esc(S.rewrite)+'</div>';}
+  if(S.analogyLike&&S.analogyBecause){h+='<h3 style="font-family:Georgia,serif;margin:16px 0 6px">Your analogy</h3><p>'+esc(S.concept||"It")+' is like <b>'+esc(S.analogyLike)+'</b> because '+esc(S.analogyBecause)+'</p>';}
+  document.getElementById("summary").innerHTML=h;
+  var gl=document.getElementById("gaplist");
+  if(!S.gaps.length){gl.innerHTML='<div class="flag good"><b>No gaps recorded.</b> You answered every "but why?" — impressive.</div>';}
+  else{gl.innerHTML="";
+    S.gaps.forEach(function(g,i){
+      var row=document.createElement("div");row.className="gapitem";
+      var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!g.done;cb.id="gap"+i;
+      cb.setAttribute("aria-label","Re-study item "+(i+1));
+      cb.addEventListener("change",function(){S.gaps[i].done=cb.checked;save();});
+      var lab=document.createElement("label");lab.htmlFor="gap"+i;
+      lab.innerHTML=(g.unknown?'<b>Gap to re-study:</b> ':'')+esc(g.text);
+      row.appendChild(cb);row.appendChild(lab);gl.appendChild(row);
+    });
+  }
+  var ns=document.getElementById("nextsteps");
+  ns.innerHTML='<li>Work through the gap checklist above — look each item up in your source material until you can explain it in one plain sentence.</li>'+
+    '<li>Re-run any re-studied section through the coach: teach it again and re-score.</li>'+
+    '<li>Teach the concept to a real person (a friend, a study partner, even out loud to yourself). Wherever you stumble is your next gap.</li>'+
+    '<li>Save this page — your draft, analogy, and polished version stay here until you start over.</li>';
+}
+
+document.getElementById("to2").addEventListener("click",function(){
+  var c=document.getElementById("concept").value.trim();
+  if(!c){document.getElementById("err1").textContent="Name the concept first.";return;}
+  document.getElementById("err1").textContent="";S.concept=c;S.why=document.getElementById("why").value.trim();goto(2);
+});
+document.getElementById("to3").addEventListener("click",function(){goto(3);});
+document.getElementById("to4").addEventListener("click",function(){
+  S.whyqs.forEach(function(item,i){var ta=document.getElementById("wq"+i);if(ta&&!item.isGap)item.answer=ta.value;});
+  save();goto(4);
+});
+document.getElementById("to5").addEventListener("click",function(){
+  S.analogyLike=document.getElementById("analogyLike").value.trim();
+  S.analogyBecause=document.getElementById("analogyBecause").value.trim();save();goto(5);
+});
+document.getElementById("to6").addEventListener("click",function(){
+  var t=document.getElementById("rewrite").value.trim();
+  if(t&&S.score2===null){S.rewrite=t;}
+  save();goto(6);
+});
+document.getElementById("back1").addEventListener("click",function(){goto(1);});
+document.getElementById("back2").addEventListener("click",function(){goto(2);});
+document.getElementById("back3").addEventListener("click",function(){goto(3);});
+document.getElementById("back4").addEventListener("click",function(){goto(4);});
+document.getElementById("back5").addEventListener("click",function(){goto(5);});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={step:1,concept:"",why:"",teach:"",whyqs:[],analogyLike:"",analogyBecause:"",rewrite:"",gaps:[],score1:null,score2:null,analyzed:false};
+  ["concept","why","teach","analogyLike","analogyBecause","rewrite"].forEach(function(id){document.getElementById(id).value="";});
+  document.getElementById("analysis").innerHTML="";document.getElementById("rescoreOut").innerHTML="";
+  document.getElementById("analogyOut").innerHTML="";document.getElementById("to3").disabled=true;
+  goto(1);
+});
+
+["concept","why"].forEach(function(id){document.getElementById(id).addEventListener("input",function(){S[id]=this.value;save();});});
+document.getElementById("teach").addEventListener("input",function(){S.teach=this.value;save();});
+document.getElementById("rewrite").addEventListener("input",function(){S.rewrite=this.value;save();});
+
+load();
+document.getElementById("concept").value=S.concept||"";
+document.getElementById("why").value=S.why||"";
+document.getElementById("teach").value=S.teach||"";
+document.getElementById("analogyLike").value=S.analogyLike||"";
+document.getElementById("analogyBecause").value=S.analogyBecause||"";
+document.getElementById("rewrite").value=S.rewrite||"";
+if(S.analyzed&&S.teach){showAnalysis("analysis","to3",S.score1||analyze(S.teach));buildWhyQs();
+  S.whyqs.forEach(function(item,i){var ta=document.getElementById("wq"+i);if(ta){ta.value=item.answer||"";if(item.isGap){ta.disabled=true;}}});
+}
+if(S.score2&&S.rewrite){showAnalysis("rescoreOut",null,S.score2);}
+drawDots();
+for(var i=1;i<=6;i++){document.getElementById("step"+i).hidden=(i!==S.step);}
+if(S.step===6){renderSummary();}
+</script>
+</body>
+</html>
