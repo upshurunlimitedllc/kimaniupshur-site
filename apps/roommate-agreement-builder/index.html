@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roommate Agreement Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Create a clear, fair roommate agreement covering rent, chores, guests, and quiet hours — before problems start. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/roommate-agreement-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Roommate Agreement Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Create a clear, fair roommate agreement covering rent, chores, guests, and quiet hours — before problems start. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/roommate-agreement-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;margin-bottom:6px;font-size:1.3rem}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.sm{padding:10px 18px;min-height:44px;font-size:.92rem}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.flabel{display:block;font-weight:bold;margin:14px 0 2px}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 8px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.radio-row{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+.radio-pill{border:2px solid #c9a227;border-radius:999px;padding:10px 18px;background:#fff;cursor:pointer;min-height:44px;font-size:.95rem}
+.radio-pill.sel{background:#c9a227;color:#141210;font-weight:bold}
+.radio-pill .rd{display:block;font-size:.82rem;font-weight:normal;opacity:.75}
+.radio-pill.sel .rd{opacity:1}
+.doc{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:26px;font-size:1rem}
+.doc h3{font-family:Georgia,serif;margin:18px 0 6px;font-size:1.1rem}
+.doc h3:first-child{margin-top:0}
+.doc .preamble{font-style:italic;color:#5c543f;margin-bottom:10px}
+.doc .sig{margin-top:26px;border-top:2px solid #141210;padding-top:6px;font-size:.9rem;min-height:64px}
+.doc .sigrow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:560px){.doc .sigrow{grid-template-columns:1fr}}
+.err{color:#b3261e;font-weight:bold;font-size:.92rem;margin-top:8px}
+.copyok{color:#2e7d32;font-weight:bold;font-size:.9rem;margin-left:8px}
+.hidden{display:none!important}
+.cond{display:none}
+.cond.show{display:block}
+#printonly{display:none}
+@media print{
+body>*{display:none!important}
+#printonly{display:block!important;font-family:Georgia,serif;color:#000;padding:20px}
+#printonly h1{font-size:1.7rem;margin-bottom:4px}
+#printonly .pmeta{font-size:.9rem;color:#333;margin-bottom:14px}
+#printonly h3{font-size:1.05rem;margin:16px 0 4px;border-bottom:1px solid #999;padding-bottom:2px}
+#printonly p{margin:6px 0}
+#printonly .psig{margin-top:40px}
+#printonly .psigline{border-top:1px solid #000;margin:34px 0 0;width:62%;padding-top:4px;font-size:.85rem}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Roommate Agreement Builder</h1>
+<p class="intro">Most roommate fights are about things nobody wrote down. Walk through eight modules together, pick an option for each, and get a clean agreement with signature lines. This is practical planning help — not legal advice. For deposit or eviction questions, check your local tenant law.</p>
+
+<div class="appcard">
+<h2>Who's in the house?</h2>
+<label class="flabel" for="r1">Roommate 1</label>
+<input type="text" id="r1" maxlength="60" placeholder="Full name">
+<label class="flabel" for="r2">Roommate 2</label>
+<input type="text" id="r2" maxlength="60" placeholder="Full name">
+<label class="flabel" for="r3">Roommate 3 (optional)</label>
+<input type="text" id="r3" maxlength="60" placeholder="Full name">
+<label class="flabel" for="r4">Roommate 4 (optional)</label>
+<input type="text" id="r4" maxlength="60" placeholder="Full name">
+<label class="flabel" for="startdate">Agreement start date</label>
+<input type="text" id="startdate" maxlength="40" placeholder="e.g., September 1, 2026">
+</div>
+
+<div class="appcard" id="mod-rent">
+<h2>1. Rent &amp; bills split</h2>
+<label class="flabel" for="rent_total">Monthly rent (total, $)</label>
+<input type="number" id="rent_total" min="0" max="100000" step="1" placeholder="e.g., 1800">
+<label class="flabel">How is rent split?</label>
+<div class="radio-row" role="radiogroup" aria-label="Rent split">
+<button type="button" class="radio-pill sel" data-g="renthow" data-v="equal">Equal split</button>
+<button type="button" class="radio-pill" data-g="renthow" data-v="roomsize">Proportional to room size</button>
+<button type="button" class="radio-pill" data-g="renthow" data-v="custom">Custom</button>
+</div>
+<div class="cond" id="cond-rentcustom">
+<label class="flabel" for="rent_custom">Custom split details</label>
+<input type="text" id="rent_custom" maxlength="200" placeholder="e.g., Maya $950 (master), Jordan $850">
+</div>
+<label class="flabel">Utilities &amp; shared bills (internet, electric, water)</label>
+<div class="radio-row" role="radiogroup" aria-label="Bill split">
+<button type="button" class="radio-pill sel" data-g="billhow" data-v="same">Same as rent</button>
+<button type="button" class="radio-pill" data-g="billhow" data-v="equal">Equal regardless of rent</button>
+</div>
+</div>
+
+<div class="appcard" id="mod-chores">
+<h2>2. Chore rotation</h2>
+<label class="flabel">How do we divide chores?</label>
+<div class="radio-row" role="radiogroup" aria-label="Chore system">
+<button type="button" class="radio-pill sel" data-g="chorehow" data-v="rotate">Fixed weekly rotation</button>
+<button type="button" class="radio-pill" data-g="chorehow" data-v="pick">Pick your own + swap rule</button>
+<button type="button" class="radio-pill" data-g="chorehow" data-v="hire">Hire help, split the cost</button>
+</div>
+<div class="cond" id="cond-chorehire">
+<label class="flabel" for="cleaner_cost">Cleaner cost per visit ($)</label>
+<input type="number" id="cleaner_cost" min="0" max="10000" step="1" placeholder="e.g., 120">
+<label class="flabel" for="cleaner_freq">How often?</label>
+<select id="cleaner_freq"><option value="weekly">Weekly</option><option value="every two weeks" selected>Every two weeks</option><option value="monthly">Monthly</option></select>
+</div>
+<label class="flabel" for="chore_list">Chores this covers (one per line, optional)</label>
+<textarea id="chore_list" maxlength="600" placeholder="e.g., kitchen, bathrooms, trash, vacuuming common areas"></textarea>
+</div>
+
+<div class="appcard" id="mod-guests">
+<h2>3. Guests &amp; overnight policy</h2>
+<label class="flabel">General guest style</label>
+<div class="radio-row" role="radiogroup" aria-label="Guest style">
+<button type="button" class="radio-pill" data-g="gueststyle" data-v="casual">Casual<span class="rd">Guests welcome, light heads-up</span></button>
+<button type="button" class="radio-pill sel" data-g="gueststyle" data-v="moderate">Moderate<span class="rd">Reasonable notice, agreed limits</span></button>
+<button type="button" class="radio-pill" data-g="gueststyle" data-v="strict">Strict<span class="rd">Guests by agreement only</span></button>
+</div>
+<label class="flabel" for="heads_up">Minimum heads-up before an overnight guest (hours)</label>
+<input type="number" id="heads_up" min="0" max="168" step="1" placeholder="e.g., 24">
+<label class="flabel" for="max_over">Max overnight guest nights per week</label>
+<input type="number" id="max_over" min="0" max="7" step="1" placeholder="e.g., 2">
+</div>
+
+<div class="appcard" id="mod-quiet">
+<h2>4. Quiet hours</h2>
+<label class="flabel" for="quiet_from">Quiet hours start</label>
+<input type="text" id="quiet_from" maxlength="20" placeholder="e.g., 10:00 PM">
+<label class="flabel" for="quiet_to">Quiet hours end</label>
+<input type="text" id="quiet_to" maxlength="20" placeholder="e.g., 7:00 AM">
+<label class="checkrow hint" style="display:flex;gap:10px;align-items:center;padding:8px 0"><input type="checkbox" id="quiet_exam" style="width:24px;height:24px;accent-color:#c9a227"> Extra quiet during exam / crunch periods (agreed in advance)</label>
+</div>
+
+<div class="appcard" id="mod-supplies">
+<h2>5. Shared supplies</h2>
+<p class="hint">Toilet paper, dish soap, trash bags, cleaning supplies.</p>
+<label class="flabel">How do we pay for shared supplies?</label>
+<div class="radio-row" role="radiogroup" aria-label="Supply system">
+<button type="button" class="radio-pill sel" data-g="supplyhow" data-v="fund">Shared fund</button>
+<button type="button" class="radio-pill" data-g="supplyhow" data-v="turns">Take turns buying</button>
+<button type="button" class="radio-pill" data-g="supplyhow" data-v="own">Everyone buys their own</button>
+</div>
+<div class="cond" id="cond-supplyfund">
+<label class="flabel" for="fund_amt">Monthly contribution per person ($)</label>
+<input type="number" id="fund_amt" min="0" max="1000" step="1" placeholder="e.g., 15">
+</div>
+</div>
+
+<div class="appcard" id="mod-food">
+<h2>6. Food rules</h2>
+<label class="flabel">Kitchen &amp; food setup</label>
+<div class="radio-row" role="radiogroup" aria-label="Food rules">
+<button type="button" class="radio-pill sel" data-g="foodhow" data-v="shared">Shared basics, label the rest</button>
+<button type="button" class="radio-pill" data-g="foodhow" data-v="separate">Everything labeled &amp; separate</button>
+<button type="button" class="radio-pill" data-g="foodhow" data-v="cook">Shared basics + cook-alone nights</button>
+</div>
+<label class="flabel" for="food_notes">Notes (allergies, off-limits items, optional)</label>
+<input type="text" id="food_notes" maxlength="200" placeholder="e.g., no peanuts in the house; the good olive oil is mine">
+</div>
+
+<div class="appcard" id="mod-conflict">
+<h2>7. Conflict process</h2>
+<label class="flabel">When something bothers us, we&hellip;</label>
+<div class="radio-row" role="radiogroup" aria-label="Conflict process">
+<button type="button" class="radio-pill sel" data-g="conflicthow" data-v="48h">48-hour rule<span class="rd">Raise it directly within 48 hours</span></button>
+<button type="button" class="radio-pill" data-g="conflicthow" data-v="checkin">Monthly house check-in<span class="rd">Small issues wait for the sit-down</span></button>
+<button type="button" class="radio-pill" data-g="conflicthow" data-v="note">Written note first, then talk<span class="rd">Text/email the concern, discuss within 3 days</span></button>
+</div>
+<label class="flabel" for="escalation">If we can't resolve it ourselves</label>
+<select id="escalation">
+<option value="a neutral friend we both trust" selected>Ask a neutral friend we both trust to mediate</option>
+<option value="the landlord or property manager">Involve the landlord or property manager</option>
+<option value="a professional mediator">Bring in a professional mediator</option>
+</select>
+</div>
+
+<div class="appcard" id="mod-moveout">
+<h2>8. Move-out terms</h2>
+<label class="flabel" for="notice">Notice period before moving out</label>
+<select id="notice">
+<option value="30 days" selected>30 days</option>
+<option value="60 days">60 days</option>
+</select>
+<label class="flabel">Finding a replacement</label>
+<div class="radio-row" role="radiogroup" aria-label="Replacement responsibility">
+<button type="button" class="radio-pill sel" data-g="replacehow" data-v="leaver">The person leaving finds a qualified replacement</button>
+<button type="button" class="radio-pill" data-g="replacehow" data-v="all">Everyone helps find a replacement</button>
+</div>
+<label class="flabel">Cleaning standard at move-out</label>
+<div class="radio-row" role="radiogroup" aria-label="Cleaning standard">
+<button type="button" class="radio-pill sel" data-g="cleanhow" data-v="same">Same-or-better than move-in</button>
+<button type="button" class="radio-pill" data-g="cleanhow" data-v="pro">Professional cleaning, split cost</button>
+</div>
+<label class="flabel">Security deposit</label>
+<div class="radio-row" role="radiogroup" aria-label="Deposit handling">
+<button type="button" class="radio-pill sel" data-g="deposithow" data-v="timely">Returned within 30 days of move-out</button>
+<button type="button" class="radio-pill" data-g="deposithow" data-v="law">Per state/local law, minus documented damage</button>
+</div>
+</div>
+
+<div class="appcard">
+<div class="err" id="r_err" role="alert"></div>
+<div style="margin-top:4px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn" id="buildbtn">Generate my agreement</button>
+<button class="btn ghost sm" id="resetbtn">Start over</button>
+</div>
+</div>
+
+<div class="appcard hidden" id="outcard">
+<h2>Your Roommate Agreement</h2>
+<p class="hint">Review it together, tweak anything, then each person signs. Print two copies — one for each roommate.</p>
+<div class="doc" id="docbox"></div>
+<div style="margin:12px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+<button class="btn ghost sm" id="copybtn">Copy agreement</button><span class="copyok" id="copyok" style="display:none">Copied!</span>
+<button class="btn ghost sm" id="printbtn">Print for signing</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with Books</h3>
+<p>The Roommate Agreement Builder is just the start. Browse the full Made Simple library by Kimani Upshur, M.Ed. — clear chapters and practical guidance you can use today, including titles on communication and conflict.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/">Browse the Made Simple Books</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<div id="printonly" aria-hidden="true"></div>
+<script>
+var KEY="app-roommate-agreement-builder-v1";
+var TEXT={rent_total:"rent_total",rent_custom:"rent_custom",cleaner_cost:"cleaner_cost",cleaner_freq:"cleaner_freq",chore_list:"chore_list",heads_up:"heads_up",max_over:"max_over",quiet_from:"quiet_from",quiet_to:"quiet_to",quiet_exam:"quiet_exam",fund_amt:"fund_amt",food_notes:"food_notes",escalation:"escalation",notice:"notice"};
+var RADIO_GROUPS=["renthow","billhow","chorehow","gueststyle","supplyhow","foodhow","conflicthow","replacehow","cleanhow","deposithow"];
+var DEFAULTS={renthow:"equal",billhow:"same",chorehow:"rotate",gueststyle:"moderate",supplyhow:"fund",foodhow:"shared",conflicthow:"48h",replacehow:"leaver",cleanhow:"same",deposithow:"timely"};
+var state={radios:{},texts:{},checks:{}};
+RADIO_GROUPS.forEach(function(g){state.radios[g]=DEFAULTS[g];});
+["r1","r2","r3","r4","startdate"].forEach(function(id){state.texts[id]="";});
+Object.keys(TEXT).forEach(function(k){state.texts[k]="";});
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(!r)return;var s=JSON.parse(r);if(!s||typeof s!=="object")return;
+ if(s.radios&&typeof s.radios==="object"){RADIO_GROUPS.forEach(function(g){if(DEFAULTS[g]&&typeof s.radios[g]==="string"&&s.radios[g])state.radios[g]=s.radios[g];});}
+ if(s.texts&&typeof s.texts==="object"){Object.keys(state.texts).forEach(function(k){if(typeof s.texts[k]==="string")state.texts[k]=s.texts[k];});}}catch(e){}}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function $(id){return document.getElementById(id);}
+function paintRadios(){
+ document.querySelectorAll(".radio-pill").forEach(function(b){
+  var g=b.getAttribute("data-g"),v=b.getAttribute("data-v");
+  var on=state.radios[g]===v;
+  b.classList.toggle("sel",on);b.setAttribute("aria-pressed",on);
+ });
+ paintCond();
+}
+function paintCond(){
+ $("cond-rentcustom").classList.toggle("show",state.radios.renthow==="custom");
+ $("cond-chorehire").classList.toggle("show",state.radios.chorehow==="hire");
+ $("cond-supplyfund").classList.toggle("show",state.radios.supplyhow==="fund");
+}
+document.querySelectorAll(".radio-pill").forEach(function(b){
+ b.addEventListener("click",function(){
+  state.radios[b.getAttribute("data-g")]=b.getAttribute("data-v");save();paintRadios();
+  if(!$("outcard").classList.contains("hidden"))build();
+ });
+});
+[["r1","r1"],["r2","r2"],["r3","r3"],["r4","r4"],["startdate","startdate"],
+ ["rent_total","rent_total"],["rent_custom","rent_custom"],["cleaner_cost","cleaner_cost"],
+ ["cleaner_freq","cleaner_freq"],["chore_list","chore_list"],["heads_up","heads_up"],["max_over","max_over"],
+ ["quiet_from","quiet_from"],["quiet_to","quiet_to"],["fund_amt","fund_amt"],["food_notes","food_notes"],
+ ["escalation","escalation"],["notice","notice"]].forEach(function(p){
+ var el=$(p[0]);if(!el)return;
+ el.addEventListener("input",function(){state.texts[p[1]]=this.value;save();});
+ el.addEventListener("change",function(){state.texts[p[1]]=this.value;save();});
+});
+$("quiet_exam").addEventListener("change",function(){state.texts.quiet_exam=this.checked?"1":"";save();});
+function num(k){var v=parseFloat(state.texts[k]);return isNaN(v)?null:v;}
+function names(){var n=[state.texts.r1.trim(),state.texts.r2.trim(),state.texts.r3.trim(),state.texts.r4.trim()].filter(Boolean);return n;}
+function joinNames(n){if(n.length===1)return n[0];if(n.length===2)return n[0]+" and "+n[1];return n.slice(0,-1).join(", ")+", and "+n[n.length-1];}
+function rentSentence(){
+ var t=num("rent_total");
+ var rt=t===null?"$___":("$"+t.toLocaleString("en-US"));
+ var how=state.radios.renthow;
+ var hs=how==="equal"?"split equally among all of us":
+        how==="roomsize"?"split proportionally to room size":
+        ("split as follows: "+(state.texts.rent_custom.trim()||"(describe your split)"));
+ var bills=state.radios.billhow==="same"?"in the same proportions as rent":"split equally, regardless of rent shares";
+ return "Monthly rent is "+rt+". We "+hs+". Shared bills (utilities, internet, water, and similar) are "+bills+". Rent is due in full to the landlord/leaseholder on time; whoever is short owes the others immediately, not next month.";
+}
+function choreSentence(){
+ var how=state.radios.chorehow;
+ var list=state.texts.chore_list.trim();
+ var cl=list?(" This covers: "+list.replace(/\n+/g,"; ")+"."):"";
+ if(how==="rotate")return "Chores rotate on a fixed weekly schedule so everyone does every chore over time."+cl+" If you can't do your turn, you arrange a swap — you don't skip it.";
+ if(how==="pick")return "Each of us picks our own chores, and the swap rule applies: trade only, never skip."+cl+" Anyone can propose a re-deal each month.";
+ var c=num("cleaner_cost");var cs=c===null?"$___":("$"+c.toLocaleString("en-US"));
+ return "We hire a cleaner "+state.texts.cleaner_freq+" at "+cs+" per visit, split equally."+cl+" Between visits, everyone cleans up after themselves daily.";
+}
+function guestSentence(){
+ var st=state.radios.gueststyle;
+ var sd=st==="casual"?"Casual — guests are welcome, just give a light heads-up.":st==="moderate"?"Moderate — reasonable notice and the limits below apply.":"Strict — guests only by agreement in advance.";
+ var hu=num("heads_up"),mo=num("max_over");
+ var detail="";
+ if(hu!==null)detail+=" At least "+hu+" hours' notice before any overnight guest.";
+ if(mo!==null)detail+=" No more than "+mo+" overnight guest night(s) per week.";
+ return sd+detail+" Guests use common areas respectfully and don't park in anyone's spot.";
+}
+function quietSentence(){
+ var f=state.texts.quiet_from.trim()||"___",t=state.texts.quiet_to.trim()||"___";
+ var s="Quiet hours are "+f+" to "+t+". During quiet hours: no loud music, no shouting, headphones for calls and video.";
+ if(state.texts.quiet_exam==="1")s+=" During exam or crunch periods (agreed in advance), quiet hours tighten and guests pause.";
+ return s;
+}
+function supplySentence(){
+ var how=state.radios.supplyhow;
+ if(how==="fund"){var a=num("fund_amt");var as=a===null?"$___":("$"+a.toLocaleString("en-US"));return "Each of us contributes "+as+" per month to a shared supply fund for toilet paper, dish soap, trash bags, and cleaning supplies. Receipts stay in a shared folder.";}
+ if(how==="turns")return "We take turns buying shared supplies (toilet paper, dish soap, trash bags, cleaning supplies). Keep a simple running list so turns stay even.";
+ return "Everyone buys their own supplies. Label anything you don't want shared — unlabeled basics in common areas are fair game.";
+}
+function foodSentence(){
+ var how=state.radios.foodhow;
+ var s=how==="shared"?"Pantry basics and condiments are shared; everything else gets labeled. Don't eat what isn't yours.":how==="separate"?"All food is labeled and separate — including basics. The fridge is divided, and no one eats from anyone else's shelf without asking.":"Pantry basics and condiments are shared; everything else gets labeled. We each get cook-alone nights per the schedule we set together — the kitchen is yours on your night.";
+ var n=state.texts.food_notes.trim();
+ if(n)s+=" Notes: "+n+".";
+ return s;
+}
+function conflictSentence(){
+ var how=state.radios.conflicthow;
+ var s=how==="48h"?"The 48-hour rule: if something bothers you, raise it directly within 48 hours — calmly, privately, specifically. No silent scorekeeping.":how==="checkin"?"We hold a monthly house check-in. Small issues wait for the sit-down; anything urgent gets raised right away.":"Written note first, then talk: put the concern in a message, then discuss it in person within 3 days.";
+ return s+" If we can't resolve it ourselves, we ask "+state.texts.escalation+" for help.";
+}
+function moveoutSentence(){
+ var r=state.radios.replacehow==="leaver"?"The person leaving finds a qualified replacement the rest of us approve.":"Everyone helps find a replacement.";
+ var c=state.radios.cleanhow==="same"?"The person leaving returns their room and shared spaces in same-or-better condition than move-in.":"The person leaving pays their share of a professional cleaning.";
+ var d=state.radios.deposithow==="timely"?"Security deposit portions are returned within 30 days of move-out, minus documented damage.":"Security deposit portions are handled per state/local law, minus documented damage.";
+ return "Notice: "+state.texts.notice+" before moving out. "+r+" "+c+" "+d;
+}
+function buildDoc(){
+ var n=names();
+ var title="Roommate Agreement";
+ var meta=(n.length?joinNames(n):"___")+(state.texts.startdate.trim()?" \u2014 effective "+state.texts.startdate.trim():"");
+ var secs=[
+ ["1. Rent & bills",rentSentence()],
+ ["2. Chores",choreSentence()],
+ ["3. Guests & overnight",guestSentence()],
+ ["4. Quiet hours",quietSentence()],
+ ["5. Shared supplies",supplySentence()],
+ ["6. Food rules",foodSentence()],
+ ["7. Conflict process",conflictSentence()],
+ ["8. Move-out terms",moveoutSentence()]];
+ var sigs=n.length?n:["______________________"];
+ var sigHtml='<div class="sigrow">'+sigs.map(function(s){return '<div class="sig">Signed: '+esc(s)+'<br>Date: ____________</div>';}).join("")+"</div>";
+ var checkinText="We\u2019ll revisit this agreement 30 days after the start date. Anything that isn\u2019t working gets discussed and updated in writing. This agreement is between us as roommates and doesn\u2019t change our lease.";
+ var checkin='<h3>30-day check-in</h3><p>'+checkinText+'</p>';
+ return {title:title,meta:meta,secs:secs,sigHtml:sigHtml,checkin:checkin,checkinText:checkinText};
+}
+function build(){
+ var err=$("r_err");err.textContent="";
+ var n=names();
+ if(n.length<2){err.textContent="Enter at least two roommate names to generate the agreement.";return false;}
+ if(!num("rent_total")&&state.radios.renthow!=="custom"){/* rent optional-ish but warn */}
+ var d=buildDoc();
+ var h='<h3 style="margin-top:0">'+esc(d.title)+'</h3><p class="preamble">'+esc(d.meta)+'</p>';
+ h+='<p class="preamble">We agree to the following as housemates, in good faith:</p>';
+ d.secs.forEach(function(s){h+="<h3>"+esc(s[0])+"</h3><p>"+esc(s[1])+"</p>";});
+ h+=d.checkin+"<h3>Signatures</h3>"+d.sigHtml;
+ $("docbox").innerHTML=h;
+ $("outcard").classList.remove("hidden");
+ return true;
+}
+$("buildbtn").addEventListener("click",function(){if(build()){try{$("outcard").scrollIntoView();}catch(e){}}});
+$("resetbtn").addEventListener("click",function(){
+ if(!confirm("Clear your draft and start over?"))return;
+ try{localStorage.removeItem(KEY);}catch(e){}
+ state={radios:{},texts:{},checks:{}};
+ RADIO_GROUPS.forEach(function(g){state.radios[g]=DEFAULTS[g];});
+ ["r1","r2","r3","r4","startdate"].forEach(function(id){state.texts[id]="";});
+ Object.keys(TEXT).forEach(function(k){state.texts[k]="";});
+ ["r1","r2","r3","r4","startdate","rent_total","rent_custom","cleaner_cost","chore_list","heads_up","max_over","quiet_from","quiet_to","fund_amt","food_notes"].forEach(function(id){var el=$(id);if(el)el.value="";});
+ $("cleaner_freq").value="every two weeks";$("escalation").selectedIndex=0;$("notice").selectedIndex=0;$("quiet_exam").checked=false;
+ $("docbox").innerHTML="";$("outcard").classList.add("hidden");$("r_err").textContent="";
+ paintRadios();window.scrollTo(0,0);
+});
+function copyText(t,okId){
+ var ok=$(okId);
+ function done(){ok.style.display="inline";setTimeout(function(){ok.style.display="none";},1800);}
+ if(!t||!t.trim())return;
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}
+ else{var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);done();}
+}
+$("copybtn").addEventListener("click",function(){
+ var d=$("docbox");
+ var t=(d.innerText!==undefined)?d.innerText:d.textContent;
+ copyText(t,"copyok");
+});
+$("printbtn").addEventListener("click",function(){
+ var d=buildDoc();
+ var h='<h1>'+esc(d.title)+'</h1><p class="pmeta">'+esc(d.meta)+'</p><p>We agree to the following as housemates, in good faith:</p>';
+ d.secs.forEach(function(s){h+="<h3>"+esc(s[0])+"</h3><p>"+esc(s[1])+"</p>";});
+ var n=names();var sigs=n.length?n:["______________________"];
+ h+="<h3>30-day check-in</h3><p>"+esc(d.checkinText)+"</p>";
+ h+="<h3>Signatures</h3>"+'<div class="psig">'+sigs.map(function(s){return '<div class="psigline">Signed: '+esc(s)+' &nbsp;&nbsp; Date: ____________</div>';}).join("")+"</div>";
+ $("printonly").innerHTML=h;
+ window.print();
+});
+load();
+["r1","r2","r3","r4","startdate","rent_total","rent_custom","cleaner_cost","chore_list","heads_up","max_over","quiet_from","quiet_to","fund_amt","food_notes"].forEach(function(id){var el=$(id);if(el&&state.texts[id]!==undefined)el.value=state.texts[id];});
+$("cleaner_freq").value=state.texts.cleaner_freq||"every two weeks";
+$("escalation").value=state.texts.escalation||"a neutral friend we both trust";
+$("notice").value=state.texts.notice||"30 days";
+$("quiet_exam").checked=state.texts.quiet_exam==="1";
+paintRadios();
+if(names().length>=2)build();
+</script>
+</body>
+</html>

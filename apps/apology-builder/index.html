@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apology Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Craft a sincere, complete apology — acknowledge, own the impact, and say what you'll change — with a guided sentence builder. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/apology-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Apology Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Craft a sincere, complete apology — acknowledge, own the impact, and say what you'll change — with a guided sentence builder. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/apology-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.sm{padding:10px 18px;min-height:44px;font-size:.92rem}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:100px;font-family:inherit}
+label.flabel{display:block;font-weight:bold;margin:14px 0 2px}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 8px}
+.example{background:#f7f3e6;border-radius:8px;padding:12px 14px;margin:10px 0;font-size:.93rem;color:#5c543f}
+.example .ex{font-weight:bold;color:#8a6d1c}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.typegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+@media (max-width:560px){.typegrid{grid-template-columns:1fr}}
+.tcard{border:2px solid #c9a227;border-radius:10px;padding:16px;background:#fff;cursor:pointer;text-align:left;min-height:48px}
+.tcard .tt{font-weight:bold;display:block;margin-bottom:4px}
+.tcard .td{font-size:.88rem;color:#6b6250;display:block}
+.tcard.sel{background:#c9a227;color:#141210}
+.tcard.sel .td{color:#141210}
+.script{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:22px;font-size:1.02rem}
+.script .part{margin-bottom:14px}
+.script .plabel{font-size:.78rem;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:#8a6d1c;display:block;margin-bottom:4px}
+.flag{border-left:4px solid #b3261e;background:#fff;border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0}
+.flag .fw{font-weight:bold;color:#b3261e}
+.flag .fx{font-size:.92rem;color:#2e7d32;margin-top:4px}
+.okline{border-left:4px solid #2e7d32;background:#fff;border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0;color:#1b5e20;font-weight:bold}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #eee}
+.checkrow:last-child{border-bottom:none}
+.checkrow input{width:26px;height:26px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow label{cursor:pointer}
+.checkrow small{display:block;color:#6b6250;font-weight:normal}
+.err{color:#b3261e;font-weight:bold;font-size:.92rem;margin-top:8px}
+.copyok{color:#2e7d32;font-weight:bold;font-size:.9rem;margin-left:8px}
+.hidden{display:none!important}
+#printonly{display:none}
+@media print{
+body>*{display:none!important}
+#printonly{display:block!important;font-family:Georgia,serif;color:#000}
+#printonly h1{font-size:1.6rem;margin-bottom:4px}
+#printonly .psec{margin:14px 0}
+#printonly .plabel{font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:#555;display:block}
+#printonly .psig{margin-top:34px;border-top:1px solid #000;width:60%;padding-top:4px;font-size:.85rem}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Apology Builder</h1>
+<p class="intro">Craft a sincere, complete apology — acknowledge what happened, own the impact, say what you'll change. A clear apology is honest communication: it doesn't guarantee how the other person will respond, and it can't replace the work of rebuilding trust over time. This is practical communication help, not counseling.</p>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">1. What happened?</h2>
+<p class="hint">Pick the situation closest to yours. Each one comes with tailored examples and "don't say this" warnings.</p>
+<div class="typegrid" role="radiogroup" aria-label="Situation type">
+<button type="button" class="tcard sel" data-s="words" role="radio" aria-checked="true"><span class="tt">Said something hurtful</span><span class="td">Words that landed wrong — criticism, sarcasm, an outburst.</span></button>
+<button type="button" class="tcard" data-s="promise" role="radio" aria-checked="false"><span class="tt">Broke a promise</span><span class="td">Said you'd do something, then didn't.</span></button>
+<button type="button" class="tcard" data-s="neglect" role="radio" aria-checked="false"><span class="tt">Dropped the ball</span><span class="td">Forgot, didn't show up, weren't there when it counted.</span></button>
+<button type="button" class="tcard" data-s="trust" role="radio" aria-checked="false"><span class="tt">Broke their trust</span><span class="td">Crossed a line — loyalty, honesty, or a boundary.</span></button>
+</div>
+<label class="flabel" for="a_name">Their first name (optional)</label>
+<input type="text" id="a_name" maxlength="40" placeholder="e.g., Maya">
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">2. What happened — no excuses</h2>
+<p class="hint">State the specific action in plain words. No "but," no reasons, no context yet — just what you did.</p>
+<div class="example" id="ex_what"></div>
+<textarea id="a_what" maxlength="800" placeholder=""></textarea>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">3. The impact you understand</h2>
+<p class="hint">Show you get it — what did it cost them? Time, trust, a feeling, an opportunity? Don't minimize, and don't tell them how to feel.</p>
+<div class="example" id="ex_impact"></div>
+<textarea id="a_impact" maxlength="800" placeholder=""></textarea>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">4. What you'll change — one concrete action</h2>
+<p class="hint">Name one specific, keepable change. "I'll do better" is not a change. "Next time X happens, I will Y" is.</p>
+<div class="example" id="ex_change"></div>
+<textarea id="a_change" maxlength="800" placeholder=""></textarea>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">5. The ask</h2>
+<p class="hint">How do you want to close? A good apology expects nothing back.</p>
+<div class="typegrid" role="radiogroup" aria-label="How to close the apology" id="askgrid">
+<button type="button" class="tcard sel" data-ask="forgive" role="radio" aria-checked="true"><span class="tt">Ask for forgiveness</span><span class="td">Direct: "Will you forgive me?" Accept any answer.</span></button>
+<button type="button" class="tcard" data-ask="repair" role="radio" aria-checked="false"><span class="tt">Ask how to make it right</span><span class="td">Open-ended: "What would help?" Plus a repair offer below.</span></button>
+<button type="button" class="tcard" data-ask="open" role="radio" aria-checked="false"><span class="tt">No ask — leave the door open</span><span class="td">Best when they're not ready. No pressure, no expectation.</span></button>
+</div>
+<label class="flabel" for="a_offer">A concrete repair offer (optional — appears with "ask how to make it right")</label>
+<input type="text" id="a_offer" maxlength="300" placeholder="e.g., I'll cover the rescheduled fee">
+<div class="err" id="a_err" role="alert"></div>
+<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn" id="buildbtn">Build my apology</button>
+<button class="btn ghost sm" id="resetbtn">Start over</button>
+</div>
+</div>
+
+<div class="appcard hidden" id="outcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your apology script</h2>
+<div class="script" id="scriptbox"></div>
+<div style="margin:12px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+<button class="btn ghost sm" id="copybtn">Copy apology</button><span class="copyok" id="copyok" style="display:none">Copied!</span>
+<button class="btn ghost sm" id="printbtn">Print</button>
+</div>
+<h3 style="font-family:Georgia,serif;margin:20px 0 8px">Language check</h3>
+<p class="hint">Scans your draft for the phrases that make apologies fail. Fix any flags before you deliver.</p>
+<div id="flaglist"></div>
+<h3 style="font-family:Georgia,serif;margin:20px 0 8px">Delivery tips</h3>
+<div id="tips">
+<label class="checkrow"><input type="checkbox" data-t="calm"><span>Wait until you're calm<small>An apology delivered in anger becomes another offense. Sleep on it if you need to.</small></span></label>
+<label class="checkrow"><input type="checkbox" data-t="private"><span>Match the medium to the weight<small>Big harms deserve in-person or a call. Text is fine for small things — never for trust-breaking ones.</small></span></label>
+<label class="checkrow"><input type="checkbox" data-t="timing"><span>Don't ambush<small>Pick a private moment, not right before an event, bedtime, or when they're rushing out the door.</small></span></label>
+<label class="checkrow"><input type="checkbox" data-t="listen"><span>Listen after you speak<small>The apology ends when they're heard, not when you feel relieved. Don't defend.</small></span></label>
+<label class="checkrow"><input type="checkbox" data-t="once"><span>Apologize once, properly<small>Repeating it weekly turns your guilt into their burden. Say it fully, then live it.</small></span></label>
+<label class="checkrow"><input type="checkbox" data-t="expect"><span>Expect nothing back<small>Forgiveness is theirs to give on their timeline. An apology with strings attached isn't one.</small></span></label>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Apology Builder is just the start. <em>Apology Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/apology-made-simple/">Get Apology Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<div id="printonly" aria-hidden="true"></div>
+<script>
+var KEY="app-apology-builder-v1";
+var SIT={
+ words:{
+  ex_what:['<span class="ex">Example:</span> "Last night I told you your presentation was embarrassing, in front of the whole team."',
+   '<span class="ex">Don\u2019t say:</span> "I\u2019m sorry you took it that way" \u00b7 "I was just being honest" \u00b7 "You know how I get when I\u2019m stressed."'],
+  ex_impact:['<span class="ex">Example:</span> "I can see it humiliated you and probably made you dread today\u2019s meeting."',
+   '<span class="ex">Don\u2019t say:</span> "It wasn\u2019t that bad" \u00b7 "You\u2019re too sensitive."'],
+  ex_change:['<span class="ex">Example:</span> "From now on, any criticism I have goes to you privately, never in a group."',
+   '<span class="ex">Don\u2019t say:</span> "I\u2019ll try to be nicer" — vague promises are how this happens again.']},
+ promise:{
+  ex_what:['<span class="ex">Example:</span> "I promised to drive you to the airport Tuesday, then booked over it and left you scrambling."',
+   '<span class="ex">Don\u2019t say:</span> "You know how busy I am" \u00b7 "Something came up" as a full sentence.'],
+  ex_impact:['<span class="ex">Example:</span> "You had to pay for a last-minute ride, and I get that it makes my word feel unreliable."',
+   '<span class="ex">Don\u2019t say:</span> "It worked out fine" \u00b7 "You should have reminded me."'],
+  ex_change:['<span class="ex">Example:</span> "Any promise I make goes on the calendar immediately, and if a conflict comes up I tell you first — before I commit."',
+   '<span class="ex">Don\u2019t say:</span> "It won\u2019t happen again" — say what will prevent it.']},
+ neglect:{
+  ex_what:['<span class="ex">Example:</span> "I said I\u2019d help you move Saturday and I didn\u2019t show, didn\u2019t text, nothing."',
+   '<span class="ex">Don\u2019t say:</span> "I didn\u2019t mean to" — then stop. Meaning it or not doesn\u2019t erase the no-show.'],
+  ex_impact:['<span class="ex">Example:</span> "You were left doing a two-person job alone, and I wasn\u2019t reachable."',
+   '<span class="ex">Don\u2019t say:</span> "You never asked twice" \u00b7 "I was tired."'],
+  ex_change:['<span class="ex">Example:</span> "If I commit to something, I set two reminders — and if I can\u2019t make it, I call you, not text, with real notice."',
+   '<span class="ex">Don\u2019t say:</span> "I\u2019ll try harder" — name the mechanism, not the intention.']},
+ trust:{
+  ex_what:['<span class="ex">Example:</span> "I told Sam about your situation after you asked me to keep it between us."',
+   '<span class="ex">Don\u2019t say:</span> "It slipped out" \u00b7 "It wasn\u2019t that big a deal" \u00b7 "At least I\u2019m telling you now."'],
+  ex_impact:['<span class="ex">Example:</span> "I broke the one thing you asked of me, and now you\u2019re wondering what else I\u2019ve said."',
+   '<span class="ex">Don\u2019t say:</span> "Nothing bad happened" — you don\u2019t get to grade the damage.'],
+  ex_change:['<span class="ex">Example:</span> "When someone tells me something in confidence, it stops with me — I\u2019m telling you that plainly now, and I\u2019ll live by it."',
+   '<span class="ex">Don\u2019t say:</span> "Trust me" — trust is rebuilt by pattern, not by asking for it.']}
+};
+var OPEN={
+ words:"I want to talk about what I said to you.",
+ promise:"I want to talk about the promise I broke.",
+ neglect:"I want to talk about the fact that I let you down.",
+ trust:"I want to talk about how I broke your trust."};
+var ASK={
+ forgive:"Will you forgive me? Whatever you answer, I understand.",
+ repair:"What would help make this right?",
+ open:"I don\u2019t expect anything from you. I just needed to say this honestly. The door is open whenever you\u2019re ready."};
+var FLAGS=[
+ {re:/sorry,?\s+but\b/i,note:"\u201CSorry, but\u201D cancels the apology — everything after \u201Cbut\u201D becomes an excuse.",fix:"Delete \u201Cbut\u201D and everything after it. Let the apology stand alone."},
+ {re:/i'?m sorry (you|if)/i,note:"\u201CI\u2019m sorry you feel\u2026\u201D apologizes for their feelings, not your actions.",fix:"Apologize for what you did: \u201CI was wrong to\u2026\u201D"},
+ {re:/if i (offended|hurt|upset|wronged)/i,note:"\u201CIf I offended you\u201D dodges responsibility — it makes the harm hypothetical.",fix:"Drop \u201Cif\u201D. State the harm you caused as fact."},
+ {re:/\bjust (joking|kidding)\b/i,note:"\u201CJust joking\u201D dismisses the harm instead of owning it.",fix:"Remove it. The impact is real regardless of intent."},
+ {re:/didn'?t mean to/i,note:"\u201CDidn\u2019t mean to\u201D is context, not an apology — it centers your intent instead of their hurt.",fix:"Lead with what happened and the impact; keep intent to one short sentence, or cut it."},
+ {re:/you (always|never)\b/i,note:"Absolutes (\u201Cyou always\u201D / \u201Cyou never\u201D) turn an apology into an accusation.",fix:"Remove the absolute. Stay on your side of the story."},
+ {re:/\b(at least|anyway|whatever)\b/i,note:"\u201CAt least / anyway / whatever\u201D minimizes or deflects.",fix:"Say it plainly, without softeners or pivots."}];
+var state={sit:"words",ask:"forgive",name:"",what:"",impact:"",change:"",offer:"",tips:{}};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(!r)return;var s=JSON.parse(r);if(!s||typeof s!=="object")return;
+ if(s.sit&&SIT[s.sit])state.sit=s.sit; if(s.ask&&ASK[s.ask])state.ask=s.ask;
+ ["name","what","impact","change","offer"].forEach(function(k){if(typeof s[k]==="string")state[k]=s[k];});
+ if(s.tips&&typeof s.tips==="object")state.tips=s.tips;}catch(e){}}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function paintCards(sel,attr){
+ document.querySelectorAll(sel).forEach(function(b){
+  var on=b.getAttribute(attr)===state[attr==="data-s"?"sit":"ask"];
+  b.classList.toggle("sel",on);b.setAttribute("aria-checked",on);
+ });
+}
+function paintExamples(){
+ var s=SIT[state.sit];
+ document.getElementById("ex_what").innerHTML=s.ex_what.join("<br>");
+ document.getElementById("ex_impact").innerHTML=s.ex_impact.join("<br>");
+ document.getElementById("ex_change").innerHTML=s.ex_change.join("<br>");
+ document.getElementById("a_what").placeholder='e.g., '+s.ex_what[0].replace(/<[^>]*>/g,"").replace(/^Example: /,"").slice(0,90)+"...";
+}
+document.querySelectorAll('[data-s]').forEach(function(b){
+ b.addEventListener("click",function(){state.sit=b.getAttribute("data-s");save();paintCards('[data-s]',"data-s");paintExamples();
+  if(!document.getElementById("outcard").classList.contains("hidden"))build();});
+});
+document.querySelectorAll('[data-ask]').forEach(function(b){
+ b.addEventListener("click",function(){state.ask=b.getAttribute("data-ask");save();paintCards('[data-ask]',"data-ask");
+  if(!document.getElementById("outcard").classList.contains("hidden"))build();});
+});
+[["a_name","name"],["a_what","what"],["a_impact","impact"],["a_change","change"],["a_offer","offer"]].forEach(function(p){
+ document.getElementById(p[0]).addEventListener("input",function(){state[p[1]]=this.value;save();});
+});
+document.querySelectorAll("#tips input").forEach(function(cb){
+ cb.addEventListener("change",function(){state.tips[cb.getAttribute("data-t")]=cb.checked;save();});
+});
+function build(){
+ var err=document.getElementById("a_err");err.textContent="";
+ var what=state.what.trim(),impact=state.impact.trim(),change=state.change.trim();
+ if(!what||!impact||!change){err.textContent="Fill in all three blocks (what happened, the impact, what you'll change) to build the apology.";return false;}
+ var name=state.name.trim();
+ var parts=[];
+ parts.push({l:"Opening",t:(name?name+", ":"")+OPEN[state.sit]});
+ parts.push({l:"What happened — no excuses",t:what});
+ parts.push({l:"The impact, as I understand it",t:impact});
+ parts.push({l:"What I'll change",t:change});
+ var askt=ASK[state.ask];
+ if(state.ask==="repair"&&state.offer.trim())askt=askt+' My offer: "'+state.offer.trim()+'."';
+ parts.push({l:"The ask",t:askt});
+ var box=document.getElementById("scriptbox");
+ box.innerHTML=parts.map(function(p){return '<div class="part"><span class="plabel">'+p.l+'</span>'+esc(p.t)+"</div>";}).join("");
+ var fl=document.getElementById("flaglist");fl.innerHTML="";
+ var hits=[];
+ var all=what+" "+impact+" "+change;
+ FLAGS.forEach(function(f){var m=all.match(f.re);if(m)hits.push({word:m[0],note:f.note,fix:f.fix});});
+ if(!hits.length){fl.innerHTML='<div class="okline">Language check passed — no apology-killing phrases detected in your draft.</div>';}
+ hits.forEach(function(h){var d=document.createElement("div");d.className="flag";
+  d.innerHTML='<span class="fw">Flagged: \u201C'+esc(h.word)+'\u201D</span><div>'+h.note+'</div><div class="fx">Try instead: '+h.fix+"</div>";fl.appendChild(d);});
+ document.getElementById("outcard").classList.remove("hidden");
+ return true;
+}
+document.getElementById("buildbtn").addEventListener("click",function(){if(build()){try{document.getElementById("outcard").scrollIntoView();}catch(e){}}});
+document.getElementById("resetbtn").addEventListener("click",function(){
+ if(!confirm("Clear your draft and start over?"))return;
+ try{localStorage.removeItem(KEY);}catch(e){}
+ state={sit:"words",ask:"forgive",name:"",what:"",impact:"",change:"",offer:"",tips:{}};
+ ["a_name","a_what","a_impact","a_change","a_offer"].forEach(function(id){document.getElementById(id).value="";});
+ document.getElementById("flaglist").innerHTML="";document.getElementById("scriptbox").innerHTML="";
+ document.getElementById("outcard").classList.add("hidden");document.getElementById("a_err").textContent="";
+ document.querySelectorAll("#tips input").forEach(function(cb){cb.checked=false;});
+ paintCards('[data-s]',"data-s");paintCards('[data-ask]',"data-ask");paintExamples();window.scrollTo(0,0);
+});
+function copyText(t,okId){
+ var ok=document.getElementById(okId);
+ function done(){ok.style.display="inline";setTimeout(function(){ok.style.display="none";},1800);}
+ if(!t||!t.trim())return;
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}
+ else{var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);done();}
+}
+document.getElementById("copybtn").addEventListener("click",function(){
+ var sb=document.getElementById("scriptbox");
+ var t=(sb.innerText!==undefined)?sb.innerText:sb.textContent;
+ copyText(t,"copyok");
+});
+document.getElementById("printbtn").addEventListener("click",function(){
+ var name=state.name.trim();
+ var po=document.getElementById("printonly");
+ po.innerHTML='<h1>My Apology</h1><div class="psec"><span class="plabel">To</span>'+esc(name||"(name)")+'</div>'+
+ '<div class="psec"><span class="plabel">What happened</span>'+esc(state.what.trim())+'</div>'+
+ '<div class="psec"><span class="plabel">The impact, as I understand it</span>'+esc(state.impact.trim())+'</div>'+
+ '<div class="psec"><span class="plabel">What I\'ll change</span>'+esc(state.change.trim())+'</div>'+
+ '<div class="psec"><span class="plabel">The ask</span>'+esc(ASK[state.ask]+(state.ask==="repair"&&state.offer.trim()?' My offer: "'+state.offer.trim()+'."':""))+'</div>';
+ window.print();
+});
+load();
+document.getElementById("a_name").value=state.name;document.getElementById("a_what").value=state.what;
+document.getElementById("a_impact").value=state.impact;document.getElementById("a_change").value=state.change;
+document.getElementById("a_offer").value=state.offer;
+document.querySelectorAll("#tips input").forEach(function(cb){cb.checked=!!state.tips[cb.getAttribute("data-t")];});
+paintCards('[data-s]',"data-s");paintCards('[data-ask]',"data-ask");paintExamples();
+if(state.what&&state.impact&&state.change)build();
+</script>
+</body>
+</html>
