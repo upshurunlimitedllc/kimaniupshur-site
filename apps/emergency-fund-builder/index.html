@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emergency Fund Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Figure out exactly how big your emergency fund should be and get a month-by-month plan to build it. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/emergency-fund-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Emergency Fund Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Figure out exactly how big your emergency fund should be and get a month-by-month plan to build it. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/emergency-fund-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:18px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag.bad{background:#fbeeee;border-left-color:#a33}
+.pill{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:bold;color:#fff;margin:4px 6px 4px 0}
+.p-low{background:#3d7a3d}.p-med{background:#8a6d1c}.p-high{background:#b45f06}.p-crit{background:#a33}
+.big{font-family:Georgia,serif;font-size:2rem;color:#141210;margin:6px 0}
+.meter{background:#e8e0c8;border-radius:999px;height:22px;overflow:hidden;margin:10px 0}
+.meter>div{height:100%;background:#3d7a3d;border-radius:999px;transition:width .4s}
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+table.grid th,table.grid td{border:1px solid #e0d6b8;padding:8px;text-align:center}
+table.grid th{background:#141210;color:#e8c84a}
+table.grid td.l{text-align:left;background:#fffdf7}
+.twrap{overflow-x:auto;max-height:420px;overflow-y:auto}
+.sched-scroll{max-height:420px;overflow-y:auto}
+ol.steps{margin:8px 0 8px 22px}
+ol.steps li{margin:6px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{header.site,footer.site,section.devotional,.noprint,#schedCard,#inputsCard{display:none!important}main.app{max-width:100%;padding:10px}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Emergency Fund Builder</h1>
+<p class="intro">Answer six questions, get your personal emergency-fund target, a funded-by date, and a month-by-month savings schedule you can print and follow.</p>
+<div class="flag"><b>Educational modeling, not professional financial advice.</b> This tool uses simple, conservative rules of thumb to estimate a savings target. It is not a financial plan, and it does not replace a licensed financial professional.</div>
+
+<div class="appcard noprint" id="inputsCard">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Your situation</h2>
+<p class="hint">Your answers never leave this device — everything is saved in your browser only.</p>
+
+<label class="lbl" for="expenses">Monthly essential expenses ($)</label>
+<p class="hint">Rent or mortgage, utilities, groceries, insurance, transportation, and minimum debt payments. Not vacations, dining out, or hobbies.</p>
+<input type="number" id="expenses" min="0" step="0.01" inputmode="decimal" placeholder="e.g., 3200">
+
+<label class="lbl" for="savings">Current emergency savings ($)</label>
+<p class="hint">Money you could reach within a few days if you lost your income tomorrow. Enter 0 if you're starting from scratch.</p>
+<input type="number" id="savings" min="0" step="0.01" inputmode="decimal" placeholder="e.g., 1500">
+
+<label class="lbl" for="earners">Income earners in the household</label>
+<select id="earners">
+<option value="1">1 earner</option>
+<option value="2">2 earners</option>
+<option value="3">3 or more earners</option>
+</select>
+
+<label class="lbl" for="stability">Job stability</label>
+<select id="stability">
+<option value="0">Very stable (tenured, government, long-standing role)</option>
+<option value="1" selected>Stable (established employer, steady paycheck)</option>
+<option value="2">Variable (freelance, commission, seasonal, gig work)</option>
+<option value="3">Uncertain (contract ending, layoffs rumored, between jobs)</option>
+</select>
+
+<label class="lbl" for="setaside">Amount you can set aside each month ($)</label>
+<p class="hint">Be honest, not heroic — a smaller amount you actually save beats a big one you abandon in March.</p>
+<input type="number" id="setaside" min="0" step="0.01" inputmode="decimal" placeholder="e.g., 400">
+
+<label class="lbl" for="payfreq">How often are you paid?</label>
+<select id="payfreq">
+<option value="1">Once a month</option>
+<option value="2">Twice a month</option>
+<option value="biweekly" selected>Every 2 weeks</option>
+<option value="weekly">Every week</option>
+</select>
+
+<p class="err" id="err" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="build">Build my plan</button>
+<button class="btn ghost" id="reset">Reset (clear saved work)</button>
+</div>
+</div>
+
+<div class="appcard" id="targetCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your number</h2>
+<div id="targetBody" aria-live="polite"></div>
+</div>
+
+<div class="appcard" id="scheduleCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your savings schedule</h2>
+<div id="scheduleBody" aria-live="polite"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn" id="printBtn">Print my one-page plan</button>
+</div>
+</div>
+
+<div class="appcard" id="guideCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Where to park it &amp; what to do next</h2>
+<div id="guideBody" aria-live="polite"></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Building the fund is the start. <em>Emergency Funds Made Simple</em> by Kimani Upshur, M.Ed. goes deeper into sizing, protecting, and rebuilding your safety net in plain English.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/emergency-funds-made-simple/">Get Emergency Funds Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-emergency-fund-builder-v1";
+var S={expenses:"",savings:"",earners:"1",stability:"1",setaside:"",payfreq:"biweekly"};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"){
+  ["expenses","savings","earners","stability","setaside","payfreq"].forEach(function(k){if(typeof o[k]==="string")S[k]=o[k];});
+}}}catch(e){}}
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function money0(n){return "$"+Math.round(n).toLocaleString("en-US");}
+function money2(n){return "$"+Number(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+function num(v){var n=parseFloat(v);return (isFinite(n)?n:NaN);}
+function monthName(d){return d.toLocaleDateString("en-US",{month:"long",year:"numeric"});}
+function addMonths(d,m){var x=new Date(d.getFullYear(),d.getMonth()+m,1);return x;}
+var EARNER_PTS={"1":2,"2":1,"3":0};
+var EARNER_LBL={"1":"one income earner","2":"two income earners","3":"three or more income earners"};
+var STAB_LBL={"0":"very stable","1":"stable","2":"variable","3":"uncertain"};
+function targetMonths(earners,stability){
+  var pts=(EARNER_PTS[earners]||0)+parseInt(stability,10);
+  if(pts<=1)return 3;
+  if(pts<=3)return 6;
+  return 9;
+}
+function coverageLabel(pct){
+  if(pct>=100)return{label:"Fully funded",cls:"p-low"};
+  if(pct>=75)return{label:"Almost there",cls:"p-low"};
+  if(pct>=50)return{label:"Well on the way",cls:"p-med"};
+  if(pct>=25)return{label:"Building momentum",cls:"p-med"};
+  if(pct>0)return{label:"Getting started",cls:"p-high"};
+  return{label:"Starting line",cls:"p-crit"};
+}
+function whyText(months,earners,stability,expenses){
+  var e=EARNER_LBL[earners]||"one income earner";
+  var s=STAB_LBL[stability]||"stable";
+  var base="Your income picture has "+e+" and "+s+" work. ";
+  if(months===3)return base+"That is the steadiest profile, so the standard 3-month cushion applies: "+money0(expenses)+" × 3 months = "+money0(expenses*3)+". Three months covers a short job gap or a major surprise without derailing you.";
+  if(months===6)return base+"That is a middle-of-the-road profile — if the main income stopped, you'd need real runway. So the target is 6 months: "+money0(expenses)+" × 6 months = "+money0(expenses*6)+". Six months covers a typical job search plus a buffer for surprises along the way.";
+  return base+"That is the most exposed profile — one income stream plus income that isn't guaranteed. So the conservative target is 9 months: "+money0(expenses)+" × 9 months = "+money0(expenses*9)+". Nine months buys time for a long job search, a slow freelance stretch, or stacked emergencies.";
+}
+function perPaycheck(setaside,pf){
+  if(pf==="1")return{amt:setaside,note:"once a month"};
+  if(pf==="2")return{amt:setaside/2,note:"twice a month"};
+  if(pf==="weekly")return{amt:setaside*12/52,note:"every week (52 paychecks/year)"};
+  return{amt:setaside*12/26,note:"every 2 weeks (26 paychecks/year)"};
+}
+function validate(){
+  var errs=[];
+  var expenses=num(S.expenses),savings=num(S.savings),setaside=num(S.setaside);
+  if(isNaN(expenses)||expenses<=0)errs.push("Monthly essential expenses must be a number greater than 0.");
+  else if(expenses>1000000)errs.push("Monthly essential expenses look unusually large — please double-check the number.");
+  if(isNaN(savings)||savings<0)errs.push("Current emergency savings must be 0 or more.");
+  else if(savings>10000000)errs.push("Current emergency savings look unusually large — please double-check the number.");
+  if(isNaN(setaside)||setaside<=0)errs.push("Monthly set-aside must be greater than 0 — the plan needs a deposit amount to schedule.");
+  else if(setaside>1000000)errs.push("Monthly set-aside looks unusually large — please double-check the number.");
+  return errs;
+}
+function build(){
+  var err=document.getElementById("err");err.textContent="";
+  var errs=validate();
+  if(errs.length){err.textContent=errs[0];
+    document.getElementById("targetCard").hidden=true;
+    document.getElementById("scheduleCard").hidden=true;
+    document.getElementById("guideCard").hidden=true;
+    return;}
+  var expenses=num(S.expenses),savings=num(S.savings),setaside=num(S.setaside);
+  var months=targetMonths(S.earners,S.stability);
+  var target=expenses*months;
+  var pct=target>0?(savings/target*100):0;
+  var gap=Math.max(0,target-savings);
+  var cov=coverageLabel(pct);
+  var tb=document.getElementById("targetBody");
+  var h="";
+  h+='<div class="flag '+(pct>=100?"good":(pct>=50?"":"bad"))+'"><b>Target: '+money0(target)+'</b> — '+months+' months of essential expenses ('+money0(expenses)+'/month).</div>';
+  h+='<div class="big">'+money0(savings)+' <span style="font-size:1rem;color:#6b6250">saved of '+money0(target)+'</span></div>';
+  h+='<div class="meter" role="img" aria-label="Coverage '+Math.round(pct)+'%"><div style="width:'+Math.min(100,Math.max(0,pct))+'%"></div></div>';
+  h+='<p><b>Coverage score: '+Math.round(pct)+'%</b> <span class="pill '+cov.cls+'">'+cov.label+'</span></p>';
+  if(gap<=0){
+    h+='<div class="flag good"><b>You are fully funded.</b> Your job now is maintenance: keep the fund intact, and rebuild it after any withdrawal before resuming other goals.</div>';
+  }else{
+    h+='<p><b>Remaining to save: '+money0(gap)+'</b></p>';
+  }
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Why this target fits you</h3>';
+  h+='<p>'+esc(whyText(months,S.earners,S.stability,expenses))+'</p>';
+  tb.innerHTML=h;
+  document.getElementById("targetCard").hidden=false;
+
+  var sb=document.getElementById("scheduleBody");
+  var s="";
+  var pp=perPaycheck(setaside,S.payfreq);
+  s+='<p><b>Save '+money2(pp.amt)+' '+esc(pp.note)+'</b> — that adds up to '+money0(setaside)+' per month.</p>';
+  if(gap>0){
+    var monthsToGo=Math.ceil(gap/setaside);
+    var today=new Date();
+    if(monthsToGo>360){
+      s+='<div class="flag bad"><b>Reality check:</b> at '+money0(setaside)+'/month, a '+money0(gap)+' gap would take over 30 years. The math is honest: raise the monthly amount, cut expenses, or both — then rebuild this plan.</div>';
+      monthsToGo=360;
+    }
+    var funded=addMonths(today,monthsToGo);
+    s+='<div class="flag good"><b>Funded-by date: '+esc(monthName(funded))+'</b> — that is '+monthsToGo+' month'+(monthsToGo===1?"":"s")+' of '+money0(setaside)+' deposits from today.</div>';
+    s+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Milestones</h3>';
+    var marks=[25,50,75,100];
+    s+='<ol class="steps">';
+    marks.forEach(function(p){
+      var amt=target*p/100;
+      var done=savings>=amt;
+      var mdate;
+      if(done){mdate="already reached";}
+      else{var need=Math.ceil((amt-savings)/setaside);mdate=monthName(addMonths(today,need));}
+      s+='<li><b>'+p+'% ('+money0(amt)+')</b> — '+(done?'<span class="pill p-low">reached</span>':'expected '+esc(mdate))+'</li>';
+    });
+    s+='</ol>';
+    s+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Month-by-month schedule</h3>';
+    s+='<div class="twrap sched-scroll"><table class="grid" aria-label="Savings schedule"><tr><th>#</th><th style="text-align:left">Month</th><th>Deposit</th><th>Balance</th><th style="text-align:left">Milestone</th></tr>';
+    var bal=savings;
+    for(var k=1;k<=monthsToGo;k++){
+      bal+=setaside;
+      var mname=monthName(addMonths(today,k));
+      var mk="";
+      marks.forEach(function(p){var prev=savings+setaside*(k-1);if(prev<target*p/100&&bal>=target*p/100)mk+=(mk?", ":"")+p+"%";});
+      s+='<tr><td><b>'+k+'</b></td><td class="l">'+esc(mname)+'</td><td>'+money0(setaside)+'</td><td><b>'+money0(Math.min(bal,target))+'</b></td><td class="l">'+(mk?'<span class="pill p-low">'+mk+'</span>':"—")+'</td></tr>';
+    }
+    s+='</table></div>';
+    s+='<p class="note">Assumes deposits land once a month and earn no interest — conservative on purpose. Most savings accounts pay at least a little interest, so you will likely finish slightly early.</p>';
+  }
+  sb.innerHTML=s;
+  document.getElementById("scheduleCard").hidden=false;
+
+  var gb=document.getElementById("guideBody");
+  var g="";
+  g+='<h3 style="font-family:Georgia,serif;margin:6px 0 4px">Where to park it</h3>';
+  g+='<ol class="steps"><li><b>A separate savings account</b> — not your everyday checking. Distance kills temptation.</li><li><b>Accessible in 1–3 days.</b> A high-yield savings account at an insured bank is the standard choice.</li><li><b>Not invested.</b> Stocks can drop exactly when emergencies hit. This money has one job: be there.</li><li><b>Automate it.</b> Move '+money2(pp.amt)+' '+esc(pp.note)+' on payday, before you can spend it.</li><li><b>Name the account "Emergency Fund."</b> A label makes raiding it feel like what it is.</li></ol>';
+  g+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Next steps</h3>';
+  g+='<ol class="steps"><li>Open (or label) the separate savings account this week.</li><li>Set up the automatic transfer for your next payday.</li><li>Hit each milestone, then keep going — partial funds still beat no fund.</li><li>If you ever withdraw from the fund, rebuilding it becomes your #1 money goal until it is full again.</li><li>Re-run this plan whenever your expenses, income, or job situation changes.</li></ol>';
+  g+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">How the math works (assumptions)</h3>';
+  g+='<ul style="margin-left:22px;font-size:.92rem;color:#6b6250"><li>Target = monthly essential expenses × 3, 6, or 9 months.</li><li>Risk points: one earner = 2, two earners = 1, three or more = 0; very stable job = 0, stable = 1, variable = 2, uncertain = 3. Totals of 0–1 → 3 months, 2–3 → 6 months, 4–5 → 9 months.</li><li>Every-2-weeks pay assumes 26 paychecks/year; weekly assumes 52.</li><li>No interest is credited — a deliberately conservative choice.</li><li>Essential expenses means survival costs only, not your whole budget.</li></ul>';
+  g+='<p class="note"><b>Reminder:</b> this is educational modeling, not professional financial advice. For debt, tax, or investment decisions tied to this plan, talk to a licensed professional.</p>';
+  gb.innerHTML=g;
+  document.getElementById("guideCard").hidden=false;
+
+  var tc=document.getElementById("targetCard");
+  if(tc.scrollIntoView)tc.scrollIntoView({behavior:"smooth",block:"start"});
+  save();
+}
+function syncInputs(){
+  document.getElementById("expenses").value=S.expenses;
+  document.getElementById("savings").value=S.savings;
+  document.getElementById("earners").value=S.earners;
+  document.getElementById("stability").value=S.stability;
+  document.getElementById("setaside").value=S.setaside;
+  document.getElementById("payfreq").value=S.payfreq;
+}
+["expenses","savings","setaside"].forEach(function(id){
+  document.getElementById(id).addEventListener("input",function(){S[id]=this.value;save();});
+});
+["earners","stability","payfreq"].forEach(function(id){
+  document.getElementById(id).addEventListener("change",function(){S[id]=this.value;save();});
+});
+document.getElementById("build").addEventListener("click",build);
+document.getElementById("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={expenses:"",savings:"",earners:"1",stability:"1",setaside:"",payfreq:"biweekly"};
+  syncInputs();
+  document.getElementById("err").textContent="";
+  document.getElementById("targetCard").hidden=true;
+  document.getElementById("scheduleCard").hidden=true;
+  document.getElementById("guideCard").hidden=true;
+});
+load();syncInputs();
+if(validate().length===0&&S.expenses!=="")build();
+</script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debt Strategy Simulator | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Compare avalanche vs. snowball payoff strategies on your real debts — payoff dates, total interest, and a plain-language verdict. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/debt-strategy-simulator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Debt Strategy Simulator | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Compare avalanche vs. snowball payoff strategies on your real debts — payoff dates, total interest, and a plain-language verdict. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/debt-strategy-simulator/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:16px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],input[type=range],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag.bad{background:#fdeeee;border-left-color:#a33}
+.debtcard{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:14px 0}
+.debtcard h3{font-family:Georgia,serif;margin-bottom:4px}
+.orow{display:flex;gap:8px;align-items:center;margin:6px 0;flex-wrap:wrap}
+.orow input{margin:0}
+.orow .dn{flex:2;min-width:150px}
+.orow .db,.orow .da,.orow .dm{flex:1;min-width:105px}
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+table.grid th,table.grid td{border:1px solid #e0d6b8;padding:8px;text-align:center}
+table.grid th{background:#141210;color:#e8c84a}
+table.grid td.l{text-align:left;font-weight:bold}
+.twrap{overflow-x:auto}
+.bar{height:16px;background:#c9a227;border-radius:8px;min-width:2px}
+.bar.alt{background:#8a6d1c}
+.win{background:#eef6ee}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{
+  header.site,footer.site,.screenonly,.noprint,#devotional,#godeeper{display:none!important}
+  main.app{max-width:100%;padding:0}
+  .appcard{border:1px solid #999;break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Debt Strategy Simulator</h1>
+<p class="intro">Enter your real debts and an extra monthly payment. This tool simulates both payoff strategies month by month — <b>avalanche</b> (highest rate first) and <b>snowball</b> (smallest balance first) — then shows you which costs less, which finishes first, and the exact payoff order for each.</p>
+<p class="hint" style="margin-bottom:16px"><b>Educational modeling only — not professional financial advice.</b> This simulates fixed rates, fixed minimums, no new charges, and on-time payments. Real-world results vary with fees, rate changes, and missed payments.</p>
+
+<div class="appcard screenonly">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px">Your debts</h2>
+<p class="hint">Balance = what you owe today. APR = the annual rate on your statement. Minimum = the required monthly payment. Leave a row blank to skip it.</p>
+<div id="debts"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+<button class="btn ghost small" id="addDebt">+ Add debt</button>
+<button class="btn ghost small" id="sample">Load sample debts</button>
+</div>
+<label class="lbl" for="extra">Extra payment each month (on top of all minimums)</label>
+<input type="text" id="extra" inputmode="decimal" placeholder="e.g., 200" aria-describedby="extraHint">
+<p class="hint" id="extraHint">This is the engine of both strategies: every extra dollar goes to one target debt until it's gone, then rolls to the next.</p>
+<p class="err" id="err" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="run">Compare strategies</button>
+<button class="btn ghost" id="reset">Reset (clear saved work)</button>
+</div>
+</div>
+
+<div class="appcard" id="results" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Results</h2>
+<div id="verdict" aria-live="polite"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Side by side</h3>
+<div class="twrap" id="compare"></div>
+<div id="chart"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Payoff sequence — Avalanche (highest rate first)</h3>
+<div class="twrap" id="seqA"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Payoff sequence — Snowball (smallest balance first)</h3>
+<div class="twrap" id="seqS"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Assumptions behind these numbers</h3>
+<ul class="note" style="margin-left:22px">
+<li>Interest accrues monthly at APR ÷ 12 on the remaining balance, then your payment is applied.</li>
+<li>Each month you pay every open debt's minimum first; the extra payment plus any freed-up minimums all go to the current target debt.</li>
+<li>Rates, minimums, and the extra payment stay fixed. No new purchases, no fees, no late payments, no balance transfers.</li>
+<li>Payoff dates count forward from the current month. Figures are rounded to the cent; months are whole months.</li>
+<li>If minimums don't cover monthly interest, the balance grows — the simulation caps at 50 years and flags it.</li>
+</ul>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn" id="printBtn">Print payoff plan</button>
+</div>
+</div>
+
+<section class="appcard screenonly" id="godeeper" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>For the full system — payoff psychology, negotiating with creditors, and staying debt-free — read <em>Debt Made Simple</em> by Kimani Upshur, M.Ed.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/debt-made-simple/">Get Debt Made Simple — $4.99</a></p>
+</section>
+<p class="screenonly" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section id="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-debt-strategy-simulator-v1";
+var MAXM=600; /* 50-year cap against negative amortization */
+var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+var S={debts:[{name:"",balance:"",apr:"",min:""}],extra:""};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function money(n){
+  if(n===null||n===undefined||!isFinite(n))return "—";
+  var neg=n<0;var a=Math.abs(n);
+  return (neg?"−$":"$")+a.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+function strictNum(v){
+  var t=String(v).trim().replace(/[$,%\s]/g,"");
+  if(!/^-?(\d+(\.\d+)?|\.\d+)$/.test(t))return NaN;
+  var n=parseFloat(t);return isFinite(n)?n:NaN;
+}
+function monthLabel(m){
+  if(m<=0||m>MAXM)return "—";
+  var now=new Date();
+  var d=new Date(now.getFullYear(),now.getMonth()+m-1,1);
+  return MONTHS[d.getMonth()]+" "+d.getFullYear();
+}
+
+function drawDebts(){
+  var box=document.getElementById("debts");box.innerHTML="";
+  S.debts.forEach(function(d,i){
+    var card=document.createElement("div");card.className="debtcard";
+    var h=document.createElement("h3");h.textContent="Debt "+(i+1);card.appendChild(h);
+    var row=document.createElement("div");row.className="orow";
+    var nm=document.createElement("input");nm.type="text";nm.className="dn";nm.value=d.name;
+    nm.placeholder="Name (e.g., Visa card)";nm.setAttribute("aria-label","Debt "+(i+1)+" name");
+    nm.addEventListener("input",function(){S.debts[i].name=nm.value;save();});
+    var bl=document.createElement("input");bl.type="text";bl.className="db";bl.value=d.balance;bl.inputMode="decimal";
+    bl.placeholder="Balance $";bl.setAttribute("aria-label","Debt "+(i+1)+" balance in dollars");
+    bl.addEventListener("input",function(){S.debts[i].balance=bl.value;save();});
+    var ap=document.createElement("input");ap.type="text";ap.className="da";ap.value=d.apr;ap.inputMode="decimal";
+    ap.placeholder="APR %";ap.setAttribute("aria-label","Debt "+(i+1)+" APR percent");
+    ap.addEventListener("input",function(){S.debts[i].apr=ap.value;save();});
+    var mn=document.createElement("input");mn.type="text";mn.className="dm";mn.value=d.min;mn.inputMode="decimal";
+    mn.placeholder="Minimum $";mn.setAttribute("aria-label","Debt "+(i+1)+" minimum monthly payment in dollars");
+    mn.addEventListener("input",function(){S.debts[i].min=mn.value;save();});
+    row.appendChild(nm);row.appendChild(bl);row.appendChild(ap);row.appendChild(mn);
+    card.appendChild(row);
+    if(S.debts.length>1){
+      var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove debt";
+      rm.setAttribute("aria-label","Remove debt "+(i+1));
+      rm.addEventListener("click",function(){S.debts.splice(i,1);save();drawDebts();});
+      card.appendChild(rm);
+    }
+    box.appendChild(card);
+  });
+}
+
+function parseDebts(){
+  var errs=[],list=[];
+  S.debts.forEach(function(d,i){
+    var anyIn=String(d.name||"").trim()!==""||String(d.balance||"").trim()!==""||String(d.apr||"").trim()!==""||String(d.min||"").trim()!=="";
+    if(!anyIn)return; /* skip fully blank rows */
+    var name=String(d.name||"").trim()||("Debt "+(i+1));
+    var b=strictNum(d.balance),a=strictNum(d.apr),m=strictNum(d.min);
+    if(isNaN(b)||b<=0){errs.push("Debt "+(i+1)+": balance must be a positive number.");return;}
+    if(isNaN(a)||a<0){errs.push("Debt "+(i+1)+": APR must be 0 or higher.");return;}
+    if(isNaN(m)||m<0){errs.push("Debt "+(i+1)+": minimum payment must be 0 or higher.");return;}
+    if(b>1000000000||a>1000){errs.push("Debt "+(i+1)+": that number looks unrealistic — please double-check it.");return;}
+    list.push({name:name,balance:b,apr:a,min:m});
+  });
+  return {list:list,errs:errs};
+}
+
+/* Month-by-month simulation. Each month: accrue interest, pay minimums on
+   open debts, then throw the extra plus freed minimums at the target debt. */
+function simulate(debts,extra,strategy){
+  var ds=debts.map(function(d){return{name:d.name,balance:d.balance,apr:d.apr,min:d.min,interest:0,paidMonth:0};});
+  var idx=ds.map(function(_,i){return i;});
+  if(strategy==="avalanche"){idx.sort(function(x,y){return (ds[y].apr-ds[x].apr)||(ds[y].balance-ds[x].balance);});}
+  else{idx.sort(function(x,y){return (ds[x].balance-ds[y].balance)||(ds[y].apr-ds[x].apr);});}
+  var budget=ds.reduce(function(s,d){return s+d.min;},0)+extra;
+  var startTotal=ds.reduce(function(s,d){return s+d.balance;},0);
+  var months=0,totalInterest=0;
+  while(months<MAXM){
+    var open=[],k;
+    for(k=0;k<ds.length;k++){if(ds[k].balance>0.005)open.push(ds[k]);}
+    if(!open.length)break;
+    months++;
+    for(k=0;k<open.length;k++){var d=open[k];var it=d.balance*d.apr/1200;d.balance+=it;d.interest+=it;totalInterest+=it;}
+    var minsPaid=0;
+    for(k=0;k<open.length;k++){var d2=open[k];var pm=Math.min(d2.min,d2.balance);d2.balance-=pm;minsPaid+=pm;}
+    var pool=budget-minsPaid;
+    for(var j=0;j<idx.length&&pool>0.005;j++){var d3=ds[idx[j]];if(d3.balance<=0.005)continue;var pay=Math.min(pool,d3.balance);d3.balance-=pay;pool-=pay;}
+    for(k=0;k<ds.length;k++){if(!ds[k].paidMonth&&ds[k].balance<=0.005){ds[k].balance=0;ds[k].paidMonth=months;}}
+  }
+  var stuck=false;
+  for(var q=0;q<ds.length;q++){if(ds[q].balance>0.005)stuck=true;}
+  return{months:months,totalInterest:totalInterest,debts:ds,stuck:stuck,order:idx,
+         totalPaid:startTotal+totalInterest,budget:budget,startTotal:startTotal};
+}
+
+function renderSeq(el,sim){
+  var order=sim.debts.slice().sort(function(a,b){return a.paidMonth-b.paidMonth;});
+  var h='<table class="grid" aria-label="Payoff sequence"><tr><th>#</th><th>Debt</th><th>Debt-free</th><th>Interest paid</th></tr>';
+  order.forEach(function(d,i){
+    h+='<tr><td>'+(i+1)+'</td><td class="l">'+esc(d.name)+'</td><td>'+(d.paidMonth?esc(monthLabel(d.paidMonth))+" ("+d.paidMonth+" mo)":"—")+'</td><td>'+money(d.interest)+'</td></tr>';
+  });
+  h+='</table>';
+  el.innerHTML=h;
+}
+
+function renderResults(debts,extra,a,s){
+  document.getElementById("results").hidden=false;
+  var v=document.getElementById("verdict");
+  var vh="";
+  if(a.stuck&&s.stuck){
+    vh='<div class="flag bad"><b>Neither strategy pays these debts off.</b> Your total monthly payments ('+money(a.budget)+') don\'t cover the monthly interest, so balances grow instead of shrinking. Increase the extra payment, negotiate lower rates, or talk to a nonprofit credit counselor — the math can\'t work at this payment level.</div>';
+  }else if(a.stuck||s.stuck){
+    var good=a.stuck?s:a;var goodName=a.stuck?"Snowball":"Avalanche";
+    vh='<div class="flag"><b>Only one strategy works here.</b> '+(a.stuck?"Avalanche":"Snowball")+' never finishes at this payment level, but <b>'+goodName+'</b> gets you debt-free by '+esc(monthLabel(good.months))+' with '+money(good.totalInterest)+' in total interest. Increase the extra payment and both strategies become viable.</div>';
+  }else{
+    var dI=s.totalInterest-a.totalInterest; /* >0: avalanche cheaper */
+    var dM=s.months-a.months;               /* >0: avalanche faster */
+    var line='Avalanche: debt-free <b>'+esc(monthLabel(a.months))+'</b> ('+a.months+' months), '+money(a.totalInterest)+' interest. '+
+             'Snowball: debt-free <b>'+esc(monthLabel(s.months))+'</b> ('+s.months+' months), '+money(s.totalInterest)+' interest.';
+    if(Math.abs(dI)<0.01&&dM===0){
+      vh='<div class="flag"><b>Identical results.</b> '+line+' With no extra payment, every dollar goes to minimums, so both strategies behave the same. Add an extra monthly payment above and the strategies will diverge.</div>';
+    }else if(dM===0){
+      vh='<div class="flag good"><b>Verdict: Avalanche saves you '+money(dI)+'.</b> '+line+' Both finish the same month, so take the cheaper route: avalanche.</div>';
+    }else if(dI>=0&&dM>=0&&(dI>0.01||dM>0)){
+      vh='<div class="flag good"><b>Verdict: Avalanche wins on both counts — '+money(dI)+' cheaper and '+dM+' month'+(dM===1?"":"s")+' faster.</b> '+line+'</div>';
+    }else if(dI<=0&&dM<=0&&(dI<-0.01||dM<0)){
+      vh='<div class="flag good"><b>Verdict: Snowball wins on both counts — '+money(-dI)+' cheaper and '+(-dM)+' month'+(dM===-1?"":"s")+' faster.</b> '+line+'</div>';
+    }else{
+      /* classic trade-off: avalanche cheaper, snowball faster */
+      vh='<div class="flag"><b>Verdict: it\'s a trade-off.</b> '+line+
+        ' <b>Avalanche saves you '+money(dI)+' in interest;</b> <b>snowball gets you debt-free '+dM+' month'+(dM===1?"":"s")+' sooner.</b>'+
+        ' If early wins keep you motivated, choose snowball — the best strategy is the one you\'ll stick with. If you want the cheapest route and can stay disciplined, choose avalanche.</div>';
+    }
+  }
+  v.innerHTML=vh;
+
+  var c='<table class="grid" aria-label="Strategy comparison"><tr><th></th><th>Avalanche</th><th>Snowball</th></tr>';
+  function row(label,fa,fb,fmt){
+    var wa=!a.stuck&&(fmt==="m"?a.months<s.months:a.totalInterest<s.totalInterest-0.005);
+    var ws=!s.stuck&&(fmt==="m"?s.months<a.months:s.totalInterest<a.totalInterest-0.005);
+    c+='<tr><td class="l">'+label+'</td><td class="'+(wa?"win":"")+'">'+fa+'</td><td class="'+(ws?"win":"")+'">'+fb+'</td></tr>';
+  }
+  row("Debt-free date",a.stuck?"Never (50+ yr)":esc(monthLabel(a.months)),s.stuck?"Never (50+ yr)":esc(monthLabel(s.months)),"m");
+  row("Months to debt-free",a.stuck?"—":a.months,s.stuck?"—":s.months,"m");
+  row("Total interest",money(a.totalInterest),money(s.totalInterest),"i");
+  row("Total paid (principal + interest)",money(a.totalPaid),money(s.totalPaid),"i");
+  row("Monthly payment",money(a.budget),money(s.budget),"i");
+  c+='</table><p class="note">Green cells mark the winner of each row.</p>';
+  document.getElementById("compare").innerHTML=c;
+
+  var ch="";
+  if(!a.stuck&&!s.stuck){
+    var maxI=Math.max(a.totalInterest,s.totalInterest,0.01),maxM=Math.max(a.months,s.months,1);
+    ch='<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Visual comparison</h3>'+
+      '<p class="hint">Total interest</p>'+
+      '<div class="orow"><span style="min-width:90px">Avalanche</span><div style="flex:1"><div class="bar" style="width:'+Math.max(2,a.totalInterest/maxI*100)+'%"></div></div><span>'+money(a.totalInterest)+'</span></div>'+
+      '<div class="orow"><span style="min-width:90px">Snowball</span><div style="flex:1"><div class="bar alt" style="width:'+Math.max(2,s.totalInterest/maxI*100)+'%"></div></div><span>'+money(s.totalInterest)+'</span></div>'+
+      '<p class="hint">Months to debt-free</p>'+
+      '<div class="orow"><span style="min-width:90px">Avalanche</span><div style="flex:1"><div class="bar" style="width:'+Math.max(2,a.months/maxM*100)+'%"></div></div><span>'+a.months+' mo</span></div>'+
+      '<div class="orow"><span style="min-width:90px">Snowball</span><div style="flex:1"><div class="bar alt" style="width:'+Math.max(2,s.months/maxM*100)+'%"></div></div><span>'+s.months+' mo</span></div>';
+  }
+  document.getElementById("chart").innerHTML=ch;
+
+  renderSeq(document.getElementById("seqA"),a);
+  renderSeq(document.getElementById("seqS"),s);
+  try{document.getElementById("results").scrollIntoView();}catch(e){}
+}
+
+document.getElementById("addDebt").addEventListener("click",function(){
+  if(S.debts.length>=8){document.getElementById("err").textContent="Eight debts is the limit — combine the smallest ones.";return;}
+  S.debts.push({name:"",balance:"",apr:"",min:""});save();drawDebts();
+});
+document.getElementById("sample").addEventListener("click",function(){
+  S.debts=[
+    {name:"Credit card",balance:"4800",apr:"24.99",min:"120"},
+    {name:"Personal loan",balance:"2000",apr:"11.9",min:"60"},
+    {name:"Car loan",balance:"12500",apr:"7.9",min:"285"}
+  ];
+  S.extra="200";
+  document.getElementById("extra").value="200";
+  document.getElementById("err").textContent="";
+  save();drawDebts();
+});
+document.getElementById("extra").addEventListener("input",function(){S.extra=this.value;save();});
+document.getElementById("run").addEventListener("click",function(){
+  var errEl=document.getElementById("err");errEl.textContent="";
+  var p=parseDebts();
+  if(p.errs.length){errEl.textContent=p.errs[0];return;}
+  if(!p.list.length){errEl.textContent="Enter at least one debt (balance, APR, and minimum).";return;}
+  var extraRaw=String(S.extra||"").trim();
+  var extra=extraRaw===""?0:strictNum(extraRaw);
+  if(isNaN(extra)||extra<0){errEl.textContent="Extra payment must be 0 or higher.";return;}
+  if(extra>1000000){errEl.textContent="That extra payment looks unrealistic — please double-check it.";return;}
+  var budget=p.list.reduce(function(s,d){return s+d.min;},0)+extra;
+  if(budget<=0){errEl.textContent="With $0 in minimums and $0 extra, nothing ever gets paid. Enter payment amounts.";return;}
+  var firstInterest=p.list.reduce(function(s,d){return s+d.balance*d.apr/1200;},0);
+  if(budget<=firstInterest){
+    errEl.textContent="Warning: your total monthly payment ("+money(budget)+") doesn't cover one month of interest ("+money(firstInterest)+") — balances will grow. Results below show the outcome; consider a larger extra payment.";
+  }
+  var a=simulate(p.list,extra,"avalanche");
+  var s=simulate(p.list,extra,"snowball");
+  renderResults(p.list,extra,a,s);
+});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={debts:[{name:"",balance:"",apr:"",min:""}],extra:""};
+  document.getElementById("extra").value="";
+  document.getElementById("err").textContent="";
+  document.getElementById("results").hidden=true;
+  drawDebts();
+});
+document.getElementById("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+
+load();
+document.getElementById("extra").value=S.extra||"";
+drawDebts();
+</script>
+</body>
+</html>

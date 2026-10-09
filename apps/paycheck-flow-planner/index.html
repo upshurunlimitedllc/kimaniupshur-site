@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paycheck Flow Planner | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Map each paycheck to the bills due before the next one, so timing gaps never cause overdrafts or late fees. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/paycheck-flow-planner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paycheck Flow Planner | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Map each paycheck to the bills due before the next one, so timing gaps never cause overdrafts or late fees. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/paycheck-flow-planner/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:18px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag.bad{background:#fbeeee;border-left-color:#a33}
+.pill{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:bold;color:#fff;margin:4px 6px 4px 0}
+.p-low{background:#3d7a3d}.p-med{background:#8a6d1c}.p-high{background:#b45f06}.p-crit{background:#a33}
+.big{font-family:Georgia,serif;font-size:2rem;color:#141210;margin:6px 0}
+.billrow{border:2px solid #e0d6b8;border-radius:10px;padding:14px;margin:10px 0;background:#fff}
+.billrow .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}
+@media (max-width:520px){.billrow .cols{grid-template-columns:1fr}}
+.billrow .top{display:flex;gap:8px;align-items:flex-start}
+.billrow .num{padding-top:16px;min-width:40px;color:#8a6d1c;font-weight:bold}
+.period{border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.period.short{border-color:#a33;border-width:3px}
+.period.tight{border-color:#b45f06;border-width:3px}
+.period .phead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+table.grid th,table.grid td{border:1px solid #e0d6b8;padding:8px;text-align:center}
+table.grid th{background:#141210;color:#e8c84a}
+table.grid td.l{text-align:left;background:#fffdf7}
+.twrap{overflow-x:auto}
+ol.steps{margin:8px 0 8px 22px}
+ol.steps li{margin:6px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.grid2{grid-template-columns:1fr}}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{header.site,footer.site,section.devotional,.noprint,#inputsCard,#billsCard{display:none!important}main.app{max-width:100%;padding:10px}.period{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Paycheck Flow Planner</h1>
+<p class="intro">Enter your pay schedule and your bills. Get a paycheck-by-paycheck map showing exactly which bills each paycheck covers — and where the tight weeks are before they surprise you.</p>
+<div class="flag"><b>Educational modeling, not professional financial advice.</b> This tool maps bill timing against paydays with simple rules. It does not move money, contact billers, or replace a budget or a financial professional.</div>
+
+<div class="appcard noprint" id="inputsCard">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Step 1 — Your pay</h2>
+<div class="grid2">
+<div>
+<label class="lbl" for="freq">Pay frequency</label>
+<select id="freq">
+<option value="weekly">Every week</option>
+<option value="biweekly" selected>Every 2 weeks</option>
+<option value="semimonthly">Twice a month (e.g., 1st &amp; 15th)</option>
+<option value="monthly">Once a month</option>
+</select>
+</div>
+<div>
+<label class="lbl" for="paydate">Next pay date</label>
+<input type="date" id="paydate">
+</div>
+</div>
+<div class="grid2">
+<div>
+<label class="lbl" for="payamount">Amount per paycheck ($, take-home)</label>
+<input type="number" id="payamount" min="0" step="0.01" inputmode="decimal" placeholder="e.g., 1850">
+</div>
+<div>
+<label class="lbl" for="horizon">Plan how many pay periods ahead?</label>
+<select id="horizon">
+<option value="6">6 pay periods</option>
+<option value="8" selected>8 pay periods</option>
+<option value="12">12 pay periods</option>
+</select>
+</div>
+</div>
+<label class="lbl" for="buffer">Buffer target ($)</label>
+<p class="hint">The standing cushion you want left untouched in the account — your overdraft shield. $200–$500 is a common starting point.</p>
+<input type="number" id="buffer" min="0" step="1" inputmode="decimal" placeholder="e.g., 300">
+</div>
+
+<div class="appcard noprint" id="billsCard">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Step 2 — Your bills</h2>
+<p class="hint">Every recurring bill with a due date: rent, utilities, phone, insurance, loan minimums, subscriptions. Enter the day of the month it is due (1–31); months without that day use the last day of the month.</p>
+<div id="bills"></div>
+<div class="noprint"><button class="btn ghost small" id="addBill">+ Add bill</button></div>
+<h2 style="font-family:Georgia,serif;margin:18px 0 4px;font-size:1.25rem">Step 3 — Build the flow</h2>
+<p class="err" id="err" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="plan">Build my paycheck flow</button>
+<button class="btn ghost" id="reset">Reset (clear saved work)</button>
+</div>
+</div>
+
+<div class="appcard" id="summaryCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">The big picture</h2>
+<div id="summaryBody" aria-live="polite"></div>
+</div>
+
+<div class="appcard" id="calendarCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Pay-cycle calendar</h2>
+<div id="calendarBody" aria-live="polite"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn" id="printBtn">Print my plan</button>
+</div>
+</div>
+
+<div class="appcard" id="smoothCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Smoothing plan</h2>
+<div id="smoothBody" aria-live="polite"></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Timing your bills is the start. <em>Budgeting Made Simple</em> by Kimani Upshur, M.Ed. goes deeper into building a budget that actually holds — in plain English.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/budgeting-made-simple/">Get Budgeting Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-paycheck-flow-planner-v1";
+var MAXB=25;
+var S={freq:"biweekly",paydate:"",payamount:"",horizon:"8",buffer:"300",
+  bills:[{name:"",amount:"",day:""}]};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"){
+  ["freq","paydate","payamount","horizon","buffer"].forEach(function(k){if(typeof o[k]==="string")S[k]=o[k];});
+  if(Array.isArray(o.bills)&&o.bills.length)S.bills=o.bills.map(function(x){return{name:String(x.name||""),amount:String(x.amount||""),day:String(x.day||"")};});
+}}}catch(e){}}
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function money0(n){var v=Math.round(n);return (v<0?"-$":"$")+Math.abs(v).toLocaleString("en-US");}
+function money2(n){var v=Number(n);return (v<0?"-$":"$")+Math.abs(v).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+function daysInMonth(y,m){return new Date(y,m+1,0).getDate();}
+function parseDate(str){
+  var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(str||"");
+  if(!m)return null;
+  var d=new Date(parseInt(m[1],10),parseInt(m[2],10)-1,parseInt(m[3],10));
+  if(d.getFullYear()!==parseInt(m[1],10)||d.getMonth()!==parseInt(m[2],10)-1||d.getDate()!==parseInt(m[3],10))return null;
+  return d;
+}
+function addDays(d,n){var x=new Date(d.getTime());x.setDate(x.getDate()+n);return x;}
+function addMonthsClamped(d,n){
+  var y=d.getFullYear(),m=d.getMonth()+n,day=d.getDate();
+  var dim=daysInMonth(y,m);
+  return new Date(y,m,Math.min(day,dim));
+}
+function fmtD(d){return d.toLocaleDateString("en-US",{month:"short",day:"numeric"});}
+function fmtDY(d){return d.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});}
+function todayMid(){var t=new Date();return new Date(t.getFullYear(),t.getMonth(),t.getDate());}
+function stepPayday(d,freq){
+  if(freq==="weekly")return addDays(d,7);
+  if(freq==="biweekly")return addDays(d,14);
+  if(freq==="monthly")return addMonthsClamped(d,1);
+  // semimonthly: alternate 1st / 15th
+  if(d.getDate()>=15)return new Date(d.getFullYear(),d.getMonth()+1,1);
+  return new Date(d.getFullYear(),d.getMonth(),15);
+}
+function nextOccurrence(d,freq){
+  var t=todayMid(),x=new Date(d.getTime()),guard=0;
+  while(x<t&&guard<400){x=stepPayday(x,freq);guard++;}
+  return x;
+}
+function drawBills(){
+  var box=document.getElementById("bills");box.innerHTML="";
+  S.bills.forEach(function(b,idx){
+    var d=document.createElement("div");d.className="billrow";
+    var top=document.createElement("div");top.className="top";
+    var num=document.createElement("div");num.className="num";num.textContent=(idx+1);
+    var nm=document.createElement("input");nm.type="text";nm.value=b.name;nm.placeholder="e.g., Rent";
+    nm.setAttribute("aria-label","Bill "+(idx+1)+" name");
+    nm.addEventListener("input",function(){b.name=nm.value;save();});
+    top.appendChild(num);top.appendChild(nm);
+    if(S.bills.length>1){var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove";rm.setAttribute("aria-label","Remove bill "+(idx+1));rm.style.margin="8px 0";
+      rm.addEventListener("click",function(){S.bills.splice(idx,1);save();drawBills();});
+      top.appendChild(rm);}
+    d.appendChild(top);
+    var cols=document.createElement("div");cols.className="cols";
+    var awrap=document.createElement("div");
+    var al=document.createElement("label");al.className="lbl";al.textContent="Amount ($)";awrap.appendChild(al);
+    var ai=document.createElement("input");ai.type="number";ai.min="0";ai.step="0.01";ai.inputMode="decimal";ai.value=b.amount;ai.placeholder="e.g., 1200";
+    ai.setAttribute("aria-label","Amount for bill "+(idx+1));
+    ai.addEventListener("input",function(){b.amount=ai.value;save();});
+    awrap.appendChild(ai);cols.appendChild(awrap);
+    var dwrap=document.createElement("div");
+    var dl=document.createElement("label");dl.className="lbl";dl.textContent="Due day of month";dwrap.appendChild(dl);
+    var di=document.createElement("input");di.type="number";di.min="1";di.max="31";di.step="1";di.inputMode="numeric";di.value=b.day;di.placeholder="1–31";
+    di.setAttribute("aria-label","Due day for bill "+(idx+1));
+    di.addEventListener("input",function(){b.day=di.value;save();});
+    dwrap.appendChild(di);cols.appendChild(dwrap);
+    var xw=document.createElement("div");
+    xw.innerHTML='<p class="hint" style="margin-top:34px">Day the bill is due each month.</p>';
+    cols.appendChild(xw);
+    d.appendChild(cols);
+    box.appendChild(d);
+  });
+}
+function namedBills(){return S.bills.filter(function(b){return b.name.trim()!=="";});}
+function validate(){
+  var errs=[];
+  var pd=parseDate(S.paydate);
+  if(!pd)errs.push("Enter a valid next pay date.");
+  var amt=parseFloat(S.payamount);
+  if(!isFinite(amt)||amt<=0)errs.push("Paycheck amount must be greater than 0.");
+  else if(amt>1000000)errs.push("Paycheck amount looks unusually large — please double-check it.");
+  var buf=parseFloat(S.buffer);
+  if(S.buffer!==""&&(!isFinite(buf)||buf<0))errs.push("Buffer target must be 0 or more.");
+  var named=namedBills();
+  if(named.length===0)errs.push("Add at least one bill with a name.");
+  for(var k=0;k<named.length;k++){
+    var b=named[k],a=parseFloat(b.amount),day=parseInt(b.day,10);
+    if(!isFinite(a)||a<0){errs.push('"'+b.name.trim()+'" needs an amount of 0 or more.');break;}
+    if(a>1000000){errs.push('"'+b.name.trim()+'" looks unusually large — please double-check it.');break;}
+    if(!(day>=1&&day<=31)){errs.push('"'+b.name.trim()+'" needs a due day between 1 and 31.');break;}
+  }
+  return errs;
+}
+function build(){
+  var err=document.getElementById("err");err.textContent="";
+  var errs=validate();
+  if(errs.length){err.textContent=errs[0];hideResults();return;}
+  var freq=S.freq,n=parseInt(S.horizon,10)||8;
+  var payAmount=parseFloat(S.payamount);
+  var buffer=S.buffer===""?0:parseFloat(S.buffer);
+  var bills=namedBills().map(function(b){return{name:b.name.trim(),amount:parseFloat(b.amount),day:parseInt(b.day,10)};});
+  var start0=parseDate(S.paydate);
+  var rolled=false;
+  if(start0<todayMid()){var nx=nextOccurrence(start0,freq);rolled=nx.getTime()!==start0.getTime();start0=nx;}
+  // payday starts: N periods => N+1 boundaries
+  var starts=[start0];
+  for(var i=1;i<=n;i++)starts.push(stepPayday(starts[i-1],freq));
+  // bill occurrences assigned to periods
+  var periods=[];
+  for(var p=0;p<n;p++)periods.push({start:starts[p],end:starts[p+1],bills:[]});
+  var m0=new Date(starts[0].getFullYear(),starts[0].getMonth(),1);
+  var mEnd=new Date(starts[n].getFullYear(),starts[n].getMonth(),1);
+  var cursor=new Date(m0.getTime());
+  var guard=0;
+  while(cursor<=mEnd&&guard<40){
+    bills.forEach(function(b){
+      var dim=daysInMonth(cursor.getFullYear(),cursor.getMonth());
+      var due=new Date(cursor.getFullYear(),cursor.getMonth(),Math.min(b.day,dim));
+      for(var p2=0;p2<n;p2++){
+        if(due>=periods[p2].start&&due<periods[p2].end){periods[p2].bills.push({name:b.name,amount:b.amount,due:due});break;}
+      }
+    });
+    cursor=new Date(cursor.getFullYear(),cursor.getMonth()+1,1);guard++;
+  }
+  periods.forEach(function(per){
+    per.allocated=per.bills.reduce(function(t,b){return t+b.amount;},0);
+    per.remainder=payAmount-per.allocated;
+    per.status=per.remainder<0?"short":(per.remainder<buffer?"tight":"ok");
+  });
+  renderSummary(periods,payAmount,buffer,rolled,start0);
+  renderCalendar(periods,payAmount,buffer);
+  renderSmoothing(periods,payAmount,buffer,bills);
+  document.getElementById("summaryCard").hidden=false;
+  document.getElementById("calendarCard").hidden=false;
+  document.getElementById("smoothCard").hidden=false;
+  var sc=document.getElementById("summaryCard");
+  if(sc.scrollIntoView)sc.scrollIntoView({behavior:"smooth",block:"start"});
+  save();
+}
+function hideResults(){
+  document.getElementById("summaryCard").hidden=true;
+  document.getElementById("calendarCard").hidden=true;
+  document.getElementById("smoothCard").hidden=true;
+}
+function statusPill(st){
+  if(st==="short")return '<span class="pill p-crit">SHORTFALL</span>';
+  if(st==="tight")return '<span class="pill p-high">TIGHT</span>';
+  return '<span class="pill p-low">OK</span>';
+}
+function renderSummary(periods,payAmount,buffer,rolled,start0){
+  var b=document.getElementById("summaryBody");
+  var totalBills=periods.reduce(function(t,p){return t+p.allocated;},0);
+  var totalIncome=payAmount*periods.length;
+  var shorts=periods.filter(function(p){return p.status==="short";});
+  var tights=periods.filter(function(p){return p.status==="tight";});
+  var worst=periods.slice().sort(function(a,c){return a.remainder-c.remainder;})[0];
+  var h="";
+  if(rolled)h+='<div class="flag"><b>Note:</b> your entered pay date had already passed, so the plan starts at your next upcoming payday: <b>'+esc(fmtDY(start0))+'</b>.</div>';
+  h+='<div class="big">'+money0(totalIncome)+'<span style="font-size:1rem;color:#6b6250"> income</span> vs '+money0(totalBills)+'<span style="font-size:1rem;color:#6b6250"> bills</span></div>';
+  h+='<p>Across '+periods.length+' pay periods ('+esc(fmtD(periods[0].start))+' – '+esc(fmtD(periods[periods.length-1].end))+').</p>';
+  if(shorts.length===0&&tights.length===0){
+    h+='<div class="flag good"><b>All clear:</b> every paycheck covers its bills with your '+money0(buffer)+' buffer intact. This is what a working flow looks like.</div>';
+  }else{
+    if(shorts.length)h+='<div class="flag bad"><b>'+shorts.length+' shortfall period'+(shorts.length>1?"s":"")+'</b> — bills exceed the paycheck. Overdraft or late-fee risk is real here; see the smoothing plan below.</div>';
+    if(tights.length)h+='<div class="flag"><b>'+tights.length+' tight period'+(tights.length>1?"s":"")+'</b> — bills are covered but your '+money0(buffer)+' buffer would not survive intact.</div>';
+  }
+  h+='<p><b>Tightest stretch:</b> '+esc(fmtD(worst.start))+' – '+esc(fmtD(worst.end))+' with '+money0(worst.remainder)+' left after bills '+statusPill(worst.status)+'</p>';
+  b.innerHTML=h;
+}
+function renderCalendar(periods,payAmount,buffer){
+  var b=document.getElementById("calendarBody");
+  var h='<p class="hint">Each card is one pay period: the paycheck at the top, the bills due before the next payday, and what is <b>safe to spend</b> once bills are covered. Safe to spend assumes your '+money0(buffer)+' buffer stays untouched in the account.</p>';
+  periods.forEach(function(per,idx){
+    var cls=per.status==="short"?" short":(per.status==="tight"?" tight":"");
+    var safe=Math.max(0,per.remainder-buffer);
+    h+='<div class="period'+cls+'"><div class="phead"><div><b>Paycheck '+(idx+1)+'</b> — '+esc(fmtDY(per.start))+' → '+esc(fmtD(per.end))+'</div>'+statusPill(per.status)+'</div>';
+    h+='<p style="margin:4px 0"><b>Pay:</b> '+money2(payAmount)+'</p>';
+    if(per.bills.length){
+      h+='<div class="twrap"><table class="grid" aria-label="Bills for paycheck '+(idx+1)+'"><tr><th style="text-align:left">Bill</th><th>Due</th><th>Amount</th></tr>';
+      per.bills.slice().sort(function(a,c){return a.due-c.due;}).forEach(function(bl){
+        h+='<tr><td class="l">'+esc(bl.name)+'</td><td>'+esc(fmtD(bl.due))+'</td><td>'+money2(bl.amount)+'</td></tr>';
+      });
+      h+='</table></div>';
+    }else{
+      h+='<p class="note">No bills due in this window.</p>';
+    }
+    h+='<p style="margin:6px 0"><b>Bills total:</b> '+money2(per.allocated)+' &nbsp;·&nbsp; <b>Left after bills:</b> '+money0(per.remainder)+'</p>';
+    if(per.status==="short"){
+      h+='<p style="color:#a33;font-weight:bold">Safe to spend: $0 — this paycheck is short '+money0(-per.remainder)+'. Do not spend freely here.</p>';
+    }else{
+      h+='<p><b>Safe to spend:</b> <span class="big" style="font-size:1.5rem">'+money0(safe)+'</span>'+(per.status==="tight"?' <span class="pill p-high">buffer at risk</span>':"")+'</p>';
+    }
+    h+='</div>';
+  });
+  b.innerHTML=h;
+}
+function renderSmoothing(periods,payAmount,buffer,bills){
+  var b=document.getElementById("smoothBody");
+  var h="";
+  var shorts=periods.filter(function(p){return p.status==="short";});
+  var tights=periods.filter(function(p){return p.status==="tight";});
+  var suggestions=[];
+  shorts.forEach(function(per){
+    if(!per.bills.length)return;
+    var big=per.bills.slice().sort(function(a,c){return c.amount-a.amount;})[0];
+    suggestions.push('<b>Move or split "'+esc(big.name)+'"</b> ('+money2(big.amount)+' due '+esc(fmtD(big.due))+', in the '+esc(fmtD(per.start))+'–'+esc(fmtD(per.end))+' shortfall): call the biller and ask to shift the due date later in the month, or ask about splitting it across two payments. Moving one big bill fixes most shortfalls.');
+  });
+  var giants=(shorts.length||tights.length)?bills.filter(function(bl){return bl.amount>payAmount*0.5;}):[];
+  giants.forEach(function(bl){
+    suggestions.push('<b>Split "'+esc(bl.name)+'"</b> ('+money2(bl.amount)+' is more than half a '+money2(payAmount)+' paycheck): paying half from each of two consecutive paychecks turns one brutal period into two manageable ones. Many billers allow partial payments — ask.');
+  });
+  if(buffer>0&&(shorts.length||tights.length)){
+    var per= Math.ceil(buffer/Math.min(4,periods.length));
+    var doneBy=periods[Math.min(4,periods.length)-1].end;
+    suggestions.push('<b>Build the '+money0(buffer)+' buffer:</b> set aside '+money0(per)+' from each of the next '+Math.min(4,periods.length)+' paychecks and do not touch it. Buffer complete around '+esc(fmtD(doneBy))+'. After that, shortfalls become inconveniences instead of overdrafts.');
+  }
+  if(tights.length&&!shorts.length){
+    suggestions.push('<b>Protect the tight periods:</b> '+tights.length+' period'+(tights.length>1?"s are":" is")+' covered but thin. Move any flexible spending (groceries stock-up, non-urgent purchases) into your OK periods.');
+  }
+  if(suggestions.length===0){
+    h+='<div class="flag good"><b>No smoothing needed.</b> Your paydays and due dates already line up well. Keep the '+money0(buffer)+' buffer in place and re-run this plan whenever a bill or your pay changes.</div>';
+  }else{
+    h+='<p class="hint">Concrete fixes, generated from your actual numbers — in the order that helps most:</p><ol class="steps">';
+    suggestions.forEach(function(s2){h+='<li>'+s2+'</li>';});
+    h+='</ol>';
+  }
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">How the math works (assumptions)</h3>';
+  h+='<ul style="margin-left:22px;font-size:.92rem;color:#6b6250"><li>Each pay period runs from one payday to the next. A bill belongs to the paycheck whose period contains its due date.</li><li>Twice-a-month pay alternates between the 1st and the 15th after your first payday.</li><li>Bills due on the 29th–31st fall on the last day of shorter months.</li><li>Paycheck amounts are assumed identical each period — bonuses and overtime are not counted.</li><li>"Safe to spend" = paycheck − this period\'s bills − your buffer target, never below $0.</li><li>Past pay dates roll forward to the next upcoming payday automatically.</li></ul>';
+  h+='<p class="note"><b>Reminder:</b> this is educational modeling, not professional financial advice. Shifting due dates and splitting payments are suggestions to discuss with your billers — confirm any change in writing.</p>';
+  b.innerHTML=h;
+}
+function syncInputs(){
+  document.getElementById("freq").value=S.freq;
+  document.getElementById("paydate").value=S.paydate;
+  document.getElementById("payamount").value=S.payamount;
+  document.getElementById("horizon").value=S.horizon;
+  document.getElementById("buffer").value=S.buffer;
+}
+["freq","horizon"].forEach(function(id){
+  document.getElementById(id).addEventListener("change",function(){S[id]=this.value;save();});
+});
+["paydate","payamount","buffer"].forEach(function(id){
+  document.getElementById(id).addEventListener("input",function(){S[id]=this.value;save();});
+});
+document.getElementById("addBill").addEventListener("click",function(){
+  if(S.bills.length>=MAXB){document.getElementById("err").textContent="Twenty-five bills is the practical limit — combine the small ones first.";return;}
+  S.bills.push({name:"",amount:"",day:""});save();drawBills();
+});
+document.getElementById("plan").addEventListener("click",build);
+document.getElementById("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={freq:"biweekly",paydate:"",payamount:"",horizon:"8",buffer:"300",bills:[{name:"",amount:"",day:""}]};
+  syncInputs();drawBills();
+  document.getElementById("err").textContent="";
+  hideResults();
+});
+load();syncInputs();drawBills();
+(function(){
+  var errs=validate();
+  if(errs.length===0)build();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coast Point Calculator | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Could you stop saving for retirement today and still retire on time? Find your Coast FIRE number, your progress, and a year-by-year projection. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/coast-point-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coast Point Calculator | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Could you stop saving for retirement today and still retire on time? Find your Coast FIRE number, your progress, and a year-by-year projection. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/coast-point-calculator/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.field{display:block;font-weight:bold;margin-top:14px;font-size:.95rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.82rem}
+input[type=range]{width:100%;height:44px;accent-color:#c9a227;cursor:pointer;margin:4px 0}
+.slider-row{display:flex;align-items:center;gap:12px}
+.slider-row output{font-weight:bold;min-width:70px;text-align:right;color:#8a6d1c;white-space:nowrap}
+.verdict{border-radius:12px;padding:22px;margin:18px 0;text-align:center}
+.verdict h2{font-family:Georgia,serif;font-size:1.6rem;margin-bottom:6px}
+.verdict.on{background:#e9f5e6;border:2px solid #2e7d32;color:#1b4d1f}
+.verdict.off{background:#fff6dd;border:2px solid #c9a227;color:#6d5410}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+.stat{background:#fff;border:1px solid #e3d9b8;border-radius:10px;padding:14px;text-align:center}
+.stat .v{font-size:1.35rem;font-weight:bold;color:#141210}
+.stat .l{font-size:.8rem;color:#6b6250}
+.bar{height:22px;background:#eee;border-radius:11px;overflow:hidden;margin:10px 0}
+.bar>div{height:100%;background:#2e7d32;border-radius:11px;transition:width .25s}
+canvas.chart{width:100%;height:280px;background:#fff;border:1px solid #e3d9b8;border-radius:10px;margin-top:10px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:#6b6250;margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:22px;height:4px;border-radius:2px}
+.tablewrap{overflow-x:auto;max-height:320px;overflow-y:auto;border:1px solid #e3d9b8;border-radius:10px;margin-top:10px}
+table.proj{width:100%;border-collapse:collapse;font-size:.85rem}
+table.proj th,table.proj td{padding:8px 10px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap}
+table.proj th{position:sticky;top:0;background:#f7f1df;color:#8a6d1c;text-align:right}
+table.proj th:first-child,table.proj td:first-child{text-align:left}
+.err{background:#fdecea;border:2px solid #b3261e;color:#7a1a14;border-radius:10px;padding:16px;margin:14px 0}
+.disclaimer{background:#f7f1df;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5236;margin-top:18px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Coast Point Calculator</h1>
+<p class="intro">Could you stop saving for retirement <em>today</em> and still retire on time? That's Coast FIRE. Enter your numbers to find your "coast number" — the amount that grows untouched into a full retirement fund.</p>
+<div class="disclaimer"><strong>Educational tool only.</strong> This is a simplified model for learning, not financial advice. It uses steady assumed returns, ignores taxes, fees, inflation surprises, and Social Security. Talk to a qualified financial professional about your situation.</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your numbers</h2>
+<label class="field">Current age
+<input type="number" id="age" min="18" max="80" step="1" value="35"></label>
+<label class="field">Current invested savings
+<small>Money already invested for retirement (401(k), IRA, brokerage).</small>
+<input type="number" id="savings" min="0" step="1000" value="150000"></label>
+<label class="field">Desired annual spending in retirement
+<small>In today's dollars. Your full-retirement target = 25&times; this (the 4% rule).</small>
+<input type="number" id="spend" min="0" step="1000" value="60000"></label>
+<label class="field">Monthly contribution (optional)
+<small>If you're still saving, enter it to see <em>when</em> you'll reach your coast point.</small>
+<input type="number" id="pmt" min="0" step="50" value="500"></label>
+<label class="field" for="rateSlider">Expected annual return (real, after inflation)
+<small>Conservative planning uses 4–6%. Historical stock-heavy real returns average ~7%.</small></label>
+<div class="slider-row"><input type="range" id="rateSlider" min="1" max="10" step="0.25" value="5" aria-label="Expected annual real return"><output id="rateOut">5%</output></div>
+<label class="field" for="retSlider">Retirement age</label>
+<div class="slider-row"><input type="range" id="retSlider" min="55" max="75" step="1" value="65" aria-label="Retirement age"><output id="retOut">65</output></div>
+</div>
+
+<div id="errBox" class="err" style="display:none"></div>
+
+<div class="appcard" id="resultsCard" aria-live="polite">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your coast number</h2>
+<div class="statgrid">
+<div class="stat"><div class="v" id="stCoast">$—</div><div class="l">Coast number (needed today)</div></div>
+<div class="stat"><div class="v" id="stTarget">$—</div><div class="l">Full retirement target at <span id="stRetAge">65</span></div></div>
+<div class="stat"><div class="v" id="stProg">—</div><div class="l">Of the way there</div></div>
+<div class="stat"><div class="v" id="stAway">$—</div><div class="l" id="stAwayLabel">Still needed</div></div>
+</div>
+<div class="bar" aria-hidden="true"><div id="progBar" style="width:0%"></div></div>
+<div id="verdictBox"></div>
+<canvas class="chart" id="chart" width="700" height="280" aria-label="Chart of untouched savings growth versus the coast number over time"></canvas>
+<div class="legend"><span><i class="sw" style="background:#8a6d1c"></i>Your savings, untouched</span><span><i class="sw" style="background:#2e7d32"></i>Coast number needed</span></div>
+<h3 style="font-family:Georgia,serif;margin-top:22px">Year-by-year projection (no new contributions)</h3>
+<p style="font-size:.88rem;color:#6b6250">Watch your untouched savings grow toward the shrinking coast number. The ratio stays constant without contributions — new savings are what move it.</p>
+<div class="tablewrap"><table class="proj" id="projTable">
+<thead><tr><th>Age</th><th>Untouched savings</th><th>Coast number</th><th>Progress</th></tr></thead>
+<tbody></tbody></table></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">What changes once you coast</h2>
+<ul style="padding-left:20px;color:#5c5236;font-size:.95rem">
+<li><strong>Retirement saving becomes optional.</strong> Every new dollar can go to goals your retirement accounts can't serve: a home, a business, travel, giving, or simply working less.</li>
+<li><strong>Keep the emergency fund.</strong> Coasting assumes the invested money stays invested — a cash cushion protects it from forced withdrawals.</li>
+<li><strong>Don't actually stop entirely if you can help it.</strong> Coasting past your number builds margin against the one thing this model can't promise: future returns.</li>
+<li><strong>Re-run yearly.</strong> Markets move, spending targets change, and life happens. Your coast number is a compass, not a contract.</li>
+</ul>
+<h2 style="font-family:Georgia,serif;margin:18px 0 6px">Assumptions behind the math</h2>
+<ul style="padding-left:20px;color:#5c5236;font-size:.92rem">
+<li>Coast number = full retirement target ÷ (1 + return)<sup>years left</sup>. Target = 25&times; annual retirement spending (4% rule).</li>
+<li>Returns are steady and real (after inflation); no volatility, taxes, or fees modeled.</li>
+<li>"Untouched savings" grows at the same assumed return with zero new contributions.</li>
+</ul>
+<p style="margin-top:12px"><button class="btn ghost" id="resetBtn">Reset to defaults</button></p>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Coasting is one milestone in a bigger journey. <em>Retirement Made Simple</em> by Kimani Upshur, M.Ed. maps the whole path in plain language.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/retirement-made-simple/">Get Retirement Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-coast-point-calculator-v1";
+function $(id){return document.getElementById(id);}
+function num(v,d){v=parseFloat(v);return isFinite(v)?v:d;}
+function money(n){if(!isFinite(n))return "—";var neg=n<0;n=Math.abs(Math.round(n));return (neg?"−$":"$")+n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");}
+function monthsToCoast(pv,pmt,annualRate,coast){
+  var r=annualRate/100/12;
+  if(pv>=coast)return 0;
+  if(r<=0){return pmt>0?(coast-pv)/pmt:Infinity;}
+  return Math.log((coast*r+pmt)/(pv*r+pmt))/Math.log(1+r);
+}
+var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function dateLabel(monthsFromNow){
+  var d=new Date();d.setMonth(d.getMonth()+Math.ceil(monthsFromNow));
+  return MONTHS[d.getMonth()]+" "+d.getFullYear();
+}
+var DEFAULTS={age:35,savings:150000,spend:60000,pmt:500,rate:5,ret:65};
+function read(){
+  return {
+    age:Math.max(18,Math.min(80,num($("age").value,DEFAULTS.age))),
+    savings:Math.max(0,num($("savings").value,DEFAULTS.savings)),
+    spend:Math.max(0,num($("spend").value,DEFAULTS.spend)),
+    pmt:Math.max(0,Math.min(50000,num($("pmt").value,DEFAULTS.pmt))),
+    rate:Math.max(0.01,Math.min(20,num($("rateSlider").value,DEFAULTS.rate))),
+    ret:num($("retSlider").value,DEFAULTS.ret)
+  };
+}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}}
+function load(){
+  try{
+    var s=JSON.parse(localStorage.getItem(KEY));if(!s)return;
+    $("age").value=s.age;$("savings").value=s.savings;$("spend").value=s.spend;$("pmt").value=s.pmt;
+    $("rateSlider").value=s.rate;$("retSlider").value=s.ret;
+  }catch(e){}
+}
+function drawChart(grow,coastLine,retAge,age){
+  var c=$("chart");var w=c.clientWidth||700;var h=280;
+  try{
+    var dpr=window.devicePixelRatio||1;c.width=w*dpr;c.height=h*dpr;
+    var ctx=c.getContext("2d");if(!ctx)return;ctx.scale(dpr,dpr);
+    var pad={l:56,r:14,t:14,b:30};
+    var maxV=Math.max(grow[grow.length-1],coastLine[0])*1.08;
+    var X=function(i){return pad.l+(w-pad.l-pad.r)*i/(grow.length-1);};
+    var Y=function(v){return h-pad.b-(h-pad.t-pad.b)*v/maxV;};
+    ctx.strokeStyle="#ddd";ctx.fillStyle="#6b6250";ctx.font="11px sans-serif";ctx.lineWidth=1;
+    for(var g=0;g<=4;g++){var gv=maxV*g/4,y=Y(gv);
+      ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke();
+      ctx.fillText(money(gv),4,y+4);}
+    ctx.strokeStyle="#8a6d1c";ctx.lineWidth=3;ctx.beginPath();
+    for(var i=0;i<grow.length;i++){var x=X(i),y=Y(grow[i]);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+    ctx.stroke();
+    ctx.strokeStyle="#2e7d32";ctx.lineWidth=2;ctx.beginPath();
+    for(var j=0;j<coastLine.length;j++){var x2=X(j),y2=Y(coastLine[j]);if(j===0)ctx.moveTo(x2,y2);else ctx.lineTo(x2,y2);}
+    ctx.stroke();
+    ctx.fillStyle="#6b6250";ctx.textAlign="center";
+    var step=Math.ceil(grow.length/6);
+    for(var k=0;k<grow.length;k+=step){ctx.fillText("Age "+(age+k),X(k),h-10);}
+    ctx.textAlign="left";
+  }catch(e){}
+}
+function recalc(){
+  var s=read();
+  $("rateOut").textContent=(Math.round(s.rate*100)/100)+"%";
+  $("retOut").textContent=s.ret;
+  save(s);
+  var err=$("errBox"),card=$("resultsCard");
+  if(s.ret<=s.age){
+    err.style.display="block";card.style.display="none";
+    err.textContent="Retirement age ("+s.ret+") must be higher than your current age ("+s.age+"). Move the retirement-age slider up.";
+    return;
+  }
+  err.style.display="none";card.style.display="block";
+  var years=s.ret-s.age;
+  var r=s.rate/100;
+  var target=25*s.spend;
+  var coast=target/Math.pow(1+r,years);
+  var prog=s.savings/coast;
+  var away=Math.max(0,coast-s.savings);
+  $("stCoast").textContent=money(coast);
+  $("stTarget").textContent=money(target);
+  $("stRetAge").textContent=s.ret;
+  $("stProg").textContent=Math.round(Math.min(prog,9.99)*100)+"%";
+  $("stAway").textContent=money(away);
+  $("stAwayLabel").textContent=s.savings>=coast?"Surplus past coast":"Still needed";
+  $("progBar").style.width=Math.min(prog*100,100)+"%";
+  $("progBar").style.background=s.savings>=coast?"#2e7d32":"#c9a227";
+  var vb=$("verdictBox");vb.innerHTML="";
+  var d=document.createElement("div");
+  var h=document.createElement("h2"),p=document.createElement("p");
+  if(s.savings>=coast){
+    d.className="verdict on";
+    h.textContent="You've reached your coast point.";
+    p.textContent="Your "+money(s.savings)+" grows untouched into roughly "+money(s.savings*Math.pow(1+r,years))+" by age "+s.ret+" — covering your "+money(target)+" target. You could stop retirement saving today and still retire on time. See below for what changes.";
+  }else{
+    d.className="verdict off";
+    h.textContent=money(away)+" away from your coast point.";
+    var m=monthsToCoast(s.savings,s.pmt,s.rate,coast);
+    if(isFinite(m)&&m>0&&s.pmt>0){
+      p.textContent="At "+money(s.pmt)+"/month and "+s.rate+"% real returns, you'll hit your coast number in about "+(m/12).toFixed(1)+" years — around "+dateLabel(m)+". After that, retirement saving becomes optional.";
+    }else if(s.pmt<=0){
+      p.textContent="You're adding $0/month, so the gap won't close on its own — the ratio stays flat without contributions. Add a monthly contribution above to see your coast date, or raise your expected contributions to move it sooner.";
+    }else{
+      p.textContent="At these settings the coast point is out of reach — try a higher contribution, a later retirement age, or a lower spending target.";
+    }
+  }
+  d.appendChild(h);d.appendChild(p);vb.appendChild(d);
+  // chart data
+  var grow=[],cl=[];
+  for(var y=0;y<=years;y++){
+    grow.push(s.savings*Math.pow(1+r,y));
+    cl.push(target/Math.pow(1+r,years-y));
+  }
+  drawChart(grow,cl,s.ret,s.age);
+  // table
+  var tb=$("projTable").querySelector("tbody");tb.innerHTML="";
+  for(var t=0;t<=years;t++){
+    var tr=document.createElement("tr");
+    var c0=document.createElement("td");c0.textContent=s.age+t;
+    var c1=document.createElement("td");c1.textContent=money(grow[t]);
+    var c2=document.createElement("td");c2.textContent=money(cl[t]);
+    var c3=document.createElement("td");c3.textContent=Math.round(Math.min(grow[t]/cl[t],9.99)*100)+"%";
+    tr.appendChild(c0);tr.appendChild(c1);tr.appendChild(c2);tr.appendChild(c3);
+    tb.appendChild(tr);
+  }
+}
+["age","savings","spend","pmt"].forEach(function(id){$(id).addEventListener("input",recalc);});
+["rateSlider","retSlider"].forEach(function(id){$(id).addEventListener("input",recalc);});
+$("resetBtn").addEventListener("click",function(){
+  try{localStorage.removeItem(KEY);}catch(e){}
+  $("age").value=DEFAULTS.age;$("savings").value=DEFAULTS.savings;$("spend").value=DEFAULTS.spend;$("pmt").value=DEFAULTS.pmt;
+  $("rateSlider").value=DEFAULTS.rate;$("retSlider").value=DEFAULTS.ret;
+  recalc();
+});
+window.addEventListener("resize",function(){recalc();});
+load();recalc();
+</script>
+</body>
+</html>

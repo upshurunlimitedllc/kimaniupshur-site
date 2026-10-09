@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tax-Smart Account Chooser | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Answer a few questions and get a ranked funding order for your 401(k), HSA, Roth IRA, and Traditional IRA — with dollar targets and plain-language reasoning. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/tax-smart-account-chooser/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tax-Smart Account Chooser | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Answer a few questions and get a ranked funding order for your 401(k), HSA, Roth IRA, and Traditional IRA — with dollar targets and plain-language reasoning. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/tax-smart-account-chooser/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.field{display:block;font-weight:bold;margin-top:14px;font-size:.95rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.82rem}
+.notice{background:#fdecea;border:2px solid #b3261e;color:#7a1a14;border-radius:10px;padding:16px;margin-bottom:20px;font-size:.92rem}
+.notice strong{display:block;margin-bottom:4px}
+.rank{border:1px solid #e3d9b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff;display:flex;gap:14px}
+.rank .num{font-family:Georgia,serif;font-size:1.8rem;font-weight:bold;color:#8a6d1c;min-width:44px;text-align:center}
+.rank h3{font-size:1.05rem;margin-bottom:4px}
+.rank .target{font-weight:bold;color:#2e7d32;margin:6px 0;font-size:1.05rem}
+.rank .why{font-size:.9rem;color:#5c5236}
+.rank .what{font-size:.9rem;color:#6b6250;font-style:italic;margin-bottom:6px}
+.bracket{background:#f7f1df;border-radius:10px;padding:14px;margin:14px 0;font-size:.95rem}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #eee;cursor:pointer}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow.done span{color:#8a7a4a;text-decoration:line-through}
+.disclaimer{background:#f7f1df;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5236;margin-top:18px}
+.hidden{display:none!important}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Tax-Smart Account Chooser</h1>
+<p class="intro">Answer a few questions and get a ranked funding order — which accounts to fill first, with dollar targets and the reasoning for each rank, in plain language.</p>
+
+<div class="notice" role="alert"><strong>Educational content only — this is NOT tax advice.</strong> Tax rules are complex, change yearly, and depend on your full situation. The limits below are the 2026 IRS figures; always confirm current numbers at IRS.gov or with a qualified tax professional before acting.</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your situation</h2>
+<label class="field">Your age
+<input type="number" id="age" min="18" max="100" step="1" value="35"></label>
+<label class="field">Filing status
+<select id="filing"><option value="single">Single</option><option value="mfj">Married filing jointly</option></select></label>
+<label class="field">Annual gross household income
+<small>Used to roughly estimate your federal tax bracket (2026 brackets).</small>
+<input type="number" id="income" min="0" step="1000" value="90000"></label>
+<label class="field">Workplace retirement plan
+<select id="hasPlan"><option value="yes">Yes — I have a 401(k), 403(b), or TSP at work</option><option value="no">No workplace plan</option></select></label>
+<div id="matchBox">
+<label class="field">Employer match: they match
+<small>Common formula: "50% of your contributions up to 6% of salary" → enter 50 and 6.</small></label>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<div style="flex:1;min-width:140px"><input type="number" id="matchPct" min="0" max="200" step="1" value="50" aria-label="Employer match percent"></div>
+<div style="flex:1;min-width:140px"><input type="number" id="matchCap" min="0" max="100" step="0.5" value="6" aria-label="Match applies up to percent of salary"></div>
+</div>
+<p style="font-size:.85rem;color:#6b6250">Enter match % and the salary % it applies up to.</p>
+</div>
+<label class="field">Health plan type
+<select id="hsa">
+<option value="none">Not on a high-deductible plan (no HSA)</option>
+<option value="self">High-deductible plan, self-only coverage (HSA eligible)</option>
+<option value="family">High-deductible plan, family coverage (HSA eligible)</option>
+</select></label>
+<label class="field">In retirement, I expect my tax rate to be…
+<select id="future">
+<option value="higher">Higher than today</option>
+<option value="same">About the same</option>
+<option value="lower">Lower than today</option>
+<option value="unsure">Not sure</option>
+</select></label>
+<p><button class="btn" id="goBtn">Get my funding order</button></p>
+</div>
+
+<div class="appcard hidden" id="resultsCard" aria-live="polite">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your ranked funding order</h2>
+<div class="bracket" id="bracketBox"></div>
+<div id="rankList"></div>
+<h3 style="font-family:Georgia,serif;margin-top:24px">The decision logic, in one picture</h3>
+<ol style="padding-left:20px;color:#5c5236;font-size:.92rem">
+<li><strong>Free money first:</strong> an employer match is an instant 50–100% return. Nothing beats it.</li>
+<li><strong>Triple tax advantage next:</strong> the HSA is the only account with deductible contributions, tax-free growth, <em>and</em> tax-free withdrawals for medical costs.</li>
+<li><strong>Then pick your tax timing:</strong> Roth (pay tax now) if you're in a lower bracket today than you'll be in retirement; Traditional/pre-tax (deduct now) if you're in a high bracket today and expect a lower one later.</li>
+<li><strong>Fill the big bucket last:</strong> the 401(k) holds the most ($24,500 for 2026), so it absorbs everything after the match.</li>
+<li><strong>Overflow goes taxable:</strong> a regular brokerage account has no limits — and no special tax breaks either.</li>
+</ol>
+</div>
+
+<div class="appcard hidden" id="janCard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Annual contribution checklist — revisit every January</h2>
+<p style="color:#6b6250;font-size:.9rem">Tax rules and limits change yearly. Run through this each January; your checkmarks are saved on this device.</p>
+<div id="janList"></div>
+<p style="margin-top:12px"><button class="btn ghost" id="resetBtn">Reset answers</button></p>
+</div>
+
+<div class="disclaimer"><strong>Not tax advice.</strong> This tool gives a general educational funding order based on widely used planning principles. Your situation may differ — deductions phase out at higher incomes, state taxes matter, and rules change. Confirm 2026 limits and your eligibility at IRS.gov or with a qualified tax professional.</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Accounts are the containers; strategy is the game. <em>Taxes Made Simple</em> by Kimani Upshur, M.Ed. explains the tax system in plain language anyone can use.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/taxes-made-simple/">Get Taxes Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-tax-smart-account-chooser-v1";
+function $(id){return document.getElementById(id);}
+function num(v,d){v=parseFloat(v);return isFinite(v)?v:d;}
+function money(n){if(!isFinite(n))return "—";var neg=n<0;n=Math.abs(Math.round(n));return (neg?"−$":"$")+n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");}
+// 2026 IRS figures (verified Oct 2026; confirm at IRS.gov)
+var L401K=24500, CATCH401K=8000, SUPER401K=11250, IRA=7500, CATCHIRA=1100, HSA_SELF=4400, HSA_FAM=8750, CATCHHSA=1000;
+var BRACKETS={
+ single:{ded:16100,lim:[12400,50400,105700,201775,256225,640600],rates:[10,12,22,24,32,35,37]},
+ mfj:{ded:32200,lim:[24800,100800,211400,403550,512450,768700],rates:[10,12,22,24,32,35,37]}
+};
+function marginal(filing,income){
+ var b=BRACKETS[filing];var tax=Math.max(0,income-b.ded);
+ for(var i=0;i<b.lim.length;i++){if(tax<=b.lim[i])return b.rates[i];}
+ return 37;
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(collect()));}catch(e){}}
+function collect(){
+ return {age:num($("age").value,35),filing:$("filing").value,income:num($("income").value,0),
+ hasPlan:$("hasPlan").value,matchPct:num($("matchPct").value,50),matchCap:num($("matchCap").value,6),
+ hsa:$("hsa").value,future:$("future").value,checks:readJanChecks()};
+}
+function readJanChecks(){
+ var out=[];document.querySelectorAll("#janList input[type=checkbox]").forEach(function(cb,i){if(cb.checked)out.push(i);});
+ return out;
+}
+function restore(s){
+ if(!s)return;
+ $("age").value=s.age;$("filing").value=s.filing;$("income").value=s.income;
+ $("hasPlan").value=s.hasPlan;$("matchPct").value=s.matchPct;$("matchCap").value=s.matchCap;
+ $("hsa").value=s.hsa;$("future").value=s.future;
+ toggleMatch();compute(false);
+ if(s.checks)applyJanChecks(s.checks);
+}
+function toggleMatch(){$("matchBox").style.display=$("hasPlan").value==="yes"?"block":"none";}
+$("hasPlan").addEventListener("change",function(){toggleMatch();});
+function pickIRA(marg,future,hasPlan){
+ // returns {type:"Roth"|"Traditional"|"Either", why}
+ if(marg<=22||future==="higher")return {type:"Roth",why:"You're in the "+marg+"% bracket now"+(future==="higher"?" and expect a higher rate later":"")+" — paying tax at today's lower rate and withdrawing tax-free later usually wins."};
+ if(marg>=32&&future==="lower")return {type:"Traditional",why:"You're in the "+marg+"% bracket now and expect a lower rate in retirement — the deduction today is worth more than tax-free withdrawals later. Note: if a workplace plan covers you, deductibility phases out above IRS income limits — confirm yours."};
+ if(marg>=32&&future!=="lower")return {type:"Traditional",why:"At a "+marg+"% marginal rate, the upfront deduction is powerful. If you expect your rate to stay high, consider splitting between Traditional and Roth."};
+ if(future==="lower")return {type:"Traditional",why:"You expect a lower tax rate in retirement, so deducting contributions now at "+marg+"% and paying tax later at a lower rate is the efficient move."};
+ return {type:"Roth",why:"At "+marg+"% with an uncertain future rate, Roth's tax-free growth and withdrawal flexibility are the safer default — you lock in today's known rate."};
+}
+function compute(showAlert){
+ var s=collect();save();
+ var marg=marginal(s.filing,s.income);
+ $("bracketBox").innerHTML="";
+ var bb=document.createElement("div");
+ var b1=document.createElement("strong");b1.textContent="Your estimated marginal federal bracket: "+marg+"%";
+ var b2=document.createElement("div");b2.style.fontSize=".85rem";b2.style.color="#6b6250";
+ b2.textContent="Rough 2026 estimate from "+money(s.income)+" income ("+s.filing==="single"?"single":"married filing jointly"+" standard deduction). Ignores other deductions — confirm with a tax pro.";
+ bb.appendChild(b1);bb.appendChild(b2);$("bracketBox").appendChild(bb);
+ var ranks=[];
+ var n=1;
+ function add(name,what,target,why){
+   ranks.push({n:n++,name:name,what:what,target:target,why:why});
+ }
+ var iraLim=IRA+(s.age>=50?CATCHIRA:0);
+ var k401=L401K+(s.age>=50?CATCH401K:0);
+ var k401note=s.age>=60&&s.age<=63?" (super catch-up "+money(SUPER401K)+" may apply at 60–63 — confirm your plan allows it)":"";
+ // 1. match
+ var matchDollars=0,matchContrib=0;
+ if(s.hasPlan==="yes"&&s.matchPct>0&&s.matchCap>0){
+   matchContrib=s.income*s.matchCap/100;
+   matchDollars=matchContrib*s.matchPct/100;
+   add("401(k) — up to the full employer match",
+     "Your workplace retirement plan. Contributions may be pre-tax (deduct now) or Roth (pay tax now); growth is tax-deferred either way.",
+     "Contribute "+s.matchCap+"% of salary ("+money(matchContrib)+"/yr) to capture "+money(matchDollars)+"/yr of employer match",
+     "This is free money — a "+s.matchPct+"% instant return on every matched dollar. No other step beats it. If you do nothing else, do this.");
+ }
+ // 2. HSA
+ if(s.hsa!=="none"){
+   var hsaLim=(s.hsa==="family"?HSA_FAM:HSA_SELF)+(s.age>=55?CATCHHSA:0);
+   add("HSA — max it out",
+     "Health Savings Account: the only triple-tax-advantaged account — deductible contributions, tax-free growth, tax-free withdrawals for medical costs.",
+     money(hsaLim)+"/yr ("+(s.hsa==="family"?"family":"self-only")+" HDHP coverage"+(s.age>=55?", incl. $1,000 catch-up":"")+")",
+     "After the match, nothing beats the HSA's triple tax break. Even if you're healthy, it doubles as a stealth retirement account — pay medical bills from cash, let the HSA compound, reimburse yourself decades later.");
+ }
+ // 3. IRA choice
+ var ira=pickIRA(marg,s.future,s.hasPlan);
+ var iraWhy=ira.why;
+ if(s.hasPlan==="yes"&&ira.type==="Traditional"&&marg>=22){
+   iraWhy+=" Covered by a workplace plan? The deduction phases out above IRS income limits — check yours before counting on it.";
+ }
+ add(ira.type+" IRA",
+   ira.type==="Roth"
+     ?"Individual Retirement Account funded with after-tax dollars: no deduction now, but qualified withdrawals in retirement are completely tax-free."
+     :"Individual Retirement Account funded with pre-tax (deductible) dollars: lowers this year's tax bill; you pay tax when you withdraw in retirement.",
+   money(iraLim)+"/yr"+(s.age>=50?" (incl. $1,100 catch-up)":"")+" — combined Traditional + Roth limit",
+   iraWhy);
+ // 4. 401(k) beyond match
+ if(s.hasPlan==="yes"){
+   var flavor=(marg<=22||s.future==="higher")?"Roth 401(k) contributions lean":"pre-tax contributions lean";
+   var beyond=Math.max(0,k401-matchContrib);
+   add("401(k) — beyond the match, up to "+money(k401),
+     "Same workplace plan, now filled past the match. $24,500 of your own contributions allowed for 2026.",
+     "Up to "+money(beyond)+"/yr more ("+flavor+")",
+     "The 401(k) has the biggest contribution limit, so it absorbs everything after the match. "+(marg<=22||s.future==="higher"?"At your bracket, Roth contributions lock in today's rate.":"Pre-tax contributions cut today's tax bill at "+marg+"%.")+" Note: total employee limit "+money(k401)+k401note+".");
+ }else{
+   add("Taxable brokerage account",
+     "A regular investment account: no contribution limits, no special tax breaks — but complete flexibility.",
+     "Anything beyond IRA + HSA",
+     "With no workplace plan, your tax-advantaged space is just IRA + HSA. Once those are full, a taxable brokerage keeps you investing with zero restrictions.");
+   // skip separate rank 5 below
+   renderRanks(ranks);renderJan(s);return;
+ }
+ // 5. taxable
+ add("Taxable brokerage account",
+   "A regular investment account: no contribution limits, no special tax breaks — but complete flexibility.",
+   "Anything left over",
+   "Maxed the accounts above? You're saving more than most Americans. Keep going here — no limits, no penalties, full access.");
+ renderRanks(ranks);renderJan(s);
+}
+function renderRanks(ranks){
+ var box=$("rankList");box.innerHTML="";
+ ranks.forEach(function(r){
+   var d=document.createElement("div");d.className="rank";
+   var nm=document.createElement("div");nm.className="num";nm.textContent=r.n;
+   var body=document.createElement("div");
+   var h=document.createElement("h3");h.textContent=r.name;
+   var what=document.createElement("div");what.className="what";what.textContent=r.what;
+   var tg=document.createElement("div");tg.className="target";tg.textContent="Target: "+r.target;
+   var why=document.createElement("div");why.className="why";
+   var wl=document.createElement("strong");wl.textContent="Why this rank: ";
+   var wt=document.createElement("span");wt.textContent=r.why;
+   why.appendChild(wl);why.appendChild(wt);
+   body.appendChild(h);body.appendChild(what);body.appendChild(tg);body.appendChild(why);
+   d.appendChild(nm);d.appendChild(body);box.appendChild(d);
+ });
+ $("resultsCard").classList.remove("hidden");
+}
+var JAN=[
+ "Confirm this year's IRS limits at IRS.gov — 401(k), IRA, and HSA figures change annually.",
+ "Set your 401(k) contribution % to capture the FULL employer match.",
+ "If on a high-deductible health plan, open and fund your HSA.",
+ "Fund your IRA ($7,500 for 2026) and choose Roth vs. Traditional using your funding order above.",
+ "Review beneficiaries on every retirement account.",
+ "Put a calendar reminder for next January to run this checklist again."
+];
+function renderJan(s){
+ var box=$("janList");box.innerHTML="";
+ JAN.forEach(function(t,i){
+   var lab=document.createElement("label");lab.className="checkrow";
+   var cb=document.createElement("input");cb.type="checkbox";cb.setAttribute("aria-label",t);
+   if(s.checks&&s.checks.indexOf(i)>=0){cb.checked=true;lab.classList.add("done");}
+   cb.addEventListener("change",function(){lab.classList.toggle("done",this.checked);save();});
+   var sp=document.createElement("span");sp.textContent=t;
+   lab.appendChild(cb);lab.appendChild(sp);box.appendChild(lab);
+ });
+ $("janCard").classList.remove("hidden");
+}
+function applyJanChecks(idxs){
+ var cbs=document.querySelectorAll("#janList input[type=checkbox]");
+ cbs.forEach(function(cb,i){if(idxs.indexOf(i)>=0){cb.checked=true;cb.closest("label").classList.add("done");}});
+}
+$("goBtn").addEventListener("click",function(){compute(true);});
+$("resetBtn").addEventListener("click",function(){
+ try{localStorage.removeItem(KEY);}catch(e){}
+ location.reload();
+});
+["age","income","matchPct","matchCap"].forEach(function(id){$(id).addEventListener("input",save);});
+["filing","hasPlan","hsa","future"].forEach(function(id){$(id).addEventListener("change",save);});
+// init
+(function(){try{var s=JSON.parse(localStorage.getItem(KEY));restore(s);}catch(e){toggleMatch();}})();
+toggleMatch();
+</script>
+</body>
+</html>

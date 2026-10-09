@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retirement Gap Simulator | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="See whether you're on track to retire with scenario sliders, a projected-vs-needed chart, and a plain-language verdict. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/retirement-gap-simulator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Retirement Gap Simulator | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="See whether you're on track to retire with scenario sliders, a projected-vs-needed chart, and a plain-language verdict. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/retirement-gap-simulator/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.field{display:block;font-weight:bold;margin-top:14px;font-size:.95rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.82rem}
+input[type=range]{width:100%;height:44px;accent-color:#c9a227;cursor:pointer;margin:4px 0}
+.slider-row{display:flex;align-items:center;gap:12px}
+.slider-row output{font-weight:bold;min-width:84px;text-align:right;color:#8a6d1c;white-space:nowrap}
+.verdict{border-radius:12px;padding:22px;margin:18px 0;text-align:center}
+.verdict h2{font-family:Georgia,serif;font-size:1.6rem;margin-bottom:6px}
+.verdict.on{background:#e9f5e6;border:2px solid #2e7d32;color:#1b4d1f}
+.verdict.close{background:#fff6dd;border:2px solid #c9a227;color:#6d5410}
+.verdict.gap{background:#fdecea;border:2px solid #b3261e;color:#7a1a14}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+.stat{background:#fff;border:1px solid #e3d9b8;border-radius:10px;padding:14px;text-align:center}
+.stat .v{font-size:1.35rem;font-weight:bold;color:#141210}
+.stat .l{font-size:.8rem;color:#6b6250}
+.bar{height:22px;background:#eee;border-radius:11px;overflow:hidden;margin:10px 0}
+.bar>div{height:100%;background:#c9a227;border-radius:11px;transition:width .25s}
+table.plan{width:100%;border-collapse:collapse;margin-top:10px}
+table.plan td{padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top}
+table.plan td.n{font-weight:bold;color:#8a6d1c;white-space:nowrap}
+.disclaimer{background:#f7f1df;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5236;margin-top:18px}
+canvas.chart{width:100%;height:280px;background:#fff;border:1px solid #e3d9b8;border-radius:10px;margin-top:10px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:#6b6250;margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:22px;height:4px;border-radius:2px}
+.err{background:#fdecea;border:2px solid #b3261e;color:#7a1a14;border-radius:10px;padding:16px;margin:14px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Retirement Gap Simulator</h1>
+<p class="intro">Enter your numbers, move the sliders, and see whether you're on track to retire — with a plain-language verdict and a prioritized action plan.</p>
+
+<div class="disclaimer"><strong>Educational tool only.</strong> This is a simplified model for learning, not financial advice. It uses nominal returns, ignores taxes, fees, inflation, and Social Security. Talk to a qualified financial professional about your situation.</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your numbers</h2>
+<label class="field">Current age
+<input type="number" id="age" min="18" max="80" step="1" value="35"></label>
+<label class="field">Current retirement savings
+<small>Total across 401(k), IRA, brokerage — whatever is earmarked for retirement.</small>
+<input type="number" id="savings" min="0" step="1000" value="50000"></label>
+<label class="field">Annual gross income
+<small>Used to estimate how much you'll need each year in retirement.</small>
+<input type="number" id="income" min="0" step="1000" value="90000"></label>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Scenario sliders</h2>
+
+<label class="field" for="pmtSlider">Monthly contribution
+<small>What you (plus any employer match you count) put toward retirement each month.</small></label>
+<div class="slider-row"><input type="range" id="pmtSlider" min="0" max="3000" step="25" value="750" aria-label="Monthly contribution"><output id="pmtOut">$750</output></div>
+
+<label class="field" for="retSlider">Retirement age</label>
+<div class="slider-row"><input type="range" id="retSlider" min="55" max="75" step="1" value="65" aria-label="Retirement age"><output id="retOut">65</output></div>
+
+<label class="field" for="rateSlider">Expected annual return
+<small>Nominal (before inflation). Stock-heavy portfolios have averaged ~7% after inflation historically; 5–7% is a sober planning range.</small></label>
+<div class="slider-row"><input type="range" id="rateSlider" min="1" max="10" step="0.25" value="7" aria-label="Expected annual return"><output id="rateOut">7%</output></div>
+
+<label class="field" for="replSlider">Retirement spending target
+<small>Percent of your current income you expect to spend each year in retirement. 80% is the classic rule of thumb.</small></label>
+<div class="slider-row"><input type="range" id="replSlider" min="50" max="100" step="5" value="80" aria-label="Retirement spending target"><output id="replOut">80%</output></div>
+</div>
+
+<div id="errBox" class="err" style="display:none"></div>
+
+<div class="appcard" id="resultsCard" aria-live="polite">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your projection</h2>
+<div class="statgrid">
+<div class="stat"><div class="v" id="stProjected">$—</div><div class="l">Projected nest egg at <span id="stRetAge">65</span></div></div>
+<div class="stat"><div class="v" id="stNeed">$—</div><div class="l">Estimated need (25&times; spending)</div></div>
+<div class="stat"><div class="v" id="stGap">$—</div><div class="l" id="stGapLabel">Gap</div></div>
+</div>
+<div class="bar" aria-hidden="true"><div id="fundBar" style="width:0%"></div></div>
+<p style="text-align:center;color:#6b6250;font-size:.9rem"><span id="fundPct">0</span>% of estimated need funded</p>
+<div id="verdictBox"></div>
+<canvas class="chart" id="chart" width="700" height="280" aria-label="Chart of projected savings growth versus estimated need"></canvas>
+<div class="legend"><span><i class="sw" style="background:#8a6d1c"></i>Projected savings</span><span><i class="sw" style="background:#b3261e"></i>Estimated need</span></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your prioritized action plan</h2>
+<table class="plan" id="planTable"></table>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Assumptions behind the math</h2>
+<ul style="padding-left:20px;color:#5c5236;font-size:.92rem">
+<li>Growth compounds monthly at your expected return. "Need" = 25&times; your target annual retirement spending (the 4% withdrawal rule of thumb).</li>
+<li>Returns are nominal (not inflation-adjusted); contributions stay flat — no raises modeled.</li>
+<li>Ignores taxes, investment fees, employer-match details, pensions, and Social Security.</li>
+<li>Conservative beats precise: if you're borderline, plan as if returns come in 1–2% lower.</li>
+</ul>
+<p style="margin-top:12px"><button class="btn ghost" id="resetBtn">Reset to defaults</button></p>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The simulator shows the gap. <em>Retirement Made Simple</em> by Kimani Upshur, M.Ed. shows the whole system — saving, investing, and retiring with confidence, in plain language.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/retirement-made-simple/">Get Retirement Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-retirement-gap-simulator-v1";
+function $(id){return document.getElementById(id);}
+function num(v,d){v=parseFloat(v);return isFinite(v)?v:d;}
+function money(n){
+  if(!isFinite(n))return "—";
+  var neg=n<0;n=Math.abs(Math.round(n));
+  var s=n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return (neg?"−$":"$")+s;
+}
+function fv(pv,pmt,annualRate,months){
+  var r=annualRate/100/12;
+  if(months<=0)return pv;
+  if(r===0)return pv+pmt*months;
+  var f=Math.pow(1+r,months);
+  return pv*f+pmt*(f-1)/r;
+}
+function pmtNeeded(pv,target,annualRate,months){
+  var r=annualRate/100/12;
+  if(months<=0)return Infinity;
+  if(r===0)return (target-pv)/months;
+  var f=Math.pow(1+r,months);
+  return (target-pv*f)/((f-1)/r);
+}
+function earliestRetAge(pv,pmt,rate,age,need){
+  for(var a=age+1;a<=85;a++){
+    if(fv(pv,pmt,rate,(a-age)*12)>=need)return a;
+  }
+  return null;
+}
+var DEFAULTS={age:35,savings:50000,income:90000,pmt:750,ret:65,rate:7,repl:80};
+function read(){
+  return {
+    age:Math.max(18,Math.min(80,num($("age").value,DEFAULTS.age))),
+    savings:Math.max(0,num($("savings").value,DEFAULTS.savings)),
+    income:Math.max(0,num($("income").value,DEFAULTS.income)),
+    pmt:Math.max(0,Math.min(10000,num($("pmtSlider").value,DEFAULTS.pmt))),
+    ret:num($("retSlider").value,DEFAULTS.ret),
+    rate:Math.max(0,Math.min(20,num($("rateSlider").value,DEFAULTS.rate))),
+    repl:num($("replSlider").value,DEFAULTS.repl)
+  };
+}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}}
+function load(){
+  try{
+    var s=JSON.parse(localStorage.getItem(KEY));
+    if(!s)return;
+    $("age").value=s.age;$("savings").value=s.savings;$("income").value=s.income;
+    $("pmtSlider").value=s.pmt;$("retSlider").value=s.ret;$("rateSlider").value=s.rate;$("replSlider").value=s.repl;
+  }catch(e){}
+}
+function drawChart(points,need,retAge,age){
+  var c=$("chart");var w=c.clientWidth||700;var h=280;
+  try{
+    var dpr=window.devicePixelRatio||1;
+    c.width=w*dpr;c.height=h*dpr;
+    var ctx=c.getContext("2d");if(!ctx)return;
+    ctx.scale(dpr,dpr);
+    var pad={l:56,r:14,t:14,b:30};
+    var maxV=Math.max(need,points[points.length-1])*1.08;
+    var X=function(i){return pad.l+(w-pad.l-pad.r)*i/(points.length-1);};
+    var Y=function(v){return h-pad.b-(h-pad.t-pad.b)*v/maxV;};
+    ctx.strokeStyle="#ddd";ctx.fillStyle="#6b6250";ctx.font="11px sans-serif";ctx.lineWidth=1;
+    for(var g=0;g<=4;g++){
+      var gv=maxV*g/4,y=Y(gv);
+      ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke();
+      ctx.fillText(money(gv),4,y+4);
+    }
+    // need line
+    ctx.strokeStyle="#b3261e";ctx.setLineDash([7,5]);ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(pad.l,Y(need));ctx.lineTo(w-pad.r,Y(need));ctx.stroke();
+    ctx.setLineDash([]);
+    // projected curve
+    ctx.strokeStyle="#8a6d1c";ctx.lineWidth=3;ctx.beginPath();
+    for(var i=0;i<points.length;i++){var x=X(i),y=Y(points[i]);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+    ctx.stroke();
+    // x labels
+    ctx.fillStyle="#6b6250";ctx.textAlign="center";
+    var step=Math.ceil(points.length/6);
+    for(var k=0;k<points.length;k+=step){ctx.fillText("Age "+(age+k),X(k),h-10);}
+    ctx.textAlign="left";
+  }catch(e){}
+}
+function recalc(){
+  var s=read();
+  $("pmtOut").textContent="$"+Math.round(s.pmt).toLocaleString("en-US")+"/mo";
+  $("retOut").textContent=s.ret;
+  $("rateOut").textContent=(Math.round(s.rate*100)/100)+"%";
+  $("replOut").textContent=s.repl+"%";
+  save(s);
+  var err=$("errBox"),card=$("resultsCard");
+  if(s.ret<=s.age){
+    err.style.display="block";card.style.display="none";
+    err.textContent="Retirement age ("+s.ret+") must be higher than your current age ("+s.age+"). Move the retirement-age slider up.";
+    return;
+  }
+  err.style.display="none";card.style.display="block";
+  var months=(s.ret-s.age)*12;
+  var spend=s.income*s.repl/100;
+  var need=25*spend;
+  var proj=fv(s.savings,s.pmt,s.rate,months);
+  var gap=proj-need;
+  var funded=need>0?proj/need*100:(proj>0?100:0);
+  $("stProjected").textContent=money(proj);
+  $("stNeed").textContent=money(need);
+  $("stGap").textContent=money(gap);
+  $("stGapLabel").textContent=gap>=0?"Surplus":"Shortfall";
+  $("stRetAge").textContent=s.ret;
+  $("fundPct").textContent=Math.round(Math.min(funded,999));
+  $("fundBar").style.width=Math.min(funded,100)+"%";
+  $("fundBar").style.background=gap>=0?"#2e7d32":(funded>=85?"#c9a227":"#b3261e");
+  var vb=$("verdictBox");
+  var cls,head,sub;
+  if(gap>=0){cls="on";head="On track.";sub="At these settings your projected savings cover your estimated need, with "+money(gap)+" to spare. Keep doing what you're doing — and recheck yearly.";}
+  else if(funded>=85){cls="close";head="Close — small changes fix it.";sub="You're at "+Math.round(funded)+"% of your estimated need. A modest increase in contributions or one extra working year closes a "+money(gap)+" shortfall.";}
+  else{cls="gap";head="Significant gap.";sub="You're at "+Math.round(funded)+"% of your estimated need — a "+money(gap)+" shortfall. The plan below shows the highest-leverage moves, in order.";}
+  vb.innerHTML="";
+  var d=document.createElement("div");d.className="verdict "+cls;
+  var h=document.createElement("h2");h.textContent=head;
+  var p=document.createElement("p");p.textContent=sub;
+  d.appendChild(h);d.appendChild(p);vb.appendChild(d);
+  // points for chart
+  var pts=[];for(var y=0;y<=s.ret-s.age;y++){pts.push(fv(s.savings,s.pmt,s.rate,y*12));}
+  drawChart(pts,need,s.ret,s.age);
+  // action plan
+  var rows=[];
+  function add(n,t){rows.push([n,t]);}
+  if(gap<0){
+    var needPmt=pmtNeeded(s.savings,need,s.rate,months);
+    if(isFinite(needPmt)&&needPmt>0){
+      add("1","Raise contributions to <b>"+money(needPmt)+"/month</b> — that's "+money(needPmt-s.pmt)+"/month more than now — to fully fund retirement by age "+s.ret+".");
+    }else{
+      add("1","At your current savings, contributions alone can't close this gap by age "+s.ret+" — focus on steps 2 and 3.");
+    }
+    var later=Math.min(s.ret+2,75);
+    if(later>s.ret){
+      var proj2=fv(s.savings,s.pmt,s.rate,(later-s.age)*12);
+      add("2","Work 2 more years (to "+later+"): your nest egg grows to <b>"+money(proj2)+"</b>, shrinking the shortfall to <b>"+money(proj2-need)+"</b> — compounding does heavy lifting late.");
+    }
+    add("3","Stress-test at "+(s.rate-2)+"% returns: if markets underperform, the plan still needs to work. Re-run with the return slider two points lower.");
+    add("4","Cut the drag: every 1% in annual fees costs roughly a quarter of your final balance over 30+ years. Check your fund expense ratios.");
+    add("5","Automate 1% more per year: an annual 1% contribution bump is painless with raises and closes most gaps within a decade.");
+  }else{
+    var early=earliestRetAge(s.savings,s.pmt,s.rate,s.age,need);
+    if(early!==null&&early<s.ret){
+      add("1","You could retire at <b>"+early+"</b> instead of "+s.ret+" and still hit your number — or keep going and build a cushion.");
+    }else{
+      add("1","Keep your contributions on autopilot. You're funded — protect the plan.");
+    }
+    add("2","Guard the surplus: don't count "+money(gap)+" as 'extra spending money.' Treat it as insurance against lower returns or longer life.");
+    add("3","Revisit yearly: income, savings, and return assumptions change — re-run this in January and adjust.");
+    add("4","If you haven't already, make sure you're capturing any full employer 401(k) match before investing elsewhere — it's an instant return.");
+  }
+  var t=$("planTable");t.innerHTML="";
+  rows.forEach(function(r){
+    var tr=document.createElement("tr");
+    var td1=document.createElement("td");td1.className="n";td1.textContent=r[0];
+    var td2=document.createElement("td");td2.innerHTML=r[1];
+    tr.appendChild(td1);tr.appendChild(td2);t.appendChild(tr);
+  });
+}
+["age","savings","income"].forEach(function(id){$(id).addEventListener("input",recalc);});
+["pmtSlider","retSlider","rateSlider","replSlider"].forEach(function(id){$(id).addEventListener("input",recalc);});
+$("resetBtn").addEventListener("click",function(){
+  try{localStorage.removeItem(KEY);}catch(e){}
+  $("age").value=DEFAULTS.age;$("savings").value=DEFAULTS.savings;$("income").value=DEFAULTS.income;
+  $("pmtSlider").value=DEFAULTS.pmt;$("retSlider").value=DEFAULTS.ret;$("rateSlider").value=DEFAULTS.rate;$("replSlider").value=DEFAULTS.repl;
+  recalc();
+});
+window.addEventListener("resize",function(){recalc();});
+load();recalc();
+</script>
+</body>
+</html>
