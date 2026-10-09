@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentation Story Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn a dry topic into a presentation people remember — build your hook, three core points, and closing call to action, then get a timed slide-by-slide outline and delivery checklist. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/presentation-story-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Presentation Story Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Turn a dry topic into a presentation people remember — build your hook, three core points, and closing call to action, then get a timed slide-by-slide outline and delivery checklist. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/presentation-story-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:860px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.45rem;color:#141210;margin-bottom:10px}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;color:#141210;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.9rem}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:110px;resize:vertical}
+label.fld{display:block;margin:14px 0}
+label.fld .lbl{display:block;font-weight:bold;margin-bottom:4px}
+label.fld .hint{display:block;font-size:.85rem;color:#6b6250;font-weight:normal}
+.err{background:#fdecea;border:2px solid #c0392b;color:#7b241c;border-radius:8px;padding:12px 16px;margin:12px 0;display:none}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.step{flex:1;min-width:100px;text-align:center;padding:10px 6px;border-radius:8px;border:2px solid #e5d9ae;font-size:.82rem;font-weight:bold;color:#8a7a4a;background:#fff}
+.step.on{border-color:#c9a227;background:#c9a227;color:#141210}
+.step.done{border-color:#5a8f2b;color:#1e7e34}
+.hooktypes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+@media (max-width:600px){.hooktypes{grid-template-columns:1fr}}
+.hooktype{border:2px solid #e5d9ae;border-radius:10px;padding:14px;background:#fff;cursor:pointer;text-align:center}
+.hooktype.sel{border-color:#c9a227;background:#fffdf2;box-shadow:0 0 0 2px #c9a227}
+.hooktype strong{display:block;font-size:1.05rem;margin-bottom:4px}
+.hooktype span{font-size:.85rem;color:#6b6250}
+.tip{background:#faf7ef;border-left:4px solid #c9a227;padding:10px 14px;margin:10px 0;border-radius:0 8px 8px 0;font-size:.92rem}
+.pointblock{border:2px solid #e5d9ae;border-radius:10px;padding:18px;margin:14px 0;background:#fff}
+.pointblock h4{font-size:1.05rem;font-family:Georgia,serif}
+table.outline{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+table.outline th{background:#141210;color:#e8c84a;text-align:left;padding:10px 12px}
+table.outline td{border-bottom:1px solid #eee;padding:10px 12px;vertical-align:top}
+table.outline tr.actrow td{background:#faf7ef;font-weight:bold;color:#8a6d1c}
+.checkrow{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:4px}
+.checkrow .ct strong{display:block}
+.checkrow .ct span{font-size:.88rem;color:#6b6250}
+.coreline{background:#141210;color:#f5efdd;border-radius:10px;padding:20px;margin:14px 0;font-family:Georgia,serif;font-size:1.15rem;line-height:1.6}
+.navrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+@media print{
+  body{background:#fff}
+  header.site,.appcard,.backlink,.devot-block,footer.site,.navrow,.noprint{display:none !important}
+  main.app{max-width:100%;padding:0}
+  #printarea{display:block !important}
+}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.backlink{text-align:center;margin-top:24px}
+.backlink a{color:#8a6d1c}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Presentation Story Builder</h1>
+<p class="intro">Turn a dry topic into a presentation people remember. We'll walk a three-act story structure — <strong>Hook → Tension → Resolution</strong> — then generate your timed slide outline, one-sentence core message, and delivery checklist.</p>
+
+<div class="steps" id="steps"></div>
+<div class="err" id="err" role="alert"></div>
+
+<!-- STEP 1 -->
+<div class="appcard" id="step1">
+<h2>Step 1 — Set the stage</h2>
+<label class="fld"><span class="lbl">Topic</span><span class="hint">What is the presentation about?</span><input type="text" id="topic" placeholder="e.g. Quarterly sales results"></label>
+<label class="fld"><span class="lbl">Audience</span><span class="hint">Who is in the room? What do they care about?</span><input type="text" id="audience" placeholder="e.g. Regional sales managers"></label>
+<label class="fld"><span class="lbl">Goal</span><select id="goal">
+<option value="">Choose one…</option>
+<option value="inform">Inform — they leave understanding it</option>
+<option value="persuade">Persuade — they leave ready to act</option>
+<option value="inspire">Inspire — they leave moved to change</option>
+</select></label>
+<label class="fld"><span class="lbl">Total time (minutes)</span><span class="hint">1–180 minutes; the outline is timed to fit</span><input type="number" id="minutes" min="1" max="180" step="1" inputmode="numeric" value="10"></label>
+<div class="navrow">
+<button class="btn" id="to2">Build Act 1 — the Hook &rarr;</button>
+<button class="btn ghost small" id="reset1">Start over</button>
+</div>
+</div>
+
+<!-- STEP 2 -->
+<div class="appcard" id="step2" style="display:none">
+<h2>Step 2 — Act 1: The Hook</h2>
+<p style="color:#6b6250">Open with something the audience can't ignore. Pick a hook type, then write your opening in your own words.</p>
+<div class="hooktypes" id="hooktypes">
+<div class="hooktype" data-h="story" role="radio" aria-checked="false" tabindex="0"><strong>Story</strong><span>A 30-second moment from real life that pulls them in</span></div>
+<div class="hooktype" data-h="stat" role="radio" aria-checked="false" tabindex="0"><strong>Stat</strong><span>One surprising number that reframes the topic</span></div>
+<div class="hooktype" data-h="question" role="radio" aria-checked="false" tabindex="0"><strong>Question</strong><span>A question they can't answer yet — but want to</span></div>
+</div>
+<div class="tip" id="hooktip">Pick a hook type to see guidance.</div>
+<label class="fld"><span class="lbl">Your opening hook (say it out loud as you write)</span><textarea id="hooktext" placeholder="Write your first 2–3 sentences here…"></textarea></label>
+<div class="navrow">
+<button class="btn ghost" id="back1">&larr; Back</button>
+<button class="btn" id="to3">Build Act 2 — the 3 points &rarr;</button>
+</div>
+</div>
+
+<!-- STEP 3 -->
+<div class="appcard" id="step3" style="display:none">
+<h2>Step 3 — Act 2: The Tension (your 3 core points)</h2>
+<p style="color:#6b6250">Every strong presentation makes exactly three points — each one raises the stakes. For each point: the idea, why it matters to <em>this</em> audience, and one piece of proof.</p>
+<div id="points"></div>
+<div class="navrow">
+<button class="btn ghost" id="back2">&larr; Back</button>
+<button class="btn" id="to4">Build Act 3 — the Close &rarr;</button>
+</div>
+</div>
+
+<!-- STEP 4 -->
+<div class="appcard" id="step4" style="display:none">
+<h2>Step 4 — Act 3: The Resolution</h2>
+<p style="color:#6b6250">Resolve the tension: tell them exactly what to think, feel, or do — then land the final line.</p>
+<label class="fld"><span class="lbl">Call to action</span><span class="hint">One specific thing the audience should do, think, or feel after this talk</span><textarea id="cta" placeholder="e.g. Book a 15-minute pipeline review with me this week"></textarea></label>
+<label class="fld"><span class="lbl">Closer formula</span><select id="closer">
+<option value="">Choose one…</option>
+<option value="callback">Callback — echo your opening hook with new meaning</option>
+<option value="vision">Vision — paint the future if they act</option>
+<option value="challenge">Challenge — a direct, memorable challenge to the room</option>
+</select></label>
+<div class="tip" id="closertip">Pick a closer formula to see guidance.</div>
+<label class="fld"><span class="lbl">Your closing lines (memorize these word-for-word)</span><textarea id="closetext" placeholder="Write your final 2–3 sentences here…"></textarea></label>
+<div class="navrow">
+<button class="btn ghost" id="back3">&larr; Back</button>
+<button class="btn" id="to5">Generate my presentation plan &rarr;</button>
+</div>
+</div>
+
+<!-- STEP 5 -->
+<div id="step5" style="display:none">
+<div class="appcard noprint">
+<h2>Your presentation plan</h2>
+<p style="color:#6b6250">Everything below is timed to your <span id="out-minutes"></span>-minute slot. Edit anything, then print or copy it.</p>
+</div>
+<div id="printarea">
+<div class="appcard">
+<h3>Your one-sentence core message</h3>
+<div class="coreline" id="coreline"></div>
+<label class="fld noprint"><span class="lbl">Edit your core message</span><textarea id="coremsg" rows="3"></textarea></label>
+<div class="noprint"><button class="btn small" id="draftmsg">Draft it for me</button></div>
+</div>
+<div class="appcard">
+<h3>Timed slide-by-slide outline</h3>
+<table class="outline" id="outlinetable">
+<thead><tr><th>Slide</th><th>Content</th><th style="white-space:nowrap">Time</th></tr></thead>
+<tbody id="outlinebody"></tbody>
+</table>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn small" id="copyoutline">Copy outline as text</button>
+<span id="copied" style="color:#1e7e34;font-weight:bold;display:none">Copied!</span>
+</div>
+</div>
+<div class="appcard">
+<h3>Delivery checklist <span id="checkprogress" style="font-size:.85rem;color:#6b6250"></span></h3>
+<div id="checklist"></div>
+</div>
+</div>
+<div class="navrow noprint">
+<button class="btn ghost" id="back4">&larr; Back</button>
+<button class="btn" id="printbtn">Print plan</button>
+<button class="btn ghost" id="reset2">Start a new presentation</button>
+</div>
+</div>
+
+<section class="appcard noprint" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Presentation Story Builder is just the start. <em>Public Speaking Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — how to speak with clarity, confidence, and impact.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/public-speaking-made-simple/">Get Public Speaking Made Simple — $4.99</a></p>
+</section>
+<p class="backlink"><a href="/apps.html">&larr; All Apps</a></p>
+</main>
+<section class="devot-block" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-presentation-story-builder-v1";
+var $=function(id){return document.getElementById(id);};
+var HOOK_TIPS={
+ story:"<strong>Story hook:</strong> Start mid-action — 'Last Tuesday, at 2 a.m., our biggest client called…' Keep it under 30 seconds, name a real person or moment, and land on the tension your talk resolves.",
+ stat:"<strong>Stat hook:</strong> One number that surprises: '73% of our deals stall in the same week.' Then the question it raises: 'Here's why — and what we're doing about it.' Cite the source on the slide.",
+ question:"<strong>Question hook:</strong> Ask something they can't answer yet: 'What if our best month wasn't luck?' Pause 3 full seconds. Don't answer it — promise the talk will."
+};
+var CLOSER_TIPS={
+ callback:"<strong>Callback:</strong> Repeat your opening line, then twist it: 'That 2 a.m. call? It never happens anymore — because we fixed the thing I'm asking you to fix today.'",
+ vision:"<strong>Vision:</strong> Describe the room six months from now if they act: 'Picture next quarter's review — every deal moving, nobody stuck.' Make it concrete, not fluffy.",
+ challenge:"<strong>Challenge:</strong> End with one direct sentence: 'Before Friday, book your pipeline review. That's it. That's the whole ask.' Short. Specific. Memorable."
+};
+var CHECKS=[
+ ["Pace — aim 130–150 words per minute","Time a full run-through. If you're over, cut a slide — never speed up."],
+ ["Pauses — 2 full seconds after the hook and each key point","Silence feels long to you and powerful to them. Mark 'PAUSE' in your notes."],
+ ["First 30 seconds memorized word-for-word","Nerves peak at the start. A memorized opening buys you confidence for the rest."],
+ ["Final line memorized — end on purpose","Don't trail off with '…so, yeah.' Your last sentence is what they quote."],
+ ["Q&A prep — 3 toughest questions drafted","Write the 3 questions you hope nobody asks, plus your honest answers."],
+ ["Tech check in the actual room","Slides, clicker, mic, and font sizes tested from the back row before anyone arrives."],
+ ["One idea per slide, big type","If they can't read it from the back row in 3 seconds, cut the words."],
+ ["Energy check — stand, gesture, vary your voice","Record one run-through on your phone. If you look bored, they'll feel bored."]
+];
+var GOAL_VERB={inform:"walk away understanding",persuade:"be ready to act on",inspire:"feel inspired to change how they see"};
+var state={topic:"",audience:"",goal:"",minutes:10,hookType:"",hookText:"",points:[{t:"",w:"",e:""},{t:"",w:"",e:""},{t:"",w:"",e:""}],cta:"",closer:"",closeText:"",coreMsg:"",checks:[]};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){
+  try{var s=JSON.parse(localStorage.getItem(KEY));
+    if(s&&typeof s==="object"){
+      Object.keys(state).forEach(function(k){if(s[k]!==undefined)state[k]=s[k];});
+      if(!Array.isArray(state.points)||state.points.length!==3)state.points=[{t:"",w:"",e:""},{t:"",w:"",e:""},{t:"",w:"",e:""}];
+      return true;
+    }}catch(e){}
+  return false;
+}
+function showError(msg){var e=$("err");e.style.display="block";e.textContent=msg;}
+function clearError(){$("err").style.display="none";}
+var stepNames=["Setup","Hook","3 Points","Close","Plan"];
+function show(n){
+  clearError();
+  [1,2,3,4,5].forEach(function(i){$("step"+i).style.display=i===n?"block":"none";});
+  var st=$("steps");st.innerHTML="";
+  stepNames.forEach(function(nm,i){
+    var d=document.createElement("div");
+    d.className="step"+(i+1===n?" on":i+1<n?" done":"");
+    d.textContent=(i+1)+". "+nm;st.appendChild(d);
+  });
+  window.scrollTo(0,0);
+}
+/* hook type select */
+function selectHook(h){
+  state.hookType=h;save();
+  var cards=document.querySelectorAll("#hooktypes .hooktype");
+  cards.forEach(function(c){
+    var on=c.getAttribute("data-h")===h;
+    c.classList.toggle("sel",on);
+    c.setAttribute("aria-checked",on?"true":"false");
+  });
+  $("hooktip").innerHTML=HOOK_TIPS[h]||"Pick a hook type to see guidance.";
+}
+document.querySelectorAll("#hooktypes .hooktype").forEach(function(c){
+  function pick(){selectHook(c.getAttribute("data-h"));}
+  c.addEventListener("click",pick);
+  c.addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();pick();}});
+});
+$("closer").addEventListener("change",function(){
+  state.closer=$("closer").value;save();
+  $("closertip").innerHTML=CLOSER_TIPS[state.closer]||"Pick a closer formula to see guidance.";
+});
+/* step 3 points */
+function renderPoints(){
+  var wrap=$("points");wrap.innerHTML="";
+  state.points.forEach(function(p,i){
+    var d=document.createElement("div");d.className="pointblock";
+    d.innerHTML="<h4></h4>";
+    d.querySelector("h4").textContent="Point "+(i+1);
+    var fields=[
+      ["t","The point (one clear sentence)",p.t,"e.g. Most deals stall because follow-up stops after one email"],
+      ["w","Why it matters to this audience",p.w,"e.g. Every stalled deal costs each manager their bonus"],
+      ["e","One proof — a stat, example, or story",p.e,"e.g. Deals with 3+ follow-ups close 2x more often"]
+    ];
+    fields.forEach(function(f){
+      var lab=document.createElement("label");lab.className="fld";
+      var s1=document.createElement("span");s1.className="lbl";s1.textContent=f[1];lab.appendChild(s1);
+      var inp=document.createElement("input");inp.type="text";inp.value=f[2];inp.placeholder=f[3];
+      inp.setAttribute("aria-label","Point "+(i+1)+": "+f[1]);
+      inp.addEventListener("input",function(){state.points[i][f[0]]=inp.value;save();});
+      lab.appendChild(inp);d.appendChild(lab);
+    });
+    wrap.appendChild(d);
+  });
+}
+/* bindings for text fields */
+[["topic","topic"],["audience","audience"],["minutes","minutes"],["hooktext","hookText"],["cta","cta"],["closetext","closeText"],["coremsg","coreMsg"]].forEach(function(pair){
+  $(pair[0]).addEventListener("input",function(){
+    state[pair[1]]=pair[1]==="minutes"?parseInt($(pair[0]).value,10)||0:$(pair[0]).value;
+    save();
+  });
+});
+$("goal").addEventListener("change",function(){state.goal=$("goal").value;save();});
+/* ---------- outline ---------- */
+function fmtMin(m){
+  var r=Math.round(m*10)/10;
+  return (r%1===0?r.toFixed(0):r.toFixed(1))+" min";
+}
+function buildOutline(){
+  var T=state.minutes;
+  var rows=[
+    {act:"SETUP",slide:"1 · Title",content:"Topic: "+state.topic+" — for "+state.audience,frac:0.04},
+    {act:"ACT 1 · HOOK",slide:"2 · The Hook",content:state.hookType?("["+state.hookType+"] "+state.hookText):state.hookText,frac:0.10},
+    {act:"ACT 2 · TENSION",slide:"3 · The Stakes",content:"Why this matters now — the cost of ignoring it.",frac:0.06}
+  ];
+  state.points.forEach(function(p,i){
+    rows.push({act:"ACT 2 · TENSION",slide:(4+i*2)+" · Point "+(i+1),content:p.t+(p.w?" — why it matters: "+p.w:""),frac:0.10});
+    rows.push({act:"ACT 2 · TENSION",slide:(5+i*2)+" · Proof "+(i+1),content:p.e||"Supporting evidence / example.",frac:0.10});
+  });
+  rows.push({act:"ACT 3 · RESOLUTION",slide:"10 · Call to Action",content:state.cta,frac:0.12});
+  rows.push({act:"ACT 3 · RESOLUTION",slide:"11 · The Close",content:state.closeText+(state.closer?" ["+state.closer+"]":""),frac:0.08});
+  var acc=0;
+  rows.forEach(function(r,i){
+    r.mins=Math.round(T*r.frac*2)/2; // nearest half minute
+    if(r.mins<0.5&&T>=6)r.mins=0.5;
+    acc+=r.mins;
+  });
+  // nudge last row so the total matches T
+  var diff=Math.round((T-acc)*2)/2;
+  rows[rows.length-1].mins=Math.max(0.5,rows[rows.length-1].mins+diff);
+  return rows;
+}
+function renderOutline(){
+  $("out-minutes").textContent=state.minutes;
+  var body=$("outlinebody");body.innerHTML="";
+  var lastAct="";
+  buildOutline().forEach(function(r){
+    if(r.act!==lastAct){
+      var ar=document.createElement("tr");ar.className="actrow";
+      var ac=document.createElement("td");ac.colSpan=3;ac.textContent=r.act;ar.appendChild(ac);body.appendChild(ar);
+      lastAct=r.act;
+    }
+    var tr=document.createElement("tr");
+    var td1=document.createElement("td");td1.innerHTML="<strong></strong>";td1.querySelector("strong").textContent=r.slide;
+    var td2=document.createElement("td");td2.textContent=r.content;
+    var td3=document.createElement("td");td3.style.whiteSpace="nowrap";td3.textContent=fmtMin(r.mins);
+    tr.appendChild(td1);tr.appendChild(td2);tr.appendChild(td3);
+    body.appendChild(tr);
+  });
+  var tot=document.createElement("tr");
+  tot.innerHTML="<td></td><td style='text-align:right'><strong>Total</strong></td><td><strong></strong></td>";
+  tot.querySelector("td strong").textContent=fmtMin(state.minutes);
+  body.appendChild(tot);
+}
+/* ---------- checklist ---------- */
+function renderChecklist(){
+  var wrap=$("checklist");wrap.innerHTML="";
+  CHECKS.forEach(function(c,i){
+    var row=document.createElement("div");row.className="checkrow";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!state.checks[i];
+    cb.setAttribute("aria-label",c[0]);
+    cb.addEventListener("change",function(){state.checks[i]=cb.checked;save();updateCheckProgress();});
+    var ct=document.createElement("div");ct.className="ct";
+    ct.innerHTML="<strong></strong><span></span>";
+    ct.querySelector("strong").textContent=c[0];
+    ct.querySelector("span").textContent=c[1];
+    row.appendChild(cb);row.appendChild(ct);wrap.appendChild(row);
+  });
+  updateCheckProgress();
+}
+function updateCheckProgress(){
+  var n=state.checks.filter(Boolean).length;
+  $("checkprogress").textContent="— "+n+" of "+CHECKS.length+" ready";
+}
+/* ---------- core message ---------- */
+function draftCoreMessage(){
+  var verb=GOAL_VERB[state.goal]||"walk away understanding";
+  var p1=state.points[0]&&state.points[0].t?state.points[0].t.toLowerCase():"";
+  var msg="When "+state.audience+" leave this room, they will "+verb+" "+state.topic.toLowerCase()+(p1?" — starting with this: "+p1:"")+".";
+  state.coreMsg=msg;$("coremsg").value=msg;save();
+}
+$("draftmsg").addEventListener("click",draftCoreMessage);
+/* ---------- copy ---------- */
+$("copyoutline").addEventListener("click",function(){
+  var lines=["PRESENTATION OUTLINE — "+state.topic,"Audience: "+state.audience+" · "+state.minutes+" minutes",""];
+  buildOutline().forEach(function(r){lines.push("Slide "+r.slide+" ("+fmtMin(r.mins)+"): "+r.content);});
+  lines.push("","Core message: "+state.coreMsg);
+  var txt=lines.join("\n");
+  function done(){$("copied").style.display="inline";setTimeout(function(){$("copied").style.display="none";},2000);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done,done);
+  }else{
+    var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");}catch(e){}
+    document.body.removeChild(ta);done();
+  }
+});
+/* ---------- nav ---------- */
+$("to2").addEventListener("click",function(){
+  var miss=[];
+  if(!$("topic").value.trim())miss.push("Topic");
+  if(!$("audience").value.trim())miss.push("Audience");
+  if(!$("goal").value)miss.push("Goal");
+  var m=parseInt($("minutes").value,10);
+  if(!m||m<1||m>180)miss.push("Total time (1–180 minutes)");
+  if(miss.length){showError("Please complete: "+miss.join(", ")+".");return;}
+  show(2);
+});
+$("back1").addEventListener("click",function(){show(1);});
+$("to3").addEventListener("click",function(){
+  if(!state.hookType){showError("Pick a hook type (story, stat, or question).");return;}
+  if(!$("hooktext").value.trim()){showError("Write your opening hook — even a rough draft.");return;}
+  show(3);
+});
+$("back2").addEventListener("click",function(){show(2);});
+$("to4").addEventListener("click",function(){
+  var miss=[];
+  state.points.forEach(function(p,i){
+    if(!p.t.trim())miss.push("Point "+(i+1)+" title");
+    if(!p.w.trim())miss.push("Point "+(i+1)+" — why it matters");
+    if(!p.e.trim())miss.push("Point "+(i+1)+" proof");
+  });
+  if(miss.length){showError("Each point needs all three fields. Missing: "+miss.join("; ")+".");return;}
+  show(4);
+});
+$("back3").addEventListener("click",function(){show(3);});
+$("to5").addEventListener("click",function(){
+  var miss=[];
+  if(!$("cta").value.trim())miss.push("Call to action");
+  if(!state.closer)miss.push("Closer formula");
+  if(!$("closetext").value.trim())miss.push("Closing lines");
+  if(miss.length){showError("Please complete: "+miss.join(", ")+".");return;}
+  if(!state.coreMsg.trim())draftCoreMessage();
+  $("coreline").textContent=state.coreMsg;
+  $("coremsg").value=state.coreMsg;
+  renderOutline();renderChecklist();show(5);
+});
+$("back4").addEventListener("click",function(){show(4);});
+$("printbtn").addEventListener("click",function(){window.print();});
+function hardReset(){
+  if(!confirm("Start a new presentation? Everything will be cleared."))return;
+  state={topic:"",audience:"",goal:"",minutes:10,hookType:"",hookText:"",points:[{t:"",w:"",e:""},{t:"",w:"",e:""},{t:"",w:"",e:""}],cta:"",closer:"",closeText:"",coreMsg:"",checks:[]};
+  save();
+  ["topic","audience","hooktext","cta","closetext","coremsg"].forEach(function(id){$(id).value="";});
+  $("goal").value="";$("minutes").value="10";$("closer").value="";
+  selectHook("");$("hooktip").textContent="Pick a hook type to see guidance.";
+  $("closertip").textContent="Pick a closer formula to see guidance.";
+  renderPoints();show(1);
+}
+$("reset1").addEventListener("click",hardReset);
+$("reset2").addEventListener("click",hardReset);
+/* ---------- init ---------- */
+load();
+$("topic").value=state.topic;$("audience").value=state.audience;$("goal").value=state.goal;
+$("minutes").value=state.minutes;$("hooktext").value=state.hookText;
+$("cta").value=state.cta;$("closer").value=state.closer;$("closetext").value=state.closeText;
+$("coremsg").value=state.coreMsg;
+if(state.hookType)selectHook(state.hookType);
+if(state.closer)$("closertip").innerHTML=CLOSER_TIPS[state.closer]||"";
+renderPoints();
+show(1);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Proposal Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn a sales conversation into a professional proposal that wins the yes. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/client-proposal-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Client Proposal Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Turn a sales conversation into a professional proposal that wins the yes. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/client-proposal-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:960px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.3rem;margin-bottom:12px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.9rem}
+input[type=text],input[type=number],input[type=date],input[type=email],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:96px;resize:vertical}
+label.field{display:block;margin-bottom:6px}
+label.field>span.lbl{display:block;font-weight:bold;font-size:.95rem;margin-top:10px}
+label.field small{display:block;color:#6b6250;font-weight:normal;font-size:.85rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+.err{background:#fdecea;border:2px solid #b3261e;border-radius:8px;padding:12px 16px;color:#7a1a14;margin:12px 0;display:none}
+.delrow{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.delrow input{margin:0}
+.delrow button{flex-shrink:0;background:#fdecea;border:2px solid #b3261e;color:#7a1a14;border-radius:8px;min-width:44px;min-height:44px;font-size:1.1rem;cursor:pointer}
+.chk{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.chk input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.chk .auto{margin-left:auto;flex-shrink:0;font-size:.8rem;font-weight:bold;padding:2px 10px;border-radius:4px}
+.chk .auto.ok{background:#e6f4ea;color:#2e7d32}
+.chk .auto.no{background:#fdecea;color:#b3261e}
+.prop{border:3px solid #c9a227;border-radius:12px;background:#fff;padding:30px;margin-top:10px}
+.prop h2{font-family:Georgia,serif;text-align:center;margin-bottom:2px}
+.prop .psub{text-align:center;color:#8a6d1c;font-size:.9rem;margin-bottom:20px}
+.prop h4{font-family:Georgia,serif;color:#8a6d1c;margin:18px 0 6px;font-size:1rem;text-transform:uppercase;letter-spacing:1px}
+.prop p,.prop li{margin-bottom:6px}
+.prop ul{margin-left:20px}
+.prop .invest{font-size:1.3rem;font-weight:bold}
+.tl{margin:10px 0 0 20px}
+.tl li{margin-bottom:10px}
+.disclaimer{font-size:.82rem;color:#8a7a4a;margin-top:18px}
+@media print{
+  body{background:#fff}
+  header.site,footer.site,.no-print,section:last-of-type{display:none!important}
+  main.app{max-width:100%;padding:0}
+  #printArea{display:block!important}
+}
+#printArea{display:none}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Client Proposal Builder</h1>
+<p class="intro">Turn your sales conversation into a professional proposal that wins the yes. Fill in each section — the writing prompts keep you specific — then run the professionalism checklist before you send.</p>
+
+<div class="appcard no-print">
+<h2>1. Client &amp; project</h2>
+<div class="grid2">
+<div><label class="field"><span class="lbl">Your name / business</span><input type="text" id="p_vendor" placeholder="e.g. Upshur Consulting"></label></div>
+<div><label class="field"><span class="lbl">Client name</span><input type="text" id="p_client" placeholder="e.g. Dana Whitfield"></label></div>
+<div><label class="field"><span class="lbl">Client company</span><input type="text" id="p_company" placeholder="e.g. Whitfield Realty Group"></label></div>
+<div><label class="field"><span class="lbl">Project title</span><input type="text" id="p_title" placeholder="e.g. Website Redesign &amp; Launch"></label></div>
+</div>
+<label class="field"><span class="lbl">Problem restatement</span>
+<small>Show you listened. Restate their problem in their words — what did they say is broken, expensive, or stuck?</small>
+<textarea id="p_problem" placeholder="e.g. Their current site loads slowly, doesn't work on phones, and hasn't generated a single qualified lead in 6 months…"></textarea></label>
+<label class="field"><span class="lbl">Proposed approach</span>
+<small>Your plan in plain language — 3–5 sentences. What you'll do, in what order, and why it works.</small>
+<textarea id="p_approach" placeholder="e.g. First I'll audit the current site and interview 5 past clients. Then I'll rebuild on a fast template with clear calls to action, then launch and train your team…"></textarea></label>
+</div>
+
+<div class="appcard no-print">
+<h2>2. Deliverables</h2>
+<p style="color:#6b6250;font-size:.95rem;margin-bottom:8px">List exactly what the client gets — specific items, not vague promises. Each deliverable is a proof point.</p>
+<div id="delList"></div>
+<button class="btn small ghost" id="btnAddDel" type="button">+ Add deliverable</button>
+</div>
+
+<div class="appcard no-print">
+<h2>3. Timeline &amp; investment</h2>
+<div class="grid2">
+<div><label class="field"><span class="lbl">Start date</span><input type="date" id="p_start"></label></div>
+<div><label class="field"><span class="lbl">Target completion</span><input type="date" id="p_end"></label></div>
+<div><label class="field"><span class="lbl">Pricing model</span>
+<select id="p_model">
+<option value="Fixed project fee">Fixed project fee</option>
+<option value="Monthly retainer">Monthly retainer</option>
+<option value="Hourly">Hourly rate</option>
+</select></label></div>
+<div><label class="field"><span class="lbl">Price ($)</span><input type="number" id="p_price" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 3500"></label></div>
+</div>
+<label class="field"><span class="lbl">Payment terms</span>
+<small>When and how you get paid. 50% upfront is standard for project work.</small>
+<select id="p_terms">
+<option>50% upfront, 50% on completion</option>
+<option>100% upfront</option>
+<option>Monthly invoicing, net 15</option>
+<option>Monthly invoicing, net 30</option>
+<option>Milestone-based payments</option>
+</select></label>
+<div class="grid2">
+<div><label class="field"><span class="lbl">Proposal valid until</span>
+<small>An expiry date creates urgency and protects you from stale pricing.</small>
+<input type="date" id="p_expiry"></label></div>
+<div><label class="field"><span class="lbl">Your call to action</span>
+<small>One clear next step. Not three options — one.</small>
+<input type="text" id="p_cta" placeholder="e.g. Reply “yes” and I'll send the agreement today"></label></div>
+</div>
+<div class="err" id="errBox" role="alert"></div>
+</div>
+
+<div class="appcard no-print" id="chkCard">
+<h2>4. Professionalism checklist</h2>
+<p style="color:#6b6250;font-size:.95rem;margin-bottom:8px">Green = auto-checked from your inputs. Read the manual ones honestly.</p>
+<div id="chkList"></div>
+</div>
+
+<div class="appcard no-print">
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn" id="btnBuild">Build My Proposal</button>
+<button class="btn ghost" id="btnCopy">Copy Proposal Text</button>
+<button class="btn ghost" id="btnPrint">Print / Save PDF</button>
+<button class="btn ghost" id="btnReset">Reset</button>
+</div>
+</div>
+
+<div class="appcard no-print" id="fuCard" style="display:none">
+<h2>Follow-up timeline (if there's no reply)</h2>
+<p style="color:#6b6250;font-size:.95rem">Most proposals are won in the follow-up, not the send. Work this schedule from your send date:</p>
+<label class="field" style="max-width:280px"><span class="lbl">Proposal sent date</span><input type="date" id="p_sent"></label>
+<ol class="tl" id="fuList"></ol>
+</div>
+
+<div class="appcard">
+<h3>Go Deeper with the Book</h3>
+<p>The Client Proposal Builder is just the start. <em>Sales Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper — the full conversation that leads to the yes, handled with integrity.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/sales-made-simple/">Get Sales Made Simple — $4.99</a></p>
+</div>
+
+<p class="no-print" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+<p class="disclaimer no-print">Educational purposes only — not legal advice. For binding agreements, use a proper contract reviewed by a qualified professional.</p>
+</main>
+<div id="printArea"></div>
+<section style="max-width:960px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+var KEY="app-client-proposal-builder-v1";
+var $=function(id){return document.getElementById(id);};
+var FIELDS=["p_vendor","p_client","p_company","p_title","p_problem","p_approach","p_start","p_end","p_model","p_price","p_terms","p_expiry","p_cta","p_sent"];
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function showErr(m){var b=$("errBox");b.style.display=m?"block":"none";b.textContent=m||"";}
+function todayISO(){var d=new Date();return d.toISOString().slice(0,10);}
+function fmtDate(iso){if(!iso)return "";var p=iso.split("-");if(p.length<3)return iso;var M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return M[parseInt(p[1],10)-1]+" "+parseInt(p[2],10)+", "+p[0];}
+function money(x){return "$"+Number(x).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+
+/* deliverables */
+function addDel(val){
+  var row=document.createElement("div");row.className="delrow";
+  row.innerHTML='<input type="text" class="delInput" aria-label="Deliverable" placeholder="e.g. Homepage redesign, mobile-responsive, delivered as staged preview link"><button type="button" aria-label="Remove deliverable">&times;</button>';
+  if(val)row.querySelector("input").value=val;
+  row.querySelector("button").addEventListener("click",function(){row.remove();save();refreshChecklist();});
+  row.querySelector("input").addEventListener("input",function(){save();refreshChecklist();});
+  $("delList").appendChild(row);
+}
+$("btnAddDel").addEventListener("click",function(){addDel("");save();});
+function getDels(){var a=[];document.querySelectorAll(".delInput").forEach(function(i){var v=i.value.trim();if(v)a.push(v);});return a;}
+
+/* checklist */
+var AUTO=[
+ {id:"c_client",label:"Client name and company are filled in",test:function(){return $("p_client").value.trim()!==""&&$("p_company").value.trim()!=="";}},
+ {id:"c_del",label:"At least one specific deliverable listed",test:function(){return getDels().length>0;}},
+ {id:"c_price",label:"Investment amount is stated",test:function(){var v=parseFloat($("p_price").value);return !isNaN(v)&&v>0;}},
+ {id:"c_time",label:"Timeline has a start and completion date",test:function(){return $("p_start").value!==""&&$("p_end").value!=="";}},
+ {id:"c_exp",label:"Proposal has an expiry date in the future",test:function(){var e=$("p_expiry").value;return e!==""&&e>=todayISO();}},
+ {id:"c_cta",label:"Exactly one clear call to action",test:function(){return $("p_cta").value.trim().length>5;}}
+];
+var MANUAL=[
+ {id:"m_proof",label:"Proofread: I read it aloud once and fixed every typo and awkward sentence."},
+ {id:"m_name",label:"I spelled the client's name and company name correctly (checked, not assumed)."},
+ {id:"m_one",label:"There is ONE call to action — I removed any competing “or you could…” options."}
+];
+function buildChecklist(){
+  var el=$("chkList");el.innerHTML="";
+  AUTO.forEach(function(c){
+    var d=document.createElement("div");d.className="chk";
+    d.innerHTML='<input type="checkbox" disabled aria-hidden="true" tabindex="-1"><span>'+esc(c.label)+'</span><span class="auto" id="st_'+c.id+'"></span>';
+    el.appendChild(d);
+  });
+  MANUAL.forEach(function(c){
+    var d=document.createElement("div");d.className="chk";
+    d.innerHTML='<input type="checkbox" id="'+c.id+'"><label for="'+c.id+'">'+esc(c.label)+'</label>';
+    el.appendChild(d);
+    d.querySelector("input").addEventListener("change",save);
+  });
+  refreshChecklist();
+}
+function refreshChecklist(){
+  AUTO.forEach(function(c){
+    var ok=false;try{ok=c.test();}catch(e){}
+    var st=$("st_"+c.id);if(!st)return;
+    var box=st.parentElement.querySelector('input[type=checkbox]');
+    box.checked=ok;st.textContent=ok?"OK":"MISSING";st.className="auto "+(ok?"ok":"no");
+  });
+}
+function checklistWarnings(){
+  var w=[];
+  AUTO.forEach(function(c){var ok=false;try{ok=c.test();}catch(e){}if(!ok)w.push(c.label);});
+  MANUAL.forEach(function(c){var b=$(c.id);if(b&&!b.checked)w.push(c.label);});
+  return w;
+}
+
+/* proposal assembly */
+function validate(){
+  if($("p_client").value.trim()===""){showErr("Enter the client name — a proposal without a name isn't ready.");return false;}
+  if(getDels().length===0){showErr("Add at least one deliverable — the client needs to see exactly what they get.");return false;}
+  var pr=parseFloat($("p_price").value);
+  if(isNaN(pr)||pr<=0){showErr("Enter the investment amount — never send a proposal without a price.");return false;}
+  if($("p_start").value&&$("p_end").value&&$("p_end").value<$("p_start").value){showErr("Completion date is before the start date — check your timeline.");return false;}
+  showErr("");return true;
+}
+function proposalHTML(){
+  var client=$("p_client").value.trim(),company=$("p_company").value.trim(),
+      vendor=$("p_vendor").value.trim()||"Me",title=$("p_title").value.trim()||"Project Proposal",
+      price=parseFloat($("p_price").value),model=$("p_model").value;
+  var priceLine=model==="Hourly"?money(price)+" / hour":model==="Monthly retainer"?money(price)+" / month":"Fixed fee: "+money(price);
+  var dels=getDels();
+  var h='<div class="prop"><h2>'+esc(title)+'</h2><div class="psub">Prepared for '+esc(client)+(company?", "+esc(company):"")+' · by '+esc(vendor)+' · '+esc(fmtDate(todayISO()))+'</div>';
+  var prob=$("p_problem").value.trim();
+  if(prob)h+="<h4>The problem, as I understand it</h4><p>"+esc(prob)+"</p>";
+  var appr=$("p_approach").value.trim();
+  if(appr)h+="<h4>Proposed approach</h4><p>"+esc(appr)+"</p>";
+  h+="<h4>What you'll receive</h4><ul>"+dels.map(function(d){return "<li>"+esc(d)+"</li>";}).join("")+"</ul>";
+  if($("p_start").value||$("p_end").value)
+    h+="<h4>Timeline</h4><p>"+esc($("p_start").value?fmtDate($("p_start").value):"TBD")+" → "+esc($("p_end").value?fmtDate($("p_end").value):"TBD")+"</p>";
+  h+='<h4>Investment</h4><p class="invest">'+esc(priceLine)+'</p><p>Payment terms: '+esc($("p_terms").value)+'.</p>';
+  if($("p_expiry").value)h+="<p><b>This proposal is valid until "+esc(fmtDate($("p_expiry").value))+".</b></p>";
+  var cta=$("p_cta").value.trim();
+  h+="<h4>Next step</h4><p><b>"+(cta?esc(cta):"Reply to this proposal and we'll get started.")+"</b></p></div>";
+  return h;
+}
+function proposalText(){
+  var client=$("p_client").value.trim(),company=$("p_company").value.trim(),
+      vendor=$("p_vendor").value.trim()||"Me",title=$("p_title").value.trim()||"Project Proposal",
+      price=parseFloat($("p_price").value),model=$("p_model").value;
+  var priceLine=model==="Hourly"?money(price)+" / hour":model==="Monthly retainer"?money(price)+" / month":"Fixed fee: "+money(price);
+  var t=title.toUpperCase()+"\nPrepared for "+client+(company?", "+company:"")+" · by "+vendor+"\n\n";
+  if($("p_problem").value.trim())t+="THE PROBLEM, AS I UNDERSTAND IT\n"+$("p_problem").value.trim()+"\n\n";
+  if($("p_approach").value.trim())t+="PROPOSED APPROACH\n"+$("p_approach").value.trim()+"\n\n";
+  t+="WHAT YOU'LL RECEIVE\n"+getDels().map(function(d){return "• "+d;}).join("\n")+"\n\n";
+  if($("p_start").value||$("p_end").value)t+="TIMELINE\n"+(fmtDate($("p_start").value)||"TBD")+" → "+(fmtDate($("p_end").value)||"TBD")+"\n\n";
+  t+="INVESTMENT\n"+priceLine+"\nPayment terms: "+$("p_terms").value+"\n\n";
+  if($("p_expiry").value)t+="This proposal is valid until "+fmtDate($("p_expiry").value)+".\n\n";
+  t+="NEXT STEP\n"+($("p_cta").value.trim()||"Reply to this proposal and we'll get started.")+"\n";
+  return t;
+}
+
+/* follow-up timeline */
+function addDaysISO(iso,n){var d=iso?new Date(iso+"T12:00:00"):new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10);}
+function buildFollowup(){
+  var sent=$("p_sent").value||todayISO();
+  var items=[
+    [3,"Day 3 — the check-in","“Hi "+($("p_client").value.trim()||"there")+", just making sure the proposal landed — happy to walk through any part of it.” Short, helpful, no pressure."],
+    [7,"Day 7 — the value nudge","Share one useful idea or relevant result related to their problem. End with: “Still happy to answer anything on the proposal.”"],
+    [14,"Day 14 — the clean close","“I don't want to be a pest — should I keep this proposal open or close it out?” This either revives it or frees you. Both are wins."]
+  ];
+  $("fuList").innerHTML=items.map(function(it){
+    return "<li><b>"+esc(it[1])+" ("+esc(fmtDate(addDaysISO(sent,it[0])))+")</b><br>"+esc(it[2])+"</li>";
+  }).join("");
+  $("fuCard").style.display="block";
+}
+$("p_sent").addEventListener("change",function(){buildFollowup();save();});
+
+$("btnBuild").addEventListener("click",function(){
+  if(!validate())return;
+  var warns=checklistWarnings();
+  var old=$("propResult");if(old)old.remove();
+  var card=document.createElement("div");card.className="appcard no-print";card.id="propResult";
+  card.innerHTML=proposalHTML()+
+    '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn" id="btnPrint2">Print / Save PDF</button><button class="btn ghost" id="btnCopy2">Copy Proposal Text</button></div>'+
+    (warns.length?'<p style="color:#7a5b00;margin-top:12px">⚠ Checklist items still open ('+warns.length+'): '+esc(warns.join("; "))+'</p>':'<p style="color:#2e7d32;margin-top:12px">✓ Professionalism checklist complete — ready to send.</p>');
+  $("fuCard").before(card);
+  $("btnPrint2").addEventListener("click",doPrint);
+  $("btnCopy2").addEventListener("click",copyProp);
+  buildFollowup();save();
+  card.scrollIntoView({behavior:"smooth",block:"start"});
+});
+function copyProp(){
+  var t=proposalText();
+  function done(){var b=$("btnCopy");b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Proposal Text";},2000);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback();});}
+  else fallback();
+  function fallback(){var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done();}catch(e){}document.body.removeChild(ta);}
+}
+$("btnCopy").addEventListener("click",function(){if(validate())copyProp();});
+function doPrint(){
+  if(!validate())return;
+  $("printArea").innerHTML=proposalHTML();
+  window.print();
+}
+$("btnPrint").addEventListener("click",doPrint);
+$("btnReset").addEventListener("click",function(){
+  FIELDS.forEach(function(f){$(f).value="";});
+  $("delList").innerHTML="";addDel("");
+  var old=$("propResult");if(old)old.remove();
+  $("fuCard").style.display="none";$("fuList").innerHTML="";
+  MANUAL.forEach(function(c){var b=$(c.id);if(b)b.checked=false;});
+  showErr("");refreshChecklist();
+  try{localStorage.removeItem(KEY);}catch(e){}
+});
+function save(){
+  try{var s={dels:getDels()};FIELDS.forEach(function(f){s[f]=$(f).value;});
+  MANUAL.forEach(function(c){var b=$(c.id);if(b)s[c.id]=b.checked;});
+  localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}
+}
+function restore(){
+  var s=null;
+  try{s=JSON.parse(localStorage.getItem(KEY)||"null");}catch(e){s=null;}
+  if(s){
+    FIELDS.forEach(function(f){if(s[f]!==undefined)$(f).value=s[f];});
+    $("delList").innerHTML="";
+    (s.dels&&s.dels.length?s.dels:[""]).forEach(addDel);
+    buildChecklist();
+    MANUAL.forEach(function(c){var b=$(c.id);if(b&&s[c.id])b.checked=true;});
+  }else{
+    $("delList").innerHTML="";addDel("");
+    buildChecklist();
+  }
+  refreshChecklist();
+}
+FIELDS.forEach(function(f){$(f).addEventListener("change",function(){save();refreshChecklist();});});
+restore();
+if($("p_expiry").value===""){var d=new Date();d.setDate(d.getDate()+14);$("p_expiry").value=d.toISOString().slice(0,10);}
+})();
+</script>
+</body>
+</html>

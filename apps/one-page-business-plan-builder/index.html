@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-Page Business Plan Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Build a complete business plan on a single page with guided prompts — no 40-page document required. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/one-page-business-plan-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="One-Page Business Plan Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Build a complete business plan on a single page with guided prompts — no 40-page document required. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/one-page-business-plan-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:960px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.3rem;margin-bottom:12px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0;min-height:88px;resize:vertical}
+input[type=text]{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+details{margin:6px 0;font-size:.92rem}
+details summary{cursor:pointer;color:#8a6d1c;font-weight:bold;min-height:44px;display:inline-flex;align-items:center}
+details p{background:#f7f2e3;border-radius:8px;padding:10px 14px;margin:6px 0;color:#555}
+.block{border:2px solid #e0d5b8;border-radius:10px;padding:18px;margin-bottom:14px;background:#fff}
+.block.pass{border-color:#7fb069}
+.block.flag{border-color:#d4a017;background:#fffdf4}
+.block h3{font-family:Georgia,serif;font-size:1.1rem}
+.block h3 .n{display:inline-block;background:#c9a227;color:#141210;width:28px;height:28px;border-radius:50%;text-align:center;line-height:28px;font-size:.9rem;margin-right:8px;font-family:-apple-system,sans-serif}
+.block .guide{font-size:.85rem;color:#8a6d1c;margin:2px 0 6px}
+.counter{font-size:.82rem;color:#6b6250;text-align:right}
+.counter.over{color:#b3261e;font-weight:bold}
+.bflag{font-size:.88rem;color:#7a5b00;background:#fdf3d8;border-radius:6px;padding:8px 12px;margin-top:8px;display:none}
+.bflag.show{display:block}
+.bok{font-size:.88rem;color:#2e7d32;margin-top:8px;display:none}
+.bok.show{display:block}
+.strength{background:#f7f2e3;border-radius:10px;padding:16px;margin-bottom:18px}
+.sbar{height:14px;background:#e5dcc3;border-radius:7px;overflow:hidden;margin-top:8px}
+.sbar>div{height:100%;background:#c9a227;width:0;transition:width .4s}
+.plan-out{border:3px solid #c9a227;border-radius:12px;background:#fff;padding:30px;margin-top:10px}
+.plan-out h2{font-family:Georgia,serif;text-align:center;margin-bottom:4px}
+.plan-out .pdate{text-align:center;color:#8a6d1c;font-size:.9rem;margin-bottom:20px}
+.plan-out h4{font-family:Georgia,serif;color:#8a6d1c;margin:16px 0 4px;font-size:1rem;text-transform:uppercase;letter-spacing:1px}
+.plan-out p{margin-bottom:4px;white-space:pre-wrap}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow label{font-size:.95rem}
+.disclaimer{font-size:.82rem;color:#8a7a4a;margin-top:18px}
+@media print{
+  body{background:#fff}
+  header.site,footer.site,.appcard.no-print,.no-print,section:last-of-type{display:none!important}
+  main.app{max-width:100%;padding:0}
+  #printArea{display:block!important}
+}
+#printArea{display:none}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>One-Page Business Plan Builder</h1>
+<p class="intro">A complete business plan on a single page. Work through the 9 blocks below — short, specific beats long and vague every time. Weak blocks get flagged automatically as you type.</p>
+
+<div class="appcard no-print">
+<label style="font-weight:bold">Business name (appears on your plan)
+<input type="text" id="bizName" placeholder="e.g. Cornerstone Tutoring" aria-label="Business name"></label>
+<div class="strength" aria-live="polite">
+<b>Plan strength: <span id="strengthPct">0%</span></b> — <span id="strengthMsg">Fill in the blocks below.</span>
+<div class="sbar"><div id="strengthBar"></div></div>
+</div>
+<div id="blocks"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="btnPlan">Build My One-Page Plan</button>
+<button class="btn ghost" id="btnCopy">Copy Plan Text</button>
+<button class="btn ghost" id="btnPrint">Print / Save PDF</button>
+<button class="btn ghost" id="btnReset">Reset</button>
+</div>
+</div>
+
+<div class="appcard no-print" id="checkCard" style="display:none">
+<h2>Your 90-day milestone review checklist</h2>
+<p style="color:#6b6250;font-size:.95rem">A plan dies without review dates. Check these off on schedule:</p>
+<div id="reviewList"></div>
+</div>
+
+<div class="appcard">
+<h3>Go Deeper with the Book</h3>
+<p>The One-Page Business Plan Builder is just the start. <em>Starting a Business Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper — from idea to launch with clear, practical steps.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/starting-a-business-made-simple/">Get Starting a Business Made Simple — $4.99</a></p>
+</div>
+
+<p class="no-print" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+<p class="disclaimer no-print">Educational purposes only — not professional business, legal, or financial advice. Verify important decisions with a qualified professional.</p>
+</main>
+<div id="printArea"></div>
+<section style="max-width:960px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+var KEY="app-one-page-business-plan-builder-v1";
+var $=function(id){return document.getElementById(id);};
+var BLOCKS=[
+ {id:"problem",title:"Problem",guide:"The painful problem you solve — in the customer's words. Aim: 1–2 sentences, under 200 characters.",
+  prompt:"What painful, expensive, or annoying problem does your customer have right now?",
+  example:"Example: “Busy parents in our neighborhood can't find affordable after-school tutoring they trust — existing options cost $60+/hour or have 3-month waitlists.”",
+  max:200,check:function(t){t=t.trim();if(t.length<40)return "Too short — name the pain specifically. What does it cost them in money, time, or stress?";return "";}},
+ {id:"customer",title:"Customer",guide:"Exactly who pays you. A nameable group, not “everyone.” Aim: 1 sentence, under 120 characters.",
+  prompt:"Who is your ideal customer, specifically enough that you could find 10 of them today?",
+  example:"Example: “Working parents of elementary students in the Riverside school district, household income $60k–$120k.”",
+  max:120,check:function(t){t=t.trim();if(t.length<15)return "Too short — describe the customer.";if(/\beveryone\b|\banyone\b|\banybody\b|\beverybody\b|\bpeople in general\b|\ball people\b/i.test(t))return "Too vague — “everyone” is not a customer. Name a specific group you can actually reach.";return "";}},
+ {id:"solution",title:"Solution",guide:"What you offer and the outcome it delivers. Aim: 1–2 sentences, under 200 characters.",
+  prompt:"What do you offer, and what outcome does the customer get?",
+  example:"Example: “Small-group after-school tutoring (max 4 students) that raises math grades within 8 weeks — $35/session, first session free.”",
+  max:200,check:function(t){t=t.trim();if(t.length<40)return "Too short — say what you deliver and the outcome.";return "";}},
+ {id:"advantage",title:"Unfair Advantage",guide:"Why you win vs. alternatives. Must be specific and hard to copy. Aim: 1–2 sentences, under 160 characters.",
+  prompt:"Why will customers pick you over every alternative — including doing nothing?",
+  example:"Example: “I'm a certified teacher with 12 years in this district; parents already know and trust me, and my curriculum maps to local school standards.”",
+  max:160,check:function(t){t=t.trim();if(t.length<30)return "Too short — name something concrete competitors can't easily copy.";if(/^(we are|we're|i am|i'm) the best/i.test(t)&&t.length<60)return "“Best” is a claim, not an advantage — what specifically makes it true?";return "";}},
+ {id:"channels",title:"Channels",guide:"How customers find and buy from you. Name real places. Aim: under 120 characters.",
+  prompt:"Where will your first 50 customers come from? Be specific.",
+  example:"Example: “School pickup line flyers, the Riverside Parents Facebook group (8k members), and referrals from two partner daycares.”",
+  max:120,check:function(t){t=t.trim();if(t.length<20)return "Too short — name at least one concrete channel.";if(/\bsocial media\b/i.test(t)&&t.length<40)return "“Social media” is not a channel — which platform, which group, which audience?";return "";}},
+ {id:"revenue",title:"Revenue",guide:"Exactly how money arrives. Price × volume. Aim: under 160 characters.",
+  prompt:"How do you get paid? State the price and how often.",
+  example:"Example: “$35/session × 40 sessions/week = ~$5,600/month. 10% of revenue from summer prep packages at $299.”",
+  max:160,check:function(t){t=t.trim();if(t.length<20)return "Too short — say how money arrives.";if(!/(\$|dollar|price|fee|subscription|pay|charge|per)/i.test(t))return "Missing the money part — include a price, fee, or payment model.";return "";}},
+ {id:"costs",title:"Costs",guide:"Your biggest costs, fixed and per-sale. Aim: under 160 characters.",
+  prompt:"What are your three biggest costs?",
+  example:"Example: “Rent $800/mo, curriculum materials ~$5/student, insurance $120/mo. Biggest risk: rent if enrollment drops below 25 students.”",
+  max:160,check:function(t){t=t.trim();if(t.length<20)return "Too short — list your biggest costs.";return "";}},
+ {id:"milestones",title:"Milestones",guide:"3 dated, measurable targets for the next 90 days. Aim: under 200 characters.",
+  prompt:"What 3 measurable wins will you hit in the next 90 days, and by when?",
+  example:"Example: “Day 30: 15 enrolled students. Day 60: break even at 25 students. Day 90: 40 students + first 5 written parent testimonials.”",
+  max:200,check:function(t){t=t.trim();if(t.length<30)return "Too short — set dated, measurable targets.";if(!/\d/.test(t))return "Add numbers — milestones need measurable targets (dates, counts, dollars).";return "";}},
+ {id:"metrics",title:"Key Metrics",guide:"The 2–3 numbers you check weekly to know if it's working. Aim: under 160 characters.",
+  prompt:"Which numbers tell you, weekly, whether the business is healthy?",
+  example:"Example: “Weekly: new enrollments, sessions delivered, revenue. Monthly: churn rate, cost per new student, net profit.”",
+  max:160,check:function(t){t=t.trim();if(t.length<15)return "Too short — name the numbers you'll track.";if(!/\d/.test(t)&&!/revenue|profit|enrollment|conversion|churn|sales|customers|signups/i.test(t))return "Name concrete, countable metrics — what numbers will you check weekly?";return "";}}
+];
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+var blocksEl=$("blocks");
+BLOCKS.forEach(function(b,i){
+  var d=document.createElement("div");
+  d.className="block";d.id="blk_"+b.id;
+  d.innerHTML='<h3><span class="n">'+(i+1)+'</span>'+esc(b.title)+'</h3>'+
+    '<div class="guide">'+esc(b.guide)+'</div>'+
+    '<details><summary>Show prompt &amp; example</summary><p><b>Prompt:</b> '+esc(b.prompt)+'</p><p>'+esc(b.example)+'</p></details>'+
+    '<textarea id="ta_'+b.id+'" aria-label="'+esc(b.title)+'" maxlength="'+(b.max+200)+'" placeholder="Type here…"></textarea>'+
+    '<div class="counter" id="ct_'+b.id+'">0 / '+b.max+' characters</div>'+
+    '<div class="bflag" id="fl_'+b.id+'"></div><div class="bok" id="ok_'+b.id+'">✓ Looks solid.</div>';
+  blocksEl.appendChild(d);
+  $("ta_"+b.id).addEventListener("input",function(){evaluate(b);evaluateAll();save();});
+});
+$("bizName").addEventListener("input",save);
+
+function evaluate(b){
+  var t=$("ta_"+b.id).value,ct=$("ct_"+b.id),fl=$("fl_"+b.id),ok=$("ok_"+b.id),blk=$("blk_"+b.id);
+  ct.textContent=t.length+" / "+b.max+" characters";
+  ct.className="counter"+(t.length>b.max?" over":"");
+  var msg=b.check(t);
+  blk.classList.remove("pass","flag");
+  if(!t.trim()){fl.className="bflag";ok.className="bok";return null;}
+  if(msg){fl.textContent="⚠ "+msg;fl.className="bflag show";ok.className="bok";blk.classList.add("flag");return false;}
+  fl.className="bflag";ok.className="bok show";blk.classList.add("pass");return true;
+}
+function evaluateAll(){var p=0,f=0;BLOCKS.forEach(function(b){var r=evaluate(b);if(r===true)p++;else if(r===false)f++;});
+  var pctg=Math.round(p/BLOCKS.length*100);
+  $("strengthPct").textContent=pctg+"%";
+  $("strengthBar").style.width=pctg+"%";
+  $("strengthMsg").textContent=pctg===100?"All 9 blocks solid — build your plan below.":(p+" of 9 blocks solid"+(f?", "+f+" flagged":"")+".");
+  return p;
+}
+function planText(){
+  var name=$("bizName").value.trim()||"My Business";
+  var d=new Date();var ds=d.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  var out="ONE-PAGE BUSINESS PLAN — "+name.toUpperCase()+"\nCreated "+ds+"\n\n";
+  BLOCKS.forEach(function(b,i){out+=(i+1)+". "+b.title.toUpperCase()+"\n"+($("ta_"+b.id).value.trim()||"(not filled in)")+"\n\n";});
+  out+="90-DAY REVIEW CHECKLIST\n[ ] Day 30 ("+addDays(30)+"): Review milestones. What's on track? What's stuck?\n[ ] Day 60 ("+addDays(60)+"): Score each metric. Kill or fix what's not working.\n[ ] Day 90 ("+addDays(90)+"): Full plan review. Update this page — plans are living documents.\n";
+  return out;
+}
+function addDays(n){var d=new Date();d.setDate(d.getDate()+n);return d.toLocaleDateString("en-US",{month:"short",day:"numeric"});}
+function buildReview(){
+  var items=[
+    ["Day 30 — "+addDays(30),"Milestone check: which of your 90-day milestones are on track? What's stuck, and what's the one fix?"],
+    ["Day 60 — "+addDays(60),"Metrics scorecard: review every key metric. Double down on what's working; kill or fix what isn't."],
+    ["Day 90 — "+addDays(90),"Full plan review: update all 9 blocks with what you learned. Set the next 90 days' milestones."]
+  ];
+  var el=$("reviewList");el.innerHTML="";
+  items.forEach(function(it,i){
+    var row=document.createElement("div");row.className="checkrow";
+    row.innerHTML='<input type="checkbox" id="rv'+i+'"><label for="rv'+i+'"><b>'+esc(it[0])+'</b> — '+esc(it[1])+'</label>';
+    el.appendChild(row);
+    var cb=row.querySelector("input");
+    cb.addEventListener("change",save);
+  });
+  $("checkCard").style.display="block";
+}
+$("btnPlan").addEventListener("click",function(){
+  var p=evaluateAll();
+  var name=$("bizName").value.trim()||"My Business";
+  var d=new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  var h='<div class="plan-out"><h2>'+esc(name)+'</h2><div class="pdate">One-Page Business Plan · '+esc(d)+'</div>';
+  BLOCKS.forEach(function(b,i){
+    var t=$("ta_"+b.id).value.trim()||"<i>Not filled in</i>";
+    var warn=b.check($("ta_"+b.id).value.trim());
+    h+="<h4>"+(i+1)+". "+esc(b.title)+"</h4><p>"+esc(t)+"</p>";
+    if(warn)h+='<p style="color:#7a5b00;font-size:.85rem">⚠ '+esc(warn)+'</p>';
+  });
+  h+="<h4>90-Day Review</h4><p>Day 30 ("+addDays(30)+") · Day 60 ("+addDays(60)+") · Day 90 ("+addDays(90)+") — review milestones and metrics on these dates.</p></div>";
+  h+='<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px" class="no-print"><button class="btn" id="btnPrint2">Print / Save PDF</button><button class="btn ghost" id="btnCopy2">Copy Plan Text</button></div>';
+  var old=$("planResult");if(old)old.remove();
+  var card=document.createElement("div");card.className="appcard no-print";card.id="planResult";card.innerHTML=h;
+  $("checkCard").after(card);
+  $("btnPrint2").addEventListener("click",doPrint);
+  $("btnCopy2").addEventListener("click",copyPlan);
+  buildReview();save();
+  card.scrollIntoView({behavior:"smooth",block:"start"});
+  if(p<9){var n=document.createElement("p");n.style.cssText="color:#7a5b00;margin-top:10px";n.textContent="Note: "+(9-p)+" block(s) still need work — flagged above. Your plan is usable now and stronger after you fix them.";card.appendChild(n);}
+});
+function copyPlan(){
+  var t=planText();
+  function done(ok){var b=$("btnCopy");if(ok){b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Plan Text";},2000);}}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){done(true);},function(){fallback();});}
+  else fallback();
+  function fallback(){var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done(true);}catch(e){}document.body.removeChild(ta);}
+}
+$("btnCopy").addEventListener("click",copyPlan);
+function doPrint(){
+  var name=$("bizName").value.trim()||"My Business";
+  var h='<div class="plan-out"><h2>'+esc(name)+'</h2><div class="pdate">One-Page Business Plan</div>';
+  BLOCKS.forEach(function(b,i){var t=$("ta_"+b.id).value.trim()||"—";h+="<h4>"+(i+1)+". "+esc(b.title)+"</h4><p>"+esc(t)+"</p>";});
+  h+="</div>";
+  $("printArea").innerHTML=h;
+  window.print();
+}
+$("btnPrint").addEventListener("click",doPrint);
+$("btnReset").addEventListener("click",function(){
+  BLOCKS.forEach(function(b){$("ta_"+b.id).value="";evaluate(b);});
+  $("bizName").value="";var old=$("planResult");if(old)old.remove();
+  $("checkCard").style.display="none";$("reviewList").innerHTML="";
+  evaluateAll();
+  try{localStorage.removeItem(KEY);}catch(e){}
+});
+function save(){
+  try{var s={name:$("bizName").value};BLOCKS.forEach(function(b){s[b.id]=$("ta_"+b.id).value;});
+  for(var i=0;i<3;i++){var c=$("rv"+i);if(c)s["rv"+i]=c.checked;}
+  localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}
+}
+function restore(){
+  try{var s=JSON.parse(localStorage.getItem(KEY)||"null");if(!s)return;
+  if(s.name)$("bizName").value=s.name;
+  BLOCKS.forEach(function(b){if(s[b.id]!==undefined)$("ta_"+b.id).value=s[b.id];});
+  evaluateAll();buildReview();
+  for(var i=0;i<3;i++){var c=$("rv"+i);if(c&&s["rv"+i])c.checked=true;}
+  }catch(e){}
+}
+restore();
+})();
+</script>
+</body>
+</html>

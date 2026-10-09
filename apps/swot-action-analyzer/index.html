@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SWOT Action Analyzer | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn a vague SWOT brainstorm into three strategic actions you'll actually take — score each item on impact and feasibility, get cross-matched moves, and print a one-page action plan. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/swot-action-analyzer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SWOT Action Analyzer | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Turn a vague SWOT brainstorm into three strategic actions you'll actually take — score each item on impact and feasibility, get cross-matched moves, and print a one-page action plan. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/swot-action-analyzer/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:860px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.45rem;color:#141210;margin-bottom:10px}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;color:#141210;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.9rem}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:88px;resize:vertical}
+.err{background:#fdecea;border:2px solid #c0392b;color:#7b241c;border-radius:8px;padding:12px 16px;margin:12px 0;display:none}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.step{flex:1;min-width:120px;text-align:center;padding:10px 6px;border-radius:8px;border:2px solid #e5d9ae;font-size:.85rem;font-weight:bold;color:#8a7a4a;background:#fff}
+.step.on{border-color:#c9a227;background:#c9a227;color:#141210}
+.step.done{border-color:#5a8f2b;color:#1e7e34}
+.quads{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.quads{grid-template-columns:1fr}}
+.quad{border:2px solid #e5d9ae;border-radius:10px;padding:16px;background:#fff}
+.quad h3{margin-top:0;font-size:1.1rem}
+.quad.S h3{color:#1e7e34}.quad.W h3{color:#b8860b}.quad.O h3{color:#1d5f8a}.quad.T h3{color:#b02a20}
+.promptchips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chip{font-size:.78rem;background:#faf7ef;border:1px solid #c9a227;color:#8a6d1c;border-radius:20px;padding:6px 12px;cursor:pointer;min-height:36px}
+.chip:hover{background:#c9a227;color:#141210}
+.item{display:flex;gap:8px;align-items:center;margin:8px 0}
+.item input{flex:1;margin:0}
+.item .del{background:transparent;border:2px solid #c0392b;color:#b02a20;border-radius:8px;min-width:44px;min-height:44px;font-size:1.1rem;cursor:pointer;flex-shrink:0}
+.addrow{display:flex;gap:8px;margin-top:10px}
+.addrow input{flex:1;margin:0}
+.scorerow{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #eee;flex-wrap:wrap}
+.scorerow .iname{flex:1;min-width:180px;font-weight:bold}
+.scorerow .qs{display:flex;gap:10px}
+.scorerow label{font-size:.8rem;color:#6b6250;display:flex;flex-direction:column;gap:2px}
+.scorerow select{width:120px;margin:0;padding:10px}
+.scorepill{display:inline-block;min-width:44px;text-align:center;font-weight:bold;background:#faf7ef;border:2px solid #c9a227;border-radius:8px;padding:8px 10px}
+.move{border:2px solid #e5d9ae;border-radius:10px;padding:16px;margin:12px 0;background:#fff;cursor:pointer}
+.move.sel{border-color:#c9a227;background:#fffdf2;box-shadow:0 0 0 2px #c9a227}
+.move .mrank{display:inline-block;background:#141210;color:#e8c84a;font-weight:bold;border-radius:6px;padding:2px 10px;font-size:.8rem;margin-right:8px}
+.move .mscore{float:right;font-weight:bold;color:#8a6d1c}
+.move .mtype{font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:#6b6250;margin-bottom:6px}
+.planblock{border:2px solid #e5d9ae;border-radius:10px;padding:18px;margin:14px 0;background:#fff}
+.planblock h4{font-size:1.05rem;margin-bottom:4px}
+.planblock .pm{font-size:.9rem;color:#6b6250;margin-bottom:10px}
+.navrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.summary{border:3px solid #141210;border-radius:12px;padding:28px;background:#fff;margin-top:10px}
+.summary h2{font-family:Georgia,serif;font-size:1.6rem;text-align:center;margin-bottom:4px}
+.summary .sub{text-align:center;color:#6b6250;margin-bottom:18px}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+@media (max-width:600px){.sgrid{grid-template-columns:1fr}}
+.squad{border:2px solid #e5d9ae;border-radius:8px;padding:12px}
+.squad h4{font-size:.95rem;margin-bottom:6px}
+.squad ul{margin-left:18px;font-size:.88rem}
+.actrow{border-top:2px solid #c9a227;padding:14px 0}
+.actrow h4{font-size:1.05rem}
+.actrow .meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:.88rem;margin-top:8px}
+@media (max-width:600px){.actrow .meta{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff}
+  header.site,nav.main,.appcard,.backlink,.devot-block,footer.site,.navrow,.noprint{display:none !important}
+  main.app{max-width:100%;padding:0}
+  #summaryprint{display:block !important}
+}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.backlink{text-align:center;margin-top:24px}
+.backlink a{color:#8a6d1c}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>SWOT Action Analyzer</h1>
+<p class="intro">Turn a vague SWOT brainstorm into three strategic actions you'll actually take. Brainstorm each quadrant, score every item on impact × feasibility, then let the app cross-match strengths–opportunities and weaknesses–threats into ranked moves.</p>
+
+<div class="steps" id="steps"></div>
+<div class="err" id="err" role="alert"></div>
+
+<!-- STEP 1 -->
+<div class="appcard" id="step1">
+<h2>Step 1 — Brainstorm the four quadrants</h2>
+<p style="color:#6b6250">Add at least 2 items per quadrant. Tap a prompt chip to use it as a starter, then make it your own.</p>
+<div class="quads" id="quads"></div>
+<div class="navrow">
+<button class="btn" id="to2">Continue to scoring &rarr;</button>
+<button class="btn ghost small" id="reset1">Start over</button>
+</div>
+</div>
+
+<!-- STEP 2 -->
+<div class="appcard" id="step2" style="display:none">
+<h2>Step 2 — Score every item</h2>
+<p style="color:#6b6250">Rate each item: <strong>Impact</strong> (how much it matters) and <strong>Feasibility</strong> (how doable it is for you) from 1 to 5. Priority = Impact × Feasibility.</p>
+<div id="scorelist"></div>
+<p id="scoreprogress" style="color:#6b6250;margin-top:10px"></p>
+<div class="navrow">
+<button class="btn ghost" id="back1">&larr; Back</button>
+<button class="btn" id="to3">Generate candidate moves &rarr;</button>
+</div>
+</div>
+
+<!-- STEP 3 -->
+<div class="appcard" id="step3" style="display:none">
+<h2>Step 3 — Pick your top 3 moves</h2>
+<p style="color:#6b6250">The app cross-matched your highest-scored items. Click to select exactly <strong>3</strong> strategic moves — the top 3 are pre-selected.</p>
+<div id="movelist"></div>
+<p id="movecount" style="color:#6b6250;margin-top:8px"></p>
+<div class="navrow">
+<button class="btn ghost" id="back2">&larr; Back</button>
+<button class="btn" id="to4">Build the action plan &rarr;</button>
+</div>
+</div>
+
+<!-- STEP 4 -->
+<div class="appcard" id="step4" style="display:none">
+<h2>Step 4 — Make each action real</h2>
+<p style="color:#6b6250">For each of your 3 actions, define the first step, the owner, and a deadline. Then print or save your one-page plan.</p>
+<div id="planlist"></div>
+<div class="navrow">
+<button class="btn ghost" id="back3">&larr; Back</button>
+<button class="btn" id="finish">Finish — show my one-page plan</button>
+</div>
+</div>
+
+<!-- STEP 5 -->
+<div id="step5" style="display:none">
+<div class="summary" id="summaryprint">
+<h2>SWOT Action Plan</h2>
+<p class="sub" id="sumdate"></p>
+<div class="sgrid" id="sumquads"></div>
+<div id="sumactions"></div>
+</div>
+<div class="navrow noprint">
+<button class="btn ghost" id="back4">&larr; Back</button>
+<button class="btn" id="printbtn">Print one-page plan</button>
+<button class="btn ghost" id="reset2">Start a new analysis</button>
+</div>
+</div>
+
+<section class="appcard noprint" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>SWOT Action Analyzer is just the start. <em>Strategy Execution Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — how to turn strategy into results you can measure.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/strategy-execution-made-simple/">Get Strategy Execution Made Simple — $4.99</a></p>
+</section>
+<p class="backlink"><a href="/apps.html">&larr; All Apps</a></p>
+</main>
+<section class="devot-block" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-swot-action-analyzer-v1";
+var $=function(id){return document.getElementById(id);};
+var QUADS=[
+ {id:"S",name:"Strengths",inner:"Internal — what you do well",cls:"S",prompts:["What do customers praise you for?","What do you do better than competitors?","What unique resources or skills do you have?"]},
+ {id:"W",name:"Weaknesses",inner:"Internal — where you fall short",cls:"W",prompts:["What do customers complain competitors do better?","Where do you lose time or money?","What skills or resources are you missing?"]},
+ {id:"O",name:"Opportunities",inner:"External — openings you could seize",cls:"O",prompts:["What trends could you ride?","What are competitors ignoring?","What do customers wish someone offered?"]},
+ {id:"T",name:"Threats",inner:"External — what could hurt you",cls:"T",prompts:["What could put you out of business?","What are competitors doing that worries you?","What changes in the market could blindside you?"]}
+];
+var state={items:{S:[],W:[],O:[],T:[]},scores:{},moves:[],selected:[],plan:[{},{},{}]};
+var nextId=1;
+function nid(){return "i"+(nextId++);}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({state:state,nextId:nextId}));}catch(e){}}
+function load(){
+  try{var s=JSON.parse(localStorage.getItem(KEY));
+    if(s&&s.state&&s.state.items){state=s.state;nextId=s.nextId||1000;
+      Object.keys(state.items).forEach(function(q){
+        state.items[q].forEach(function(it){if(typeof it.id==="string"&&it.id[0]==="i"){var n=parseInt(it.id.slice(1),10);if(n>=nextId)nextId=n+1;}});
+      });
+      return true;}}catch(e){}
+  return false;
+}
+function showError(msg){var e=$("err");e.style.display="block";e.textContent=msg;}
+function clearError(){$("err").style.display="none";e_scroll();}
+function e_scroll(){}
+var stepNames=["Brainstorm","Score","Pick moves","Action plan","Summary"];
+function show(step){
+  clearError();
+  [1,2,3,4,5].forEach(function(n){$("step"+n).style.display=n===step?"block":"none";});
+  var st=$("steps");st.innerHTML="";
+  stepNames.forEach(function(n,i){
+    var d=document.createElement("div");
+    d.className="step"+(i+1===step?" on":i+1<step?" done":"");
+    d.textContent=(i+1)+". "+n;st.appendChild(d);
+  });
+  window.scrollTo(0,0);
+}
+/* ---------- STEP 1 ---------- */
+function renderQuads(){
+  var wrap=$("quads");wrap.innerHTML="";
+  QUADS.forEach(function(q){
+    var box=document.createElement("div");box.className="quad "+q.cls;
+    var h=document.createElement("h3");h.textContent=q.name;box.appendChild(h);
+    var sub=document.createElement("p");sub.style.cssText="font-size:.82rem;color:#6b6250;margin-bottom:6px";sub.textContent=q.inner;box.appendChild(sub);
+    var chips=document.createElement("div");chips.className="promptchips";
+    q.prompts.forEach(function(p){
+      var c=document.createElement("button");c.type="button";c.className="chip";c.textContent=p;
+      c.addEventListener("click",function(){addItem(q.id,p);});
+      chips.appendChild(c);
+    });
+    box.appendChild(chips);
+    var list=document.createElement("div");
+    state.items[q.id].forEach(function(it){
+      var row=document.createElement("div");row.className="item";
+      var inp=document.createElement("input");inp.type="text";inp.value=it.text;inp.setAttribute("aria-label",q.name+" item");
+      inp.addEventListener("input",function(){it.text=inp.value;save();});
+      var del=document.createElement("button");del.type="button";del.className="del";del.textContent="×";del.setAttribute("aria-label","Remove item");
+      del.addEventListener("click",function(){
+        state.items[q.id]=state.items[q.id].filter(function(x){return x.id!==it.id;});
+        delete state.scores[it.id];save();renderQuads();
+      });
+      row.appendChild(inp);row.appendChild(del);list.appendChild(row);
+    });
+    box.appendChild(list);
+    var addrow=document.createElement("div");addrow.className="addrow";
+    var ain=document.createElement("input");ain.type="text";ain.placeholder="Add a "+q.name.toLowerCase().slice(0,-1)+"…";ain.setAttribute("aria-label","New "+q.name+" item");
+    var abtn=document.createElement("button");abtn.type="button";abtn.className="btn small";abtn.textContent="Add";
+    function commit(){if(ain.value.trim()){addItem(q.id,ain.value.trim());ain.value="";ain.focus();}}
+    abtn.addEventListener("click",commit);
+    ain.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();commit();}});
+    addrow.appendChild(ain);addrow.appendChild(abtn);
+    box.appendChild(addrow);
+    wrap.appendChild(box);
+  });
+}
+function addItem(qid,text){
+  if(state.items[qid].length>=8){showError("Maximum 8 items per quadrant — keep the list focused.");return;}
+  clearError();
+  state.items[qid].push({id:nid(),text:text});
+  save();renderQuads();
+}
+/* ---------- STEP 2 ---------- */
+function allItems(){
+  var out=[];
+  QUADS.forEach(function(q){state.items[q.id].forEach(function(it){out.push({q:q.id,qname:q.name,item:it});});});
+  return out;
+}
+function renderScores(){
+  var list=$("scorelist");list.innerHTML="";
+  var items=allItems(),done=0;
+  items.forEach(function(entry){
+    var sc=state.scores[entry.item.id]||{impact:0,feas:0};
+    var row=document.createElement("div");row.className="scorerow";
+    var nm=document.createElement("div");nm.className="iname";
+    nm.innerHTML='<span style="font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:#8a7a4a"></span><br><span></span>';
+    nm.children[0].textContent=entry.qname;
+    nm.children[1].textContent=entry.item.text||"(empty)";
+    var qs=document.createElement("div");qs.className="qs";
+    [["Impact","impact"],["Feasibility","feas"]].forEach(function(pair){
+      var lab=document.createElement("label");lab.textContent=pair[0];
+      var sel=document.createElement("select");sel.setAttribute("aria-label",pair[0]+" for "+entry.item.text);
+      sel.innerHTML='<option value="0">—</option><option value="1">1 · Low</option><option value="2">2</option><option value="3">3 · Med</option><option value="4">4</option><option value="5">5 · High</option>';
+      sel.value=String(sc[pair[1]]);
+      sel.addEventListener("change",function(){
+        if(!state.scores[entry.item.id])state.scores[entry.item.id]={impact:0,feas:0};
+        state.scores[entry.item.id][pair[1]]=parseInt(sel.value,10);
+        save();updateScoreRow(row,entry.item.id);
+      });
+      lab.appendChild(sel);qs.appendChild(lab);
+    });
+    var pill=document.createElement("span");pill.className="scorepill";pill.id="pill-"+entry.item.id;
+    row.appendChild(nm);row.appendChild(qs);row.appendChild(pill);
+    list.appendChild(row);
+    updateScoreRow(row,entry.item.id);
+    if(sc.impact>0&&sc.feas>0)done++;
+  });
+  $("scoreprogress").textContent=done+" of "+items.length+" items scored.";
+  return {done:done,total:items.length};
+}
+function scoreOf(id){var s=state.scores[id];return s&&s.impact>0&&s.feas>0?s.impact*s.feas:0;}
+function updateScoreRow(row,id){
+  var v=scoreOf(id);
+  var pill=row.querySelector(".scorepill");
+  pill.textContent=v>0?v:"–";
+  pill.style.borderColor=v>=15?"#1e7e34":v>0?"#c9a227":"#ccc";
+  var items=allItems(),done=0;
+  items.forEach(function(e){if(scoreOf(e.item.id)>0)done++;});
+  $("scoreprogress").textContent=done+" of "+items.length+" items scored.";
+}
+/* ---------- STEP 3 ---------- */
+var MOVE_TYPES={
+ SO:{label:"Strength → Opportunity",verb:"Use",tpl:function(a,b){return "Use "+a.toLowerCase()+" to capture "+b.toLowerCase();},first:"List the first concrete deliverable this strength makes possible."},
+ WO:{label:"Weakness → Opportunity",verb:"Fix",tpl:function(a,b){return "Overcome "+a.toLowerCase()+" so you can seize "+b.toLowerCase();},first:"Name the smallest fix to the weakness that unlocks the opportunity."},
+ ST:{label:"Strength → Threat",verb:"Deploy",tpl:function(a,b){return "Deploy "+a.toLowerCase()+" to blunt "+b.toLowerCase();},first:"Decide how the strength gets aimed at the threat this quarter."},
+ WT:{label:"Weakness → Threat",verb:"Defend",tpl:function(a,b){return "Fix "+a.toLowerCase()+" before "+b.toLowerCase();},first:"Set the guardrail or fix that neutralizes this threat first."}
+};
+function topByScore(qid,n){
+  return state.items[qid].slice().sort(function(a,b){return scoreOf(b.id)-scoreOf(a.id);}).filter(function(it){return scoreOf(it.id)>0;}).slice(0,n);
+}
+function generateMoves(){
+  var moves=[];
+  var pairs=[["S","O","SO"],["W","O","WO"],["S","T","ST"],["W","T","WT"]];
+  pairs.forEach(function(p){
+    var as=topByScore(p[0],2),bs=topByScore(p[1],2);
+    as.forEach(function(a){
+      bs.forEach(function(b){
+        var sa=scoreOf(a.id),sb=scoreOf(b.id);
+        moves.push({type:p[2],a:a,b:b,combo:sa+sb,prod:sa*sb,
+          text:MOVE_TYPES[p[2]].tpl(a.text,b.text),
+          firstHint:MOVE_TYPES[p[2]].first});
+      });
+    });
+  });
+  moves.sort(function(x,y){return y.combo-x.combo||y.prod-x.prod;});
+  state.moves=moves.slice(0,8);
+  state.selected=state.moves.slice(0,3).map(function(m,i){return i;});
+  save();
+}
+function renderMoves(){
+  var list=$("movelist");list.innerHTML="";
+  state.moves.forEach(function(m,i){
+    var d=document.createElement("div");
+    d.className="move"+(state.selected.indexOf(i)>=0?" sel":"");
+    d.setAttribute("role","checkbox");
+    d.setAttribute("aria-checked",state.selected.indexOf(i)>=0?"true":"false");
+    d.tabIndex=0;
+    d.innerHTML='<span class="mscore"></span><div class="mtype"></div><div><span class="mrank"></span><strong></strong></div><div style="font-size:.88rem;color:#6b6250;margin-top:6px">Priority score <span class="ps"></span> · click to select</div>';
+    d.querySelector(".mscore").textContent=m.combo+" pts";
+    d.querySelector(".mtype").textContent=MOVE_TYPES[m.type].label;
+    d.querySelector(".mrank").textContent="#"+(i+1);
+    d.querySelector("strong").textContent=m.text;
+    d.querySelector(".ps").textContent=m.a.text+" ("+scoreOf(m.a.id)+") + "+m.b.text+" ("+scoreOf(m.b.id)+")";
+    function toggle(){
+      var idx=state.selected.indexOf(i);
+      if(idx>=0){state.selected.splice(idx,1);}
+      else{
+        if(state.selected.length>=3){showError("Only 3 actions — deselect one to change your picks.");return;}
+        state.selected.push(i);
+      }
+      clearError();save();renderMoves();
+    }
+    d.addEventListener("click",toggle);
+    d.addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();toggle();}});
+    list.appendChild(d);
+  });
+  updateMoveCount();
+}
+function updateMoveCount(){
+  $("movecount").textContent=state.selected.length+" of 3 selected.";
+}
+/* ---------- STEP 4 ---------- */
+function renderPlan(){
+  var list=$("planlist");list.innerHTML="";
+  state.selected.slice().sort(function(a,b){return a-b;}).forEach(function(mi,k){
+    var m=state.moves[mi];
+    var p=state.plan[k]||{};
+    var d=document.createElement("div");d.className="planblock";
+    d.innerHTML='<h4></h4><div class="pm"></div>';
+    d.querySelector("h4").textContent="Action "+(k+1)+": "+m.text;
+    d.querySelector(".pm").textContent=MOVE_TYPES[m.type].label+" · "+m.combo+" priority points";
+    var fields=[["first","First step — "+m.firstHint,"text"],["owner","Owner — who is responsible?","text"],["deadline","Deadline","date"]];
+    fields.forEach(function(f){
+      var lab=document.createElement("label");
+      lab.style.cssText="display:block;margin:10px 0;font-weight:bold;font-size:.92rem";
+      lab.textContent=f[1];
+      var inp=document.createElement("input");inp.type=f[2];inp.value=p[f[0]]||"";
+      inp.setAttribute("aria-label",f[1]);
+      if(f[0]==="first")inp.placeholder="e.g. Email three past clients for referrals by Friday";
+      if(f[0]==="owner")inp.placeholder="e.g. Me / Jordan / the team";
+      inp.addEventListener("input",function(){state.plan[k][f[0]]=inp.value;save();});
+      lab.appendChild(inp);d.appendChild(lab);
+    });
+    list.appendChild(d);
+  });
+}
+/* ---------- STEP 5 ---------- */
+function renderSummary(){
+  var now=new Date();
+  $("sumdate").textContent="Prepared "+now.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  var g=$("sumquads");g.innerHTML="";
+  QUADS.forEach(function(q){
+    var d=document.createElement("div");d.className="squad";
+    var h=document.createElement("h4");h.textContent=q.name+" (top by priority)";d.appendChild(h);
+    var ul=document.createElement("ul");
+    state.items[q.id].slice().sort(function(a,b){return scoreOf(b.id)-scoreOf(a.id);}).slice(0,4).forEach(function(it){
+      var li=document.createElement("li");li.textContent=it.text+" — "+scoreOf(it.id)+" pts";ul.appendChild(li);
+    });
+    if(!ul.children.length){var li=document.createElement("li");li.textContent="—";ul.appendChild(li);}
+    d.appendChild(ul);g.appendChild(d);
+  });
+  var a=$("sumactions");a.innerHTML="<h3 style='font-family:Georgia,serif;font-size:1.25rem;margin-bottom:6px'>Top 3 Strategic Actions</h3>";
+  state.selected.slice().sort(function(x,y){return x-y;}).forEach(function(mi,k){
+    var m=state.moves[mi],p=state.plan[k]||{};
+    var d=document.createElement("div");d.className="actrow";
+    d.innerHTML="<h4></h4><p style='font-size:.9rem;color:#6b6250'></p><div class='meta'></div>";
+    d.querySelector("h4").textContent=(k+1)+". "+m.text;
+    d.querySelector("p").textContent=MOVE_TYPES[m.type].label+" · "+m.combo+" priority points";
+    var meta=d.querySelector(".meta");
+    [["First step",p.first],["Owner",p.owner],["Deadline",p.deadline]].forEach(function(pair){
+      var s=document.createElement("div");
+      s.innerHTML="<strong></strong><br><span></span>";
+      s.querySelector("strong").textContent=pair[0]+":";
+      s.querySelector("span").textContent=pair[1]||"—";
+      meta.appendChild(s);
+    });
+    a.appendChild(d);
+  });
+}
+/* ---------- NAV ---------- */
+$("to2").addEventListener("click",function(){
+  var short=[];
+  QUADS.forEach(function(q){if(state.items[q.id].length<2)short.push(q.name);});
+  if(short.length){showError("Add at least 2 items in: "+short.join(", ")+".");return;}
+  clearError();renderScores();show(2);
+});
+$("back1").addEventListener("click",function(){show(1);});
+$("to3").addEventListener("click",function(){
+  var items=allItems(),unscored=items.filter(function(e){return scoreOf(e.item.id)===0;});
+  if(unscored.length){showError("Score every item before generating moves ("+unscored.length+" left).");return;}
+  var counts={};QUADS.forEach(function(q){counts[q.id]=topByScore(q.id,1).length;});
+  var empty=QUADS.filter(function(q){return counts[q.id]===0;});
+  if(empty.length){showError("Every quadrant needs at least one scored item.");return;}
+  clearError();generateMoves();renderMoves();show(3);
+});
+$("back2").addEventListener("click",function(){show(2);});
+$("to4").addEventListener("click",function(){
+  if(state.selected.length!==3){showError("Select exactly 3 moves ("+state.selected.length+" selected).");return;}
+  clearError();renderPlan();show(4);
+});
+$("back3").addEventListener("click",function(){show(3);});
+$("finish").addEventListener("click",function(){
+  var missing=[];
+  state.selected.slice().sort(function(a,b){return a-b;}).forEach(function(mi,k){
+    var p=state.plan[k]||{};
+    if(!p.first||!p.first.trim())missing.push("Action "+(k+1)+" first step");
+    if(!p.owner||!p.owner.trim())missing.push("Action "+(k+1)+" owner");
+    if(!p.deadline)missing.push("Action "+(k+1)+" deadline");
+  });
+  if(missing.length){showError("Complete every field to finish: "+missing.join("; ")+".");return;}
+  clearError();renderSummary();show(5);
+});
+$("back4").addEventListener("click",function(){show(4);});
+$("printbtn").addEventListener("click",function(){window.print();});
+function hardReset(){
+  if(!confirm("Start a new analysis? Everything will be cleared."))return;
+  state={items:{S:[],W:[],O:[],T:[]},scores:{},moves:[],selected:[],plan:[{},{},{}]};
+  save();renderQuads();show(1);
+}
+$("reset1").addEventListener("click",hardReset);
+$("reset2").addEventListener("click",hardReset);
+/* ---------- INIT ---------- */
+load();
+renderQuads();
+show(1);
+})();
+</script>
+</body>
+</html>
