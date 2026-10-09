@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exam Countdown Planner | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn any exam date into a day-by-day backward study plan with checkable milestones, automatic rebalancing, and a final-7-days checklist. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/exam-countdown-planner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Exam Countdown Planner | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Turn any exam date into a day-by-day backward study plan with checkable milestones, automatic rebalancing, and a final-7-days checklist. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/exam-countdown-planner/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:12px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.danger{background:transparent;color:#a33;border:2px solid #c66}
+.btn.small{padding:8px 14px;min-height:44px;font-size:.9rem}
+.hidden{display:none!important}
+.err{background:#fdecea;border:2px solid #c66;color:#a33;border-radius:8px;padding:10px 14px;margin:10px 0;font-weight:bold}
+.okmsg{background:#eef7e6;border:2px solid #6a6;color:#2a5;border-radius:8px;padding:10px 14px;margin:10px 0}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:110px}
+label.f{display:block;font-weight:bold;margin-top:14px;color:#141210}
+label.f small{font-weight:normal;color:#6b6250}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid #e6ddc2}
+.checkrow input{width:26px;height:26px;accent-color:#c9a227;flex-shrink:0;margin-top:3px}
+.checkrow .t{flex:1}
+.checkrow .t.done .ttl{text-decoration:line-through;color:#8a7a4a}
+.checkrow .ttl{font-weight:bold}
+.checkrow .sub{font-size:.88rem;color:#6b6250}
+.checkrow.missedday{background:#fdf3e7;border-radius:8px}
+.dayhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.daydate{font-weight:bold;font-family:Georgia,serif;font-size:1.05rem}
+.pill{display:inline-block;font-size:.72rem;font-weight:bold;padding:3px 10px;border-radius:20px;margin:2px 4px 2px 0;white-space:nowrap}
+.pill.learn{background:#dcead2;color:#2a5}
+.pill.practice{background:#e3ecf7;color:#245}
+.pill.review{background:#f3e3c8;color:#7a4d00}
+.pill.catchup{background:#f7d9d9;color:#a33}
+.prog{height:14px;background:#e6ddc2;border-radius:7px;overflow:hidden;margin:12px 0}
+.prog>div{height:100%;background:#c9a227;width:0;transition:width .2s}
+.countdown{font-family:Georgia,serif;font-size:2.4rem;color:#141210;text-align:center}
+.countdown small{font-size:1rem;color:#6b6250;display:block;font-family:-apple-system,sans-serif}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+header.site,footer.site,.noprint,section.devotional{display:none!important}
+body{background:#fff}
+main.app{max-width:100%;padding:0}
+.appcard{border:1px solid #999;break-inside:avoid}
+.btn{display:none}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Exam Countdown Planner</h1>
+<p class="intro">Enter your exam date, topics, and weekly study hours. The planner builds a day-by-day backward schedule — learn, then practice, then review — with checkable days, automatic rebalancing when you fall behind, and a cram-safe final-7-days checklist.</p>
+
+<!-- SETUP -->
+<div id="ecSetup" class="appcard">
+<h2>Build your plan</h2>
+<label class="f" for="ecName">Exam name <small>(e.g., "Biology 201 Final")</small></label>
+<input type="text" id="ecName" maxlength="120" placeholder="Exam name">
+<label class="f" for="ecDate">Exam date</label>
+<input type="date" id="ecDate">
+<label class="f" for="ecTopics">Topics / subjects <small>(one per line — these drive your schedule)</small></label>
+<textarea id="ecTopics" placeholder="Cell structure&#10;Photosynthesis&#10;Genetics&#10;Ecology" aria-label="Topics, one per line"></textarea>
+<label class="f" for="ecHours">Study hours per week <small>(realistic hours you can actually do)</small></label>
+<input type="number" id="ecHours" min="1" max="80" step="0.5" value="10">
+<div class="err hidden" id="ecSetupErr"></div>
+<button class="btn" id="ecGenerate" style="margin-top:10px">Generate My Study Plan</button>
+</div>
+
+<!-- PLAN -->
+<div id="ecPlan" class="hidden">
+<div class="appcard">
+<div class="countdown" id="ecCountdown"></div>
+<p style="text-align:center;color:#6b6250;margin-top:4px" id="ecPlanSub"></p>
+<div class="prog" role="progressbar" aria-label="Study plan progress"><div id="ecBar"></div></div>
+<p style="text-align:center;font-weight:bold" id="ecProgLabel"></p>
+<div class="err hidden" id="ecPlanErr"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px" class="noprint">
+<button class="btn" id="ecRebalance">Rebalance Missed Days</button>
+<button class="btn ghost" id="ecPrint">Print Plan</button>
+<button class="btn danger" id="ecReset">Start Over</button>
+</div>
+<div class="okmsg hidden" id="ecRebMsg"></div>
+</div>
+<div class="appcard">
+<h2>Your day-by-day plan</h2>
+<div id="ecDays"></div>
+</div>
+<div class="appcard">
+<h2>Final 7 days — cram-safe checklist</h2>
+<p style="color:#6b6250;margin-bottom:10px">The last week is about rest, logistics, and light review — not new material.</p>
+<div id="ecFinal"></div>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Exam Countdown Planner is just the start. <em>Learning Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper — study systems, memory tactics, and exam strategies that work under pressure.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/learning-made-simple/">Get Learning Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-exam-countdown-planner-v1";
+function p2(n){return String(n).padStart(2,"0");}
+function dstr(d){return d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate());}
+function todayStr(){return dstr(new Date());}
+function parseLocal(s){var p=String(s).split("-");return new Date(parseInt(p[0],10),parseInt(p[1],10)-1,parseInt(p[2],10));}
+function addDaysStr(s,n){var d=parseLocal(s);d.setDate(d.getDate()+n);return dstr(d);}
+function fmtLong(s){return parseLocal(s).toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"});}
+function $(id){return document.getElementById(id);}
+function showErr(id,msg){var e=$(id);e.textContent=msg;e.classList.remove("hidden");}
+function hideErr(id){$(id).classList.add("hidden");}
+var LEARN_ACT=["Read & outline the material","Take notes & summarize in your own words","Teach it back / make flashcards","Draw a mind map of key connections"];
+var PRACTICE_ACT=["Timed practice problems","Past-paper / sample questions","Drill your weakest spots","Mixed practice set across topics"];
+var FINAL=[
+"Set out your ID, supplies, and clothes the night before the exam.",
+"Get a full night of sleep TWO nights before (not just the night before).",
+"Final day: light review only — no new material.",
+"Eat a normal meal beforehand; bring water and a small snack.",
+"Arrive 20 minutes early; confirm the room and route today.",
+"Skim your one-page summary sheet the morning of.",
+"Schedule one full rest block in the last 3 days.",
+"Tell someone your exam time so they can check in on you."
+];
+function blank(){return {plan:null};}
+var S=blank();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"&&("plan" in o)){S=o;return;}}}catch(e){}S=blank();}
+function clampHours(h){if(isNaN(h)||!isFinite(h))return null;h=Math.round(h*2)/2;if(h<1)h=1;if(h>80)h=80;return h;}
+function buildDays(examDate,topics,hoursPerWeek){
+  // Local dates only. Study days: today through the day BEFORE the exam.
+  var days=[],d=parseLocal(todayStr()),ex=parseLocal(examDate),guard=0;
+  while(d<ex&&guard<2000){days.push(dstr(d));d.setDate(d.getDate()+1);guard++;}
+  var n=days.length;
+  var learnCount,practiceCount,reviewCount;
+  if(n>=3){
+    reviewCount=Math.max(1,Math.round(n*0.15));
+    practiceCount=Math.max(1,Math.round(n*0.25));
+    learnCount=n-reviewCount-practiceCount;
+    if(learnCount<1){learnCount=1;practiceCount=Math.max(0,n-reviewCount-learnCount);}
+  }else if(n===2){learnCount=1;practiceCount=0;reviewCount=1;}
+  else{learnCount=1;practiceCount=0;reviewCount=0;}
+  var hpday=Math.max(0.5,Math.round(hoursPerWeek/7*2)/2);
+  var out=[],ti=0,pi=0,li=0,ri=0,ai=0;
+  for(var i=0;i<n;i++){
+    var day={date:days[i],done:false,missed:false,extra:[],focus:"",detail:"",phase:"",hours:hpday};
+    if(i<learnCount){day.phase="learn";day.focus=topics[ti%topics.length];ti++;day.detail=LEARN_ACT[ai%LEARN_ACT.length];}
+    else if(i<learnCount+practiceCount){day.phase="practice";day.focus=topics[pi%topics.length];pi++;day.detail=PRACTICE_ACT[ai%PRACTICE_ACT.length];}
+    else{day.phase="review";day.focus="All topics";day.detail=(ri===0)?"Full sweep: revisit flagged items":"Light review: summary sheets only";ri++;}
+    ai++;out.push(day);
+  }
+  return out;
+}
+function generate(){
+  hideErr("ecSetupErr");
+  var name=$("ecName").value.trim();
+  var examDate=$("ecDate").value;
+  var topics=$("ecTopics").value.split("\n").map(function(x){return x.trim();}).filter(function(x){return x.length>0;}).slice(0,60);
+  var hours=clampHours(parseFloat($("ecHours").value));
+  if(!name){showErr("ecSetupErr","Give your exam a name first.");return;}
+  if(!examDate){showErr("ecSetupErr","Pick your exam date.");return;}
+  var t=todayStr();
+  if(examDate<=t){showErr("ecSetupErr","Your exam date must be in the future — you need at least one study day.");return;}
+  if(examDate>addDaysStr(t,5*365)){showErr("ecSetupErr","That exam is more than 5 years away. Pick a date within the next 5 years.");return;}
+  if(topics.length===0){showErr("ecSetupErr","List at least one topic (one per line).");return;}
+  if(hours===null){showErr("ecSetupErr","Enter your weekly study hours (1–80).");return;}
+  var days=buildDays(examDate,topics,hours);
+  if(days.length<1){showErr("ecSetupErr","Not enough time: your exam is today or earlier.");return;}
+  S.plan={name:name,examDate:examDate,topics:topics,hoursPerWeek:hours,days:days,
+    final:FINAL.map(function(f){return {label:f,done:false};}),created:t};
+  save();render();
+}
+function render(){
+  var p=S.plan;
+  $("ecSetup").classList.toggle("hidden",!!p);
+  $("ecPlan").classList.toggle("hidden",!p);
+  if(!p)return;
+  var t=todayStr();
+  var remaining=Math.max(0,Math.round((parseLocal(p.examDate)-parseLocal(t))/86400000));
+  $("ecCountdown").innerHTML=remaining+' <small>day'+(remaining===1?"":"s")+' until "'+p.name.replace(/</g,"&lt;")+'"</small>';
+  $("ecPlanSub").textContent=fmtLong(p.examDate)+" · "+p.topics.length+" topics · "+p.hoursPerWeek+" hrs/week · "+p.days.length+" study days";
+  renderDays();renderFinal();renderProgress();
+}
+function renderProgress(){
+  var p=S.plan;if(!p)return;
+  var done=p.days.filter(function(d){return d.done;}).length;
+  var pct=p.days.length?Math.round(done/p.days.length*100):0;
+  $("ecBar").style.width=pct+"%";
+  $("ecProgLabel").textContent=done+" of "+p.days.length+" study days done ("+pct+"%)";
+}
+function renderDays(){
+  var p=S.plan,box=$("ecDays");box.innerHTML="";
+  var t=todayStr();
+  p.days.forEach(function(day,i){
+    var row=document.createElement("div");
+    row.className="checkrow"+((!day.done&&day.date<t)?" missedday":"");
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!day.done;
+    cb.setAttribute("aria-label","Mark "+fmtLong(day.date)+" done");
+    cb.addEventListener("change",function(){day.done=cb.checked;if(cb.checked)day.missed=false;save();renderDays();renderProgress();});
+    row.appendChild(cb);
+    var txt=document.createElement("div");txt.className="t"+(day.done?" done":"");
+    var head=document.createElement("div");head.className="dayhead";
+    var dt=document.createElement("span");dt.className="daydate";dt.textContent=fmtLong(day.date);head.appendChild(dt);
+    var pill=document.createElement("span");pill.className="pill "+day.phase;
+    pill.textContent=day.phase==="learn"?"LEARN":day.phase==="practice"?"PRACTICE":"REVIEW";
+    head.appendChild(pill);
+    if(!day.done&&day.date<t){var m=document.createElement("span");m.className="pill catchup";m.textContent="MISSED";head.appendChild(m);}
+    txt.appendChild(head);
+    var ttl=document.createElement("div");ttl.className="ttl";
+    ttl.textContent=day.detail+": "+day.focus;txt.appendChild(ttl);
+    if(day.extra.length){var ex=document.createElement("div");ex.className="sub";
+      ex.innerHTML='<span class="pill catchup">CATCH-UP</span> '+day.extra.map(function(e){return e.replace(/</g,"&lt;");}).join(" · ");txt.appendChild(ex);}
+    var sub=document.createElement("div");sub.className="sub";sub.textContent="≈ "+day.hours+" hrs · Day "+(i+1)+" of "+p.days.length;txt.appendChild(sub);
+    row.appendChild(txt);box.appendChild(row);
+  });
+}
+function renderFinal(){
+  var p=S.plan,box=$("ecFinal");box.innerHTML="";
+  p.final.forEach(function(f){
+    var row=document.createElement("div");row.className="checkrow";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!f.done;
+    cb.setAttribute("aria-label",f.label);
+    cb.addEventListener("change",function(){f.done=cb.checked;save();});
+    row.appendChild(cb);
+    var txt=document.createElement("div");txt.className="t"+(f.done?" done":"");
+    var s=document.createElement("span");s.className="ttl";s.textContent=f.label;txt.appendChild(s);
+    row.appendChild(txt);box.appendChild(row);
+  });
+}
+function rebalance(){
+  hideErr("ecPlanErr");var m=$("ecRebMsg");m.classList.add("hidden");
+  var p=S.plan;if(!p)return;
+  var t=todayStr();
+  var missed=p.days.filter(function(d){return !d.done&&!d.missed&&d.date<t;});
+  if(missed.length===0){m.textContent="Nothing to rebalance — no missed days. Nice work.";m.classList.remove("hidden");return;}
+  var catchups=[];
+  missed.forEach(function(d){d.missed=true;if(d.phase!=="review")catchups.push(d.detail.split(":")[0]+": "+d.focus);});
+  var future=p.days.filter(function(d){return !d.done&&!d.missed&&d.date>=t;});
+  if(future.length===0){m.textContent=missed.length+" missed day(s), but there are no future study days left to move them to. Consider moving your exam date.";m.classList.remove("hidden");save();renderDays();return;}
+  catchups.forEach(function(c,i){future[i%future.length].extra.push(c);});
+  save();renderDays();
+  m.textContent="Rebalanced "+missed.length+" missed day"+(missed.length===1?"":"s")+": "+catchups.length+" catch-up item"+(catchups.length===1?"":"s")+" spread across your remaining days.";
+  m.classList.remove("hidden");
+}
+$("ecGenerate").addEventListener("click",generate);
+$("ecRebalance").addEventListener("click",rebalance);
+$("ecPrint").addEventListener("click",function(){window.print();});
+$("ecReset").addEventListener("click",function(){
+  if(confirm("Discard this study plan and start over?")){S.plan=null;save();render();}
+});
+load();render();
+window.__ecApi={state:function(){return S;},save:save,load:load,render:render,todayStr:todayStr,addDaysStr:addDaysStr,parseLocal:parseLocal,buildDays:buildDays,clampHours:clampHours,rebalance:rebalance,generate:generate};
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadline Backward Planner | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Start from a fixed deadline and reverse-schedule every milestone with buffers so you finish early, not late. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/deadline-backward-planner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Deadline Backward Planner | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Start from a fixed deadline and reverse-schedule every milestone with buffers so you finish early, not late. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/deadline-backward-planner/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:110px;resize:vertical}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.stepdots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.stepdots span{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;border:2px solid #c9a227;font-size:.9rem}
+.stepdots span.cur{background:#c9a227;color:#141210}
+.stepdots span.done{background:#141210;color:#e8c84a;border-color:#141210}
+.stepdots span.todo{background:transparent;color:#8a6d1c}
+.navrow{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:20px}
+.steplabel{display:inline-block;background:#141210;color:#e8c84a;font-weight:bold;border-radius:6px;padding:4px 12px;margin-bottom:8px;font-size:.9rem}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.warn{background:#fdeeee;border-left-color:#a33}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.rowitem{display:flex;gap:8px;align-items:center;margin:6px 0}
+.rowitem input{margin:0}
+.rowitem .pname{flex:2}
+.rowitem .pdays{flex:1;min-width:80px}
+.optblock{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:12px 0}
+.plantable{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+.plantable th,.plantable td{border:1px solid #e0d6b8;padding:10px;text-align:left;vertical-align:top}
+.plantable th{background:#141210;color:#e8c84a}
+.plantable tr.bufferrow td{background:#fdf3e3}
+.plantable tr.reviewrow td{background:#eef6ee}
+.plantable tr.deadlinerow td{background:#141210;color:#e8c84a;font-weight:bold}
+.bar{height:10px;border-radius:5px;background:#e0d6b8;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:#c9a227}
+.bar.buffer i{background:#e09112}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}.rowitem{flex-wrap:wrap}.rowitem .pname{flex:1 1 100%}}
+@media print{header.site,footer.site,.navrow,.noprint,section{display:none}main.app{max-width:100%}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Deadline Backward Planner</h1>
+<p class="intro">Name the deliverable and its immovable deadline. This tool schedules every phase <b>backward</b> from that date — with an automatic 20% buffer — so you finish early, not late.</p>
+
+<div class="stepdots" id="dots" aria-label="Progress"></div>
+
+<div class="appcard" id="s1">
+<span class="steplabel">Step 1 — The deadline</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">What must be delivered, and when?</h2>
+<label class="lbl" for="dname">Deliverable</label>
+<input type="text" id="dname" placeholder="e.g., Client website launch" maxlength="120">
+<label class="lbl" for="ddate">Immovable deadline</label>
+<input type="date" id="ddate" aria-label="Deadline date">
+<label class="lbl" for="rwdays">Final review days</label>
+<p class="hint">Days reserved at the very end for final review and fixes. (Enter 0 to skip.)</p>
+<input type="number" id="rwdays" min="0" max="365" step="1" value="2">
+<div class="err" id="e1" role="alert"></div>
+<div class="navrow">
+<button class="btn ghost" id="reset1" type="button">Reset all</button>
+<button class="btn" id="tophases" type="button">Define phases &rarr;</button>
+</div>
+</div>
+
+<div class="appcard" id="s2" hidden>
+<span class="steplabel">Step 2 — The phases</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Break the work into phases</h2>
+<p class="hint">List the major phases in the order you will do them, with your honest estimate of working days for each. The tool schedules them backward from the deadline and inserts a buffer automatically.</p>
+<div id="phaselist"></div>
+<div class="rowitem">
+<input type="text" id="pname" class="pname" placeholder="Phase name, e.g., Research" maxlength="80" aria-label="Phase name">
+<input type="number" id="pdays" class="pdays" placeholder="Days" min="1" max="3650" step="1" aria-label="Estimated days">
+<button class="btn small" id="addphase" type="button">Add</button>
+</div>
+<div class="err" id="e2" role="alert"></div>
+<label class="lbl" for="bufpct">Safety buffer</label>
+<select id="bufpct" aria-label="Buffer percentage">
+<option value="20" selected>20% — recommended (finishes early)</option>
+<option value="10">10% — tight (higher risk)</option>
+</select>
+<div class="navrow">
+<button class="btn ghost" id="back1" type="button">&larr; Back</button>
+<button class="btn" id="buildplan" type="button">Build my reverse plan &rarr;</button>
+</div>
+</div>
+
+<div class="appcard" id="s3" hidden>
+<span class="steplabel">Step 3 — Your reverse timeline</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px" id="planname">Your plan</h2>
+<p class="hint">Read top-down: the deadline is at the top, the start date at the bottom. Assumes calendar days. Buffer blocks are highlighted.</p>
+<div id="riskbox"></div>
+<div id="planout"></div>
+<div class="optblock" id="cutpanel" hidden>
+<h4>Scope-cut options — reclaim days</h4>
+<p class="hint">Tick phases to cut, or shrink the buffer, then recalculate. Cutting scope is a last resort; do it deliberately, not by accident.</p>
+<div id="cutlist"></div>
+<label style="display:block;margin-top:8px"><input type="checkbox" id="cutbuf" style="width:20px;height:20px;accent-color:#c9a227;vertical-align:middle"> Shrink buffer to 10%</label>
+<button class="btn small" id="recalc" type="button" style="margin-top:10px">Recalculate plan</button>
+</div>
+<div class="optblock">
+<h4>Take it with you</h4>
+<label class="lbl" for="copysum">Calendar-ready milestone summary</label>
+<textarea id="copysum" readonly></textarea>
+<div class="navrow">
+<button class="btn small" id="copybtn" type="button">Copy summary</button>
+<button class="btn small ghost" id="icsbtn" type="button">Download calendar file (.ics)</button>
+</div>
+<div class="hint" id="copymsg"></div>
+</div>
+<div class="navrow">
+<button class="btn ghost" id="editphases" type="button">&larr; Edit phases</button>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn ghost" id="printbtn" type="button">Print plan</button>
+<button class="btn danger" id="reset3" type="button">Reset all</button>
+</div>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Backward planning is one of the most reliable ways to hit a hard date. Browse the <em>Made Simple</em> library for more practical tools on planning, productivity, and getting things done.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/">Browse the Made Simple Books</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-deadline-backward-planner-v1";
+var S={step:1,deliverable:"",deadline:"",reviewDays:2,bufferPct:20,phases:[],nextId:1,built:false};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"){
+  if(typeof o.deliverable==="string")S.deliverable=o.deliverable;
+  if(typeof o.deadline==="string")S.deadline=o.deadline;
+  if(typeof o.reviewDays==="number")S.reviewDays=o.reviewDays;
+  if(o.bufferPct===10||o.bufferPct===20)S.bufferPct=o.bufferPct;
+  if(Array.isArray(o.phases))S.phases=o.phases.filter(function(p){return p&&typeof p.name==="string"&&typeof p.days==="number";});
+  if(typeof o.nextId==="number")S.nextId=o.nextId;
+  if(o.step===1||o.step===2||o.step===3)S.step=o.step;
+  S.built=!!o.built;}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+var MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function pad(n){return (n<10?"0":"")+n;}
+function parseD(s){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||"");if(!m)return null;
+  var d=new Date(+m[1],+m[2]-1,+m[3]);if(d.getFullYear()!==+m[1]||d.getMonth()!==+m[2]-1||d.getDate()!==+m[3])return null;return d;}
+function addDays(d,n){var x=new Date(d.getTime());x.setDate(x.getDate()+n);return x;}
+function fmt(d){return MON[d.getMonth()]+" "+d.getDate()+", "+d.getFullYear();}
+function todayMid(){var t=new Date();t.setHours(0,0,0,0);return t;}
+function diffDays(a,b){return Math.round((a.getTime()-b.getTime())/86400000);}
+function show(n){S.step=n;save();for(var i=1;i<=3;i++){document.getElementById("s"+i).hidden=(i!==n);}drawDots();}
+function drawDots(){var d=document.getElementById("dots");d.innerHTML="";var labels=["Deadline","Phases","Timeline"];
+  for(var i=1;i<=3;i++){var s=document.createElement("span");s.textContent=i;s.title=labels[i-1];
+    s.className=(i===S.step)?"cur":(i<S.step?"done":"todo");d.appendChild(s);}}
+function activePhases(){return S.phases.filter(function(p){return !p.cut;});}
+function calcPlan(){
+  var dl=parseD(S.deadline);if(!dl)return{error:"deadline"};
+  var rw=Math.max(0,Math.floor(S.reviewDays)||0);
+  var ph=activePhases();if(!ph.length)return{error:"phases"};
+  var totalDays=ph.reduce(function(a,p){return a+p.days;},0);
+  var bufDays=Math.ceil(totalDays*(S.bufferPct/100));
+  var rows=[],cursor=dl;
+  rows.push({label:"Deadline — "+S.deliverable,start:dl,end:dl,kind:"deadline",days:1});
+  var reviewStart=null;
+  if(rw>0){var rs=addDays(dl,-(rw-1));rows.push({label:"Final review",start:rs,end:dl,kind:"review",days:rw});cursor=addDays(rs,-1);reviewStart=rs;}
+  if(bufDays>0){var be=cursor,bs=addDays(be,-(bufDays-1));
+    rows.push({label:"Buffer ("+S.bufferPct+"%) — do not spend early",start:bs,end:be,kind:"buffer",days:bufDays});cursor=addDays(bs,-1);}
+  for(var i=ph.length-1;i>=0;i--){var p=ph[i];var pe=cursor,ps=addDays(pe,-(p.days-1));
+    rows.push({label:p.name,start:ps,end:pe,kind:"phase",days:p.days});cursor=addDays(ps,-1);}
+  var startDate=rows[rows.length-1].start;
+  var today=todayMid();
+  var atRisk=startDate<today;
+  return{rows:rows,startDate:startDate,totalDays:totalDays,bufDays:bufDays,reviewDays:rw,atRisk:atRisk,daysLate:atRisk?diffDays(today,startDate):0,today:today,deadline:dl};
+}
+function renderPhases(){var w=document.getElementById("phaselist");w.innerHTML="";
+  if(!S.phases.length)w.innerHTML="<p class='hint'>No phases yet — add the first one below.</p>";
+  S.phases.forEach(function(p){var d=document.createElement("div");d.className="rowitem";
+    d.innerHTML="<input type='text' class='pname' value='"+esc(p.name)+"' maxlength='80' aria-label='Phase name'>"+
+      "<input type='number' class='pdays' value='"+p.days+"' min='1' max='3650' step='1' aria-label='Estimated days'>";
+    var nm=d.querySelector(".pname"),dy=d.querySelector(".pdays");
+    nm.addEventListener("input",function(){p.name=nm.value;save();});
+    dy.addEventListener("change",function(){var v=parseInt(dy.value,10);if(!isNaN(v)&&v>=1&&v<=3650){p.days=v;save();}});
+    var b=document.createElement("button");b.type="button";b.className="btn small ghost";b.textContent="Remove";
+    b.setAttribute("aria-label","Remove phase "+p.name);
+    b.addEventListener("click",function(){S.phases=S.phases.filter(function(x){return x.id!==p.id;});save();renderPhases();});
+    d.appendChild(b);w.appendChild(d);});}
+function addPhase(){var nm=document.getElementById("pname"),dy=document.getElementById("pdays");
+  var v=nm.value.trim(),days=parseInt(dy.value,10);
+  if(!v){document.getElementById("e2").textContent="Give the phase a name.";return;}
+  if(isNaN(days)||days<1||days>3650){document.getElementById("e2").textContent="Days must be a whole number between 1 and 3650.";return;}
+  document.getElementById("e2").textContent="";
+  S.phases.push({id:"p"+(S.nextId++),name:v,days:days,cut:false});
+  nm.value="";dy.value="";save();renderPhases();nm.focus();}
+function validateStep1(){
+  if(!S.deliverable.trim())return"Name the deliverable first.";
+  var dl=parseD(S.deadline);
+  if(!dl)return"Pick a valid deadline date.";
+  if(dl<todayMid())return"The deadline must be today or later.";
+  var rw=parseInt(document.getElementById("rwdays").value,10);
+  if(isNaN(rw)||rw<0||rw>365)return"Final review days must be between 0 and 365.";
+  S.reviewDays=rw;save();return"";}
+function renderPlan(){var r=calcPlan();var out=document.getElementById("planout");var rb=document.getElementById("riskbox");
+  rb.innerHTML="";out.innerHTML="";
+  if(r.error){out.innerHTML="<p class='err'>Cannot build the plan: "+(r.error==="deadline"?"the deadline is invalid.":"add at least one phase.")+" Go back and fix it.</p>";return;}
+  document.getElementById("planname").textContent="Reverse plan: "+S.deliverable;
+  var totalSpan=Math.max(1,r.totalDays+r.bufDays+r.reviewDays+1);
+  var html="<table class='plantable'><tr><th>Milestone</th><th>Dates</th><th>Days</th></tr>";
+  r.rows.forEach(function(row){
+    var cls=row.kind==="buffer"?" class='bufferrow'":(row.kind==="review"?" class='reviewrow'":(row.kind==="deadline"?" class='deadlinerow'":""));
+    var dr=row.start.getTime()===row.end.getTime()?fmt(row.start):fmt(row.start)+" → "+fmt(row.end);
+    var w=Math.max(4,Math.round(row.days/totalSpan*100));
+    var bc=row.kind==="buffer"?"bar buffer":"bar";
+    html+="<tr"+cls+"><td>"+esc(row.label)+"<div class='"+bc+"'><i style='width:"+w+"%'></i></div></td><td>"+dr+"</td><td>"+row.days+"</td></tr>";
+  });
+  html+="</table>";
+  html+="<div class='flag good'><b>Start date: "+fmt(r.startDate)+".</b> "+r.totalDays+" phase days + "+r.bufDays+" buffer days ("+S.bufferPct+"%)"+(r.reviewDays? " + "+r.reviewDays+" review days":"")+". If every milestone lands on time, you finish with the buffer unspent.</div>";
+  out.innerHTML=html;
+  if(r.atRisk){
+    var f=document.createElement("div");f.className="flag warn";f.id="riskflag";
+    f.innerHTML="<b>Deadline at risk:</b> this plan needed to start "+r.daysLate+" day"+(r.daysLate===1?"":"s")+" ago ("+fmt(r.startDate)+"). You have three honest options: cut scope below, shrink the buffer, or move the deadline. Pick one on purpose — don't let the plan pick for you.";
+    rb.appendChild(f);
+    var cp=document.getElementById("cutpanel");cp.hidden=false;
+    var cl=document.getElementById("cutlist");cl.innerHTML="";
+    S.phases.forEach(function(p){var lab=document.createElement("label");
+      lab.style.cssText="display:block;margin:6px 0";
+      lab.innerHTML="<input type='checkbox' data-cut='"+p.id+"' "+(p.cut?"checked":"")+" style='width:20px;height:20px;accent-color:#a33;vertical-align:middle'> Cut <b>"+esc(p.name)+"</b> ("+p.days+" days)";
+      cl.appendChild(lab);});
+    cl.querySelectorAll("[data-cut]").forEach(function(c){c.addEventListener("change",function(){
+      var p=S.phases.filter(function(x){return x.id===c.getAttribute("data-cut");})[0];
+      if(p){p.cut=c.checked;save();}});});
+    document.getElementById("cutbuf").checked=(S.bufferPct===10);
+  }else{
+    document.getElementById("cutpanel").hidden=true;
+    var g=document.createElement("div");g.className="flag good";
+    g.innerHTML="<b>On track:</b> the computed start date ("+fmt(r.startDate)+") is "+(diffDays(r.startDate,r.today)===0?"today":diffDays(r.startDate,r.today)+" days from now")+". Start on time and the deadline holds.";
+    rb.appendChild(g);
+  }
+  document.getElementById("copysum").value=buildSummary(r);
+}
+function buildSummary(r){
+  var L=[];L.push(S.deliverable+" — reverse plan (deadline "+fmt(r.deadline)+")");
+  r.rows.forEach(function(row){var dr=row.start.getTime()===row.end.getTime()?fmt(row.start):fmt(row.start)+" → "+fmt(row.end);
+    L.push("• "+row.label+": "+dr+" ("+row.days+"d)");});
+  L.push("Start date: "+fmt(r.startDate)+(r.atRisk?" — AT RISK ("+r.daysLate+" days late)":" — on track"));
+  return L.join("\n");
+}
+function buildICS(r){
+  function dstr(d){return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate());}
+  var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Upshur Unlimited//Deadline Backward Planner//EN"];
+  r.rows.forEach(function(row,i){
+    ics.push("BEGIN:VEVENT","UID:dbp-"+i+"-"+dstr(row.start)+"@kimaniupshur.com",
+      "DTSTAMP:20260101T000000Z","DTSTART;VALUE=DATE:"+dstr(row.start),"DTEND;VALUE=DATE:"+dstr(addDays(row.end,1)),
+      "SUMMARY:"+(""+S.deliverable+": "+row.label).replace(/[\r\n]/g," ").slice(0,120),"END:VEVENT");});
+  ics.push("END:VCALENDAR");return ics.join("\r\n");
+}
+var resetArmed=false,resetTimer=null;
+function armReset(btn){if(!resetArmed){resetArmed=true;btn.textContent="Click again to confirm reset";btn.classList.add("danger");
+    resetTimer=setTimeout(function(){resetArmed=false;btn.textContent="Reset all";},5000);return;}
+  clearTimeout(resetTimer);resetArmed=false;btn.textContent="Reset all";
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={step:1,deliverable:"",deadline:"",reviewDays:2,bufferPct:20,phases:[],nextId:1,built:false};
+  document.getElementById("dname").value="";document.getElementById("ddate").value="";document.getElementById("rwdays").value="2";
+  document.getElementById("bufpct").value="20";renderPhases();
+  for(var i=1;i<=3;i++){document.getElementById("s"+i).hidden=(i!==1);}
+  drawDots();}
+document.getElementById("dname").addEventListener("input",function(){S.deliverable=this.value;save();});
+document.getElementById("ddate").addEventListener("change",function(){S.deadline=this.value;save();});
+document.getElementById("rwdays").addEventListener("change",function(){var v=parseInt(this.value,10);if(!isNaN(v)){S.reviewDays=v;save();}});
+document.getElementById("tophases").addEventListener("click",function(){
+  var e=validateStep1();document.getElementById("e1").textContent=e;
+  if(e)return;renderPhases();show(2);});
+document.getElementById("back1").addEventListener("click",function(){show(1);});
+document.getElementById("addphase").addEventListener("click",addPhase);
+document.getElementById("pname").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();addPhase();}});
+document.getElementById("bufpct").addEventListener("change",function(){S.bufferPct=parseInt(this.value,10);save();});
+document.getElementById("buildplan").addEventListener("click",function(){
+  if(!activePhases().length){document.getElementById("e2").textContent="Add at least one phase first.";return;}
+  document.getElementById("e2").textContent="";S.built=true;save();show(3);renderPlan();});
+document.getElementById("editphases").addEventListener("click",function(){renderPhases();show(2);});
+document.getElementById("recalc").addEventListener("click",function(){
+  if(document.getElementById("cutbuf").checked)S.bufferPct=10;else S.bufferPct=20;
+  document.getElementById("bufpct").value=String(S.bufferPct);save();renderPlan();});
+document.getElementById("copybtn").addEventListener("click",function(){
+  var t=document.getElementById("copysum");var m=document.getElementById("copymsg");
+  function done(ok){m.textContent=ok?"Copied to clipboard.":"Copy failed — select the text above and copy it manually.";}
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(function(){done(true);},function(){done(false);});}
+    else{t.select();done(document.execCommand("copy"));}
+  }catch(e){done(false);}});
+document.getElementById("icsbtn").addEventListener("click",function(){
+  var r=calcPlan();if(r.error)return;
+  try{var blob=new Blob([buildICS(r)],{type:"text/calendar"});
+    var a=document.createElement("a");a.href=URL.createObjectURL(blob);
+    a.download="deadline-plan.ics";document.body.appendChild(a);a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1000);}catch(e){}});
+document.getElementById("printbtn").addEventListener("click",function(){window.print();});
+document.getElementById("reset1").addEventListener("click",function(){armReset(this);});
+document.getElementById("reset3").addEventListener("click",function(){armReset(this);});
+load();
+document.getElementById("dname").value=S.deliverable||"";
+document.getElementById("ddate").value=S.deadline||"";
+document.getElementById("rwdays").value=S.reviewDays;
+document.getElementById("bufpct").value=String(S.bufferPct);
+show(S.built&&S.step===3?3:(S.step===2?2:1));
+if(S.step===2)renderPhases();
+if(S.step===3)renderPlan();
+</script>
+</body>
+</html>

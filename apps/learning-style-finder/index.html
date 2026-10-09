@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning Style Finder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Discover your learning preferences and get a personalized, evidence-based study-tactics playbook. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/learning-style-finder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Learning Style Finder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Discover your learning preferences and get a personalized, evidence-based study-tactics playbook. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/learning-style-finder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+.navrow{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:20px}
+.steplabel{display:inline-block;background:#141210;color:#e8c84a;font-weight:bold;border-radius:6px;padding:4px 12px;margin-bottom:8px;font-size:.9rem}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.optblock{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:12px 0}
+.optblock h4{font-family:Georgia,serif;margin-bottom:4px}
+.qopts{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.qopt{text-align:left;background:#fff;border:2px solid #c9a227;border-radius:10px;padding:16px;font-size:1rem;cursor:pointer;min-height:56px;color:#141210;width:100%}
+.qopt:hover{background:#fdf6e3}
+.qopt.sel{background:#141210;color:#e8c84a;border-color:#141210}
+.prefbar{margin:10px 0}
+.prefbar .plabel{display:flex;justify-content:space-between;font-weight:bold;font-size:.95rem}
+.pbar{height:14px;border-radius:7px;background:#e0d6b8;margin-top:4px;overflow:hidden}
+.pbar i{display:block;height:100%;background:#c9a227}
+.tactic{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:14px;margin:10px 0}
+.tactic h4{font-family:Georgia,serif;color:#141210;margin-bottom:4px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+#print-summary{display:none}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{
+  header.site,footer.site,.navrow,.noprint,section{display:none}
+  #quiz-ui{display:none}
+  #print-summary{display:block}
+  main.app{max-width:100%}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<div id="quiz-ui">
+<h1>Learning Style Finder</h1>
+<p class="intro">Answer 15 quick questions about how you prefer to learn, and get a personalized playbook of study tactics — built on what research actually supports.</p>
+
+<div class="appcard" id="quiz" hidden>
+<span class="steplabel" id="qstep">Question 1 of 15</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px" id="qtext"></h2>
+<div class="qopts" id="qopts"></div>
+<div class="navrow">
+<button class="btn ghost" id="qback" type="button">&larr; Back</button>
+<button class="btn danger" id="qreset" type="button">Reset</button>
+</div>
+</div>
+
+<div class="appcard" id="intro-card">
+<span class="steplabel">How this works</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Preferences, not labels</h2>
+<p>You will answer 15 scenario questions. Twelve reveal which ways of engaging with new material you <b>prefer</b> — seeing, hearing, reading/writing, or doing. Three reveal your ideal focus environment.</p>
+<div class="flag" id="evidence-note-intro"><b>An honest note before you begin:</b> large reviews of learning research find no reliable evidence that matching instruction to a fixed &ldquo;learning style&rdquo; improves learning. Preferences are real, but they are not fixed traits — and most people learn well through several channels. What the evidence does support is <b>how</b> you study: spaced practice, retrieval practice, interleaving, and dual coding. Your playbook below is built on those methods, tuned to your preferences.</div>
+<button class="btn" id="startbtn" type="button">Start the 15 questions &rarr;</button>
+</div>
+
+<div class="appcard" id="results" hidden>
+<span class="steplabel">Your results</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your learning-preference profile</h2>
+<p class="hint">Ranked by your answers — this shows what you tend to prefer, not a fixed label about how your brain works.</p>
+<div id="prefbars"></div>
+<div class="flag" id="evidence-note"><b>What the research actually says:</b> there is no reliable evidence that matching instruction to a supposed &ldquo;learning style&rdquo; improves outcomes. These preferences are real — you may genuinely enjoy diagrams more than lectures — but they are not fixed traits, and you can learn effectively through any channel. Study methods matter far more than the channel: the playbook below leans on evidence-backed tactics (spaced practice, retrieval practice, interleaving, dual coding), adjusted to fit your preferences.</div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Your personalized playbook</h3>
+<div id="playbook"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Your focus environment</h3>
+<div id="envout"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Tactics that work for everyone</h3>
+<p class="hint">These four methods have the strongest research support in the science of learning. Use them no matter your preferences.</p>
+<div id="everyone"></div>
+<div class="navrow">
+<button class="btn ghost" id="retake" type="button">&larr; Retake the quiz</button>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn ghost" id="printbtn" type="button">Print one-page summary</button>
+</div>
+</div>
+</div>
+</div><!-- /quiz-ui -->
+
+<div id="print-summary" aria-hidden="true"></div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Preferences are the starting point — method is what makes learning stick. <em>Learning Made Simple</em> by Kimani Upshur, M.Ed. walks through practical, evidence-informed ways to learn anything faster and remember it longer.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/learning-made-simple/">Get Learning Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-learning-style-finder-v1";
+var DIMS={V:"Visual",A:"Auditory",R:"Reading / Writing",K:"Hands-on"};
+var SCEN=[
+{q:"You need to learn a new software tool. What do you do first?",o:[["Watch a tutorial video and study the screenshots","V"],["Ask someone to walk you through it out loud","A"],["Read the help docs or getting-started guide","R"],["Click around and figure it out by trying","K"]]},
+{q:"You are visiting a new city and need to find your way around. You\u2026",o:[["Study a map of the area first","V"],["Ask a local for spoken directions","A"],["Read written directions or a guide","R"],["Wander and explore until it clicks","K"]]},
+{q:"You have to give a presentation next week. How do you prepare?",o:[["Build slides full of diagrams and visuals","V"],["Rehearse it out loud, over and over","A"],["Write out a full script and read it through","R"],["Practice with props, movement, or a live run-through","K"]]},
+{q:"You want to learn a new recipe. Your first move is to\u2026",o:[["Watch someone cook it in a video","V"],["Listen to someone describe the steps","A"],["Read the recipe card carefully","R"],["Just start cooking and adjust as you go","K"]]},
+{q:"A big test is coming. Your go-to study move is\u2026",o:[["Redraw diagrams, charts, and timelines from memory","V"],["Discuss the material with a study partner","A"],["Rewrite your notes in your own words","R"],["Work through practice problems by hand","K"]]},
+{q:"You are assembling flat-pack furniture. You\u2026",o:[["Follow the picture diagrams step by step","V"],["Have someone explain the steps aloud while you work","A"],["Read the written instructions first","R"],["Sort the parts and figure it out by handling them","K"]]},
+{q:"You just met someone and want to remember their name. You\u2026",o:[["Picture their face with the name attached","V"],["Repeat the name aloud a few times","A"],["Write the name down as soon as you can","R"],["Link it to the handshake or the moment","K"]]},
+{q:"You are learning about a historical event. You prefer\u2026",o:[["Timelines, maps, and documentary footage","V"],["Lectures, podcasts, and class discussion","A"],["Textbooks, articles, and primary sources","R"],["A hands-on project, site visit, or reenactment","K"]]},
+{q:"Your phone just got new features. You learn them by\u2026",o:[["Watching a demo video","V"],["Asking a friend to explain what changed","A"],["Reading the update notes","R"],["Tapping through every menu yourself","K"]]},
+{q:"You need to understand a new process at work. You want\u2026",o:[["A flowchart or diagram of the whole thing","V"],["A walkthrough meeting where someone talks it through","A"],["A written standard operating procedure","R"],["To shadow someone doing it in real time","K"]]},
+{q:"You are learning a new language. You would rather\u2026",o:[["Watch shows and study illustrated vocabulary","V"],["Practice by speaking with other people","A"],["Study grammar books and write sentences","R"],["Role-play real situations like ordering food","K"]]},
+{q:"Something in your home is broken. To fix it, you\u2026",o:[["Search for a diagram or a repair video","V"],["Call someone and talk through the symptoms","A"],["Read the troubleshooting steps","R"],["Take it apart and tinker until it works","K"]]}
+];
+var ENVQ=[
+{q:"Where do you focus best?",o:[["Alone in a quiet room","quiet"],["Somewhere with background buzz, like a caf\u00e9","buzz"],["Around other people who are also working","social"],["It honestly depends on the task","flex"]]},
+{q:"When is your brain sharpest?",o:[["Early morning","morning"],["Late morning to afternoon","midday"],["Evening","evening"],["Late at night","night"]]},
+{q:"How long can you focus before you need a real break?",o:[["Under 25 minutes","short"],["25\u201350 minutes","medium"],["50\u201390 minutes","long"],["90 minutes or more","verylong"]]}
+];
+var NQ=SCEN.length+ENVQ.length;
+var PLAYBOOK={
+V:{notes:"<b>Sketchnote your notes.</b> Turn lectures and chapters into one-page visual summaries: boxes, arrows, simple icons. The act of translating words into pictures is the learning — not the pretty page.",session:"Study in <b>25-minute focused blocks</b>. Start each block by sketching what you remember from the last one (retrieval), then learn the next chunk, then close the block by adding it to the same page.",env:"Keep a whiteboard, sticky notes, or a sketchpad within reach. Color-code with two or three pens — color is a memory cue, not decoration."},
+A:{notes:"<b>Explain it aloud.</b> After reading a section, close the book and teach it to an empty room (or a patient friend). If you stumble, that gap is exactly what to re-study. Short voice memos of key ideas work too.",session:"Study in <b>25-minute blocks with a talk-back finish</b>: learn for 20 minutes, then spend 5 explaining what you just learned out loud. Join or form a discussion group for the hardest topics.",env:"Read key passages aloud. Use text-to-speech for dense material, and talk through problems instead of only writing them."},
+R:{notes:"<b>Write to learn.</b> Use Cornell notes: key terms on the left, full notes on the right, a 2-sentence summary at the bottom of each page. Rewriting in your own words forces understanding — copying does not.",session:"Study in <b>30\u201340 minute writing blocks</b>. End each block by writing a short summary from memory, then check it against the source and fix what you missed.",env:"Keep lists, glossaries, and one-page written summaries. When stuck, write the question out fully — half the time the answer appears mid-sentence."},
+K:{notes:"<b>Learn by doing.</b> Turn every topic into an action: build a model, run the simulation, do the practice set, role-play the scenario. Reading about it is the warm-up; doing it is the workout.",session:"Study in <b>20-minute action bursts</b>: attempt the problem or task first, then study what you got wrong. Attempt-first beats read-first for hands-on learners.",env:"Study where you can move, spread out materials, and make a mess. Pace while memorizing; use flashcards you physically handle and sort."}
+};
+var EVERYONE=[
+["Spaced practice","Spread study sessions over days instead of cramming. Reviewing something three times across a week beats three hours in one night — every time."],
+["Retrieval practice","Test yourself from memory: close the book and recall, use flashcards, or do practice questions. Recalling strengthens memory far more than re-reading."],
+["Interleaving","Mix topics within a session instead of drilling one topic to exhaustion. It feels harder, and that difficulty is what builds flexible understanding."],
+["Dual coding","Combine words with visuals: a diagram plus a written explanation, a sketched timeline plus spoken narration. Two channels beat one."]
+];
+var ENV_TIPS={
+quiet:"You focus best in quiet — guard it. Noise-cancelling headphones or a closed door turn any space into a study space.",
+buzz:"You focus best with background buzz — caf\u00e9s, libraries, or low ambient sound give your brain the steady hum it likes.",
+social:"You focus best around other working people — body-doubling works. Study in libraries, co-working spaces, or parallel study sessions.",
+flex:"Your ideal setting depends on the task — match it deliberately: quiet for hard new material, buzz or company for routine review."};
+var S={qi:0,answers:{},done:false};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"){
+  if(typeof o.qi==="number")S.qi=o.qi;
+  if(o.answers&&typeof o.answers==="object")S.answers=o.answers;
+  S.done=!!o.done;}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function allQ(){return SCEN.concat(ENVQ);}
+function answeredCount(){var n=0;for(var i=0;i<NQ;i++){if(S.answers["q"+i]!==undefined&&S.answers["q"+i]!==null)n++;}return n;}
+function renderQ(){
+  var qs=allQ();var q=qs[S.qi];
+  document.getElementById("qstep").textContent="Question "+(S.qi+1)+" of "+NQ+(S.qi>=SCEN.length?" — focus environment":"");
+  document.getElementById("qtext").textContent=q.q;
+  var box=document.getElementById("qopts");box.innerHTML="";
+  q.o.forEach(function(opt,idx){
+    var b=document.createElement("button");b.type="button";b.className="qopt"+(S.answers["q"+S.qi]===idx?" sel":"");
+    b.textContent=opt[0];
+    b.addEventListener("click",function(){
+      S.answers["q"+S.qi]=idx;save();
+      if(S.qi<NQ-1){S.qi++;save();renderQ();}
+      else{S.done=true;save();renderResults();}
+    });
+    box.appendChild(b);});
+  document.getElementById("qback").disabled=(S.qi===0);
+  document.getElementById("qback").style.opacity=(S.qi===0)?"0.4":"1";
+}
+function prefScores(){var c={V:0,A:0,R:0,K:0};
+  for(var i=0;i<SCEN.length;i++){var a=S.answers["q"+i];if(a!==undefined&&a!==null){c[SCEN[i].o[a][1]]++;}}
+  return c;}
+function ranked(){var c=prefScores();return Object.keys(c).sort(function(a,b){return c[b]-c[a];});}
+function renderResults(){
+  document.getElementById("quiz").hidden=true;
+  document.getElementById("intro-card").hidden=true;
+  var res=document.getElementById("results");res.hidden=false;
+  var c=prefScores();var order=ranked();
+  var hb="";order.forEach(function(k,i){
+    var pct=Math.round(c[k]/SCEN.length*100);
+    hb+="<div class='prefbar'><div class='plabel'><span>"+(i+1)+". "+DIMS[k]+"</span><span>"+c[k]+" of "+SCEN.length+" ("+pct+"%)</span></div><div class='pbar'><i style='width:"+pct+"%'></i></div></div>";});
+  hb+="<p class='hint'>Most people draw on several preferences — a clear winner is common, but ties are normal too. Nothing here limits what you can learn.</p>";
+  document.getElementById("prefbars").innerHTML=hb;
+  var top=order[0],second=order[1];var pb=PLAYBOOK[top];
+  var ph="<div class='optblock'><h4>Your strongest preference: "+DIMS[top]+"</h4>";
+  ph+="<p><b>Note-taking:</b> "+pb.notes+"</p>";
+  ph+="<p><b>Session structure:</b> "+pb.session+"</p>";
+  ph+="<p><b>Environment:</b> "+pb.env+"</p></div>";
+  if(c[second]>0&&second!==top){ph+="<p class='hint'>Your runner-up preference is <b>"+DIMS[second]+"</b> — blend its tactics in: "+PLAYBOOK[second].notes+"</p>";}
+  document.getElementById("playbook").innerHTML=ph;
+  var envHtml="";
+  var setA=S.answers["q12"],timeA=S.answers["q13"],lenA=S.answers["q14"];
+  if(setA!==undefined)envHtml+="<div class='tactic'><h4>Setting</h4><p>"+ENV_TIPS[ENVQ[0].o[setA][1]]+"</p></div>";
+  if(timeA!==undefined){var tname={morning:"early morning",midday:"late morning to afternoon",evening:"evening",night:"late night"}[ENVQ[1].o[timeA][1]];
+    envHtml+="<div class='tactic'><h4>Peak hours</h4><p>Your brain is sharpest in the <b>"+tname+"</b>. Schedule your hardest material there; save routine review for your off-hours.</p></div>";}
+  if(lenA!==undefined){var ln=ENVQ[2].o[lenA][1];
+    var ltxt={short:"Under 25 minutes — use short sprints (15\u201320 min) with real breaks between them. Shorter sessions, more of them.",medium:"25\u201350 minutes — the classic 25-minute focus block with 5-minute breaks fits you well.",long:"50\u201390 minutes — you can sustain deep 50-minute blocks; take a 10-minute break, then go again.",verylong:"90+ minutes — protect long uninterrupted stretches for deep work, and still stand up and move between them."}[ln];
+    envHtml+="<div class='tactic'><h4>Focus length</h4><p>"+ltxt+"</p></div>";}
+  document.getElementById("envout").innerHTML=envHtml;
+  var ev="";EVERYONE.forEach(function(t){ev+="<div class='tactic'><h4>"+t[0]+"</h4><p>"+t[1]+"</p></div>";});
+  document.getElementById("everyone").innerHTML=ev;
+  renderPrintSummary(order,c);
+  try{res.scrollIntoView();}catch(e){}
+}
+function renderPrintSummary(order,c){
+  var top=order[0];var d=new Date();
+  var h="<h2 style='font-family:Georgia,serif'>Learning Preferences — One-Page Summary</h2>";
+  h+="<p>"+d.toDateString()+" · kimaniupshur.com/apps/learning-style-finder/</p><hr>";
+  h+="<h3>Preference ranking</h3><ol>";
+  order.forEach(function(k){h+="<li>"+DIMS[k]+": "+c[k]+" of "+SCEN.length+"</li>";});h+="</ol>";
+  h+="<h3>Your playbook ("+DIMS[top]+")</h3><ul><li>"+PLAYBOOK[top].notes+"</li><li>"+PLAYBOOK[top].session+"</li><li>"+PLAYBOOK[top].env+"</li></ul>";
+  h+="<h3>Evidence-backed tactics (for everyone)</h3><ul>";
+  EVERYONE.forEach(function(t){h+="<li><b>"+t[0]+":</b> "+t[1]+"</li>";});h+="</ul>";
+  h+="<p><i>Note: research finds no reliable evidence that matching instruction to a fixed \u201clearning style\u201d improves learning. Preferences are real but not fixed \u2014 method matters more than channel.</i></p>";
+  document.getElementById("print-summary").innerHTML=h;
+}
+var resetArmed=false,resetTimer=null;
+function armReset(btn){if(!resetArmed){resetArmed=true;btn.textContent="Click again to confirm";btn.classList.add("danger");
+    resetTimer=setTimeout(function(){resetArmed=false;btn.textContent="Reset";},5000);return;}
+  clearTimeout(resetTimer);resetArmed=false;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={qi:0,answers:{},done:false};btn.textContent="Reset";
+  document.getElementById("results").hidden=true;document.getElementById("quiz").hidden=true;
+  document.getElementById("intro-card").hidden=false;}
+document.getElementById("startbtn").addEventListener("click",function(){
+  document.getElementById("intro-card").hidden=true;
+  document.getElementById("quiz").hidden=false;renderQ();});
+document.getElementById("qback").addEventListener("click",function(){if(S.qi>0){S.qi--;save();renderQ();}});
+document.getElementById("qreset").addEventListener("click",function(){armReset(this);});
+document.getElementById("retake").addEventListener("click",function(){
+  S={qi:0,answers:{},done:false};save();
+  document.getElementById("results").hidden=true;
+  document.getElementById("quiz").hidden=false;renderQ();});
+document.getElementById("printbtn").addEventListener("click",function(){window.print();});
+load();
+if(S.done&&answeredCount()===NQ){renderResults();}
+else if(answeredCount()>0||S.qi>0){document.getElementById("intro-card").hidden=true;document.getElementById("quiz").hidden=false;renderQ();}
+</script>
+</body>
+</html>

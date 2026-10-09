@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Outline Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Build a complete nonfiction or fiction book outline through a guided framework — premise, chapters, per-chapter beats, word-count targets, and a printable outline. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/book-outline-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book Outline Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Build a complete nonfiction or fiction book outline through a guided framework — premise, chapters, per-chapter beats, word-count targets, and a printable outline. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/book-outline-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:12px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;margin:18px 0 8px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.danger{background:transparent;color:#a33;border:2px solid #c66}
+.btn.small{padding:8px 14px;min-height:44px;font-size:.9rem}
+.hidden{display:none!important}
+.err{background:#fdecea;border:2px solid #c66;color:#a33;border-radius:8px;padding:10px 14px;margin:10px 0;font-weight:bold}
+.okmsg{background:#eef7e6;border:2px solid #6a6;color:#2a5;border-radius:8px;padding:10px 14px;margin:10px 0}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:90px}
+label.f{display:block;font-weight:bold;margin-top:14px;color:#141210}
+label.f small{font-weight:normal;color:#6b6250}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.step{flex:1;min-width:110px;text-align:center;padding:10px 6px;border:2px solid #c9a227;border-radius:8px;background:#fffdf7;font-size:.82rem;font-weight:bold;color:#8a6d1c;cursor:pointer;min-height:48px}
+.step.active{background:#c9a227;color:#141210}
+.step.done{background:#eef7e6;border-color:#6a6;color:#2a5}
+.typerow{display:flex;gap:12px;flex-wrap:wrap}
+.typeopt{flex:1;min-width:200px;border:2px solid #c9a227;border-radius:10px;padding:18px;background:#fff;cursor:pointer}
+.typeopt.sel{background:#f5efdd;border-color:#141210;box-shadow:0 0 0 2px #c9a227}
+.typeopt h3{font-family:Georgia,serif;margin:0 0 6px}
+.typeopt p{font-size:.9rem;color:#6b6250}
+.partrow,.chaprow{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid #e6ddc2;flex-wrap:wrap}
+.partrow .nm,.chaprow .nm{flex:1;min-width:140px;font-weight:bold}
+.beatchip{display:inline-block;font-size:.7rem;font-weight:bold;letter-spacing:1px;padding:3px 10px;border-radius:14px;background:#141210;color:#e8c84a;margin-right:6px}
+.beatbox{background:#fff;border:1px solid #e6ddc2;border-radius:8px;padding:14px;margin:10px 0}
+.olpart{font-family:Georgia,serif;font-size:1.15rem;color:#141210;margin:20px 0 6px;border-bottom:2px solid #c9a227;padding-bottom:4px}
+.olchap{margin:12px 0 4px 8px}
+.olchap .ct{font-weight:bold}
+.olbeats{margin:4px 0 10px 24px;font-size:.93rem;color:#444}
+.olbeats li{margin:3px 0}
+.chk{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #e6ddc2}
+.chk .ok{color:#2a5;font-weight:bold}
+.chk .no{color:#a33;font-weight:bold}
+#bobDoc{background:#fff}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+header.site,footer.site,.noprint,section.devotional{display:none!important}
+body{background:#fff}
+main.app{max-width:100%;padding:0}
+.appcard{border:1px solid #999;break-inside:avoid}
+.btn,.steps,.stepnav{display:none!important}
+#bobDoc{display:block!important}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Book Outline Builder</h1>
+<p class="intro">Build a complete book outline step by step: pick nonfiction or fiction, nail your premise, structure your parts and chapters, write per-chapter beats, and finish with a printable outline document, word-count targets, and a chapter checklist. Everything saves automatically as you go.</p>
+
+<div class="steps noprint" id="bobSteps" role="tablist" aria-label="Outline builder steps">
+<button class="step" data-s="1">1 · Type &amp; Title</button>
+<button class="step" data-s="2">2 · Premise</button>
+<button class="step" data-s="3">3 · Parts &amp; Chapters</button>
+<button class="step" data-s="4">4 · Chapter Beats</button>
+<button class="step" data-s="5">5 · Outline &amp; Print</button>
+</div>
+
+<!-- STEP 1 -->
+<div class="appcard" id="bobS1">
+<h2>Step 1 — What kind of book is it?</h2>
+<div class="typerow noprint">
+<div class="typeopt" id="bobTypeNF" role="button" tabindex="0" aria-label="Choose nonfiction">
+<h3>Nonfiction</h3><p>Teach, explain, or argue. Chapters carry an idea: point → story → takeaway.</p>
+</div>
+<div class="typeopt" id="bobTypeF" role="button" tabindex="0" aria-label="Choose fiction">
+<h3>Fiction</h3><p>Tell a story. Chapters move the plot: goal → obstacle → turn.</p>
+</div>
+</div>
+<label class="f" for="bobTitle">Working title</label>
+<input type="text" id="bobTitle" maxlength="160" placeholder="e.g., The Focused Life">
+<label class="f" for="bobSubtitle">Subtitle <small>(optional)</small></label>
+<input type="text" id="bobSubtitle" maxlength="200" placeholder="e.g., A practical guide to doing less, better">
+<div class="err hidden" id="bobErr1"></div>
+<div class="stepnav" style="display:flex;gap:10px;justify-content:flex-end;margin-top:14px">
+<button class="btn" id="bobNext1">Save &amp; Continue &rarr;</button>
+</div>
+</div>
+
+<!-- STEP 2 -->
+<div class="appcard hidden" id="bobS2">
+<h2>Step 2 — Premise &amp; reader promise</h2>
+<p style="color:#6b6250" id="bobPremiseHint"></p>
+<label class="f" for="bobPremise">Your premise in one sentence</label>
+<textarea id="bobPremise" maxlength="500" placeholder=""></textarea>
+<label class="f" for="bobPromise">Reader promise <small>(what the reader gets by the end)</small></label>
+<textarea id="bobPromise" maxlength="500" placeholder=""></textarea>
+<div class="err hidden" id="bobErr2"></div>
+<div class="stepnav" style="display:flex;gap:10px;justify-content:space-between;margin-top:14px">
+<button class="btn ghost" id="bobBack2">&larr; Back</button>
+<button class="btn" id="bobNext2">Save &amp; Continue &rarr;</button>
+</div>
+</div>
+
+<!-- STEP 3 -->
+<div class="appcard hidden" id="bobS3">
+<h2>Step 3 — Parts &amp; chapters</h2>
+<p style="color:#6b6250">Add parts (major sections), then add chapters and assign each to a part. A typical book has 2–4 parts and 8–16 chapters — but build what your book needs.</p>
+<h3>Parts</h3>
+<div id="bobPartList"></div>
+<div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+<input type="text" id="bobPartName" maxlength="120" placeholder="Part name, e.g., The Problem" style="flex:1;min-width:200px" aria-label="New part name">
+<button class="btn ghost small" id="bobAddPart" style="min-height:56px">Add Part</button>
+</div>
+<h3>Chapters</h3>
+<div id="bobChapList"></div>
+<div class="err hidden" id="bobErr3"></div>
+<div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+<input type="text" id="bobChapName" maxlength="160" placeholder="Chapter title" style="flex:2;min-width:200px" aria-label="New chapter title">
+<select id="bobChapPart" style="flex:1;min-width:160px" aria-label="Assign chapter to part"></select>
+<button class="btn ghost small" id="bobAddChap" style="min-height:56px">Add Chapter</button>
+</div>
+<div class="stepnav" style="display:flex;gap:10px;justify-content:space-between;margin-top:14px">
+<button class="btn ghost" id="bobBack3">&larr; Back</button>
+<button class="btn" id="bobNext3">Save &amp; Continue &rarr;</button>
+</div>
+</div>
+
+<!-- STEP 4 -->
+<div class="appcard hidden" id="bobS4">
+<h2>Step 4 — Chapter beats</h2>
+<p style="color:#6b6250" id="bobBeatsHint"></p>
+<label class="f" for="bobBeatChap">Chapter</label>
+<select id="bobBeatChap"></select>
+<div class="beatbox">
+<label class="f" for="bobBeatA" id="bobBeatALabel">Point</label>
+<textarea id="bobBeatA" maxlength="1500" placeholder=""></textarea>
+<label class="f" for="bobBeatB" id="bobBeatBLabel">Story / example</label>
+<textarea id="bobBeatB" maxlength="1500" placeholder=""></textarea>
+<label class="f" for="bobBeatC" id="bobBeatCLabel">Takeaway</label>
+<textarea id="bobBeatC" maxlength="1500" placeholder=""></textarea>
+<label class="f" for="bobBeatNotes">Working notes <small>(optional — scenes, research, reminders)</small></label>
+<textarea id="bobBeatNotes" maxlength="2000"></textarea>
+</div>
+<div class="okmsg hidden" id="bobBeatSaved"></div>
+<div class="stepnav" style="display:flex;gap:10px;justify-content:space-between;margin-top:14px;flex-wrap:wrap">
+<button class="btn ghost" id="bobBack4">&larr; Back</button>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn ghost" id="bobBeatPrev">Save &amp; &larr; Prev Chapter</button>
+<button class="btn ghost" id="bobBeatNext">Save &amp; Next Chapter &rarr;</button>
+<button class="btn" id="bobNext4">Finish Outline &rarr;</button>
+</div>
+</div>
+</div>
+
+<!-- STEP 5 -->
+<div class="appcard hidden" id="bobS5">
+<h2>Step 5 — Your outline document</h2>
+<label class="f" for="bobWordTarget">Total word-count target <small>(typical nonfiction: 40,000–60,000; typical novel: 70,000–90,000)</small></label>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+<input type="number" id="bobWordTarget" min="1000" max="500000" step="1000" value="50000" style="flex:1;min-width:180px" aria-label="Total word count target">
+<button class="btn ghost small" id="bobSetTarget" style="min-height:56px">Set Target</button>
+</div>
+<p id="bobTargetLine" style="margin-top:8px;color:#6b6250"></p>
+<h3>Chapter checklist</h3>
+<div id="bobChecklist"></div>
+<h3>Reorder chapters</h3>
+<p style="color:#6b6250">Use the arrows to move chapters within the outline. Parts group chapters; deleting a part keeps its chapters (they become unassigned).</p>
+<div id="bobReorder"></div>
+<div class="stepnav" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+<button class="btn" id="bobPrint">Print / Save as PDF</button>
+<button class="btn ghost" id="bobCopy">Copy Outline as Text</button>
+<button class="btn ghost" id="bobBack5">&larr; Back</button>
+<button class="btn danger" id="bobReset">Delete Outline &amp; Start Over</button>
+</div>
+<div class="okmsg hidden" id="bobCopyMsg"></div>
+</div>
+
+<!-- PRINTABLE OUTLINE (visible on screen too) -->
+<div class="appcard" id="bobDocWrap">
+<h2>Outline preview</h2>
+<div id="bobDoc"></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Book Outline Builder is just the start. <em>Freelance Writing Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the writing craft — turning ideas into finished, publishable work.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/freelance-writing-made-simple/">Get Freelance Writing Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-book-outline-builder-v1";
+function $(id){return document.getElementById(id);}
+function showErr(id,msg){var e=$(id);e.textContent=msg;e.classList.remove("hidden");}
+function hideErr(id){$(id).classList.add("hidden");}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+var _u=1;function uid(){return "b"+Date.now().toString(36)+(_u++).toString(36);}
+var NF={a:["Point","What one idea does this chapter prove or teach?"],b:["Story / example","What story, case, or example makes the point stick?"],c:["Takeaway","What should the reader do or believe differently after this chapter?"]};
+var F={a:["Goal","What does the POV character want in this chapter?"],b:["Obstacle","What blocks them — the conflict or complication?"],c:["Turn","How does the chapter change things — the shift or revelation?"]};
+function labels(){return S.type==="fiction"?F:NF;}
+function blank(){return {type:null,title:"",subtitle:"",premise:"",promise:"",parts:[],chapters:[],wordTarget:50000,step:1};}
+var S=blank();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"&&"chapters" in o){S=o;if(!Array.isArray(S.parts))S.parts=[];if(!Array.isArray(S.chapters))S.chapters=[];if(!S.step)S.step=1;return;}}}catch(e){}S=blank();}
+function getPart(id){for(var i=0;i<S.parts.length;i++)if(S.parts[i].id===id)return S.parts[i];return null;}
+function getChap(id){for(var i=0;i<S.chapters.length;i++)if(S.chapters[i].id===id)return S.chapters[i];return null;}
+function gotoStep(n){S.step=Math.max(1,Math.min(5,n));save();render();}
+function render(){
+  for(var i=1;i<=5;i++)$("bobS"+i).classList.toggle("hidden",S.step!==i);
+  document.querySelectorAll("#bobSteps .step").forEach(function(el){
+    var n=parseInt(el.getAttribute("data-s"),10);
+    el.classList.toggle("active",n===S.step);
+    var done=(n===1&&S.type&&S.title)||(n===2&&S.premise&&S.promise)||(n===3&&S.chapters.length>0)||(n===4&&S.chapters.length>0&&S.chapters.some(function(c){return c.beats.a||c.beats.b||c.beats.c;}))||(n===5&&S.step===5);
+    el.classList.toggle("done",!!done&&n!==S.step);
+  });
+  renderStep1();renderStep2();renderStep3();renderStep4();renderStep5();renderDoc();
+}
+function renderStep1(){
+  $("bobTypeNF").classList.toggle("sel",S.type==="nonfiction");
+  $("bobTypeF").classList.toggle("sel",S.type==="fiction");
+  if(document.activeElement!==$("bobTitle"))$("bobTitle").value=S.title||"";
+  if(document.activeElement!==$("bobSubtitle"))$("bobSubtitle").value=S.subtitle||"";
+}
+function renderStep2(){
+  var fic=S.type==="fiction";
+  $("bobPremiseHint").textContent=fic?"One sentence: whose story is this, what do they want, and what stands in the way?":"One sentence: what is this book about, and what change does it create in the reader?";
+  $("bobPremise").placeholder=fic?"e.g., A retired detective must solve one last case to clear her name before her memory fails.":"e.g., This book teaches busy parents a 20-minute daily system for staying on top of money without budgeting apps.";
+  $("bobPromise").placeholder=fic?"e.g., Readers will get a twisty mystery about memory and justice they cannot put down.":"e.g., Readers will finish with a working money system they can run in 20 minutes a day.";
+  if(document.activeElement!==$("bobPremise"))$("bobPremise").value=S.premise||"";
+  if(document.activeElement!==$("bobPromise"))$("bobPromise").value=S.promise||"";
+}
+function renderStep3(){
+  var pl=$("bobPartList");pl.innerHTML="";
+  S.parts.forEach(function(p){
+    var row=document.createElement("div");row.className="partrow";
+    var nm=document.createElement("div");nm.className="nm";
+    nm.textContent=p.name+" ("+S.chapters.filter(function(c){return c.partId===p.id;}).length+" chapters)";
+    row.appendChild(nm);
+    var del=document.createElement("button");del.className="btn danger small";del.textContent="Delete";
+    del.addEventListener("click",function(){if(confirm('Delete part "'+p.name+'"? Its chapters will become unassigned.')){S.parts=S.parts.filter(function(x){return x.id!==p.id;});S.chapters.forEach(function(c){if(c.partId===p.id)c.partId=null;});save();render();}});
+    row.appendChild(del);pl.appendChild(row);
+  });
+  if(!S.parts.length)pl.innerHTML='<p style="color:#6b6250">No parts yet. Parts are optional — chapters work fine without them.</p>';
+  var sel=$("bobChapPart");var cur=sel.value;sel.innerHTML="";
+  var o0=document.createElement("option");o0.value="";o0.textContent="No part (unassigned)";sel.appendChild(o0);
+  S.parts.forEach(function(p){var o=document.createElement("option");o.value=p.id;o.textContent=p.name;sel.appendChild(o);});
+  if(cur)sel.value=cur;
+  var cl=$("bobChapList");cl.innerHTML="";
+  S.chapters.forEach(function(c){
+    var row=document.createElement("div");row.className="chaprow";
+    var nm=document.createElement("div");nm.className="nm";
+    var p=getPart(c.partId);
+    nm.textContent=(S.chapters.indexOf(c)+1)+". "+c.title+(p?"  ·  "+p.name:"");
+    row.appendChild(nm);
+    var del=document.createElement("button");del.className="btn danger small";del.textContent="Delete";
+    del.addEventListener("click",function(){if(confirm('Delete chapter "'+c.title+'"?')){S.chapters=S.chapters.filter(function(x){return x.id!==c.id;});save();render();}});
+    row.appendChild(del);cl.appendChild(row);
+  });
+  if(!S.chapters.length)cl.innerHTML='<p style="color:#6b6250">No chapters yet. Add your first chapter below.</p>';
+}
+var beatChapId=null;
+function renderStep4(){
+  var L=labels();
+  $("bobBeatsHint").textContent=S.type==="fiction"?"For each chapter, define the character's goal, the obstacle, and the turn. Save as you go — beats update the outline live.":"For each chapter, define the point, the story that carries it, and the takeaway. Save as you go — beats update the outline live.";
+  $("bobBeatALabel").innerHTML='<span class="beatchip">A</span> '+L.a[0]+' <small style="font-weight:normal;color:#6b6250">('+L.a[1]+')</small>';
+  $("bobBeatBLabel").innerHTML='<span class="beatchip">B</span> '+L.b[0]+' <small style="font-weight:normal;color:#6b6250">('+L.b[1]+')</small>';
+  $("bobBeatCLabel").innerHTML='<span class="beatchip">C</span> '+L.c[0]+' <small style="font-weight:normal;color:#6b6250">('+L.c[1]+')</small>';
+  $("bobBeatA").placeholder="e.g., "+L.a[1];
+  $("bobBeatB").placeholder="e.g., "+L.b[1];
+  $("bobBeatC").placeholder="e.g., "+L.c[1];
+  var sel=$("bobBeatChap");sel.innerHTML="";
+  S.chapters.forEach(function(c){var o=document.createElement("option");o.value=c.id;o.textContent=(S.chapters.indexOf(c)+1)+". "+c.title;sel.appendChild(o);});
+  if(!S.chapters.length){var o=document.createElement("option");o.value="";o.textContent="No chapters yet — add some in Step 3";sel.appendChild(o);}
+  if(beatChapId&&getChap(beatChapId))sel.value=beatChapId;
+  else if(S.chapters.length)sel.value=S.chapters[0].id;
+  loadBeatFields();
+}
+function loadBeatFields(){
+  var c=getChap($("bobBeatChap").value);
+  beatChapId=c?c.id:null;
+  $("bobBeatA").value=c?c.beats.a:"";
+  $("bobBeatB").value=c?c.beats.b:"";
+  $("bobBeatC").value=c?c.beats.c:"";
+  $("bobBeatNotes").value=c?(c.notes||""):"";
+  $("bobBeatSaved").classList.add("hidden");
+}
+function saveBeatFields(silent){
+  var c=getChap($("bobBeatChap").value);if(!c)return false;
+  c.beats.a=$("bobBeatA").value.trim();c.beats.b=$("bobBeatB").value.trim();c.beats.c=$("bobBeatC").value.trim();
+  c.notes=$("bobBeatNotes").value.trim();save();
+  if(!silent){var m=$("bobBeatSaved");m.textContent="Beats saved for “"+c.title+"”. The outline preview below is up to date.";m.classList.remove("hidden");}
+  renderDoc();return true;
+}
+function chapterComplete(c){return !!(c.title&&c.beats.a&&c.beats.b&&c.beats.c);}
+function renderStep5(){
+  $("bobWordTarget").value=S.wordTarget||50000;
+  var n=S.chapters.length,per=n?Math.round((S.wordTarget||0)/n):0;
+  $("bobTargetLine").textContent=n?("≈ "+per.toLocaleString()+" words per chapter across "+n+" chapters."):"Add chapters in Step 3 to see per-chapter targets.";
+  var cl=$("bobChecklist");cl.innerHTML="";
+  if(!n){cl.innerHTML='<p style="color:#6b6250">No chapters yet.</p>';}
+  S.chapters.forEach(function(c,i){
+    var row=document.createElement("div");row.className="chk";
+    var ok=chapterComplete(c);
+    var s=document.createElement("span");s.className=ok?"ok":"no";s.textContent=ok?"✓":"○";row.appendChild(s);
+    var t=document.createElement("div");t.innerHTML="<strong>"+esc("Chapter "+(i+1)+": "+c.title)+"</strong><br><span style='font-size:.85rem;color:#6b6250'>"+
+      (c.title?"title ✓":"title missing")+" · beats "+[c.beats.a,c.beats.b,c.beats.c].filter(Boolean).length+"/3 · "+(c.partId&&getPart(c.partId)?"assigned to "+esc(getPart(c.partId).name):"unassigned part")+"</span>";
+    row.appendChild(t);cl.appendChild(row);
+  });
+  var ro=$("bobReorder");ro.innerHTML="";
+  S.chapters.forEach(function(c,i){
+    var row=document.createElement("div");row.className="chaprow";
+    var nm=document.createElement("div");nm.className="nm";nm.textContent=(i+1)+". "+c.title;row.appendChild(nm);
+    var up=document.createElement("button");up.className="btn ghost small";up.textContent="↑";up.setAttribute("aria-label","Move "+c.title+" up");up.disabled=(i===0);
+    up.addEventListener("click",function(){moveChapter(c.id,-1);});
+    var dn=document.createElement("button");dn.className="btn ghost small";dn.textContent="↓";dn.setAttribute("aria-label","Move "+c.title+" down");dn.disabled=(i===S.chapters.length-1);
+    dn.addEventListener("click",function(){moveChapter(c.id,1);});
+    row.appendChild(up);row.appendChild(dn);ro.appendChild(row);
+  });
+}
+function moveChapter(id,dir){
+  var i=S.chapters.findIndex(function(c){return c.id===id;});
+  var j=i+dir;if(i<0||j<0||j>=S.chapters.length)return;
+  var t=S.chapters[i];S.chapters[i]=S.chapters[j];S.chapters[j]=t;save();render();
+}
+function renderDoc(){
+  var d=$("bobDoc"),L=labels();
+  var html="";
+  html+='<h3 style="font-family:Georgia,serif;font-size:1.5rem;margin:0 0 4px">'+esc(S.title||"(untitled)")+"</h3>";
+  if(S.subtitle)html+='<p style="color:#6b6250;font-style:italic">'+esc(S.subtitle)+"</p>";
+  html+='<p style="font-size:.85rem;color:#8a6d1c">'+esc(S.type==="fiction"?"A novel outline":S.type==="nonfiction"?"A nonfiction outline":"Book outline")+"</p>";
+  if(S.premise)html+="<p><strong>Premise:</strong> "+esc(S.premise)+"</p>";
+  if(S.promise)html+="<p><strong>Reader promise:</strong> "+esc(S.promise)+"</p>";
+  var n=S.chapters.length,per=n&&S.wordTarget?Math.round(S.wordTarget/n):0;
+  if(n)html+="<p><strong>"+n+" chapters</strong>"+(per?" · target ≈ "+per.toLocaleString()+" words/chapter":"")+"</p>";
+  if(!n)html+='<p style="color:#6b6250">Your chapters will appear here as you add them in Step 3.</p>';
+  S.parts.forEach(function(p){
+    var chs=S.chapters.filter(function(c){return c.partId===p.id;});
+    if(!chs.length)return;
+    html+='<div class="olpart">Part: '+esc(p.name)+"</div>";
+    chs.forEach(function(c){html+=chapHtml(c,S.chapters.indexOf(c)+1,L);});
+  });
+  var un=S.chapters.filter(function(c){return !c.partId||!getPart(c.partId);});
+  if(un.length){
+    if(S.parts.length)html+='<div class="olpart">Unassigned chapters</div>';
+    un.forEach(function(c){html+=chapHtml(c,S.chapters.indexOf(c)+1,L);});
+  }
+  d.innerHTML=html;
+}
+function chapHtml(c,num,L){
+  var h='<div class="olchap"><div class="ct">Chapter '+num+": "+esc(c.title)+"</div>";
+  var items=[];
+  if(c.beats.a)items.push("<strong>"+L.a[0]+":</strong> "+esc(c.beats.a));
+  if(c.beats.b)items.push("<strong>"+L.b[0]+":</strong> "+esc(c.beats.b));
+  if(c.beats.c)items.push("<strong>"+L.c[0]+":</strong> "+esc(c.beats.c));
+  if(items.length)h+='<ul class="olbeats">'+items.map(function(x){return "<li>"+x+"</li>";}).join("")+"</ul>";
+  if(c.notes)h+='<p style="font-size:.85rem;color:#6b6250;margin-left:24px"><em>Notes:</em> '+esc(c.notes)+"</p>";
+  return h+"</div>";
+}
+function outlineText(){
+  var L=labels(),t=[];
+  t.push((S.title||"Untitled")+(S.subtitle?" — "+S.subtitle:""));
+  t.push((S.type==="fiction"?"A novel outline.":S.type==="nonfiction"?"A nonfiction outline.":"Book outline."));
+  t.push("");
+  if(S.premise)t.push("PREMISE: "+S.premise);
+  if(S.promise)t.push("READER PROMISE: "+S.promise);
+  t.push("");
+  var n=S.chapters.length,per=n&&S.wordTarget?Math.round(S.wordTarget/n):0;
+  if(n)t.push(n+" chapters"+(per?" · target ~"+per.toLocaleString()+" words/chapter":""));
+  S.parts.forEach(function(p){
+    var chs=S.chapters.filter(function(c){return c.partId===p.id;});
+    if(!chs.length)return;
+    t.push("");t.push("PART: "+p.name.toUpperCase());
+    chs.forEach(function(c){t.push.apply(t,chapText(c,S.chapters.indexOf(c)+1,L));});
+  });
+  var un=S.chapters.filter(function(c){return !c.partId||!getPart(c.partId);});
+  if(un.length){if(S.parts.length)t.push("");if(S.parts.length)t.push("UNASSIGNED CHAPTERS");
+    un.forEach(function(c){t.push.apply(t,chapText(c,S.chapters.indexOf(c)+1,L));});}
+  return t.join("\n");
+}
+function chapText(c,num,L){
+  var t=["","Chapter "+num+": "+c.title];
+  if(c.beats.a)t.push("  "+L.a[0]+": "+c.beats.a);
+  if(c.beats.b)t.push("  "+L.b[0]+": "+c.beats.b);
+  if(c.beats.c)t.push("  "+L.c[0]+": "+c.beats.c);
+  if(c.notes)t.push("  Notes: "+c.notes);
+  return t;
+}
+// events
+function pickType(t){S.type=t;save();renderStep1();}
+$("bobTypeNF").addEventListener("click",function(){pickType("nonfiction");});
+$("bobTypeF").addEventListener("click",function(){pickType("fiction");});
+$("bobTypeNF").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pickType("nonfiction");}});
+$("bobTypeF").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pickType("fiction");}});
+document.querySelectorAll("#bobSteps .step").forEach(function(el){
+  el.addEventListener("click",function(){gotoStep(parseInt(el.getAttribute("data-s"),10));});
+});
+$("bobNext1").addEventListener("click",function(){
+  hideErr("bobErr1");
+  if(!S.type){showErr("bobErr1","Choose nonfiction or fiction first.");return;}
+  var t=$("bobTitle").value.trim();
+  if(!t){showErr("bobErr1","Give your book a working title — you can change it later.");return;}
+  S.title=t;S.subtitle=$("bobSubtitle").value.trim();gotoStep(2);
+});
+$("bobBack2").addEventListener("click",function(){gotoStep(1);});
+$("bobNext2").addEventListener("click",function(){
+  hideErr("bobErr2");
+  var p=$("bobPremise").value.trim(),pr=$("bobPromise").value.trim();
+  if(!p){showErr("bobErr2","Write your premise in one sentence first.");return;}
+  if(!pr){showErr("bobErr2","Now add your reader promise — what does the reader get?");return;}
+  S.premise=p;S.promise=pr;gotoStep(3);
+});
+$("bobBack3").addEventListener("click",function(){gotoStep(2);});
+$("bobNext3").addEventListener("click",function(){
+  hideErr("bobErr3");
+  if(S.chapters.length===0){showErr("bobErr3","Add at least one chapter before continuing.");return;}
+  gotoStep(4);
+});
+$("bobAddPart").addEventListener("click",function(){
+  var n=$("bobPartName").value.trim();
+  if(!n)return;
+  S.parts.push({id:uid(),name:n});$("bobPartName").value="";save();render();
+});
+$("bobAddChap").addEventListener("click",function(){
+  hideErr("bobErr3");
+  var t=$("bobChapName").value.trim();
+  if(!t){showErr("bobErr3","Type a chapter title first.");return;}
+  var pid=$("bobChapPart").value||null;
+  S.chapters.push({id:uid(),partId:pid,title:t,beats:{a:"",b:"",c:""},notes:""});
+  $("bobChapName").value="";save();render();$("bobChapName").focus();
+});
+$("bobBack4").addEventListener("click",function(){saveBeatFields(true);gotoStep(3);});
+$("bobNext4").addEventListener("click",function(){saveBeatFields(true);gotoStep(5);});
+$("bobBeatChap").addEventListener("change",function(){saveBeatFields(true);loadBeatFields();});
+$("bobBeatPrev").addEventListener("click",function(){
+  saveBeatFields(true);
+  var i=S.chapters.findIndex(function(c){return c.id===beatChapId;});
+  if(i>0){beatChapId=S.chapters[i-1].id;}
+  renderStep4();
+});
+$("bobBeatNext").addEventListener("click",function(){
+  saveBeatFields(true);
+  var i=S.chapters.findIndex(function(c){return c.id===beatChapId;});
+  if(i>=0&&i<S.chapters.length-1){beatChapId=S.chapters[i+1].id;}
+  renderStep4();
+});
+$("bobBack5").addEventListener("click",function(){gotoStep(4);});
+$("bobSetTarget").addEventListener("click",function(){
+  var v=parseInt($("bobWordTarget").value,10);
+  if(isNaN(v)||v<1000)v=1000;if(v>500000)v=500000;
+  S.wordTarget=v;save();renderStep5();renderDoc();
+});
+$("bobPrint").addEventListener("click",function(){window.print();});
+$("bobCopy").addEventListener("click",function(){
+  var txt=outlineText(),m=$("bobCopyMsg");
+  function done(ok){m.textContent=ok?"Outline copied to clipboard.":"Copy failed — select the preview text manually.";m.classList.remove("hidden");}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){done(true);},function(){done(false);});}
+  else{var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();try{done(document.execCommand("copy"));}catch(e){done(false);}document.body.removeChild(ta);}
+});
+$("bobReset").addEventListener("click",function(){
+  if(confirm("Delete this entire outline and start over? This cannot be undone.")){S=blank();beatChapId=null;save();gotoStep(1);}
+});
+load();render();
+window.__bobApi={state:function(){return S;},save:save,load:load,gotoStep:gotoStep,render:render,outlineText:outlineText,chapterComplete:chapterComplete,moveChapter:moveChapter,labels:labels,getChap:getChap};
+})();
+</script>
+</body>
+</html>
