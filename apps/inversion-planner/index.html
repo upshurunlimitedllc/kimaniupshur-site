@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inversion Planner | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Instead of asking how to succeed, list everything that would guarantee failure — then invert it into a prevention plan. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/inversion-planner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Inversion Planner | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Instead of asking how to succeed, list everything that would guarantee failure — then invert it into a prevention plan. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/inversion-planner/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.failrow{border:2px solid #e0d6b8;border-radius:10px;padding:14px;margin:10px 0;background:#fff}
+.failrow .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.failrow .cols{grid-template-columns:1fr}}
+.pill{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:bold;color:#fff;margin:4px 6px 4px 0}
+.p-low{background:#3d7a3d}.p-med{background:#8a6d1c}.p-high{background:#b45f06}.p-crit{background:#a33}
+.inv{border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.inv.danger{border-color:#a33;border-width:3px}
+.avoid{display:flex;gap:12px;align-items:flex-start;border:2px solid #e0d6b8;border-radius:10px;padding:12px;margin:8px 0;background:#fff}
+.avoid input[type=checkbox]{width:28px;height:28px;accent-color:#a33;flex-shrink:0;margin-top:4px}
+.avoid.done{opacity:.55;background:#f4efe0}
+.avoid.done .txt{text-decoration:line-through}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag.bad{background:#fbeeee;border-left-color:#a33}
+.plan h3{font-family:Georgia,serif;margin:16px 0 6px;font-size:1.15rem}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{header.site,footer.site,section.devotional,.noprint{display:none!important}main.app{max-width:100%}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Inversion Planner</h1>
+<p class="intro">Instead of asking how to succeed, ask: <b>what would guarantee failure?</b> List every surefire way to fail, score how dangerous each trap is, then invert each one into a preventive action. Avoiding stupidity beats seeking brilliance.</p>
+
+<div class="appcard">
+<label class="lbl" for="goal">Step 1 — State your goal</label>
+<p class="hint">The thing you want to succeed at. One clear sentence.</p>
+<input type="text" id="goal" placeholder="e.g., Launch my online course by March, keep my new hires past 90 days">
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Step 2 — Guarantee failure</h2>
+<p class="hint">For each trap, name the failure mode, then rate <b>how likely you'd fall into it</b> (1 = unlikely, 5 = almost certain) and the <b>damage if it happened</b> (1 = minor setback, 5 = goal dead). Danger = trap &times; damage.</p>
+<div id="fails"></div>
+<div class="noprint"><button class="btn ghost small" id="addFail">+ Add failure mode</button></div>
+</div>
+
+<div class="appcard" id="invcard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Step 3 — Invert each trap</h2>
+<p class="hint">Flip every failure mode into a preventive action. Read the trap, then write the <b>opposite behavior</b> you'd need. The deadliest traps are marked — invert those first.</p>
+<div id="invs"></div>
+</div>
+
+<div class="appcard noprint">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Build my plans</h2>
+<p class="err" id="err" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="build">Build my avoidance checklist &amp; prevention plan</button>
+<button class="btn ghost" id="reset">Reset (clear saved work)</button>
+</div>
+<p class="note">Your work saves automatically on this device as you type.</p>
+</div>
+
+<div class="appcard plan" id="out" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your Inversion Plans</h2>
+<div id="outBody" aria-live="polite"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn ghost" id="printBtn">Print / save as PDF</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Inversion is one of the most powerful mental models there is. <em>Inversion Made Simple</em> by Kimani Upshur, M.Ed. teaches it — and the models that pair with it — in plain English.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/inversion-made-simple/">Get Inversion Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-inversion-planner-v1";
+var MAXF=15;
+var S={goal:"",fails:[{mode:"",trap:"",damage:"",invert:"",avoided:false}]};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"){
+  if(typeof o.goal==="string")S.goal=o.goal;
+  if(Array.isArray(o.fails)&&o.fails.length)S.fails=o.fails.map(function(x){return{mode:String(x.mode||""),trap:String(x.trap||""),damage:String(x.damage||""),invert:String(x.invert||""),avoided:!!x.avoided};});
+}}}catch(e){}}
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function danger(f){var t=parseInt(f.trap,10),d=parseInt(f.damage,10);if(!(t>=1&&t<=5&&d>=1&&d<=5))return null;return t*d;}
+function level(s){if(s==null)return null;if(s<=4)return{label:"Minor trap",cls:"p-low"};if(s<=9)return{label:"Moderate trap",cls:"p-med"};if(s<=15)return{label:"Serious trap",cls:"p-high"};return{label:"Deadly trap",cls:"p-crit"};}
+var TS=["","1 — Unlikely","2 — Possible","3 — Plausible","4 — Probable","5 — Almost certain"];
+var DS=["","1 — Minor setback","2 — Noticeable","3 — Painful","4 — Severe","5 — Goal dead"];
+
+function drawFails(){
+  var box=document.getElementById("fails");box.innerHTML="";
+  S.fails.forEach(function(f,idx){
+    var d=document.createElement("div");d.className="failrow";
+    var top=document.createElement("div");top.style.cssText="display:flex;gap:8px;align-items:flex-start";
+    var num=document.createElement("div");num.innerHTML="<b>Trap "+(idx+1)+"</b>";num.style.cssText="padding-top:16px;min-width:64px;color:#a33;white-space:nowrap";
+    top.appendChild(num);
+    var inp=document.createElement("input");inp.type="text";inp.value=f.mode;
+    inp.placeholder="What would guarantee failure? e.g., Never talk to a single customer before building";
+    inp.setAttribute("aria-label","Failure mode "+(idx+1));
+    inp.addEventListener("input",function(){f.mode=inp.value;save();drawInvs();});
+    top.appendChild(inp);
+    if(S.fails.length>1){var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove";rm.setAttribute("aria-label","Remove failure mode "+(idx+1));rm.style.margin="8px 0";
+      rm.addEventListener("click",function(){S.fails.splice(idx,1);save();drawFails();drawInvs();});
+      top.appendChild(rm);}
+    d.appendChild(top);
+    var cols=document.createElement("div");cols.className="cols";
+    var tsel=document.createElement("select");tsel.setAttribute("aria-label","Trap likelihood for failure mode "+(idx+1));
+    TS.forEach(function(t,v){var o=document.createElement("option");o.value=v;o.textContent=t||"Trap likelihood…";if(String(v)===f.trap)o.selected=true;tsel.appendChild(o);});
+    if(f.trap==="")tsel.selectedIndex=0;
+    tsel.addEventListener("change",function(){f.trap=tsel.value;save();liveScore(d,f);});
+    var dsel=document.createElement("select");dsel.setAttribute("aria-label","Damage for failure mode "+(idx+1));
+    DS.forEach(function(t,v){var o=document.createElement("option");o.value=v;o.textContent=t||"Damage if it happens…";if(String(v)===f.damage)o.selected=true;dsel.appendChild(o);});
+    if(f.damage==="")dsel.selectedIndex=0;
+    dsel.addEventListener("change",function(){f.damage=dsel.value;save();liveScore(d,f);});
+    var tw=document.createElement("div");var tl=document.createElement("label");tl.className="lbl";tl.textContent="How likely is this trap?";tw.appendChild(tl);tw.appendChild(tsel);
+    var dw=document.createElement("div");var dl=document.createElement("label");dl.className="lbl";dl.textContent="Damage if it happens?";dw.appendChild(dl);dw.appendChild(dsel);
+    cols.appendChild(tw);cols.appendChild(dw);d.appendChild(cols);
+    var live=document.createElement("div");live.className="note";d.appendChild(live);
+    box.appendChild(d);liveScore(d,f);
+  });
+}
+function liveScore(rowEl,f){
+  var el=rowEl.querySelector(".note");if(!el)return;
+  var s=danger(f);
+  if(s==null){el.innerHTML="";return;}
+  var lv=level(s);
+  el.innerHTML='Danger score: <b>'+s+'</b> ('+f.trap+' &times; '+f.damage+') <span class="pill '+lv.cls+'">'+lv.label+'</span>';
+}
+function invertHint(mode){
+  var m=(mode||"").trim();
+  if(!m)return "Write the opposite behavior you'd need to guarantee this does NOT happen.";
+  return "The opposite of \""+(m.length>60?m.slice(0,60)+"…":m)+"\" is…";
+}
+function drawInvs(){
+  var box=document.getElementById("invs");box.innerHTML="";
+  var named=S.fails.filter(function(f){return f.mode.trim();});
+  if(!named.length){document.getElementById("invcard").hidden=true;return;}
+  document.getElementById("invcard").hidden=false;
+  var ranked=named.slice().sort(function(a,b){return (danger(b)||0)-(danger(a)||0);});
+  ranked.forEach(function(f){
+    var s=danger(f),lv=level(s);
+    var d=document.createElement("div");d.className="inv"+(lv&&lv.cls==="p-crit"?" danger":"");
+    var h='<p><b>Guaranteed failure:</b> '+esc(f.mode.trim())+(lv?' <span class="pill '+lv.cls+'">'+(s!=null?s+" · ":"")+lv.label+'</span>':"")+'</p>';
+    if(lv&&lv.cls==="p-crit")h+='<p class="hint" style="color:#a33;font-weight:bold">Deadly trap — invert this one first.</p>';
+    h+='<p class="hint">'+esc(invertHint(f.mode))+'</p>';
+    d.innerHTML=h;
+    var ta=document.createElement("textarea");ta.rows=2;ta.value=f.invert;
+    ta.placeholder="Prevention: e.g., Interview 10 customers before writing any code";
+    ta.setAttribute("aria-label","Prevention action for: "+f.mode.trim().slice(0,50));
+    ta.addEventListener("input",function(){f.invert=ta.value;save();});
+    var lb=document.createElement("label");lb.className="lbl";lb.textContent="Inverted prevention action";d.appendChild(lb);d.appendChild(ta);
+    box.appendChild(d);
+  });
+}
+function build(){
+  var err=document.getElementById("err");err.textContent="";
+  if(!S.goal.trim()){err.textContent="State your goal first (step 1) — inversion needs a target to fail at.";return;}
+  var named=S.fails.filter(function(f){return f.mode.trim();});
+  if(!named.length){err.textContent="Add at least one failure mode (step 2). Be brutally honest — the exercise only works if the traps are real.";return;}
+  for(var k=0;k<named.length;k++){
+    if(danger(named[k])==null){err.textContent="Failure mode \""+named[k].mode.trim().slice(0,40)+"…\" is missing a trap or damage rating. Rate all traps 1–5.";return;}
+  }
+  var ranked=named.map(function(f){var s=danger(f);return {f:f,s:s,lv:level(s)};})
+    .sort(function(a,b){return b.s-a.s||(a.f.mode<b.f.mode?-1:1);});
+  var noInv=ranked.filter(function(x){return !x.f.invert.trim();});
+  renderPlans(ranked,noInv);
+  document.getElementById("out").hidden=false;
+  if(document.getElementById("out").scrollIntoView)document.getElementById("out").scrollIntoView({behavior:"smooth",block:"start"});
+  save();
+}
+function renderPlans(ranked,noInv){
+  var b=document.getElementById("outBody");
+  var h="";
+  var counts={crit:0,high:0};
+  ranked.forEach(function(x){if(x.lv.cls==="p-crit")counts.crit++;else if(x.lv.cls==="p-high")counts.high++;});
+  h+='<div class="flag '+(counts.crit>0?"bad":"good")+'"><b>'+ranked.length+' failure modes identified</b> for "'+esc(S.goal.trim())+'": '+
+    '<span class="pill p-crit">'+counts.crit+' deadly</span><span class="pill p-high">'+counts.high+' serious</span>. '+
+    (counts.crit>0?"The deadly traps get first attention in your prevention plan.":"No deadly traps — either a robust plan, or traps rated too kindly.")+'</div>';
+  h+='<h3>Avoid at all costs — the checklist</h3>';
+  h+='<p class="hint">Check each one off when you\'re confident the trap is neutralized. Revisit weekly until they\'re all checked.</p>';
+  ranked.forEach(function(x,n){
+    h+='<div class="avoid'+(x.f.avoided?" done":"")+'" data-rankidx="'+n+'">'+
+      '<input type="checkbox"'+(x.f.avoided?" checked":"")+' aria-label="Mark avoided: '+esc(x.f.mode.trim().slice(0,60))+'">'+
+      '<div class="txt"><b>'+esc(x.f.mode.trim())+'</b> <span class="pill '+x.lv.cls+'">'+x.s+' · '+x.lv.label+'</span></div></div>';
+  });
+  h+='<h3>The prevention plan — inverted</h3>';
+  h+='<p class="hint">Each failure mode, flipped into the action that prevents it. Worked in priority order.</p>';
+  ranked.forEach(function(x,n){
+    var pri=x.lv.cls==="p-crit"?"P1":(x.lv.cls==="p-high"?"P2":"P3");
+    h+='<div class="inv'+(x.lv.cls==="p-crit"?" danger":"")+'"><p><b>'+pri+' — '+esc(x.f.invert.trim()||"(no prevention written yet)")+'</b></p>'+
+      '<p class="hint">Prevents: '+esc(x.f.mode.trim())+' <span class="pill '+x.lv.cls+'">'+x.s+' · '+x.lv.label+'</span></p></div>';
+  });
+  if(noInv.length){
+    h+='<div class="flag bad"><b>'+noInv.length+' trap'+(noInv.length>1?"s have":" has")+' no prevention action yet:</b> '+
+      noInv.map(function(x){return '"'+esc(x.f.mode.trim().slice(0,40))+'"';}).join(", ")+
+      '. An uninverted trap is just a worry — write the opposite behavior for each.</div>';
+  }
+  h+='<h3>Next steps</h3><ol style="margin-left:22px">'+
+    '<li>Do the P1 preventions this week. Deadly traps don\'t wait for a convenient time.</li>'+
+    '<li>Share the avoid-list with anyone involved — traps everyone can see get sprung less often.</li>'+
+    '<li>Re-run this exercise when the goal changes phase. New phases, new traps.</li></ol>';
+  b.innerHTML=h;
+  b.querySelectorAll(".avoid input[type=checkbox]").forEach(function(cb){
+    cb.addEventListener("change",function(){
+      var n=parseInt(cb.closest(".avoid").getAttribute("data-rankidx"),10);
+      var x=ranked[n];
+      if(x){x.f.avoided=cb.checked;save();}
+      cb.closest(".avoid").classList.toggle("done",cb.checked);
+    });
+  });
+}
+document.getElementById("addFail").addEventListener("click",function(){
+  if(S.fails.length>=MAXF){document.getElementById("err").textContent="Fifteen traps is plenty — merge the small ones first.";return;}
+  S.fails.push({mode:"",trap:"",damage:"",invert:"",avoided:false});save();drawFails();drawInvs();
+});
+document.getElementById("build").addEventListener("click",build);
+document.getElementById("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={goal:"",fails:[{mode:"",trap:"",damage:"",invert:"",avoided:false}]};
+  document.getElementById("goal").value="";
+  document.getElementById("invcard").hidden=true;document.getElementById("out").hidden=true;
+  document.getElementById("err").textContent="";
+  drawFails();drawInvs();
+});
+document.getElementById("goal").addEventListener("input",function(){S.goal=this.value;save();});
+load();
+document.getElementById("goal").value=S.goal||"";
+drawFails();drawInvs();
+</script>
+</body>
+</html>

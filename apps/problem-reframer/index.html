@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problem Reframer | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Restate your problem five different ways — because the stated problem is rarely the real problem — then pick the frame worth solving. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/problem-reframer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Problem Reframer | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Restate your problem five different ways — because the stated problem is rarely the real problem — then pick the frame worth solving. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/problem-reframer/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:90px;resize:vertical}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.stepdots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.stepdots span{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;border:2px solid #c9a227;font-size:.8rem}
+.stepdots span.cur{background:#c9a227;color:#141210}
+.stepdots span.done{background:#141210;color:#e8c84a;border-color:#141210}
+.stepdots span.todo{background:transparent;color:#8a6d1c}
+.navrow{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:20px}
+.steplabel{display:inline-block;background:#141210;color:#e8c84a;font-weight:bold;border-radius:6px;padding:4px 12px;margin-bottom:8px;font-size:.9rem}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.rowitem{display:flex;gap:8px;align-items:center;margin:6px 0}
+.rowitem input{margin:0;flex:1}
+.optblock{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:12px 0}
+.optblock h4{font-family:Georgia,serif;margin-bottom:4px}
+.scoregrid{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.scoregrid>div{flex:1;min-width:130px}
+.scoregrid label.lbl{margin-top:6px}
+.ranktable{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+.ranktable th,.ranktable td{border:1px solid #e0d6b8;padding:10px;text-align:left;vertical-align:top}
+.ranktable th{background:#141210;color:#e8c84a}
+.ranktable tr.win td{background:#eef6ee;font-weight:bold}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{header.site,footer.site,.navrow,.noprint,section{display:none}main.app{max-width:100%}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Problem Reframer</h1>
+<p class="intro">The problem as you stated it is rarely the real problem. Restate it <b>five different ways</b>, score each frame on solvability and importance, and walk out with the frame worth solving — plus concrete first steps.</p>
+
+<div class="stepdots" id="dots" aria-label="Progress"></div>
+
+<div class="appcard" id="step1">
+<span class="steplabel">Step 1 — State it</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">What's the problem?</h2>
+<p class="hint">Say it the way you've been saying it to yourself — rough and honest is fine. You'll reshape it in the next step.</p>
+<label class="lbl" for="problem">My problem, as I currently see it:</label>
+<textarea id="problem" placeholder="e.g., I'm not getting enough new customers for my business."></textarea>
+<p class="err" id="err1" role="alert"></p>
+<div class="navrow"><span></span><button class="btn" id="to2">Reframe it five ways &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step2" hidden>
+<span class="steplabel">Step 2 — Five reframes</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Say it five different ways</h2>
+<p class="hint">Each lens below bends your problem into a new shape. Write a fresh version of your problem through each one — the one that surprises you is often the right one.</p>
+<div id="frames"></div>
+<p class="err" id="err2" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back1">&larr; Back</button><button class="btn" id="to3">Score the frames &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step3" hidden>
+<span class="steplabel">Step 3 — Score &amp; pick</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Which frame is worth solving?</h2>
+<p class="hint">Rate each reframe on <b>solvability</b> (how much can you actually do about this?) and <b>importance</b> (how much would solving this matter?). 1 = low, 5 = high. Total = solvability × importance.</p>
+<div id="scoreblocks"></div>
+<h3 style="font-family:Georgia,serif;margin:16px 0 4px">Live ranking</h3>
+<div id="ranking"></div>
+<label class="lbl">The frame I choose to solve</label>
+<div id="winnerPick"></div>
+<p class="err" id="err3" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back2">&larr; Back</button><button class="btn" id="to4">Plan first steps &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step4" hidden>
+<span class="steplabel">Step 4 — First steps</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Make the winning frame actionable</h2>
+<p class="hint">A reframe is only useful if it changes what you DO. List at least <b>two concrete first steps</b> toward the frame you chose — small enough to start this week.</p>
+<div class="flag good" id="winnerBanner"></div>
+<label class="lbl">First steps (at least 2)</label>
+<div id="actions"></div>
+<button class="btn ghost small" id="addAction">+ Add step</button>
+<p class="err" id="err4" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back3">&larr; Back</button><button class="btn" id="to5">See my reframe plan &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step5" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your reframe plan</h2>
+<div id="plan" aria-live="polite"></div>
+<div class="navrow noprint"><button class="btn ghost" id="back4">&larr; Back</button>
+<span style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn ghost" id="printBtn">Print plan</button><button class="btn danger" id="reset">Start over (clear saved work)</button></span></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Reframing is just one clear-thinking skill. <em>Clear Thinking Made Simple</em> by Kimani Upshur, M.Ed. gives you a full toolkit for cutting through mental fog and solving the right problem.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/clear-thinking-made-simple/">Get Clear Thinking Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-problem-reframer-v1";
+var LENSES=[
+ {name:"Broaden it",q:"What is the bigger problem this is part of?",hint:"Zoom one level up. Instead of \u201chow do I get more customers?\u201d try \u201chow do I grow revenue reliably?\u201d"},
+ {name:"Narrow it",q:"What is the smallest concrete version of this?",hint:"Shrink it to one specific instance. Instead of \u201cI\u2019m bad at money,\u201d try \u201cI overspend on food delivery on weekends.\u201d"},
+ {name:"Flip it",q:"What would make this problem worse? What is the opposite goal?",hint:"Invert it. Instead of \u201chow do I get motivated?\u201d try \u201cwhat is draining my motivation?\u201d"},
+ {name:"Zoom out",q:"Will this matter in a year? What would an outsider see?",hint:"Take the 10,000-foot view. Often the \u201ccrisis\u201d is one symptom of a slower, bigger shift."},
+ {name:"The real goal",q:"What do you actually want? If this problem vanished, what would you do instead?",hint:"Stop solving and name the desire. The stated problem is often a workaround for an unspoken goal."}
+];
+var S={step:1,problem:"",frames:["","","","",""],scores:{},winner:-1,actions:[""]};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function total(i){var s=S.scores[i];if(!s||!s.solv||!s.imp)return null;return s.solv*s.imp;}
+function ranking(){
+  var arr=[];
+  for(var i=0;i<5;i++){arr.push({i:i,t:total(i)});}
+  arr.sort(function(a,b){
+    if(a.t===null&&b.t===null)return 0;
+    if(a.t===null)return 1;
+    if(b.t===null)return -1;
+    if(b.t!==a.t)return b.t-a.t;
+    var ai=(S.scores[a.i]||{}).imp||0,bi=(S.scores[b.i]||{}).imp||0;
+    return bi-ai;
+  });
+  return arr;
+}
+
+function drawDots(){
+  var names=["State","Reframe","Score","Act","Plan"];
+  var d=document.getElementById("dots");d.innerHTML="";
+  names.forEach(function(n,i){
+    var sp=document.createElement("span");var n2=i+1;
+    sp.textContent=n2;sp.title="Step "+n2+": "+n;
+    sp.className=n2===S.step?"cur":(n2<S.step?"done":"todo");
+    d.appendChild(sp);
+  });
+}
+function goto(n){
+  S.step=n;save();drawDots();
+  for(var i=1;i<=5;i++){document.getElementById("step"+i).hidden=(i!==n);}
+  if(n===2)drawFrames();
+  if(n===3)drawScores();
+  if(n===4)drawActions();
+  if(n===5)renderPlan();
+  window.scrollTo(0,0);
+}
+
+function drawFrames(){
+  var box=document.getElementById("frames");box.innerHTML="";
+  LENSES.forEach(function(L,i){
+    var div=document.createElement("div");div.className="optblock";
+    div.innerHTML='<h4>Lens '+(i+1)+': '+esc(L.name)+'</h4>'+
+      '<p class="hint"><b>'+esc(L.q)+'</b><br>'+esc(L.hint)+'</p>'+
+      '<label class="lbl" for="fr'+i+'">My problem, '+esc(L.name.toLowerCase())+':</label>'+
+      '<textarea id="fr'+i+'" placeholder="Restate your problem through this lens\u2026"></textarea>';
+    box.appendChild(div);
+    var ta=div.querySelector("#fr"+i);
+    ta.value=S.frames[i]||"";
+    ta.addEventListener("input",function(){S.frames[i]=ta.value;save();});
+  });
+}
+function drawScores(){
+  var box=document.getElementById("scoreblocks");box.innerHTML="";
+  LENSES.forEach(function(L,i){
+    var s=S.scores[i]||{solv:0,imp:0};
+    var div=document.createElement("div");div.className="optblock";
+    var h='<h4>'+esc(L.name)+': '+esc((S.frames[i]||"").slice(0,80))+((S.frames[i]||"").length>80?"\u2026":"")+'</h4>';
+    h+='<div class="scoregrid"><div>'+
+      '<label class="lbl" for="sv'+i+'">Solvability (1\u20135)</label>'+
+      '<select id="sv'+i+'" aria-label="Solvability of frame: '+esc(L.name)+'">'+
+      '<option value="0">Choose\u2026</option><option value="1">1 \u2014 barely solvable</option><option value="2">2 \u2014 hard</option><option value="3">3 \u2014 moderate</option><option value="4">4 \u2014 very solvable</option><option value="5">5 \u2014 fully in my hands</option></select>'+
+      '</div><div>'+
+      '<label class="lbl" for="im'+i+'">Importance (1\u20135)</label>'+
+      '<select id="im'+i+'" aria-label="Importance of frame: '+esc(L.name)+'">'+
+      '<option value="0">Choose\u2026</option><option value="1">1 \u2014 trivial</option><option value="2">2 \u2014 minor</option><option value="3">3 \u2014 meaningful</option><option value="4">4 \u2014 major</option><option value="5">5 \u2014 changes everything</option></select>'+
+      '</div><div style="display:flex;align-items:flex-end"><div class="flag" style="margin:0;flex:1" id="tot'+i+'">Total: \u2014</div></div></div>';
+    div.innerHTML=h;
+    box.appendChild(div);
+    var sv=div.querySelector("#sv"+i),im=div.querySelector("#im"+i);
+    sv.value=s.solv;im.value=s.imp;
+    var upd=function(){setScore(i,parseInt(sv.value,10)||0,parseInt(im.value,10)||0);};
+    sv.addEventListener("change",upd);im.addEventListener("change",upd);
+  });
+  drawRanking();drawWinnerPick();
+}
+function setScore(i,solv,imp){
+  S.scores[i]={solv:solv,imp:imp};save();
+  var t=total(i);
+  var el=document.getElementById("tot"+i);
+  if(el)el.innerHTML="Total: <b>"+(t===null?"\u2014":t+" / 25")+"</b>";
+  drawRanking();drawWinnerPick();
+}
+function drawRanking(){
+  var r=document.getElementById("ranking");
+  var arr=ranking();
+  var h='<table class="ranktable"><tr><th>Rank</th><th>Frame</th><th>Solvability</th><th>Importance</th><th>Total</th></tr>';
+  arr.forEach(function(a,n){
+    var s=S.scores[a.i]||{solv:0,imp:0};
+    h+='<tr'+(S.winner===a.i?' class="win"':'')+'><td>'+(n+1)+'</td><td>'+esc(LENSES[a.i].name)+'</td><td>'+(s.solv||"\u2014")+'</td><td>'+(s.imp||"\u2014")+'</td><td>'+(a.t===null?"\u2014":a.t)+'</td></tr>';
+  });
+  r.innerHTML=h+'</table>';
+}
+function drawWinnerPick(){
+  var box=document.getElementById("winnerPick");box.innerHTML="";
+  var arr=ranking();
+  var sugg=arr.length&&arr[0].t!==null?arr[0].i:-1;
+  var allScored=true;
+  for(var k=0;k<5;k++){if(total(k)===null){allScored=false;break;}}
+  if(S.winner<0&&allScored&&sugg>=0){S.winner=sugg;save();}
+  LENSES.forEach(function(L,i){
+    var t=total(i);
+    var lab=document.createElement("label");
+    lab.style.cssText="display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;background:#fff;border:2px solid #e0d6b8;border-radius:8px;padding:8px 14px;margin:6px 0";
+    var rb=document.createElement("input");
+    rb.type="radio";rb.name="winner";rb.value=i;rb.checked=(S.winner===i);
+    rb.style.cssText="width:22px;height:22px;accent-color:#c9a227";
+    rb.setAttribute("aria-label","Choose frame: "+L.name+(t===null?"":", total "+t));
+    rb.addEventListener("change",function(){S.winner=i;save();drawRanking();});
+    lab.appendChild(rb);
+    var sp=document.createElement("span");
+    sp.innerHTML="<b>"+esc(L.name)+"</b>"+(t===null?"":' <span class="hint">(total '+t+')</span>')+(i===sugg&&t!==null?' <span class="hint">\u2014 top scorer</span>':"");
+    lab.appendChild(sp);
+    box.appendChild(lab);
+  });
+}
+function drawActions(){
+  var w=S.winner>=0?S.frames[S.winner]:"(no frame chosen yet)";
+  document.getElementById("winnerBanner").innerHTML="<b>Winning frame:</b> "+esc(LENSES[S.winner]?LENSES[S.winner].name:"")+" \u2014 "+esc(w);
+  var box=document.getElementById("actions");box.innerHTML="";
+  S.actions.forEach(function(a,i){
+    var row=document.createElement("div");row.className="rowitem";
+    var inp=document.createElement("input");inp.type="text";inp.value=a;
+    inp.placeholder="First step "+(i+1)+", e.g., Call two past clients and ask why they left";
+    inp.setAttribute("aria-label","First step "+(i+1));
+    inp.addEventListener("input",function(){S.actions[i]=inp.value;save();});
+    row.appendChild(inp);
+    if(S.actions.length>2){
+      var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove";
+      rm.setAttribute("aria-label","Remove step "+(i+1));
+      rm.addEventListener("click",function(){S.actions.splice(i,1);save();drawActions();});
+      row.appendChild(rm);
+    }
+    box.appendChild(row);
+  });
+}
+function renderPlan(){
+  var w=S.winner;
+  var h='<p class="hint">Original problem: <b>'+esc(S.problem||"(unnamed)")+'</b></p>';
+  var t=total(w);
+  h+='<div class="flag good"><b>Winning frame: '+esc(LENSES[w].name)+'</b> (total '+(t===null?"\u2014":t+"/25")+')<br>'+esc(S.frames[w]||"")+'</div>';
+  var arr=ranking();
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">All five frames, ranked</h3><table class="ranktable"><tr><th>Rank</th><th>Frame</th><th>Total</th></tr>';
+  arr.forEach(function(a,n){h+='<tr'+(a.i===w?' class="win"':'')+'><td>'+(n+1)+'</td><td>'+esc(LENSES[a.i].name)+' \u2014 '+esc((S.frames[a.i]||"").slice(0,70))+(((S.frames[a.i]||"").length>70)?"\u2026":"")+'</td><td>'+(a.t===null?"\u2014":a.t)+'</td></tr>';});
+  h+='</table>';
+  var acts=S.actions.map(function(x){return x.trim();}).filter(function(x){return x;});
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">First steps on the winning frame</h3><ol style="margin-left:22px">';
+  acts.forEach(function(x){h+='<li>'+esc(x)+'</li>';});
+  h+='</ol>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Next steps</h3><ol style="margin-left:22px">'+
+    '<li>Do the first step this week \u2014 a reframe only matters if it changes action.</li>'+
+    '<li>If a first step stalls, re-run the five lenses on <i>that</i> blockage.</li>'+
+    '<li>Revisit in 30 days: is the winning frame still the right problem to solve?</li></ol>';
+  document.getElementById("plan").innerHTML=h;
+}
+
+document.getElementById("addAction").addEventListener("click",function(){
+  if(S.actions.length>=8){document.getElementById("err4").textContent="Eight steps is plenty \u2014 keep the sharpest ones.";return;}
+  S.actions.push("");save();drawActions();
+});
+document.getElementById("to2").addEventListener("click",function(){
+  var e=document.getElementById("err1");
+  if(S.problem.trim().length<10){e.textContent="State the problem in at least a sentence or two first.";return;}
+  e.textContent="";goto(2);
+});
+document.getElementById("to3").addEventListener("click",function(){
+  var e=document.getElementById("err2");
+  for(var i=0;i<5;i++){
+    if(S.frames[i].trim().length<5){e.textContent="Write a reframe through the \u201c"+LENSES[i].name+"\u201d lens before scoring \u2014 even a rough one.";return;}
+  }
+  e.textContent="";goto(3);
+});
+document.getElementById("to4").addEventListener("click",function(){
+  var e=document.getElementById("err3");
+  for(var i=0;i<5;i++){
+    var s=S.scores[i];
+    if(!s||!s.solv||!s.imp){e.textContent="Score every frame on both solvability and importance \u2014 the ranking needs complete data.";return;}
+  }
+  if(S.winner<0){e.textContent="Pick the frame you're going to solve.";return;}
+  e.textContent="";goto(4);
+});
+document.getElementById("to5").addEventListener("click",function(){
+  var e=document.getElementById("err4");
+  var acts=S.actions.filter(function(x){return x.trim();});
+  if(acts.length<2){e.textContent="List at least two concrete first steps \u2014 one step is a thought, two is a plan.";return;}
+  e.textContent="";goto(5);
+});
+document.getElementById("back1").addEventListener("click",function(){goto(1);});
+document.getElementById("back2").addEventListener("click",function(){goto(2);});
+document.getElementById("back3").addEventListener("click",function(){goto(3);});
+document.getElementById("back4").addEventListener("click",function(){goto(4);});
+document.getElementById("printBtn").addEventListener("click",function(){window.print();});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={step:1,problem:"",frames:["","","","",""],scores:{},winner:-1,actions:[""]};
+  document.getElementById("problem").value="";
+  goto(1);
+});
+document.getElementById("problem").addEventListener("input",function(){S.problem=this.value;save();});
+
+load();
+document.getElementById("problem").value=S.problem||"";
+drawDots();
+for(var i=1;i<=5;i++){document.getElementById("step"+i).hidden=(i!==S.step);}
+if(S.step===2)drawFrames();
+if(S.step===3)drawScores();
+if(S.step===4)drawActions();
+if(S.step===5)renderPlan();
+</script>
+</body>
+</html>

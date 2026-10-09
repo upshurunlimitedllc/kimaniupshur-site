@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source Credibility Checker | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Score any article, video, influencer, or study on expertise, evidence, bias, and corroboration — and get a clear verdict plus exactly what to check next. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/source-credibility-checker/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Source Credibility Checker | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Score any article, video, influencer, or study on expertise, evidence, bias, and corroboration — and get a clear verdict plus exactly what to check next. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/source-credibility-checker/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+/* app-specific */
+.dots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.dots button{width:44px;height:44px;border-radius:50%;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer;font-size:.78rem}
+.dots button.cur{background:#c9a227;color:#141210}
+.dots button:disabled{opacity:.35;cursor:default}
+.cardhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+.cardhead h2{font-family:Georgia,serif;font-size:1.35rem;color:#141210}
+.resetlink{background:none;border:none;color:#8a6d1c;text-decoration:underline;cursor:pointer;font-size:.85rem;min-height:44px;padding:10px}
+.stepnum{color:#8a6d1c;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.err{color:#b3261e;font-weight:bold;margin:10px 0}
+.hint{color:#6b6250;font-size:.92rem;margin:8px 0}
+.field label{font-weight:bold;display:block;margin:12px 0 2px}
+.navrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{padding:10px 16px;min-height:44px;border-radius:8px;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer}
+.seg button:hover{background:#f3e6bd}
+.seg button.sel-strong{background:#dcebd8;border-color:#2e5d26;color:#2e5d26}
+.seg button.sel-mixed{background:#f3e6bd;border-color:#8a6d1c;color:#8a6d1c}
+.seg button.sel-weak{background:#f8dcd8;border-color:#b3261e;color:#b3261e}
+.seg button.sel-unknown{background:#e8e4d8;border-color:#8a8378;color:#5c574c}
+.qblock{border:2px solid #e5d9b5;border-radius:8px;padding:16px;margin:14px 0;background:#fff}
+.qblock .qcat{font-size:.78rem;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#8a6d1c;margin-bottom:4px}
+.qblock .qtext{font-weight:bold;margin-bottom:10px}
+.qblock .qopt{font-size:.85rem;color:#6b6250;margin-top:8px;min-height:1.2em}
+.scorenum{font-family:Georgia,serif;font-size:4rem;color:#141210;line-height:1}
+.verdict{display:inline-block;font-weight:bold;font-size:1.15rem;padding:10px 22px;border-radius:30px;margin:10px 0}
+.v-green{background:#dcebd8;color:#2e5d26}
+.v-lime{background:#eef3d4;color:#5c6b1c}
+.v-amber{background:#f3e6bd;color:#8a6d1c}
+.v-red{background:#f8dcd8;color:#b3261e}
+.bar{height:14px;background:#eee7d0;border-radius:7px;overflow:hidden;margin:6px 0 2px}
+.bar span{display:block;height:100%;background:#c9a227}
+.catrow{margin:12px 0}
+.catrow .clab{display:flex;justify-content:space-between;font-size:.92rem}
+.recap{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #eee;font-size:.92rem}
+.dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.dot.strong{background:#2e5d26}.dot.mixed{background:#c9a227}.dot.weak{background:#b3261e}.dot.unknown{background:#8a8378}
+.checkitem{border:2px solid #e5d9b5;border-left:6px solid #c9a227;border-radius:8px;padding:14px;margin:12px 0;background:#fff}
+.checkitem.urgent{border-left-color:#b3261e}
+.checkitem .ctag{font-size:.75rem;font-weight:bold;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.checkitem.urgent .ctag{color:#b3261e}
+.checkitem .ctag{color:#8a6d1c}
+.result{background:#fff;border:2px solid #c9a227;border-radius:12px;padding:24px;margin-top:20px}
+.result h3{font-family:Georgia,serif;color:#141210;margin:16px 0 6px}
+.result h3:first-child{margin-top:0}
+.result ol,.result ul{margin:6px 0 6px 22px}
+.result li{margin-bottom:6px}
+.nextsteps{background:#f7f1de;border-radius:8px;padding:16px;margin-top:14px}
+@media print{header.site,footer.site,.navrow,.noprint,.dots,.resetlink{display:none!important}main.app{max-width:100%;padding:0}.appcard{border:none;padding:0}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Source Credibility Checker</h1>
+<p class="intro">Before you trust it, score it. Answer 10 questions about any article, video, influencer, or study — and get a credibility score, a clear verdict, and exactly what to check next.</p>
+<div class="appcard">
+<div class="cardhead">
+<div><div class="stepnum" id="stepnum"></div><h2 id="steptitle"></h2></div>
+<button class="resetlink noprint" id="resetTop" type="button">Start over</button>
+</div>
+<div class="dots noprint" id="dots" role="navigation" aria-label="Steps"></div>
+<div id="err" class="err" role="alert" style="display:none"></div>
+<div id="stepbody"></div>
+<div class="navrow noprint" id="navrow"></div>
+</div>
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p><em>Critical Thinking Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same method — evaluating evidence, spotting bias, and thinking clearly under pressure.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/critical-thinking-made-simple/">Get Critical Thinking Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-source-credibility-checker-v1";
+var STEPS=["Source","Expertise & Evidence","Bias & Corroboration","Score & Verdict","What to Check Next"];
+var TYPES=["Article","Video","Influencer post","Study or report","Podcast","Other"];
+var OPTS=[
+ ["strong","Strong"],["mixed","Mixed"],["weak","Weak"],["unknown","Can't tell"]
+];
+var QUESTIONS=[
+{cat:"Expertise",q:"Who created this? Do they have real expertise in this subject?",
+ d:{strong:"Clear credentials or a proven track record in this subject.",
+    mixed:"Some relevant experience, but limited.",
+    weak:"No relevant expertise — or anonymous.",
+    unknown:"You can't tell who is behind it."},
+ c:{mixed:"Look the author up: search their name plus the topic. Has anyone credible cited their work?",
+    weak:"Credibility gap. Search the author's name and credentials before trusting any claim here.",
+    unknown:"Find out who made this: check the byline, about page, or channel owner. Anonymous plus bold claims is high risk."}},
+{cat:"Expertise",q:"Does the author or outlet have a track record of accuracy?",
+ d:{strong:"Known for accuracy and public corrections.",
+    mixed:"Mixed record — some good work, some sloppy.",
+    weak:"Known for errors, fabrication, or retracted stories.",
+    unknown:"You can't tell what their record is."},
+ c:{mixed:"Search the outlet's name plus \"correction\" or \"retraction\" — how they handle errors matters more than their promises.",
+    weak:"A poor accuracy record is disqualifying for important decisions. Find the same claim from a cleaner source.",
+    unknown:"Check their record: search the outlet's name plus \"correction\", \"retraction\", or \"fabrication\"."}},
+{cat:"Evidence",q:"Does it cite specific, checkable sources — data, studies, named experts, documents?",
+ d:{strong:"Yes — specific sources you could verify.",
+    mixed:"Some sources, but vague.",
+    weak:"No sources at all.",
+    unknown:"You can't tell whether it cites sources."},
+ c:{mixed:"Chase the vague citations: find the original study, document, or recording. Don't trust second-hand quotes.",
+    weak:"No sources means no verification is possible. Treat every claim here as unproven.",
+    unknown:"Scan for links, footnotes, or named sources. If there are none, treat this as unsourced."}},
+{cat:"Evidence",q:"Is the evidence proportional to the claim — data and specifics, not just stories?",
+ d:{strong:"Yes — data and specifics, proportionate to the claim.",
+    mixed:"Anecdotes with some data.",
+    weak:"Bold claims with no real evidence.",
+    unknown:"You can't tell what the evidence is."},
+ c:{mixed:"Separate the stories from the data. Ask: what would the raw numbers need to show for this claim to hold?",
+    weak:"Extraordinary claims need evidence. Without it, this is rhetoric, not information.",
+    unknown:"Re-read for specifics: numbers, dates, names. If you find only adjectives, that's your answer."}},
+{cat:"Evidence",q:"Is it current enough for this topic — and clearly dated?",
+ d:{strong:"Current and clearly dated.",
+    mixed:"Dated, but aging.",
+    weak:"Undated or clearly outdated.",
+    unknown:"You can't tell how current it is."},
+ c:{mixed:"Check whether newer information exists — aging data on a fast-moving topic misleads.",
+    weak:"Old or undated information presented as current is a classic misinformation pattern.",
+    unknown:"Find the date. If you can't, treat timeliness as unverified."}},
+{cat:"Bias",q:"Who paid for this — and do they benefit if you believe it?",
+ d:{strong:"Independent, and funding is disclosed.",
+    mixed:"Some interests, but disclosed.",
+    weak:"Clear conflict — they profit if you believe.",
+    unknown:"You can't tell who funds it."},
+ c:{mixed:"Note the interest and discount the message accordingly. Would they say this even if it weren't true?",
+    weak:"Follow the money: they sell what they're promoting. Verify every key claim independently.",
+    unknown:"Check the about page and funding disclosures. Undisclosed funding behind persuasive content is a red flag."}},
+{cat:"Bias",q:"Does it present other sides or admit uncertainty?",
+ d:{strong:"Yes — fair, and notes its limits.",
+    mixed:"Mostly one-sided, but not dishonest.",
+    weak:"Cherry-picks evidence; attacks critics.",
+    unknown:"You can't tell whether it is balanced."},
+ c:{mixed:"Read the strongest counter-argument yourself: search the claim plus \"criticism\" or \"debunked\".",
+    weak:"One-sided advocacy isn't reporting. Find an independent analysis before deciding anything.",
+    unknown:"Look for counter-arguments, caveats, or critics. Their absence tells you something."}},
+{cat:"Bias",q:"Is the tone measured — or sensational, clickbait, outrage-bait?",
+ d:{strong:"Calm, specific language.",
+    mixed:"Some hype.",
+    weak:"Sensational — outrage language, clickbait.",
+    unknown:"You can't tell from a skim."},
+ c:{mixed:"Strip the hype and re-read the facts underneath. Are they enough on their own?",
+    weak:"Manipulative tone is a reliability signal: sources confident in facts don't need outrage.",
+    unknown:"Re-read the headline and opening. Hype without substance is a warning sign."}},
+{cat:"Corroboration",q:"Is the same claim reported by at least one independent, reputable outlet?",
+ d:{strong:"Yes — multiple independent outlets.",
+    mixed:"Partially — similar claims, different details.",
+    weak:"No — only this source and its echoes.",
+    unknown:"You haven't checked."},
+ c:{mixed:"Compare the details across outlets. Where they disagree is where the claim is weakest.",
+    weak:"An uncorroborated claim is a rumor with production values. Find a second independent source.",
+    unknown:"Search the central claim in two or three other outlets before trusting it."}},
+{cat:"Corroboration",q:"Is there accountability — a corrections policy, retractions, contact information?",
+ d:{strong:"Clear corrections policy and contact info.",
+    mixed:"Vague accountability.",
+    weak:"None — no corrections, no contact, anonymous.",
+    unknown:"You can't tell."},
+ c:{mixed:"Accountability is thin here. Prefer sources that correct themselves publicly.",
+    weak:"No way to correct means no incentive to be right. High risk for anything that matters.",
+    unknown:"Look for a corrections policy and a real contact. Their absence is itself information."}}
+];
+var CATS=["Expertise","Evidence","Bias","Corroboration"];
+var POINTS={strong:2,mixed:1,weak:0,unknown:0};
+var MAXPTS=QUESTIONS.length*2;
+
+function freshState(){return{step:0,maxStep:0,title:"",type:"Article",foundAt:"",answers:[null,null,null,null,null,null,null,null,null,null]};}
+function loadState(){
+  try{var raw=localStorage.getItem(KEY);
+    if(raw){var s=JSON.parse(raw);
+      if(s&&typeof s==="object"){
+        var d=freshState();
+        if(typeof s.title==="string")d.title=s.title;
+        if(TYPES.indexOf(s.type)>=0)d.type=s.type;
+        if(typeof s.foundAt==="string")d.foundAt=s.foundAt;
+        if(Array.isArray(s.answers)){
+          for(var i=0;i<QUESTIONS.length;i++){
+            var a=s.answers[i];
+            d.answers[i]=(a==="strong"||a==="mixed"||a==="weak"||a==="unknown")?a:null;
+          }
+        }
+        if(typeof s.step==="number")d.step=Math.max(0,Math.min(STEPS.length-1,Math.floor(s.step)));
+        if(typeof s.maxStep==="number")d.maxStep=Math.max(0,Math.min(STEPS.length-1,Math.floor(s.maxStep)));
+        return d;
+      }
+    }
+  }catch(e){}
+  return freshState();
+}
+var state=loadState();
+var maxStep=(typeof state.maxStep==="number")?state.maxStep:0;
+if(state.step>maxStep)state.step=maxStep;
+function save(){state.maxStep=maxStep;try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function el(tag,cls,text){var d=document.createElement(tag);if(cls)d.className=cls;if(text!==undefined&&text!==null)d.textContent=text;return d;}
+function showErr(msg){var e=document.getElementById("err");if(msg){e.textContent=msg;e.style.display="block";}else{e.textContent="";e.style.display="none";}}
+function esc(s){return String(s);}
+
+function drawDots(){
+  var dots=document.getElementById("dots");dots.innerHTML="";
+  STEPS.forEach(function(name,i){
+    var b=el("button",i===state.step?"cur":"",String(i+1));
+    b.type="button";b.title=name;b.setAttribute("aria-label","Step "+(i+1)+": "+name);
+    if(i>maxStep)b.disabled=true;
+    b.addEventListener("click",function(){go(i);});
+    dots.appendChild(b);
+  });
+  document.getElementById("stepnum").textContent="Step "+(state.step+1)+" of "+STEPS.length;
+  document.getElementById("steptitle").textContent=STEPS[state.step];
+}
+function go(i){showErr("");state.step=i;if(i>maxStep)maxStep=i;save();render();}
+function resetAll(){
+  if(!window.confirm("Clear everything and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  state=freshState();maxStep=0;save();render();
+}
+
+/* ---------- scoring ---------- */
+function catScore(cat){
+  var pts=0,max=0;
+  QUESTIONS.forEach(function(Q,i){
+    if(Q.cat!==cat)return;
+    max+=2;
+    var a=state.answers[i];
+    if(a)pts+=POINTS[a];
+  });
+  return{pct:max?Math.round(pts/max*100):0,pts:pts,max:max};
+}
+function totalScore(){
+  var pts=0;
+  state.answers.forEach(function(a){if(a)pts+=POINTS[a];});
+  return Math.round(pts/MAXPTS*100);
+}
+function verdict(pct){
+  if(pct>=80)return{cls:"v-green",label:"Reliable",desc:"This source holds up well across expertise, evidence, bias, and corroboration. You can use it with normal caution — still verify any claim you would act on."};
+  if(pct>=60)return{cls:"v-lime",label:"Trust but verify",desc:"Usable, but with real gaps. Work the checklist on the next step before you rely on this source for anything important."};
+  if(pct>=40)return{cls:"v-amber",label:"Treat skeptically",desc:"Too many weak spots to rely on. Use it only as a lead — verify everything independently before you believe or share it."};
+  return{cls:"v-red",label:"Do not rely on this source",desc:"This source fails too many basic credibility tests. Find a better source for anything that matters. Do not share it until it is verified."};
+}
+function checklist(){
+  var items=[];
+  QUESTIONS.forEach(function(Q,i){
+    var a=state.answers[i];
+    if(a==="strong"||!a||!Q.c[a])return;
+    items.push({q:Q.q,action:Q.c[a],pri:a==="weak"?1:(a==="unknown"?2:3),cat:Q.cat,ans:a});
+  });
+  items.sort(function(x,y){return x.pri-y.pri;});
+  return items;
+}
+
+/* ---------- step renderers ---------- */
+function renderSource(body){
+  body.appendChild(el("p","hint","Name the source you want to evaluate. It can be an article, a video, an influencer's post, a study — anything making claims you might act on."));
+  var f=el("div","field");
+  var l1=el("label",null,"What is the source? (title, headline, or description)");l1.setAttribute("for","srcTitle");f.appendChild(l1);
+  var t=el("input");t.type="text";t.id="srcTitle";t.value=state.title;
+  t.placeholder="Example: \"New study shows coffee cures everything\" — viral video";
+  t.setAttribute("aria-label","Source title, headline, or description");
+  t.addEventListener("input",function(){state.title=t.value;save();});
+  f.appendChild(t);
+  var l2=el("label",null,"Type of source");f.appendChild(l2);
+  var seg=el("div","seg");seg.setAttribute("role","group");seg.setAttribute("aria-label","Type of source");
+  TYPES.forEach(function(tp){
+    var b=el("button",state.type===tp?"sel-mixed":"",tp);b.type="button";
+    b.setAttribute("aria-pressed",state.type===tp?"true":"false");
+    b.addEventListener("click",function(){state.type=tp;save();render();});
+    seg.appendChild(b);
+  });
+  f.appendChild(seg);
+  var l3=el("label",null,"Where did you find it? (optional)");l3.setAttribute("for","srcFound");f.appendChild(l3);
+  var fd=el("input");fd.type="text";fd.id="srcFound";fd.value=state.foundAt;
+  fd.placeholder="Example: forwarded in a group chat, YouTube recommendation…";
+  fd.setAttribute("aria-label","Where you found the source, optional");
+  fd.addEventListener("input",function(){state.foundAt=fd.value;save();});
+  f.appendChild(fd);
+  body.appendChild(f);
+}
+function renderQuestions(body,from,to){
+  body.appendChild(el("p","hint","Answer honestly. \"Can't tell\" is a valid answer — it becomes part of your checklist, because not knowing is itself a gap."));
+  for(var i=from;i<=to;i++){
+    (function(idx){
+      var Q=QUESTIONS[idx];
+      var box=el("div","qblock");
+      box.appendChild(el("div","qcat",Q.cat+" · "+(idx+1)+" of "+QUESTIONS.length));
+      box.appendChild(el("div","qtext",Q.q));
+      var seg=el("div","seg");seg.setAttribute("role","group");seg.setAttribute("aria-label","Question "+(idx+1)+": "+Q.q);
+      var note=el("div","qopt","");
+      OPTS.forEach(function(o){
+        var b=el("button",state.answers[idx]===o[0]?"sel-"+o[0]:"",o[1]);
+        b.type="button";b.setAttribute("aria-pressed",state.answers[idx]===o[0]?"true":"false");
+        b.addEventListener("click",function(){
+          state.answers[idx]=o[0];save();render();
+        });
+        seg.appendChild(b);
+      });
+      box.appendChild(seg);
+      if(state.answers[idx])note.textContent=Q.d[state.answers[idx]];
+      box.appendChild(note);
+      body.appendChild(box);
+    })(i);
+  }
+  var un=0;
+  for(var j=from;j<=to;j++)if(!state.answers[j])un++;
+  if(un>0)body.appendChild(el("p","hint",un+" question"+(un===1?"":"s")+" on this page still need"+(un===1?"s":"")+" an answer before you continue."));
+}
+function renderVerdict(body){
+  var pct=totalScore(),v=verdict(pct);
+  var src=el("p",null,"");src.innerHTML="<strong>Source:</strong> ";
+  src.appendChild(document.createTextNode(state.title.trim()||"(unnamed)"));
+  src.appendChild(document.createTextNode(" · "+state.type));
+  body.appendChild(src);
+  var center=el("div");center.style.textAlign="center";center.style.margin="18px 0";
+  var num=el("div","scorenum",pct+"%");center.appendChild(num);
+  var badge=el("span","verdict "+v.cls,v.label);center.appendChild(badge);
+  body.appendChild(center);
+  body.appendChild(el("p",null,v.desc));
+  var unknowns=state.answers.filter(function(a){return a==="unknown";}).length;
+  var weaks=state.answers.filter(function(a){return a==="weak";}).length;
+  if(weaks>0)body.appendChild(el("p","hint","Red flags: "+weaks+" answer"+(weaks===1?"":"s")+" came back weak — see the checklist on the next step."));
+  if(unknowns>=4)body.appendChild(el("p","hint","Note: "+unknowns+" of your answers are \"Can't tell\", so this score is provisional. Filling those gaps is your first job."));
+  var card=el("div","result");card.id="verdictCard";
+  card.appendChild(el("h3",null,"Category breakdown"));
+  CATS.forEach(function(c){
+    var cs=catScore(c);
+    var row=el("div","catrow");
+    var lab=el("div","clab");
+    lab.appendChild(el("span",null,c));
+    lab.appendChild(el("strong",null,cs.pct+"%"));
+    row.appendChild(lab);
+    var bar=el("div","bar");var fill=el("span");fill.style.width=cs.pct+"%";
+    if(cs.pct<40)fill.style.background="#b3261e";else if(cs.pct<70)fill.style.background="#c9a227";else fill.style.background="#2e5d26";
+    bar.appendChild(fill);row.appendChild(bar);
+    var pl=el("p","hint",cs.pts+" of "+cs.max+" points");
+    row.appendChild(pl);
+    card.appendChild(row);
+  });
+  card.appendChild(el("h3",null,"Question recap"));
+  QUESTIONS.forEach(function(Q,i){
+    var r=el("div","recap");
+    r.appendChild(el("span","dot "+state.answers[i]));
+    var tx=el("div");tx.appendChild(el("strong",null,Q.q+" "));
+    var ol=OPTS.filter(function(o){return o[0]===state.answers[i];})[0];
+    tx.appendChild(document.createTextNode("— "+(ol?ol[1]:"?")));
+    r.appendChild(tx);card.appendChild(r);
+  });
+  body.appendChild(card);
+}
+function renderChecks(body){
+  var items=checklist();
+  var unknowns=state.answers.filter(function(a){return a==="unknown";}).length;
+  body.appendChild(el("p","hint","Your score is only as good as its weakest answers. Work this list top-down: fix the weak spots first, then fill the unknowns, then double-check the mixed ones."));
+  if(items.length===0){
+    body.appendChild(el("div","nextsteps",
+      "Every answer came back strong — nothing to fix. Your one remaining habit: spot-check any single claim you would act on, no matter how good the source looks."));
+  }else{
+    items.forEach(function(it,n){
+      var box=el("div","checkitem"+(it.pri===1?" urgent":""));
+      var tag=it.pri===1?"Fix first":(it.pri===2?"Find out":"Double-check");
+      box.appendChild(el("div","ctag",(n+1)+". "+tag+" · "+it.cat));
+      box.appendChild(el("p",null,it.q));
+      box.appendChild(el("p",null,it.action));
+      body.appendChild(box);
+    });
+  }
+  var ns=el("div","nextsteps");
+  ns.appendChild(el("strong",null,"The 5-minute verification habit"));
+  var ol=el("ol");
+  ol.appendChild(el("li",null,"Open three new tabs: one for the author, one for the outlet, one for the central claim."));
+  ol.appendChild(el("li",null,"Do a lateral read — see what independent sources say before you finish reading this one."));
+  ol.appendChild(el("li",null,"Decide your stance: trust it, trust it only with verification, or set it aside."));
+  ol.appendChild(el("li",null,"If you share it, share your verdict too — \"I checked this, here's what held up.\""));
+  ns.appendChild(ol);body.appendChild(ns);
+  var row=el("div","navrow");
+  var copy=el("button","btn ghost","Copy scorecard");copy.type="button";
+  copy.addEventListener("click",copyScorecard);
+  var pr=el("button","btn ghost","Print");pr.type="button";
+  pr.addEventListener("click",function(){window.print();});
+  row.appendChild(copy);row.appendChild(pr);body.appendChild(row);
+}
+function scorecardText(){
+  var L=[];
+  var pct=totalScore(),v=verdict(pct);
+  L.push("SOURCE CREDIBILITY SCORECARD");
+  L.push("Source: "+state.title.trim());
+  L.push("Type: "+state.type+(state.foundAt.trim()?" · Found via: "+state.foundAt.trim():""));
+  L.push("");
+  L.push("SCORE: "+pct+"% — "+v.label.toUpperCase());
+  L.push(v.desc);
+  L.push("");
+  L.push("CATEGORY BREAKDOWN:");
+  CATS.forEach(function(c){var cs=catScore(c);L.push("- "+c+": "+cs.pct+"% ("+cs.pts+"/"+cs.max+" pts)");});
+  L.push("");
+  L.push("QUESTION ANSWERS:");
+  QUESTIONS.forEach(function(Q,i){
+    var ol=OPTS.filter(function(o){return o[0]===state.answers[i];})[0];
+    L.push((i+1)+". ["+Q.cat+"] "+Q.q+" → "+(ol?ol[1]:"?"));
+  });
+  var items=checklist();
+  if(items.length){
+    L.push("");
+    L.push("WHAT TO CHECK NEXT:");
+    items.forEach(function(it,n){
+      var tag=it.pri===1?"FIX FIRST":(it.pri===2?"FIND OUT":"DOUBLE-CHECK");
+      L.push((n+1)+". ["+tag+"] "+it.q);
+      L.push("   "+it.action);
+    });
+  }else{
+    L.push("");
+    L.push("WHAT TO CHECK NEXT: nothing — all answers strong. Spot-check any claim you'd act on.");
+  }
+  return L.join("\n");
+}
+function copyScorecard(){
+  var t=scorecardText();
+  function ok(){alert("Scorecard copied to clipboard.");}
+  function fb(){
+    var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");alert("Scorecard copied to clipboard.");}
+    catch(e){alert("Copy failed — select the text manually.");}
+    document.body.removeChild(ta);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(ok,fb);
+  else fb();
+}
+
+/* ---------- validation + nav ---------- */
+function validate(){
+  if(state.step===0&&state.title.trim()==="")return "Name the source first — a title, headline, or short description is enough.";
+  if(state.step===1){
+    var un=[];for(var i=0;i<=4;i++)if(!state.answers[i])un.push(i+1);
+    if(un.length)return "Answer every question on this page (missing: "+un.join(", ")+"). \"Can't tell\" counts as an answer.";
+  }
+  if(state.step===2){
+    var un2=[];for(var j=5;j<=9;j++)if(!state.answers[j])un2.push(j+1);
+    if(un2.length)return "Answer every question on this page (missing: "+un2.join(", ")+"). \"Can't tell\" counts as an answer.";
+  }
+  return "";
+}
+function renderNav(){
+  var nav=document.getElementById("navrow");nav.innerHTML="";
+  if(state.step>0){
+    var back=el("button","btn ghost","Back");back.type="button";
+    back.addEventListener("click",function(){go(state.step-1);});nav.appendChild(back);
+  }
+  if(state.step<STEPS.length-1){
+    var next=el("button","btn","Next \u2192");next.type="button";
+    next.addEventListener("click",function(){
+      var v=validate();
+      if(v){showErr(v);return;}
+      showErr("");go(state.step+1);
+    });
+    nav.appendChild(next);
+  }
+}
+var RENDERERS=[renderSource,
+  function(b){renderQuestions(b,0,4);},
+  function(b){renderQuestions(b,5,9);},
+  renderVerdict,renderChecks];
+function render(){
+  drawDots();showErr("");
+  var body=document.getElementById("stepbody");body.innerHTML="";
+  RENDERERS[state.step](body);
+  renderNav();
+}
+document.getElementById("resetTop").addEventListener("click",resetAll);
+render();
+</script>
+</body>
+</html>

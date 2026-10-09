@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk Register Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="List everything that could go wrong with your project, score each risk, and leave with a prioritized mitigation plan. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/risk-register-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Risk Register Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="List everything that could go wrong with your project, score each risk, and leave with a prioritized mitigation plan. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/risk-register-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.riskrow{border:2px solid #e0d6b8;border-radius:10px;padding:14px;margin:10px 0;background:#fff}
+.riskrow .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.riskrow .cols{grid-template-columns:1fr}}
+.pill{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:bold;color:#fff;margin:4px 6px 4px 0}
+.p-low{background:#3d7a3d}.p-med{background:#8a6d1c}.p-high{background:#b45f06}.p-crit{background:#a33}
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+table.grid th,table.grid td{border:1px solid #e0d6b8;padding:8px;text-align:center}
+table.grid th{background:#141210;color:#e8c84a}
+table.grid td.l{text-align:left;background:#fffdf7}
+.twrap{overflow-x:auto}
+.heat{display:grid;grid-template-columns:64px repeat(5,1fr);gap:3px;margin:14px 0;font-size:.78rem}
+.heat .cell{border-radius:6px;padding:6px 4px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.heat .ax{display:flex;align-items:center;justify-content:center;font-weight:bold;color:#6b6250}
+.heat .score{font-weight:bold;font-size:.95rem}
+.heat .tag{font-size:.68rem;color:#333;background:rgba(255,255,255,.75);border-radius:4px;padding:0 4px;margin:1px 0;line-height:1.5}
+.reg{border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.reg.top{border-color:#a33;border-width:3px}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag.bad{background:#fbeeee;border-left-color:#a33}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{header.site,footer.site,section.devotional,.noprint{display:none!important}main.app{max-width:100%}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Risk Register Builder</h1>
+<p class="intro">List everything that could go wrong with your project, score each risk by likelihood and impact, and leave with a prioritized mitigation plan. What gets written down gets managed.</p>
+
+<div class="appcard">
+<label class="lbl" for="project">Project name (optional)</label>
+<input type="text" id="project" placeholder="e.g., Website relaunch, wedding planning, product launch">
+<h2 style="font-family:Georgia,serif;margin:18px 0 4px;font-size:1.25rem">Step 1 — List the risks</h2>
+<p class="hint">Name each thing that could go wrong. Rate <b>likelihood</b> (1 = rare, 5 = almost certain) and <b>impact</b> (1 = minor annoyance, 5 = project fails). Score = likelihood &times; impact.</p>
+<div id="risks"></div>
+<div class="noprint"><button class="btn ghost small" id="addRisk">+ Add risk</button></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Step 2 — Score and rank</h2>
+<p class="hint">The math ranks your risks so your attention goes where it matters most.</p>
+<p class="err" id="err" role="alert"></p>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="analyze">Score &amp; build my register</button>
+<button class="btn ghost" id="reset">Reset (clear saved work)</button>
+</div>
+</div>
+
+<div class="appcard" id="out" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your Risk Register</h2>
+<div id="outBody" aria-live="polite"></div>
+</div>
+
+<div class="appcard" id="mitcard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 3 — Mitigation plan</h2>
+<p class="hint">For each risk below (highest score first), write a <b>mitigation action</b>, an <b>owner</b>, and an <b>early-warning sign</b> — the signal that tells you the risk is starting to happen. High and critical risks are highlighted: do not skip them.</p>
+<div id="mits"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn" id="finalize">Finalize my register</button>
+<button class="btn ghost" id="printBtn">Print / save as PDF</button>
+</div>
+<p class="note">Your work saves automatically on this device as you type.</p>
+</div>
+
+<div class="appcard" id="finalcard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your prioritized mitigation plan</h2>
+<div id="finalBody" aria-live="polite"></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Risk scoring is just the start. <em>Risk Made Simple</em> by Kimani Upshur, M.Ed. goes deeper into identifying, pricing, and managing risk in plain English.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/risk-made-simple/">Get Risk Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-risk-register-builder-v1";
+var MAXR=20;
+var S={project:"",risks:[{desc:"",l:"",i:"",mit:"",owner:"",warn:""}]};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"){if(typeof o.project==="string")S.project=o.project;if(Array.isArray(o.risks)&&o.risks.length)S.risks=o.risks.map(function(x){return {desc:String(x.desc||""),l:String(x.l||""),i:String(x.i||""),mit:String(x.mit||""),owner:String(x.owner||""),warn:String(x.warn||"")};});}}}catch(e){}}
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function score(r){var l=parseInt(r.l,10),i=parseInt(r.i,10);if(!(l>=1&&l<=5&&i>=1&&i<=5))return null;return l*i;}
+function level(s){if(s==null)return null;if(s<=4)return{label:"Low",cls:"p-low"};if(s<=9)return{label:"Medium",cls:"p-med"};if(s<=15)return{label:"High",cls:"p-high"};return{label:"Critical",cls:"p-crit"};}
+var LS=["","1 — Rare","2 — Unlikely","3 — Possible","4 — Likely","5 — Almost certain"];
+var IS=["","1 — Minor","2 — Moderate","3 — Serious","4 — Major","5 — Catastrophic"];
+
+function drawRisks(){
+  var box=document.getElementById("risks");box.innerHTML="";
+  S.risks.forEach(function(r,idx){
+    var d=document.createElement("div");d.className="riskrow";
+    var top=document.createElement("div");top.style.cssText="display:flex;gap:8px;align-items:flex-start";
+    var num=document.createElement("div");num.innerHTML="<b>Risk "+(idx+1)+"</b>";num.style.cssText="padding-top:16px;min-width:64px;color:#8a6d1c";
+    top.appendChild(num);
+    var inp=document.createElement("input");inp.type="text";inp.value=r.desc;inp.placeholder="What could go wrong? e.g., Key supplier misses deadline";
+    inp.setAttribute("aria-label","Risk "+(idx+1)+" description");
+    inp.addEventListener("input",function(){r.desc=inp.value;save();});
+    top.appendChild(inp);
+    if(S.risks.length>1){var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove";rm.setAttribute("aria-label","Remove risk "+(idx+1));rm.style.margin="8px 0";
+      rm.addEventListener("click",function(){S.risks.splice(idx,1);save();drawRisks();});
+      top.appendChild(rm);}
+    d.appendChild(top);
+    var cols=document.createElement("div");cols.className="cols";
+    var lsel=document.createElement("select");lsel.setAttribute("aria-label","Likelihood for risk "+(idx+1));
+    LS.forEach(function(t,v){var o=document.createElement("option");o.value=v;o.textContent=t==="?"?"":t||"Likelihood…";if(String(v)===r.l)o.selected=true;lsel.appendChild(o);});
+    if(r.l==="")lsel.selectedIndex=0;
+    lsel.addEventListener("change",function(){r.l=lsel.value;save();showLive(idx,d);});
+    var isel=document.createElement("select");isel.setAttribute("aria-label","Impact for risk "+(idx+1));
+    IS.forEach(function(t,v){var o=document.createElement("option");o.value=v;o.textContent=t||"Impact…";if(String(v)===r.i)o.selected=true;isel.appendChild(o);});
+    if(r.i==="")isel.selectedIndex=0;
+    isel.addEventListener("change",function(){r.i=isel.value;save();showLive(idx,d);});
+    var lw=document.createElement("div");var ll=document.createElement("label");ll.className="lbl";ll.textContent="Likelihood";ll.setAttribute("for","");lw.appendChild(ll);lw.appendChild(lsel);
+    var iw=document.createElement("div");var il=document.createElement("label");il.className="lbl";il.textContent="Impact";iw.appendChild(il);iw.appendChild(isel);
+    cols.appendChild(lw);cols.appendChild(iw);d.appendChild(cols);
+    var live=document.createElement("div");live.className="note";live.id="live-"+idx;d.appendChild(live);
+    box.appendChild(d);showLive(idx,d);
+  });
+}
+function showLive(idx,rowEl){
+  var r=S.risks[idx];var s=score(r);var el=rowEl.querySelector("#live-"+idx)||rowEl.querySelector(".note");
+  if(!el)return;
+  if(s==null){el.innerHTML="";return;}
+  var lv=level(s);
+  el.innerHTML='Score: <b>'+s+'</b> ('+r.l+' &times; '+r.i+') <span class="pill '+lv.cls+'">'+lv.label+'</span>';
+}
+function validRisks(){
+  var named=S.risks.filter(function(r){return r.desc.trim()!=="";});
+  return named;
+}
+function analyze(){
+  var err=document.getElementById("err");err.textContent="";
+  var named=validRisks();
+  if(named.length===0){err.textContent="Add at least one risk with a description.";return;}
+  for(var k=0;k<named.length;k++){
+    if(score(named[k])==null){err.textContent="Risk \""+(named[k].desc.trim().slice(0,40))+"…\" is missing a likelihood or impact rating. Rate all risks 1–5.";return;}
+  }
+  var seen={};
+  named.forEach(function(r){var d=r.desc.trim().toLowerCase();seen[d]=(seen[d]||0)+1;});
+  var dups=Object.keys(seen).filter(function(k){return seen[k]>1;});
+  var ranked=named.map(function(r){var s=score(r);return {r:r,s:s,lv:level(s)};})
+    .sort(function(a,b){return b.s-a.s||b.r.i-a.r.i||(a.r.desc<b.r.desc?-1:1);});
+  renderRegister(ranked,dups);
+  drawMits(ranked);
+  document.getElementById("out").hidden=false;
+  document.getElementById("mitcard").hidden=false;
+  document.getElementById("finalcard").hidden=true;
+  if(document.getElementById("out").scrollIntoView)document.getElementById("out").scrollIntoView({behavior:"smooth",block:"start"});
+  save();
+}
+function cellColor(s){var lv=level(s);if(lv.cls==="p-low")return"#cfe6cf";if(lv.cls==="p-med")return"#f3e3a8";if(lv.cls==="p-high")return"#f0c892";return"#eeb3b3";}
+function renderRegister(ranked,dups){
+  var b=document.getElementById("outBody");
+  var h="";
+  var counts={Low:0,Medium:0,High:0,Critical:0};
+  ranked.forEach(function(x){counts[x.lv.label]++;});
+  h+='<div class="flag '+(counts.Critical>0?"bad":(counts.High>0?"":"good"))+'"><b>'+ranked.length+' risks scored.</b> '+
+    '<span class="pill p-crit">'+counts.Critical+' critical</span>'+
+    '<span class="pill p-high">'+counts.High+' high</span>'+
+    '<span class="pill p-med">'+counts.Medium+' medium</span>'+
+    '<span class="pill p-low">'+counts.Low+' low</span></div>';
+  if(counts.Critical===0&&counts.High===0){
+    h+='<div class="flag good"><b>Good news:</b> nothing scored above medium. That either means a genuinely calm project — or that the ratings are optimistic. Ask a skeptical friend to review the list before you relax.</div>';
+  }
+  if(dups.length){h+='<p class="note">Heads-up: these look like duplicates — '+(dups.map(function(d){return '"'+esc(d.slice(0,40))+'"';}).join(", "))+' — consider merging them.</p>';}
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Risk heat map</h3><p class="hint">Impact runs down the left, likelihood across the top. Your risks are placed where they land.</p>';
+  h+='<div class="heat" aria-label="Risk heat map">';
+  h+='<div class="ax"></div>';
+  for(var L=1;L<=5;L++)h+='<div class="ax">L'+L+'</div>';
+  for(var I=5;I>=1;I--){
+    h+='<div class="ax">I'+I+'</div>';
+    for(var L2=1;L2<=5;L2++){
+      var s=L2*I;
+      var tags=ranked.filter(function(x){return parseInt(x.r.l,10)===L2&&parseInt(x.r.i,10)===I;});
+      h+='<div class="cell" style="background:'+cellColor(s)+'"><span class="score">'+s+'</span>';
+      tags.forEach(function(t){h+='<span class="tag">'+esc(t.r.desc.trim().slice(0,22))+(t.r.desc.trim().length>22?"…":"")+'</span>';});
+      h+='</div>';
+    }
+  }
+  h+='</div><p class="hint">L = likelihood 1–5, I = impact 1–5. Top-right corner is the danger zone.</p>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Ranked risks</h3>';
+  h+='<div class="twrap"><table class="grid" aria-label="Ranked risks"><tr><th>#</th><th style="text-align:left">Risk</th><th>L</th><th>I</th><th>Score</th><th>Level</th></tr>';
+  ranked.forEach(function(x,n){
+    h+='<tr><td><b>'+(n+1)+'</b></td><td class="l">'+esc(x.r.desc.trim())+'</td><td>'+x.r.l+'</td><td>'+x.r.i+'</td><td><b>'+x.s+'</b></td><td><span class="pill '+x.lv.cls+'">'+x.lv.label+'</span></td></tr>';
+  });
+  h+='</table></div>';
+  h+='<p class="note">Score = likelihood &times; impact (1–25). Ties break toward higher impact first. Now complete the mitigation plan below, starting with the red and orange risks.</p>';
+  b.innerHTML=h;
+}
+function drawMits(ranked){
+  var box=document.getElementById("mits");box.innerHTML="";
+  ranked.forEach(function(x,n){
+    var r=x.r;
+    var d=document.createElement("div");d.className="reg"+((x.lv.cls==="p-crit"||x.lv.cls==="p-high")?" top":"");
+    var h='<div><b>#'+(n+1)+' — '+esc(r.desc.trim())+'</b> <span class="pill '+x.lv.cls+'">'+x.s+' · '+x.lv.label+'</span></div>';
+    if(x.lv.cls==="p-crit")h+='<p class="hint" style="color:#a33;font-weight:bold">Critical: this risk needs a mitigation plan before anything else.</p>';
+    else if(x.lv.cls==="p-high")h+='<p class="hint" style="color:#b45f06;font-weight:bold">High: make sure this one has a real owner and a watchable warning sign.</p>';
+    d.innerHTML=h;
+    var mit=document.createElement("textarea");mit.rows=2;mit.value=r.mit;
+    mit.placeholder="Mitigation: what will you do to prevent or reduce this? e.g., Confirm delivery dates in writing each Friday";
+    mit.setAttribute("aria-label","Mitigation for "+r.desc.trim().slice(0,40));
+    mit.addEventListener("input",function(){r.mit=mit.value;save();});
+    var ml=document.createElement("label");ml.className="lbl";ml.textContent="Mitigation action";d.appendChild(ml);d.appendChild(mit);
+    var ow=document.createElement("input");ow.type="text";ow.value=r.owner;ow.placeholder="e.g., Dana (or just 'me')";
+    ow.setAttribute("aria-label","Owner for "+r.desc.trim().slice(0,40));
+    ow.addEventListener("input",function(){r.owner=ow.value;save();});
+    var ol=document.createElement("label");ol.className="lbl";ol.textContent="Owner";d.appendChild(ol);d.appendChild(ow);
+    var wn=document.createElement("input");wn.type="text";wn.value=r.warn;wn.placeholder="Early-warning sign: e.g., Supplier goes quiet for 3+ days";
+    wn.setAttribute("aria-label","Early warning sign for "+r.desc.trim().slice(0,40));
+    wn.addEventListener("input",function(){r.warn=wn.value;save();});
+    var wl=document.createElement("label");wl.className="lbl";wl.textContent="Early-warning sign";d.appendChild(wl);d.appendChild(wn);
+    box.appendChild(d);
+  });
+}
+function finalize(){
+  var ranked=validRisks().map(function(r){var s=score(r);return {r:r,s:s,lv:level(s)};})
+    .sort(function(a,b){return b.s-a.s||b.r.i-a.r.i||(a.r.desc<b.r.desc?-1:1);});
+  var missing=ranked.filter(function(x){return (x.lv.cls==="p-crit"||x.lv.cls==="p-high")&&(!x.r.mit.trim()||!x.r.owner.trim()||!x.r.warn.trim());});
+  var b=document.getElementById("finalBody");
+  var h="";
+  if(missing.length){
+    h+='<div class="flag bad"><b>'+missing.length+' high/critical risk'+(missing.length>1?"s":"")+' missing a mitigation, owner, or warning sign:</b> '+
+      missing.map(function(x){return '"'+esc(x.r.desc.trim().slice(0,40))+'"';}).join(", ")+
+      '. The plan below still renders, but these are the ones to finish first.</div>';
+  }
+  var title=S.project.trim()?esc(S.project.trim()):"Your project";
+  h+='<h3 style="font-family:Georgia,serif;margin:10px 0 6px">Mitigation plan — '+title+'</h3>';
+  ranked.forEach(function(x,n){
+    h+='<div class="reg'+((x.lv.cls==="p-crit"||x.lv.cls==="p-high")?" top":"")+'">';
+    h+='<div><b>#'+(n+1)+' '+esc(x.r.desc.trim())+'</b> <span class="pill '+x.lv.cls+'">'+x.s+' · '+x.lv.label+'</span></div>';
+    h+='<p style="margin:6px 0"><b>Do:</b> '+(x.r.mit.trim()?esc(x.r.mit.trim()):'<span style="color:#a33">no mitigation written yet</span>')+'</p>';
+    h+='<p style="margin:6px 0"><b>Owner:</b> '+(x.r.owner.trim()?esc(x.r.owner.trim()):'<span style="color:#a33">unassigned</span>')+' &nbsp;·&nbsp; <b>Watch for:</b> '+(x.r.warn.trim()?esc(x.r.warn.trim()):'<span style="color:#a33">no warning sign set</span>')+'</p>';
+    h+='</div>';
+  });
+  var unassigned=ranked.filter(function(x){return !x.r.owner.trim();}).length;
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 6px">Next steps</h3><ol style="margin-left:22px">'+
+    '<li>Review this register with anyone named as an owner — an owner who doesn\'t know they\'re the owner isn\'t one.</li>'+
+    '<li>Put the early-warning signs on a weekly checklist. Most risks are survivable if caught early.</li>'+
+    '<li>Revisit the register whenever the project changes: new phase, new people, new deadline.</li>'+
+    (unassigned?'<li>'+unassigned+' risk'+(unassigned>1?"s have":" has")+' no owner yet — assign them this week.</li>':"")+
+    '</ol>';
+  b.innerHTML=h;
+  document.getElementById("finalcard").hidden=false;
+  if(document.getElementById("finalcard").scrollIntoView)document.getElementById("finalcard").scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.getElementById("addRisk").addEventListener("click",function(){
+  if(S.risks.length>=MAXR){document.getElementById("err").textContent="Twenty risks is the practical limit — merge the small ones first.";return;}
+  S.risks.push({desc:"",l:"",i:"",mit:"",owner:"",warn:""});save();drawRisks();
+});
+document.getElementById("analyze").addEventListener("click",analyze);
+document.getElementById("finalize").addEventListener("click",finalize);
+document.getElementById("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={project:"",risks:[{desc:"",l:"",i:"",mit:"",owner:"",warn:""}]};
+  document.getElementById("project").value="";
+  document.getElementById("out").hidden=true;document.getElementById("mitcard").hidden=true;document.getElementById("finalcard").hidden=true;
+  document.getElementById("err").textContent="";
+  drawRisks();
+});
+document.getElementById("project").addEventListener("input",function(){S.project=this.value;save();});
+load();
+document.getElementById("project").value=S.project||"";
+drawRisks();
+</script>
+</body>
+</html>

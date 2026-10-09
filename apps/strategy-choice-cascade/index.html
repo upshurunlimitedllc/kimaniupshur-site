@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strategy Choice Cascade | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Build a complete one-page strategy by answering five linked questions — aspiration, where to play, how to win, capabilities, and systems — with a built-in consistency check. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/strategy-choice-cascade/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Strategy Choice Cascade | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Build a complete one-page strategy by answering five linked questions — aspiration, where to play, how to win, capabilities, and systems — with a built-in consistency check. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/strategy-choice-cascade/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+/* app-specific */
+.dots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.dots button{width:44px;height:44px;border-radius:50%;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer;font-size:.78rem}
+.dots button.cur{background:#c9a227;color:#141210}
+.dots button:disabled{opacity:.35;cursor:default}
+.cardhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+.cardhead h2{font-family:Georgia,serif;font-size:1.35rem;color:#141210}
+.resetlink{background:none;border:none;color:#8a6d1c;text-decoration:underline;cursor:pointer;font-size:.85rem;min-height:44px;padding:10px}
+.stepnum{color:#8a6d1c;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.err{color:#b3261e;font-weight:bold;margin:10px 0}
+.hint{color:#6b6250;font-size:.92rem;margin:8px 0}
+.field label{font-weight:bold;display:block;margin:12px 0 2px}
+.navrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{padding:10px 16px;min-height:44px;border-radius:8px;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer}
+.seg button:hover{background:#f3e6bd}
+.seg button.sel{background:#c9a227;color:#141210}
+.constraints{background:#f7f1de;border-radius:8px;padding:14px;margin-bottom:18px;font-size:.92rem}
+.constraints strong{color:#8a6d1c}
+.constraints .clab{font-size:.78rem;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#8a6d1c;margin-bottom:6px}
+.caprow{border:2px solid #e5d9b5;border-radius:8px;padding:14px;margin:12px 0;background:#fff}
+.caprow .rowtop{display:flex;gap:10px;align-items:flex-start}
+.caprow .rowtop input{flex:1}
+.xbtn{width:44px;height:44px;flex-shrink:0;background:transparent;border:2px solid #c9a227;border-radius:8px;color:#8a6d1c;font-size:1.1rem;cursor:pointer;font-weight:bold}
+.xbtn:hover{background:#f3e6bd}
+.havebadge{display:inline-block;font-size:.75rem;font-weight:bold;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.have-have{background:#dcebd8;color:#2e5d26}
+.have-building{background:#f3e6bd;color:#8a6d1c}
+.have-gap{background:#f8dcd8;color:#b3261e}
+.sysgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.sysgrid{grid-template-columns:1fr}}
+.flag{border:2px solid #e5d9b5;border-left:6px solid #c9a227;border-radius:8px;padding:14px;margin:12px 0;background:#fff}
+.flag.red{border-left-color:#b3261e}
+.flag.amber{border-left-color:#c9a227}
+.flag.green{border-left-color:#2e5d26}
+.flag .ftag{font-size:.75rem;font-weight:bold;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.flag.red .ftag{color:#b3261e}.flag.amber .ftag{color:#8a6d1c}.flag.green .ftag{color:#2e5d26}
+.onepage{background:#fff;border:2px solid #c9a227;border-radius:12px;padding:24px;margin-top:8px}
+.onepage h3{font-family:Georgia,serif;color:#141210;margin:18px 0 6px;border-bottom:2px solid #f3e6bd;padding-bottom:4px}
+.onepage h3:first-child{margin-top:0}
+.onepage .asp{font-family:Georgia,serif;font-size:1.25rem;font-style:italic;color:#141210;border-left:4px solid #c9a227;padding-left:14px;margin:8px 0}
+.onepage ul{margin:6px 0 6px 22px}
+.onepage li{margin-bottom:6px}
+.nextsteps{background:#f7f1de;border-radius:8px;padding:16px;margin-top:14px}
+@media print{header.site,footer.site,.navrow,.noprint,.dots,.resetlink{display:none!important}main.app{max-width:100%;padding:0}.appcard{border:none;padding:0}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Strategy Choice Cascade</h1>
+<p class="intro">A complete strategy is five linked choices. Answer each one — aspiration, where to play, how to win, capabilities, systems — and the app checks that your answers actually fit together.</p>
+<div class="appcard">
+<div class="cardhead">
+<div><div class="stepnum" id="stepnum"></div><h2 id="steptitle"></h2></div>
+<button class="resetlink noprint" id="resetTop" type="button">Start over</button>
+</div>
+<div class="dots noprint" id="dots" role="navigation" aria-label="Steps"></div>
+<div id="err" class="err" role="alert" style="display:none"></div>
+<div id="stepbody"></div>
+<div class="navrow noprint" id="navrow"></div>
+</div>
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p><em>Strategic Thinking Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same method — making clear strategic choices and turning them into action.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/strategic-thinking-made-simple/">Get Strategic Thinking Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-strategy-choice-cascade-v1";
+var STEPS=["Winning Aspiration","Where to Play","How to Win","Capabilities","Management Systems","Strategy on One Page"];
+var HAVES=[["have","We have it"],["building","Building it"],["gap","Don't have it"]];
+
+function freshState(){return{step:0,maxStep:0,
+  aspiration:"",win3y:"",notWinning:"",
+  whoServe:"",whereGeo:"",whatOffer:"",whatNot:"",
+  howWin:"",advantage:"",
+  caps:[],systems:[]};}
+function loadState(){
+  try{var raw=localStorage.getItem(KEY);
+    if(raw){var s=JSON.parse(raw);
+      if(s&&typeof s==="object"){
+        var d=freshState();
+        ["aspiration","win3y","notWinning","whoServe","whereGeo","whatOffer","whatNot","howWin","advantage"].forEach(function(k){
+          if(typeof s[k]==="string")d[k]=s[k];
+        });
+        if(Array.isArray(s.caps))d.caps=s.caps.filter(function(c){return c&&typeof c.t==="string";}).map(function(c){return{t:c.t,have:(c.have==="building"||c.have==="gap")?c.have:"have"};});
+        if(Array.isArray(s.systems))d.systems=s.systems.filter(function(x){return x&&typeof x.name==="string";}).map(function(x){return{name:x.name,cadence:typeof x.cadence==="string"?x.cadence:"",owner:typeof x.owner==="string"?x.owner:""};});
+        if(typeof s.step==="number")d.step=Math.max(0,Math.min(STEPS.length-1,Math.floor(s.step)));
+        if(typeof s.maxStep==="number")d.maxStep=Math.max(0,Math.min(STEPS.length-1,Math.floor(s.maxStep)));
+        return d;
+      }
+    }
+  }catch(e){}
+  return freshState();
+}
+var state=loadState();
+var maxStep=(typeof state.maxStep==="number")?state.maxStep:0;
+if(state.step>maxStep)state.step=maxStep;
+function save(){state.maxStep=maxStep;try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function el(tag,cls,text){var d=document.createElement(tag);if(cls)d.className=cls;if(text!==undefined&&text!==null)d.textContent=text;return d;}
+function showErr(msg){var e=document.getElementById("err");if(msg){e.textContent=msg;e.style.display="block";}else{e.textContent="";e.style.display="none";}}
+function trunc(s,n){s=String(s||"");return s.length>n?s.slice(0,n-1)+"\u2026":s;}
+function drawDots(){
+  var dots=document.getElementById("dots");dots.innerHTML="";
+  STEPS.forEach(function(name,i){
+    var b=el("button",i===state.step?"cur":"",String(i+1));
+    b.type="button";b.title=name;b.setAttribute("aria-label","Step "+(i+1)+": "+name);
+    if(i>maxStep)b.disabled=true;
+    b.addEventListener("click",function(){go(i);});
+    dots.appendChild(b);
+  });
+  document.getElementById("stepnum").textContent="Step "+(state.step+1)+" of "+STEPS.length;
+  document.getElementById("steptitle").textContent=STEPS[state.step];
+}
+function go(i){showErr("");state.step=i;if(i>maxStep)maxStep=i;save();render();}
+function resetAll(){
+  if(!window.confirm("Clear everything and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  state=freshState();maxStep=0;save();render();
+}
+function constraintBox(){
+  var box=el("div","constraints");
+  box.appendChild(el("div","clab","Your earlier choices — everything below must fit inside these"));
+  var ul=el("ul");ul.style.margin="4px 0 0 18px";
+  if(state.aspiration.trim())ul.appendChild(el("li",null,"Aspiration: "+trunc(state.aspiration.trim(),90)));
+  if(state.whoServe.trim()||state.whereGeo.trim()||state.whatOffer.trim())
+    ul.appendChild(el("li",null,"Where to play: "+trunc([state.whoServe.trim(),state.whereGeo.trim(),state.whatOffer.trim()].filter(Boolean).join(" · "),120)));
+  if(state.howWin.trim())ul.appendChild(el("li",null,"How to win: "+trunc(state.howWin.trim(),120)));
+  if(!ul.children.length)ul.appendChild(el("li",null,"(no earlier choices yet)"));
+  box.appendChild(ul);
+  return box;
+}
+
+/* ---------- step renderers ---------- */
+function renderAspiration(body){
+  body.appendChild(el("p","hint","Choice 1 of 5. Your winning aspiration is the purpose that pulls everything forward: what does winning actually look like, and why does it matter?"));
+  var f=el("div","field");
+  var l1=el("label",null,"Your winning aspiration — one sentence");l1.setAttribute("for","asp");f.appendChild(l1);
+  var t=el("input");t.type="text";t.id="asp";t.value=state.aspiration;
+  t.placeholder="Example: Become the most trusted bakery in Portland for custom celebration cakes.";
+  t.setAttribute("aria-label","Your winning aspiration, one sentence");
+  t.addEventListener("input",function(){state.aspiration=t.value;save();});
+  f.appendChild(t);
+  var l2=el("label",null,"What does winning look like in 3 years?");l2.setAttribute("for","win3y");f.appendChild(l2);
+  var ta=el("textarea");ta.id="win3y";ta.rows=3;ta.value=state.win3y;
+  ta.placeholder="Be concrete: revenue, customers, reputation, market position…";
+  ta.setAttribute("aria-label","What winning looks like in three years");
+  ta.addEventListener("input",function(){state.win3y=ta.value;save();});
+  f.appendChild(ta);
+  var l3=el("label",null,"What winning is NOT (optional, but clarifying)");l3.setAttribute("for","notWin");f.appendChild(l3);
+  var nw=el("input");nw.type="text";nw.id="notWin";nw.value=state.notWinning;
+  nw.placeholder="Example: Not the cheapest option, not a national chain.";
+  nw.setAttribute("aria-label","What winning is not, optional");
+  nw.addEventListener("input",function(){state.notWinning=nw.value;save();});
+  f.appendChild(nw);
+  body.appendChild(f);
+}
+function renderWhere(body){
+  body.appendChild(constraintBox());
+  body.appendChild(el("p","hint","Choice 2 of 5. Where will you compete — and just as importantly, where will you not? A strategy that tries to serve everyone serves no one well."));
+  var f=el("div","field");
+  var l1=el("label",null,"Who do you serve? (be specific)");l1.setAttribute("for","whoServe");f.appendChild(l1);
+  var w=el("textarea");w.id="whoServe";w.rows=2;w.value=state.whoServe;
+  w.placeholder="Example: Busy parents in the metro area ordering celebration cakes.";
+  w.setAttribute("aria-label","Who you serve");
+  w.addEventListener("input",function(){state.whoServe=w.value;save();});
+  f.appendChild(w);
+  var l2=el("label",null,"Where — geography, channels, segments?");l2.setAttribute("for","whereGeo");f.appendChild(l2);
+  var g=el("textarea");g.id="whereGeo";g.rows=2;g.value=state.whereGeo;
+  g.placeholder="Example: One storefront plus online ordering, within 25 miles.";
+  g.setAttribute("aria-label","Geography, channels, segments");
+  g.addEventListener("input",function(){state.whereGeo=g.value;save();});
+  f.appendChild(g);
+  var l3=el("label",null,"What do you offer?");l3.setAttribute("for","whatOffer");f.appendChild(l3);
+  var o=el("textarea");o.id="whatOffer";o.rows=2;o.value=state.whatOffer;
+  o.placeholder="Example: Custom celebration cakes and a small line of daily pastries.";
+  o.setAttribute("aria-label","What you offer");
+  o.addEventListener("input",function(){state.whatOffer=o.value;save();});
+  f.appendChild(o);
+  var l4=el("label",null,"What do you explicitly NOT do?");l4.setAttribute("for","whatNot");f.appendChild(l4);
+  var n=el("textarea");n.id="whatNot";n.rows=2;n.value=state.whatNot;
+  n.placeholder="Example: No wholesale, no wedding catering, no discount lines.";
+  n.setAttribute("aria-label","What you explicitly do not do");
+  n.addEventListener("input",function(){state.whatNot=n.value;save();});
+  f.appendChild(n);
+  body.appendChild(f);
+}
+function renderHow(body){
+  body.appendChild(constraintBox());
+  body.appendChild(el("p","hint","Choice 3 of 5. On the playing field you just defined, why will customers choose YOU over the alternatives? This must be true, specific, and hard to copy."));
+  var f=el("div","field");
+  var l1=el("label",null,"How will you win? Why will customers choose you?");l1.setAttribute("for","howWin");f.appendChild(l1);
+  var h=el("textarea");h.id="howWin";h.rows=4;h.value=state.howWin;
+  h.placeholder="Example: We win on design artistry and reliability — the cake looks stunning and arrives exactly on time, every time.";
+  h.setAttribute("aria-label","How you will win");
+  h.addEventListener("input",function(){state.howWin=h.value;save();});
+  f.appendChild(h);
+  var l2=el("label",null,"Your edge in one line (optional)");l2.setAttribute("for","adv");f.appendChild(l2);
+  var a=el("input");a.type="text";a.id="adv";a.value=state.advantage;
+  a.placeholder="Example: The only bakery in town with a dedicated cake designer on staff.";
+  a.setAttribute("aria-label","Your edge in one line, optional");
+  a.addEventListener("input",function(){state.advantage=a.value;save();});
+  f.appendChild(a);
+  body.appendChild(f);
+}
+function renderCaps(body){
+  body.appendChild(constraintBox());
+  body.appendChild(el("p","hint","Choice 4 of 5. What must you be genuinely great at for your \"how to win\" to be true? List the capabilities — then be honest about which ones you actually have."));
+  var list=el("div");list.id="capList";
+  function drawList(){
+    list.innerHTML="";
+    if(state.caps.length===0)list.appendChild(el("p","hint","No capabilities listed yet. Aim for 3–6 — the few things that must be true for you to win."));
+    state.caps.forEach(function(c,i){
+      var row=el("div","caprow");
+      var top=el("div","rowtop");
+      var inp=el("input");inp.type="text";inp.value=c.t;
+      inp.placeholder="Example: Custom cake design at scale";
+      inp.setAttribute("aria-label","Capability "+(i+1)+" name");
+      inp.addEventListener("input",function(){c.t=inp.value;save();});
+      var x=el("button","xbtn","\u00D7");x.type="button";x.setAttribute("aria-label","Remove capability "+(i+1));
+      x.addEventListener("click",function(){state.caps.splice(i,1);save();drawList();});
+      top.appendChild(inp);top.appendChild(x);row.appendChild(top);
+      var seg=el("div","seg");seg.style.marginTop="10px";seg.setAttribute("role","group");seg.setAttribute("aria-label","Do you have this capability: "+(c.t||("capability "+(i+1))));
+      HAVES.forEach(function(hv){
+        var b=el("button",c.have===hv[0]?"sel":"",hv[1]);b.type="button";
+        b.setAttribute("aria-pressed",c.have===hv[0]?"true":"false");
+        b.addEventListener("click",function(){c.have=hv[0];save();drawList();});
+        seg.appendChild(b);
+      });
+      row.appendChild(seg);
+      list.appendChild(row);
+    });
+  }
+  drawList();
+  body.appendChild(list);
+  var add=el("button","btn ghost","Add a capability");add.type="button";add.style.marginTop="6px";
+  add.addEventListener("click",function(){state.caps.push({t:"",have:"have"});save();drawList();});
+  body.appendChild(add);
+}
+function renderSystems(body){
+  body.appendChild(constraintBox());
+  body.appendChild(el("p","hint","Choice 5 of 5. Strategies die without systems to sustain them: the metrics, reviews, and rituals that keep every choice above alive."));
+  var list=el("div");list.id="sysList";
+  function drawList(){
+    list.innerHTML="";
+    if(state.systems.length===0)list.appendChild(el("p","hint","No systems yet. Examples: a weekly numbers review, a quarterly strategy check-in, a customer feedback ritual."));
+    state.systems.forEach(function(s,i){
+      var row=el("div","caprow");
+      var top=el("div","rowtop");
+      var nm=el("input");nm.type="text";nm.value=s.name;
+      nm.placeholder="Example: Weekly numbers review";
+      nm.setAttribute("aria-label","System "+(i+1)+" name");
+      nm.addEventListener("input",function(){s.name=nm.value;save();});
+      var x=el("button","xbtn","\u00D7");x.type="button";x.setAttribute("aria-label","Remove system "+(i+1));
+      x.addEventListener("click",function(){state.systems.splice(i,1);save();drawList();});
+      top.appendChild(nm);top.appendChild(x);row.appendChild(top);
+      var grid=el("div","sysgrid");
+      var f1=el("div","field");
+      var l1=el("label",null,"Cadence");l1.setAttribute("for","syscad"+i);f1.appendChild(l1);
+      var cd=el("input");cd.type="text";cd.id="syscad"+i;cd.value=s.cadence;
+      cd.placeholder="Example: Every Monday";
+      cd.setAttribute("aria-label","Cadence for system "+(i+1));
+      cd.addEventListener("input",function(){s.cadence=cd.value;save();});
+      f1.appendChild(cd);grid.appendChild(f1);
+      var f2=el("div","field");
+      var l2=el("label",null,"Owner (optional)");l2.setAttribute("for","sysown"+i);f2.appendChild(l2);
+      var ow=el("input");ow.type="text";ow.id="sysown"+i;ow.value=s.owner;
+      ow.placeholder="Example: You";
+      ow.setAttribute("aria-label","Owner for system "+(i+1));
+      ow.addEventListener("input",function(){s.owner=ow.value;save();});
+      f2.appendChild(ow);grid.appendChild(f2);
+      row.appendChild(grid);
+      list.appendChild(row);
+    });
+  }
+  drawList();
+  body.appendChild(list);
+  var add=el("button","btn ghost","Add a system");add.type="button";add.style.marginTop="6px";
+  add.addEventListener("click",function(){state.systems.push({name:"",cadence:"",owner:""});save();drawList();});
+  body.appendChild(add);
+}
+
+/* ---------- consistency check ---------- */
+var THEMES=[
+ {rx:/price|cost|cheap|afford|budget|value/i,need:/cost|efficien|price|lean|scale|operation|process|margin|procure|supply/i,theme:"cost/price",msg:"You plan to win on cost or price, but no capability mentions cost efficiency, operations, or scale."},
+ {rx:/quality|premium|best|craft|design|expert|mastery|luxur/i,need:/quality|craft|design|talent|expert|research|skill|engineer|content|curat/i,theme:"quality",msg:"You plan to win on quality or craft, but no capability mentions the talent, design, or expertise that delivers it."},
+ {rx:/fast|speed|quick|agile|respons|turnaround|deliver/i,need:/speed|agil|deliver|logist|operation|fulfill|dispatch/i,theme:"speed",msg:"You plan to win on speed or responsiveness, but no capability mentions delivery, logistics, or agility."},
+ {rx:/service|relationship|support|care|trust|loyal/i,need:/service|support|relationship|success|customer|community|retention/i,theme:"service",msg:"You plan to win on service or relationships, but no capability mentions customer success, support, or community."},
+ {rx:/innovat|new |novel|first|cutting.edge|breakthrough/i,need:/innovat|research|r&d|product|experiment|develop/i,theme:"innovation",msg:"You plan to win on innovation, but no capability mentions research, product development, or experimentation."}
+];
+function consistency(){
+  var flags=[],passes=[];
+  var haveCaps=state.caps.filter(function(c){return c.t.trim();});
+  var capText=haveCaps.map(function(c){return c.t;}).join(" ");
+  /* capability gaps */
+  haveCaps.forEach(function(c){
+    if(c.have==="gap")flags.push({sev:"red",tag:"Capability gap",msg:"\""+c.t.trim()+"\" — your strategy needs this and you don't have it. Build it, buy it, partner for it, or change the strategy so you don't need it."});
+    else if(c.have==="building")flags.push({sev:"amber",tag:"In progress",msg:"\""+c.t.trim()+"\" is still being built. Make the build plan explicit: who, by when, and what \"done\" looks like."});
+  });
+  if(haveCaps.length&&!haveCaps.some(function(c){return c.have==="gap";}))
+    passes.push("Every capability your strategy needs is one you have or are building.");
+  /* theme coherence */
+  var hw=state.howWin+" "+state.advantage;
+  THEMES.forEach(function(th){
+    if(th.rx.test(hw)&&!th.need.test(capText))
+      flags.push({sev:"amber",tag:"Possible mismatch",msg:th.msg+" If the capability exists under another name, rename it so the link is explicit."});
+  });
+  if(THEMES.some(function(th){return th.rx.test(hw);})&&!flags.some(function(f){return f.tag==="Possible mismatch";}))
+    passes.push("Your capabilities line up with how you plan to win — the link is explicit.");
+  /* scope */
+  if(state.whoServe.trim()&&state.whoServe.trim().length<12)
+    flags.push({sev:"amber",tag:"Playing field too broad?",msg:"\""+state.whoServe.trim()+"\" is very broad. A focused strategy names its customer precisely — who exactly, and who is excluded?"});
+  else if(state.whoServe.trim())passes.push("Your playing field names a specific customer.");
+  if(!state.whatNot.trim())
+    flags.push({sev:"amber",tag:"Nothing ruled out",msg:"You haven't named what you won't do. Strategy is choice — ruling things out protects your focus."});
+  else passes.push("You've named what you won't do — that focus is a strength.");
+  /* aspiration sharpness */
+  if(!/win|lead|best|#1|top|dominat|grow|number one|first/i.test(state.aspiration))
+    flags.push({sev:"amber",tag:"Aspiration is soft",msg:"Your aspiration doesn't yet say what winning means. Sharpen it: in what arena, and what does \"won\" look like?"});
+  else passes.push("Your aspiration states what winning means.");
+  /* systems */
+  var haveSys=state.systems.filter(function(s){return s.name.trim();});
+  if(haveSys.length<2)
+    flags.push({sev:"amber",tag:"Thin systems",msg:"You have "+haveSys.length+" management system"+(haveSys.length===1?"":"s")+". One system rarely sustains a strategy — add at least a review cadence and a metrics system."});
+  else passes.push(haveSys.length+" management systems will keep the choices alive.");
+  return{flags:flags,passes:passes};
+}
+
+/* ---------- final output ---------- */
+function renderOnePage(body){
+  var op=el("div","onepage");op.id="onepage";
+  op.appendChild(el("h3",null,"1 · Winning aspiration"));
+  op.appendChild(el("div","asp",state.aspiration.trim()));
+  if(state.win3y.trim()){var w=el("p",null,"");w.innerHTML="<strong>Winning in 3 years looks like:</strong> ";w.appendChild(document.createTextNode(state.win3y.trim()));op.appendChild(w);}
+  if(state.notWinning.trim()){var n=el("p","hint","");n.appendChild(document.createTextNode("Not winning: "+state.notWinning.trim()));op.appendChild(n);}
+  op.appendChild(el("h3",null,"2 · Where to play"));
+  var ul=el("ul");
+  if(state.whoServe.trim()){var li=el("li",null,"");li.innerHTML="<strong>Serve:</strong> ";li.appendChild(document.createTextNode(state.whoServe.trim()));ul.appendChild(li);}
+  if(state.whereGeo.trim()){var li2=el("li",null,"");li2.innerHTML="<strong>Where:</strong> ";li2.appendChild(document.createTextNode(state.whereGeo.trim()));ul.appendChild(li2);}
+  if(state.whatOffer.trim()){var li3=el("li",null,"");li3.innerHTML="<strong>Offer:</strong> ";li3.appendChild(document.createTextNode(state.whatOffer.trim()));ul.appendChild(li3);}
+  if(state.whatNot.trim()){var li4=el("li",null,"");li4.innerHTML="<strong>Won't do:</strong> ";li4.appendChild(document.createTextNode(state.whatNot.trim()));ul.appendChild(li4);}
+  op.appendChild(ul);
+  op.appendChild(el("h3",null,"3 · How to win"));
+  var hw=el("p",null,"");hw.appendChild(document.createTextNode(state.howWin.trim()));op.appendChild(hw);
+  if(state.advantage.trim()){var ad=el("p",null,"");ad.innerHTML="<strong>Edge:</strong> ";ad.appendChild(document.createTextNode(state.advantage.trim()));op.appendChild(ad);}
+  op.appendChild(el("h3",null,"4 · Required capabilities"));
+  var cul=el("ul");
+  state.caps.filter(function(c){return c.t.trim();}).forEach(function(c){
+    var li=el("li",null,c.t.trim());
+    var b=el("span","havebadge have-"+c.have,HAVES.filter(function(h){return h[0]===c.have;})[0][1]);
+    li.appendChild(b);cul.appendChild(li);
+  });
+  op.appendChild(cul);
+  op.appendChild(el("h3",null,"5 · Management systems"));
+  var sul=el("ul");
+  state.systems.filter(function(s){return s.name.trim();}).forEach(function(s){
+    var bits=[s.name.trim()];
+    if(s.cadence.trim())bits.push(s.cadence.trim());
+    if(s.owner.trim())bits.push("owner: "+s.owner.trim());
+    sul.appendChild(el("li",null,bits.join(" · ")));
+  });
+  op.appendChild(sul);
+  body.appendChild(op);
+
+  var con=consistency();
+  var card=el("div","result");card.id="consistencyCard";
+  card.appendChild(el("h3",null,"Consistency check"));
+  card.appendChild(el("p","hint","These are possible tensions to resolve — not verdicts. A strategy is only as strong as the fit between its five choices."));
+  if(con.flags.length===0){
+    card.appendChild(el("div","flag green",
+      "No contradictions found. Your five choices fit together — now pressure-test them against reality."));
+  }else{
+    con.flags.forEach(function(f){
+      var box=el("div","flag "+f.sev);
+      box.appendChild(el("div","ftag",f.tag));
+      box.appendChild(el("p",null,f.msg));
+      card.appendChild(box);
+    });
+  }
+  if(con.passes.length){
+    card.appendChild(el("h3",null,"What's working"));
+    var pl=el("ul");
+    con.passes.forEach(function(p){pl.appendChild(el("li",null,p));});
+    card.appendChild(pl);
+  }
+  body.appendChild(card);
+
+  var ns=el("div","nextsteps");
+  ns.appendChild(el("strong",null,"Next steps"));
+  var ol=el("ol");
+  ol.appendChild(el("li",null,"Resolve every red flag first — a strategy with a known gap is a wish, not a plan."));
+  ol.appendChild(el("li",null,"Share this one-pager with your team. If they can't repeat it back, it isn't clear enough yet."));
+  ol.appendChild(el("li",null,"Review quarterly: has the playing field shifted? Do the capabilities still match how you win?"));
+  ns.appendChild(ol);body.appendChild(ns);
+
+  var row=el("div","navrow");
+  var copy=el("button","btn ghost","Copy strategy");copy.type="button";
+  copy.addEventListener("click",copyStrategy);
+  var pr=el("button","btn ghost","Print");pr.type="button";
+  pr.addEventListener("click",function(){window.print();});
+  row.appendChild(copy);row.appendChild(pr);body.appendChild(row);
+}
+function strategyText(){
+  var L=[];
+  L.push("STRATEGY ON ONE PAGE");
+  L.push("");
+  L.push("1. WINNING ASPIRATION");
+  L.push(state.aspiration.trim());
+  if(state.win3y.trim())L.push("Winning in 3 years: "+state.win3y.trim());
+  if(state.notWinning.trim())L.push("Not winning: "+state.notWinning.trim());
+  L.push("");
+  L.push("2. WHERE TO PLAY");
+  if(state.whoServe.trim())L.push("Serve: "+state.whoServe.trim());
+  if(state.whereGeo.trim())L.push("Where: "+state.whereGeo.trim());
+  if(state.whatOffer.trim())L.push("Offer: "+state.whatOffer.trim());
+  if(state.whatNot.trim())L.push("Won't do: "+state.whatNot.trim());
+  L.push("");
+  L.push("3. HOW TO WIN");
+  L.push(state.howWin.trim());
+  if(state.advantage.trim())L.push("Edge: "+state.advantage.trim());
+  L.push("");
+  L.push("4. REQUIRED CAPABILITIES");
+  state.caps.filter(function(c){return c.t.trim();}).forEach(function(c){
+    L.push("- "+c.t.trim()+" ["+HAVES.filter(function(h){return h[0]===c.have;})[0][1]+"]");
+  });
+  L.push("");
+  L.push("5. MANAGEMENT SYSTEMS");
+  state.systems.filter(function(s){return s.name.trim();}).forEach(function(s){
+    var bits=[s.name.trim()];
+    if(s.cadence.trim())bits.push(s.cadence.trim());
+    if(s.owner.trim())bits.push("owner: "+s.owner.trim());
+    L.push("- "+bits.join(" · "));
+  });
+  var con=consistency();
+  L.push("");
+  L.push("CONSISTENCY CHECK ("+con.flags.length+" flag"+(con.flags.length===1?"":"s")+", "+con.passes.length+" pass"+(con.passes.length===1?"":"es")+")");
+  con.flags.forEach(function(f){L.push("["+f.tag.toUpperCase()+"] "+f.msg);});
+  con.passes.forEach(function(p){L.push("[OK] "+p);});
+  return L.join("\n");
+}
+function copyStrategy(){
+  var t=strategyText();
+  function ok(){alert("Strategy copied to clipboard.");}
+  function fb(){
+    var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");alert("Strategy copied to clipboard.");}
+    catch(e){alert("Copy failed — select the text manually.");}
+    document.body.removeChild(ta);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(ok,fb);
+  else fb();
+}
+
+/* ---------- validation + nav ---------- */
+function validate(){
+  if(state.step===0&&state.aspiration.trim()==="")return "State your winning aspiration first — one sentence is enough.";
+  if(state.step===1&&state.whoServe.trim()==="")return "Say who you serve before continuing — a strategy needs a defined playing field.";
+  if(state.step===2&&state.howWin.trim()==="")return "Say how you will win before continuing — why will customers choose you?";
+  if(state.step===3&&state.caps.filter(function(c){return c.t.trim();}).length===0)return "List at least one required capability before continuing.";
+  if(state.step===4&&state.systems.filter(function(s){return s.name.trim();}).length===0)return "Define at least one management system before continuing.";
+  return "";
+}
+function renderNav(){
+  var nav=document.getElementById("navrow");nav.innerHTML="";
+  if(state.step>0){
+    var back=el("button","btn ghost","Back");back.type="button";
+    back.addEventListener("click",function(){go(state.step-1);});nav.appendChild(back);
+  }
+  if(state.step<STEPS.length-1){
+    var next=el("button","btn","Next \u2192");next.type="button";
+    next.addEventListener("click",function(){
+      var v=validate();
+      if(v){showErr(v);return;}
+      showErr("");go(state.step+1);
+    });
+    nav.appendChild(next);
+  }
+}
+var RENDERERS=[renderAspiration,renderWhere,renderHow,renderCaps,renderSystems,renderOnePage];
+function render(){
+  drawDots();showErr("");
+  var body=document.getElementById("stepbody");body.innerHTML="";
+  RENDERERS[state.step](body);
+  renderNav();
+}
+document.getElementById("resetTop").addEventListener("click",resetAll);
+render();
+</script>
+</body>
+</html>

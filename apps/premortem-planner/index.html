@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pre-Mortem Planner | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Imagine your project has already failed a year from now — diagnose why, while there's still time to prevent it. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/premortem-planner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pre-Mortem Planner | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Imagine your project has already failed a year from now — diagnose why, while there's still time to prevent it. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/premortem-planner/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:110px;resize:vertical}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.stepdots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.stepdots span{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;border:2px solid #c9a227;font-size:.8rem}
+.stepdots span.cur{background:#c9a227;color:#141210}
+.stepdots span.done{background:#141210;color:#e8c84a;border-color:#141210}
+.stepdots span.todo{background:transparent;color:#8a6d1c}
+.navrow{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:20px}
+.steplabel{display:inline-block;background:#141210;color:#e8c84a;font-weight:bold;border-radius:6px;padding:4px 12px;margin-bottom:8px;font-size:.9rem}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.rowitem{display:flex;gap:8px;align-items:center;margin:6px 0}
+.rowitem input{margin:0;flex:1}
+.optblock{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:12px 0}
+.optblock h4{font-family:Georgia,serif;margin-bottom:4px}
+.plantable{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+.plantable th,.plantable td{border:1px solid #e0d6b8;padding:10px;text-align:left;vertical-align:top}
+.plantable th{background:#141210;color:#e8c84a}
+.storybox{background:#141210;color:#f5efdd;border-radius:10px;padding:18px;margin:12px 0}
+.storybox p{margin-bottom:8px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{header.site,footer.site,.navrow,.noprint,section{display:none}main.app{max-width:100%}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Pre-Mortem Planner</h1>
+<p class="intro">It's one year from now and your project has <b>failed</b>. Write the story of why — while there's still time to prevent it. Then turn every cause into a preventive action with an owner and a deadline.</p>
+
+<div class="stepdots" id="dots" aria-label="Progress"></div>
+
+<div class="appcard" id="step1">
+<span class="steplabel">Step 1 — The project</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">What are we stress-testing?</h2>
+<p class="hint">Name the project or plan you want to protect, and the date it's supposed to succeed by.</p>
+<label class="lbl" for="pname">Project name</label>
+<input type="text" id="pname" placeholder="e.g., Launching my online course">
+<label class="lbl" for="pdate">Target date — when should this have succeeded?</label>
+<input type="date" id="pdate">
+<label class="lbl" for="pdesc">One or two sentences on what success looks like</label>
+<textarea id="pdesc" placeholder="e.g., 200 students enrolled, $20k revenue, course fully delivered by launch date." style="min-height:80px"></textarea>
+<p class="err" id="err1" role="alert"></p>
+<div class="navrow"><span></span><button class="btn" id="to2">Write the failure story &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step2" hidden>
+<span class="steplabel">Step 2 — The failure story</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">It failed. Here's why.</h2>
+<p class="hint">Imagine the target date has passed and the project is dead. Be brutally honest — optimism is not allowed in this step. Answer these in your story:</p>
+<ul class="hint" style="margin-left:20px;margin-bottom:8px">
+<li>What went wrong <b>first</b>?</li>
+<li>What warning signs did everyone <b>ignore</b>?</li>
+<li>What finally <b>killed</b> it?</li>
+</ul>
+<label class="lbl" for="story">The story of the failure (past tense, as if it already happened):</label>
+<textarea id="story" placeholder="It is a year later and the launch failed. Here's what happened: first, the course content ran three weeks late because I kept re-recording the videos. Then..."></textarea>
+<p class="hint" id="storycount"></p>
+<p class="err" id="err2" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back1">&larr; Back</button><button class="btn" id="to3">List the causes &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step3" hidden>
+<span class="steplabel">Step 3 — The causes</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">What caused the failure?</h2>
+<p class="hint">Pull the distinct causes out of your story. List at least <b>3</b> — one per line of thinking. Be specific: "we ran out of money" beats "things went badly."</p>
+<div id="causes"></div>
+<button class="btn ghost small" id="addCause">+ Add cause</button>
+<p class="err" id="err3" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back2">&larr; Back</button><button class="btn" id="to4">Convert to prevention &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step4" hidden>
+<span class="steplabel">Step 4 — Prevention</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Turn each cause into a plan</h2>
+<p class="hint">For every imagined cause of failure, write one <b>preventive action</b>, name an <b>owner</b>, and set a <b>deadline</b> (before your target date). A cause without an owner is a wish.</p>
+<div id="mits"></div>
+<p class="err" id="err4" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back3">&larr; Back</button><button class="btn" id="to5">See my mitigation plan &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step5" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your pre-mortem mitigation plan</h2>
+<div id="plan" aria-live="polite"></div>
+<div class="navrow noprint"><button class="btn ghost" id="back4">&larr; Back</button>
+<span style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn ghost" id="printBtn">Print plan</button><button class="btn danger" id="reset">Start over (clear saved work)</button></span></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>The pre-mortem is one of the most powerful planning tools there is. <em>Pre-Mortem Made Simple</em> by Kimani Upshur, M.Ed. walks you through the full method — and the other planning tools that keep projects alive.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/pre-mortem-made-simple/">Get Pre-Mortem Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-premortem-planner-v1";
+var S={step:1,name:"",date:"",desc:"",story:"",causes:["","",""],mits:[]};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}
+  if(!Array.isArray(S.mits)){var arr=[];Object.keys(S.mits||{}).forEach(function(k){arr[parseInt(k,10)]=S.mits[k];});S.mits=arr;}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function words(t){t=String(t||"").trim();return t?t.split(/\s+/).length:0;}
+function mitGet(i){if(!S.mits[i])S.mits[i]={action:"",owner:"",deadline:""};return S.mits[i];}
+
+function drawDots(){
+  var names=["Project","Story","Causes","Prevention","Plan"];
+  var d=document.getElementById("dots");d.innerHTML="";
+  names.forEach(function(n,i){
+    var sp=document.createElement("span");var n2=i+1;
+    sp.textContent=n2;sp.title="Step "+n2+": "+n;
+    sp.className=n2===S.step?"cur":(n2<S.step?"done":"todo");
+    d.appendChild(sp);
+  });
+}
+function goto(n){
+  S.step=n;save();drawDots();
+  for(var i=1;i<=5;i++){document.getElementById("step"+i).hidden=(i!==n);}
+  if(n===3)drawCauses();
+  if(n===4)drawMits();
+  if(n===5)renderPlan();
+  window.scrollTo(0,0);
+}
+
+function drawCauses(){
+  var box=document.getElementById("causes");box.innerHTML="";
+  S.causes.forEach(function(c,i){
+    var row=document.createElement("div");row.className="rowitem";
+    var inp=document.createElement("input");inp.type="text";inp.value=c;
+    inp.placeholder="Cause "+(i+1)+", e.g., Content ran 3 weeks late from endless re-recording";
+    inp.setAttribute("aria-label","Cause of failure "+(i+1));
+    inp.addEventListener("input",function(){S.causes[i]=inp.value;save();});
+    row.appendChild(inp);
+    if(S.causes.length>3){
+      var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove";
+      rm.setAttribute("aria-label","Remove cause "+(i+1));
+      rm.addEventListener("click",function(){S.causes.splice(i,1);S.mits.splice(i,1);save();drawCauses();});
+      row.appendChild(rm);
+    }
+    box.appendChild(row);
+  });
+}
+function drawMits(){
+  var box=document.getElementById("mits");box.innerHTML="";
+  var named=S.causes.map(function(c,i){return c.trim()||("Cause "+(i+1));});
+  named.forEach(function(nm,i){
+    var m=mitGet(i);
+    var div=document.createElement("div");div.className="optblock";
+    div.innerHTML='<h4>Cause '+(i+1)+': '+esc(nm)+'</h4>'+
+      '<label class="lbl" for="mact'+i+'">Preventive action</label>'+
+      '<input type="text" id="mact'+i+'" placeholder="e.g., Cap re-recording at 2 takes; publish good-enough cuts weekly">'+
+      '<label class="lbl" for="mown'+i+'">Owner</label>'+
+      '<input type="text" id="mown'+i+'" placeholder="Who owns this? e.g., Me, or Dana">'+
+      '<label class="lbl" for="mdue'+i+'">Deadline</label>'+
+      '<input type="date" id="mdue'+i+'">';
+    box.appendChild(div);
+    var a=div.querySelector("#mact"+i),o=div.querySelector("#mown"+i),d=div.querySelector("#mdue"+i);
+    a.value=m.action;o.value=m.owner;d.value=m.deadline;
+    a.addEventListener("input",function(){mitGet(i).action=a.value;save();});
+    o.addEventListener("input",function(){mitGet(i).owner=o.value;save();});
+    d.addEventListener("change",function(){mitGet(i).deadline=d.value;save();});
+  });
+}
+function sortedMits(){
+  var named=S.causes.map(function(c,i){return c.trim()||("Cause "+(i+1));});
+  var arr=[];
+  named.forEach(function(nm,i){
+    var m=mitGet(i);
+    arr.push({i:i,cause:nm,action:m.action.trim(),owner:m.owner.trim(),deadline:m.deadline});
+  });
+  arr.sort(function(a,b){
+    if(a.deadline&&b.deadline)return a.deadline<b.deadline?-1:(a.deadline>b.deadline?1:0);
+    if(a.deadline)return -1;
+    if(b.deadline)return 1;
+    return a.i-b.i;
+  });
+  return arr;
+}
+function renderPlan(){
+  var h='<p class="hint">Project: <b>'+esc(S.name||"(unnamed)")+'</b>'+(S.date?' · target date: <b>'+esc(S.date)+'</b>':"")+'</p>';
+  if(S.desc.trim())h+='<p class="hint">Success looks like: '+esc(S.desc.trim())+'</p>';
+  h+='<div class="storybox"><p style="font-weight:bold;color:#e8c84a">The failure story (written before it happened)</p><p>'+esc(S.story.trim())+'</p></div>';
+  var arr=sortedMits();
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Mitigation plan — '+arr.length+' cause'+(arr.length===1?"":"s")+' converted to prevention</h3>';
+  h+='<table class="plantable"><tr><th>Cause (imagined)</th><th>Preventive action</th><th>Owner</th><th>Deadline</th></tr>';
+  arr.forEach(function(a){
+    h+='<tr><td>'+esc(a.cause)+'</td><td>'+esc(a.action)+'</td><td>'+esc(a.owner)+'</td><td>'+esc(a.deadline||"—")+'</td></tr>';
+  });
+  h+='</table>';
+  var missing=arr.filter(function(a){return !a.deadline;}).length;
+  if(missing)h+='<div class="flag">Note: '+missing+' action'+(missing===1?" has":"s have")+' no deadline yet — a prevention without a date drifts.</div>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Next steps</h3><ol style="margin-left:22px">'+
+    '<li>Share this plan with every owner named above — confirm they accept it.</li>'+
+    '<li>Put every deadline on a calendar with a reminder, not just on this page.</li>'+
+    '<li>Re-run the pre-mortem at the halfway point to the target date — new risks will have appeared.</li></ol>';
+  document.getElementById("plan").innerHTML=h;
+}
+
+function updateCount(){
+  var w=words(S.story);
+  document.getElementById("storycount").textContent=w+" words"+(w<50?" — aim for at least 50 so the story gets specific.":"");
+}
+
+document.getElementById("addCause").addEventListener("click",function(){
+  if(S.causes.length>=10){document.getElementById("err3").textContent="Ten causes is plenty — merge the overlapping ones.";return;}
+  S.causes.push("");save();drawCauses();
+});
+document.getElementById("to2").addEventListener("click",function(){
+  var e=document.getElementById("err1");
+  if(!S.name.trim()){e.textContent="Name the project first.";return;}
+  if(!S.date){e.textContent="Pick the target date — the pre-mortem needs a future to fail in.";return;}
+  if(!S.desc.trim()){e.textContent="Describe what success looks like — failure is only meaningful against a goal.";return;}
+  e.textContent="";goto(2);
+});
+document.getElementById("to3").addEventListener("click",function(){
+  var e=document.getElementById("err2");
+  if(words(S.story)<50){e.textContent="Give the failure story at least 50 words — vague stories hide vague causes. Say what went wrong first, what got ignored, and what killed it.";return;}
+  e.textContent="";goto(3);
+});
+document.getElementById("to4").addEventListener("click",function(){
+  var e=document.getElementById("err3");
+  var named=S.causes.filter(function(c){return c.trim();});
+  if(named.length<3){e.textContent="List at least 3 distinct causes — one cause is bad luck, three is a pattern.";return;}
+  e.textContent="";goto(4);
+});
+document.getElementById("to5").addEventListener("click",function(){
+  var e=document.getElementById("err4");
+  var named=S.causes.map(function(c,i){return c.trim()||("Cause "+(i+1));});
+  for(var i=0;i<named.length;i++){
+    var m=mitGet(i);
+    if(!m.action.trim()){e.textContent="Write a preventive action for \""+named[i]+"\" — every cause needs a counter-move.";return;}
+    if(!m.owner.trim()){e.textContent="Name an owner for the action against \""+named[i]+"\" — a cause without an owner is a wish.";return;}
+    if(!m.deadline){e.textContent="Set a deadline for the action against \""+named[i]+"\" — prevention without a date drifts.";return;}
+    if(S.date&&m.deadline>S.date){e.textContent="The deadline for \""+named[i]+"\" is after the target date ("+S.date+") — prevention has to happen BEFORE the project is due.";return;}
+  }
+  e.textContent="";goto(5);
+});
+document.getElementById("back1").addEventListener("click",function(){goto(1);});
+document.getElementById("back2").addEventListener("click",function(){goto(2);});
+document.getElementById("back3").addEventListener("click",function(){goto(3);});
+document.getElementById("back4").addEventListener("click",function(){goto(4);});
+document.getElementById("printBtn").addEventListener("click",function(){window.print();});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={step:1,name:"",date:"",desc:"",story:"",causes:["","",""],mits:[]};
+  document.getElementById("pname").value="";document.getElementById("pdate").value="";
+  document.getElementById("pdesc").value="";document.getElementById("story").value="";
+  updateCount();goto(1);
+});
+document.getElementById("pname").addEventListener("input",function(){S.name=this.value;save();});
+document.getElementById("pdate").addEventListener("change",function(){S.date=this.value;save();});
+document.getElementById("pdesc").addEventListener("input",function(){S.desc=this.value;save();});
+document.getElementById("story").addEventListener("input",function(){S.story=this.value;save();updateCount();});
+
+load();
+document.getElementById("pname").value=S.name||"";
+document.getElementById("pdate").value=S.date||"";
+document.getElementById("pdesc").value=S.desc||"";
+document.getElementById("story").value=S.story||"";
+updateCount();
+drawDots();
+for(var i=1;i<=5;i++){document.getElementById("step"+i).hidden=(i!==S.step);}
+if(S.step===3)drawCauses();
+if(S.step===4)drawMits();
+if(S.step===5)renderPlan();
+</script>
+</body>
+</html>
