@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life Balance Wheel | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Rate eight life areas, get a balance score, and build an action plan for your weakest area. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/life-balance-wheel/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Life Balance Wheel | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Rate eight life areas, get a balance score, and build an action plan for your weakest area. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/life-balance-wheel/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;color:#141210;margin-bottom:12px}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;color:#141210;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:8px 14px;min-height:44px;font-size:.9rem}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.hidden{display:none!important}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.flabel{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.85rem;color:#6b6250}
+.err{color:#a33;font-weight:bold;margin-top:10px}
+.areabox{border:2px solid #e3d9b8;border-radius:10px;padding:18px;margin:14px 0;background:#fff}
+.areabox .aname{font-family:Georgia,serif;font-size:1.2rem;font-weight:bold;color:#141210}
+.areabox .ascore{float:right;font-size:1.2rem;font-weight:bold;color:#8a6d1c}
+.srow{display:flex;align-items:center;gap:12px;margin:10px 0}
+.srow .q{flex:1;font-size:.92rem}
+.srow .qv{font-weight:bold;min-width:28px;text-align:right;color:#8a6d1c}
+input[type=range]{flex:1 1 120px;min-width:110px;accent-color:#c9a227;height:44px}
+.idealrow{border-top:1px dashed #d8cfae;padding-top:8px;margin-top:8px}
+.idealrow .q{font-size:.88rem;color:#6b6250;font-style:italic}
+.bigscore{text-align:center;margin:8px 0 4px}
+.bigscore .n{font-family:Georgia,serif;font-size:3.4rem;color:#141210;line-height:1.1}
+.bigscore .l{color:#6b6250;font-size:.95rem}
+.wheelwrap{text-align:center;margin:14px 0}
+.wheelwrap svg{max-width:100%;height:auto}
+.scoregrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.scard{background:#fff;border:2px solid #e3d9b8;border-radius:8px;padding:10px;text-align:center}
+.scard .n{font-size:1.5rem;font-weight:bold}
+.scard .l{font-size:.8rem;color:#6b6250}
+.scard.weak{border-color:#a33;background:#fdf1f1}
+.scard.gap{border-color:#c9a227;background:#fdf6e0}
+.legend{font-size:.85rem;color:#6b6250;margin-top:6px}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid #eee;cursor:pointer}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow.done span{text-decoration:line-through;color:#8a8574}
+.planbox{background:#f4ecd8;border-radius:8px;padding:18px;margin-top:14px}
+.weeklbl{font-weight:bold;margin:12px 0 4px;color:#141210}
+.note{font-size:.85rem;color:#6b6250;margin-top:14px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Life Balance Wheel</h1>
+<p class="intro">Rate eight life areas, get a balance score, and build an action plan for your weakest area. Two quick questions per area — answer honestly, not aspirationally.</p>
+
+<!-- ASSESS -->
+<div class="appcard" id="assessCard">
+<h2>Rate your 8 life areas</h2>
+<p class="hint">1 = running on empty, 10 = exactly where you want it. The "ideal" slider is where you'd like that area to be.</p>
+<div id="areaList"></div>
+<div class="btnrow"><button class="btn" id="calcBtn">See My Balance Wheel</button></div>
+</div>
+
+<!-- RESULTS -->
+<div class="appcard hidden" id="resultCard">
+<h2>Your balance wheel</h2>
+<div class="wheelwrap"><svg id="wheel" viewBox="0 0 380 380" role="img" aria-label="Life balance wheel chart"></svg></div>
+<p class="legend">Solid gold = your ratings. Dashed gray = your ideals.</p>
+<div class="bigscore"><div class="n" id="bigNum">0</div><div class="l" id="bigLabel">Balance score (out of 100)</div></div>
+<p class="hint" style="text-align:center" id="spreadLine"></p>
+<h3>Area scores</h3>
+<div class="scoregrid" id="scoreGrid"></div>
+<p class="note" id="focusLine"></p>
+<div class="btnrow">
+<button class="btn ghost" id="backBtn">Adjust My Ratings</button>
+<button class="btn" id="planBtn">Build My 30-Day Plan</button>
+</div>
+</div>
+
+<!-- PLANNER -->
+<div class="appcard hidden" id="planCard">
+<h2>Your 30-day micro-plan</h2>
+<p class="hint">Small beats big. One tiny weekly action, one habit to start, one thing to stop — for your weakest area.</p>
+<label class="flabel" for="focusSel">Focus area</label>
+<select id="focusSel" aria-label="Focus area"></select>
+<label class="flabel" for="weeklyAction">One small weekly action</label>
+<input type="text" id="weeklyAction" placeholder="e.g. Walk 20 minutes every Tuesday and Thursday" aria-label="Weekly action">
+<label class="flabel" for="habitStart">One habit to start</label>
+<input type="text" id="habitStart" placeholder="e.g. Lights out by 10:30 PM" aria-label="Habit to start">
+<label class="flabel" for="thingStop">One thing to stop</label>
+<input type="text" id="thingStop" placeholder="e.g. Scrolling my phone in bed" aria-label="Thing to stop">
+<div class="btnrow"><button class="btn" id="buildPlan">Build My 30-Day Plan</button></div>
+<p class="err hidden" id="planErr"></p>
+<div class="planbox hidden" id="planOut">
+<h3 style="margin-top:0">30 days: <span id="planArea"></span></h3>
+<div id="planWeeks"></div>
+<p class="note">Check each box as you complete it. At day 30, re-run this wheel and compare — progress you can see is progress you'll keep.</p>
+<div class="btnrow"><button class="btn ghost" id="reassessBtn">Re-run the Wheel</button></div>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Life Balance Wheel is just the start. <em>Life Direction Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/life-direction-made-simple/">Get Life Direction Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-life-balance-wheel-v1";
+var $=function(id){return document.getElementById(id);};
+var AREAS=[
+ {n:"Health & Energy",q1:"My physical health and energy feel strong right now.",q2:"I get enough sleep, movement, and real rest."},
+ {n:"Work & Career",q1:"My work feels meaningful and on track.",q2:"My workload and boundaries feel sustainable."},
+ {n:"Relationships",q1:"My close relationships are strong.",q2:"I give my important people real time and attention."},
+ {n:"Finances",q1:"My money habits support my goals.",q2:"I feel in control of my spending and saving."},
+ {n:"Personal Growth",q1:"I am learning and growing on purpose.",q2:"I invest time in skills and ideas that matter to me."},
+ {n:"Fun & Play",q1:"I make real time for fun and rest.",q2:"I laugh, play, and enjoy life regularly."},
+ {n:"Home & Space",q1:"My home supports the way I want to live.",q2:"My spaces are calm and organized enough."},
+ {n:"Contribution",q1:"I give back in a way that matters.",q2:"My time or resources regularly help others."}
+];
+var state={vals:[],ideals:[],plan:{focus:0,action:"",habit:"",stop:"",checks:{}},results:null};
+for(var a0=0;a0<8;a0++){state.vals.push([5,5]);state.ideals.push(8);}
+function show(id){$(id).classList.remove("hidden");}
+function hide(id){$(id).classList.add("hidden");}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function scoreColor(s){return s>=8?"#2e7d32":s>=6?"#8a6d1c":s>=4?"#c97b1e":"#a33";}
+
+// build assess UI
+var al=$("areaList");
+AREAS.forEach(function(a,i){
+  var box=document.createElement("div");box.className="areabox";
+  var head=document.createElement("div");
+  var nm=document.createElement("span");nm.className="aname";nm.textContent=a.n;
+  var sc=document.createElement("span");sc.className="ascore";sc.id="ascore"+i;sc.textContent="5.0";
+  head.appendChild(nm);head.appendChild(sc);box.appendChild(head);
+  function mkRow(q,idx,isIdeal){
+    var row=document.createElement("div");row.className="srow"+(isIdeal?" idealrow":"");
+    var ql=document.createElement("span");ql.className="q";ql.textContent=q;
+    var r=document.createElement("input");r.type="range";r.min="1";r.max="10";r.step="1";
+    r.value=isIdeal?state.ideals[i]:state.vals[i][idx];
+    r.setAttribute("aria-label",a.n+" — "+q);
+    var v=document.createElement("span");v.className="qv";v.textContent=r.value;
+    r.addEventListener("input",function(){
+      v.textContent=r.value;
+      if(isIdeal)state.ideals[i]=parseInt(r.value,10);
+      else{state.vals[i][idx]=parseInt(r.value,10);updateAreaScore(i);}
+      save();
+    });
+    row.appendChild(ql);row.appendChild(r);row.appendChild(v);
+    return row;
+  }
+  box.appendChild(mkRow(a.q1,0,false));
+  box.appendChild(mkRow(a.q2,1,false));
+  box.appendChild(mkRow("Ideal level — where would you like this area to be?",0,true));
+  al.appendChild(box);
+});
+function updateAreaScore(i){
+  var s=Math.round(((state.vals[i][0]+state.vals[i][1])/2)*10)/10;
+  var el=$("ascore"+i);el.textContent=s.toFixed(1);el.style.color=scoreColor(s);
+}
+for(var u0=0;u0<8;u0++)updateAreaScore(u0);
+
+function areaScores(){return state.vals.map(function(v){return Math.round(((v[0]+v[1])/2)*10)/10;});}
+
+function drawWheel(scores){
+  var svg=$("wheel");svg.innerHTML="";
+  var NS="http://www.w3.org/2000/svg";
+  var cx=190,cy=185,R=125;
+  function pt(i,val){
+    var ang=(-90+i*45)*Math.PI/180;
+    var r=R*val/10;
+    return [cx+r*Math.cos(ang),cy+r*Math.sin(ang)];
+  }
+  function el(tag,attrs){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);return e;}
+  // rings
+  [2,4,6,8,10].forEach(function(v){
+    var pts=[];for(var i=0;i<8;i++)pts.push(pt(i,v).join(","));
+    svg.appendChild(el("polygon",{points:pts.join(" "),fill:"none",stroke:"#ddd3b3","stroke-width":1}));
+  });
+  // spokes + labels
+  AREAS.forEach(function(a,i){
+    var p=pt(i,10);
+    svg.appendChild(el("line",{x1:cx,y1:cy,x2:p[0],y2:p[1],stroke:"#ddd3b3","stroke-width":1}));
+    var lp=pt(i,12.6);
+    var t=el("text",{x:lp[0],y:lp[1],"text-anchor":"middle","dominant-baseline":"middle","font-size":11,fill:"#5a5342","font-weight":"bold"});
+    t.textContent=a.n;svg.appendChild(t);
+  });
+  // ideal polygon (dashed)
+  var ip=[];for(var j=0;j<8;j++)ip.push(pt(j,state.ideals[j]).join(","));
+  svg.appendChild(el("polygon",{points:ip.join(" "),fill:"none",stroke:"#9a9a9a","stroke-width":2,"stroke-dasharray":"6,4"}));
+  // score polygon
+  var sp=[];for(var k=0;k<8;k++)sp.push(pt(k,scores[k]).join(","));
+  svg.appendChild(el("polygon",{points:sp.join(" "),fill:"rgba(201,162,39,0.35)",stroke:"#c9a227","stroke-width":3}));
+  // dots + value labels
+  scores.forEach(function(s,i){
+    var p=pt(i,s);
+    svg.appendChild(el("circle",{cx:p[0],cy:p[1],r:5,fill:scoreColor(s),stroke:"#fff","stroke-width":1.5}));
+  });
+}
+
+function interp(overall){
+  if(overall>=80)return"Strong and steady — protect what's working and lift the low spots.";
+  if(overall>=60)return"Building momentum — one focused area at a time will raise the whole wheel.";
+  if(overall>=40)return"Wobbly — that's honest. Pick your weakest area and shrink it with one small plan.";
+  return"Time for a reset — be kind to yourself, and start with the single lowest area below.";
+}
+
+function calculate(){
+  var scores=areaScores();
+  var overall=Math.round(scores.reduce(function(a,b){return a+b;},0)/scores.length*10);
+  var mn=Math.min.apply(null,scores),mx=Math.max.apply(null,scores);
+  var weakIdx=[],gapIdx=[],gapMax=-1;
+  scores.forEach(function(s,i){
+    if(s===mn)weakIdx.push(i);
+    var g=state.ideals[i]-s;
+    if(g>gapMax){gapMax=g;gapIdx=[i];}else if(g===gapMax){gapIdx.push(i);}
+  });
+  state.results={scores:scores,overall:overall,mn:mn,mx:mx,weak:weakIdx,gaps:gapIdx,gapMax:Math.round(gapMax*10)/10};
+  drawWheel(scores);
+  $("bigNum").textContent=overall;
+  $("bigLabel").textContent="Balance score (out of 100) — "+interp(overall);
+  $("spreadLine").textContent="Spread between your highest and lowest area: "+(Math.round((mx-mn)*10)/10)+" points. A smaller spread means a more balanced life.";
+  var grid=$("scoreGrid");grid.innerHTML="";
+  AREAS.forEach(function(a,i){
+    var c=document.createElement("div");c.className="scard";
+    if(weakIdx.indexOf(i)>=0)c.classList.add("weak");
+    if(gapIdx.indexOf(i)>=0)c.classList.add("gap");
+    var nn=document.createElement("div");nn.className="n";nn.style.color=scoreColor(scores[i]);
+    nn.textContent=scores[i].toFixed(1);
+    var ll=document.createElement("div");ll.className="l";ll.textContent=a.n+" (ideal "+state.ideals[i]+")";
+    c.appendChild(nn);c.appendChild(ll);grid.appendChild(c);
+  });
+  var focus="Your weakest area"+(weakIdx.length>1?"s":"")+": "+weakIdx.map(function(i){return AREAS[i].n;}).join(", ")+". ";
+  focus+="Your biggest gap from ideal"+(gapIdx.length>1?"s":"")+": "+gapIdx.map(function(i){return AREAS[i].n+" (gap "+state.results.gapMax+")";}).join(", ")+".";
+  $("focusLine").textContent=focus;
+  // planner focus select
+  var fs=$("focusSel");fs.innerHTML="";
+  AREAS.forEach(function(a,i){
+    var o=document.createElement("option");o.value=i;o.textContent=a.n+" ("+scores[i].toFixed(1)+")";
+    if(weakIdx.indexOf(i)>=0&&state.plan.focus===i)o.selected=true;
+    fs.appendChild(o);
+  });
+  fs.value=weakIdx[0];
+  state.plan.focus=weakIdx[0];
+  hide("assessCard");show("resultCard");
+  save();
+}
+$("calcBtn").addEventListener("click",calculate);
+$("backBtn").addEventListener("click",function(){hide("resultCard");show("assessCard");});
+$("planBtn").addEventListener("click",function(){hide("resultCard");show("planCard");renderPlanOut();});
+
+function renderPlanOut(){
+  var p=state.plan;
+  $("weeklyAction").value=p.action||"";$("habitStart").value=p.habit||"";$("thingStop").value=p.stop||"";
+  if(p.action||p.habit||p.stop){
+    $("planOut").classList.remove("hidden");
+    drawPlanWeeks();
+  }
+}
+$("focusSel").addEventListener("change",function(){state.plan.focus=parseInt($("focusSel").value,10);save();});
+$("buildPlan").addEventListener("click",function(){
+  var err=$("planErr");err.classList.add("hidden");
+  var a=$("weeklyAction").value.trim(),h=$("habitStart").value.trim(),s=$("thingStop").value.trim();
+  if(!a&&!h&&!s){err.textContent="Fill in at least one: a weekly action, a habit to start, or a thing to stop.";err.classList.remove("hidden");return;}
+  state.plan.action=a;state.plan.habit=h;state.plan.stop=s;
+  state.plan.focus=parseInt($("focusSel").value,10);
+  $("planOut").classList.remove("hidden");
+  drawPlanWeeks();save();
+});
+function drawPlanWeeks(){
+  var p=state.plan;
+  $("planArea").textContent=AREAS[p.focus].n;
+  var w=$("planWeeks");w.innerHTML="";
+  var rows=[];
+  if(p.action)rows.push({k:"a",t:"Weekly action: "+p.action});
+  if(p.habit)rows.push({k:"h",t:"Habit to start: "+p.habit});
+  if(p.stop)rows.push({k:"s",t:"Thing to stop: "+p.stop});
+  for(var wk=1;wk<=4;wk++){
+    var hl=document.createElement("div");hl.className="weeklbl";hl.textContent="Week "+wk;
+    w.appendChild(hl);
+    rows.forEach(function(r){
+      var key="w"+wk+r.k;var done=!!p.checks[key];
+      var lab=document.createElement("label");lab.className="checkrow"+(done?" done":"");
+      var cb=document.createElement("input");cb.type="checkbox";cb.checked=done;
+      cb.setAttribute("aria-label","Week "+wk+": "+r.t);
+      var sp=document.createElement("span");sp.textContent=r.t;
+      (function(k){cb.addEventListener("change",function(){p.checks[k]=cb.checked;lab.classList.toggle("done",cb.checked);save();});})(key);
+      lab.appendChild(cb);lab.appendChild(sp);w.appendChild(lab);
+    });
+  }
+}
+["weeklyAction","habitStart","thingStop"].forEach(function(id){
+  $(id).addEventListener("input",function(){
+    state.plan.action=$("weeklyAction").value.trim();
+    state.plan.habit=$("habitStart").value.trim();
+    state.plan.stop=$("thingStop").value.trim();
+    save();
+  });
+});
+$("reassessBtn").addEventListener("click",function(){hide("planCard");show("assessCard");});
+
+// restore
+try{
+  var raw=localStorage.getItem(KEY);
+  if(raw){
+    var s=JSON.parse(raw);
+    if(s.vals)state.vals=s.vals;
+    if(s.ideals)state.ideals=s.ideals;
+    if(s.plan)state.plan=s.plan;
+    // re-sync slider positions
+    var sliders=$("areaList").querySelectorAll("input[type=range]");
+    var idx=0;
+    AREAS.forEach(function(a,i){
+      sliders[idx].value=state.vals[i][0];sliders[idx].nextSibling.textContent=state.vals[i][0];idx++;
+      sliders[idx].value=state.vals[i][1];sliders[idx].nextSibling.textContent=state.vals[i][1];idx++;
+      sliders[idx].value=state.ideals[i];sliders[idx].nextSibling.textContent=state.ideals[i];idx++;
+    });
+    for(var u1=0;u1<8;u1++)updateAreaScore(u1);
+    if(s.results){calculate();}
+  }
+}catch(e){}
+})();
+</script>
+</body>
+</html>

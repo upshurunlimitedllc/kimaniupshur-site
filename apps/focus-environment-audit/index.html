@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focus Environment Audit | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Score your physical and digital workspace for focus-friendliness and get a prioritized fix list, quick wins first. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/focus-environment-audit/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Focus Environment Audit | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Score your physical and digital workspace for focus-friendliness and get a prioritized fix list, quick wins first. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/focus-environment-audit/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:6px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;margin:18px 0 8px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.95rem}
+.hidden{display:none!important}
+.zone{margin-bottom:22px}
+.zone h3{font-family:Georgia,serif;font-size:1.15rem;color:#141210;border-bottom:2px solid #c9a227;padding-bottom:6px;margin-bottom:10px}
+.q{padding:12px 0;border-bottom:1px solid #eee}
+.q p{font-weight:600;margin-bottom:8px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opts label{flex:1;min-width:100px;text-align:center;border:2px solid #e3d5a8;border-radius:8px;padding:12px 6px;cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:center;font-weight:600;position:relative}
+.opts input{position:absolute;opacity:0;width:1px;height:1px}
+.opts label.sel{background:#c9a227;border-color:#c9a227;color:#141210}
+.score-big{font-family:Georgia,serif;font-size:3.2rem;color:#141210;text-align:center;line-height:1.1}
+.score-band{text-align:center;font-weight:bold;color:#8a6d1c;font-size:1.1rem;margin-bottom:8px}
+.zrow{display:grid;grid-template-columns:170px 1fr 52px;gap:10px;align-items:center;margin:8px 0;font-size:.92rem}
+@media (max-width:560px){.zrow{grid-template-columns:1fr 52px}.zrow .ztrack{grid-column:1/-1;order:3}}
+.ztrack{background:#eee5c8;border-radius:6px;height:20px;overflow:hidden}
+.zfill{background:#c9a227;height:100%;border-radius:6px;min-width:2px}
+.fix{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid #e3d5a8;border-radius:10px;margin:10px 0;background:#fff}
+.fix input[type=checkbox]{width:26px;height:26px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.fix.done .ftext{text-decoration:line-through;color:#8a7a4a}
+.tag{display:inline-block;font-size:.72rem;font-weight:bold;border-radius:20px;padding:3px 10px;margin:4px 6px 0 0;letter-spacing:.4px}
+.tag.zone-tag{background:#f7f1dc;color:#8a6d1c;border:1px solid #c9a227}
+.tag.qw{background:#141210;color:#e8c84a}
+.tag.ie{background:#eee5c8;color:#5c4a08}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Focus Environment Audit</h1>
+<p class="intro">Answer 20 questions across 4 zones of your workspace. Get a Focus Score per zone and overall &mdash; then a fix list ranked by impact, quick wins first.</p>
+
+<div class="appcard">
+<h2>The 20-question audit</h2>
+<p style="color:#6b6250;margin-bottom:10px">For each statement, pick the answer that matches your <strong>typical workday</strong>.</p>
+<div id="zones"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:center">
+<button class="btn" id="score">Score my environment</button>
+<button class="btn ghost" id="resetbtn">Start over</button>
+<span id="prog" style="color:#6b6250;font-size:.92rem"></span>
+</div>
+<div id="formerr" style="color:#a33;margin-top:10px"></div>
+</div>
+
+<div class="appcard hidden" id="results">
+<h2>Your Focus Scorecard</h2>
+<div class="score-big" id="oscore">&mdash;</div>
+<div class="score-band" id="ograde"></div>
+<p id="oexplain" style="color:#6b6250;text-align:center"></p>
+<h3>Scores by zone</h3>
+<div id="zscores"></div>
+<h3>Your prioritized fix list</h3>
+<p style="color:#6b6250">Ranked by impact-to-effort ratio &mdash; quick wins first. Check fixes off as you do them; your progress is saved.</p>
+<div id="fixprog" style="font-weight:bold;color:#8a6d1c;margin:10px 0"></div>
+<div id="fixes"></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Focus Environment Audit is just the start. <em>Focus Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic &mdash; practical systems for deep, distraction-free work.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/focus-made-simple/">Get Focus Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action. Educational purposes only.</p>
+</div></footer>
+<script>
+var KEY="app-focus-environment-audit-v1";
+var ZONES=[
+ {id:"desk",name:"Physical Desk",qs:[
+  {q:"My desk surface is clear except what I'm working on right now.",fix:"Clear your desk to one active project. Box everything else into a drawer or tray.",i:3,e:1},
+  {q:"My chair, screen height, and lighting let me work comfortably for an hour.",fix:"Set your screen at eye level, adjust your chair, and fix glare or dim lighting.",i:2,e:1},
+  {q:"I have one visible place to capture ideas and to-dos (notepad, inbox tray).",fix:"Put a single notepad or inbox tray on your desk for all captures.",i:3,e:1},
+  {q:"My workspace is somewhere people rarely walk through or interrupt.",fix:"Move to the quietest available spot; if you can't move, add a visible focus signal.",i:3,e:2},
+  {q:"Water and what I need are within reach, so I don't break focus to fetch them.",fix:"Keep water and core supplies at your desk before each focus block.",i:2,e:1}
+ ]},
+ {id:"digital",name:"Digital Desktop",qs:[
+  {q:"My computer desktop has few visible icons and no clutter.",fix:"Move desktop files into folders; keep 5 or fewer icons visible.",i:2,e:1},
+  {q:"Notifications on my computer are silenced during focus blocks.",fix:"Turn on Do Not Disturb / Focus mode on your computer during work blocks.",i:3,e:1},
+  {q:"I work with only the apps I need open (email and social closed).",fix:"Close email and social tabs; keep one window per task.",i:3,e:1},
+  {q:"I can find any file I use regularly in under a minute.",fix:"Make a simple folder structure and move current project files into it.",i:2,e:2},
+  {q:"My browser opens to a calm start page, not social media or news.",fix:"Change your homepage and new-tab page to something neutral.",i:2,e:1}
+ ]},
+ {id:"phone",name:"Phone & Notifications",qs:[
+  {q:"My phone is out of sight (or in another room) during focus time.",fix:"Leave your phone in another room during focus blocks — not face-down, another room.",i:3,e:1},
+  {q:"Non-essential app notifications are turned off.",fix:"Turn off notifications for every app except calls and messages from key people.",i:3,e:2},
+  {q:"My phone is on silent or Do Not Disturb during work blocks.",fix:"Schedule automatic Do Not Disturb for your work hours.",i:3,e:1},
+  {q:"I check messages at set times instead of whenever they arrive.",fix:"Set 2–3 message check times per day and tell key people.",i:2,e:2},
+  {q:"Social apps are logged out, deleted, or behind friction.",fix:"Log out of social apps or move them off your home screen.",i:2,e:1}
+ ]},
+ {id:"sound",name:"Sound & Interruptions",qs:[
+  {q:"Background sound during focus is chosen (quiet, music, noise), not accidental.",fix:"Pick a default focus sound: quiet, instrumental music, or brown noise.",i:2,e:1},
+  {q:"People around me can tell when I'm in a focus block (signal, headphones, door).",fix:"Agree on a focus signal with housemates or coworkers; wear headphones.",i:3,e:2},
+  {q:"Meetings and interruptions are batched instead of scattered through the day.",fix:"Batch meetings into one block and protect 2+ hour focus windows.",i:3,e:3},
+  {q:"I have a clear end to the workday (shutdown ritual).",fix:"Build a 5-minute shutdown ritual: review tomorrow, close everything, stop.",i:2,e:1},
+  {q:"Unexpected noise rarely breaks my concentration (earplugs or headphones ready).",fix:"Keep earplugs or noise-cancelling headphones at your desk.",i:2,e:2}
+ ]}
+];
+var OPTS=[[2,"Always"],[1,"Sometimes"],[0,"Never"]];
+var S=null;
+function blank(){return{ans:{},done:{},scored:false};}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&o.ans){S=o;return;}}}catch(e){}S=blank();}
+function qid(zi,qi){return zi+"_"+qi;}
+function buildZones(){
+ var box=document.getElementById("zones");box.innerHTML="";
+ ZONES.forEach(function(z,zi){
+  var zd=document.createElement("div");zd.className="zone";
+  var h=document.createElement("h3");h.textContent=z.name+" ("+(zi+1)+" of 4)";zd.appendChild(h);
+  z.qs.forEach(function(q,qi){
+   var id=qid(zi,qi);
+   var d=document.createElement("div");d.className="q";d.id="qw_"+id;
+   var p=document.createElement("p");p.textContent=(zi*5+qi+1)+". "+q.q;d.appendChild(p);
+   var o=document.createElement("div");o.className="opts";o.setAttribute("role","radiogroup");
+   o.setAttribute("aria-label",z.name+" question "+(qi+1));
+   OPTS.forEach(function(op){
+    var l=document.createElement("label");l.textContent=op[1];
+    var r=document.createElement("input");r.type="radio";r.name="a_"+id;r.value=op[0];
+    if(S.ans[id]===op[0]){r.checked=true;l.classList.add("sel");}
+    r.addEventListener("change",function(){
+     S.ans[id]=op[0];S.scored=false;save();
+     var ls=o.querySelectorAll("label");for(var k=0;k<ls.length;k++)ls[k].classList.remove("sel");
+     l.classList.add("sel");updateProg();
+    });
+    l.appendChild(r);o.appendChild(l);
+   });
+   d.appendChild(o);zd.appendChild(d);
+  });
+  box.appendChild(zd);
+ });
+}
+function answeredCount(){var n=0;for(var k in S.ans){if(S.ans[k]!==undefined&&S.ans[k]!==null)n++;}return n;}
+function updateProg(){document.getElementById("prog").textContent=answeredCount()+" of 20 answered";}
+function zoneScore(zi){
+ var sum=0;ZONES[zi].qs.forEach(function(q,qi){sum+=(S.ans[qid(zi,qi)]||0);});
+ return Math.round(sum/10*100);
+}
+function gradeFor(s){
+ if(s>=85)return["Focus Fortress","Your environment is built for deep work. Protect it — and re-audit whenever your setup changes."];
+ if(s>=70)return["Strong Foundation","Good bones with a few leaks. The fix list below will close them fast."];
+ if(s>=55)return["A Few Leaks","Your environment is fighting you in a few places. Quick wins will make the biggest difference."];
+ if(s>=40)return["Leaky","Distractions are baked into your setup. Work the fix list top-down for two weeks."];
+ return["Distraction Zone","Your environment is working against you. Start with the quick wins — small changes, big relief."];
+}
+function score(){
+ var err=document.getElementById("formerr");err.textContent="";
+ var missing=[];
+ ZONES.forEach(function(z,zi){z.qs.forEach(function(q,qi){var id=qid(zi,qi);if(S.ans[id]===undefined||S.ans[id]===null)missing.push(id);});});
+ if(missing.length){
+  err.textContent="Please answer all 20 questions ("+missing.length+" left).";
+  document.getElementById("qw_"+missing[0]).scrollIntoView({behavior:"smooth",block:"center"});
+  return;
+ }
+ var zs=ZONES.map(function(z,zi){return zoneScore(zi);});
+ var overall=Math.round(zs.reduce(function(a,b){return a+b;},0)/zs.length);
+ document.getElementById("oscore").textContent=overall+" / 100";
+ var g=gradeFor(overall);
+ document.getElementById("ograde").textContent=g[0];
+ document.getElementById("oexplain").textContent=g[1];
+ var zb=document.getElementById("zscores");zb.innerHTML="";
+ ZONES.forEach(function(z,zi){
+  var row=document.createElement("div");row.className="zrow";
+  row.innerHTML="<span>"+z.name+"</span>"+
+   '<div class="ztrack"><div class="zfill" style="width:'+zs[zi]+'%"></div></div><strong>'+zs[zi]+"</strong>";
+  zb.appendChild(row);
+ });
+ var fixes=[];
+ ZONES.forEach(function(z,zi){z.qs.forEach(function(q,qi){
+  var id=qid(zi,qi),a=S.ans[id];
+  if(a<2)fixes.push({id:id,zone:z.name,fix:q.fix,i:q.i,e:q.e,ratio:q.i/q.e});
+ });});
+ fixes.sort(function(a,b){
+  if(b.ratio!==a.ratio)return b.ratio-a.ratio;
+  if(b.i!==a.i)return b.i-a.i;
+  return a.e-b.e;
+ });
+ var fx=document.getElementById("fixes");fx.innerHTML="";
+ if(fixes.length===0){
+  fx.innerHTML='<p style="color:#6b6250">No fixes needed — you answered "Always" to all 20. Your environment is dialed in.</p>';
+ }else{
+  var qw=fixes.filter(function(f){return f.e===1;});
+  if(qw.length){
+   var h=document.createElement("h3");h.textContent="Quick wins — do today ("+qw.length+")";fx.appendChild(h);
+   qw.forEach(function(f){fx.appendChild(fixEl(f,true));});
+  }
+  var rest=fixes.filter(function(f){return f.e>1;});
+  if(rest.length){
+   var h2=document.createElement("h3");h2.textContent="Deeper changes ("+rest.length+")";fx.appendChild(h2);
+   rest.forEach(function(f){fx.appendChild(fixEl(f,false));});
+  }
+ }
+ S._fixIds=fixes.map(function(f){return f.id;});
+ S.scored=true;save();updateFixProg();
+ document.getElementById("results").classList.remove("hidden");
+ document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function fixEl(f,isQW){
+ var d=document.createElement("div");d.className="fix";
+ if(S.done[f.id])d.classList.add("done");
+ var c=document.createElement("input");c.type="checkbox";c.checked=!!S.done[f.id];
+ c.setAttribute("aria-label","Mark fix done: "+f.fix);
+ c.addEventListener("change",function(){S.done[f.id]=c.checked;save();d.classList.toggle("done",c.checked);updateFixProg();});
+ var t=document.createElement("div");t.className="ftext";
+ t.innerHTML=f.fix+'<br><span class="tag zone-tag">'+f.zone+"</span>"+
+  (isQW?'<span class="tag qw">QUICK WIN</span>':"")+
+  '<span class="tag ie">Impact '+f.i+"/3 · Effort "+f.e+"/3</span>";
+ d.appendChild(c);d.appendChild(t);
+ return d;
+}
+function updateFixProg(){
+ var ids=S._fixIds||[];if(!ids.length){document.getElementById("fixprog").textContent="";return;}
+ var n=ids.filter(function(id){return S.done[id];}).length;
+ document.getElementById("fixprog").textContent=n+" of "+ids.length+" fixes done";
+}
+document.getElementById("score").addEventListener("click",score);
+document.getElementById("resetbtn").addEventListener("click",function(){
+ if(!confirm("Clear all answers and start over?"))return;
+ S=blank();save();buildZones();updateProg();
+ document.getElementById("results").classList.add("hidden");
+ document.getElementById("formerr").textContent="";
+ window.scrollTo(0,0);
+});
+load();buildZones();updateProg();
+if(S.scored&&answeredCount()===20){score();}
+</script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quarterly Goal Sprint Planner | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Run your goals in 12-week sprints: set 1–3 goals, track weekly leading indicators, and review at the mid-sprint checkpoint. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/quarterly-goal-sprint-planner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quarterly Goal Sprint Planner | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Run your goals in 12-week sprints: set 1–3 goals, track weekly leading indicators, and review at the mid-sprint checkpoint. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/quarterly-goal-sprint-planner/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:820px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.4rem;margin-bottom:10px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;margin:18px 0 8px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:8px 16px;min-height:40px;font-size:.9rem}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:88px;resize:vertical}
+label.f{display:block;font-weight:bold;margin:14px 0 2px}
+label.f span.hint{display:block;font-weight:normal;font-size:.85rem;color:#6b6250}
+.err{color:#a33;background:#fdecea;border:1px solid #e5a;border-radius:8px;padding:10px 14px;margin:10px 0;display:none}
+.goalblock{border:1px solid #e0d6b8;border-radius:10px;padding:18px;margin:14px 0;background:#fff}
+.goalblock .ghead{font-weight:bold;font-family:Georgia,serif;font-size:1.1rem;color:#8a6d1c;margin-bottom:4px}
+.scorewrap{overflow-x:auto;margin:16px 0;border:1px solid #e0d6b8;border-radius:8px}
+table.score{border-collapse:collapse;min-width:900px;width:100%;background:#fff}
+table.score th,table.score td{border:1px solid #eee3c4;padding:6px 4px;text-align:center;font-size:.78rem}
+table.score th{background:#f6f0dc;font-weight:bold}
+table.score td.gname{text-align:left;padding:10px;font-size:.85rem;min-width:170px;font-weight:bold}
+.cell{width:52px;height:44px;border:none;background:#f4efe0;cursor:pointer;border-radius:6px;font-size:1.1rem;line-height:1;min-width:44px;min-height:44px}
+.cell:hover{background:#e9e0c6}
+.cell.met{background:#2f7d3b;color:#fff}
+.cell.missed{background:#c0392b;color:#fff}
+.cell.thisweek{outline:3px solid #c9a227;outline-offset:1px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:#6b6250;margin:8px 0}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:middle}
+.pbar{height:16px;background:#eee3c4;border-radius:8px;overflow:hidden;margin:10px 0}
+.pbar>div{height:100%;background:#c9a227;transition:width .3s}
+.q{margin:14px 0;padding:14px;border:1px solid #eee3c4;border-radius:8px;background:#fff}
+.q p{font-weight:bold;margin-bottom:8px}
+.radioRow{display:flex;gap:10px;flex-wrap:wrap}
+.radioRow label{border:2px solid #c9a227;border-radius:8px;padding:10px 16px;cursor:pointer;font-size:.95rem;min-height:44px;display:inline-flex;align-items:center}
+.radioRow input{margin-right:8px;accent-color:#8a6d1c;width:18px;height:18px}
+.timerbox{text-align:center;border:2px dashed #c9a227;border-radius:10px;padding:18px;margin-top:14px;background:#fff}
+.timerbox .t{font-size:2.6rem;font-family:Georgia,serif;margin:6px 0}
+ol.steps{margin:10px 0 10px 22px}
+ol.steps li{margin:8px 0}
+.badge{display:inline-block;background:#2f7d3b;color:#fff;border-radius:20px;padding:4px 14px;font-size:.8rem;font-weight:bold}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Quarterly Goal Sprint Planner</h1>
+<p class="intro">Run your goals in 12-week sprints. Pick 1&ndash;3 goals, define a weekly leading indicator for each (the controllable action, not just the outcome), then score yourself every week. Includes a week-6 pivot-or-persevere checkpoint and a 10-minute weekly scoring ritual.</p>
+
+<div id="setupView">
+<div class="appcard">
+<h2>Step 1 &mdash; Set Up Your Sprint</h2>
+<label class="f" for="sprintName">Sprint name <span class="hint">e.g. &ldquo;Fall Launch Sprint&rdquo;</span></label>
+<input type="text" id="sprintName" maxlength="80" placeholder="My 12-Week Sprint">
+<label class="f" for="startDate">Sprint start date <span class="hint">Defaults to today. The sprint runs 12 full weeks from here.</span></label>
+<input type="date" id="startDate">
+<div class="err" id="setupErr"></div>
+<h3>Your Goals (1&ndash;3)</h3>
+<p style="font-size:.9rem;color:#6b6250">For each goal, name the <strong>leading indicator</strong> &mdash; the controllable weekly action that drives the outcome. Not &ldquo;lose 10 lbs&rdquo; (outcome) but &ldquo;4 workouts&rdquo; (indicator).</p>
+<div id="goalInputs"></div>
+<button class="btn" id="genSprint" style="margin-top:14px">Generate My 12-Week Scorecard</button>
+</div>
+</div>
+
+<div id="sprintView" style="display:none">
+<div class="appcard">
+<h2 id="sprintTitle">Your Sprint</h2>
+<p id="sprintDates" style="color:#6b6250"></p>
+<div class="legend" aria-hidden="true">
+<span><i style="background:#2f7d3b"></i>Met target</span>
+<span><i style="background:#c0392b"></i>Missed target</span>
+<span><i style="background:#f4efe0;border:1px solid #ccc"></i>Not scored</span>
+</div>
+<div class="scorewrap">
+<table class="score" id="scoreTable" aria-label="12-week scorecard"></table>
+</div>
+<p style="font-size:.85rem;color:#6b6250">Tap a cell to cycle: not scored &rarr; met &rarr; missed &rarr; not scored. The current week is outlined in gold.</p>
+<h3>Sprint Score</h3>
+<div class="pbar"><div id="scoreBar" style="width:0%"></div></div>
+<p id="scoreText">Score your weeks to see progress.</p>
+</div>
+
+<div class="appcard">
+<h2>Weekly 10-Minute Scoring Ritual</h2>
+<p style="color:#6b6250;font-size:.95rem">Do this at the same time every week &mdash; for example, Friday at 4:00 PM. Start the timer, work the steps, stop at zero.</p>
+<div class="timerbox">
+<div class="t" id="rtime">10:00</div>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+<button class="btn small" id="rstart">Start ritual timer</button>
+<button class="btn small ghost" id="rreset">Reset</button>
+</div>
+</div>
+<ol class="steps">
+<li><strong>Score the week (2 min):</strong> Tap each cell in the current week column above &mdash; green if you hit the weekly target, red if you missed.</li>
+<li><strong>Note what happened (3 min):</strong> In one sentence per goal, write what helped or what got in the way. Keep it short.</li>
+<li><strong>Plan next week (4 min):</strong> Schedule the leading-indicator action on your calendar before this timer ends. If it is not scheduled, it will not happen.</li>
+<li><strong>Protect the streak (1 min):</strong> Look at your overall score. Anything below 70% gets one adjustment next week &mdash; smaller target, earlier time slot, or a removed blocker.</li>
+</ol>
+</div>
+
+<div class="appcard">
+<h2>Week-6 Mid-Sprint Checkpoint</h2>
+<p style="color:#6b6250;font-size:.95rem">At the halfway mark, answer these honestly. The question is not &ldquo;am I perfect?&rdquo; &mdash; it is <strong>pivot or persevere?</strong></p>
+<div class="q"><p>1. Is each goal's leading indicator actually within your control?</p>
+<textarea id="q1" maxlength="1000" placeholder="Your notes..."></textarea></div>
+<div class="q"><p>2. Are you hitting at least 70% of your weekly targets so far?</p>
+<div class="radioRow">
+<label><input type="radio" name="q2" value="yes"> Yes, mostly</label>
+<label><input type="radio" name="q2" value="mixed"> Mixed</label>
+<label><input type="radio" name="q2" value="no"> No, struggling</label>
+</div></div>
+<div class="q"><p>3. What keeps getting in the way? (The real obstacle, not the excuse.)</p>
+<textarea id="q3" maxlength="1000" placeholder="Your notes..."></textarea></div>
+<div class="q"><p>4. What is one change that would make the next 6 weeks easier?</p>
+<textarea id="q4" maxlength="1000" placeholder="Your notes..."></textarea></div>
+<div class="q"><p>5. Pivot or persevere?</p>
+<div class="radioRow">
+<label><input type="radio" name="q5" value="persevere"> <span><strong>Persevere</strong> &mdash; the plan works, I keep going</span></label>
+<label><input type="radio" name="q5" value="pivot"> <span><strong>Pivot</strong> &mdash; I adjust a goal, indicator, or target</span></label>
+</div>
+<textarea id="q5note" maxlength="1000" placeholder="What exactly changes? (Be specific.)"></textarea></div>
+<p id="pivotVerdict" style="margin-top:10px"></p>
+<button class="btn small" id="saveReview">Save checkpoint answers</button>
+</div>
+
+<div class="appcard">
+<h2>Sprint Tools</h2>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn ghost small" id="exportPlan">Copy sprint plan as text</button>
+<button class="btn ghost small" id="newSprint">Start a new sprint</button>
+</div>
+<p id="exportMsg" style="font-size:.85rem;color:#6b6250;margin-top:8px"></p>
+</div>
+</div>
+<div class="appcard">
+<h2>Go Deeper with the Book</h2>
+<p>Browse the full Made Simple library for more on goals, productivity, and systems that stick — practical chapters you can apply the same day.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/">Browse the Made Simple Books</a></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:820px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and encouragement in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-quarterly-goal-sprint-planner-v1";
+function $(id){return document.getElementById(id);}
+function todayISO(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function fmtDate(d){return (d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear();}
+function weekDate(start,w){var d=new Date(start.getTime());d.setDate(d.getDate()+w*7);return d;}
+function currentWeekIdx(start){var now=new Date();now.setHours(0,0,0,0);
+  var s=new Date(start.getTime());s.setHours(0,0,0,0);
+  var diff=Math.floor((now-s)/86400000);var idx=Math.floor(diff/7);
+  if(idx<0)return 0; if(idx>11)return 11; return idx;}
+
+function goalInputHTML(i){
+  return '<div class="goalblock"><div class="ghead">Goal '+(i+1)+'</div>'+
+  '<label class="f" for="gname'+i+'">Goal name</label>'+
+  '<input type="text" id="gname'+i+'" maxlength="80" placeholder="e.g. Get in shape">'+
+  '<label class="f" for="glead'+i+'">Weekly leading indicator <span class="hint">The controllable action, e.g. &ldquo;strength workouts completed&rdquo;</span></label>'+
+  '<input type="text" id="glead'+i+'" maxlength="120" placeholder="e.g. workouts completed">'+
+  '<div style="display:flex;gap:10px"><div style="flex:1"><label class="f" for="gtarget'+i+'">Weekly target number</label>'+
+  '<input type="number" id="gtarget'+i+'" min="1" max="999" placeholder="4"></div>'+
+  '<div style="flex:1"><label class="f" for="gunit'+i+'">Unit</label>'+
+  '<input type="text" id="gunit'+i+'" maxlength="30" placeholder="workouts"></div></div></div>';
+}
+var goalCount=3;
+function renderGoalInputs(){
+  var h='<div style="display:flex;gap:10px;align-items:center;margin-bottom:4px"><span style="font-weight:bold">Number of goals:</span>'+
+  [1,2,3].map(function(n){return '<label style="margin-right:12px"><input type="radio" name="gcount" value="'+n+'" '+(n===goalCount?'checked':'')+' style="accent-color:#8a6d1c;width:18px;height:18px;vertical-align:middle"> '+n+'</label>';}).join("")+'</div>';
+  for(var i=0;i<goalCount;i++)h+=goalInputHTML(i);
+  $("goalInputs").innerHTML=h;
+  var rs=document.querySelectorAll('input[name="gcount"]');
+  rs.forEach(function(r){r.addEventListener("change",function(){goalCount=parseInt(r.value,10)||3;renderGoalInputs();});});
+}
+renderGoalInputs();
+$("startDate").value=todayISO();
+
+function showErr(msg){var e=$("setupErr");e.textContent=msg;e.style.display="block";}
+function hideErr(){$("setupErr").style.display="none";}
+
+function loadState(){try{var raw=localStorage.getItem(KEY);return raw?JSON.parse(raw):null;}catch(e){return null;}}
+function saveState(st){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+
+$("genSprint").addEventListener("click",function(){
+  hideErr();
+  var name=$("sprintName").value.trim()||"My 12-Week Sprint";
+  var sd=$("startDate").value;
+  var start=sd?new Date(sd+"T00:00:00"):new Date(todayISO()+"T00:00:00");
+  if(isNaN(start.getTime())){showErr("Please enter a valid start date.");return;}
+  var goals=[];
+  for(var i=0;i<goalCount;i++){
+    var gn=$("gname"+i).value.trim(), gl=$("glead"+i).value.trim(),
+        gt=parseInt($("gtarget"+i).value,10), gu=$("gunit"+i).value.trim();
+    if(!gn&&!gl&&!$("gtarget"+i).value&&!gu)continue;
+    if(!gn){showErr("Goal "+(i+1)+" needs a name.");return;}
+    if(!gl){showErr("Goal "+(i+1)+" needs a weekly leading indicator (the controllable action).");return;}
+    if(!(gt>=1&&gt<=999)){showErr("Goal "+(i+1)+" needs a weekly target number between 1 and 999.");return;}
+    if(!gu){showErr("Goal "+(i+1)+" needs a unit (e.g. workouts, pages, calls).");return;}
+    goals.push({name:gn,indicator:gl,target:gt,unit:gu});
+  }
+  if(goals.length===0){showErr("Define at least one goal.");return;}
+  var st={name:name,start:fmtDate(start),startISO:start.toISOString(),goals:goals,
+          scores:{},review:{q1:"",q2:"",q3:"",q4:"",q5:"",q5note:""}};
+  saveState(st);
+  showSprint(st);
+});
+
+function showSprint(st){
+  $("setupView").style.display="none";
+  $("sprintView").style.display="block";
+  var start=new Date(st.startISO);
+  var end=weekDate(start,12);end.setDate(end.getDate()-1);
+  $("sprintTitle").textContent=st.name;
+  $("sprintDates").textContent="12 weeks: "+fmtDate(start)+" \u2013 "+fmtDate(end)+"  \u00b7  "+st.goals.length+" goal"+(st.goals.length>1?"s":"");
+  var cw=currentWeekIdx(start);
+  var t='<tr><th style="min-width:170px;text-align:left;padding:10px">Goal / Week</th>';
+  for(var w=0;w<12;w++){t+='<th>W'+(w+1)+'<br><span style="font-weight:normal;font-size:.7rem">'+fmtDate(weekDate(start,w))+'</span></th>';}
+  t+='</tr>';
+  st.goals.forEach(function(g,gi){
+    t+='<tr><td class="gname">'+escapeHTML(g.name)+'<br><span style="font-weight:normal;color:#6b6250">'+g.target+' '+escapeHTML(g.unit)+'/wk</span></td>';
+    for(var w=0;w<12;w++){
+      var key=gi+"-"+w;var v=(st.scores||{})[key]||"";
+      t+='<td><button class="cell '+(w===cw?"thisweek":"")+' '+(v==="met"?"met":v==="missed"?"missed":"")+'" data-g="'+gi+'" data-w="'+w+'" data-v="'+v+'" aria-label="'+escapeHTML(g.name)+' week '+(w+1)+': '+(v?v:"not scored")+'">'+(v==="met"?"\u2713":v==="missed"?"\u2717":"&nbsp;")+'</button></td>';
+    }
+    t+='</tr>';
+  });
+  $("scoreTable").innerHTML=t;
+  var cells=document.querySelectorAll("#scoreTable .cell");
+  cells.forEach(function(c){
+    c.addEventListener("click",function(){
+      var st2=loadState()||st;var key=c.getAttribute("data-g")+"-"+c.getAttribute("data-w");
+      var v=c.getAttribute("data-v");
+      v=v===""?"met":v==="met"?"missed":"";
+      st2.scores=st2.scores||{};st2.scores[key]=v;
+      saveState(st2);
+      c.setAttribute("data-v",v);
+      c.className="cell "+(c.classList.contains("thisweek")?"thisweek":"")+" "+(v==="met"?"met":v==="missed"?"missed":"");
+      c.innerHTML=v==="met"?"\u2713":v==="missed"?"\u2717":"&nbsp;";
+      updateScore(st2);
+    });
+  });
+  if(st.review){
+    $("q1").value=st.review.q1||"";$("q3").value=st.review.q3||"";$("q4").value=st.review.q4||"";$("q5note").value=st.review.q5note||"";
+    ["q2","q5"].forEach(function(q){if(st.review[q]){var r=document.querySelector('input[name="'+q+'"][value="'+st.review[q]+'"]');if(r)r.checked=true;}});
+  }
+  updateScore(st);
+  updateVerdict();
+}
+
+function updateScore(st){
+  var met=0,scored=0;
+  Object.keys(st.scores||{}).forEach(function(k){var v=st.scores[k];if(v==="met"){met++;scored++;}else if(v==="missed"){scored++;}});
+  var total=st.goals.length*12;
+  var pct=scored?Math.round(met/scored*100):0;
+  $("scoreBar").style.width=(scored?Math.round(scored/total*100):0)+"%";
+  if(!scored){$("scoreText").textContent="Score your weeks to see progress.";}
+  else{
+    $("scoreText").innerHTML='<span class="badge">'+pct+'%</span> '+met+' of '+scored+' scored weeks on target ('+scored+' of '+total+' weeks scored). '+
+      (pct>=80?'Excellent \u2014 protect the system.':pct>=70?'On track. Keep going.':pct>=50?'Wobbly \u2014 use the checkpoint questions below to adjust.':'Off track \u2014 your week-6 review is where you fix this, not by working harder on a broken plan.');
+  }
+}
+
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+
+function updateVerdict(){
+  var q5=document.querySelector('input[name="q5"]:checked');
+  var v=$("pivotVerdict");
+  if(!q5){v.innerHTML="";return;}
+  if(q5.value==="persevere"){v.innerHTML='<span class="badge">PERSEVERE</span> The system works. Keep your weekly ritual and don\u2019t change the plan.';}
+  else{v.innerHTML='<span class="badge" style="background:#8a6d1c">PIVOT</span> Adjust <strong>one</strong> thing: a smaller target, a different time slot, a removed blocker, or a better leading indicator. Then re-commit for 6 more weeks.';}
+}
+document.querySelectorAll('input[name="q5"]').forEach(function(r){r.addEventListener("change",updateVerdict);});
+
+$("saveReview").addEventListener("click",function(){
+  var st=loadState();if(!st)return;
+  var q2=document.querySelector('input[name="q2"]:checked');
+  var q5=document.querySelector('input[name="q5"]:checked');
+  st.review={q1:$("q1").value,q2:q2?q2.value:"",q3:$("q3").value,q4:$("q4").value,q5:q5?q5.value:"",q5note:$("q5note").value};
+  saveState(st);updateVerdict();
+  $("exportMsg").textContent="Checkpoint answers saved.";
+  setTimeout(function(){$("exportMsg").textContent="";},2500);
+});
+
+$("exportPlan").addEventListener("click",function(){
+  var st=loadState();if(!st)return;
+  var lines=["MY 12-WEEK SPRINT: "+st.name,"Weeks: "+st.start,"","GOALS:"];
+  st.goals.forEach(function(g,i){lines.push((i+1)+". "+g.name+" \u2014 weekly target: "+g.target+" "+g.unit+" ("+g.indicator+")");});
+  var met=0,scored=0;Object.keys(st.scores||{}).forEach(function(k){var v=st.scores[k];if(v==="met"){met++;scored++;}else if(v==="missed")scored++;});
+  lines.push("","SCORE: "+met+"/"+scored+" weeks on target"+(scored?" ("+Math.round(met/scored*100)+"%)":""));
+  if(st.review&&st.review.q5){lines.push("","WEEK-6 DECISION: "+st.review.q5.toUpperCase(),st.review.q5note||"");}
+  lines.push("","Weekly ritual: score the week (2 min), note what happened (3 min), plan next week (4 min), protect the streak (1 min).");
+  var txt=lines.join("\n");
+  var done=false;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){$("exportMsg").textContent="Sprint plan copied to clipboard.";},function(){fallbackCopy(txt);});
+  }else{fallbackCopy(txt);}
+  function fallbackCopy(t){
+    var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");$("exportMsg").textContent="Sprint plan copied to clipboard.";}
+    catch(e){$("exportMsg").textContent="Copy failed \u2014 your browser blocked clipboard access.";}
+    document.body.removeChild(ta);
+  }
+});
+
+$("newSprint").addEventListener("click",function(){
+  if(confirm("Start a new sprint? Your current sprint plan and scores will be cleared.")){
+    try{localStorage.removeItem(KEY);}catch(e){}
+    $("sprintView").style.display="none";$("setupView").style.display="block";
+    goalCount=3;renderGoalInputs();$("startDate").value=todayISO();$("sprintName").value="";
+  }
+});
+
+/* 10-minute ritual timer */
+var rleft=600,rtimer=null;
+function rfmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");}
+$("rstart").addEventListener("click",function(){
+  if(rtimer){clearInterval(rtimer);rtimer=null;this.textContent="Resume";return;}
+  if(rleft<=0)rleft=600;
+  rtimer=setInterval(function(){rleft--;
+    if(rleft<=0){clearInterval(rtimer);rtimer=null;$("rstart").textContent="Start ritual timer";$("rtime").textContent="Done!";return;}
+    $("rtime").textContent=rfmt(rleft);},1000);
+  this.textContent="Pause";
+});
+$("rreset").addEventListener("click",function(){clearInterval(rtimer);rtimer=null;rleft=600;$("rtime").textContent=rfmt(rleft);$("rstart").textContent="Start ritual timer";});
+
+/* restore */
+(function restore(){
+  var st=loadState();
+  if(st&&st.goals&&st.goals.length){showSprint(st);}
+})();
+})();
+</script>
+</body>
+</html>

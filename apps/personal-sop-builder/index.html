@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal SOP Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn any task you repeat into a step-by-step standard operating procedure you (or someone else) can follow. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/personal-sop-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personal SOP Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Turn any task you repeat into a step-by-step standard operating procedure you (or someone else) can follow. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/personal-sop-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;color:#141210;margin-bottom:12px}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;color:#141210;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:8px 14px;min-height:44px;font-size:.9rem}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.hidden{display:none!important}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.flabel{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.85rem;color:#6b6250}
+.err{color:#a33;font-weight:bold;margin-top:10px}
+.stepbox{border:2px solid #e3d9b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.stepbox .snum{font-family:Georgia,serif;font-weight:bold;font-size:1.1rem;color:#8a6d1c}
+.stepbox .sbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.decwrap{background:#fdf6e0;border:1px dashed #c9a227;border-radius:8px;padding:12px;margin-top:8px}
+.decwrap .decrow{display:flex;gap:8px;flex-wrap:wrap}
+.decwrap .decrow input{flex:1;min-width:140px}
+.mistbox{border:2px solid #e3d9b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.checkrow{display:flex;align-items:center;gap:10px;padding:6px 0}
+.checkrow input{width:22px;height:22px;accent-color:#c9a227;flex-shrink:0}
+.sophead{background:#141210;color:#f5efdd;border-radius:10px;padding:22px;margin-bottom:18px}
+.sophead h2{font-family:Georgia,serif;color:#e8c84a;font-size:1.6rem;margin-bottom:6px}
+.sophead .meta{font-size:.9rem;color:#cbbf9a}
+.sopstep{border-left:4px solid #c9a227;padding:6px 0 6px 16px;margin:16px 0}
+.sopstep .t{font-weight:bold;font-size:1.08rem}
+.sopstep .d{color:#333;margin:4px 0}
+.sopstep .tag{display:inline-block;background:#f4ecd8;border-radius:6px;padding:2px 10px;font-size:.8rem;margin:2px 6px 2px 0;color:#5a4a12}
+.sopdec{background:#fdf6e0;border:1px dashed #c9a227;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:.95rem}
+.trouble{border:2px solid #d8cfae;border-radius:8px;padding:12px 16px;margin:10px 0;background:#fff}
+.trouble .m{font-weight:bold;color:#a33}
+.trouble .f{color:#333}
+.review{background:#eef3e6;border:2px solid #9ab87a;border-radius:8px;padding:18px;margin-top:18px}
+.runsbox{background:#f4ecd8;border-radius:8px;padding:14px 16px;margin-top:14px}
+.lastbox{background:#f4ecd8;border-radius:8px;padding:14px 16px;margin-top:14px;font-size:.92rem}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+ header.site,footer.site,.noprint,section:has(.ml-embedded){display:none!important}
+ main.app{max-width:100%;padding:0}
+ .appcard{border:none;padding:0}
+ body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Personal SOP Builder</h1>
+<p class="intro">Turn any task you repeat into a step-by-step standard operating procedure you (or someone else) can follow. Capture the steps, the decisions, the tools, and the mistakes — get a clean, printable procedure card.</p>
+
+<!-- BUILDER -->
+<div id="builderWrap">
+<div class="appcard">
+<h2>1. The task</h2>
+<label class="flabel" for="taskName">What task are you documenting? *</label>
+<input type="text" id="taskName" placeholder="e.g. Publish the weekly newsletter" aria-label="Task name">
+<label class="flabel" for="taskFreq">How often does it repeat?</label>
+<select id="taskFreq" aria-label="Task frequency">
+<option value="Daily">Daily</option><option value="Weekly" selected>Weekly</option><option value="Monthly">Monthly</option><option value="Quarterly">Quarterly</option><option value="As needed">As needed</option>
+</select>
+<label class="flabel" for="taskOwner">Who usually runs it? (optional)</label>
+<input type="text" id="taskOwner" placeholder="e.g. Me, or: whoever is on duty" aria-label="Task owner">
+<label class="flabel" for="taskPurpose">What does "done right" look like? (optional)</label>
+<textarea id="taskPurpose" rows="2" placeholder="e.g. Newsletter sent to the full list by 8 AM Tuesday, zero broken links." aria-label="Definition of done"></textarea>
+</div>
+
+<div class="appcard">
+<h2>2. The steps, in order</h2>
+<p class="hint">Add one step per box. Give each step a time estimate and the tools it needs. Tick "decision point" for any step where the answer changes what happens next ("if X, then Y").</p>
+<div id="stepList"></div>
+<div class="btnrow"><button class="btn ghost" id="addStep">+ Add a Step</button></div>
+</div>
+
+<div class="appcard">
+<h2>3. Common mistakes</h2>
+<p class="hint">What usually goes wrong — and what fixes it? This becomes your troubleshooting section.</p>
+<div id="mistList"></div>
+<div class="btnrow"><button class="btn ghost" id="addMist">+ Add a Mistake</button></div>
+</div>
+
+<div class="appcard">
+<div class="btnrow"><button class="btn" id="genSop">Build My SOP</button></div>
+<p class="err hidden" id="sopErr"></p>
+</div>
+</div>
+
+<!-- SOP OUTPUT -->
+<div class="appcard hidden" id="sopCard">
+<div class="noprint" style="margin-bottom:14px">
+<span class="hint">Your standard operating procedure — saved automatically. Print it, share it, or keep refining it.</span>
+</div>
+<div class="sophead">
+<h2 id="sopTitle">—</h2>
+<div class="meta" id="sopMeta">—</div>
+</div>
+<div id="sopBody"></div>
+<div class="runsbox noprint">
+<strong>Review reminder:</strong> SOPs get better with use. Mark each run below — after <strong>3 runs</strong>, this tool will prompt you to refine the procedure.
+<div class="btnrow">
+<button class="btn small" id="runBtn">I've Run This SOP (<span id="runCount">0</span>/3)</button>
+<button class="btn small ghost" id="resetRuns">Reset Run Count</button>
+</div>
+</div>
+<div class="review hidden noprint" id="reviewBox">
+<strong>&#128161; Time to review your SOP.</strong> You've run it 3 times. What would you change?
+<textarea id="reviewNotes" rows="3" placeholder="e.g. Step 4 takes 10 min, not 5. Add the backup link to step 2." aria-label="Review notes"></textarea>
+<div class="btnrow"><button class="btn small" id="saveReview">Save Review &amp; Update Stamp</button></div>
+</div>
+<div class="btnrow noprint">
+<button class="btn" id="printBtn">Print / Save PDF</button>
+<button class="btn ghost" id="editSop">Edit This SOP</button>
+<button class="btn ghost" id="newSop">Start a New SOP</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Personal SOP Builder is just the start. <em>Organizational Intelligence Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/organizational-intelligence-made-simple/">Get Organizational Intelligence Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-personal-sop-builder-v1";
+var $=function(id){return document.getElementById(id);};
+var state={name:"",freq:"Weekly",owner:"",purpose:"",steps:[],mistakes:[],runs:0,updated:"",reviewNotes:""};
+function show(id){$(id).classList.remove("hidden");}
+function hide(id){$(id).classList.add("hidden");}
+function today(){return new Date().toISOString().slice(0,10);}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function collect(){
+  state.name=$("taskName").value.trim();
+  state.freq=$("taskFreq").value;
+  state.owner=$("taskOwner").value.trim();
+  state.purpose=$("taskPurpose").value.trim();
+}
+function renderSteps(){
+  var list=$("stepList");list.innerHTML="";
+  state.steps.forEach(function(st,i){
+    var box=document.createElement("div");box.className="stepbox";
+    var num=document.createElement("div");num.className="snum";num.textContent="Step "+(i+1);
+    var desc=document.createElement("textarea");desc.rows=2;desc.value=st.desc;
+    desc.placeholder="e.g. Open the email platform and duplicate last week's campaign";
+    desc.setAttribute("aria-label","Step "+(i+1)+" description");
+    desc.addEventListener("input",function(){st.desc=desc.value;save();});
+    var trow=document.createElement("div");trow.style.cssText="display:flex;gap:10px;flex-wrap:wrap";
+    var tw=document.createElement("div");tw.style.flex="1 1 140px";
+    var tlab=document.createElement("label");tlab.className="flabel";tlab.textContent="Time (min)";
+    var time=document.createElement("input");time.type="number";time.min="0";time.max="1440";time.value=st.time==null?"":st.time;
+    time.setAttribute("aria-label","Step "+(i+1)+" time in minutes");
+    time.addEventListener("input",function(){st.time=time.value===""?null:Math.max(0,Math.min(1440,parseInt(time.value,10)||0));save();});
+    tw.appendChild(tlab);tw.appendChild(time);
+    var ow=document.createElement("div");ow.style.flex="2 1 200px";
+    var olab=document.createElement("label");olab.className="flabel";olab.textContent="Tools needed";
+    var tools=document.createElement("input");tools.type="text";tools.value=st.tools;
+    tools.placeholder="e.g. laptop, email platform login";
+    tools.setAttribute("aria-label","Step "+(i+1)+" tools needed");
+    tools.addEventListener("input",function(){st.tools=tools.value;save();});
+    ow.appendChild(olab);ow.appendChild(tools);
+    trow.appendChild(tw);trow.appendChild(ow);
+    var crow=document.createElement("label");crow.className="checkrow";
+    var dcb=document.createElement("input");dcb.type="checkbox";dcb.checked=!!st.dec;
+    var dlab=document.createElement("span");dlab.innerHTML="<strong>Decision point</strong> — the next action depends on an answer (if X, then Y).";
+    crow.appendChild(dcb);crow.appendChild(dlab);
+    var decwrap=document.createElement("div");decwrap.className="decwrap"+(st.dec?"":" hidden");
+    var drow=document.createElement("div");drow.className="decrow";
+    var ifI=document.createElement("input");ifI.type="text";ifI.value=st.if_;ifI.placeholder='If… (e.g. "If the open rate is under 20%")';ifI.setAttribute("aria-label","Step "+(i+1)+" condition");
+    var thenI=document.createElement("input");thenI.type="text";thenI.value=st.then_;thenI.placeholder='Then… (e.g. "Then rewrite the subject line")';thenI.setAttribute("aria-label","Step "+(i+1)+" outcome");
+    ifI.addEventListener("input",function(){st.if_=ifI.value;save();});
+    thenI.addEventListener("input",function(){st.then_=thenI.value;save();});
+    drow.appendChild(ifI);drow.appendChild(thenI);decwrap.appendChild(drow);
+    dcb.addEventListener("change",function(){st.dec=dcb.checked;decwrap.classList.toggle("hidden",!st.dec);save();});
+    var sbtns=document.createElement("div");sbtns.className="sbtns";
+    var up=document.createElement("button");up.type="button";up.className="btn small ghost";up.textContent="↑ Move up";
+    var dn=document.createElement("button");dn.type="button";dn.className="btn small ghost";dn.textContent="↓ Move down";
+    var rm=document.createElement("button");rm.type="button";rm.className="btn small ghost";rm.textContent="Remove";
+    up.addEventListener("click",function(){if(i>0){var t=state.steps[i-1];state.steps[i-1]=state.steps[i];state.steps[i]=t;renderSteps();save();}});
+    dn.addEventListener("click",function(){if(i<state.steps.length-1){var t=state.steps[i+1];state.steps[i+1]=state.steps[i];state.steps[i]=t;renderSteps();save();}});
+    rm.addEventListener("click",function(){state.steps.splice(i,1);renderSteps();save();});
+    sbtns.appendChild(up);sbtns.appendChild(dn);sbtns.appendChild(rm);
+    box.appendChild(num);box.appendChild(desc);box.appendChild(trow);box.appendChild(crow);box.appendChild(decwrap);box.appendChild(sbtns);
+    list.appendChild(box);
+  });
+}
+function renderMists(){
+  var list=$("mistList");list.innerHTML="";
+  state.mistakes.forEach(function(mt,i){
+    var box=document.createElement("div");box.className="mistbox";
+    var lab=document.createElement("div");lab.innerHTML="<strong>Mistake "+(i+1)+"</strong>";
+    var mi=document.createElement("input");mi.type="text";mi.value=mt.m;mi.placeholder="What goes wrong? e.g. Forgetting to test the links";
+    mi.setAttribute("aria-label","Mistake "+(i+1));
+    var fi=document.createElement("input");fi.type="text";fi.value=mt.f;fi.placeholder="The fix: e.g. Run the link checker before every send";
+    fi.setAttribute("aria-label","Fix for mistake "+(i+1));
+    mi.addEventListener("input",function(){mt.m=mi.value;save();});
+    fi.addEventListener("input",function(){mt.f=fi.value;save();});
+    var sbtns=document.createElement("div");sbtns.className="sbtns";
+    var rm=document.createElement("button");rm.type="button";rm.className="btn small ghost";rm.textContent="Remove";
+    rm.addEventListener("click",function(){state.mistakes.splice(i,1);renderMists();save();});
+    sbtns.appendChild(rm);
+    box.appendChild(lab);box.appendChild(mi);box.appendChild(fi);box.appendChild(sbtns);
+    list.appendChild(box);
+  });
+}
+function toolsList(){
+  var seen={},out=[];
+  state.steps.forEach(function(st){
+    (st.tools||"").split(",").forEach(function(t){
+      t=t.trim();var k=t.toLowerCase();
+      if(t&&!seen[k]){seen[k]=1;out.push(t);}
+    });
+  });
+  return out;
+}
+function totalTime(){
+  var t=0;state.steps.forEach(function(st){t+=st.time||0;});
+  return t;
+}
+function buildSop(){
+  var err=$("sopErr");err.classList.add("hidden");
+  collect();
+  if(!state.name){err.textContent="Give your task a name before building the SOP.";err.classList.remove("hidden");$("taskName").focus();return;}
+  var realSteps=state.steps.filter(function(s){return s.desc.trim();});
+  if(realSteps.length===0){err.textContent="Add at least one step with a description.";err.classList.remove("hidden");return;}
+  state.updated=today();
+  save();
+  $("sopTitle").textContent=state.name;
+  var meta=state.freq+(state.owner?" · Usually run by: "+state.owner:"")+" · Last updated: "+state.updated+" · Est. total time: "+totalTime()+" min";
+  $("sopMeta").textContent=meta;
+  var body="";
+  if(state.purpose)body+='<div class="lastbox" style="margin-top:0"><strong>Done right looks like:</strong> '+esc(state.purpose)+"</div>";
+  var tools=toolsList();
+  if(tools.length)body+="<h3>What you need</h3><p>"+tools.map(esc).join(" · ")+"</p>";
+  body+="<h3>Procedure</h3>";
+  realSteps.forEach(function(st,i){
+    body+='<div class="sopstep"><div class="t">Step '+(i+1)+": "+esc(st.desc)+"</div>";
+    body+='<div style="margin-top:6px">';
+    if(st.time!=null&&st.time!=="")body+='<span class="tag">⏱ '+(st.time)+" min</span>";
+    if(st.tools&&st.tools.trim())body+='<span class="tag">🧰 '+esc(st.tools)+"</span>";
+    body+="</div>";
+    if(st.dec&&(st.if_||st.then_))body+='<div class="sopdec"><strong>Decision:</strong> If '+esc(st.if_||"…")+",&nbsp;then "+esc(st.then_||"…")+".</div>";
+    body+="</div>";
+  });
+  var mists=state.mistakes.filter(function(m){return m.m.trim();});
+  if(mists.length){
+    body+="<h3>Troubleshooting — common mistakes</h3>";
+    mists.forEach(function(mt){
+      body+='<div class="trouble"><div class="m">⚠ '+esc(mt.m)+"</div>"+(mt.f.trim()?'<div class="f"><strong>Fix:</strong> '+esc(mt.f)+"</div>":"")+"</div>";
+    });
+  }
+  $("sopBody").innerHTML=body;
+  updateRuns();
+  hide("builderWrap");show("sopCard");
+  save();
+}
+function updateRuns(){
+  $("runCount").textContent=Math.min(3,state.runs);
+  $("reviewBox").classList.toggle("hidden",!(state.runs>=3));
+}
+$("addStep").addEventListener("click",function(){state.steps.push({desc:"",time:null,tools:"",dec:false,if_:"",then_:""});renderSteps();save();});
+$("addMist").addEventListener("click",function(){state.mistakes.push({m:"",f:""});renderMists();save();});
+$("genSop").addEventListener("click",buildSop);
+["taskName","taskFreq","taskOwner","taskPurpose"].forEach(function(id){
+  $(id).addEventListener("input",function(){collect();save();});
+  $(id).addEventListener("change",function(){collect();save();});
+});
+$("runBtn").addEventListener("click",function(){state.runs++;updateRuns();save();});
+$("resetRuns").addEventListener("click",function(){state.runs=0;updateRuns();save();});
+$("saveReview").addEventListener("click",function(){
+  state.reviewNotes=$("reviewNotes").value.trim();
+  state.updated=today();state.runs=0;
+  $("sopMeta").textContent=state.freq+(state.owner?" · Usually run by: "+state.owner:"")+" · Last updated: "+state.updated+" · Est. total time: "+totalTime()+" min";
+  updateRuns();save();
+});
+$("printBtn").addEventListener("click",function(){window.print();});
+$("editSop").addEventListener("click",function(){hide("sopCard");show("builderWrap");});
+$("newSop").addEventListener("click",function(){
+  state={name:"",freq:"Weekly",owner:"",purpose:"",steps:[],mistakes:[],runs:0,updated:"",reviewNotes:""};
+  $("taskName").value="";$("taskFreq").value="Weekly";$("taskOwner").value="";$("taskPurpose").value="";$("reviewNotes").value="";
+  renderSteps();renderMists();hide("sopCard");show("builderWrap");save();
+});
+// restore
+try{
+  var raw=localStorage.getItem(KEY);
+  if(raw){
+    var s=JSON.parse(raw);
+    Object.keys(state).forEach(function(k){if(s[k]!==undefined)state[k]=s[k];});
+    $("taskName").value=state.name;$("taskFreq").value=state.freq;
+    $("taskOwner").value=state.owner;$("taskPurpose").value=state.purpose;
+    $("reviewNotes").value=state.reviewNotes||"";
+  }
+}catch(e){}
+renderSteps();renderMists();
+})();
+</script>
+</body>
+</html>
