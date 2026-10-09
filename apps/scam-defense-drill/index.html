@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scam Defense Drill | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Interactive spot-the-scam training: judge 9 realistic scenarios, pick the red flags, get a score, and build your personal Scam Reflex Card. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/scam-defense-drill/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scam Defense Drill | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Interactive spot-the-scam training: judge 9 realistic scenarios, pick the red flags, get a score, and build your personal Scam Reflex Card. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/scam-defense-drill/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.disclaim{background:#fff4e0;border:2px solid #d8a93c;border-radius:12px;padding:16px 20px;margin-bottom:20px;font-size:.9rem;color:#6b5510}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.prog{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.prog span{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;border:2px solid #c9a227;color:#8a6d1c;font-size:.85rem}
+.prog span.cur{background:#c9a227;color:#141210}
+.prog span.good{background:#e9f5e6;color:#2e7d32;border-color:#2e7d32}
+.prog span.bad{background:#fdecea;color:#b3261e;border-color:#b3261e}
+.scenario-msg{background:#f4f1e6;border:2px solid #d8cfb0;border-radius:10px;padding:20px;font-size:1rem;margin:14px 0;white-space:pre-wrap}
+.scenario-msg .tag{display:inline-block;background:#141210;color:#e8c84a;font-size:.75rem;font-weight:bold;padding:3px 10px;border-radius:20px;margin-bottom:10px;letter-spacing:1px}
+.verdict{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.verdict .btn{flex:1;min-width:150px}
+.verdict .btn.sel-scam{background:#b3261e;color:#fff;border:2px solid #b3261e}
+.verdict .btn.sel-legit{background:#2e7d32;color:#fff;border:2px solid #2e7d32}
+.flags{display:grid;gap:8px;margin:14px 0}
+.flag{border:2px solid #d8cfb0;border-radius:8px;padding:12px 14px;background:#fff;cursor:pointer;display:flex;gap:12px;align-items:flex-start;min-height:44px}
+.flag input{width:22px;height:22px;accent-color:#c9a227;flex-shrink:0;margin-top:3px;cursor:pointer}
+.flag.picked{border-color:#c9a227;background:#fdf6e3}
+.flag.correct{border-color:#2e7d32;background:#e9f5e6}
+.flag.missed{border-color:#b3261e;background:#fdecea}
+.flag.wrong{border-color:#b3261e;background:#fdecea}
+.flag .why{font-size:.88rem;color:#5b5340;display:block;margin-top:4px}
+.flag.correct .why{color:#2e7d32}
+.result-line{font-weight:bold;font-size:1.1rem;margin:10px 0}
+.ok{color:#2e7d32}.no{color:#b3261e}
+.scorebig{font-family:Georgia,serif;font-size:3.2rem;color:#141210;text-align:center}
+.gradeline{text-align:center;font-size:1.2rem;font-weight:bold;margin:6px 0 16px}
+.review{background:#fff;border:2px solid #d8cfb0;border-radius:10px;padding:16px;margin:12px 0}
+.review h4{font-family:Georgia,serif;margin-bottom:6px}
+.review ul{margin:8px 0 8px 20px;font-size:.95rem}
+.reflexcard{border:3px solid #c9a227;border-radius:12px;padding:26px;background:#fff}
+.reflexcard h3{font-family:Georgia,serif;text-align:center;margin-bottom:14px}
+.reflexcard ol{margin:0 0 0 22px}
+.reflexcard li{margin:10px 0}
+.reflexcard li b{display:block}
+table.log{width:100%;border-collapse:collapse;font-size:.92rem;margin:12px 0}
+table.log th,table.log td{border:1px solid #d8cfb0;padding:8px;text-align:left}
+table.log th{background:#f4f1e6}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+  header.site,footer.site,.btnrow,.prog,.noprint,.devot-block{display:none!important}
+  main.app{max-width:100%;padding:10px}
+  .reflexcard,.appcard{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Scam Defense Drill</h1>
+<p class="intro">Work through 9 realistic scenarios. Judge each one — scam or legitimate — then tap the red flags you spot. You'll get a score, a plain-language review of every flag you missed, and a personal <strong>Scam Reflex Card</strong>: five checks to run before you send money or share information. For education — not a substitute for professional advice.</p>
+
+<div id="startcard" class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:10px">How the drill works</h2>
+<ol style="margin:0 0 16px 22px">
+<li><strong>Judge</strong> each scenario: <em>Scam</em> or <em>Legitimate</em>.</li>
+<li><strong>Tap the red flags</strong> you spot (pick every one that applies — some are decoys).</li>
+<li>Get <strong>50 points</strong> for the right call and up to <strong>50 points</strong> for catching the flags.</li>
+<li>Get your <strong>score, mistake review, and Scam Reflex Card</strong> at the end.</li>
+</ol>
+<p id="bestline" style="color:#6b6250"></p>
+<div class="btnrow"><button class="btn" id="startbtn">Start the drill</button></div>
+</div>
+
+<div id="quizcard" class="appcard" style="display:none">
+<div class="prog" id="prog"></div>
+<div class="scenario-msg"><span class="tag" id="stag"></span><div id="sbody"></div></div>
+<h3 style="margin:8px 0 4px">Your call: scam or legitimate?</h3>
+<div class="verdict">
+<button class="btn ghost" id="vscam">It's a SCAM</button>
+<button class="btn ghost" id="vlegit">It's LEGITIMATE</button>
+</div>
+<div id="flagsec" style="display:none">
+<h3 style="margin:14px 0 4px">Now tap every red flag you spot</h3>
+<p style="color:#6b6250;font-size:.92rem">Some options are decoys — picking a decoy costs points, so only tap what you're sure of.</p>
+<div class="flags" id="flags"></div>
+<div class="btnrow"><button class="btn" id="submitbtn">Lock in my answer</button></div>
+</div>
+<div id="feedback" style="display:none"></div>
+<div class="btnrow noprint" id="nextrow" style="display:none"><button class="btn" id="nextbtn">Next scenario &rarr;</button></div>
+</div>
+
+<div id="resultcard" class="appcard" style="display:none">
+<h2 style="font-family:Georgia,serif;text-align:center">Your Scam Defense Score</h2>
+<div class="scorebig" id="scorebig"></div>
+<div class="gradeline" id="gradeline"></div>
+<p id="scoreline" style="text-align:center;color:#6b6250"></p>
+<table class="log" id="scoretable"><thead><tr><th>#</th><th>Scenario</th><th>Your call</th><th>Points</th></tr></thead><tbody></tbody></table>
+<h3 style="font-family:Georgia,serif;margin:20px 0 8px">Mistake review — what to learn</h3>
+<div id="review"></div>
+<h3 style="font-family:Georgia,serif;margin:20px 0 8px">Your Scam Reflex Card</h3>
+<div class="reflexcard" id="reflex">
+<h3>MY SCAM REFLEX CARD</h3>
+<p style="text-align:center;color:#6b6250;font-size:.9rem;margin-bottom:10px">Five checks before I send money or share information</p>
+<ol>
+<li><b>1. STOP — pressure is the weapon.</b> Real emergencies still give you time to think. Scammers manufacture urgency ("today!", "don't tell anyone!") so you act before you verify.</li>
+<li><b>2. VERIFY independently.</b> Never use the phone number, link, or reply address in the message. Look up the company yourself and call the number on your card, statement, or official website.</li>
+<li><b>3. Money rules.</b> No legitimate business asks for gift cards, wire transfers, crypto, or payment-app payments to fix a problem. Never deposit a check and send part of it back.</li>
+<li><b>4. Lock your info.</b> Never share passwords, PINs, Social Security numbers, or verification codes. Real banks, the IRS, and tech companies will never ask for them by text, email, or call.</li>
+<li><b>5. Report it.</b> Forward scam texts to 7726 (SPAM) and report to the FTC at ReportFraud.ftc.gov. Reporting protects the next person.</li>
+</ol>
+</div>
+<div class="btnrow noprint">
+<button class="btn ghost" id="printbtn">Print my reflex card</button>
+<button class="btn" id="retrybtn">Run the drill again</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Scam Defense Drill is just the start. <em>Scams Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — how scams work, the psychology behind them, and how to protect yourself and your family.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/scams-made-simple/">Get Scams Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devot-block" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action. This app is for educational purposes only and is not professional financial, legal, or security advice. If you believe you've been scammed, contact local law enforcement and file a report at ReportFraud.ftc.gov.</p>
+</div></footer>
+<script>
+var KEY="app-scam-defense-drill-v1";
+var SCEN=[
+{t:"The Package Text",kind:"TEXT MESSAGE",isScam:true,
+ body:"USPS: Your package could not be delivered. Confirm your address and pay the $0.97 re-delivery fee here:\n\nusps-redeliver-verify.net",
+ flags:[
+  ["Look-alike web address","The real USPS site is usps.com. \u201cusps-redeliver-verify.net\u201d is a look-alike domain — scammers register names that look close to real ones.",1],
+  ["Tiny fee to release the package","Real shippers never text you asking for a small card payment to release a package. The fee is bait to steal your card number.",1],
+  ["Out-of-the-blue text","You got a \u201cdelivery failed\u201d message for a package you never ordered. Urgency out of nowhere is the classic opener.",1],
+  ["No tracking number or details","A real delivery notice includes your tracking number and specifics, not a bare demand.",1],
+  ["It names a real carrier, so it must be real","Decoy: scammers name-drop USPS, UPS, and FedEx constantly. A real name in the text proves nothing.",0],
+  ["Texts can\u2019t carry links","Decoy: texts absolutely can carry links — that\u2019s why smishing works.",0]],
+ note:"The fee is the trap — one click and they have your address plus your card number."},
+{t:"The Crypto \u2018Advisor\u2019",kind:"DIRECT MESSAGE",isScam:true,
+ body:"Hi! I\u2019m Dana, a professional crypto trader. I turned $500 into $8,000 for my clients last month. Send me BTC and I\u2019ll trade for you — guaranteed 200% in 7 days. Only 3 spots left, act fast!",
+ flags:[
+  ["Guaranteed returns","No real investment can guarantee returns — \u201cguaranteed 200% in 7 days\u201d is financially impossible and always a lie.",1],
+  ["Pressure and fake scarcity","\u201cOnly 3 spots left, act fast\u201d is designed to stop you from thinking or asking questions.",1],
+  ["Sending crypto to a stranger","Crypto transfers are irreversible. Once you send it, it\u2019s gone — no bank can reverse it.",1],
+  ["Unsolicited contact","A stranger messaged you out of nowhere with a money opportunity. Real advisors don\u2019t recruit by DM.",1],
+  ["She gave her name, so she\u2019s accountable","Decoy: \u201cDana\u201d can be anyone behind a fake profile. A first name is not identity.",0],
+  ["Crypto trading is always a scam","Decoy: crypto itself isn\u2019t the flag here — the guaranteed returns and stranger are.",0]],
+ note:"Guaranteed returns are the single biggest tell in investment fraud."},
+{t:"\u201cGrandma, It\u2019s Me\u201d",kind:"PHONE CALL",isScam:true,
+ body:"\u201cHi Grandma? It\u2019s me\u2026 I\u2019m in real trouble. I was in a car accident in Florida \u2014 please don\u2019t tell Mom, she\u2019ll panic. I need $3,000 for bail and the lawyer will call you in 10 minutes with where to send it.\u201d",
+ flags:[
+  ["\u201cDon\u2019t tell anyone\u201d","Secrecy is the weapon. If it were real, telling family would be the first thing you\u2019d do.",1],
+  ["No name given","The caller never said which grandchild — they wait for YOU to fill in the name.",1],
+  ["Engineered urgency","Ten minutes, an accident far away, bail due now — every detail is tuned to stop you from verifying.",1],
+  ["Money via a stranger\u2019s instructions","Real bail doesn\u2019t work through a \u201clawyer\u201d who calls ten minutes later with payment directions.",1],
+  ["They called at night","Decoy: the time of the call isn\u2019t a red flag — the secrecy and urgency are.",0],
+  ["Florida is a real state","Decoy: scammers pick real places. The location details are decoration, not proof.",0]],
+ note:"Defense: hang up and call your grandchild on the number you already have. A real emergency survives a five-minute check."},
+{t:"The Dream Job",kind:"EMAIL",isScam:true,
+ body:"Subject: YOU\u2019RE HIRED \u2014 Remote Package Inspector ($3,800/mo)\n\nCongratulations! No interview needed \u2014 your r\u00e9sum\u00e9 impressed us. Your first task: we\u2019ll mail you a check for $2,900. Deposit it, keep $400 as your first pay, and wire the remaining $2,500 to our vendor.",
+ flags:[
+  ["Hired with no interview","No legitimate employer hires sight-unseen for a paying job off a r\u00e9sum\u00e9 blast.",1],
+  ["Deposit-and-wire-back","The $2,900 check is fake and will bounce days later — after you\u2019ve already wired $2,500 of YOUR money.",1],
+  ["Pay far above market","$3,800/month for inspecting packages with no experience is bait, not a job.",1],
+  ["Tasks run through your bank account","Real jobs pay YOU. They never route money through your personal account.",1],
+  ["Remote work is a red flag","Decoy: remote jobs are normal. The check-and-wire routine is the actual crime.",0],
+  ["The email used your name","Decoy: mail-merge makes personalization trivial. Your name in the email means nothing.",0]],
+ note:"Any \u201cjob\u201d that asks you to move money is money laundering or check fraud — never a real job."},
+{t:"The Bank Fraud Alert",kind:"TEXT MESSAGE",isScam:false,
+ body:"ALERT: Possible fraud on your card ending 4419 \u2014 $312.44 at ELECTRONICS DEPOT. If this wasn\u2019t you, call the number on the back of your card. We will never ask for your PIN or passwords.",
+ flags:[
+  ["It names my card and a store","Decoy: this message actually tells you what happened — but details alone never prove a text is real. Call the number YOU trust.",0],
+  ["It asks me to reply YES","Decoy: this message doesn\u2019t ask you to reply at all — it points you to your card. That\u2019s the good sign.",0],
+  ["Any bank text is automatically fake","Decoy: banks do send real alerts. The test is what it asks you to DO.",0],
+  ["It warns about PIN requests","Decoy: that warning is exactly what a legitimate bank includes — it\u2019s a good sign, not a red flag.",0]],
+ note:"This is LEGITIMATE — but note the golden rule it teaches: call the number on the back of YOUR card, never a number in a message."},
+{t:"The Utility Shutoff",kind:"ROBOCALL / VOICEMAIL",isScam:true,
+ body:"\u201cFINAL NOTICE from your power company: your electricity will be disconnected TODAY at 6 PM unless your $487.33 balance is paid immediately. Press 1 or call 1-800-555-0134 to pay by gift card or Zelle.\u201d",
+ flags:[
+  ["Payment by gift card or Zelle","No real utility accepts gift cards. Ever. Any caller demanding them is a criminal, full stop.",1],
+  ["\u201cToday at 6 PM\u201d threat","Disconnections follow a legal process with written notices — never a same-day phone ambush.",1],
+  ["They gave you a number to call","The number in the message routes to the scammers. Always call the number on your bill instead.",1],
+  ["Extreme urgency","The artificial deadline is there so you pay before you think to verify.",1],
+  ["Robocalls happen at dinnertime","Decoy: timing isn\u2019t the tell — the payment method and the threat are.",0],
+  ["The balance sounds specific","Decoy: a specific dollar amount is easy to invent. Precision is not proof.",0]],
+ note:"One rule ends this scam instantly: utilities never take gift cards."},
+{t:"The Toll Text",kind:"TEXT MESSAGE",isScam:true,
+ body:"FastTrak: You have an unpaid toll of $12.75. Pay within 24 hours to avoid a $50 penalty:\n\nfasttrak-pay-tolls.com",
+ flags:[
+  ["Look-alike web address","The real site won\u2019t have extra words tacked on like \u201cfasttrak-pay-tolls.com\u201d. Compare it to the official site you find yourself.",1],
+  ["24-hour penalty threat","Toll agencies send mailed notices with real due dates — they don\u2019t threaten by text on a 24-hour clock.",1],
+  ["Out-of-the-blue toll text","If you don\u2019t drive toll roads — or never got a mailed notice — the text is fiction.",1],
+  ["Small amount feels harmless","Decoy: the $12.75 isn\u2019t the point — the link harvests your card and personal details.",0],
+  ["They spelled FastTrak right","Decoy: scammers spell brand names correctly on purpose. Spelling proves nothing.",0]],
+ note:"Toll smishing is one of the most common text scams in the U.S. When in doubt, check your account on the official site — never the link in the text."},
+{t:"The Tech Support Pop-up",kind:"BROWSER POP-UP",isScam:true,
+ body:"\u26a0 WINDOWS SECURITY ALERT\nVirus detected! Your files are being locked. Call Microsoft Support IMMEDIATELY: 1-888-555-0147. Do NOT restart your computer or your data will be deleted.",
+ flags:[
+  ["A pop-up demanding a phone call","Real security warnings never tell you to call a phone number. That\u2019s the whole scam.",1],
+  ["\u201cDo NOT restart\u201d","They don\u2019t want you to restart because restarting clears the fake pop-up and ends their leverage.",1],
+  ["Scare tactics","\u201cFiles are being locked\u201d is fear theater to make you dial without thinking.",1],
+  ["Big companies don\u2019t work this way","Decoy: true but not the flag — the flag is the call demand and the lock threat, which you should spot first.",0],
+  ["Warning icons mean danger","Decoy: anyone can put a \u26a0 icon on a web page. Icons are decoration, not authority.",0]],
+ note:"If your screen locks you into a warning you can\u2019t close, restart the computer — a real warning never punishes you for that."},
+{t:"The Pharmacy Text",kind:"TEXT MESSAGE",isScam:false,
+ body:"Hi Maria, your prescription is ready for pickup at 123 Main St. (Pharmacy). Hours: 9am\u20139pm. Reply STOP to opt out.",
+ flags:[
+  ["It uses my first name","Decoy: you gave this pharmacy your name when you signed up for refill texts. It\u2019s expected here.",0],
+  ["There\u2019s no link to click","Decoy: the absence of a link is actually a GOOD sign — there\u2019s nothing malicious to tap.",0],
+  ["It mentions a real address","Decoy: it\u2019s the store you already use. Matches a service you signed up for = normal.",0],
+  ["Any unexpected text is a scam","Decoy: not every text is a scam — this one matches a service you use and asks for nothing.",0]],
+ note:"This is LEGITIMATE: it matches a service you signed up for, asks for nothing, and has nothing to click. Still, never tap links in texts you didn\u2019t expect — call the store directly."}
+];
+var state={i:0,verdict:null,picks:[],scores:[],answers:[]};
+function save(){try{var b=0;try{b=parseInt(localStorage.getItem(KEY+"-best"))||0;}catch(e){}
+  var s=state.scores.reduce(function(a,x){return a+x;},0)/state.scores.length;
+  if(state.scores.length===SCEN.length&&s>b){try{localStorage.setItem(KEY+"-best",Math.round(s));}catch(e){}}}catch(e){}}
+function bestLine(){try{var b=localStorage.getItem(KEY+"-best");if(b)document.getElementById("bestline").textContent="Your best score so far: "+b+"/100.";}catch(e){}}
+function drawProg(){var p=document.getElementById("prog");p.innerHTML="";
+  SCEN.forEach(function(s,i){var d=document.createElement("span");d.textContent=i+1;
+    if(i<state.i){var a=state.answers[i];d.className=a.verdictOk?"good":"bad";}
+    else if(i===state.i)d.className="cur";
+    p.appendChild(d);});}
+function render(){var s=SCEN[state.i];drawProg();
+  document.getElementById("stag").textContent=s.kind;
+  document.getElementById("sbody").textContent=s.body;
+  document.getElementById("flagsec").style.display="none";
+  document.getElementById("feedback").style.display="none";
+  document.getElementById("nextrow").style.display="none";
+  state.verdict=null;state.picks=[];
+  var vs=document.getElementById("vscam"),vl=document.getElementById("vlegit");
+  vs.className="btn ghost";vl.className="btn ghost";
+  var fl=document.getElementById("flags");fl.innerHTML="";
+  s.flags.forEach(function(f,fi){var lab=document.createElement("label");lab.className="flag";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=false;
+    cb.addEventListener("change",function(){lab.classList.toggle("picked",cb.checked);
+      if(cb.checked&&state.picks.indexOf(fi)<0)state.picks.push(fi);
+      if(!cb.checked)state.picks=state.picks.filter(function(x){return x!==fi;});});
+    var sp=document.createElement("span");sp.textContent=f[0];
+    lab.appendChild(cb);lab.appendChild(sp);fl.appendChild(lab);});
+  document.getElementById("submitbtn").disabled=false;
+  document.getElementById("quizcard").scrollIntoView();}
+function pickVerdict(v){state.verdict=v;
+  document.getElementById("vscam").className="btn ghost"+(v==="scam"?" sel-scam":"");
+  document.getElementById("vlegit").className="btn ghost"+(v==="legit"?" sel-legit":"");
+  document.getElementById("flagsec").style.display="block";}
+function submit(){if(!state.verdict){alert("First make your call: scam or legitimate?");return;}
+  var s=SCEN[state.i];
+  var verdictOk=(state.verdict==="scam")===s.isScam;
+  var realIdx=s.flags.map(function(f,i){return f[2]?i:-1;}).filter(function(i){return i>=0;});
+  var correctPicked=state.picks.filter(function(i){return realIdx.indexOf(i)>=0;}).length;
+  var wrongPicked=state.picks.filter(function(i){return realIdx.indexOf(i)<0;}).length;
+  var flagPts=0;
+  if(realIdx.length>0){flagPts=Math.round(50*(correctPicked/realIdx.length)-12*wrongPicked);if(flagPts<0)flagPts=0;}
+  else{flagPts=verdictOk?50:0;}
+  var pts=(verdictOk?50:0)+flagPts;
+  state.scores.push(pts);
+  state.answers.push({verdictOk:verdictOk,pts:pts,missed:realIdx.filter(function(i){return state.picks.indexOf(i)<0;}),wrong:state.picks.filter(function(i){return realIdx.indexOf(i)<0;})});
+  var fl=document.getElementById("flags").children;
+  for(var i=0;i<fl.length;i++){var f=s.flags[i];var box=fl[i].querySelector("input");box.disabled=true;
+    var why=document.createElement("span");why.className="why";
+    if(f[2]&&state.picks.indexOf(i)>=0){fl[i].classList.add("correct");why.textContent="\u2713 Got it — "+f[1];}
+    else if(f[2]){fl[i].classList.add("missed");why.textContent="\u2717 Missed — "+f[1];}
+    else if(state.picks.indexOf(i)>=0){fl[i].classList.add("wrong");why.textContent="\u2717 Decoy — "+f[1];}
+    else{why.textContent="Decoy, correctly skipped.";}
+    fl[i].appendChild(why);}
+  document.getElementById("vscam").disabled=true;document.getElementById("vlegit").disabled=true;
+  document.getElementById("submitbtn").disabled=true;
+  var fb=document.getElementById("feedback");fb.style.display="block";
+  fb.innerHTML="<p class='result-line '>"+(verdictOk?"<span class='ok'>\u2713 Right call.</span>":"<span class='no'>\u2717 Wrong call — this was "+(s.isScam?"a SCAM":"LEGITIMATE")+".</span>")+
+    " <span style='font-weight:normal'>"+pts+"/100 points for this scenario.</span></p>"+
+    "<p style='color:#6b6250'>"+s.note+"</p>";
+  document.getElementById("nextrow").style.display="flex";
+  document.getElementById("nextbtn").textContent=state.i<SCEN.length-1?"Next scenario \u2192":"See my results \u2192";
+  drawProg();}
+function results(){document.getElementById("quizcard").style.display="none";
+  var rc=document.getElementById("resultcard");rc.style.display="block";
+  var total=state.scores.reduce(function(a,x){return a+x;},0);
+  var avg=Math.round(total/state.scores.length);
+  document.getElementById("scorebig").textContent=avg+"/100";
+  var g,gd;
+  if(avg>=90){g="A \u2014 Scam-proof instincts";gd="You spot the tricks before they land. Keep that reflex card somewhere visible.";}
+  else if(avg>=75){g="B \u2014 Strong defenses";gd="Solid instincts with a few blind spots — review the misses below.";}
+  else if(avg>=60){g="C \u2014 Vulnerable in spots";gd="Scammers would find openings. Re-run the drill and study your reflex card.";}
+  else{g="D \u2014 Needs practice";gd="Right now a scammer has a real shot at you. Drill again, and share this with someone you love.";}
+  document.getElementById("gradeline").textContent=g;
+  document.getElementById("scoreline").textContent=gd;
+  save();bestLine();
+  var tb=document.querySelector("#scoretable tbody");tb.innerHTML="";
+  var rv=document.getElementById("review");rv.innerHTML="";var anyMiss=false;
+  state.answers.forEach(function(a,i){var s=SCEN[i];
+    var tr=document.createElement("tr");
+    tr.innerHTML="<td>"+(i+1)+"</td><td>"+s.t+"</td><td>"+(a.verdictOk?"<span class='ok'>\u2713</span>":"<span class='no'>\u2717</span>")+"</td><td>"+a.pts+"</td>";
+    tb.appendChild(tr);
+    if(a.missed.length||a.wrong.length||!a.verdictOk){anyMiss=true;
+      var d=document.createElement("div");d.className="review";
+      var h="<h4>"+(i+1)+". "+s.t+" \u2014 "+a.pts+"/100</h4>";
+      var lis="";
+      if(!a.verdictOk)lis+="<li><b>Wrong call:</b> this was "+(s.isScam?"a SCAM":"LEGITIMATE")+". "+s.note+"</li>";
+      a.missed.forEach(function(mi){lis+="<li><b>Missed flag:</b> \u201c"+s.flags[mi][0]+"\u201d — "+s.flags[mi][1]+"</li>";});
+      a.wrong.forEach(function(wi){lis+="<li><b>Fell for a decoy:</b> \u201c"+s.flags[wi][0]+"\u201d — "+s.flags[wi][1]+"</li>";});
+      d.innerHTML=h+"<ul>"+lis+"</ul>";rv.appendChild(d);}});
+  if(!anyMiss)rv.innerHTML="<p style='color:#2e7d32;font-weight:bold'>Perfect run — you caught every flag and skipped every decoy. \u{1F6E1}\uFE0F</p>";
+  rc.scrollIntoView();}
+function reset(){state={i:0,verdict:null,picks:[],scores:[],answers:[]};
+  document.getElementById("resultcard").style.display="none";
+  document.getElementById("quizcard").style.display="block";
+  document.getElementById("vscam").disabled=false;document.getElementById("vlegit").disabled=false;
+  render();}
+document.getElementById("startbtn").addEventListener("click",function(){
+  document.getElementById("startcard").style.display="none";
+  document.getElementById("quizcard").style.display="block";render();});
+document.getElementById("vscam").addEventListener("click",function(){pickVerdict("scam");});
+document.getElementById("vlegit").addEventListener("click",function(){pickVerdict("legit");});
+document.getElementById("submitbtn").addEventListener("click",submit);
+document.getElementById("nextbtn").addEventListener("click",function(){
+  if(state.i<SCEN.length-1){state.i++;
+    document.getElementById("vscam").disabled=false;document.getElementById("vlegit").disabled=false;
+    render();}
+  else results();});
+document.getElementById("retrybtn").addEventListener("click",reset);
+document.getElementById("printbtn").addEventListener("click",function(){window.print();});
+bestLine();
+</script>
+</body>
+</html>

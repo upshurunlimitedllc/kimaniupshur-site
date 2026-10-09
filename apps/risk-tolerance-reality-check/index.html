@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risk Tolerance Reality Check | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Answer 12 scenario questions to discover your true risk tolerance — capacity vs. willingness scored separately — and get a model stock/bond mix matched to your profile. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/risk-tolerance-reality-check/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Risk Tolerance Reality Check | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Answer 12 scenario questions to discover your true risk tolerance — capacity vs. willingness scored separately — and get a model stock/bond mix matched to your profile. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/risk-tolerance-reality-check/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.field{display:block;font-weight:bold;margin-top:14px;font-size:.95rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.82rem}
+.notice{background:#fdecea;border:2px solid #b3261e;color:#7a1a14;border-radius:10px;padding:16px;margin-bottom:20px;font-size:.92rem}
+.notice strong{display:block;margin-bottom:4px}
+.disclaimer{background:#f7f1df;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5236;margin-top:18px}
+.hidden{display:none!important}
+.q{margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid #eee}
+.q:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.q p.qt{font-weight:bold;margin-bottom:8px}
+.q p.qt .qn{display:inline-block;background:#c9a227;color:#141210;border-radius:50%;width:28px;height:28px;text-align:center;line-height:28px;font-size:.85rem;margin-right:8px}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:12px;border:2px solid #e3d9b8;border-radius:10px;margin:8px 0;cursor:pointer;min-height:48px}
+.opt:hover{border-color:#c9a227}
+.opt.sel{border-color:#c9a227;background:#fdf6e0}
+.opt input{width:22px;height:22px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.secttl{font-family:Georgia,serif;font-size:1.25rem;color:#141210;margin:6px 0 4px}
+.secsub{color:#6b6250;font-size:.92rem;margin-bottom:18px}
+.meter{height:22px;background:#eee7cf;border-radius:11px;overflow:hidden;margin:8px 0 4px}
+.meter>div{height:100%;background:linear-gradient(90deg,#c9a227,#8a6d1c);border-radius:11px;transition:width .4s}
+.mixbar{display:flex;height:44px;border-radius:10px;overflow:hidden;border:2px solid #c9a227;margin:12px 0}
+.mixbar .stocks{background:#2e7d32;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:.85rem}
+.mixbar .bonds{background:#8a6d1c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:.85rem}
+.mixbar .cash{background:#b0a684;color:#141210;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:.85rem}
+.profilebadge{display:inline-block;background:#141210;color:#e8c84a;font-family:Georgia,serif;font-size:1.3rem;font-weight:bold;padding:10px 24px;border-radius:10px;margin:8px 0}
+.flag{background:#fff;border:1px solid #e3d9b8;border-left:4px solid #c9a227;border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0;font-size:.93rem}
+ul.tips{margin:8px 0 8px 20px;font-size:.93rem}
+ul.tips li{margin:6px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Risk Tolerance Reality Check</h1>
+<p class="intro">Twelve scenario questions reveal your true risk tolerance — scored as two separate numbers, <strong>risk capacity</strong> (what your life can handle) and <strong>risk willingness</strong> (what your nerves can handle) — then translated into a model portfolio mix.</p>
+<div class="notice" role="alert"><strong>Educational purposes only — not financial or investment advice.</strong> This tool models general concepts. Suggested allocations are model ranges, not recommendations for you personally. Consider talking with a qualified financial professional before making investment decisions.</div>
+
+<div class="appcard" id="balanceCard">
+<label class="field" for="balance">Your investable balance (the money this assessment is about)<small>Used only to show you what a market drop feels like in real dollars. Nothing leaves your browser.</small></label>
+<input type="text" id="balance" inputmode="numeric" placeholder="e.g. 50,000" aria-label="Your investable balance in dollars">
+</div>
+
+<div class="appcard" id="quizCard">
+<h2 class="secttl">Part 1 — Your capacity for risk</h2>
+<p class="secsub">These five questions measure what your financial life can handle, regardless of how brave you feel.</p>
+<div id="qCapacity"></div>
+<h2 class="secttl" style="margin-top:28px">Part 2 — Your willingness to take risk</h2>
+<p class="secsub">These seven scenarios measure how you actually behave when money is on the line. Answer honestly — there are no "right" answers.</p>
+<div id="qWilling"></div>
+<div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn" id="seeResults">See my results</button>
+<button class="btn ghost" id="resetQuiz">Start over</button>
+</div>
+<p id="missingWarn" class="hidden" style="color:#b3261e;font-weight:bold;margin-top:12px" role="alert"></p>
+</div>
+
+<div class="appcard hidden" id="realityCard" aria-live="polite">
+<h2 class="secttl">The honesty test</h2>
+<p>Before we show your results, let's make it real. A <strong>20% market drop</strong> — the kind your scenario answers say you can ride out — would do this to your balance:</p>
+<div style="background:#f7f1df;border-radius:10px;padding:18px;margin:16px 0;text-align:center">
+<div style="font-size:.9rem;color:#6b6250">Your balance today</div>
+<div id="rcNow" style="font-family:Georgia,serif;font-size:1.8rem;font-weight:bold"></div>
+<div style="font-size:.9rem;color:#6b6250;margin-top:10px">After a 20% drop <span id="rcDrop" style="color:#b3261e;font-weight:bold"></span></div>
+<div id="rcAfter" style="font-family:Georgia,serif;font-size:1.8rem;font-weight:bold;color:#b3261e"></div>
+</div>
+<p><strong>Would you really hold steady watching that number?</strong> If the dollar amount makes your stomach turn, your honest answers may be one notch more cautious than you picked.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+<button class="btn" id="rcConfirm">Yes — show my results</button>
+<button class="btn ghost" id="rcRevise">Let me revisit my answers</button>
+</div>
+</div>
+
+<div class="appcard hidden" id="resultsCard" aria-live="polite">
+<h2 class="secttl">Your risk profile</h2>
+<div><span class="profilebadge" id="profileName"></span></div>
+<p id="profileDesc" style="margin-top:8px"></p>
+<h3 style="margin-top:20px;font-size:1.05rem">Capacity vs. willingness</h3>
+<div style="margin-top:8px"><strong>Risk capacity:</strong> <span id="capScore"></span>/100
+<div class="meter" aria-hidden="true"><div id="capBar"></div></div>
+<small style="color:#6b6250">What your timeline, income stability, savings, and debts can handle.</small></div>
+<div style="margin-top:12px"><strong>Risk willingness:</strong> <span id="willScore"></span>/100
+<div class="meter" aria-hidden="true"><div id="willBar"></div></div>
+<small style="color:#6b6250">What your nerves and past behavior say you can handle.</small></div>
+<div class="flag" id="constraintNote"></div>
+<h3 style="margin-top:20px;font-size:1.05rem">Suggested model mix</h3>
+<p style="font-size:.9rem;color:#6b6250">A starting range for discussion — not a personal recommendation. Stocks = broad stock funds; Bonds = bond funds; Cash = short-term reserves.</p>
+<div class="mixbar" aria-hidden="true"><div class="stocks" id="mixStocks"></div><div class="bonds" id="mixBonds"></div><div class="cash" id="mixCash"></div></div>
+<p id="mixText" style="font-weight:bold"></p>
+<p id="mixDollars" style="font-size:.93rem;color:#5c5236"></p>
+<h3 style="margin-top:20px;font-size:1.05rem">Matching investments to this profile</h3>
+<ul class="tips" id="matchTips"></ul>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn ghost" id="retake">Retake the assessment</button>
+</div>
+</div>
+
+<div class="disclaimer"><strong>Assumptions behind this tool.</strong> Scores are simple averages of your answers (capacity: 5 questions; willingness: 7 questions; each answer 0–100). The profile blends both scores equally. Allocation ranges are generic model portfolios used widely in financial education; they ignore taxes, fees, specific funds, and your full financial picture. A 20% drop illustration is arithmetic only — real drawdowns vary. This is educational modeling, not professional financial or investment advice.</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The concepts behind this check — asset allocation, diversification, and staying the course — are covered step by step in <em>Investing Made Simple</em> by Kimani Upshur, M.Ed.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/investing-made-simple/">Get Investing Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-risk-tolerance-reality-check-v1";
+var QUESTIONS=[
+{sec:"capacity",q:"When will you need this money?",opts:[["Less than 3 years",0],["3\u20135 years",25],["6\u201310 years",50],["11\u201320 years",75],["More than 20 years",100]]},
+{sec:"capacity",q:"How stable is your income right now?",opts:[["Unstable or unpredictable (gig work, freelance, between jobs)",0],["Somewhat stable, but it varies month to month",30],["Stable salary or other reliable income",65],["Very stable, and I regularly save a surplus",100]]},
+{sec:"capacity",q:"How much of an emergency fund do you have, separate from investments?",opts:[["None",0],["1\u20132 months of expenses",35],["3\u20135 months of expenses",70],["6 or more months of expenses",100]]},
+{sec:"capacity",q:"How much high-interest debt (credit cards, payday loans) do you carry?",opts:[["A lot \u2014 it is a real burden",10],["Some, but it is manageable",50],["None",100]]},
+{sec:"capacity",q:"How likely is it you would need to pull out more than 10% of this money unexpectedly in the next 2 years?",opts:[["Quite likely",0],["Possible",50],["Unlikely",100]]},
+{sec:"willingness",q:"Your $50,000 portfolio drops to $35,000 over a few months. What do you do?",opts:[["Sell everything to stop the losses",0],["Sell some to reduce the risk",30],["Hold and do nothing",70],["Buy more while prices are low",100]]},
+{sec:"willingness",q:"Think back to the last big market drop (or imagine your first one). What best matches you?",opts:[["I sold (or would have sold) to stop the pain",10],["I held on, uncomfortably",60],["I bought more",100],["I have never been invested \u2014 I am not sure",40]]},
+{sec:"willingness",q:"Choose: $10,000 guaranteed, OR a 50/50 coin flip for $25,000 or nothing.",opts:[["The guaranteed $10,000, no question",15],["Probably the guarantee",40],["Probably the coin flip",70],["The coin flip \u2014 I like the upside",100]]},
+{sec:"willingness",q:"Pick the one-year ride you would actually choose:",opts:[["Best case +8%, worst case \u22123%",15],["Best case +15%, worst case \u221210%",55],["Best case +25%, worst case \u221220%",95]]},
+{sec:"willingness",q:"A friend's portfolio jumps 40% in a year while yours gains 10%. You feel:",opts:[["Regret \u2014 I want to switch to whatever worked for them",15],["Uneasy, but I stick with my plan",55],["Fine \u2014 I chose my plan for a reason",100]]},
+{sec:"willingness",q:"How often do you check your investment balance?",opts:[["Daily",20],["Weekly",45],["Monthly",70],["Quarterly or less",100]]},
+{sec:"willingness",q:"Which statement fits you best?",opts:[["Losses keep me up at night",10],["Losses bother me a lot",35],["Losses bother me a little",70],["Losses do not bother me \u2014 I expect them sometimes",100]]}
+];
+var PROFILES=[
+{name:"Conservative",min:0,max:24,stocks:[20,40],desc:"Preserving what you have matters more than growing it fast. Smaller ups and downs help you stay invested without panic."},
+{name:"Moderately Conservative",min:25,max:44,stocks:[40,55],desc:"You want some growth but with guardrails. A meaningful cushion of steadier holdings keeps the ride tolerable."},
+{name:"Moderate",min:45,max:64,stocks:[55,70],desc:"You accept real ups and downs in exchange for real long-term growth. Balance is the whole strategy."},
+{name:"Moderately Aggressive",min:65,max:84,stocks:[70,85],desc:"Growth is the priority and you can stomach the turbulence that comes with it. Time is doing the heavy lifting."},
+{name:"Aggressive",min:85,max:100,stocks:[85,100],desc:"Maximum long-term growth is the goal and short-term drops are noise to you. This only works with a long horizon and steady nerves."}
+];
+function fmt$(n){return "$"+Math.round(n).toLocaleString("en-US");}
+function parseBalance(v){var n=parseFloat(String(v).replace(/[^0-9.]/g,""));if(!isFinite(n)||n<=0)return 50000;return Math.min(n,1e12);}
+var answers={};
+try{var saved=JSON.parse(localStorage.getItem(KEY)||"{}");if(saved&&typeof saved==="object"){answers=saved.answers||{};}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({answers:answers,balance:document.getElementById("balance").value}));}catch(e){}}
+function renderQuestions(){
+  var cap=document.getElementById("qCapacity"),wil=document.getElementById("qWilling");
+  cap.innerHTML="";wil.innerHTML="";
+  QUESTIONS.forEach(function(item,qi){
+    var div=document.createElement("div");div.className="q";div.id="q"+qi;
+    var p=document.createElement("p");p.className="qt";
+    var num=document.createElement("span");num.className="qn";num.textContent=(qi+1);
+    p.appendChild(num);p.appendChild(document.createTextNode(item.q));div.appendChild(p);
+    item.opts.forEach(function(o,oi){
+      var lab=document.createElement("label");lab.className="opt";
+      var inp=document.createElement("input");inp.type="radio";inp.name="q"+qi;inp.value=oi;
+      inp.setAttribute("aria-label",o[0]);
+      if(answers[qi]===oi){inp.checked=true;lab.classList.add("sel");}
+      inp.addEventListener("change",function(){
+        answers[qi]=oi;save();
+        var labs=div.querySelectorAll(".opt");for(var k=0;k<labs.length;k++)labs[k].classList.remove("sel");
+        lab.classList.add("sel");
+        document.getElementById("missingWarn").classList.add("hidden");
+      });
+      lab.appendChild(inp);
+      var sp=document.createElement("span");sp.textContent=o[0];lab.appendChild(sp);
+      div.appendChild(lab);
+    });
+    (item.sec==="capacity"?cap:wil).appendChild(div);
+  });
+}
+function scores(){
+  var cap=0,cn=0,wil=0,wn=0;
+  QUESTIONS.forEach(function(item,qi){
+    if(answers[qi]===undefined)return;
+    var s=item.opts[answers[qi]][1];
+    if(item.sec==="capacity"){cap+=s;cn++;}else{wil+=s;wn++;}
+  });
+  return{cap:cn?Math.round(cap/cn):null,wil:wn?Math.round(wil/wn):null};
+}
+function profileFor(s){for(var i=0;i<PROFILES.length;i++){if(s>=PROFILES[i].min&&s<=PROFILES[i].max)return PROFILES[i];}return PROFILES[2];}
+function missing(){var m=[];for(var i=0;i<QUESTIONS.length;i++){if(answers[i]===undefined)m.push(i+1);}return m;}
+document.getElementById("seeResults").addEventListener("click",function(){
+  var m=missing();
+  var warn=document.getElementById("missingWarn");
+  if(m.length){warn.textContent="Please answer every question first. Still unanswered: #"+m.join(", #");warn.classList.remove("hidden");
+    var el=document.getElementById("q"+(m[0]-1));if(el)el.scrollIntoView();return;}
+  warn.classList.add("hidden");
+  var bal=parseBalance(document.getElementById("balance").value);
+  var drop=bal*0.20;
+  document.getElementById("rcNow").textContent=fmt$(bal);
+  document.getElementById("rcDrop").textContent="(\u2212"+fmt$(drop)+")";
+  document.getElementById("rcAfter").textContent=fmt$(bal-drop);
+  document.getElementById("realityCard").classList.remove("hidden");
+  document.getElementById("resultsCard").classList.add("hidden");
+  document.getElementById("realityCard").scrollIntoView();
+});
+document.getElementById("rcRevise").addEventListener("click",function(){
+  document.getElementById("realityCard").classList.add("hidden");
+  document.getElementById("qWilling").scrollIntoView();
+});
+document.getElementById("rcConfirm").addEventListener("click",function(){
+  document.getElementById("realityCard").classList.add("hidden");
+  showResults();
+});
+function showResults(){
+  var s=scores();
+  var blended=Math.round((s.cap+s.wil)/2);
+  var prof=profileFor(blended);
+  var bal=parseBalance(document.getElementById("balance").value);
+  document.getElementById("profileName").textContent=prof.name;
+  document.getElementById("profileDesc").textContent=prof.desc+" Your blended score is "+blended+" out of 100.";
+  document.getElementById("capScore").textContent=s.cap;
+  document.getElementById("willScore").textContent=s.wil;
+  document.getElementById("capBar").style.width=s.cap+"%";
+  document.getElementById("willBar").style.width=s.wil+"%";
+  var note=document.getElementById("constraintNote");
+  if(s.cap<s.wil-15){note.innerHTML="<strong>Your capacity is the constraint.</strong> Your nerves say \u201cgo\u201d but your timeline, savings, or debts say \u201cslow down.\u201d When the two disagree, capacity usually wins \u2014 money you might need soon should not ride a roller coaster.";}
+  else if(s.wil<s.cap-15){note.innerHTML="<strong>Your willingness is the constraint.</strong> Your life could handle more risk than your stomach can. That is normal \u2014 and it is the score that matters most in a crash, because panic-selling locks in losses. Consider staying near the cautious end of your range.";}
+  else{note.innerHTML="<strong>Capacity and willingness agree.</strong> Your life circumstances and your temperament point the same way, which makes it easier to pick a mix and stick with it.";}
+  var lo=prof.stocks[0],hi=prof.stocks[1];
+  var midS=(lo+hi)/2, midB=(100-midS)*0.8, midC=100-midS-midB;
+  document.getElementById("mixStocks").style.width=midS+"%";document.getElementById("mixStocks").textContent="Stocks";
+  document.getElementById("mixBonds").style.width=midB+"%";document.getElementById("mixBonds").textContent="Bonds";
+  document.getElementById("mixCash").style.width=midC+"%";document.getElementById("mixCash").textContent="Cash";
+  document.getElementById("mixText").textContent="Model range: "+lo+"\u2013"+hi+"% stocks, with the rest in bonds and short-term reserves.";
+  document.getElementById("mixDollars").textContent="On your "+fmt$(bal)+" balance, that is roughly "+fmt$(bal*lo/100)+" to "+fmt$(bal*hi/100)+" in stock funds.";
+  var tips={
+    "Conservative":["Lean on broad, low-cost bond funds for the steadier portion and a smaller slice of a total stock market index fund for growth.","Keep 3\u20136 months of expenses in cash outside this mix \u2014 the \u201ccash\u201d slice here is short-term reserves, not your emergency fund.","Rebalance once a year back toward your range; as your horizon lengthens you can revisit the mix."],
+    "Moderately Conservative":["A total bond market index fund plus a total stock market index fund, in roughly your range, covers most of what this profile needs.","Automate contributions \u2014 steady investing matters more than perfect percentages.","Revisit the mix if your time horizon or debts change materially."],
+    "Moderate":["Two or three broad index funds (total US stock, total international stock, total bond) can express this whole range.","Rebalance annually or when the mix drifts more than about 5 percentage points.","As the goal gets closer (under ~5 years out), plan to glide toward the conservative end."],
+    "Moderately Aggressive":["Emphasize broad stock index funds (US + international); keep a smaller bond position so you have something steady to rebalance from in a downturn.","A small bond allocation is not about return \u2014 it is dry powder and shock absorption.","Check the mix yearly; avoid the urge to concentrate in whatever just went up."],
+    "Aggressive":["Broad stock index funds do the work here; adding international stocks spreads the growth bet across economies.","Even aggressive profiles usually keep a small reserve \u2014 not for return, but so a surprise expense never forces a sale at the bottom.","This profile demands the longest horizon. If your timeline shortens, re-take this check."]
+  };
+  var ul=document.getElementById("matchTips");ul.innerHTML="";
+  tips[prof.name].forEach(function(t){var li=document.createElement("li");li.textContent=t;ul.appendChild(li);});
+  document.getElementById("resultsCard").classList.remove("hidden");
+  document.getElementById("resultsCard").scrollIntoView();
+}
+document.getElementById("retake").addEventListener("click",function(){
+  answers={};save();renderQuestions();
+  document.getElementById("resultsCard").classList.add("hidden");
+  document.getElementById("realityCard").classList.add("hidden");
+  document.getElementById("quizCard").scrollIntoView();
+});
+document.getElementById("resetQuiz").addEventListener("click",function(){
+  answers={};try{localStorage.removeItem(KEY);}catch(e){}
+  document.getElementById("balance").value="";
+  renderQuestions();
+  document.getElementById("resultsCard").classList.add("hidden");
+  document.getElementById("realityCard").classList.add("hidden");
+  document.getElementById("missingWarn").classList.add("hidden");
+  window.scrollTo(0,0);
+});
+document.getElementById("balance").addEventListener("input",save);
+try{var sv=JSON.parse(localStorage.getItem(KEY)||"{}");if(sv&&sv.balance!==undefined)document.getElementById("balance").value=sv.balance;}catch(e){}
+renderQuestions();
+</script>
+</body>
+</html>

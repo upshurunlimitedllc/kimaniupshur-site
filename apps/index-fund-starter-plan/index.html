@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Index Fund Starter Plan | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="A guided 5-step walkthrough from zero to a funded, automated index-fund plan: account type, brokerage, fund criteria, automatic contributions, and a review date. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/index-fund-starter-plan/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Index Fund Starter Plan | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="A guided 5-step walkthrough from zero to a funded, automated index-fund plan: account type, brokerage, fund criteria, automatic contributions, and a review date. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/index-fund-starter-plan/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+input[type=text],input[type=number],input[type=date],select{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.field{display:block;font-weight:bold;margin-top:14px;font-size:.95rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.82rem}
+.notice{background:#fdecea;border:2px solid #b3261e;color:#7a1a14;border-radius:10px;padding:16px;margin-bottom:20px;font-size:.92rem}
+.notice strong{display:block;margin-bottom:4px}
+.disclaimer{background:#f7f1df;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5236;margin-top:18px}
+.hidden{display:none!important}
+#stepdots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+#stepdots button{width:48px;height:48px;border-radius:50%;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer;font-size:1rem}
+#stepdots button.cur{background:#c9a227;color:#141210}
+#stepdots button.done{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.why{background:#f7f1df;border-radius:10px;padding:14px 16px;margin:14px 0;font-size:.92rem;color:#5c5236}
+.why strong{color:#8a6d1c}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:14px;border:2px solid #e3d9b8;border-radius:10px;margin:8px 0;cursor:pointer;min-height:48px}
+.opt:hover{border-color:#c9a227}
+.opt.sel{border-color:#c9a227;background:#fdf6e0}
+.opt input{width:22px;height:22px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.opt .t{font-weight:bold}
+.opt .d{font-size:.88rem;color:#6b6250}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #eee;cursor:pointer;min-height:48px}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow.done span{color:#8a7a4a;text-decoration:line-through}
+.explain{border:1px solid #e3d9b8;border-radius:10px;padding:12px 14px;margin:8px 0;background:#fff;font-size:.92rem}
+.explain strong{color:#8a6d1c}
+.planrow{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #eee;font-size:.95rem;flex-wrap:wrap}
+.planrow .k{font-weight:bold;color:#8a6d1c}
+.badge{display:inline-block;background:#2e7d32;color:#fff;font-weight:bold;padding:8px 18px;border-radius:20px;margin:6px 0}
+.badge.pending{background:#8a6d1c}
+.stepnav{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.err{color:#b3261e;font-weight:bold;margin-top:10px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Index Fund Starter Plan</h1>
+<p class="intro">Five guided steps take you from zero to a funded, automated index-fund plan. Each step explains <em>why it matters</em> and gives you a short checklist. Your plan saves as you go.</p>
+<div class="notice" role="alert"><strong>Educational purposes only — not financial or investment advice.</strong> This walkthrough teaches general concepts. Brokerages and fund types are described as examples, not endorsements or recommendations. Consider talking with a qualified financial professional before investing.</div>
+
+<div class="appcard" id="wizardCard">
+<div id="stepdots" role="tablist" aria-label="Plan steps"></div>
+<div id="stepBody" aria-live="polite"></div>
+<div class="stepnav">
+<button class="btn ghost" id="prevBtn">Back</button>
+<button class="btn" id="nextBtn">Continue</button>
+</div>
+<p class="err hidden" id="stepErr" role="alert"></p>
+</div>
+
+<div class="appcard hidden" id="planCard" aria-live="polite">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;margin-bottom:4px">Your starter plan</h2>
+<p style="color:#6b6250;font-size:.92rem;margin-bottom:12px">A summary of your choices. Print it or keep it here — it is saved in this browser.</p>
+<div id="planSummary"></div>
+<div id="autoBadge" style="margin-top:10px"></div>
+<h3 style="margin-top:20px;font-size:1.1rem">Your 90-day action checklist</h3>
+<p style="font-size:.9rem;color:#6b6250">Check items off as you complete them. Day counts run from today.</p>
+<div id="actionList"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+<button class="btn" id="printBtn">Print my plan</button>
+<button class="btn ghost" id="editBtn">Edit my answers</button>
+<button class="btn ghost" id="resetBtn">Start over</button>
+</div>
+</div>
+
+<div class="disclaimer"><strong>Assumptions behind this tool.</strong> Contribution and review math is simple arithmetic on the numbers you enter. Tax notes are general education (rules change; confirm current IRS limits and your eligibility). Naming brokerages or fund types is illustrative, not an endorsement. This is educational modeling, not professional financial or investment advice.</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Index funds, expense ratios, and automation are explained in plain language in <em>Investing Made Simple</em> by Kimani Upshur, M.Ed.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/investing-made-simple/">Get Investing Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-index-fund-starter-plan-v1";
+var S={
+ step:0,
+ account:null,           // 401k | trad-ira | roth-ira | taxable
+ brokerageNote:"",
+ fundType:null, maxER:null,
+ contribAmt:"", contribFreq:"monthly", startDate:"", autoConfirmed:false,
+ reviewDate:"",
+ checks:{}
+};
+try{var sv=JSON.parse(localStorage.getItem(KEY)||"null");if(sv&&typeof sv==="object"){for(var k in S){if(sv[k]!==undefined)S[k]=sv[k];}}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function todayPlus(d){var t=new Date();t.setDate(t.getDate()+d);return t.toISOString().slice(0,10);}
+function fmtDate(iso){if(!iso)return "\u2014";var p=iso.split("-");return p[1]+"/"+p[2]+"/"+p[0];}
+function fmt$(n){n=parseFloat(n);if(!isFinite(n)||n<=0)return "\u2014";return "$"+Math.round(n).toLocaleString("en-US");}
+function checkKey(step,id){return "s"+step+"_"+id;}
+function checkRow(step,id,label){
+  var key=checkKey(step,id);
+  var lab=document.createElement("label");lab.className="checkrow"+(S.checks[key]?" done":"");
+  var inp=document.createElement("input");inp.type="checkbox";inp.checked=!!S.checks[key];
+  inp.setAttribute("aria-label",label);
+  inp.addEventListener("change",function(){S.checks[key]=inp.checked;lab.classList.toggle("done",inp.checked);save();});
+  var sp=document.createElement("span");sp.textContent=label;
+  lab.appendChild(inp);lab.appendChild(sp);return lab;
+}
+function why(html){var d=document.createElement("div");d.className="why";d.innerHTML="<strong>Why this matters: </strong>"+html;return d;}
+function optCard(group,val,title,desc,current,onpick){
+  var lab=document.createElement("label");lab.className="opt"+(current===val?" sel":"");
+  var inp=document.createElement("input");inp.type="radio";inp.name=group;inp.value=val;
+  inp.setAttribute("aria-label",title);
+  if(current===val)inp.checked=true;
+  inp.addEventListener("change",function(){onpick(val);
+    var els=lab.parentNode.querySelectorAll(".opt");for(var i=0;i<els.length;i++)els[i].classList.remove("sel");
+    lab.classList.add("sel");});
+  var wrap=document.createElement("div");
+  var t=document.createElement("div");t.className="t";t.textContent=title;
+  var d=document.createElement("div");d.className="d";d.textContent=desc;
+  wrap.appendChild(t);wrap.appendChild(d);lab.appendChild(inp);lab.appendChild(wrap);return lab;
+}
+var ACCOUNT_INFO={
+ "401k":{t:"Workplace plan (401(k) / 403(b))",d:"If your employer offers one \u2014 especially with a match \u2014 this is usually the first place beginners fund. Contributions can come straight out of your paycheck automatically."},
+ "roth-ira":{t:"Roth IRA",d:"You contribute after-tax dollars; withdrawals in retirement are generally tax-free. A common starting point when there is no workplace plan. Annual contribution limits apply \u2014 confirm current IRS limits."},
+ "trad-ira":{t:"Traditional IRA",d:"Contributions may be tax-deductible now; you pay tax when you withdraw in retirement. Worth comparing against a Roth IRA for your situation."},
+ "taxable":{t:"Taxable brokerage account",d:"No contribution limits and no withdrawal penalties, but no special tax break either. Flexible \u2014 good once tax-advantaged options are covered."}
+};
+var FUND_INFO={
+ "total-us":{t:"Total U.S. stock market index fund",d:"Owns a slice of nearly every U.S. company in one fund. Simple, diversified, hard to beat for beginners."},
+ "sp500":{t:"S&P 500 index fund",d:"Tracks 500 of the largest U.S. companies. Very common default choice in workplace plans."},
+ "target-date":{t:"Target-date fund",d:"One fund that automatically shifts from stocks toward bonds as your target year approaches. The ultimate \u201cset it and forget it\u201d option."},
+ "global":{t:"Global / total world index fund",d:"Adds international companies alongside U.S. ones for worldwide diversification."}
+};
+var ER_INFO={"0.05":"0.05% or less \u2014 rock bottom","0.10":"0.10% or less \u2014 very low","0.20":"0.20% or less \u2014 still reasonable"};
+var FREQ_INFO={"weekly":"Weekly","biweekly":"Every 2 weeks","monthly":"Monthly"};
+var STEPS=[
+ {title:"Pick your account type"},
+ {title:"Choose a brokerage"},
+ {title:"Set your fund criteria"},
+ {title:"Automate contributions"},
+ {title:"Schedule your review"}
+];
+function renderDots(){
+  var d=document.getElementById("stepdots");d.innerHTML="";
+  STEPS.forEach(function(s,i){
+    var b=document.createElement("button");b.textContent=i+1;b.setAttribute("aria-label","Step "+(i+1)+": "+s.title);
+    b.setAttribute("role","tab");
+    if(i===S.step)b.classList.add("cur");else if(i<S.step)b.classList.add("done");
+    b.addEventListener("click",function(){
+      if(i>S.step&&!validate())return; // forward jumps must pass current-step validation
+      goStep(i);
+    });
+    d.appendChild(b);
+  });
+  document.getElementById("prevBtn").style.visibility=S.step===0?"hidden":"visible";
+  document.getElementById("nextBtn").textContent=S.step===STEPS.length-1?"Finish my plan":"Continue";
+}
+function err(msg){var e=document.getElementById("stepErr");if(msg){e.textContent=msg;e.classList.remove("hidden");}else{e.textContent="";e.classList.add("hidden");}}
+function goStep(i){S.step=Math.max(0,Math.min(STEPS.length-1,i));save();render();}
+function validate(){
+  err(null);
+  if(S.step===0&&!S.account){err("Pick an account type to continue \u2014 tap one of the options above.");return false;}
+  if(S.step===2&&(!S.fundType||!S.maxER)){err("Choose a fund type and an expense-ratio limit to continue.");return false;}
+  if(S.step===3){
+    var a=parseFloat(S.contribAmt);
+    if(!isFinite(a)||a<=0){err("Enter a contribution amount greater than $0.");return false;}
+    if(a>100000){err("That amount looks unusually large \u2014 please double-check it.");return false;}
+    if(!S.startDate){err("Pick a start date for your automatic contribution.");return false;}
+  }
+  if(S.step===4){
+    if(!S.reviewDate){err("Pick a review date to continue.");return false;}
+    if(S.reviewDate<=todayPlus(0)){err("Pick a review date in the future.");return false;}
+  }
+  return true;
+}
+function render(){
+  renderDots();
+  var body=document.getElementById("stepBody");body.innerHTML="";
+  var h=document.createElement("h2");h.style.cssText="font-family:Georgia,serif;font-size:1.35rem;margin-bottom:6px";
+  h.textContent="Step "+(S.step+1)+" of 5 \u2014 "+STEPS[S.step].title;body.appendChild(h);
+  if(S.step===0)stepAccount(body);
+  else if(S.step===1)stepBrokerage(body);
+  else if(S.step===2)stepFunds(body);
+  else if(S.step===3)stepAutomate(body);
+  else stepReview(body);
+  document.getElementById("wizardCard").classList.remove("hidden");
+  document.getElementById("planCard").classList.add("hidden");
+}
+function stepAccount(body){
+  body.appendChild(why("Where you invest determines the tax rules, the limits, and whether you get free employer money. Picking the right <em>account</em> matters more than picking the perfect fund."));
+  var keys=["401k","roth-ira","trad-ira","taxable"];
+  keys.forEach(function(k){
+    body.appendChild(optCard("acct",k,ACCOUNT_INFO[k].t,ACCOUNT_INFO[k].d,S.account,function(v){S.account=v;save();err(null);}));
+  });
+  var h=document.createElement("h3");h.textContent="Checklist";h.style.marginTop="16px";body.appendChild(h);
+  body.appendChild(checkRow(0,"match","I know whether my employer offers a retirement plan and an employer match."));
+  body.appendChild(checkRow(0,"elig","I checked that I am eligible for the account type I picked (age/income rules)."));
+}
+function stepBrokerage(body){
+  body.appendChild(why("The brokerage is just the storefront where your account lives. For a beginner the differences that matter are fees, minimums, and whether automatic investing is easy \u2014 not fancy trading tools."));
+  var e1=document.createElement("div");e1.className="explain";
+  e1.innerHTML="<strong>What to look for:</strong> $0 account fees, $0 commissions on stock/ETF trades, low or no minimums, fractional shares (invest any dollar amount), and automatic recurring investments.";
+  body.appendChild(e1);
+  var e2=document.createElement("div");e2.className="explain";
+  e2.innerHTML="<strong>Well-known examples</strong> (not endorsements \u2014 compare any two yourself): Fidelity, Vanguard, Charles Schwab. Most major brokerages now meet the criteria above.";
+  body.appendChild(e2);
+  var lab=document.createElement("label");lab.className="field";lab.setAttribute("for","brokerNote");
+  lab.innerHTML="My brokerage shortlist or choice<small>Optional \u2014 write the one or two you plan to compare or open.</small>";
+  body.appendChild(lab);
+  var inp=document.createElement("input");inp.type="text";inp.id="brokerNote";inp.placeholder="e.g. Fidelity vs. Vanguard";inp.value=S.brokerageNote||"";
+  inp.addEventListener("input",function(){S.brokerageNote=inp.value;save();});
+  body.appendChild(inp);
+  var h=document.createElement("h3");h.textContent="Checklist";h.style.marginTop="16px";body.appendChild(h);
+  body.appendChild(checkRow(1,"compare","I compared at least two brokerages on fees and minimums."));
+  body.appendChild(checkRow(1,"auto","I confirmed the brokerage supports automatic recurring investments."));
+}
+function stepFunds(body){
+  body.appendChild(why("Inside your account you buy <em>funds</em>. An index fund simply copies a market index \u2014 owning hundreds of companies at once for a tiny annual fee. Three terms decide most of the outcome:"));
+  var terms=[
+    ["Expense ratio","The fund's annual fee, as a % of your money. A 1% fee vs. a 0.05% fee can cost tens of thousands over decades. Lower is better."],
+    ["Diversification","How many different companies the fund holds. A total-market fund holding thousands of companies means no single company can sink you."],
+    ["Minimums","The smallest amount a fund accepts. Many index funds and ETFs now have $0\u2013$1 minimums, especially with fractional shares."]
+  ];
+  terms.forEach(function(t){var d=document.createElement("div");d.className="explain";d.innerHTML="<strong>"+t[0]+" \u2014 </strong>"+t[1];body.appendChild(d);});
+  var h1=document.createElement("h3");h1.textContent="My fund type";h1.style.marginTop="16px";body.appendChild(h1);
+  ["total-us","sp500","target-date","global"].forEach(function(k){
+    body.appendChild(optCard("fund",k,FUND_INFO[k].t,FUND_INFO[k].d,S.fundType,function(v){S.fundType=v;save();err(null);}));
+  });
+  var h2=document.createElement("h3");h2.textContent="My expense-ratio limit";h2.style.marginTop="16px";body.appendChild(h2);
+  ["0.05","0.10","0.20"].forEach(function(k){
+    body.appendChild(optCard("er",k,ER_INFO[k],"",S.maxER,function(v){S.maxER=v;save();err(null);}));
+  });
+  var h3=document.createElement("h3");h3.textContent="Checklist";h3.style.marginTop="16px";body.appendChild(h3);
+  body.appendChild(checkRow(2,"ercheck","I will check the expense ratio before buying any fund (it is listed as \u201cexpense ratio\u201d on the fund page)."));
+  body.appendChild(checkRow(2,"onefund","I understand one diversified index fund can be a complete starter portfolio \u2014 I do not need five funds."));
+}
+function stepAutomate(body){
+  body.appendChild(why("Automation is the whole game. Money invested automatically every payday beats money invested \u201cwhen you remember\u201d \u2014 it removes willpower, timing temptation, and forgotten months."));
+  var lab=document.createElement("label");lab.className="field";lab.setAttribute("for","cAmt");lab.textContent="Automatic contribution amount ($)";body.appendChild(lab);
+  var amt=document.createElement("input");amt.type="text";amt.id="cAmt";amt.inputmode="decimal";amt.placeholder="e.g. 200";amt.value=S.contribAmt||"";
+  amt.setAttribute("aria-label","Contribution amount in dollars");
+  amt.addEventListener("input",function(){S.contribAmt=amt.value;save();updateYearly();});
+  body.appendChild(amt);
+  var lab2=document.createElement("label");lab2.className="field";lab2.setAttribute("for","cFreq");lab2.textContent="How often";body.appendChild(lab2);
+  var freq=document.createElement("select");freq.id="cFreq";freq.setAttribute("aria-label","Contribution frequency");
+  [["weekly","Weekly"],["biweekly","Every 2 weeks"],["monthly","Monthly"]].forEach(function(o){
+    var op=document.createElement("option");op.value=o[0];op.textContent=o[1];if(S.contribFreq===o[0])op.selected=true;freq.appendChild(op);
+  });
+  freq.addEventListener("change",function(){S.contribFreq=freq.value;save();updateYearly();});
+  body.appendChild(freq);
+  var lab3=document.createElement("label");lab3.className="field";lab3.setAttribute("for","cDate");lab3.textContent="Start date";body.appendChild(lab3);
+  var dt=document.createElement("input");dt.type="date";dt.id="cDate";dt.value=S.startDate||todayPlus(7);dt.min=todayPlus(0);
+  dt.setAttribute("aria-label","Start date");
+  if(!S.startDate){S.startDate=dt.value;save();}
+  dt.addEventListener("change",function(){S.startDate=dt.value;save();});
+  body.appendChild(dt);
+  var y=document.createElement("p");y.id="yearlyLine";y.style.cssText="font-weight:bold;color:#2e7d32;margin-top:10px";body.appendChild(y);
+  function updateYearly(){
+    var a=parseFloat(S.contribAmt),mult={weekly:52,biweekly:26,monthly:12}[S.contribFreq]||12;
+    y.textContent=(isFinite(a)&&a>0)?("That is about "+fmt$(a*mult)+" per year on autopilot."):"";
+  }
+  updateYearly();
+  var h=document.createElement("h3");h.textContent="Checklist";h.style.marginTop="16px";body.appendChild(h);
+  body.appendChild(checkRow(3,"setup","I set up (or will set up today) the automatic transfer / payroll contribution."));
+  var conf=document.createElement("label");conf.className="checkrow";
+  var ci=document.createElement("input");ci.type="checkbox";ci.checked=!!S.autoConfirmed;ci.setAttribute("aria-label","Automation confirmed");
+  ci.addEventListener("change",function(){S.autoConfirmed=ci.checked;conf.classList.toggle("done",ci.checked);save();});
+  var cs=document.createElement("span");cs.innerHTML="<strong>Automation confirmed:</strong> my recurring investment is scheduled.";
+  conf.appendChild(ci);conf.appendChild(cs);if(S.autoConfirmed)conf.classList.add("done");
+  body.appendChild(conf);
+}
+function stepReview(body){
+  body.appendChild(why("Index investing works because you mostly leave it alone \u2014 but a scheduled review keeps you honest. Ninety days is long enough to build the habit and short enough to catch setup mistakes."));
+  var lab=document.createElement("label");lab.className="field";lab.setAttribute("for","rDate");lab.textContent="My review date";body.appendChild(lab);
+  var dt=document.createElement("input");dt.type="date";dt.id="rDate";dt.value=S.reviewDate||todayPlus(90);dt.min=todayPlus(1);
+  dt.setAttribute("aria-label","Review date");
+  if(!S.reviewDate){S.reviewDate=dt.value;save();}
+  dt.addEventListener("change",function(){S.reviewDate=dt.value;save();err(null);});
+  body.appendChild(dt);
+  var h=document.createElement("h3");h.textContent="At the review, I will check";h.style.marginTop="16px";body.appendChild(h);
+  body.appendChild(checkRow(4,"fired","The automatic contributions actually happened each period."));
+  body.appendChild(checkRow(4,"stillfits","The account type and fund still fit my situation."));
+  body.appendChild(checkRow(4,"raise","Whether I can raise the contribution amount."));
+}
+document.getElementById("prevBtn").addEventListener("click",function(){if(S.step>0)goStep(S.step-1);});
+document.getElementById("nextBtn").addEventListener("click",function(){
+  if(!validate())return;
+  if(S.step<STEPS.length-1)goStep(S.step+1);else finishPlan();
+});
+function yearlyTotal(){
+  var a=parseFloat(S.contribAmt),mult={weekly:52,biweekly:26,monthly:12}[S.contribFreq]||12;
+  return (isFinite(a)&&a>0)?a*mult:0;
+}
+function finishPlan(){
+  save();
+  document.getElementById("wizardCard").classList.add("hidden");
+  var card=document.getElementById("planCard");card.classList.remove("hidden");
+  var sum=document.getElementById("planSummary");sum.innerHTML="";
+  var rows=[
+    ["Account type",S.account?ACCOUNT_INFO[S.account].t:"\u2014"],
+    ["Brokerage",S.brokerageNote||"To be chosen (compare two on fees)"],
+    ["Fund type",S.fundType?FUND_INFO[S.fundType].t:"\u2014"],
+    ["Expense-ratio limit",S.maxER?ER_INFO[S.maxER]:"\u2014"],
+    ["Automatic contribution",fmt$(S.contribAmt)+" "+(FREQ_INFO[S.contribFreq]||"").toLowerCase()+", starting "+fmtDate(S.startDate)],
+    ["Projected yearly total","About "+fmt$(yearlyTotal())+" per year"],
+    ["Review date",fmtDate(S.reviewDate)]
+  ];
+  rows.forEach(function(r){
+    var d=document.createElement("div");d.className="planrow";
+    var k=document.createElement("span");k.className="k";k.textContent=r[0];
+    var v=document.createElement("span");v.textContent=r[1];
+    d.appendChild(k);d.appendChild(v);sum.appendChild(d);
+  });
+  var badge=document.getElementById("autoBadge");
+  badge.innerHTML=S.autoConfirmed?'<span class="badge">Automation confirmed</span>':'<span class="badge pending">Automation not yet confirmed \u2014 set it up today</span>';
+  var list=document.getElementById("actionList");list.innerHTML="";
+  var items=[
+    ["a1","Open the account ("+(S.account?ACCOUNT_INFO[S.account].t:"chosen type")+")",7],
+    ["a2","Set up the automatic "+(FREQ_INFO[S.contribFreq]||"monthly").toLowerCase()+" contribution of "+fmt$(S.contribAmt),7],
+    ["a3","Buy the first fund purchase (or confirm the auto-invest bought it)",14],
+    ["a4","Verify the expense ratio is at or under "+(S.maxER?S.maxER+"%":"your limit"),14],
+    ["a5","Confirm contributions fired correctly for a full month",30],
+    ["a6","Review date: "+fmtDate(S.reviewDate)+" \u2014 check the three review items",90]
+  ];
+  items.forEach(function(it){
+    var key="act_"+it[0];
+    var lab=document.createElement("label");lab.className="checkrow"+(S.checks[key]?" done":"");
+    var inp=document.createElement("input");inp.type="checkbox";inp.checked=!!S.checks[key];
+    inp.setAttribute("aria-label",it[1]);
+    inp.addEventListener("change",function(){S.checks[key]=inp.checked;lab.classList.toggle("done",inp.checked);save();});
+    var sp=document.createElement("span");sp.innerHTML="<strong>Day "+it[2]+":</strong> "+it[1];
+    lab.appendChild(inp);lab.appendChild(sp);list.appendChild(lab);
+  });
+  card.scrollIntoView();
+}
+document.getElementById("printBtn").addEventListener("click",function(){window.print();});
+document.getElementById("editBtn").addEventListener("click",function(){render();window.scrollTo(0,0);});
+document.getElementById("resetBtn").addEventListener("click",function(){
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={step:0,account:null,brokerageNote:"",fundType:null,maxER:null,contribAmt:"",contribFreq:"monthly",startDate:"",autoConfirmed:false,reviewDate:"",checks:{}};
+  render();window.scrollTo(0,0);
+});
+if(S.step>=STEPS.length)S.step=0;
+render();
+</script>
+</body>
+</html>

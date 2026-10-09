@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Crash Drill | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Walk through a market crash before it happens and write your personal crash plan. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/market-crash-drill/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Market Crash Drill | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Walk through a market crash before it happens and write your personal crash plan. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/market-crash-drill/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:20px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.3rem;color:#141210;margin-bottom:6px}
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:bold;font-size:.95rem;margin-bottom:2px}
+.field .hint{font-size:.82rem;color:#6b6250;margin-top:2px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btn.choice{display:block;width:100%;text-align:left;margin-bottom:10px;background:#fffdf7;color:#141210;border:2px solid #c9a227;font-weight:normal}
+.btn.choice:hover{background:#f7f1de}
+.btn.choice.picked{background:#c9a227;font-weight:bold}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.err{background:#fdecea;border:2px solid #b3402e;border-radius:8px;padding:12px 16px;margin-bottom:16px;color:#7c2418;display:none}
+.err.show{display:block}
+.disclaim{background:#f4efe0;border-left:4px solid #c9a227;padding:12px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5340;margin-bottom:20px}
+.progress{display:flex;gap:6px;margin-bottom:18px}
+.progress .pip{flex:1;height:10px;border-radius:5px;background:#e3d9bd}
+.progress .pip.done{background:#2e7d4f}
+.progress .pip.now{background:#c9a227}
+.tick{font-size:4rem;font-family:Georgia,serif;color:#b3402e;line-height:1;margin:8px 0}
+.tick small{display:block;font-size:1rem;color:#6b6250;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.history{background:#f4efe0;border-radius:10px;padding:16px 18px;margin:16px 0;font-size:.93rem}
+.history strong{color:#8a6d1c}
+.feedback{border-radius:10px;padding:16px 18px;margin:16px 0;font-size:.95rem}
+.feedback.steady{background:#e9f4ec;border:2px solid #2e7d4f}
+.feedback.panic{background:#fdecea;border:2px solid #b3402e}
+.feedback .tag{font-weight:bold;display:block;margin-bottom:4px}
+.feedback.steady .tag{color:#2e7d4f}.feedback.panic .tag{color:#b3402e}
+.plan{background:#fff;border:2px solid #c9a227;border-radius:12px;padding:30px;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+.plan h2{font-family:Georgia,serif;text-align:center;margin-bottom:4px}
+.plan .rule{font-family:Georgia,serif;font-size:1.1rem;margin:14px 0;padding-left:6px;border-left:3px solid #c9a227;padding-left:14px}
+.plan .donots{background:#fdecea;border-radius:10px;padding:16px 18px;margin:16px 0}
+.plan .donots li{margin-bottom:6px}
+.sig{margin-top:26px;font-family:Georgia,serif;font-style:italic;font-size:1.15rem;text-align:right}
+table.data{width:100%;border-collapse:collapse;margin-top:12px;font-size:.92rem}
+table.data th,table.data td{border:1px solid #e3d9bd;padding:8px 10px;text-align:right}
+table.data th{background:#f4efe0}
+table.data td:first-child,table.data th:first-child{text-align:left}
+.scorebox{background:#141210;color:#f5efdd;border-radius:10px;padding:22px;margin:18px 0;text-align:center}
+.scorebox .big{font-family:Georgia,serif;font-size:2rem;color:#e8c84a}
+.scorebox p{color:#cbbf9a;font-size:.95rem;margin-top:6px}
+.assume{font-size:.85rem;color:#6b6250}
+.assume li{margin-bottom:6px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.hidden{display:none!important}
+@media print{.noprint{display:none!important}main.app{padding:0}header.site,footer.site{display:none}.plan{box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="site noprint"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1 class="noprint">Market Crash Drill</h1>
+<p class="intro noprint">Every investor plans to "buy the dip" — until the dip is their own money. This drill simulates a 30% market crash in dollars, walks you through the decisions you'd face, and turns your calm-day answers into a written crash plan for the real thing.</p>
+<div class="disclaim noprint"><strong>Educational simulation — not financial advice.</strong> The scenario below is fictional; the historical notes describe what actually happened in past crashes. Past performance does not predict future results. See the assumptions before acting on anything.</div>
+
+<div class="appcard noprint" id="setup-card">
+<h2>Your starting point</h2>
+<div class="field"><label for="s-portfolio">Current portfolio value ($)</label>
+<input type="number" id="s-portfolio" min="1" step="100" value="250000" inputmode="decimal">
+<div class="hint">Include everything invested in the market — 401(k), IRA, brokerage.</div></div>
+<div class="field"><label for="s-name">Name for your plan (optional)</label>
+<input type="text" id="s-name" maxlength="60" placeholder="e.g. Future Me">
+<div class="hint">This signs your crash plan at the end.</div></div>
+<div class="err" id="setup-err" role="alert"></div>
+<button class="btn" id="start-drill" type="button">Start the drill</button>
+</div>
+
+<div id="drill" class="hidden">
+<div class="progress noprint" id="progress" aria-label="Drill progress"></div>
+<div class="appcard" id="step-card">
+<h2 id="step-title"></h2>
+<div class="tick" id="step-value"></div>
+<p id="step-narrative"></p>
+<div class="history" id="step-history"></div>
+<div id="choices"></div>
+<div class="feedback hidden" id="feedback"></div>
+<div class="btnrow noprint"><button class="btn ghost hidden" id="step-back" type="button">&larr; Back</button><button class="btn hidden" id="step-next" type="button">Continue &rarr;</button></div>
+</div>
+<div class="btnrow noprint"><button class="btn ghost" id="restart" type="button">Restart drill</button></div>
+</div>
+
+<div id="debrief" class="hidden">
+<div class="scorebox noprint" id="scorebox"></div>
+<div class="appcard noprint">
+<h2>What your choices would have cost</h2>
+<p style="color:#6b6250;font-size:.95rem">Same crash, three investors, starting with <strong id="deb-p"></strong>:</p>
+<div style="overflow-x:auto"><table class="data" id="outcome-table"></table></div>
+<p class="assume" style="margin-top:10px">Assumes the "buy more" investor added 10% of the starting portfolio at the bottom of the crash and otherwise held. Selling assumes moving to cash and missing the entire recovery.</p>
+</div>
+<div class="plan" id="plan-card">
+<h2>My Market Crash Plan</h2>
+<p style="text-align:center;color:#6b6250;font-size:.9rem" id="plan-sub"></p>
+<div id="plan-rules"></div>
+<div class="donots"><strong style="color:#b3402e">My "do not" list for the next downturn</strong><ul id="plan-donots" style="margin:8px 0 0 20px"></ul></div>
+<p style="font-size:.9rem;color:#6b6250">Review this plan once a year, and again the next time the market falls 20%. Update the numbers, not the principles.</p>
+<div class="sig" id="plan-sig"></div>
+</div>
+<div class="btnrow noprint" style="margin-top:16px">
+<button class="btn" id="print-plan" type="button">Print my plan</button>
+<button class="btn ghost" id="new-drill" type="button">Run the drill again</button>
+</div>
+<div class="appcard noprint" style="margin-top:20px">
+<h2>Assumptions &amp; sources</h2>
+<ul class="assume">
+<li>The drill's crash (−30%, then a further leg to about −37%, flat months, then recovery to +8% above the start) is a fictional scenario built from the shape of real bear markets — it is not a forecast.</li>
+<li>Historical notes: 2007–09, the S&amp;P 500 fell about 57% from its October 2007 high to its March 2009 low and did not fully recover until spring 2013. In 2020 it fell about 34% in 33 days and recovered to a new high within about five months. In 2022 it fell about 25% and reached a new high in January 2024. The 2000–02 decline was about 49% and took roughly seven years to recover.</li>
+<li>On average, U.S. bear markets have lasted roughly 14 months from peak to bottom. Every U.S. bear market on record has eventually recovered to a new high — that describes the past, not the future.</li>
+<li>Outcome math is simple arithmetic on the scenario's multipliers. It ignores dividends, taxes, inflation, and fees.</li>
+</ul>
+</div>
+</div>
+
+<section class="appcard noprint" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Market Crash Drill is just the start. <em>Investing Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper — risk, diversification, and staying invested when it matters most.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/investing-made-simple/">Get Investing Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px" class="noprint"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="noprint" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site noprint"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-market-crash-drill-v1";
+function $(id){return document.getElementById(id);}
+function money(n){return "$"+Math.round(n).toLocaleString("en-US");}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+var STEPS=[
+{title:"Day 1 — The crash",
+ mult:0.70,
+ narrative:"It starts as an ordinary Tuesday. By the closing bell the market is down 30% from its high — the worst single stretch in years. Every headline screams. Your group chat is all red screenshots. Your portfolio, which was <b>{{P}}</b> this morning, is now <b>{{V}}</b>. Your stomach says <i>do something</i>. What do you do?",
+ history:"<strong>History check:</strong> In 2020, the market fell about 34% in just 33 days — then recovered to a new high within about five months. In 2007–09 it fell about 57% and took until spring 2013 to fully recover. Nobody rang a bell at the bottom in either case. The investors who did best weren't the ones who predicted the bottom; they were the ones who didn't sell into the panic.",
+ choices:[
+  {label:"Sell everything and go to cash",type:"panic",head:"Panic choice — here's what it really does:",
+   body:"Selling now turns a paper loss into a permanent one. You'd lock in {{V}} — a 30% loss made permanent — and you'd need perfect timing <i>twice</i> (out now, back in later) to beat simply holding. Studies of investor behavior consistently show the average investor earns less than the funds they invest in, largely because of buy-high, sell-low timing. This is the move your crash plan should forbid."},
+  {label:"Hold and do nothing",type:"steady",head:"Steady choice.",
+   body:"Doing nothing is an active decision — and in a crash it's usually the right one. Your investments didn't change; only their price tags did. Every past U.S. bear market has eventually recovered to new highs (the past doesn't guarantee the future, but panic has never improved the odds)."},
+  {label:"Keep contributing / buy a little more",type:"steady",head:"Steady choice — the aggressive version.",
+   body:"Buying when prices are down 30% means every dollar buys roughly 43% more shares than at the peak. This only works if the money isn't needed soon and you can stomach it falling further. It's optional — holding is already enough."},
+  {label:"Rebalance back to my target mix",type:"steady",head:"Steady choice — the disciplined version.",
+   body:"If stocks fell and bonds held up, your mix drifted. Selling a little of what held up to buy what's on sale is the mechanical, emotion-free way to 'buy low.' Set a rule (e.g., rebalance when allocation drifts 5%) and let the rule decide, not your mood."}
+ ]},
+{title:"Week 3 — The second leg down",
+ mult:0.63,
+ narrative:"It got worse. Another 10% leg down — your portfolio is now <b>{{V}}</b>, about 37% below where you started. A coworker sold everything last week and says you should too: \"at least I stopped the bleeding.\" The financial news is running crash montages. What do you do?",
+ history:"<strong>History check:</strong> The 2008 crash had <i>six</i> separate days of 8%+ drops, with vicious rallies in between that sucked sellers back in at the worst moments. Investors who sold 'to stop the bleeding' in October 2008 missed a 65% rally in the twelve months after the March 2009 bottom. Stopping the bleeding feels like relief; it's actually amputation.",
+ choices:[
+  {label:"Sell now — at least I stop the bleeding",type:"panic",head:"Panic choice — the most expensive sentence in investing:",
+   body:"\"Stop the bleeding\" feels like taking control, but it locks in a 37% loss and guarantees you miss the recovery, which historically begins when things feel worst. Your coworker's relief is real — and temporary. The math doesn't care how you feel: {{V}} in cash stays {{V}} while the market rebuilds without you."},
+  {label:"Hold — my plan says crashes are the price of returns",type:"steady",head:"Steady choice.",
+   body:"Right. The stock market's long-run returns <i>include</i> every crash — they're the admission price, not a malfunction. If your time horizon is years, three weeks of red is noise your future self won't remember."},
+  {label:"Keep buying on schedule — cheaper shares",type:"steady",head:"Steady choice.",
+   body:"Dollar-cost averaging earns its keep exactly here: automatic contributions buy more shares at lower prices with zero decisions required. The investors who kept their 401(k) contributions through 2008–09 bought the cheapest shares of their careers."},
+  {label:"Rebalance — sell what held up, buy what's down",type:"steady",head:"Steady choice.",
+   body:"Same rule as day one: if your allocation drifted more than ~5%, rebalance. It's the only form of market timing with evidence behind it, because it's really just risk control."}
+ ]},
+{title:"Month 4 — The flat grind",
+ mult:0.63,
+ narrative:"Four months in and nothing has recovered. The market has gone <i>sideways</i> — flat, boring, demoralizing. Your portfolio sits at <b>{{V}}</b>. The panic faded; now it's tedium and doubt: \"What if it never comes back? What if buy-and-hold is dead this time?\" What do you do?",
+ history:"<strong>History check:</strong> After the 2008 bottom in March 2009, the market chopped sideways for months before the recovery was obvious — and it still took until spring 2013 to reclaim the 2007 high. The 2000–02 bear market took roughly seven years to fully recover. Recoveries are slow, boring, and doubt-filled at the start. 'This time is different' has been wrong every time — so far.",
+ choices:[
+  {label:"Sell and move to cash — this isn't working",type:"panic",head:"Panic choice — boredom is a terrible advisor:",
+   body:"Selling during the flat grind means you endured all of the pain and captured none of the recovery. The flat period is when the seeds of the rebound are planted — earnings recover, fear exhausts itself — invisibly. Quitting in month 4 of 2008 meant missing one of the strongest multi-year rallies in history."},
+  {label:"Hold and stop checking daily",type:"steady",head:"Steady choice.",
+   body:"Checking daily during a flat market manufactures anxiety with zero information value. Prices wiggle; your plan doesn't need to. Monthly or quarterly check-ins are plenty — the market doesn't need supervision."},
+  {label:"Keep contributing — this is when it counts most",type:"steady",head:"Steady choice.",
+   body:"Flat markets after a crash are historically where long-term wealth is built: steady contributions accumulate shares at depressed prices. When the recovery comes, those shares do the heavy lifting."},
+  {label:"Rebalance on schedule",type:"steady",head:"Steady choice.",
+   body:"Boring is the point. A scheduled rebalance (quarterly or annually) keeps risk in line without requiring you to have opinions about the market's mood."}
+ ]},
+{title:"Month 9 — Green shoots",
+ mult:0.7875,
+ narrative:"Something shifted. The market has rallied 25% off the bottom. Your portfolio is back to <b>{{V}}</b> — still below where you started, but the trend is up and the headlines are cautiously optimistic. A friend says \"sell now and lock in the recovery before it reverses.\" What do you do?",
+ history:"<strong>History check:</strong> The twelve months after the March 2009 bottom returned about 65%. Investors who sold 'to lock in gains' early in the recovery captured a fraction of what holders earned. Recoveries feel fragile at the start — that's <i>why</i> the early gains are the largest: you're being paid for the fear you just endured.",
+ choices:[
+  {label:"Sell to 'lock in' the recovery",type:"panic",head:"Panic choice wearing a sensible disguise:",
+   body:"Selling into a 25% rally feels prudent, but you're still down from the start — you'd lock in a loss while calling it a win. Worse, you'd be out of position for the rest of the recovery, which historically delivers its biggest gains early. 'Locking in' works for profits; here there are no profits yet, only a smaller loss."},
+  {label:"Hold — the plan hasn't changed",type:"steady",head:"Steady choice.",
+   body:"The plan was written for exactly this moment: participate in the recovery you suffered for. Nothing about a 25% bounce changes your time horizon or your allocation targets."},
+  {label:"Keep buying — it's still on sale",type:"steady",head:"Steady choice.",
+   body:"Still ~21% below the starting peak, prices remain discounted versus your original plan. Continuing contributions here is the same logic as month 4, now with momentum behind it."},
+  {label:"Rebalance — trim what's run up",type:"steady",head:"Steady choice.",
+   body:"If the rally pushed stocks above your target allocation, trimming back to target is disciplined profit-taking — the mechanical kind, decided by your rule, not by fear of a reversal."}
+ ]},
+{title:"Year 2 — The new high",
+ mult:1.08,
+ narrative:"Two years after the crash began, the market has ground all the way back — and then some. Your portfolio is <b>{{V}}</b>, about 8% above where you started. The crash is a memory; the financial news has moved on. Time for the debrief: what did your decisions earn you?",
+ history:"<strong>History check:</strong> After 2008's 57% crash, the market took about four years to fully recover — then went on to multiply several times over. After 2020's 34% crash, recovery took about five <i>months</i>. After 2022's 25% decline, a new high arrived in January 2024. The pattern: crashes end, recoveries come, and the investors who stayed invested collected both.",
+ choices:[
+  {label:"See my debrief →",type:"steady",head:"Drill complete.",
+   body:"Below is your personal score, what each path would have earned in dollars, and your written crash plan — pre-committed instructions from calm-day you to future-panicking you."}
+ ]}
+];
+
+var state={P:0,name:"",step:0,answers:[],done:false};
+
+function renderProgress(){
+  var pr=$("progress");pr.innerHTML="";
+  STEPS.forEach(function(s,i){
+    var d=document.createElement("div");d.className="pip";
+    if(i<state.answers.length)d.classList.add("done");
+    if(i===state.step&&!state.done)d.classList.add("now");
+    pr.appendChild(d);
+  });
+}
+function fill(tpl,val){
+  return tpl.replace(/\{\{P\}\}/g,money(state.P)).replace(/\{\{V\}\}/g,money(val));
+}
+function renderStep(){
+  var s=STEPS[state.step],val=state.P*s.mult;
+  renderProgress();
+  $("step-title").textContent="Step "+(state.step+1)+" of "+STEPS.length+": "+s.title;
+  $("step-value").innerHTML=money(val)+"<small>from "+money(state.P)+" at the start ("+Math.round((s.mult-1)*100)+"% )</small>";
+  $("step-narrative").innerHTML=fill(s.narrative,val);
+  $("step-history").innerHTML=s.history;
+  var ch=$("choices");ch.innerHTML="";
+  s.choices.forEach(function(c,ci){
+    var b=document.createElement("button");b.type="button";b.className="btn choice";b.textContent=c.label;
+    b.addEventListener("click",function(){answer(ci);});
+    ch.appendChild(b);
+  });
+  $("feedback").classList.add("hidden");
+  $("step-next").classList.add("hidden");
+  $("step-back").classList.toggle("hidden",state.step===0);
+  if(state.answers[state.step]!==undefined)showFeedback(state.answers[state.step]);
+  save();
+}
+function answer(ci){
+  var s=STEPS[state.step];
+  state.answers[state.step]=ci;
+  Array.prototype.forEach.call($("choices").querySelectorAll("button"),function(b,i){b.classList.toggle("picked",i===ci);});
+  showFeedback(ci);
+  save();
+}
+function showFeedback(ci){
+  var s=STEPS[state.step],c=s.choices[ci],val=state.P*s.mult;
+  var fb=$("feedback");
+  fb.className="feedback "+c.type;
+  fb.innerHTML='<span class="tag">'+(c.type==="steady"?"Steady.":"Panic — let's look at the math.")+'</span>'+fill(c.body,val);
+  fb.classList.remove("hidden");
+  $("step-next").textContent=state.step===STEPS.length-1?"See my results & crash plan →":"Continue →";
+  $("step-next").classList.remove("hidden");
+}
+$("step-next").addEventListener("click",function(){
+  if(state.step<STEPS.length-1){state.step++;renderStep();$("step-card").scrollIntoView({block:"start"});}
+  else{finish();}
+});
+$("step-back").addEventListener("click",function(){
+  if(state.step>0){state.step--;renderStep();}
+});
+function steadyCount(){var n=0;for(var i=0;i<STEPS.length-1;i++){var a=state.answers[i];if(a!==undefined&&STEPS[i].choices[a].type==="steady")n++;}return n;}
+function verdictFor(n){
+  if(n===4)return["Ice-cold. Four for four.","You made the steady choice at every real decision point — including the boring middle, where most investors quietly quit. Write the plan anyway: future-you will thank calm-day you."];
+  if(n===3)return["Nearly unshakable — 3 of 4.","One panic moment. That's human, and it's exactly why the plan exists: to cover the one decision you'd get wrong at 2 a.m. with red headlines on the screen."];
+  if(n===2)return["Mostly steady — 2 of 4.","You held the line half the time. Your crash plan should put extra guardrails on the two moments where panic won — name them explicitly below."];
+  return["Panic won this drill — "+n+" of 4.","Good news: this was practice, and practice is the whole point. Your crash plan below is now your most important financial document — it's the steady investor you want to be, written down while you're calm."];
+}
+function finish(){
+  state.done=true;
+  var n=steadyCount(),v=verdictFor(n);
+  $("drill").classList.add("hidden");
+  $("debrief").classList.remove("hidden");
+  $("scorebox").innerHTML='<div class="big">'+n+' of '+(STEPS.length-1)+' steady choices</div><p><strong style="color:#f5efdd">'+v[0]+'</strong><br>'+v[1]+'</p>';
+  $("deb-p").textContent=money(state.P)+".";
+  var sell=state.P*0.70,hold=state.P*1.08;
+  var buyMore=hold+state.P*0.10*(1.08/0.63);
+  var ot=$("outcome-table");
+  ot.innerHTML="<tr><th>Investor</th><th>End value</th><th>vs. start</th></tr>"+
+   "<tr><td>Sold everything on Day 1</td><td>"+money(sell)+"</td><td>−"+money(state.P-sell)+" locked in</td></tr>"+
+   "<tr><td>Held through it all</td><td>"+money(hold)+"</td><td>+"+money(hold-state.P)+"</td></tr>"+
+   "<tr><td>Held + added 10% at the bottom</td><td>"+money(buyMore)+"</td><td>+"+money(buyMore-state.P)+"</td></tr>";
+  buildPlan(n);
+  save();
+  window.scrollTo(0,0);
+}
+function buildPlan(n){
+  var who=state.name||"Future Me";
+  var date=new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  $("plan-sub").textContent="Written on a calm day · "+date+" · Starting portfolio "+money(state.P);
+  var rules=[
+   "When the market drops 20% or more, I will do NOTHING for 72 hours. No selling, no 'tactical moves.' I will re-read this plan instead.",
+   "I will keep my automatic contributions running. A crash is when my contributions buy the most shares.",
+   "I will check my portfolio at most once a month during a downturn — daily checking manufactures panic, not information.",
+   "I will rebalance only if my allocation has drifted more than 5% from target — a rule, not a mood.",
+   "I will not sell into a crash. Selling turns a temporary decline into a permanent loss and guarantees I miss the recovery.",
+   "If I feel the urge to 'do something,' I will re-run the Market Crash Drill first — and then do what calm-day me decided."
+  ];
+  var pr=$("plan-rules");pr.innerHTML="";
+  rules.forEach(function(r,i){var d=document.createElement("div");d.className="rule";d.innerHTML="<strong>"+(i+1)+".</strong> "+esc(r);pr.appendChild(d);});
+  var dn=["Don't sell everything to 'stop the bleeding' — that's how temporary losses become permanent ones.",
+   "Don't stop contributions — that's selling your future shares at a discount to no one.",
+   "Don't try to time the bottom. The biggest up-days cluster near the bottom; miss them and you miss the recovery.",
+   "Don't make portfolio decisions from headlines, group chats, or 2 a.m. anxiety.",
+   "Don't 'lock in' a partial recovery by selling — you're still down, and you'd miss the rest of the rebound."];
+  var ul=$("plan-donots");ul.innerHTML="";
+  dn.forEach(function(d){var li=document.createElement("li");li.textContent=d;ul.appendChild(li);});
+  $("plan-sig").textContent="— "+who+", on a calm day ("+date+")";
+}
+$("start-drill").addEventListener("click",function(){
+  var P=parseFloat($("s-portfolio").value),e=$("setup-err");
+  if(isNaN(P)||P<1||P>1e12){e.textContent="Please enter your portfolio value — a number between $1 and $1 trillion.";e.classList.add("show");return;}
+  e.classList.remove("show");
+  state={P:P,name:$("s-name").value.trim(),step:0,answers:[],done:false};
+  $("setup-card").classList.add("hidden");$("debrief").classList.add("hidden");$("drill").classList.remove("hidden");
+  renderStep();$("drill").scrollIntoView();
+});
+function resetAll(){
+  state={P:0,name:"",step:0,answers:[],done:false};
+  try{localStorage.removeItem(KEY);}catch(e){}
+  $("s-portfolio").value="250000";$("s-name").value="";
+  $("setup-card").classList.remove("hidden");$("drill").classList.add("hidden");$("debrief").classList.add("hidden");
+  window.scrollTo(0,0);
+}
+$("restart").addEventListener("click",function(){if(confirm("Restart the drill? Your progress will be cleared."))resetAll();});
+$("new-drill").addEventListener("click",resetAll);
+$("print-plan").addEventListener("click",function(){window.print();});
+
+/* ---------- persistence ---------- */
+function save(){try{localStorage.setItem(KEY,JSON.stringify({p:$("s-portfolio").value,name:$("s-name").value,state:state}));}catch(e){}}
+(function init(){
+  var d=null;try{d=JSON.parse(localStorage.getItem(KEY));}catch(e){}
+  if(d&&d.state&&d.state.P>0){
+    $("s-portfolio").value=d.p||"250000";$("s-name").value=d.name||"";
+    state=d.state;
+    $("setup-card").classList.add("hidden");
+    if(state.done){finish();}
+    else{$("drill").classList.remove("hidden");renderStep();}
+  }
+})();
+})();
+</script>
+</body>
+</html>

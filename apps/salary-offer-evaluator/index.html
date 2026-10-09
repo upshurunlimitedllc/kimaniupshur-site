@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salary Offer Evaluator | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn salary, bonus, equity, 401(k) match, health costs, PTO, and cost of living into one comparable number — compare two job offers side by side. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/salary-offer-evaluator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Salary Offer Evaluator | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Turn salary, bonus, equity, 401(k) match, health costs, PTO, and cost of living into one comparable number — compare two job offers side by side. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/salary-offer-evaluator/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:900px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.disclaim{background:#fff4e0;border:2px solid #d8a93c;border-radius:12px;padding:16px 20px;margin-bottom:20px;font-size:.9rem;color:#6b5510}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:12px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:6px 0}
+label.field{display:block;font-weight:bold;margin-top:12px;font-size:.95rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.82rem}
+.offers{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:640px){.offers{grid-template-columns:1fr}}
+.offer{border:2px solid #d8cfb0;border-radius:10px;padding:18px;background:#fff}
+.offer h3{font-family:Georgia,serif;margin-bottom:4px}
+.err{color:#b3261e;font-weight:bold;font-size:.9rem;margin-top:6px}
+.winner{font-family:Georgia,serif;font-size:1.5rem;text-align:center;margin:8px 0 4px}
+.winner small{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:.95rem;color:#6b6250;margin-top:8px}
+table.cmp{width:100%;border-collapse:collapse;font-size:.92rem;margin:14px 0}
+table.cmp th,table.cmp td{border:1px solid #d8cfb0;padding:8px 10px;text-align:right}
+table.cmp th{background:#f4f1e6}
+table.cmp td:first-child,table.cmp th:first-child{text-align:left}
+table.cmp tr.total td{font-weight:bold;background:#fdf6e3}
+table.cmp td.win{background:#eef6ec;font-weight:bold}
+.checklist{display:grid;gap:8px;margin:12px 0}
+.checklist label{border:2px solid #d8cfb0;border-radius:8px;padding:10px 14px;background:#fff;cursor:pointer;display:flex;gap:10px;align-items:flex-start;font-size:.94rem;min-height:44px}
+.checklist input{width:22px;height:22px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checklist small{display:block;color:#6b6250}
+ul.assump{margin:8px 0 8px 20px;font-size:.9rem;color:#5b5340}
+.fsec{font-family:Georgia,serif;font-size:1.15rem;margin:20px 0 4px;border-bottom:2px solid #c9a227;padding-bottom:4px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+  header.site,footer.site,.btnrow,.noprint,.devot-block,.disclaim,#inputcard{display:none!important}
+  main.app{max-width:100%;padding:10px}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Salary Offer Evaluator</h1>
+<p class="intro">A $120,000 salary with a 10% bonus and no equity is not the same as $105,000 with RSUs, a 6% match, and cheap health insurance. Enter both offers and the tool translates everything into one comparable annual number — adjusted for cost of living — so you can see the real difference.</p>
+<div class="disclaim"><strong>Educational modeling only — not financial or career advice.</strong> Equity is valued conservatively, bonuses are discounted, and cost-of-living indexes are rough estimates. Numbers help you compare; they can't capture everything (see the non-money factors below).</div>
+
+<div class="appcard" id="inputcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">The two offers</h2>
+<div class="offers">
+<div class="offer">
+<h3>Offer A</h3>
+<label class="field">Label / company<input type="text" id="a_name" value="Offer A"></label>
+<label class="field">Base salary ($ / yr)<input type="number" id="a_base" value="120000" min="0"></label>
+<label class="field">Target bonus (% of base)<small>Annual cash bonus target</small><input type="number" id="a_bonus" value="10" min="0" max="200"></label>
+<label class="field">Equity grant — total value ($)<small>RSUs / stock options at today's value</small><input type="number" id="a_eq" value="0" min="0"></label>
+<label class="field">Equity vesting (years)<input type="number" id="a_vest" value="4" min="1" max="10"></label>
+<label class="field">401(k) match (% of base)<input type="number" id="a_match" value="4" min="0" max="25"></label>
+<label class="field">Your health premium ($ / mo)<small>What comes out of YOUR paycheck</small><input type="number" id="a_health" value="250" min="0"></label>
+<label class="field">PTO (days / yr)<input type="number" id="a_pto" value="15" min="0" max="60"></label>
+<label class="field">Location<select id="a_loc"></select></label>
+</div>
+<div class="offer">
+<h3>Offer B</h3>
+<label class="field">Label / company<input type="text" id="b_name" value="Offer B"></label>
+<label class="field">Base salary ($ / yr)<input type="number" id="b_base" value="105000" min="0"></label>
+<label class="field">Target bonus (% of base)<small>Annual cash bonus target</small><input type="number" id="b_bonus" value="15" min="0" max="200"></label>
+<label class="field">Equity grant — total value ($)<small>RSUs / stock options at today's value</small><input type="number" id="b_eq" value="60000" min="0"></label>
+<label class="field">Equity vesting (years)<input type="number" id="b_vest" value="4" min="1" max="10"></label>
+<label class="field">401(k) match (% of base)<input type="number" id="b_match" value="6" min="0" max="25"></label>
+<label class="field">Your health premium ($ / mo)<small>What comes out of YOUR paycheck</small><input type="number" id="b_health" value="150" min="0"></label>
+<label class="field">PTO (days / yr)<input type="number" id="b_pto" value="20" min="0" max="60"></label>
+<label class="field">Location<select id="b_loc"></select></label>
+</div>
+</div>
+<div class="err" id="err"></div>
+<div class="btnrow"><button class="btn" id="gobtn">Compare the offers</button></div>
+</div>
+
+<div class="appcard" id="outcard" style="display:none">
+<h2 style="font-family:Georgia,serif">The comparison</h2>
+<p class="winner" id="winner"></p>
+<div class="chartwrap" style="overflow-x:auto"><table class="cmp" id="cmptable">
+<thead><tr><th>Component</th><th id="h_a">A</th><th id="h_b">B</th><th>Difference</th></tr></thead><tbody></tbody>
+</table></div>
+<div class="fsec">How to read this</div>
+<ul class="assump" id="explain"></ul>
+<div class="fsec">Non-money factors — weigh these too</div>
+<p style="font-size:.92rem;color:#6b6250">Money is only half the decision. Check the ones that matter to you, then read your notes next to the numbers above.</p>
+<div class="checklist" id="factors"></div>
+<label class="field">Your notes<textarea id="notes" rows="3" placeholder="Commute, manager, growth, gut feeling..."></textarea></label>
+<div class="btnrow noprint">
+<button class="btn ghost" id="editbtn">Edit the offers</button>
+<button class="btn ghost" id="printbtn">Print this comparison</button>
+<button class="btn ghost" id="resetbtn">Reset</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Salary Offer Evaluator is just the start. <em>Negotiating Salary Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — how to research, ask, and negotiate with confidence.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/negotiating-salary-made-simple/">Get Negotiating Salary Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devot-block" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action. This app is for educational purposes only and is not financial, tax, or career advice.</p>
+</div></footer>
+<script>
+var KEY="app-salary-offer-evaluator-v1";
+/* Rough cost-of-living indexes, US average = 100. Estimates — user can override with Custom. */
+var CITIES=[
+ ["Remote / US average",100],["Custom (enter index below)",-1],
+ ["New York, NY",168],["San Francisco, CA",172],["San Jose, CA",170],["Boston, MA",148],
+ ["Los Angeles, CA",152],["Seattle, WA",145],["Washington, DC",140],["San Diego, CA",142],
+ ["Miami, FL",118],["Denver, CO",112],["Chicago, IL",113],["Austin, TX",108],
+ ["Dallas, TX",104],["Atlanta, GA",102],["Phoenix, AZ",107],["Houston, TX",99],
+ ["Nashville, TN",103],["Raleigh, NC",101],["Minneapolis, MN",105],["Portland, OR",118],
+ ["Philadelphia, PA",110],["Columbus, OH",96],["Kansas City, MO",94],["Cleveland, OH",92],
+ ["Indianapolis, IN",93],["St. Louis, MO",90],["Pittsburgh, PA",95],["Orlando, FL",104]];
+var FACTORS=[
+ ["Career growth","Which role grows your skills and resume faster over 2\u20133 years?"],
+ ["Your manager","You'll work for a person, not a company. Who would you rather report to?"],
+ ["Commute / remote","Hours in traffic are hours of your life. Remote or hybrid has real value."],
+ ["Work-life balance","Expected hours, on-call load, and whether PTO is actually usable."],
+ ["Company stability","Startup upside vs. established-company steadiness — which risk fits your life now?"],
+ ["Mission & culture","Do you believe in what the company does and how it treats people?"],
+ ["Role scope","Which job gives you more ownership, impact, and interesting problems?"],
+ ["Benefits beyond the table","Parental leave, education stipends, wellness, ESPP, pension — the fine print matters."]];
+var F=["a_name","a_base","a_bonus","a_eq","a_vest","a_match","a_health","a_pto","a_loc","a_locx",
+       "b_name","b_base","b_bonus","b_eq","b_vest","b_match","b_health","b_pto","b_loc","b_locx","notes"];
+function num(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+function fmt(x){var neg=x<0;var s=Math.abs(Math.round(x)).toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");return (neg?"-$":"$")+s;}
+function fmtS(x){var neg=x<0;var s=Math.abs(Math.round(x)).toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");return (neg?"\u2212$":"+$")+s;}
+function save(){try{var o={};F.forEach(function(id){var el=document.getElementById(id);if(el)o[id]=el.value;});
+  var fx=[];document.querySelectorAll("#factors input").forEach(function(c,i){if(c.checked)fx.push(i);});o.fx=fx;
+  localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
+function load(){try{var o=JSON.parse(localStorage.getItem(KEY));if(!o)return null;return o;}catch(e){return null;}}
+function fillCities(sel){CITIES.forEach(function(c,i){var o=document.createElement("option");o.value=i;o.textContent=c[0]+(c[1]>0?" ("+c[1]+")":"");sel.appendChild(o);});}
+function colIndex(prefix){var i=parseInt(document.getElementById(prefix+"_loc").value,10);
+  if(CITIES[i][1]===-1){var x=parseFloat(document.getElementById(prefix+"_locx").value);return isNaN(x)||x<=0?100:x;}
+  return CITIES[i][1];}
+function calc(prefix){
+  var base=num(prefix+"_base"),bonusPct=num(prefix+"_bonus"),eq=num(prefix+"_eq"),vest=num(prefix+"_vest")||4,
+      matchPct=num(prefix+"_match"),health=num(prefix+"_health"),pto=num(prefix+"_pto");
+  var bonus=base*bonusPct/100*0.8;              // conservative: bonuses rarely pay 100%
+  var eqYr=eq/Math.max(1,vest)*0.7;            // conservative: taxes + no assumed growth
+  var match=base*matchPct/100;
+  var healthCost=health*12;
+  var daily=base/260;
+  var ptoVal=daily*Math.max(0,pto-15);         // value of days above a 15-day standard
+  var eff=base+bonus+eqYr+match+ptoVal-healthCost;
+  var idx=colIndex(prefix);
+  var adj=eff/(idx/100);
+  return {name:document.getElementById(prefix+"_name").value||prefix.toUpperCase(),
+    base:base,bonus:bonus,eqYr:eqYr,match:match,healthCost:healthCost,ptoVal:ptoVal,
+    eff:eff,idx:idx,adj:adj,pto:pto};
+}
+function row(label,va,vb,isMoney){
+  var d=va-vb;
+  var cls=d>0.005?"win":(d<-0.005?"":"");
+  var clsB=d<-0.005?"win":"";
+  var f=isMoney?fmt:fmtS;
+  var dv=isMoney?(d===0?"\u2014":fmtS(d)):(d===0?"\u2014":d);
+  return "<tr><td>"+label+"</td><td class='"+cls+"'>"+(isMoney?fmt(va):va)+"</td><td class='"+clsB+"'>"+(isMoney?fmt(vb):vb)+"</td><td>"+dv+"</td></tr>";
+}
+function compare(){
+  var err=document.getElementById("err");
+  var ab=num("a_base"),bb=num("b_base");
+  if(ab<=0&&bb<=0){err.textContent="Enter at least one offer with a base salary above $0.";return null;}
+  err.textContent="";
+  var A=calc("a"),B=calc("b");
+  var dAdj=A.adj-B.adj;
+  var winner=dAdj>=0?A:B,loser=dAdj>=0?B:A;
+  return {A:A,B:B,dAdj:dAdj,winner:winner,loser:loser};
+}
+function render(c){
+  document.getElementById("inputcard").style.display="none";
+  var oc=document.getElementById("outcard");oc.style.display="block";
+  document.getElementById("h_a").textContent=c.A.name;
+  document.getElementById("h_b").textContent=c.B.name;
+  var gap=Math.abs(Math.round(c.dAdj));
+  var pct=c.loser.adj>0?Math.round(100*gap/c.loser.adj):0;
+  document.getElementById("winner").innerHTML=c.winner.name+" wins on money.<small>"+
+    "Effective compensation, adjusted for cost of living: <strong>"+fmt(c.winner.adj)+"</strong> vs. "+fmt(c.loser.adj)+
+    " — a difference of <strong>"+fmt(gap)+"/yr (~"+pct+"%)</strong>. Remember: the table shows <em>effective</em> comp, and the non-money factors below can outweigh a gap like this.</small>";
+  var tb=document.querySelector("#cmptable tbody");tb.innerHTML="";
+  tb.innerHTML+=row("Base salary",c.A.base,c.B.base,true);
+  tb.innerHTML+=row("Expected bonus (target \u00d7 80%)",c.A.bonus,c.B.bonus,true);
+  tb.innerHTML+=row("Equity value / year (grant \u00f7 vesting \u00d7 70%)",c.A.eqYr,c.B.eqYr,true);
+  tb.innerHTML+=row("401(k) match value",c.A.match,c.B.match,true);
+  tb.innerHTML+=row("Extra PTO value (days above 15)",c.A.ptoVal,c.B.ptoVal,true);
+  tb.innerHTML+=row("Your health premium cost",-c.A.healthCost,-c.B.healthCost,true);
+  tb.innerHTML+="<tr class='total'><td>Effective annual compensation</td><td>"+fmt(c.A.eff)+"</td><td>"+fmt(c.B.eff)+"</td><td>"+fmtS(c.A.eff-c.B.eff)+"</td></tr>";
+  tb.innerHTML+=row("Cost-of-living index used",c.A.idx,c.B.idx,false);
+  tb.innerHTML+="<tr class='total'><td>COL-adjusted effective comp</td><td>"+fmt(c.A.adj)+"</td><td>"+fmt(c.B.adj)+"</td><td>"+fmtS(c.dAdj)+"</td></tr>";
+  document.getElementById("explain").innerHTML=
+    "<li><strong>Bonuses are discounted 20%.</strong> Target bonuses rarely pay out at 100% — we use 80% of target so you're comparing realistic expectations, not best cases.</li>"+
+    "<li><strong>Equity is valued conservatively.</strong> We spread the grant over its vesting years and cut 30% for taxes and the chance the stock falls. A $60k grant over 4 years counts as $10,500/yr, not $15,000.</li>"+
+    "<li><strong>PTO is valued above a 15-day standard</strong> at your daily rate (base \u00f7 260 workdays). Days at or below 15 add $0 — it's a baseline, not a penalty.</li>"+
+    "<li><strong>Cost of living:</strong> "+fmt(c.A.eff)+" in a "+c.A.idx+"-index city buys what "+fmt(c.A.adj)+" buys at the US average. Indexes are rough estimates — override with \u201cCustom\u201d if you have better local data.</li>"+
+    "<li><strong>Not included:</strong> income taxes (vary by state), commute costs, stock growth, sign-on bonuses, or unvested equity you'd leave behind.</li>";
+  var fx=document.getElementById("factors");fx.innerHTML="";
+  var saved=null;try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&s.fx)saved=s.fx;}catch(e){}
+  FACTORS.forEach(function(f,i){var lab=document.createElement("label");
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=saved&&saved.indexOf(i)>=0;
+    cb.addEventListener("change",save);
+    var sp=document.createElement("span");sp.innerHTML="<b>"+f[0]+"</b><small>"+f[1]+"</small>";
+    lab.appendChild(cb);lab.appendChild(sp);fx.appendChild(lab);});
+  oc.scrollIntoView();save();
+}
+function setup(){
+  ["a_loc","b_loc"].forEach(function(id){fillCities(document.getElementById(id));});
+  document.getElementById("b_loc").selectedIndex=0;
+  // insert custom-index inputs after the location selects
+  ["a","b"].forEach(function(p){
+    var inp=document.createElement("input");inp.type="number";inp.id=p+"_locx";inp.placeholder="Custom COL index (100 = US average)";inp.style.display="none";
+    inp.setAttribute("aria-label","Custom cost of living index");
+    document.getElementById(p+"_loc").parentNode.appendChild(inp);
+    document.getElementById(p+"_loc").addEventListener("change",function(){
+      var i=parseInt(this.value,10);inp.style.display=CITIES[i][1]===-1?"block":"none";save();});});
+  var saved=load();
+  if(saved){F.forEach(function(id){var el=document.getElementById(id);if(el&&saved[id]!==undefined){el.value=saved[id];
+    if(id==="a_loc"||id==="b_loc"){var i=parseInt(saved[id],10);var lx=document.getElementById(id== "a_loc"?"a_locx":"b_locx");
+      if(CITIES[i]&&CITIES[i][1]===-1)lx.style.display="block";}}});
+    if(saved.notes)document.getElementById("notes").value=saved.notes;}
+}
+document.getElementById("gobtn").addEventListener("click",function(){var c=compare();if(c)render(c);else document.getElementById("outcard").style.display="none";});
+document.getElementById("editbtn").addEventListener("click",function(){
+  document.getElementById("outcard").style.display="none";
+  document.getElementById("inputcard").style.display="block";
+  document.getElementById("inputcard").scrollIntoView();});
+document.getElementById("printbtn").addEventListener("click",function(){window.print();});
+document.getElementById("resetbtn").addEventListener("click",function(){
+  if(confirm("Reset all inputs to defaults?")){try{localStorage.removeItem(KEY);}catch(e){}location.reload();}});
+setup();
+F.forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener("input",save);});
+document.getElementById("notes").addEventListener("input",save);
+</script>
+</body>
+</html>
