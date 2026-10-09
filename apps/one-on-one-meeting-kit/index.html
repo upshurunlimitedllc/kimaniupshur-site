@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-on-One Meeting Kit | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Run one-on-ones your team values: pick the 1:1 type, get a timed agenda from a 60-question bank, log notes and commitments, and track growth quarterly. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/one-on-one-meeting-kit/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="One-on-One Meeting Kit | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Run one-on-ones your team values: pick the 1:1 type, get a timed agenda from a 60-question bank, log notes and commitments, and track growth quarterly. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/one-on-one-meeting-kit/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:860px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.45rem;color:#141210;margin-bottom:10px}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;color:#141210;margin:16px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:9px 16px;min-height:44px;font-size:.92rem}
+input[type=text],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.memberrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.mchip{border:2px solid #c9a227;border-radius:20px;background:#fff;padding:10px 18px;min-height:44px;cursor:pointer;font-size:.95rem}
+.mchip.sel{background:#c9a227;color:#141210;font-weight:bold}
+.seg{background:#fff;border:2px solid #e8ddb8;border-radius:10px;padding:14px 16px;margin:10px 0}
+.seg .stime{display:inline-block;font-size:.8rem;font-weight:bold;background:#141210;color:#e8c84a;border-radius:12px;padding:3px 12px;margin-bottom:6px}
+.seg .sname{font-weight:bold;font-size:1.05rem}
+.qitem{background:#fff;border:1px solid #e8ddb8;border-radius:8px;padding:10px 12px;margin:8px 0;display:flex;gap:10px;align-items:flex-start}
+.qitem .qt{flex:1}
+.qtag{font-size:.75rem;font-weight:bold;background:#eee5c8;border-radius:10px;padding:2px 10px;margin-right:6px;white-space:nowrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.fchip{border:2px solid #c9a227;border-radius:18px;background:#fff;padding:8px 16px;min-height:44px;cursor:pointer;font-size:.9rem}
+.fchip.sel{background:#141210;color:#e8c84a;border-color:#141210;font-weight:bold}
+.commit{background:#fff;border:2px solid #e8ddb8;border-radius:10px;padding:12px 14px;margin:8px 0}
+.commit.done{opacity:.65;border-color:#9dbb8a}
+.commit .cmeta{font-size:.82rem;color:#6b6250;margin-top:4px}
+.cbtn{border:2px solid #c9a227;background:#fff;border-radius:8px;padding:8px 14px;min-height:44px;cursor:pointer;font-size:.88rem;margin-right:8px}
+.cbtn:hover{background:#eee5c8}
+.err{background:#fdeceb;border:2px solid #d66;border-radius:8px;padding:12px 16px;margin-bottom:16px;color:#8a1f1f;font-weight:bold;display:none}
+.note{font-size:.92rem;color:#6b6250}
+.sumstat{display:inline-block;background:#141210;color:#e8c84a;border-radius:10px;padding:10px 18px;margin:6px 8px 6px 0;font-size:.95rem}
+.sumstat b{font-size:1.3rem}
+.meeting{background:#fff;border:1px solid #e8ddb8;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:.95rem}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{header.site,footer.site,.noprint,.devot-block,.godeeper,.backlink,#bankcard,#membercard,#summarycard,#pastcard{display:none}main.app{max-width:100%;padding:0}.appcard{break-inside:avoid;border-color:#999}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>One-on-One Meeting Kit</h1>
+<p class="intro">Run one-on-ones your team actually values. Pick the 1:1 type, get a timed agenda, pull questions from the 60-question bank, log notes and commitments — and never lose track of what you promised last time.</p>
+
+<div class="appcard" id="membercard">
+<h2>1 — Your team</h2>
+<div class="err" id="membererr" role="alert"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap">
+<div style="flex:2;min-width:180px"><label for="mname" style="font-weight:bold">Name</label><input type="text" id="mname" placeholder="e.g. Jordan Lee" autocomplete="off"></div>
+<div style="flex:2;min-width:180px"><label for="mrole" style="font-weight:bold">Role (optional)</label><input type="text" id="mrole" placeholder="e.g. Marketing Associate" autocomplete="off"></div>
+<div style="flex:0 0 auto;align-self:end"><button class="btn small" id="addmember">Add</button></div>
+</div>
+<div class="memberrow" id="members"></div>
+<div class="noprint" style="margin-top:10px"><button class="btn ghost small" id="delmember">Remove selected</button></div>
+</div>
+
+<div class="appcard" id="agendacard">
+<h2>2 — Build the agenda</h2>
+<div class="err" id="agendaerr" role="alert"></div>
+<div id="opencarry"></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:end">
+<div style="flex:1;min-width:220px"><label for="ttype" style="font-weight:bold">1:1 type</label>
+<select id="ttype">
+<option value="direct">Direct report — regular 1:1 (30 min)</option>
+<option value="skip">Skip-level — their manager's manager (25 min)</option>
+<option value="newhire">New hire — first 90 days (30 min)</option>
+<option value="struggling">Struggling performer — improvement focus (30 min)</option>
+</select></div>
+<div><button class="btn" id="genagenda">Generate agenda</button></div>
+</div>
+<div id="agenda"></div>
+<div class="noprint" id="agendabtns" style="display:none;margin-top:14px;gap:10px;flex-wrap:wrap">
+<button class="btn ghost small" id="printagenda">Print agenda</button>
+</div>
+</div>
+
+<div class="appcard" id="bankcard">
+<h2>3 — Question bank (60 questions)</h2>
+<p class="note">Filter by purpose, then add any question to a segment of your agenda.</p>
+<div class="chips noprint" id="purchips" role="group" aria-label="Filter questions by purpose"></div>
+<div id="qlist" style="max-height:420px;overflow-y:auto"></div>
+</div>
+
+<div class="appcard" id="notescards">
+<h2>4 — Notes &amp; commitments</h2>
+<div class="err" id="noteserr" role="alert"></div>
+<label for="mnotes" style="font-weight:bold">Meeting notes</label>
+<textarea id="mnotes" rows="6" placeholder="What did you discuss? Decisions? Observations about growth?"></textarea>
+<h3>Add a commitment</h3>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap">
+<div style="flex:3;min-width:200px"><label for="ctext" style="font-weight:bold">Commitment</label><input type="text" id="ctext" placeholder="e.g. Send the revised launch timeline by Friday"></div>
+<div style="flex:1;min-width:130px"><label for="cowner" style="font-weight:bold">Owner</label><select id="cowner"><option value="them">Them</option><option value="me">Me</option></select></div>
+<div style="flex:1;min-width:150px"><label for="cdue" style="font-weight:bold">Due</label><input type="date" id="cdue"></div>
+<div style="align-self:end"><button class="btn small" id="addcommit">Add</button></div>
+</div>
+<div id="commitlist"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn" id="savemeeting">Save meeting</button>
+</div>
+</div>
+
+<div class="appcard" id="pastcard">
+<h2>5 — Past meetings</h2>
+<div id="pastlist"><p class="note">No meetings saved yet for this person.</p></div>
+</div>
+
+<div class="appcard" id="summarycard">
+<h2>6 — Quarterly growth summary</h2>
+<p class="note">Pick a person and a quarter to see meetings held, commitments kept, and where your conversations focused.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:end">
+<div style="flex:1;min-width:180px"><label for="sq" style="font-weight:bold">Quarter</label><select id="sq"></select></div>
+<div class="noprint"><button class="btn" id="genreport">Show summary</button></div>
+</div>
+<div id="summary"></div>
+</div>
+
+<section class="appcard godeeper" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>One-on-One Meeting Kit is just the start. <em>New Manager Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — how to lead your team with clarity, coaching, and confidence in your first 90 days and beyond.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/new-manager-made-simple/">Get New Manager Made Simple — $4.99</a></p>
+</section>
+<p class="backlink" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devot-block" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-one-on-one-meeting-kit-v1";
+var TYPES={
+ direct:{name:"Direct report 1:1",mins:30,segs:[["Check-in & energy",5,"morale"],["Open commitments from last time",5,"blockers"],["Their topics & blockers",12,"blockers"],["Growth & feedback",8,"growth"]]},
+ skip:{name:"Skip-level 1:1",mins:25,segs:[["Rapport & how things are going",5,"morale"],["Experience, culture & team health",12,"morale"],["Ideas, concerns & questions for leadership",8,"feedback"]]},
+ newhire:{name:"New hire 1:1",mins:30,segs:[["Settling in & early wins",10,"morale"],["Role clarity & expectations",10,"feedback"],["Support, tools & questions",10,"blockers"]]},
+ struggling:{name:"Struggling performer 1:1",mins:30,segs:[["Opening & safety",5,"morale"],["Specific performance observations",12,"feedback"],["Improvement plan & commitments",8,"growth"],["Encouragement & close",5,"morale"]]}};
+var QBANK=[
+["growth","What skill do you most want to build this quarter?"],["growth","Where do you see your role going in the next year?"],["growth","What is one thing you'd like to be trusted with more of?"],["growth","Who on the team do you learn the most from?"],["growth","What is the most useful feedback you've gotten recently?"],["growth","If you could redesign 20% of your job, what would change?"],["growth","What project here has taught you the most so far?"],["growth","What kind of work gives you the most energy?"],["growth","Where do you feel stuck in your development?"],["growth","What would make you feel more confident in your role?"],["growth","What stretch assignment would excite you?"],["growth","What training or learning would pay off most for you?"],["growth","How do you want me to support your growth differently?"],["growth","What is a win this month you're proud of, and what did it teach you?"],["growth","What do you want to be known for on this team?"],
+["feedback","What is one thing I should keep doing as your manager?"],["feedback","What is one thing I should do differently?"],["feedback","Do you feel your contributions are recognized? What's missing?"],["feedback","How useful was my feedback on your recent work? What would make it better?"],["feedback","Is there feedback you've been wanting to give me?"],["feedback","On a scale of 1\u201310, how clear are you on what's expected of you right now?"],["feedback","What is something I assume about your workload that's wrong?"],["feedback","When do you feel most trusted? Least trusted?"],["feedback","Is there a decision I made recently you'd like to understand better?"],["feedback","How do you prefer to receive difficult feedback \u2014 direct, or with context first?"],["feedback","What is one team norm we should start or stop?"],["feedback","Am I giving you enough autonomy, too much, or just right?"],["feedback","What is the hardest part of working with me?"],["feedback","Is there praise or credit you feel you haven't gotten?"],["feedback","What would make our 1:1s more useful for you?"],
+["morale","How are you doing, honestly \u2014 work and outside it?"],["morale","What is your energy level this week, 1\u201310?"],["morale","What gave you energy at work this week? What drained it?"],["morale","Do you feel like part of the team? What would help?"],["morale","What is one small thing that would make your workday better?"],["morale","Are you getting enough recognition? From whom?"],["morale","What is worrying you that we haven't talked about?"],["morale","How is your workload feeling \u2014 sustainable or too much?"],["morale","When did you last feel genuinely excited about your work?"],["morale","Is anything outside work affecting you that I should know about?"],["morale","What do you wish the team celebrated more?"],["morale","On a scale of 1\u201310, how supported do you feel by me right now?"],["morale","What is one thing that made you smile at work recently?"],["morale","Do you feel safe disagreeing with me or the team?"],["morale","What would make you look forward to Mondays?"],
+["blockers","What is blocking you right now?"],["blockers","What decision are you waiting on?"],["blockers","What is taking longer than it should, and why?"],["blockers","What process or tool is slowing you down?"],["blockers","Is anyone outside the team blocking your work?"],["blockers","What information do you need that you don't have?"],["blockers","What would help you move twice as fast this week?"],["blockers","Are there meetings you attend that waste your time?"],["blockers","What is the biggest risk to hitting your goals this month?"],["blockers","What have you been avoiding that I can help unblock?"],["blockers","Is your current priority list clear? What conflicts?"],["blockers","What resource \u2014 people, budget, tools \u2014 are you missing?"],["blockers","What is a problem you keep working around instead of fixing?"],["blockers","Who do you need an introduction or escalation to?"],["blockers","What can I take off your plate or run interference on?"]];
+var PURPOSES=["all","growth","feedback","morale","blockers"];
+var S={members:[],meetings:[],sel:null,pur:"all",agenda:null,curType:"direct",draftCommits:[]};
+var cid=1;
+function save(){try{localStorage.setItem(KEY,JSON.stringify({members:S.members,meetings:S.meetings,sel:S.sel}));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var d=JSON.parse(r);if(d){S.members=d.members||[];S.meetings=d.meetings||[];S.sel=d.sel||null;}}}catch(e){}}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function showErr(id,msg){var e=document.getElementById(id);e.textContent=msg;e.style.display="block";e.scrollIntoView({behavior:"smooth",block:"center"});}
+function hideErr(id){document.getElementById(id).style.display="none";}
+function selMember(){for(var i=0;i<S.members.length;i++)if(S.members[i].id===S.sel)return S.members[i];return null;}
+function todayStr(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function fmtDate(s){if(!s)return"\u2014";var p=s.split("-");if(p.length<3)return s;var d=new Date(p[0],p[1]-1,p[2]);return d.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});}
+function quarterOf(s){var p=s.split("-");if(p.length<3)return null;var m=parseInt(p[1],10);return p[0]+"-Q"+(Math.floor((m-1)/3)+1);}
+
+function renderMembers(){
+ var box=document.getElementById("members");box.innerHTML="";
+ S.members.forEach(function(m){
+  var b=document.createElement("button");b.type="button";b.className="mchip"+(m.id===S.sel?" sel":"");
+  b.textContent=m.name+(m.role?" \u2014 "+m.role:"");
+  b.addEventListener("click",function(){S.sel=m.id;save();renderAll();});
+  box.appendChild(b);
+ });
+ if(!S.members.length){box.innerHTML='<p class="note">No team members yet. Add your first person above.</p>';}
+}
+document.getElementById("addmember").addEventListener("click",function(){
+ var n=document.getElementById("mname").value.trim();
+ var r=document.getElementById("mrole").value.trim();
+ if(!n){showErr("membererr","Enter a name to add a team member.");return;}
+ hideErr("membererr");
+ var m={id:"m"+Date.now()+"_"+(cid++),name:n,role:r};
+ S.members.push(m);S.sel=m.id;save();
+ document.getElementById("mname").value="";document.getElementById("mrole").value="";
+ renderAll();
+});
+document.getElementById("delmember").addEventListener("click",function(){
+ var m=selMember();
+ if(!m){showErr("membererr","Select a team member first.");return;}
+ if(!confirm("Remove "+m.name+" and all their meetings and commitments?"))return;
+ S.members=S.members.filter(function(x){return x.id!==m.id;});
+ S.meetings=S.meetings.filter(function(x){return x.memberId!==m.id;});
+ S.sel=S.members.length?S.members[0].id:null;
+ save();renderAll();
+});
+function openCommits(mid){
+ var out=[];
+ S.meetings.forEach(function(mt){
+  if(mt.memberId!==mid)return;
+  (mt.commitments||[]).forEach(function(c){
+   if(!c.done)out.push({c:c,mt:mt});
+  });
+ });
+ return out;
+}
+function renderCarry(){
+ var box=document.getElementById("opencarry");box.innerHTML="";
+ var m=selMember();
+ if(!m){box.innerHTML='<p class="note">Select a team member above to see their open commitments carried over from last time.</p>';return;}
+ var opens=openCommits(m.id);
+ if(!opens.length){box.innerHTML='<p class="note">No open commitments from last time \u2014 clean slate for '+esc(m.name)+'.</p>';return;}
+ var h=document.createElement("h3");h.textContent="Carried over from last time ("+opens.length+" open)";box.appendChild(h);
+ opens.forEach(function(o){
+  var d=document.createElement("div");d.className="commit";
+  d.innerHTML="<b>"+esc(o.c.text)+"</b><div class='cmeta'>From "+esc(fmtDate(o.mt.date))+" \u00b7 Owner: "+esc(o.c.owner==="me"?"me":m.name)+(o.c.due?" \u00b7 Due "+esc(fmtDate(o.c.due)):"")+"</div>";
+  var b=document.createElement("button");b.type="button";b.className="cbtn noprint";b.style.marginTop="8px";b.textContent="Mark done";
+  b.addEventListener("click",function(){o.c.done=true;save();renderCarry();renderPast();});
+  d.appendChild(b);box.appendChild(d);
+ });
+}
+function renderAgenda(){
+ var box=document.getElementById("agenda");box.innerHTML="";
+ document.getElementById("agendabtns").style.display="none";
+ if(!S.agenda)return;
+ var t=TYPES[S.curType];
+ var h=document.createElement("h3");h.textContent=t.name+" \u2014 "+t.mins+" minutes";box.appendChild(h);
+ var total=0;
+ S.agenda.forEach(function(seg,si){
+  total+=seg.mins;
+  var d=document.createElement("div");d.className="seg";
+  var tm=document.createElement("div");tm.className="stime";tm.textContent=seg.mins+" min";d.appendChild(tm);
+  var nm=document.createElement("div");nm.className="sname";nm.textContent=seg.name;d.appendChild(nm);
+  (seg.qs||[]).forEach(function(q,qi){
+   var qi2=document.createElement("div");qi2.className="qitem";
+   var qt=document.createElement("div");qt.className="qt";
+   var tag=document.createElement("span");tag.className="qtag";tag.textContent=q.pur;qt.appendChild(tag);
+   qt.appendChild(document.createTextNode(q.text));qi2.appendChild(qt);
+   var rb=document.createElement("button");rb.type="button";rb.className="cbtn noprint";rb.textContent="Remove";
+   rb.addEventListener("click",function(){seg.qs.splice(qi,1);renderAgenda();});
+   qi2.appendChild(rb);d.appendChild(qi2);
+  });
+  var ab=document.createElement("button");ab.type="button";ab.className="btn small noprint";ab.style.marginTop="8px";ab.textContent="Add 2 suggested questions";
+  ab.addEventListener("click",function(){suggestFor(seg,2);renderAgenda();});
+  d.appendChild(ab);box.appendChild(d);
+ });
+ var tot=document.createElement("p");tot.className="note";tot.textContent="Total: "+total+" minutes.";box.appendChild(tot);
+ document.getElementById("agendabtns").style.display="flex";
+}
+function suggestFor(seg,n){
+ var pool=QBANK.map(function(q,i){return{pur:q[0],text:q[1],idx:i};})
+  .filter(function(q){return q.pur===seg.purpose;})
+  .filter(function(q){return !(seg.qs||[]).some(function(x){return x.text===q.text;});});
+ for(var i=0;i<n&&pool.length;i++){
+  var pick=pool.splice(Math.floor(Math.random()*pool.length),1)[0];
+  seg.qs.push(pick);
+ }
+}
+document.getElementById("genagenda").addEventListener("click",function(){
+ var m=selMember();
+ if(!m){showErr("agendaerr","Add and select a team member first.");return;}
+ hideErr("agendaerr");
+ S.curType=document.getElementById("ttype").value;
+ var t=TYPES[S.curType];
+ S.agenda=t.segs.map(function(s){return{name:s[0],mins:s[1],purpose:s[2],qs:[]};});
+ S.agenda.forEach(function(seg){suggestFor(seg,2);});
+ renderAgenda();
+});
+document.getElementById("printagenda").addEventListener("click",function(){window.print();});
+function renderPurChips(){
+ var box=document.getElementById("purchips");box.innerHTML="";
+ PURPOSES.forEach(function(p){
+  var b=document.createElement("button");b.type="button";b.className="fchip"+(S.pur===p?" sel":"");
+  b.textContent=p==="all"?"All 60":p[0].toUpperCase()+p.slice(1);
+  b.addEventListener("click",function(){S.pur=p;renderPurChips();renderQList();});
+  box.appendChild(b);
+ });
+}
+function renderQList(){
+ var box=document.getElementById("qlist");box.innerHTML="";
+ var list=QBANK.map(function(q,i){return{pur:q[0],text:q[1],idx:i};}).filter(function(q){return S.pur==="all"||q.pur===S.pur;});
+ if(!list.length){box.innerHTML='<p class="note">No questions in this filter.</p>';return;}
+ list.forEach(function(q){
+  var d=document.createElement("div");d.className="qitem";
+  var qt=document.createElement("div");qt.className="qt";
+  var tag=document.createElement("span");tag.className="qtag";tag.textContent=q.pur;qt.appendChild(tag);
+  qt.appendChild(document.createTextNode(q.text));d.appendChild(qt);
+  if(S.agenda){
+   var sel=document.createElement("select");sel.className="noprint";sel.style.maxWidth="150px";sel.setAttribute("aria-label","Add to agenda segment");
+   S.agenda.forEach(function(sg,si){var o=document.createElement("option");o.value=si;o.textContent=sg.name;sel.appendChild(o);});
+   d.appendChild(sel);
+   var ab=document.createElement("button");ab.type="button";ab.className="cbtn noprint";ab.textContent="Add";
+   ab.addEventListener("click",function(){
+    var sg=S.agenda[parseInt(sel.value,10)];
+    if(sg&&!sg.qs.some(function(x){return x.text===q.text;})){sg.qs.push(q);renderAgenda();}
+   });
+   d.appendChild(ab);
+  }
+  box.appendChild(d);
+ });
+}
+function renderDraftCommits(){
+ var box=document.getElementById("commitlist");box.innerHTML="";
+ var m=selMember();
+ if(!S.draftCommits.length){box.innerHTML='<p class="note">No commitments added yet for this meeting.</p>';return;}
+ S.draftCommits.forEach(function(c,i){
+  var d=document.createElement("div");d.className="commit";
+  d.innerHTML="<b>"+esc(c.text)+"</b><div class='cmeta'>Owner: "+esc(c.owner==="me"?"me":(m?m.name:"them"))+(c.due?" \u00b7 Due "+esc(fmtDate(c.due)):"")+"</div>";
+  var rb=document.createElement("button");rb.type="button";rb.className="cbtn noprint";rb.style.marginTop="8px";rb.textContent="Remove";
+  rb.addEventListener("click",function(){S.draftCommits.splice(i,1);renderDraftCommits();});
+  d.appendChild(rb);box.appendChild(d);
+ });
+}
+document.getElementById("addcommit").addEventListener("click",function(){
+ var t=document.getElementById("ctext").value.trim();
+ if(!t){showErr("noteserr","Type a commitment before adding it.");return;}
+ hideErr("noteserr");
+ S.draftCommits.push({id:"c"+Date.now()+"_"+(cid++),text:t,owner:document.getElementById("cowner").value,due:document.getElementById("cdue").value||"",done:false});
+ document.getElementById("ctext").value="";document.getElementById("cdue").value="";
+ renderDraftCommits();
+});
+document.getElementById("savemeeting").addEventListener("click",function(){
+ var m=selMember();
+ if(!m){showErr("noteserr","Select a team member before saving.");return;}
+ hideErr("noteserr");
+ var qs=[];
+ if(S.agenda)S.agenda.forEach(function(sg){(sg.qs||[]).forEach(function(q){qs.push({pur:q.pur,text:q.text,seg:sg.name});});});
+ S.meetings.push({id:"mt"+Date.now(),memberId:m.id,date:todayStr(),type:S.curType,
+  notes:document.getElementById("mnotes").value.trim(),
+  commitments:S.draftCommits.slice(),questions:qs});
+ save();
+ document.getElementById("mnotes").value="";S.draftCommits=[];renderDraftCommits();renderCarry();renderPast();
+ var e=document.getElementById("noteserr");e.style.display="block";e.style.background="#eef6e6";e.style.borderColor="#9dbb8a";e.style.color="#3a6a2e";
+ e.textContent="Meeting saved for "+m.name+". Open commitments will surface automatically next time.";
+ setTimeout(function(){e.style.display="none";e.style.background="";e.style.borderColor="";e.style.color="";},4000);
+});
+function renderPast(){
+ var box=document.getElementById("pastlist");box.innerHTML="";
+ var m=selMember();
+ if(!m){box.innerHTML='<p class="note">Select a team member to see their past meetings.</p>';return;}
+ var list=S.meetings.filter(function(x){return x.memberId===m.id;}).sort(function(a,b){return b.date<a.date?-1:1;});
+ if(!list.length){box.innerHTML='<p class="note">No meetings saved yet for '+esc(m.name)+'.</p>';return;}
+ list.forEach(function(mt){
+  var d=document.createElement("div");d.className="meeting";
+  var t=TYPES[mt.type]?TYPES[mt.type].name:mt.type;
+  var done=(mt.commitments||[]).filter(function(c){return c.done;}).length;
+  var tot=(mt.commitments||[]).length;
+  d.innerHTML="<b>"+esc(fmtDate(mt.date))+"</b> \u00b7 "+esc(t)+
+   (mt.notes?"<div style='margin-top:6px'>"+esc(mt.notes.length>160?mt.notes.slice(0,160)+"\u2026":mt.notes)+"</div>":"")+
+   (tot?"<div class='note' style='margin-top:6px'>Commitments: "+done+"/"+tot+" done</div>":"");
+  box.appendChild(d);
+ });
+}
+function quarterOptions(){
+ var sel=document.getElementById("sq");sel.innerHTML="";
+ var set={};
+ S.meetings.forEach(function(mt){var q=quarterOf(mt.date);if(q)set[q]=1;});
+ var now=new Date();set[now.getFullYear()+"-Q"+(Math.floor(now.getMonth()/3)+1)]=1;
+ var keys=Object.keys(set).sort().reverse();
+ keys.forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=k.replace("-"," ");sel.appendChild(o);});
+}
+document.getElementById("genreport").addEventListener("click",function(){
+ var box=document.getElementById("summary");box.innerHTML="";
+ var m=selMember();
+ if(!m){box.innerHTML='<p class="note">Select a team member first.</p>';return;}
+ var q=document.getElementById("sq").value;
+ var list=S.meetings.filter(function(x){return x.memberId===m.id&&quarterOf(x.date)===q;});
+ if(!list.length){box.innerHTML='<p class="note">No meetings for '+esc(m.name)+' in '+esc(q.replace("-"," "))+'.</p>';return;}
+ var totC=0,doneC=0,focus={growth:0,feedback:0,morale:0,blockers:0};
+ list.forEach(function(mt){
+  (mt.commitments||[]).forEach(function(c){totC++;if(c.done)doneC++;});
+  (mt.questions||[]).forEach(function(qq){if(focus[qq.pur]!==undefined)focus[qq.pur]++;});
+ });
+ var rate=totC?Math.round(doneC/totC*100):0;
+ var topFocus=Object.keys(focus).sort(function(a,b){return focus[b]-focus[a];}).filter(function(k){return focus[k]>0;});
+ var html='<div style="margin:12px 0"><span class="sumstat"><b>'+list.length+'</b> meetings</span>'+
+  '<span class="sumstat"><b>'+rate+'%</b> commitments kept</span>'+
+  '<span class="sumstat"><b>'+doneC+'/'+totC+'</b> done</span></div>';
+ html+='<h3>Where your conversations focused</h3><p>'+(topFocus.length?topFocus.map(function(k){return k[0].toUpperCase()+k.slice(1)+" ("+focus[k]+" questions)";}).join(" \u00b7 "):"No bank questions used this quarter.")+'</p>';
+ html+='<h3>Commitment record</h3>';
+ list.forEach(function(mt){
+  (mt.commitments||[]).forEach(function(c){
+   html+='<div class="meeting">'+(c.done?"\u2705 ":"\u23F3 ")+esc(c.text)+' <span class="note">\u2014 '+esc(fmtDate(mt.date))+', owner: '+esc(c.owner==="me"?"me":m.name)+(c.due?", due "+esc(fmtDate(c.due)):"")+'</span></div>';
+  });
+ });
+ html+='<h3>Notes digest</h3>';
+ list.forEach(function(mt){
+  if(mt.notes)html+='<div class="meeting"><b>'+esc(fmtDate(mt.date))+':</b> '+esc(mt.notes.length>220?mt.notes.slice(0,220)+"\u2026":mt.notes)+'</div>';
+ });
+ box.innerHTML=html;
+});
+function renderAll(){
+ renderMembers();renderCarry();renderAgenda();renderPurChips();renderQList();renderDraftCommits();renderPast();quarterOptions();
+}
+load();
+if(!Array.isArray(S.members))S.members=[];
+if(!Array.isArray(S.meetings))S.meetings=[];
+if(!S.sel&&S.members.length)S.sel=S.members[0].id;
+S.draftCommits=[];
+renderAll();
+</script>
+</body>
+</html>

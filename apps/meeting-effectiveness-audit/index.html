@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meeting Effectiveness Audit | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Calculate what your meetings actually cost and get a keep/kill/shorten verdict for each one. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/meeting-effectiveness-audit/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Meeting Effectiveness Audit | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Calculate what your meetings actually cost and get a keep/kill/shorten verdict for each one. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/meeting-effectiveness-audit/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.sm{padding:10px 18px;min-height:44px;font-size:.92rem}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.flabel{display:block;font-weight:bold;margin:14px 0 2px}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 8px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.mrow{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+@media (max-width:560px){.mrow{grid-template-columns:1fr}}
+.mcard{border:2px solid #ddd;border-radius:10px;padding:18px;margin:14px 0;background:#fff}
+.mcard h3{font-family:Georgia,serif;margin-bottom:2px}
+.q{padding:10px 0;border-bottom:1px solid #eee}
+.q:last-child{border-bottom:none}
+.q .qtext{font-weight:600;margin-bottom:8px;display:block;font-size:.95rem}
+.yn{display:flex;gap:10px}
+.yn button{flex:1;padding:10px;border-radius:8px;border:2px solid #c9a227;background:#fff;font-weight:bold;font-size:.95rem;cursor:pointer;min-height:44px;color:#222}
+.yn button.yes.on{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.yn button.no.on{background:#b3261e;border-color:#b3261e;color:#fff}
+.verdict{display:inline-block;font-weight:bold;padding:6px 14px;border-radius:20px;font-size:.9rem;margin:6px 0}
+.v-keep{background:#e5f3e5;color:#1b5e20}
+.v-shorten{background:#fff3d6;color:#8a6d1c}
+.v-async{background:#e3eefc;color:#174a8b}
+.v-cancel{background:#fbdede;color:#8f1d16}
+.v-none{background:#eee;color:#666}
+.cost{font-size:1.35rem;font-weight:bold;color:#141210}
+.stat{display:inline-block;background:#fff;border:2px solid #c9a227;border-radius:10px;padding:12px 18px;margin:6px 8px 6px 0;text-align:center}
+.stat .n{font-size:1.5rem;font-weight:bold;color:#141210}
+.stat .l{font-size:.8rem;color:#6b6250}
+.err{color:#b3261e;font-weight:bold;font-size:.92rem;margin-top:8px}
+.rpt{border-left:5px solid #c9a227;background:#fff;border-radius:0 10px 10px 0;padding:16px 18px;margin:14px 0}
+.rpt.v-cancel{border-color:#b3261e}
+.rpt.v-async{border-color:#174a8b}
+.rpt.v-shorten{border-color:#c9a227}
+.rpt.v-keep{border-color:#2e7d32}
+.hidden{display:none!important}
+.copyok{color:#2e7d32;font-weight:bold;font-size:.9rem;margin-left:8px}
+textarea#proposal{font-family:inherit;min-height:220px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Meeting Effectiveness Audit</h1>
+<p class="intro">List your recurring meetings, answer 4 honest questions about each, and get a keep / shorten / make-async / cancel verdict — plus the real dollar cost of every meeting on your calendar.</p>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">1. Add a recurring meeting</h2>
+<div class="mrow">
+<div><label class="flabel" for="m_name">Meeting name</label><input type="text" id="m_name" maxlength="60" placeholder="e.g., Weekly team sync"></div>
+<div><label class="flabel" for="m_freq">Frequency</label>
+<select id="m_freq"><option value="weekly">Weekly</option><option value="biweekly">Every 2 weeks</option><option value="monthly">Monthly</option><option value="daily">Daily (workdays)</option></select></div>
+<div><label class="flabel" for="m_dur">Duration (minutes)</label><input type="number" id="m_dur" min="5" max="480" value="60" inputmode="numeric"></div>
+<div><label class="flabel" for="m_att">Number of attendees</label><input type="number" id="m_att" min="1" max="500" value="5" inputmode="numeric"></div>
+<div><label class="flabel" for="m_band">Average salary band (optional)</label>
+<select id="m_band"><option value="50000">$50k</option><option value="75000">$75k</option><option value="100000" selected>$100k</option><option value="150000">$150k</option><option value="200000">$200k</option><option value="custom">Custom hourly rate</option></select></div>
+<div id="customwrap" style="display:none"><label class="flabel" for="m_custom">Custom hourly rate ($)</label><input type="number" id="m_custom" min="1" max="2000" value="65" inputmode="decimal"></div>
+</div>
+<p class="hint">No salary info? Leave the default $100k — costs will be labeled as estimates.</p>
+<div class="err" id="m_err" role="alert"></div>
+<div style="margin-top:12px"><button class="btn" id="addbtn">Add meeting</button></div>
+</div>
+
+<div class="appcard" id="listcard" style="display:none">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">2. Audit each meeting</h2>
+<p class="hint">Answer all 4 questions per meeting — the verdict updates automatically.</p>
+<div id="mlist"></div>
+<div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn" id="reportbtn">Get my meeting report</button>
+<button class="btn ghost sm" id="clearbtn">Remove all</button>
+</div>
+</div>
+
+<div class="appcard" id="reportcard" style="display:none">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">3. Your meeting report</h2>
+<p class="hint" id="rdate"></p>
+<div id="totals" style="margin:12px 0"></div>
+<div id="rlist"></div>
+<h3 style="font-family:Georgia,serif;margin:22px 0 8px">Propose the cut</h3>
+<p class="hint">Pick a meeting, fill in the names, and get a ready-to-send proposal email for the organizer.</p>
+<label class="flabel" for="p_meet">Meeting</label><select id="p_meet"></select>
+<div class="mrow">
+<div><label class="flabel" for="p_org">Organizer's first name</label><input type="text" id="p_org" maxlength="40" placeholder="e.g., Dana"></div>
+<div><label class="flabel" for="p_you">Your first name</label><input type="text" id="p_you" maxlength="40" placeholder="e.g., Kimani"></div>
+</div>
+<div style="margin:10px 0"><button class="btn sm" id="pgen">Generate proposal</button></div>
+<textarea id="proposal" aria-label="Proposal email text" readonly></textarea>
+<div style="margin-top:10px"><button class="btn ghost sm" id="pcopy">Copy proposal</button><span class="copyok" id="pcopyok" style="display:none">Copied!</span></div>
+<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn ghost sm" id="printbtn">Print report</button>
+</div>
+<h3 style="font-family:Georgia,serif;margin:22px 0 8px">How the math works</h3>
+<ul style="margin-left:20px;font-size:.92rem;color:#6b6250">
+<li>Cost uses a <strong>1.3× fully-loaded multiplier</strong> on salary (benefits + overhead) and <strong>2,080 work hours/year</strong>.</li>
+<li>Meetings per year: daily = 250, weekly = 50, every 2 weeks = 26, monthly = 12.</li>
+<li>Reclaimable savings assume: cancel = 100% of cost, make-async = 50%, shorten = 25%, keep = 0%.</li>
+<li>These are planning estimates for educational purposes — not payroll figures.</li>
+</ul>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Meeting Effectiveness Audit is just the start. <em>Meeting Facilitation Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/meeting-facilitation-made-simple/">Get Meeting Facilitation Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-meeting-effectiveness-audit-v1";
+var FREQN={daily:250,weekly:50,biweekly:26,monthly:12};
+var FREQLBL={daily:"Daily",weekly:"Weekly",biweekly:"Every 2 weeks",monthly:"Monthly"};
+var QS=["Does it have a clear purpose everyone could state?","Do real decisions or actions come out of it?","Are the right people in the room — no passengers?","Could the same outcome happen async (doc, thread, or video update)?"];
+var state={meetings:[],seq:1};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(!r)return;var s=JSON.parse(r);
+ if(s&&Array.isArray(s.meetings)){state.meetings=s.meetings.filter(validM);state.seq=s.seq||(state.meetings.length+1);}}catch(e){}}
+function validM(m){return m&&typeof m.name==="string"&&m.name.length&&isFinite(m.dur)&&m.dur>0&&isFinite(m.att)&&m.att>0&&FREQN[m.freq];}
+function money(n){return "$"+Math.round(n).toLocaleString("en-US");}
+function hourly(m){if(m.band==="custom")return m.custom*1.3;var s=parseFloat(m.band);return s*1.3/2080;}
+function annualCost(m){return (m.dur/60)*hourly(m)*m.att*FREQN[m.freq];}
+function annualHours(m){return (m.dur/60)*m.att*FREQN[m.freq];}
+function verdict(m){
+ var q=m.q;
+ if(!q[0]&&!q[1])return{v:"cancel",t:"Cancel",why:"No clear purpose and no decisions come out of it. This meeting produces nothing — cancel it and reclaim 100% of the time and cost."};
+ if(q[3])return{v:"async",t:"Make async",why:"It has value, but it doesn\u2019t need to be live. Move it to a shared doc, thread, or recorded update and reclaim the synchronous hours."};
+ if(!q[2])return{v:"shorten",t:"Shorten",why:"The right people aren\u2019t in the room. Trim the invite list, cut it to 25 or 50 minutes, and give every minute a job."};
+ if(q[0]&&q[1]&&q[2]&&!q[3])return{v:"keep",t:"Keep",why:"Clear purpose, real decisions, the right people — and it genuinely needs to be live. Keep it, and protect it with an agenda."};
+ return{v:"shorten",t:"Shorten",why:"It has value but leaks time. Shorten it and give every minute a job."};
+}
+function allAnswered(m){return m.q.every(function(x){return x===true||x===false;});}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function renderList(){
+ var host=document.getElementById("mlist");host.innerHTML="";
+ document.getElementById("listcard").style.display=state.meetings.length?"block":"none";
+ state.meetings.forEach(function(m){
+  var card=document.createElement("div");card.className="mcard";
+  var head=document.createElement("div");
+  head.style.cssText="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap";
+  var info=document.createElement("div");
+  info.innerHTML="<h3>"+esc(m.name)+"</h3><div style='color:#6b6250;font-size:.92rem'>"+FREQLBL[m.freq]+" \u00B7 "+m.dur+" min \u00B7 "+m.att+" attendees</div><div class='cost'>"+money(annualCost(m))+"<span style='font-size:.85rem;font-weight:normal;color:#6b6250'> / year</span></div>";
+  var del=document.createElement("button");del.className="btn ghost sm";del.textContent="Remove";
+  del.setAttribute("aria-label","Remove "+m.name);
+  del.addEventListener("click",function(){state.meetings=state.meetings.filter(function(x){return x.id!==m.id;});save();renderList();document.getElementById("reportcard").style.display="none";});
+  head.appendChild(info);head.appendChild(del);card.appendChild(head);
+  QS.forEach(function(q,qi){
+   var qd=document.createElement("div");qd.className="q";
+   var sp=document.createElement("span");sp.className="qtext";sp.textContent=q;qd.appendChild(sp);
+   var yn=document.createElement("div");yn.className="yn";yn.setAttribute("role","group");yn.setAttribute("aria-label",q);
+   var yb=document.createElement("button");yb.type="button";yb.className="yes";yb.textContent="Yes";yb.setAttribute("aria-pressed",m.q[qi]===true);
+   var nb=document.createElement("button");nb.type="button";nb.className="no";nb.textContent="No";nb.setAttribute("aria-pressed",m.q[qi]===false);
+   if(m.q[qi]===true)yb.classList.add("on");if(m.q[qi]===false)nb.classList.add("on");
+   yb.addEventListener("click",function(){m.q[qi]=true;save();renderList();});
+   nb.addEventListener("click",function(){m.q[qi]=false;save();renderList();});
+   yn.appendChild(yb);yn.appendChild(nb);qd.appendChild(yn);card.appendChild(qd);
+  });
+  var vv=document.createElement("div");vv.style.marginTop="10px";
+  if(allAnswered(m)){var v=verdict(m);vv.innerHTML='<span class="verdict v-'+v.v+'">'+v.t+'</span><div style="font-size:.92rem;color:#6b6250">'+v.why+'</div>';}
+  else{vv.innerHTML='<span class="verdict v-none">Answer all 4 questions for a verdict</span>';}
+  card.appendChild(vv);
+  host.appendChild(card);
+ });
+}
+document.getElementById("m_band").addEventListener("change",function(){
+ document.getElementById("customwrap").style.display=this.value==="custom"?"block":"none";
+});
+document.getElementById("addbtn").addEventListener("click",function(){
+ var err=document.getElementById("m_err");err.textContent="";
+ var name=document.getElementById("m_name").value.trim();
+ var freq=document.getElementById("m_freq").value;
+ var dur=parseFloat(document.getElementById("m_dur").value);
+ var att=parseFloat(document.getElementById("m_att").value);
+ var band=document.getElementById("m_band").value;
+ var custom=parseFloat(document.getElementById("m_custom").value);
+ if(!name){err.textContent="Give the meeting a name.";return;}
+ if(!isFinite(dur)||dur<5||dur>480){err.textContent="Duration must be between 5 and 480 minutes.";return;}
+ if(!isFinite(att)||att<1||att>500){err.textContent="Attendees must be between 1 and 500.";return;}
+ if(band==="custom"&&(!isFinite(custom)||custom<=0||custom>2000)){err.textContent="Enter a valid custom hourly rate.";return;}
+ state.meetings.push({id:state.seq++,name:name,freq:freq,dur:Math.round(dur),att:Math.round(att),band:band,custom:band==="custom"?custom:0,q:[null,null,null,null]});
+ document.getElementById("m_name").value="";
+ save();renderList();document.getElementById("reportcard").style.display="none";
+});
+document.getElementById("clearbtn").addEventListener("click",function(){
+ if(!confirm("Remove all meetings and start over?"))return;
+ state.meetings=[];save();renderList();document.getElementById("reportcard").style.display="none";
+});
+document.getElementById("reportbtn").addEventListener("click",function(){
+ var missing=state.meetings.filter(function(m){return !allAnswered(m);});
+ if(!state.meetings.length){alert("Add at least one meeting first.");return;}
+ if(missing.length){alert("Please answer all 4 questions for: "+missing.map(function(m){return m.name;}).join(", "));return;}
+ renderReport();
+});
+var RECLAIM={cancel:1,async:0.5,shorten:0.25,keep:0};
+function renderReport(){
+ var rc=document.getElementById("reportcard");rc.style.display="block";
+ var d=new Date();document.getElementById("rdate").textContent="Generated "+d.toLocaleDateString()+" \u00B7 saved in this browser";
+ var rows=state.meetings.map(function(m){var v=verdict(m);return{m:m,v:v,c:annualCost(m),h:annualHours(m)};});
+ rows.sort(function(a,b){return b.c-a.c;});
+ var totC=0,totH=0,recC=0,recH=0;
+ rows.forEach(function(r){totC+=r.c;totH+=r.h;recC+=r.c*RECLAIM[r.v.v];recH+=r.h*RECLAIM[r.v.v];});
+ var t=document.getElementById("totals");
+ t.innerHTML='<div class="stat"><div class="n">'+money(totC)+'</div><div class="l">total annual cost</div></div>'+
+ '<div class="stat"><div class="n">'+Math.round(totH).toLocaleString()+'</div><div class="l">person-hours / year</div></div>'+
+ '<div class="stat"><div class="n" style="color:#2e7d32">'+money(recC)+'</div><div class="l">reclaimable / year</div></div>'+
+ '<div class="stat"><div class="n" style="color:#2e7d32">'+Math.round(recH).toLocaleString()+'</div><div class="l">hours reclaimable</div></div>';
+ var rl=document.getElementById("rlist");rl.innerHTML="";
+ rows.forEach(function(r,i){
+  var div=document.createElement("div");div.className="rpt v-"+r.v.v;
+  div.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><strong style="font-size:1.1rem">'+(i+1)+'. '+esc(r.m.name)+'</strong><span class="verdict v-'+r.v.v+'">'+r.v.t+'</span></div>'+
+  '<div style="color:#6b6250;font-size:.92rem">'+FREQLBL[r.m.freq]+" \u00B7 "+r.m.dur+" min \u00B7 "+r.m.att+" attendees</div>"+
+  '<div class="cost">'+money(r.c)+'<span style="font-size:.85rem;font-weight:normal;color:#6b6250"> / year \u00B7 '+Math.round(r.h).toLocaleString()+' person-hours</span></div>'+
+  '<div style="font-size:.92rem;margin-top:6px">'+r.v.why+'</div>'+
+  (RECLAIM[r.v.v]>0?'<div style="font-size:.92rem;color:#2e7d32;font-weight:bold;margin-top:4px">Reclaimable: '+money(r.c*RECLAIM[r.v.v])+'/yr ('+Math.round(r.h*RECLAIM[r.v.v]).toLocaleString()+' hrs)</div>':"");
+  rl.appendChild(div);
+ });
+ var pm=document.getElementById("p_meet");pm.innerHTML="";
+ rows.forEach(function(r){var o=document.createElement("option");o.value=r.m.id;o.textContent=r.m.name+" ("+r.v.t+")";pm.appendChild(o);});
+ rc.scrollIntoView();
+}
+var PTEXT={cancel:"cancel it and replace it with a short written update each cycle",
+ async:"move it async — a shared doc or thread where everyone posts their update by Friday, and we only meet if something needs a live decision",
+ shorten:"cut it to 25 minutes with a hard agenda, a smaller invite list, and a clear owner for each item"};
+document.getElementById("pgen").addEventListener("click",function(){
+ var id=parseInt(document.getElementById("p_meet").value,10);
+ var m=state.meetings.filter(function(x){return x.id===id;})[0];if(!m)return;
+ var org=document.getElementById("p_org").value.trim()||"there";
+ var you=document.getElementById("p_you").value.trim()||"me";
+ var v=verdict(m);
+ var prop=v.v==="keep"?"keep it exactly as is — it earns its time":"I\u2019d like to propose we "+PTEXT[v.v]+".";
+ document.getElementById("proposal").value=
+"Hi "+org+",\n\nI ran the numbers on \u201C"+m.name+"\u201D: at "+m.att+" people for "+m.dur+" minutes "+FREQLBL[m.freq].toLowerCase()+", it costs the team roughly "+money(annualCost(m))+" per year in staff time ("+Math.round(annualHours(m)).toLocaleString()+" person-hours).\n\n"+prop.charAt(0).toUpperCase()+prop.slice(1)+"\n\nCould we pilot this for 4 weeks and see if anything breaks? I\u2019ll own the follow-through either way.\n\nThanks,\n"+you;
+});
+document.getElementById("pcopy").addEventListener("click",function(){
+ var ta=document.getElementById("proposal");var ok=document.getElementById("pcopyok");
+ function done(){ok.style.display="inline";setTimeout(function(){ok.style.display="none";},1800);}
+ if(!ta.value){return;}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(done,done);}
+ else{ta.select();try{document.execCommand("copy");}catch(e){}done();}
+});
+document.getElementById("printbtn").addEventListener("click",function(){window.print();});
+load();renderList();
+</script>
+</body>
+</html>
