@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conversation Depth Ladder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Move conversations from small talk to meaningful connection with a 4-rung question ladder, graceful transition phrases, and green-light / yellow-light cues. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/conversation-depth-ladder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Conversation Depth Ladder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Move conversations from small talk to meaningful connection with a 4-rung question ladder, graceful transition phrases, and green-light / yellow-light cues. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/conversation-depth-ladder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:10px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;margin:22px 0 8px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.fld{display:block;font-weight:bold;margin-top:12px;color:#141210}
+.hidden{display:none!important}
+.setgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+@media (max-width:560px){.setgrid{grid-template-columns:1fr}}
+.setbtn{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:18px 14px;font-size:1rem;font-weight:bold;color:#141210;cursor:pointer;min-height:64px;line-height:1.35}
+.setbtn small{display:block;font-weight:normal;color:#6b6250;font-size:.85rem;margin-top:4px}
+.setbtn.sel{background:#c9a227;color:#141210}
+.setbtn.sel small{color:#3d3413}
+.rung{border:2px solid #c9a227;border-radius:10px;margin:14px 0;overflow:hidden}
+.runghead{background:#f3ecd7;padding:12px 16px;font-weight:bold;font-family:Georgia,serif;font-size:1.05rem;color:#141210}
+.runghead .goal{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:normal;font-size:.85rem;color:#6b6250;margin-top:2px}
+.rung ol{padding:14px 16px 14px 40px}
+.rung li{margin:8px 0}
+.bridge{background:#141210;color:#f5efdd;border-radius:8px;padding:12px 16px;margin:4px 0 4px 24px;font-size:.95rem}
+.bridge b{color:#e8c84a}
+.cues{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+@media (max-width:560px){.cues{grid-template-columns:1fr}}
+.cue{border-radius:10px;padding:14px 16px}
+.cue.green{background:#eef7e8;border:2px solid #5a8f4a}
+.cue.yellow{background:#fdf6e0;border:2px solid #c9a227}
+.cue h4{margin-bottom:6px}
+.cue ul{padding-left:20px;font-size:.92rem}
+.cue li{margin:5px 0}
+.tbank{padding-left:20px}
+.tbank li{margin:8px 0;font-style:italic}
+#pocketPrint{border:3px dashed #8a6d1c;border-radius:12px;padding:22px;background:#fff}
+#pocketPrint h2{font-family:Georgia,serif;margin-bottom:4px}
+#pocketPrint .pset{color:#8a6d1c;font-weight:bold;margin-bottom:10px}
+#pocketPrint h4{font-family:Georgia,serif;margin:12px 0 4px}
+#pocketPrint ol{padding-left:22px;font-size:.9rem}
+#pocketPrint li{margin:4px 0}
+#pocketPrint .pcue{font-size:.85rem;color:#6b6250;margin-top:10px}
+.drillq{background:#f3ecd7;border-radius:10px;padding:22px;margin:14px 0}
+.drillq .dq{font-family:Georgia,serif;font-size:1.25rem;margin:8px 0}
+.drillq .dt{font-style:italic;color:#6b6250}
+.dots{display:flex;gap:8px;justify-content:center;margin:12px 0}
+.dots span{width:14px;height:14px;border-radius:50%;background:#ddd;border:2px solid #c9a227}
+.dots span.on{background:#c9a227}
+.err{background:#fdecec;border:2px solid #c0392b;color:#7b241c;border-radius:8px;padding:12px 16px;margin:12px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+  body{background:#fff}
+  header.site,footer.site,.noprint,main.app .appcard:not(#pocketWrapInner){display:none!important}
+  main.app{max-width:100%;padding:0}
+  #pocketPrint{border:2px solid #000}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Conversation Depth Ladder</h1>
+<p class="intro">Move conversations from small talk to meaningful connection — one rung at a time. Pick your setting, climb the 4-rung question ladder, and use the transition phrases and green-light / yellow-light cues to go deeper gracefully.</p>
+
+<div class="appcard" id="setupCard">
+<h2>1 &middot; Pick your setting</h2>
+<p style="color:#6b6250">Where is this conversation happening? Your ladder is tailored to the setting.</p>
+<div class="setgrid" id="settingGrid" role="group" aria-label="Conversation setting"></div>
+<div class="err hidden" id="setupErr">Please pick a setting first.</div>
+<div class="btnrow"><button class="btn" id="showLadder">Show my ladder</button></div>
+</div>
+
+<div id="ladderWrap" class="hidden">
+<div class="appcard">
+<h2 id="ladderTitle"></h2>
+<p style="color:#6b6250">Start on Rung 1. Only climb when you see green lights — never force depth.</p>
+<div id="rungs"></div>
+<h3>Transition phrases — going deeper gracefully</h3>
+<p style="color:#6b6250;font-size:.95rem">Use one of these to bridge between rungs. A good transition names what they just said, then opens the next door.</p>
+<ul class="tbank" id="transBank"></ul>
+<h3>Read the room: green light / yellow light</h3>
+<div class="cues">
+<div class="cue green"><h4>&#128994; Green light — safe to go deeper</h4><ul id="greenList"></ul></div>
+<div class="cue yellow"><h4>&#128993; Yellow light — ease back a rung</h4><ul id="yellowList"></ul></div>
+</div>
+<div class="btnrow">
+<button class="btn" id="toPocket">Build my pocket question card</button>
+<button class="btn ghost" id="toDrill">Start practice drill</button>
+<button class="btn ghost" id="changeSetting">Change setting</button>
+</div>
+</div>
+</div>
+
+<div id="pocketWrap" class="hidden">
+<div class="appcard" id="pocketWrapInner">
+<h2>Your pocket question card</h2>
+<p style="color:#6b6250">A compact card for your chosen setting. Screenshot it, or print it and keep it in your wallet.</p>
+<div id="pocketPrint"></div>
+<div class="btnrow noprint">
+<button class="btn" id="printCard">Print card</button>
+<button class="btn ghost" id="pocketBack">Back to ladder</button>
+</div>
+</div>
+</div>
+
+<div id="drillWrap" class="hidden">
+<div class="appcard">
+<h2>Practice drill — rehearse going deeper</h2>
+<p style="color:#6b6250">Pick any 3 questions from your ladder and one transition phrase. Then rehearse each one out loud — transitions included. Saying it once beforehand makes it natural in the moment.</p>
+<label class="fld" for="dq1">Question 1</label><select id="dq1"></select>
+<label class="fld" for="dq2">Question 2</label><select id="dq2"></select>
+<label class="fld" for="dq3">Question 3</label><select id="dq3"></select>
+<label class="fld" for="dtrans">Transition phrase to rehearse</label><select id="dtrans"></select>
+<div class="err hidden" id="drillErr">Pick 3 <b>different</b> questions for the drill.</div>
+<div class="btnrow"><button class="btn" id="startDrill">Start drill</button></div>
+<div id="drillStage" class="hidden">
+<div class="dots" id="drillDots"></div>
+<div class="drillq">
+<div style="font-size:.85rem;color:#8a6d1c;font-weight:bold" id="drillStep"></div>
+<div class="dq" id="drillQ"></div>
+<div class="dt" id="drillT"></div>
+<p style="margin-top:10px;color:#6b6250;font-size:.95rem">Say the transition, then the question — out loud, in your own words. Then move on.</p>
+</div>
+<div class="btnrow"><button class="btn" id="drillNext">Rehearsed it — next</button></div>
+</div>
+<div id="drillDone" class="hidden">
+<div class="cue green" style="margin-top:14px"><h4>Drill complete</h4>
+<p>You just rehearsed 3 real questions and a graceful transition. In your next conversation, listen for one green light — then climb one rung. That is the whole skill.</p></div>
+<div class="btnrow"><button class="btn ghost" id="drillAgain">Run drill again</button></div>
+</div>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Conversation Depth Ladder is just the start. <em>Small Talk Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — how to start, carry, and deepen any conversation with confidence.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/small-talk-made-simple/">Get Small Talk Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-conversation-depth-ladder-v1";
+var RUNGS=[
+ {name:"Rung 1 — Easy Openers",goal:"Safe, light, anyone can answer. Goal: get talking and find common ground."},
+ {name:"Rung 2 — Getting Personal",goal:"Interests, life, preferences. Goal: discover what they enjoy."},
+ {name:"Rung 3 — Going Deeper",goal:"Values, challenges, stories. Goal: learn what shapes them."},
+ {name:"Rung 4 — Real Connection",goal:"Meaning, purpose, dreams. Goal: connect person to person."}
+];
+var TRANSITIONS=[
+ "That's interesting — what got you into that?",
+ "I'd love to hear more about that. What's been the most rewarding part?",
+ "That sounds like quite a story. What did you take away from it?",
+ "You clearly care about this — what matters most to you about it?",
+ "What surprised you most about that experience?",
+ "How did that change the way you see things?",
+ "Can I ask what you enjoy most about that?",
+ "What's next for you with that?"
+];
+var GREENS=[
+ "They ask you questions back",
+ "Their answers get longer and more detailed",
+ "They volunteer something personal without being asked",
+ "Steady eye contact, leaning in, relaxed posture",
+ "They laugh easily and seem at ease",
+ "They say things like \u201CI've never really talked about this\u201D"
+];
+var YELLOWS=[
+ "One-word answers: \u201Cfine,\u201D \u201Cyeah,\u201D \u201Cnot much\u201D",
+ "Looking around the room or checking their phone",
+ "They change the subject quickly",
+ "Arms crossed, leaning away, closed posture",
+ "Long pauses followed by a topic switch",
+ "A flat \u201Canyway...\u201D that closes the door"
+];
+var SETTINGS={
+ networking:{label:"Networking event",sub:"Professional mixers, conferences, meetups",
+  q:[
+   ["What brings you here tonight?","How did you first hear about this event?","What kind of work do you do?","How long have you been in your field?","Are you from around here, or did you travel in?","Have you been to one of these before?","What's keeping you busy these days?","What are you hoping to get out of tonight?"],
+   ["What part of your work do you enjoy most?","What's a project you're excited about right now?","How did you end up in this line of work?","What's something you're learning at the moment?","What does a great week at work look like for you?","Who's been a big influence on your career?","What skill are you trying to build this year?","What's the most interesting conversation you've had tonight?"],
+   ["What's been the biggest challenge in your work lately?","What would you do more of if time weren't an issue?","What's a risk you took professionally that paid off?","What does success look like for you five years from now?","What's something you believe about your industry that most people don't?","What's the hardest lesson your career has taught you?","What kind of work feels most meaningful to you?","What's something you're proud of that rarely comes up in conversation?"],
+   ["What legacy do you want your work to leave?","What fear have you had to face to get where you are?","When do you feel most alive in what you do?","What's a dream you've put on hold — and why?","What would you tell yourself at the start of your career?","Who are you outside of work — what defines you?","What are you hoping will be different a year from now?","What's one thing you wish more people understood about you?"]]},
+ first:{label:"First meeting",sub:"Meeting someone new — a friend of a friend, a date, a social intro",
+  q:[
+   ["How do you know the host?","Are you from around here originally?","What do you do when you're not working?","Been up to anything fun lately?","How's your week going so far?","Have you tried anything good around here recently?","What do you do for work?","How long have you lived in the area?"],
+   ["What do you do for fun on a free weekend?","What are you into these days — any hobbies or obsessions?","What's the best trip you've taken recently?","What kind of music, books, or shows are you into?","What's something you're looking forward to?","What's your go-to way to unwind?","Are you working on anything interesting outside of work?","What's a small thing that always makes your day better?"],
+   ["What's been the highlight of your year so far?","What's something you've changed your mind about recently?","What's a challenge you're working through right now?","What are you most proud of outside of work?","What's a tradition from your family you still keep?","What's something you want to get better at?","What's the best advice you've ever received?","What does a perfect day look like for you?"],
+   ["What matters most to you in life right now?","What's a dream you're quietly working toward?","When have you felt most like yourself?","What's something you've learned the hard way?","What do you want more of in your life?","What are you grateful for that you rarely say out loud?","What would you do if you knew you couldn't fail?","What kind of friend are you trying to be?"]]},
+ lunch:{label:"Team lunch",sub:"Colleagues, work lunches, office social time",
+  q:[
+   ["How's your day going so far?","What are you working on this week?","Tried anything good for lunch around here?","How was your weekend?","Got any plans for the upcoming break?","How long have you been on the team?","What did you do before this role?","What keeps you busiest these days?"],
+   ["What part of the job do you enjoy most?","What's something you're learning in your role right now?","What does your ideal workday look like?","What's a win you've had recently?","How do you like to recharge after a tough week?","What's your go-to productivity trick?","What would make your work life easier right now?","What's something outside work you're into?"],
+   ["What's the trickiest part of your role?","What would you change about how we work as a team?","What's a career goal you're working toward?","What's something you've learned from a mistake at work?","What kind of projects energize you most?","What feedback has stuck with you over the years?","What do you wish leadership understood better?","What's a skill you want to develop next?"],
+   ["What does meaningful work mean to you?","Where do you hope to be in five years — honestly?","What keeps you going on the hard days?","What's a value you won't compromise on at work?","What would you do if this job weren't a factor?","What's the best team you've ever been part of — what made it work?","What do you want to be known for?","What's one thing you'd tell a new hire about thriving here?"]]},
+ neighbor:{label:"New neighbor",sub:"The street, the building, the block — casual and local",
+  q:[
+   ["How long have you lived in the neighborhood?","Where did you move from?","Have you found a good grocery or coffee spot nearby yet?","How are you settling in?","Do you know the area well?","What do you do for work?","Have you met many people on the street yet?","How's the move treating you?"],
+   ["What do you like to do around here on weekends?","Any local spots you'd recommend?","What's your household like — family, pets, roommates?","What are you into outside of work?","What's been the best surprise about the neighborhood so far?","Do you have a favorite local restaurant yet?","What does a typical evening look like for you?","Are you a homebody or always out and about?"],
+   ["What made you choose this neighborhood?","What's been the hardest part of the move?","What are you hoping this next chapter looks like?","What's something you're looking forward to this year?","What traditions matter to you and your household?","What's a project you're working on at home?","What's something you've learned from moving before?","What would make this place feel like home?"],
+   ["What does \u201Chome\u201D mean to you?","What are you building toward in this season of life?","What community have you been part of that felt like family?","What's a value you try to live by day to day?","What are you grateful for right now?","What dream are you chasing these days?","When do you feel most at peace?","What kind of neighbor do you hope to be?"]]}
+};
+var state={setting:null};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&typeof s==="object")state=s;}catch(e){}}
+function el(id){return document.getElementById(id);}
+function show(id){el(id).classList.remove("hidden");}
+function hide(id){el(id).classList.add("hidden");}
+// --- setting picker ---
+(function(){
+ var g=el("settingGrid");
+ Object.keys(SETTINGS).forEach(function(k){
+  var b=document.createElement("button");
+  b.className="setbtn";b.type="button";b.dataset.k=k;
+  b.innerHTML=SETTINGS[k].label+"<small>"+SETTINGS[k].sub+"</small>";
+  b.setAttribute("aria-pressed","false");
+  b.addEventListener("click",function(){
+   state.setting=k;save();hide("setupErr");
+   var all=g.querySelectorAll(".setbtn");
+   for(var i=0;i<all.length;i++){all[i].classList.remove("sel");all[i].setAttribute("aria-pressed","false");}
+   b.classList.add("sel");b.setAttribute("aria-pressed","true");
+  });
+  g.appendChild(b);
+ });
+})();
+function markSetting(){
+ var all=el("settingGrid").querySelectorAll(".setbtn");
+ for(var i=0;i<all.length;i++){
+  var on=all[i].dataset.k===state.setting;
+  all[i].classList.toggle("sel",on);all[i].setAttribute("aria-pressed",on?"true":"false");
+ }
+}
+el("showLadder").addEventListener("click",function(){
+ if(!state.setting||!SETTINGS[state.setting]){show("setupErr");return;}
+ hide("setupErr");renderLadder();hide("setupCard");hide("pocketWrap");hide("drillWrap");show("ladderWrap");
+ window.scrollTo(0,0);
+});
+el("changeSetting").addEventListener("click",function(){
+ hide("ladderWrap");hide("pocketWrap");hide("drillWrap");show("setupCard");window.scrollTo(0,0);
+});
+function renderLadder(){
+ var S=SETTINGS[state.setting];
+ el("ladderTitle").textContent="Your ladder — "+S.label;
+ var r=el("rungs");r.innerHTML="";
+ RUNGS.forEach(function(rg,ri){
+  var d=document.createElement("div");d.className="rung";
+  var h=document.createElement("div");h.className="runghead";
+  h.innerHTML=rg.name+'<span class="goal">'+rg.goal+"</span>";
+  d.appendChild(h);
+  var ol=document.createElement("ol");
+  S.q[ri].forEach(function(q){var li=document.createElement("li");li.textContent=q;ol.appendChild(li);});
+  d.appendChild(ol);r.appendChild(d);
+  if(ri<RUNGS.length-1){
+   var br=document.createElement("div");br.className="bridge";
+   br.innerHTML="<b>&#8595; Going deeper — try:</b> \u201C"+TRANSITIONS[ri*2]+" \u2026\u201D";
+   r.appendChild(br);
+  }
+ });
+ var tb=el("transBank");tb.innerHTML="";
+ TRANSITIONS.forEach(function(t){var li=document.createElement("li");li.textContent="\u201C"+t+"\u201D";tb.appendChild(li);});
+ var gl=el("greenList");gl.innerHTML="";
+ GREENS.forEach(function(t){var li=document.createElement("li");li.textContent=t;gl.appendChild(li);});
+ var yl=el("yellowList");yl.innerHTML="";
+ YELLOWS.forEach(function(t){var li=document.createElement("li");li.textContent=t;yl.appendChild(li);});
+}
+// --- pocket card ---
+el("toPocket").addEventListener("click",function(){
+ var S=SETTINGS[state.setting];
+ var html="<h2>Conversation Depth Ladder</h2><div class='pset'>"+S.label+"</div>";
+ RUNGS.forEach(function(rg,ri){
+  html+="<h4>"+rg.name+"</h4><ol>";
+  for(var i=0;i<3;i++)html+="<li>"+S.q[ri][i]+"</li>";
+  html+="</ol>";
+ });
+ html+="<h4>Bridge phrases</h4><ol><li>\u201C"+TRANSITIONS[1]+"\u201D</li><li>\u201C"+TRANSITIONS[3]+"\u201D</li></ol>";
+ html+="<div class='pcue'><b>Green light?</b> They ask back, answers lengthen, they volunteer. <b>Yellow light?</b> One-word answers, phone checks, subject changes — ease back a rung.</div>";
+ el("pocketPrint").innerHTML=html;
+ hide("ladderWrap");show("pocketWrap");window.scrollTo(0,0);
+});
+el("pocketBack").addEventListener("click",function(){hide("pocketWrap");show("ladderWrap");window.scrollTo(0,0);});
+el("printCard").addEventListener("click",function(){window.print();});
+// --- practice drill ---
+function fillDrill(){
+ var S=SETTINGS[state.setting];
+ var sels=[el("dq1"),el("dq2"),el("dq3")];
+ sels.forEach(function(sel){
+  sel.innerHTML="";
+  RUNGS.forEach(function(rg,ri){
+   var og=document.createElement("optgroup");og.label=rg.name;
+   S.q[ri].forEach(function(q,qi){
+    var o=document.createElement("option");o.value=ri+"-"+qi;o.textContent=q;og.appendChild(o);
+   });
+   sel.appendChild(og);
+  });
+ });
+ var dt=el("dtrans");dt.innerHTML="";
+ TRANSITIONS.forEach(function(t,i){var o=document.createElement("option");o.value=i;o.textContent=t;dt.appendChild(o);});
+ // restore or default distinct
+ var d=state.drill||{};
+ if(d.q1&&d.q2&&d.q3&&d.q1!==d.q2&&d.q1!==d.q3&&d.q2!==d.q3){
+  el("dq1").value=d.q1;el("dq2").value=d.q2;el("dq3").value=d.q3;
+ }else{el("dq1").value="0-0";el("dq2").value="1-0";el("dq3").value="2-0";}
+ if(typeof d.t!=="undefined")el("dtrans").value=d.t;
+}
+el("toDrill").addEventListener("click",function(){
+ fillDrill();hide("ladderWrap");hide("pocketWrap");show("drillWrap");
+ hide("drillStage");hide("drillDone");window.scrollTo(0,0);
+});
+var drillQs=[],drillT="",drillIdx=0;
+function qText(v){
+ var p=v.split("-");return SETTINGS[state.setting].q[parseInt(p[0],10)][parseInt(p[1],10)];
+}
+el("startDrill").addEventListener("click",function(){
+ var a=el("dq1").value,b=el("dq2").value,c=el("dq3").value;
+ if(a===b||a===c||b===c){show("drillErr");return;}
+ hide("drillErr");
+ state.drill={q1:a,q2:b,q3:c,t:el("dtrans").value};save();
+ drillQs=[a,b,c];drillT=TRANSITIONS[parseInt(el("dtrans").value,10)];drillIdx=0;
+ hide("drillDone");show("drillStage");drawDrill();window.scrollTo(0,0);
+});
+function drawDrill(){
+ var dots=el("drillDots");dots.innerHTML="";
+ drillQs.forEach(function(_,i){
+  var s=document.createElement("span");if(i<=drillIdx)s.className="on";dots.appendChild(s);
+ });
+ el("drillStep").textContent="Question "+(drillIdx+1)+" of 3";
+ el("drillQ").textContent="\u201C"+qText(drillQs[drillIdx])+"\u201D";
+ el("drillT").textContent="Bridge in with: \u201C"+drillT+"\u201D";
+ el("drillNext").textContent=drillIdx<2?"Rehearsed it — next":"Rehearsed it — finish";
+}
+el("drillNext").addEventListener("click",function(){
+ if(drillIdx<2){drillIdx++;drawDrill();window.scrollTo(0,0);}
+ else{hide("drillStage");show("drillDone");window.scrollTo(0,0);}
+});
+el("drillAgain").addEventListener("click",function(){
+ hide("drillDone");hide("drillStage");window.scrollTo(0,0);
+});
+load();markSetting();
+if(state.setting&&SETTINGS[state.setting]){hide("setupCard");renderLadder();show("ladderWrap");}
+</script>
+</body>
+</html>

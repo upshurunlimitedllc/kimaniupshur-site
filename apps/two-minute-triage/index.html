@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two-Minute Triage Flow | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Clear a task pile fast with the two-minute rule: do it now, or route it to delegate, defer, or delete. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/two-minute-triage/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Two-Minute Triage Flow | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Clear a task pile fast with the two-minute rule: do it now, or route it to delegate, defer, or delete. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/two-minute-triage/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.hint{color:#6b6250;font-size:.92rem;margin:8px 0}
+.err{color:#a33;font-weight:bold;font-size:.95rem;margin:8px 0}
+.taskcard{background:#fff;border:3px solid #c9a227;border-radius:12px;padding:26px;margin:16px 0;text-align:center}
+.taskcard .q{font-family:Georgia,serif;font-size:1.35rem;margin:10px 0 4px}
+.taskcard .t{font-size:1.25rem;font-weight:bold;margin-bottom:6px}
+.choicegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+@media (max-width:520px){.choicegrid{grid-template-columns:1fr}}
+.progress{height:10px;background:#eee3c2;border-radius:6px;overflow:hidden;margin:10px 0}
+.progress>div{height:100%;background:#c9a227;width:0%}
+.timerbig{font-family:Georgia,serif;font-size:3rem;color:#141210;margin:8px 0}
+.listsec{margin-bottom:18px}
+.listsec h3{font-family:Georgia,serif;margin-bottom:6px}
+.item{background:#fff;border:1px solid #e0d6b8;border-radius:8px;padding:10px 14px;margin:6px 0}
+.item .meta{font-size:.85rem;color:#6b6250}
+.statline{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.statline>div{text-align:center;min-width:80px}
+.statline .n{font-size:1.7rem;font-weight:bold;font-family:Georgia,serif}
+.statline .l{font-size:.78rem;color:#6b6250}
+.routepanel{background:#faf7ef;border:2px solid #c9a227;border-radius:10px;padding:18px;margin-top:14px;text-align:left}
+.routepanel h4{font-family:Georgia,serif;margin-bottom:4px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Two-Minute Triage Flow</h1>
+<p class="intro">Dump your task pile here. The tool walks you through <strong>one task at a time</strong>: if it takes under two minutes, do it now. Otherwise delegate it, defer it, or delete it.</p>
+
+<div class="appcard" id="tinput">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">1 · Load your task pile</h2>
+<p class="hint">Paste a brain dump or type tasks — one per line.</p>
+<label for="tdump"><strong>Tasks</strong></label>
+<textarea id="tdump" rows="6" placeholder="Reply to the landlord&#10;Book the dentist&#10;Draft the Q3 report outline&#10;…"></textarea>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+<button class="btn" id="tadd">Add tasks</button>
+<button class="btn ghost" id="tsample">Use a sample pile</button>
+</div>
+<div class="err" id="tinputerr" role="alert"></div>
+<div class="statline" id="tqueuestats" style="display:none">
+<div><div class="n" id="tqcount" style="color:#8a6d1c">0</div><div class="l">in queue</div></div>
+</div>
+<div style="text-align:center;margin-top:10px"><button class="btn" id="tstart" style="display:none">Start triage →</button></div>
+</div>
+
+<div class="appcard" id="tflow" style="display:none">
+<div class="progress" aria-hidden="true"><div id="tprog"></div></div>
+<p class="hint" style="text-align:center" id="tproglabel"></p>
+<div id="tcard"></div>
+<div class="err" id="terr" role="alert"></div>
+<div style="display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:12px">
+<button class="btn ghost small" id="tundo">↩ Undo last decision</button>
+<button class="btn ghost small" id="tstop">Add more / view results</button>
+</div>
+</div>
+
+<div class="appcard" id="tresults" style="display:none">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px">Triage results</h2>
+<p class="hint">Four sorted lists. Done is done — delegated and scheduled items leave your head and land somewhere real.</p>
+<div class="statline">
+<div><div class="n" id="rcdone" style="color:#2e7d32">0</div><div class="l">done</div></div>
+<div><div class="n" id="rcdel" style="color:#8a6d1c">0</div><div class="l">delegated</div></div>
+<div><div class="n" id="rcsch" style="color:#8a6d1c">0</div><div class="l">scheduled</div></div>
+<div><div class="n" id="rcdrop" style="color:#a33">0</div><div class="l">dropped</div></div>
+</div>
+<div class="listsec"><h3>✓ Done</h3><div id="rldone"></div></div>
+<div class="listsec"><h3>→ Delegated</h3><div id="rldel"></div></div>
+<div class="listsec"><h3>◷ Scheduled</h3><div id="rlsch"></div></div>
+<div class="listsec"><h3>✕ Dropped</h3><div id="rldrop"></div></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+<button class="btn" id="tcopy">Copy summary</button>
+<button class="btn ghost" id="tmore">Triage more tasks</button>
+<button class="btn ghost" id="treset">Start over (clear all)</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Two-Minute Triage Flow is just the start. <em>Productivity Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/productivity-made-simple/">Get Productivity Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-two-minute-triage-v1";
+var uidc=0;
+function uid(){uidc++;return "id"+Date.now().toString(36)+uidc;}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function el(id){return document.getElementById(id);}
+var state={queue:[],current:null,done:[],delegated:[],scheduled:[],dropped:[],undo:[]};
+var mode="idle"; /* idle | ask | do | route */
+var timerInt=null,timerLeft=120,audio=null;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var s=JSON.parse(r);if(s&&typeof s==="object"&&s.queue){state=Object.assign({queue:[],current:null,done:[],delegated:[],scheduled:[],dropped:[],undo:[]},s);}}}catch(e){}}
+load();
+function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");}
+function chime(){try{audio=audio||new (window.AudioContext||window.webkitAudioContext)();
+  var o=audio.createOscillator(),g=audio.createGain();o.connect(g);g.connect(audio.destination);
+  o.frequency.value=523;o.type="sine";g.gain.setValueAtTime(0.001,audio.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.4,audio.currentTime+0.05);
+  g.gain.exponentialRampToValueAtTime(0.001,audio.currentTime+1.2);
+  o.start();o.stop(audio.currentTime+1.3);}catch(e){}}
+function total(){return state.queue.length+(state.current?1:0);}
+function doneCount(){return state.done.length+state.delegated.length+state.scheduled.length+state.dropped.length;}
+function setErr(m){el("terr").textContent=m||"";}
+
+/* ---------- input ---------- */
+function refreshInput(){
+  var n=state.queue.length;
+  el("tqueuestats").style.display=n?"flex":"none";
+  el("tqcount").textContent=n;
+  el("tstart").style.display=n?"inline-block":"none";
+}
+el("tadd").addEventListener("click",function(){
+  var raw=el("tdump").value.split("\n").map(function(x){return x.trim();}).filter(function(x){return x.length;});
+  if(!raw.length){el("tinputerr").textContent="Type or paste at least one task.";return;}
+  raw.forEach(function(t){if(t.length>300)t=t.slice(0,300);state.queue.push({id:uid(),text:t});});
+  el("tdump").value="";el("tinputerr").textContent="";save();refreshInput();
+});
+el("tsample").addEventListener("click",function(){
+  el("tdump").value="Reply to the landlord about the leak\nBook dentist appointment\nBuy birthday card for Mom\nDraft Q3 report outline\nCancel the unused subscription\nWater the plants\nResearch flights for December\nFix the wobbly kitchen chair\nSend invoice #1042\nDeclutter the desk drawer";
+});
+el("tstart").addEventListener("click",function(){
+  if(!state.queue.length)return;
+  el("tinput").style.display="none";
+  el("tflow").style.display="block";
+  nextTask();
+});
+
+/* ---------- flow ---------- */
+function nextTask(){
+  stopTimer();
+  if(!state.queue.length){
+    state.current=null;mode="idle";save();showResults();return;
+  }
+  state.current=state.queue.shift();
+  mode="ask";setErr("");save();renderCard();
+}
+function renderCard(){
+  var card=el("tcard");
+  var t=doneCount(),tot=t+total();
+  el("tprog").style.width=(tot?Math.round(t/tot*100):0)+"%";
+  el("tproglabel").textContent=tot?("Task "+(t+1)+" of "+tot):"";
+  if(mode==="ask"){
+    card.innerHTML='<div class="taskcard"><div class="t">'+esc(state.current.text)+'</div>'
+      +'<div class="q">Can it be done in under 2 minutes?</div>'
+      +'<p class="hint">Be honest. If it really takes two minutes, doing it now is cheaper than tracking it.</p>'
+      +'<div class="choicegrid"><button class="btn" id="tyes">Yes — do it now</button>'
+      +'<button class="btn ghost" id="tno">No — route it</button></div></div>';
+    el("tyes").addEventListener("click",function(){mode="do";renderCard();});
+    el("tno").addEventListener("click",function(){mode="route";renderCard();});
+  }else if(mode==="do"){
+    card.innerHTML='<div class="taskcard"><div class="t">'+esc(state.current.text)+'</div>'
+      +'<p class="hint">Do it right now. The timer is a nudge, not a prison — if it runs long, route the task instead.</p>'
+      +'<div class="timerbig" id="ttime">2:00</div>'
+      +'<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'
+      +'<button class="btn small" id="ttimerbtn">Start 2-min timer</button>'
+      +'<button class="btn small" id="tdonebtn">✓ Mark done</button></div>'
+      +'<div style="margin-top:10px"><button class="btn ghost small" id="tputback">Can\'t do it now — route it instead</button></div></div>';
+    el("ttimerbtn").addEventListener("click",toggleTimer);
+    el("tdonebtn").addEventListener("click",function(){decide("done",state.current);});
+    el("tputback").addEventListener("click",function(){mode="route";renderCard();});
+  }else if(mode==="route"){
+    card.innerHTML='<div class="taskcard"><div class="t">'+esc(state.current.text)+'</div>'
+      +'<div class="q">Where should it go?</div>'
+      +'<div class="choicegrid"><button class="btn" id="rdel">→ Delegate</button>'
+      +'<button class="btn" id="rsch">◷ Defer / schedule</button></div>'
+      +'<div style="margin-top:10px"><button class="btn ghost" id="rdrop">✕ Delete it</button></div>'
+      +'<div id="troutepanel"></div></div>';
+    el("rdel").addEventListener("click",showDelegate);
+    el("rsch").addEventListener("click",showDefer);
+    el("rdrop").addEventListener("click",showDelete);
+  }
+}
+function toggleTimer(){
+  var b=el("ttimerbtn");
+  if(timerInt){clearInterval(timerInt);timerInt=null;b.textContent="Resume";return;}
+  if(timerLeft<=0)timerLeft=120;
+  chime();
+  b.textContent="Pause";
+  timerInt=setInterval(function(){
+    timerLeft--;
+    var d=el("ttime");if(d)d.textContent=fmt(timerLeft);
+    if(timerLeft<=0){clearInterval(timerInt);timerInt=null;chime();var b2=el("ttimerbtn");if(b2)b2.textContent="Start 2-min timer";var dd=el("ttime");if(dd)dd.textContent="Time!";}
+  },1000);
+}
+function stopTimer(){if(timerInt){clearInterval(timerInt);timerInt=null;}timerLeft=120;}
+function decide(kind,item,extra){
+  extra=extra||{};
+  if(kind==="done")state.done.push(item);
+  else if(kind==="delegated")state.delegated.push({id:item.id,text:item.text,who:extra.who,byWhen:extra.byWhen});
+  else if(kind==="scheduled")state.scheduled.push({id:item.id,text:item.text,date:extra.date});
+  else if(kind==="dropped")state.dropped.push({id:item.id,text:item.text,reason:extra.reason});
+  state.undo.push({kind:kind,item:item,extra:extra});
+  state.current=null;save();nextTask();
+}
+function showDelegate(){
+  var p=el("troutepanel");
+  p.innerHTML='<div class="routepanel"><h4>Delegate it</h4>'
+    +'<p class="hint">Hand it off completely — with a name and a date, not a hope.</p>'
+    +'<label for="dwho"><strong>Who?</strong></label><input type="text" id="dwho" maxlength="80" placeholder="e.g., Priya">'
+    +'<label for="dwhen"><strong>By when?</strong></label><input type="text" id="dwhen" maxlength="60" placeholder="e.g., Friday, or Oct 15">'
+    +'<div class="err" id="rerr" role="alert"></div>'
+    +'<button class="btn small" id="dgo">Confirm delegation</button></div>';
+  el("dgo").addEventListener("click",function(){
+    var who=el("dwho").value.trim(),when=el("dwhen").value.trim();
+    if(!who){el("rerr").textContent="Name the person — \"someone\" is not a delegation.";el("dwho").focus();return;}
+    decide("delegated",state.current,{who:who.slice(0,80),byWhen:when?when.slice(0,60):"no date set"});
+  });
+}
+function showDefer(){
+  var p=el("troutepanel");
+  var today;try{today=new Date().toISOString().slice(0,10);}catch(e){today="";}
+  p.innerHTML='<div class="routepanel"><h4>Defer it</h4>'
+    +'<p class="hint">Give it a real date. "Later" is where tasks go to die.</p>'
+    +'<label for="sdate"><strong>Scheduled date</strong></label><input type="date" id="sdate" value="'+today+'">'
+    +'<div class="err" id="rerr" role="alert"></div>'
+    +'<button class="btn small" id="sgo">Confirm schedule</button></div>';
+  el("sgo").addEventListener("click",function(){
+    var d=el("sdate").value;
+    if(!d){el("rerr").textContent="Pick a date.";return;}
+    decide("scheduled",state.current,{date:d});
+  });
+}
+function showDelete(){
+  var p=el("troutepanel");
+  p.innerHTML='<div class="routepanel"><h4>Delete it</h4>'
+    +'<p class="hint">Deleting is a decision, not neglect. Say why it\'s safe to drop — then let it go.</p>'
+    +'<label for="xreason"><strong>Why is it safe to drop?</strong></label><input type="text" id="xreason" maxlength="200" placeholder="e.g., Nobody asked for it and nothing breaks without it">'
+    +'<div class="err" id="rerr" role="alert"></div>'
+    +'<button class="btn small" id="xgo">Confirm delete</button></div>';
+  el("xgo").addEventListener("click",function(){
+    var r=el("xreason").value.trim();
+    if(!r){el("rerr").textContent="Write the reason — that's what makes the delete guilt-free.";el("xreason").focus();return;}
+    decide("dropped",state.current,{reason:r.slice(0,200)});
+  });
+}
+el("tundo").addEventListener("click",function(){
+  var u=state.undo.pop();
+  if(!u){setErr("Nothing to undo yet.");return;}
+  var item=u.item;
+  if(u.kind==="done")state.done=state.done.filter(function(x){return x.id!==item.id;});
+  else if(u.kind==="delegated")state.delegated=state.delegated.filter(function(x){return x.id!==item.id;});
+  else if(u.kind==="scheduled")state.scheduled=state.scheduled.filter(function(x){return x.id!==item.id;});
+  else if(u.kind==="dropped")state.dropped=state.dropped.filter(function(x){return x.id!==item.id;});
+  stopTimer();
+  if(state.current){state.queue.unshift(state.current);}
+  state.queue.unshift(item);
+  state.current=null;mode="idle";setErr("");save();
+  if(!el("tflow").style.display||el("tflow").style.display==="none"){el("tflow").style.display="block";}
+  nextTask();
+});
+el("tstop").addEventListener("click",function(){
+  stopTimer();
+  if(state.current){state.queue.unshift(state.current);state.current=null;}
+  mode="idle";save();showResults();
+  el("tflow").style.display="none";
+  el("tinput").style.display="block";refreshInput();
+});
+
+/* ---------- results ---------- */
+function itemHtml(x,meta){
+  return '<div class="item"><div>'+esc(x.text)+'</div>'+(meta?'<div class="meta">'+esc(meta)+'</div>':"")+'</div>';
+}
+function emptyMsg(t){return '<p class="hint">'+t+'</p>';}
+function showResults(){
+  el("tflow").style.display="none";
+  el("tresults").style.display="block";
+  el("rcdone").textContent=state.done.length;
+  el("rcdel").textContent=state.delegated.length;
+  el("rcsch").textContent=state.scheduled.length;
+  el("rcdrop").textContent=state.dropped.length;
+  el("rldone").innerHTML=state.done.length?state.done.map(function(x){return itemHtml(x);}).join(""):emptyMsg("Nothing done yet — triage a pile first.");
+  el("rldel").innerHTML=state.delegated.length?state.delegated.map(function(x){return itemHtml(x,"Who: "+x.who+" · By: "+x.byWhen);}).join(""):emptyMsg("Nothing delegated.");
+  el("rlsch").innerHTML=state.scheduled.length?state.scheduled.map(function(x){return itemHtml(x,"Date: "+x.date);}).join(""):emptyMsg("Nothing scheduled.");
+  el("rldrop").innerHTML=state.dropped.length?state.dropped.map(function(x){return itemHtml(x,"Why it's safe: "+x.reason);}).join(""):emptyMsg("Nothing dropped.");
+}
+el("tcopy").addEventListener("click",function(){
+  var lines=["TWO-MINUTE TRIAGE — RESULTS"];
+  lines.push("DONE ("+state.done.length+"):");
+  state.done.forEach(function(x){lines.push("  [x] "+x.text);});
+  lines.push("DELEGATED ("+state.delegated.length+"):");
+  state.delegated.forEach(function(x){lines.push("  [>] "+x.text+" — "+x.who+", by "+x.byWhen);});
+  lines.push("SCHEDULED ("+state.scheduled.length+"):");
+  state.scheduled.forEach(function(x){lines.push("  [o] "+x.text+" — "+x.date);});
+  lines.push("DROPPED ("+state.dropped.length+"):");
+  state.dropped.forEach(function(x){lines.push("  [-] "+x.text+" — safe because: "+x.reason);});
+  var txt=lines.join("\n");
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt);}
+    else{var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);}
+  }catch(e){}
+});
+el("tmore").addEventListener("click",function(){
+  el("tresults").style.display="none";
+  el("tinput").style.display="block";refreshInput();
+  try{window.scrollTo(0,0);}catch(e){}
+});
+el("treset").addEventListener("click",function(){
+  if(!window.confirm("Clear all tasks and results? This cannot be undone."))return;
+  stopTimer();
+  state={queue:[],current:null,done:[],delegated:[],scheduled:[],dropped:[],undo:[]};
+  mode="idle";save();
+  el("rcdone").textContent="0";el("rcdel").textContent="0";el("rcsch").textContent="0";el("rcdrop").textContent="0";
+  el("rldone").innerHTML="";el("rldel").innerHTML="";el("rlsch").innerHTML="";el("rldrop").innerHTML="";
+  el("tresults").style.display="none";el("tflow").style.display="none";
+  el("tinput").style.display="block";refreshInput();
+});
+refreshInput();
+if(state.current||state.queue.length){el("tstart").style.display="inline-block";}
+})();
+</script>
+</body>
+</html>

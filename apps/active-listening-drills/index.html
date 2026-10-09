@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active Listening Drills | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Train active listening with 6 realistic scenarios: paraphrase the speaker, label their emotion, compare against model answers, and get your listening score plus targeted micro-drills. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/active-listening-drills/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Active Listening Drills | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Train active listening with 6 realistic scenarios: paraphrase the speaker, label their emotion, compare against model answers, and get your listening score plus targeted micro-drills. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/active-listening-drills/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:10px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;margin:22px 0 8px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0;min-height:110px}
+label.fld{display:block;font-weight:bold;margin-top:14px;color:#141210}
+.hidden{display:none!important}
+.scene{background:#f3ecd7;border-left:5px solid #c9a227;border-radius:0 10px 10px 0;padding:18px;margin:14px 0}
+.scene .who{font-weight:bold;color:#8a6d1c;margin-bottom:6px}
+.scene p{margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.chip{border:2px solid #c9a227;background:#fff;border-radius:999px;padding:10px 18px;font-size:1rem;cursor:pointer;min-height:44px;color:#141210}
+.chip.sel{background:#c9a227;font-weight:bold}
+.model{background:#eef7e8;border:2px solid #5a8f4a;border-radius:10px;padding:16px;margin:14px 0}
+.model h4{color:#2f5b26;margin-bottom:6px}
+.radios label{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #eee;cursor:pointer}
+.radios input{width:22px;height:22px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.jopt{display:block;width:100%;text-align:left;background:#fff;border:2px solid #c9a227;border-radius:10px;padding:14px 16px;margin:8px 0;cursor:pointer;font-size:1rem;color:#141210;min-height:48px}
+.jopt:hover{background:#faf3dd}
+.jopt.right{border-color:#5a8f4a;background:#eef7e8}
+.jopt.wrong{border-color:#c0392b;background:#fdecec}
+.jopt:disabled{cursor:default;opacity:.95}
+.feedback{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.95rem}
+.feedback.good{background:#eef7e8;border:2px solid #5a8f4a}
+.feedback.mid{background:#fdf6e0;border:2px solid #c9a227}
+.feedback.low{background:#fdecec;border:2px solid #c0392b}
+.err{background:#fdecec;border:2px solid #c0392b;color:#7b241c;border-radius:8px;padding:12px 16px;margin:12px 0}
+.dots{display:flex;gap:8px;justify-content:center;margin:6px 0 14px}
+.dots span{width:14px;height:14px;border-radius:50%;background:#ddd;border:2px solid #c9a227}
+.dots span.on{background:#c9a227}
+.dots span.done{background:#5a8f4a;border-color:#5a8f4a}
+.scorebig{font-family:Georgia,serif;font-size:3rem;color:#141210;text-align:center}
+.band{text-align:center;font-weight:bold;font-size:1.2rem;color:#8a6d1c;margin-bottom:8px}
+.subbars{margin:14px 0}
+.subrow{margin:10px 0}
+.subrow .lbl{font-weight:bold;font-size:.95rem}
+.bar{height:16px;background:#eee;border-radius:8px;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;background:#c9a227;border-radius:8px}
+.drill{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:14px 16px;margin:10px 0}
+.drill h4{font-family:Georgia,serif;margin-bottom:4px}
+.drill p{font-size:.95rem;color:#444}
+.kbd{font-size:.85rem;color:#6b6250}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Active Listening Drills</h1>
+<p class="intro">Listening is the most underrated communication skill — and the most trainable. Work through 6 realistic scenarios: read what the speaker says, write your paraphrase, label their likely emotion, then compare against model answers and get scored on three sub-skills.</p>
+
+<div class="appcard" id="introCard">
+<h2>How it works</h2>
+<p>Each scenario scores you on three sub-skills:</p>
+<ul style="padding-left:22px;margin:8px 0">
+<li><b>Paraphrasing</b> (0–3 pts) — can you reflect back what was said, accurately and in your own words?</li>
+<li><b>Emotion labeling</b> (0–2 pts) — can you name what the speaker is likely feeling?</li>
+<li><b>Withholding judgment</b> (0–2 pts) — can you pick the response that listens instead of judges?</li>
+</ul>
+<p class="kbd">7 points per scenario · 42 total. Your answers save as you go.</p>
+<div class="btnrow"><button class="btn" id="startBtn">Start the drills</button></div>
+</div>
+
+<div class="appcard hidden" id="sceneCard">
+<div class="dots" id="dots"></div>
+<h2 id="scTitle"></h2>
+<div class="scene"><div class="who" id="scWho"></div><div id="scText"></div></div>
+
+<label class="fld" id="emoLbl">1 · What is the speaker most likely feeling? Pick one.</label>
+<div class="chips" id="emoChips" role="group" aria-labelledby="emoLbl"></div>
+
+<label class="fld" for="para">2 · Write your paraphrase</label>
+<p class="kbd">In your own words: what did they say, and what are they feeling? No advice, no judgment — just reflect.</p>
+<textarea id="para" placeholder="Start with &quot;It sounds like...&quot; or &quot;So what I'm hearing is...&quot;"></textarea>
+
+<div class="err hidden" id="sceneErr">Pick an emotion and write at least a few words of paraphrase before checking.</div>
+<div class="btnrow"><button class="btn" id="checkBtn">Check my listening</button></div>
+
+<div id="modelWrap" class="hidden">
+<h3>Model answer — compare honestly</h3>
+<div class="model"><h4>Model paraphrase</h4><p id="modelPara"></p><h4 style="margin-top:10px">Emotion</h4><p id="modelEmo"></p></div>
+<label class="fld">3 · Score your own paraphrase (be honest — this is training)</label>
+<div class="radios" id="selfScore">
+<label><input type="radio" name="ss" value="0"><span><b>0 — Missed it.</b> I added judgment, gave advice, or got the point wrong.</span></label>
+<label><input type="radio" name="ss" value="1"><span><b>1 — Partly there.</b> I caught some of it but missed the feeling or the main point.</span></label>
+<label><input type="radio" name="ss" value="2"><span><b>2 — Accurate.</b> I reflected the content correctly in my own words.</span></label>
+<label><input type="radio" name="ss" value="3"><span><b>3 — Nailed it.</b> Accurate content <i>and</i> I named the feeling.</span></label>
+</div>
+<label class="fld">4 · Which response withholds judgment and keeps listening?</label>
+<div id="jOpts"></div>
+<div id="jFeed"></div>
+<div class="err hidden" id="scoreErr">Score your paraphrase (0–3) and pick a response above to continue.</div>
+<div class="btnrow">
+<button class="btn ghost" id="prevBtn">Back</button>
+<button class="btn" id="nextBtn">Next scenario</button>
+</div>
+</div>
+</div>
+
+<div class="appcard hidden" id="resultCard">
+<h2>Your listening score</h2>
+<div class="scorebig" id="scoreBig"></div>
+<div class="band" id="scoreBand"></div>
+<p id="scoreWhy" style="color:#6b6250;text-align:center;max-width:560px;margin:0 auto"></p>
+<h3>Sub-skill breakdown</h3>
+<div class="subbars" id="subBars"></div>
+<div id="weakWrap"></div>
+<h3>Your 3 daily micro-drills</h3>
+<p class="kbd">Do these for one week, then retake the drills and watch the score move.</p>
+<div id="drillsOut"></div>
+<div class="btnrow">
+<button class="btn" id="retakeBtn">Retake the drills</button>
+<button class="btn ghost" id="reviewBtn">Review my answers</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Active Listening Drills is just the start. <em>Active Listening Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — the habits, phrases, and practice routines of people everyone loves talking to.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/active-listening-made-simple/">Get Active Listening Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-active-listening-drills-v1";
+var SCEN=[
+ {title:"Scenario 1 — The upset customer",who:"A customer, on the phone, voice raised:",
+  text:"<p>\u201CI ordered this two weeks ago and it still hasn't arrived. This is the THIRD time I've had to call about this! Every time someone promises it'll be fixed, and nothing changes. I needed this for an event this weekend — what am I supposed to do now?\u201D</p>",
+  emos:["Frustrated","Angry","Disappointed","Confused","Embarrassed","Hopeful"],
+  exact:["Frustrated"],close:["Angry","Disappointed"],
+  modelPara:"\u201CIt sounds like repeated shipping delays have left you feeling unheard and let down — and now a deadline this weekend has made it urgent. Let me fix this right now.\u201D",
+  modelEmo:"Frustrated (Angry or Disappointed are close — the core is repeated letdown, not confusion).",
+  jprompt:"A reply lands in your head. Which one keeps you listening instead of judging?",
+  jopts:["\u201CYou should have ordered earlier if you needed it by this weekend.\u201D",
+         "\u201CIt sounds like the repeated delays have left you feeling unheard — let me look into this right now.\u201D"],
+  jright:1,jwhy:"Option A judges the customer (blame, \u201Cshould have\u201D). Option B reflects the feeling and takes ownership — that's listening in action."},
+ {title:"Scenario 2 — The rambling coworker",who:"A coworker, stopping by your desk, talking fast:",
+  text:"<p>\u201COkay so the printer on three was jammed again, and IT said they'd come by but they never did, and then the coffee machine — don't even get me started — and oh, did you see the email from finance? Anyway, the quarterly numbers, I finally got them from Priya, but the formatting is all weird, and the meeting got moved to three, did you know that? I still need to double-check the totals...\u201D</p><p><i>Buried in the ramble: the report figures are due at 3 PM and may be wrong.</i></p>",
+  emos:["Overwhelmed","Anxious","Scattered","Excited","Bored","Calm"],
+  exact:["Overwhelmed"],close:["Anxious","Scattered"],
+  modelPara:"\u201CIt sounds like a lot is hitting you at once — printer, IT, the moved meeting — and underneath it, you're worried the quarterly figures might be wrong before the 3 PM deadline.\u201D",
+  modelEmo:"Overwhelmed (Anxious or Scattered are close — the flood of details signals too much at once).",
+  jprompt:"Which reply shows you actually heard them?",
+  jopts:["\u201CGet to the point — I don't have all day for this.\u201D",
+         "\u201CLet me make sure I've got this: the report figures are the priority before 3 PM — want to check the totals together?\u201D"],
+  jright:1,jwhy:"Option A shuts them down (judgment + impatience). Option B extracts the buried need and offers help — listening filters noise for signal."},
+ {title:"Scenario 3 — The vague boss request",who:"Your manager, glancing up from their phone:",
+  text:"<p>\u201CHey — the deck for Thursday. Just make it pop a bit more, you know? Make it sing. The numbers are all there, it just needs... more. You know what I mean. Thanks!\u201D</p><p><i>They walk away before you can ask a single question.</i></p>",
+  emos:["Rushed","Distracted","Confident","Annoyed","Excited","Calm"],
+  exact:["Rushed"],close:["Distracted"],
+  modelPara:"\u201CIt sounds like you're stretched thin and need the deck to land harder on Thursday, but we haven't pinned down what \u2018more\u2019 actually looks like yet.\u201D",
+  modelEmo:"Rushed (Distracted is close — the phone-glancing and walk-away signal no time, not anger).",
+  jprompt:"Which reply moves things forward without judging?",
+  jopts:["\u201CThat's not a real brief — I can't work with \u2018make it sing.\u2019\u201D",
+         "\u201CSo the priority is making the key message stand out more — could you point to one slide that's closest to what you want?\u201D"],
+  jright:1,jwhy:"Option A judges the request (and the boss). Option B paraphrases the goal and asks one concrete question — listening turns vagueness into clarity."},
+ {title:"Scenario 4 — The emotional friend",who:"A close friend, voice quiet, looking down:",
+  text:"<p>\u201CI just... I don't even know if I should go to the reunion. Everyone's moved on — new jobs, houses, kids — and I'm still in the same place I was five years ago. I know it's stupid. I just don't want to spend the whole night feeling like a failure.\u201D</p>",
+  emos:["Sad","Ashamed","Lonely","Angry","Jealous","Numb"],
+  exact:["Sad"],close:["Ashamed","Lonely"],
+  modelPara:"\u201CIt sounds like comparing yourself to everyone else has left you feeling behind — and the reunion feels like a night of facing that, not celebrating.\u201D",
+  modelEmo:"Sad (Ashamed or Lonely are close — the comparison pain is the core, not anger).",
+  jprompt:"Your friend needs listening, not fixing. Which reply listens?",
+  jopts:["\u201CYou're overthinking it — just go and have fun, it'll be fine.\u201D",
+         "\u201CIt sounds like you're worried about feeling behind compared to everyone else. That makes sense.\u201D"],
+  jright:1,jwhy:"Option A minimizes (\u201Coverthinking\u201D) and prescribes fun — judgment disguised as cheer. Option B names the feeling without fixing it."},
+ {title:"Scenario 5 — The defensive teenager",who:"Your 15-year-old, arms crossed, after you said no to the sleepover:",
+  text:"<p>\u201CWhatever! You never listen anyway. It's not even a big deal — everyone else's parents let them go. You just don't trust me. Fine. Forget it.\u201D</p><p><i>They turn toward their room.</i></p>",
+  emos:["Hurt","Embarrassed","Angry","Jealous","Bored","Tired"],
+  exact:["Hurt"],close:["Embarrassed","Angry"],
+  modelPara:"\u201CIt sounds like you feel I'm not really hearing you — and that this sleepover matters a lot more to you than \u2018not a big deal\u2019 suggests.\u201D",
+  modelEmo:"Hurt (Embarrassed or Angry are close — but \u201Cyou never listen\u201D points to feeling unheard and dismissed).",
+  jprompt:"Which reply keeps the door open?",
+  jopts:["\u201CDon't you take that tone with me. I said no, end of discussion.\u201D",
+         "\u201CIt sounds like you feel I'm not hearing you, and that this really matters to you. Tell me what I'm missing.\u201D"],
+  jright:1,jwhy:"Option A pulls rank and slams the door. Option B paraphrases the hurt underneath the attitude and invites more — listening de-escalates."},
+ {title:"Scenario 6 — The quiet team member",who:"A normally solid teammate, in a check-in, flat tone, not meeting your eyes:",
+  text:"<p>\u201CYeah, everything's fine. The timeline's fine. I'll figure it out.\u201D</p><p><i>Everything about their body language says otherwise.</i></p>",
+  emos:["Stressed","Resentful","Bored","Calm","Confident","Excited"],
+  exact:["Stressed"],close:["Resentful"],
+  modelPara:"\u201CYou're saying it's fine, but you seem stretched thin — I'm guessing the timeline is heavier than \u2018fine\u2019 sounds. What's the toughest part?\u201D",
+  modelEmo:"Stressed (Resentful is possible — but the flat tone and avoidance point to overload, not bitterness).",
+  jprompt:"Which reply listens past the words?",
+  jopts:["\u201CIf everything's fine, then we don't need to discuss it. Let me know if that changes.\u201D",
+         "\u201CYou say it's fine, but you seem stretched — what's the heaviest part of the timeline for you right now?\u201D"],
+  jright:1,jwhy:"Option A takes \u201Cfine\u201D at face value and exits — polite avoidance. Option B names what the body language says and asks one open question."}
+];
+var DRILLS={
+ para:[
+  {t:"Echo and extend",d:"In your next 3 conversations, paraphrase the other person BEFORE you respond: \u201CSo what I'm hearing is...\u201D Then add one follow-up question. Notice how people open up."},
+  {t:"The 10-word summary",d:"After any conversation today, write a 10-word summary of what the other person said. If you can't, you were rehearsing your reply instead of listening."},
+  {t:"Content + feeling",d:"For one week, every paraphrase must include both halves: what was said AND the feeling underneath. \u201CThe deadline moved (content), and you're frustrated (feeling).\u201D"}],
+ emo:[
+  {t:"Name three a day",d:"Each day, notice 3 people and silently label their likely emotion from tone and body language — before they explain themselves. Check your accuracy when they do."},
+  {t:"Body before words",d:"In your next conversation, watch posture, face, and tone for 30 seconds before focusing on the words. Write down the feeling you read. Words confirm or correct."},
+  {t:"Feeling vocabulary",d:"Learn 5 new emotion words this week (e.g., apprehensive, resentful, sheepish, buoyant, drained). Precise labels make precise listening."}],
+ judg:[
+  {t:"The 3-second pause",d:"Before responding to anything that irritates you today, pause and count to three. Ask yourself: \u201CAm I about to judge or to understand?\u201D Then choose."},
+  {t:"Curiosity over conclusions",d:"Catch yourself forming a verdict about someone once today (\u201Cthey're just lazy\u201D). Replace it with one genuine question you'd ask them instead."},
+  {t:"Steel-man it",d:"Pick someone you disagree with. Restate their view so fairly they'd say \u201Cyes, that's what I mean.\u201D You can't argue with what you haven't heard."}]
+};
+var state={idx:0,answers:{},started:false,finished:false};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&typeof s==="object"){state.idx=s.idx||0;state.answers=s.answers||{};state.started=!!s.started;state.finished=!!s.finished;}}catch(e){}}
+function el(id){return document.getElementById(id);}
+function show(id){el(id).classList.remove("hidden");}
+function hide(id){el(id).classList.add("hidden");}
+function getA(i){return state.answers[i]||{emo:null,para:"",self:null,jpick:null};}
+function setA(i,a){state.answers[i]=a;save();}
+function drawDots(){
+ var d=el("dots");d.innerHTML="";
+ SCEN.forEach(function(_,i){
+  var s=document.createElement("span");
+  if(i===state.idx)s.className="on";else if(state.answers[i]&&state.answers[i].done)s.className="done";
+  d.appendChild(s);
+ });
+}
+function renderScene(){
+ var S=SCEN[state.idx],a=getA(state.idx);
+ el("scTitle").textContent=S.title;
+ el("scWho").textContent=S.who;
+ el("scText").innerHTML=S.text;
+ // emotion chips
+ var c=el("emoChips");c.innerHTML="";
+ S.emos.forEach(function(e){
+  var b=document.createElement("button");b.type="button";b.className="chip"+(a.emo===e?" sel":"");
+  b.textContent=e;b.setAttribute("aria-pressed",a.emo===e?"true":"false");
+  b.addEventListener("click",function(){
+   a.emo=e;setA(state.idx,a);
+   var all=c.querySelectorAll(".chip");
+   for(var i=0;i<all.length;i++){all[i].classList.remove("sel");all[i].setAttribute("aria-pressed","false");}
+   b.classList.add("sel");b.setAttribute("aria-pressed","true");hide("sceneErr");
+  });
+  c.appendChild(b);
+ });
+ el("para").value=a.para||"";
+ hide("modelWrap");hide("sceneErr");hide("scoreErr");
+ el("checkBtn").disabled=false;
+ drawDots();
+ el("nextBtn").textContent=state.idx<SCEN.length-1?"Next scenario":"See my score";
+}
+function emoScore(S,emo){
+ if(!emo)return 0;
+ if(S.exact.indexOf(emo)>=0)return 2;
+ if(S.close.indexOf(emo)>=0)return 1;
+ return 0;
+}
+el("startBtn").addEventListener("click",function(){
+ state.started=true;save();hide("introCard");show("sceneCard");renderScene();window.scrollTo(0,0);
+});
+el("para").addEventListener("input",function(){
+ var a=getA(state.idx);a.para=el("para").value;setA(state.idx,a);
+});
+el("checkBtn").addEventListener("click",function(){
+ var S=SCEN[state.idx],a=getA(state.idx);
+ a.emo=a.emo||null;
+ a.para=el("para").value.trim();
+ if(!a.emo||a.para.length<4){show("sceneErr");return;}
+ hide("sceneErr");setA(state.idx,a);
+ // model + self score restore
+ el("modelPara").textContent=S.modelPara;
+ el("modelEmo").textContent=S.modelEmo;
+ var rs=el("selfScore").querySelectorAll("input");
+ for(var i=0;i<rs.length;i++)rs[i].checked=(a.self!==null&&parseInt(rs[i].value,10)===a.self);
+ // judgment options
+ var jo=el("jOpts");jo.innerHTML="";el("jFeed").innerHTML="";
+ S.jopts.forEach(function(t,oi){
+  var b=document.createElement("button");b.type="button";b.className="jopt";b.textContent=String.fromCharCode(65+oi)+". "+t;
+  if(a.jpick!==null){
+   b.disabled=true;
+   if(oi===S.jright)b.classList.add("right");
+   else if(oi===a.jpick)b.classList.add("wrong");
+  }
+  b.addEventListener("click",function(){
+   a.jpick=oi;setA(state.idx,a);
+   var all=jo.querySelectorAll(".jopt");
+   for(var k=0;k<all.length;k++){all[k].disabled=true;all[k].classList.remove("right","wrong");}
+   all[S.jright].classList.add("right");
+   if(oi!==S.jright)all[oi].classList.add("wrong");
+   var f=document.createElement("div");
+   f.className="feedback "+(oi===S.jright?"good":"low");
+   f.innerHTML=(oi===S.jright?"<b>Correct.</b> ":"<b>Not quite.</b> ")+S.jwhy;
+   el("jFeed").innerHTML="";el("jFeed").appendChild(f);
+  });
+  jo.appendChild(b);
+ });
+ if(a.jpick!==null){
+  var f0=document.createElement("div");
+  f0.className="feedback "+(a.jpick===S.jright?"good":"low");
+  f0.innerHTML=(a.jpick===S.jright?"<b>Correct.</b> ":"<b>Not quite.</b> ")+S.jwhy;
+  el("jFeed").appendChild(f0);
+ }
+ show("modelWrap");window.scrollTo(0,0);
+});
+el("selfScore").addEventListener("change",function(e){
+ var a=getA(state.idx);a.self=parseInt(e.target.value,10);setA(state.idx,a);hide("scoreErr");
+});
+el("prevBtn").addEventListener("click",function(){
+ if(state.idx>0){state.idx--;save();renderScene();window.scrollTo(0,0);}
+});
+el("nextBtn").addEventListener("click",function(){
+ var S=SCEN[state.idx],a=getA(state.idx);
+ if(a.self===null||a.jpick===null){show("scoreErr");return;}
+ hide("scoreErr");
+ a.done=true;setA(state.idx,a);
+ if(state.idx<SCEN.length-1){state.idx++;save();renderScene();window.scrollTo(0,0);}
+ else{state.finished=true;save();renderResults();}
+});
+function totals(){
+ var t={para:0,emo:0,judg:0,all:0};
+ SCEN.forEach(function(S,i){
+  var a=getA(i);
+  t.para+=a.self||0;
+  t.emo+=emoScore(S,a.emo);
+  t.judg+=(a.jpick===S.jright?2:0);
+ });
+ t.all=t.para+t.emo+t.judg;
+ return t;
+}
+function band(pct){
+ if(pct>=86)return["Excellent listener","You hear both the words and the feelings underneath them — people feel genuinely understood talking to you."];
+ if(pct>=67)return["Strong listener","Solid foundation. One sub-skill is holding you back from excellent — the drills below target it."];
+ if(pct>=43)return["Developing listener","You're catching some of it and missing some of it. Focused practice on your weakest sub-skill will move this fast."];
+ return["Listener in training","Everyone starts here. The good news: listening is a trainable skill, and the micro-drills below are the training plan."];
+}
+var SUBNAMES={para:"Paraphrasing",emo:"Emotion labeling",judg:"Withholding judgment"};
+var SUBMAX={para:18,emo:12,judg:12};
+var SUBWHY={
+ para:"Paraphrasing is the engine of listening: reflecting content back in your own words proves you heard — and gives the speaker a chance to correct you.",
+ emo:"Emotion labeling is hearing the feeling under the words. People don't just want their facts right; they want their feelings recognized.",
+ judg:"Withholding judgment keeps the channel open. The moment someone feels judged, they stop talking — and you stop learning."};
+function renderResults(){
+ hide("sceneCard");hide("introCard");show("resultCard");
+ var t=totals(),pct=Math.round(t.all/42*100);
+ el("scoreBig").textContent=t.all+" / 42";
+ var b=band(pct);
+ el("scoreBand").textContent=b[0]+" ("+pct+"%)";
+ el("scoreWhy").textContent=b[1];
+ // sub bars
+ var sb=el("subBars");sb.innerHTML="";
+ var order=["para","emo","judg"],weakest="para",weakPct=101;
+ order.forEach(function(k){
+  var p=Math.round(t[k]/SUBMAX[k]*100);
+  if(p<weakPct){weakPct=p;weakest=k;}
+  var row=document.createElement("div");row.className="subrow";
+  row.innerHTML='<div class="lbl">'+SUBNAMES[k]+' — '+t[k]+' / '+SUBMAX[k]+' ('+p+'%)</div><div class="bar"><i style="width:'+p+'%"></i></div>';
+  sb.appendChild(row);
+ });
+ // weakest
+ var w=el("weakWrap");
+ w.innerHTML='<div class="feedback mid"><b>Your weakest sub-skill: '+SUBNAMES[weakest]+' ('+weakPct+'%).</b><br>'+SUBWHY[weakest]+'</div>';
+ var dr=el("drillsOut");dr.innerHTML="";
+ DRILLS[weakest].forEach(function(d,i){
+  var dv=document.createElement("div");dv.className="drill";
+  dv.innerHTML="<h4>Micro-drill "+(i+1)+": "+d.t+"</h4><p>"+d.d+"</p>";
+  dr.appendChild(dv);
+ });
+ window.scrollTo(0,0);
+}
+el("retakeBtn").addEventListener("click",function(){
+ if(!window.confirm("Clear all answers and start over?"))return;
+ state={idx:0,answers:{},started:true,finished:false};save();
+ hide("resultCard");show("sceneCard");renderScene();window.scrollTo(0,0);
+});
+el("reviewBtn").addEventListener("click",function(){
+ state.finished=false;state.idx=0;save();hide("resultCard");show("sceneCard");renderScene();window.scrollTo(0,0);
+});
+load();
+if(state.finished){renderResults();}
+else if(state.started){hide("introCard");show("sceneCard");renderScene();}
+</script>
+</body>
+</html>

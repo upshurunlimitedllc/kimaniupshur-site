@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deep Work Session Designer | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Design a personalized deep-work ritual — session length, break ratio, and distraction-shutdown protocol — matched to your work type. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/deep-work-session-designer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Deep Work Session Designer | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Design a personalized deep-work ritual — session length, break ratio, and distraction-shutdown protocol — matched to your work type. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/deep-work-session-designer/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:820px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{min-height:44px;padding:10px 16px;font-size:.92rem}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:80px;resize:vertical}
+label{font-weight:bold;display:block;margin-top:14px}
+.radio-opt,.check-opt{display:block;border:2px solid #d9cfb0;border-radius:8px;padding:12px 14px;margin:8px 0;cursor:pointer;font-weight:normal}
+.radio-opt:hover,.check-opt:hover{border-color:#c9a227}
+.radio-opt input,.check-opt input{width:20px;height:20px;accent-color:#c9a227;vertical-align:middle;margin-right:10px}
+.err{color:#a33a1e;font-weight:bold;margin-top:10px}
+.muted{color:#6b6250;font-size:.95rem}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow.done span{text-decoration:line-through;color:#8a7a5a}
+.planstat{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+.stat{background:#141210;color:#f5efdd;border-radius:10px;padding:12px 18px;text-align:center;min-width:110px}
+.stat b{font-size:1.4rem;display:block;color:#e8c84a}
+.stat small{font-size:.78rem;color:#cbbf9a}
+.timerbox{text-align:center;background:#141210;color:#f5efdd;border-radius:12px;padding:28px 20px;margin-top:18px}
+#dwphase{font-family:Georgia,serif;font-size:1.3rem;color:#e8c84a}
+#dwtime{font-size:3.4rem;font-family:Georgia,serif;margin:8px 0}
+#dwsess{color:#cbbf9a}
+.timerbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.progress{height:10px;background:#3a3428;border-radius:5px;overflow:hidden;margin-top:14px}
+.progress i{display:block;height:100%;background:#c9a227;width:0%}
+.logitem{background:#fff;border:1px solid #d9cfb0;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:.93rem}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Deep Work Session Designer</h1>
+<p class="intro">Design a personalized deep-work ritual — session length, break ratio, and distraction-shutdown protocol — matched to your work type. Answer a few questions, get your plan, then run it with the built-in timer.</p>
+
+<!-- INPUTS -->
+<div class="appcard" id="inputcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your work profile</h2>
+<label for="worktype">What kind of work will this session cover?</label>
+<select id="worktype" aria-label="Work type">
+<option value="writing">Writing (reports, content, emails that matter)</option>
+<option value="coding">Coding / technical building</option>
+<option value="studying">Studying / learning</option>
+<option value="creative">Creative work (design, music, ideation)</option>
+<option value="admin">Admin / shallow-but-necessary work</option>
+</select>
+<label for="hours">How many hours do you have available today?</label>
+<input type="number" id="hours" min="0.5" max="16" step="0.5" value="4" aria-label="Available hours">
+<label>Your top distractions (pick the ones that actually derail you)</label>
+<div id="distractions"></div>
+<h3 style="font-family:Georgia,serif;margin-top:22px">Attention stamina check</h3>
+<p class="muted">Be honest — this calibrates your session length.</p>
+<div id="stamina"></div>
+<p class="err" id="inputerr" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+<button class="btn" id="genplan" type="button">Design my session plan</button>
+<button class="btn ghost small" id="resetbtn" type="button" style="margin-left:auto">Start over</button>
+</div>
+</div>
+
+<!-- PLAN -->
+<div class="appcard" id="plancard" style="display:none">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your deep-work ritual</h2>
+<div id="plansummary"></div>
+<div class="planstat" id="planstats"></div>
+<h3 style="font-family:Georgia,serif;margin-top:18px">Pre-session shutdown checklist</h3>
+<p class="muted">Check each item before you start the timer. This is the ritual — do it the same way every time.</p>
+<div id="shutdown"></div>
+<h3 style="font-family:Georgia,serif;margin-top:18px">Break-activity menu</h3>
+<p class="muted">When the break timer runs, pick one. No screens.</p>
+<div id="breakmenu"></div>
+<div class="timerbox">
+<div id="dwphase">Ready</div>
+<div id="dwtime">--:--</div>
+<div id="dwsess"></div>
+<div class="progress"><i id="dwbar"></i></div>
+<div class="timerbtns">
+<button class="btn" id="dwstart" type="button">Start focus session</button>
+<button class="btn ghost" id="dwpause" type="button" style="color:#e8c84a;border-color:#e8c84a" disabled>Pause</button>
+<button class="btn ghost" id="dwskip" type="button" style="color:#e8c84a;border-color:#e8c84a" disabled>Skip break</button>
+<button class="btn ghost" id="dwend" type="button" style="color:#e8c84a;border-color:#e8c84a" disabled>End session early</button>
+</div>
+</div>
+<h3 style="font-family:Georgia,serif;margin-top:22px">End-of-session capture</h3>
+<p class="muted">Two minutes now saves twenty minutes of "where was I?" next time.</p>
+<label for="cap1">What did you finish?</label><textarea id="cap1"></textarea>
+<label for="cap2">Where exactly did you stop?</label><textarea id="cap2"></textarea>
+<label for="cap3">What is the very next step? (Write it so future-you can restart in under 2 minutes.)</label><textarea id="cap3"></textarea>
+<button class="btn small" id="capsave" type="button">Save capture</button>
+<div id="caplog" style="margin-top:12px"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+<button class="btn ghost" id="revise" type="button">Revise inputs</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Deep Work Session Designer is just the start. <em>Deep Work Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/deep-work-made-simple/">Get Deep Work Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="signup" style="max-width:820px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection and encouragement in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-deep-work-session-designer-v1";
+var DISTRACTIONS=[
+["phone","Phone notifications","Phone on silent, face-down in another room (or powered off)"],
+["social","Social media","Log out of social apps or turn on a site blocker for the session"],
+["email","Email inbox","Quit your email app completely — no 'quick checks'"],
+["coworkers","Coworkers / interruptions","Put up a do-not-disturb signal and tell people your focus hours"],
+["tabs","Open tabs / multitasking","Close every tab except the one this work needs"],
+["noise","Noise / environment","Headphones on with focus music, or earplugs in"],
+["tv","TV / streaming","TV off; sit where you cannot see a screen"],
+["snacks","Snacks / kitchen trips","Water bottle and one snack at your desk before you start"]];
+var STAMINA=[
+["How long can you focus before the urge to check your phone hits?",["Less than 15 minutes","15–30 minutes","30–60 minutes","Over an hour"]],
+["In a typical hour of hard work, how often do you switch tasks or tabs?",["Constantly","A few times","Once or twice","Rarely"]],
+["After an interruption, how fast are you fully back in the zone?",["Takes 15+ minutes","A few minutes","About a minute","Almost instantly"]],
+["How would you rate your current focus stamina overall?",["1 — fragile","2 — shaky","3 — okay","4 — solid","5 — strong"]]];
+var MATRIX={ /* [focus, break] minutes per work type per stamina tier */
+ writing:{rebuild:[25,5],develop:[50,10],trained:[90,15]},
+ coding:{rebuild:[25,5],develop:[45,10],trained:[90,20]},
+ studying:{rebuild:[25,5],develop:[40,10],trained:[60,15]},
+ creative:{rebuild:[30,5],develop:[45,10],trained:[90,20]},
+ admin:{rebuild:[25,5],develop:[50,10],trained:[75,15]}};
+var TIERNAME={rebuild:"Rebuilding",develop:"Developing",trained:"Trained"};
+var TIERDESC={rebuild:"Your attention is fragmented right now. Shorter sessions rebuild the muscle — consistency beats duration.",
+ develop:"You have a working focus muscle. Medium sessions with real breaks will stretch it without snapping it.",
+ trained:"You can hold deep focus for long stretches. Long sessions with proper recovery breaks maximize your edge."};
+var BREAKMENU=["Take a 2-minute walk (no phone)","Stretch: neck, shoulders, back","Drink water and look out a window","Step into sunlight for 2 minutes","10 slow breaths, eyes closed","Tidy one thing on your desk","Eat a light, healthy snack","Shake out your hands and reset your posture"];
+var state={worktype:"writing",hours:4,distractions:[],stamina:[null,null,null,null],plan:null,caps:[],shutdownDone:[]};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify({worktype:state.worktype,hours:state.hours,distractions:state.distractions,stamina:state.stamina,plan:state.plan,caps:state.caps,shutdownDone:state.shutdownDone}));}catch(e){}}
+function load(){try{var s=localStorage.getItem(KEY);if(s){var p=JSON.parse(s);if(p&&typeof p==="object")for(var k in p)state[k]=p[k];}}catch(e){}}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function staminaScore(){
+  var t=0;
+  for(var i=0;i<4;i++){var a=state.stamina[i];if(a==null)return null;t+=(i===3?(a===4?3:Math.min(2,Math.floor(a/2))):a);}
+  return t;
+}
+function staminaTier(score){return score<=4?"rebuild":(score<=8?"develop":"trained");}
+
+function buildPlan(){
+  var score=staminaScore(),tier=staminaTier(score);
+  var fb=MATRIX[state.worktype][tier];
+  var availMin=Math.round(state.hours*60);
+  var sessions=Math.max(1,Math.min(8,Math.floor(availMin/(fb[0]+fb[1]))));
+  return {tier:tier,score:score,focus:fb[0],brk:fb[1],sessions:sessions,deepMin:fb[0]*sessions,
+    worktype:state.worktype,hours:state.hours};
+}
+
+function drawInputs(){
+  var d=document.getElementById("distractions");d.innerHTML="";
+  DISTRACTIONS.forEach(function(x){
+    var lab=document.createElement("label");lab.className="check-opt";
+    var c=document.createElement("input");c.type="checkbox";c.value=x[0];
+    c.setAttribute("aria-label",x[1]);
+    if(state.distractions.indexOf(x[0])>=0)c.checked=true;
+    c.addEventListener("change",function(){
+      var i=state.distractions.indexOf(x[0]);
+      if(c.checked&&i<0)state.distractions.push(x[0]);
+      if(!c.checked&&i>=0)state.distractions.splice(i,1);
+      save();
+    });
+    lab.appendChild(c);lab.appendChild(document.createTextNode(x[1]));d.appendChild(lab);
+  });
+  var s=document.getElementById("stamina");s.innerHTML="";
+  STAMINA.forEach(function(q,qi){
+    var wrap=document.createElement("div");wrap.style.margin="14px 0";
+    var h=document.createElement("p");h.innerHTML="<strong>Q"+(qi+1)+".</strong> "+esc(q[0]);wrap.appendChild(h);
+    q[1].forEach(function(opt,oi){
+      var lab=document.createElement("label");lab.className="radio-opt";
+      var r=document.createElement("input");r.type="radio";r.name="sq"+qi;r.value=oi;
+      r.setAttribute("aria-label",opt);
+      if(state.stamina[qi]===oi)r.checked=true;
+      r.addEventListener("change",function(){state.stamina[qi]=oi;save();});
+      lab.appendChild(r);lab.appendChild(document.createTextNode(opt));wrap.appendChild(lab);
+    });
+    s.appendChild(wrap);
+  });
+  document.getElementById("worktype").value=state.worktype;
+  document.getElementById("hours").value=state.hours;
+}
+
+function drawPlan(){
+  var p=state.plan;
+  var wtn=document.getElementById("worktype").options[document.getElementById("worktype").selectedIndex].textContent;
+  document.getElementById("plansummary").innerHTML=
+    "<p><strong>Work type:</strong> "+esc(wtn)+" &nbsp;·&nbsp; <strong>Stamina:</strong> "+TIERNAME[p.tier]+" ("+p.score+"/12)</p>"+
+    "<p class='muted'>"+TIERDESC[p.tier]+"</p>";
+  document.getElementById("planstats").innerHTML=
+    "<div class='stat'><b>"+p.focus+" / "+p.brk+"</b><small>focus / break minutes</small></div>"+
+    "<div class='stat'><b>"+p.sessions+"</b><small>session"+(p.sessions>1?"s":"")+" today</small></div>"+
+    "<div class='stat'><b>"+Math.floor(p.deepMin/60)+"h "+(p.deepMin%60)+"m</b><small>total deep work</small></div>";
+  var sh=document.getElementById("shutdown");sh.innerHTML="";
+  var items=["Clear your desk — only what this task needs","Water bottle and bathroom before you start","Timer visible, everything else closed"];
+  state.distractions.forEach(function(dk){
+    for(var i=0;i<DISTRACTIONS.length;i++)if(DISTRACTIONS[i][0]===dk)items.push(DISTRACTIONS[i][2]);
+  });
+  items.forEach(function(t,i){
+    var row=document.createElement("label");row.className="checkrow";
+    var c=document.createElement("input");c.type="checkbox";
+    c.setAttribute("aria-label","Shutdown step: "+t);
+    if(state.shutdownDone.indexOf(i)>=0){c.checked=true;row.classList.add("done");}
+    c.addEventListener("change",function(){
+      var k=state.shutdownDone.indexOf(i);
+      if(c.checked&&k<0)state.shutdownDone.push(i);
+      if(!c.checked&&k>=0)state.shutdownDone.splice(k,1);
+      row.classList.toggle("done",c.checked);save();
+    });
+    var sp=document.createElement("span");sp.textContent=t;
+    row.appendChild(c);row.appendChild(sp);sh.appendChild(row);
+  });
+  var bm=document.getElementById("breakmenu");bm.innerHTML="";
+  BREAKMENU.forEach(function(t){
+    var row=document.createElement("div");row.className="checkrow";
+    row.innerHTML="<span style='color:#c9a227;font-weight:bold'>&bull;</span>";
+    var sp=document.createElement("span");sp.textContent=t;row.appendChild(sp);bm.appendChild(row);
+  });
+  drawCaps();
+}
+
+/* ---------- TIMER ---------- */
+var DW={phase:"idle",focusSec:0,breakSec:0,sessions:1,current:1,left:0,timer:null,total:1};
+var audioCtx=null;
+function chime(){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+  var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);
+  o.frequency.value=659;o.type="sine";g.gain.setValueAtTime(0.001,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.35,audioCtx.currentTime+0.05);
+  g.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+1.1);
+  o.start();o.stop(audioCtx.currentTime+1.2);}catch(e){}}
+function fmt(s){s=Math.max(0,Math.ceil(s));return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");}
+function dwDraw(){
+  var ph=document.getElementById("dwphase"),tm=document.getElementById("dwtime"),ss=document.getElementById("dwsess"),bar=document.getElementById("dwbar");
+  var names={idle:"Ready",focus:"FOCUS — session "+DW.current+" of "+DW.sessions,break:"BREAK — session "+DW.current+" of "+DW.sessions,done:"Session complete"};
+  ph.textContent=names[DW.phase]||DW.phase;
+  tm.textContent=(DW.phase==="idle"||DW.phase==="done")?"--:--":fmt(DW.left);
+  ss.textContent=DW.phase==="idle"?"Press start when your shutdown checklist is complete.":"";
+  bar.style.width=(DW.phase==="focus"||DW.phase==="break")?Math.round(100*(1-DW.left/DW.total))+"%":"0%";
+  document.getElementById("dwpause").disabled=!((DW.phase==="focus"||DW.phase==="break")&&DW.timer!==null);
+  document.getElementById("dwskip").disabled=DW.phase!=="break";
+  document.getElementById("dwend").disabled=!(DW.phase==="focus"||DW.phase==="break");
+  document.getElementById("dwstart").textContent=DW.phase==="idle"?"Start focus session":(DW.phase==="done"?"Run another session":"Focus session running…");
+  document.getElementById("dwstart").disabled=(DW.phase==="focus"||DW.phase==="break");
+  if(DW.phase==="break")document.getElementById("dwpause").textContent="Resume break";
+  else document.getElementById("dwpause").textContent=(DW.timer===null&&DW.left>0&&DW.phase==="focus")?"Resume":"Pause";
+}
+function dwTick(){
+  DW.left--;
+  if(DW.left<=0){
+    clearInterval(DW.timer);DW.timer=null;chime();
+    if(DW.phase==="focus"){
+      if(DW.current>=DW.sessions){DW.phase="done";dwDraw();return;}
+      DW.phase="break";DW.left=DW.breakSec;DW.total=DW.breakSec;DW.timer=setInterval(dwTick,1000);
+    }else if(DW.phase==="break"){
+      DW.current++;DW.phase="focus";DW.left=DW.focusSec;DW.total=DW.focusSec;DW.timer=setInterval(dwTick,1000);
+    }
+  }
+  dwDraw();
+}
+function dwConfigure(focusSec,breakSec,sessions){
+  dwReset();
+  DW.focusSec=Math.max(1,Math.round(focusSec));DW.breakSec=Math.max(1,Math.round(breakSec));
+  DW.sessions=Math.max(1,Math.min(12,Math.round(sessions)||1));
+}
+function dwStart(){
+  if(DW.phase==="focus"||DW.phase==="break")return;
+  if(DW.phase==="done"){DW.current=1;}
+  DW.phase="focus";DW.left=DW.focusSec;DW.total=DW.focusSec;
+  clearInterval(DW.timer);DW.timer=setInterval(dwTick,1000);chime();dwDraw();
+}
+function dwPauseResume(){
+  if(DW.phase!=="focus"&&DW.phase!=="break")return;
+  if(DW.timer){clearInterval(DW.timer);DW.timer=null;}
+  else{DW.timer=setInterval(dwTick,1000);}
+  dwDraw();
+}
+function dwSkipBreak(){if(DW.phase==="break"){clearInterval(DW.timer);DW.timer=null;DW.current++;DW.phase="focus";DW.left=DW.focusSec;DW.total=DW.focusSec;DW.timer=setInterval(dwTick,1000);dwDraw();}}
+function dwEndEarly(){if(DW.phase==="focus"||DW.phase==="break"){clearInterval(DW.timer);DW.timer=null;DW.phase="done";dwDraw();}}
+function dwReset(){clearInterval(DW.timer);DW.timer=null;DW.phase="idle";DW.current=1;DW.left=0;dwDraw();}
+document.getElementById("dwstart").addEventListener("click",dwStart);
+document.getElementById("dwpause").addEventListener("click",dwPauseResume);
+document.getElementById("dwskip").addEventListener("click",dwSkipBreak);
+document.getElementById("dwend").addEventListener("click",function(){if(confirm("End this session early? Your progress so far still counts."))dwEndEarly();});
+document.getElementById("genplan").addEventListener("click",function(){
+  var errs=[];
+  var h=parseFloat(document.getElementById("hours").value);
+  if(isNaN(h)||h<0.5||h>16)errs.push("Enter available hours between 0.5 and 16.");
+  if(state.stamina.some(function(a){return a==null;}))errs.push("Answer all 4 stamina questions.");
+  if(state.distractions.length===0)errs.push("Pick at least one distraction to shut down.");
+  var e=document.getElementById("inputerr");
+  if(errs.length){e.innerHTML=errs.join("<br>");return;}
+  e.textContent="";
+  state.worktype=document.getElementById("worktype").value;
+  state.hours=h;state.plan=buildPlan();state.shutdownDone=[];
+  save();
+  dwConfigure(state.plan.focus*60,state.plan.brk*60,state.plan.sessions);
+  document.getElementById("inputcard").style.display="none";
+  document.getElementById("plancard").style.display="block";
+  drawPlan();dwDraw();
+  if(window.scrollTo)window.scrollTo(0,0);
+});
+document.getElementById("revise").addEventListener("click",function(){
+  dwReset();
+  document.getElementById("plancard").style.display="none";
+  document.getElementById("inputcard").style.display="block";
+  if(window.scrollTo)window.scrollTo(0,0);
+});
+document.getElementById("resetbtn").addEventListener("click",function(){
+  if(confirm("Start over? This clears your profile, plan, and capture log.")){
+    try{localStorage.removeItem(KEY);}catch(e){}
+    state={worktype:"writing",hours:4,distractions:[],stamina:[null,null,null,null],plan:null,caps:[],shutdownDone:[]};
+    dwReset();drawInputs();
+    document.getElementById("plancard").style.display="none";
+    document.getElementById("inputcard").style.display="block";
+  }
+});
+function drawCaps(){
+  var w=document.getElementById("caplog");w.innerHTML="";
+  if(state.caps.length===0){w.innerHTML="<p class='muted'>No captures saved yet.</p>";return;}
+  state.caps.slice().reverse().forEach(function(c){
+    var d=document.createElement("div");d.className="logitem";
+    d.innerHTML="<strong>"+esc(c.when)+"</strong><br>Finished: "+esc(c.f)+"<br>Stopped at: "+esc(c.s)+"<br>Next step: "+esc(c.n);
+    w.appendChild(d);
+  });
+}
+document.getElementById("capsave").addEventListener("click",function(){
+  var f=document.getElementById("cap1").value.trim(),s=document.getElementById("cap2").value.trim(),n=document.getElementById("cap3").value.trim();
+  if(!f&&!s&&!n)return;
+  var d=new Date();
+  state.caps.push({when:d.toLocaleDateString()+" "+d.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}),f:f,s:s,n:n});
+  document.getElementById("cap1").value="";document.getElementById("cap2").value="";document.getElementById("cap3").value="";
+  save();drawCaps();
+});
+document.getElementById("worktype").addEventListener("change",function(){state.worktype=this.value;save();});
+document.getElementById("hours").addEventListener("input",function(){var v=parseFloat(this.value);if(!isNaN(v)){state.hours=v;save();}});
+
+load();
+drawInputs();
+if(state.plan){
+  document.getElementById("inputcard").style.display="none";
+  document.getElementById("plancard").style.display="block";
+  drawPlan();
+  dwConfigure(state.plan.focus*60,state.plan.brk*60,state.plan.sessions);
+}
+dwDraw();
+</script>
+</body>
+</html>

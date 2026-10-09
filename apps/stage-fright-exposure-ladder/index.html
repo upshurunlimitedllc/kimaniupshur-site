@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage-Fright Exposure Ladder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Shrink public-speaking fear step by step: build your personal 8-rung exposure ladder, rehearse with a timer and pre-talk routine, and watch anxiety drop on your progress chart. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/stage-fright-exposure-ladder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stage-Fright Exposure Ladder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Shrink public-speaking fear step by step: build your personal 8-rung exposure ladder, rehearse with a timer and pre-talk routine, and watch anxiety drop on your progress chart. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/stage-fright-exposure-ladder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:10px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;margin:22px 0 8px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+input[type=range]{width:100%;accent-color:#c9a227;margin:8px 0;min-height:44px}
+label.fld{display:block;font-weight:bold;margin-top:12px;color:#141210}
+.hidden{display:none!important}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{border:2px solid #c9a227;background:#fff;border-radius:8px;padding:12px 18px;font-size:1rem;font-weight:bold;cursor:pointer;min-height:48px;color:#141210}
+.tab.sel{background:#c9a227}
+.rungedit{border:2px solid #e3d9b8;border-radius:10px;padding:14px 16px;margin:10px 0;background:#fff}
+.rungedit .rlab{font-weight:bold;font-family:Georgia,serif}
+.anxval{font-weight:bold;color:#8a6d1c}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee;cursor:pointer}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+.checkrow.done span{text-decoration:line-through;color:#8a7a4a}
+#timerDisp{font-size:3.4rem;font-family:Georgia,serif;text-align:center;margin:10px 0}
+.attempt{border:1px solid #e3d9b8;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:.92rem;background:#fff}
+.attempt .ad{color:#8a6d1c;font-weight:bold}
+.prow{margin:12px 0}
+.prow .plbl{font-weight:bold;font-size:.95rem}
+.pbars{display:flex;gap:6px;align-items:flex-end;height:74px;margin-top:6px}
+.pbar{flex:1;border-radius:6px 6px 0 0;min-width:0;position:relative}
+.pbar.init{background:#d8cba0}
+.pbar.cur{background:#5a8f4a}
+.pdelta{font-size:.85rem;color:#6b6250;margin-top:2px}
+.legend{display:flex;gap:16px;font-size:.85rem;color:#6b6250;margin-top:8px;flex-wrap:wrap}
+.sw{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:baseline}
+.stat3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0}
+@media (max-width:560px){.stat3{grid-template-columns:1fr}}
+.stat{background:#f3ecd7;border-radius:10px;padding:14px;text-align:center}
+.stat .n{font-family:Georgia,serif;font-size:1.8rem;color:#141210}
+.stat .l{font-size:.85rem;color:#6b6250}
+.err{background:#fdecec;border:2px solid #c0392b;color:#7b241c;border-radius:8px;padding:12px 16px;margin:12px 0}
+.okmsg{background:#eef7e8;border:2px solid #5a8f4a;border-radius:8px;padding:12px 16px;margin:12px 0}
+.kbd{font-size:.85rem;color:#6b6250}
+#talkPrint{border:3px dashed #8a6d1c;border-radius:12px;padding:22px;background:#fff}
+#talkPrint h2{font-family:Georgia,serif;margin-bottom:8px}
+#talkPrint li{margin:8px 0;list-style:none;font-size:.95rem}
+#talkPrint li:before{content:"\2610  "}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+  body{background:#fff}
+  header.site,footer.site,.noprint,main.app .appcard{display:none!important}
+  #talkCard{display:block!important}
+  main.app{max-width:100%;padding:0}
+  #talkPrint{border:2px solid #000}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Stage-Fright Exposure Ladder</h1>
+<p class="intro">Fear shrinks with graded exposure: face slightly scarier speaking situations, one rung at a time, until your brain learns the stage is safe. Build your ladder, rehearse with the timer and pre-talk routine, and log every attempt.</p>
+<p class="kbd" style="margin-bottom:20px">Educational tool only — not professional psychological advice. If anxiety severely limits your life, consider working with a licensed professional.</p>
+
+<div class="tabs noprint" role="tablist" aria-label="App sections">
+<button class="tab sel" data-t="ladder" role="tab">1 · Build ladder</button>
+<button class="tab" data-t="practice" role="tab">2 · Practice</button>
+<button class="tab" data-t="progress" role="tab">3 · Progress</button>
+<button class="tab" data-t="talkday" role="tab">4 · Talk day</button>
+</div>
+
+<div class="appcard" id="tab-ladder">
+<h2>Build your fear ladder</h2>
+<p style="color:#6b6250">8 rungs, from easy to terrifying. Edit any rung to match your real fears, then rate your anxiety for each from 1 (calm) to 10 (panic). Aim for a smooth climb — no jumps bigger than 2–3 points.</p>
+<div id="ladderEdit"></div>
+<div class="err hidden" id="ladderErr">Anxiety jumps of more than 3 points between rungs make exposure backfire. Lower a higher rung or raise a lower one to smooth the climb.</div>
+<div class="btnrow">
+<button class="btn" id="saveLadder">Save ladder</button>
+<button class="btn ghost" id="resetLadder">Restore defaults</button>
+</div>
+<div class="okmsg hidden" id="ladderOk">Ladder saved. Start at the bottom rung and work upward — one rung at a time.</div>
+</div>
+
+<div class="appcard hidden" id="tab-practice">
+<h2>Practice session</h2>
+<label class="fld" for="pRung">Which rung are you practicing?</label>
+<select id="pRung"></select>
+
+<h3>Pre-talk routine</h3>
+<p class="kbd">Run this checklist before every rehearsal. Same routine, every time — it becomes your anchor.</p>
+<div id="preTalk"></div>
+
+<h3>Rehearsal timer</h3>
+<label class="fld" for="tMin">Minutes</label>
+<input type="number" id="tMin" value="5" min="1" max="60">
+<div id="timerDisp">05:00</div>
+<div class="btnrow" style="justify-content:center">
+<button class="btn" id="tStart">Start</button>
+<button class="btn ghost" id="tReset">Reset</button>
+</div>
+
+<h3>Log this attempt</h3>
+<label class="fld" for="aBefore">Anxiety before (1–10)</label>
+<input type="range" id="aBefore" min="1" max="10" value="5" aria-label="Anxiety before">
+<div>Before: <span class="anxval" id="aBeforeVal">5</span></div>
+<label class="fld" for="aAfter">Anxiety after (1–10)</label>
+<input type="range" id="aAfter" min="1" max="10" value="5" aria-label="Anxiety after">
+<div>After: <span class="anxval" id="aAfterVal">5</span></div>
+<label class="fld" for="aNotes">Notes (optional)</label>
+<textarea id="aNotes" rows="2" placeholder="What helped? What will you try next time?"></textarea>
+<div class="btnrow"><button class="btn" id="logAttempt">Log attempt</button></div>
+<div class="okmsg hidden" id="logOk">Attempt logged. Check the Progress tab to see your anxiety curve.</div>
+</div>
+
+<div class="appcard hidden" id="tab-progress">
+<h2>Your progress</h2>
+<div class="stat3">
+<div class="stat"><div class="n" id="stAttempts">0</div><div class="l">attempts logged</div></div>
+<div class="stat"><div class="n" id="stRungs">0 / 8</div><div class="l">rungs attempted</div></div>
+<div class="stat"><div class="n" id="stDrop">—</div><div class="l">avg anxiety drop</div></div>
+</div>
+<h3>Anxiety per rung: starting vs. latest</h3>
+<div id="chart"></div>
+<div class="legend"><span><span class="sw" style="background:#d8cba0"></span>Starting anxiety</span><span><span class="sw" style="background:#5a8f4a"></span>Latest attempt</span></div>
+<p class="kbd" style="margin-top:10px">Rule of thumb: stay on a rung until your &ldquo;after&rdquo; anxiety is 3 or below twice in a row — then climb.</p>
+<h3>Attempt log</h3>
+<div id="attemptLog"><p class="kbd">No attempts yet. Run a practice session to start your log.</p></div>
+<div class="btnrow"><button class="btn ghost" id="clearLog">Clear attempt log</button></div>
+</div>
+
+<div class="appcard hidden" id="talkCard">
+<h2>Talk-day checklist</h2>
+<p style="color:#6b6250">The big day. Work top to bottom — body first, then logistics, then mindset.</p>
+<div id="talkPrint">
+<h2>Talk-Day Checklist</h2>
+<ul id="talkList"></ul>
+</div>
+<div class="btnrow noprint">
+<button class="btn" id="printTalk">Print checklist</button>
+<button class="btn ghost" id="uncheckTalk">Uncheck all</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Stage-Fright Exposure Ladder is just the start. <em>Public Speaking Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — structuring talks, handling nerves, and connecting with any audience.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/public-speaking-made-simple/">Get Public Speaking Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-stage-fright-exposure-ladder-v1";
+var DEFAULTS=[
+ {t:"Record a 1-minute voice memo and listen back — just you",a:2},
+ {t:"Rehearse your talk out loud to an empty room",a:3},
+ {t:"Deliver your opening line to one trusted person",a:4},
+ {t:"Give a 2-minute talk to 2–3 friends or family",a:5},
+ {t:"Speak up once in a small meeting (5–8 people)",a:6},
+ {t:"Give a 5-minute update to your team (8–12 people)",a:7},
+ {t:"Present to a larger group (12–20 people)",a:8},
+ {t:"Present to 20+ people",a:9}
+];
+var PRETALK=[
+ "Slow breathing: 4 counts in, 6 counts out, 5 rounds",
+ "Power posture: stand tall, shoulders back — hold 2 minutes",
+ "First line memorized cold (say it out loud 3 times)",
+ "Water within reach",
+ "Arrive early and test the setup",
+ "Visualize: see yourself finishing strong",
+ "Shake out tension: roll shoulders, unclench jaw",
+ "Say out loud: \u201CI'm excited to share this\u201D"
+];
+var TALKDAY=[
+ "First line memorized cold",
+ "Breathing routine done (5 slow breaths)",
+ "Power posture held for 2 minutes",
+ "Water nearby, tech and clicker tested",
+ "Arrived 15 minutes early",
+ "Notes and backup plan ready",
+ "Picked one friendly face in the audience",
+ "Said out loud: \u201CI'm excited to share this\u201D",
+ "Shoulders down, jaw unclenched",
+ "Remembered: the audience wants me to succeed"
+];
+var state={ladder:null,pretalk:{},attempts:[],talkday:{},tab:"ladder"};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&typeof s==="object"){
+ state.ladder=(s.ladder&&s.ladder.length===8)?s.ladder:null;
+ state.pretalk=s.pretalk||{};state.attempts=s.attempts||[];state.talkday=s.talkday||{};
+ if(s.tab)state.tab=s.tab;}}catch(e){}}
+function el(id){return document.getElementById(id);}
+function show(id){el(id).classList.remove("hidden");}
+function hide(id){el(id).classList.add("hidden");}
+function ladder(){return state.ladder||DEFAULTS;}
+// --- tabs ---
+var tabs=document.querySelectorAll(".tab");
+function setTab(t){
+ state.tab=t;save();
+ for(var i=0;i<tabs.length;i++)tabs[i].classList.toggle("sel",tabs[i].dataset.t===t);
+ ["ladder","practice","progress","talkday"].forEach(function(k){
+  el(k==="talkday"?"talkCard":"tab-"+k).classList.toggle("hidden",k!==t);
+ });
+ if(t==="practice")renderPracticeRungs();
+ if(t==="progress")renderProgress();
+ window.scrollTo(0,0);
+}
+for(var ti=0;ti<tabs.length;ti++)(function(b){b.addEventListener("click",function(){setTab(b.dataset.t);});})(tabs[ti]);
+// --- ladder builder ---
+function renderLadderEdit(){
+ var L=ladder(),w=el("ladderEdit");w.innerHTML="";
+ L.forEach(function(r,i){
+  var d=document.createElement("div");d.className="rungedit";
+  d.innerHTML='<div class="rlab">Rung '+(i+1)+'</div>';
+  var inp=document.createElement("input");inp.type="text";inp.value=r.t;inp.maxLength=140;
+  inp.setAttribute("aria-label","Rung "+(i+1)+" description");
+  inp.addEventListener("input",function(){r.t=inp.value;});
+  var lab=document.createElement("label");lab.className="fld";lab.textContent="Anxiety (1–10)";
+  var rg=document.createElement("input");rg.type="range";rg.min="1";rg.max="10";rg.value=r.a;
+  rg.setAttribute("aria-label","Rung "+(i+1)+" anxiety");
+  var val=document.createElement("span");val.className="anxval";val.textContent=r.a;
+  rg.addEventListener("input",function(){var v=parseInt(rg.value,10)||1;r.a=v;val.textContent=v;hide("ladderErr");hide("ladderOk");});
+  d.appendChild(inp);d.appendChild(lab);d.appendChild(rg);d.appendChild(val);
+  w.appendChild(d);
+ });
+}
+el("saveLadder").addEventListener("click",function(){
+ var L=ladder();
+ for(var i=0;i<L.length;i++){
+  if(!L[i].t||!L[i].t.trim())L[i].t=DEFAULTS[i].t;
+  L[i].t=L[i].t.trim().slice(0,140);
+ }
+ for(var j=1;j<L.length;j++){
+  if(Math.abs(L[j].a-L[j-1].a)>3){show("ladderErr");window.scrollTo(0,0);return;}
+ }
+ hide("ladderErr");
+ state.ladder=L.map(function(r){return{t:r.t,a:r.a};});
+ save();show("ladderOk");renderLadderEdit();
+});
+el("resetLadder").addEventListener("click",function(){
+ if(!window.confirm("Restore the default ladder? Your custom rung text will be replaced."))return;
+ state.ladder=null;save();renderLadderEdit();hide("ladderOk");
+});
+// --- practice ---
+function renderPracticeRungs(){
+ var s=el("pRung"),cur=s.value;s.innerHTML="";
+ ladder().forEach(function(r,i){
+  var o=document.createElement("option");o.value=i;
+  o.textContent="Rung "+(i+1)+" — "+r.t+" (anxiety "+r.a+")";
+  s.appendChild(o);
+ });
+ if(cur!==""&&parseInt(cur,10)<8)s.value=cur;
+}
+function renderPreTalk(){
+ var w=el("preTalk");w.innerHTML="";
+ PRETALK.forEach(function(t,i){
+  var lab=document.createElement("label");lab.className="checkrow"+(state.pretalk[i]?" done":"");
+  var c=document.createElement("input");c.type="checkbox";c.checked=!!state.pretalk[i];
+  c.setAttribute("aria-label",t);
+  c.addEventListener("change",function(){state.pretalk[i]=c.checked;save();lab.classList.toggle("done",c.checked);});
+  var sp=document.createElement("span");sp.textContent=t;
+  lab.appendChild(c);lab.appendChild(sp);w.appendChild(lab);
+ });
+}
+renderPreTalk();
+// timer
+var tLeft=300,tTimer=null,audio=null;
+function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");}
+function drawT(){el("timerDisp").textContent=fmt(tLeft);}
+function chime(){try{audio=audio||new (window.AudioContext||window.webkitAudioContext)();
+ var o=audio.createOscillator(),g=audio.createGain();o.connect(g);g.connect(audio.destination);
+ o.frequency.value=523;o.type="sine";g.gain.setValueAtTime(0.001,audio.currentTime);
+ g.gain.exponentialRampToValueAtTime(0.4,audio.currentTime+0.05);
+ g.gain.exponentialRampToValueAtTime(0.001,audio.currentTime+1.2);
+ o.start();o.stop(audio.currentTime+1.3);}catch(e){}}
+el("tMin").addEventListener("input",function(){
+ var m=Math.max(1,Math.min(60,parseInt(el("tMin").value,10)||5));
+ el("tMin").value=m;clearInterval(tTimer);tTimer=null;tLeft=m*60;el("tStart").textContent="Start";drawT();
+});
+el("tStart").addEventListener("click",function(){
+ if(tTimer){clearInterval(tTimer);tTimer=null;this.textContent="Resume";return;}
+ if(tLeft<=0){var m=Math.max(1,Math.min(60,parseInt(el("tMin").value,10)||5));tLeft=m*60;}
+ chime();tTimer=setInterval(function(){
+  tLeft--;
+  if(tLeft<=0){clearInterval(tTimer);tTimer=null;chime();el("tStart").textContent="Start";drawT();return;}
+  drawT();
+ },1000);
+ this.textContent="Pause";
+});
+el("tReset").addEventListener("click",function(){
+ clearInterval(tTimer);tTimer=null;
+ var m=Math.max(1,Math.min(60,parseInt(el("tMin").value,10)||5));
+ tLeft=m*60;el("tStart").textContent="Start";drawT();
+});
+drawT();
+function bindRange(id,vid){
+ el(id).addEventListener("input",function(){el(vid).textContent=el(id).value;});
+}
+bindRange("aBefore","aBeforeVal");bindRange("aAfter","aAfterVal");
+el("logAttempt").addEventListener("click",function(){
+ var ri=parseInt(el("pRung").value,10)||0;
+ var L=ladder();
+ state.attempts.push({
+  d:new Date().toISOString().slice(0,10),
+  rung:ri,rungT:L[ri].t,
+  before:parseInt(el("aBefore").value,10),
+  after:parseInt(el("aAfter").value,10),
+  notes:el("aNotes").value.trim().slice(0,500)
+ });
+ save();el("aNotes").value="";
+ show("logOk");setTimeout(function(){hide("logOk");},4000);
+});
+// --- progress ---
+function renderProgress(){
+ var at=state.attempts,L=ladder();
+ el("stAttempts").textContent=at.length;
+ var rungsHit={};
+ at.forEach(function(x){rungsHit[x.rung]=true;});
+ el("stRungs").textContent=Object.keys(rungsHit).length+" / 8";
+ var drops=at.map(function(x){return x.before-x.after;});
+ el("stDrop").textContent=at.length?(drops.reduce(function(a,b){return a+b;},0)/at.length).toFixed(1)+" pts":"—";
+ // chart: per rung starting vs latest before-anxiety
+ var ch=el("chart");ch.innerHTML="";
+ L.forEach(function(r,i){
+  var mine=at.filter(function(x){return x.rung===i;});
+  var latest=mine.length?mine[mine.length-1].before:null;
+  var row=document.createElement("div");row.className="prow";
+  var lbl=document.createElement("div");lbl.className="plbl";
+  lbl.textContent="Rung "+(i+1)+" — "+r.t+(mine.length?" ("+mine.length+" attempt"+(mine.length>1?"s":"")+")":" (not attempted yet)");
+  row.appendChild(lbl);
+  var bars=document.createElement("div");bars.className="pbars";
+  var bi=document.createElement("div");bi.className="pbar init";
+  bi.style.height=Math.max(8,r.a/10*100)+"%";bi.title="Starting anxiety: "+r.a;
+  bars.appendChild(bi);
+  if(latest!==null){
+   var bc=document.createElement("div");bc.className="pbar cur";
+   bc.style.height=Math.max(8,latest/10*100)+"%";bc.title="Latest attempt anxiety: "+latest;
+   bars.appendChild(bc);
+  }
+  row.appendChild(bars);
+  var dl=document.createElement("div");dl.className="pdelta";
+  if(latest===null)dl.textContent="Starting: "+r.a+" · log an attempt to track this rung";
+  else{var d=r.a-latest;dl.textContent="Starting: "+r.a+" → Latest: "+latest+(d>0?" (−"+d+", dropping — nice work)":d<0?" (+"+(-d)+", up — that's normal, keep practicing)":" (holding steady)");}
+  row.appendChild(dl);
+  ch.appendChild(row);
+ });
+ // log
+ var lg=el("attemptLog");lg.innerHTML="";
+ if(!at.length){lg.innerHTML='<p class="kbd">No attempts yet. Run a practice session to start your log.</p>';return;}
+ for(var i=at.length-1;i>=0;i--){
+  var x=at[i],dv=document.createElement("div");dv.className="attempt";
+  dv.innerHTML='<span class="ad">'+x.d+' · Rung '+(x.rung+1)+'</span> — '+x.rungT+
+   '<br>Anxiety: '+x.before+' → '+x.after+(x.notes?'<br><i>'+x.notes.replace(/</g,"&lt;")+'</i>':"");
+  lg.appendChild(dv);
+ }
+}
+el("clearLog").addEventListener("click",function(){
+ if(!state.attempts.length)return;
+ if(!window.confirm("Clear all logged attempts? Your ladder is kept."))return;
+ state.attempts=[];save();renderProgress();
+});
+// --- talk day ---
+function renderTalk(){
+ var w=el("talkList");w.innerHTML="";
+ TALKDAY.forEach(function(t,i){
+  var li=document.createElement("li");
+  var lab=document.createElement("label");lab.className="checkrow"+(state.talkday[i]?" done":"");
+  lab.style.border="none";lab.style.padding="4px 0";
+  var c=document.createElement("input");c.type="checkbox";c.checked=!!state.talkday[i];
+  c.setAttribute("aria-label",t);
+  c.addEventListener("change",function(){state.talkday[i]=c.checked;save();lab.classList.toggle("done",c.checked);});
+  var sp=document.createElement("span");sp.textContent=t;
+  lab.appendChild(c);lab.appendChild(sp);li.appendChild(lab);w.appendChild(li);
+ });
+}
+el("uncheckTalk").addEventListener("click",function(){
+ state.talkday={};save();renderTalk();
+});
+el("printTalk").addEventListener("click",function(){window.print();});
+renderTalk();
+// init
+load();renderLadderEdit();renderTalk();renderPreTalk();
+setTab(["ladder","practice","progress","talkday"].indexOf(state.tab)>=0?state.tab:"ladder");
+</script>
+</body>
+</html>
