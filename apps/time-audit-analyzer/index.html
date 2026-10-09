@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Audit Analyzer | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Find out where your hours actually go, score how your time aligns with your top priorities, and build a reallocation plan. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/time-audit-analyzer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Time Audit Analyzer | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Find out where your hours actually go, score how your time aligns with your top priorities, and build a reallocation plan. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/time-audit-analyzer/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:6px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;margin:18px 0 8px;color:#141210}
+.appcard .step{font-size:.8rem;font-weight:bold;color:#8a6d1c;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.95rem}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+input[type=range]{width:100%;accent-color:#c9a227;min-height:44px}
+label.fld{display:block;margin:6px 0;font-weight:600}
+label.fld small{display:block;font-weight:normal;color:#6b6250;font-size:.85rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px}
+@media (max-width:560px){.grid2{grid-template-columns:1fr}}
+.totalbar{background:#141210;color:#e8c84a;border-radius:8px;padding:12px 16px;font-weight:bold;margin:12px 0;text-align:center}
+.warn{background:#fff4d6;border:2px solid #c9a227;border-radius:8px;padding:12px 16px;margin:10px 0;color:#5c4a08}
+.hidden{display:none!important}
+.bar-row{display:grid;grid-template-columns:150px 1fr 52px;gap:10px;align-items:center;margin:8px 0;font-size:.92rem}
+@media (max-width:560px){.bar-row{grid-template-columns:110px 1fr 48px;font-size:.85rem}}
+.bar-track{background:#eee5c8;border-radius:6px;height:22px;overflow:hidden}
+.bar-fill{background:#c9a227;height:100%;border-radius:6px;min-width:2px}
+.score-big{font-family:Georgia,serif;font-size:3.2rem;color:#141210;text-align:center;line-height:1.1}
+.score-band{text-align:center;font-weight:bold;color:#8a6d1c;font-size:1.1rem;margin-bottom:8px}
+.leak{border:1px solid #e3d5a8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.leak h4{font-family:Georgia,serif;margin-bottom:4px}
+.leak .nums{color:#6b6250;font-size:.9rem;margin-bottom:8px}
+.planline{background:#f7f1dc;border-radius:8px;padding:12px 14px;margin:8px 0;font-size:.95rem}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Time Audit Analyzer</h1>
+<p class="intro">Find out where your hours actually go, score how your time aligns with your priorities, and build a concrete reallocation plan.</p>
+
+<div class="appcard">
+<div class="step">Step 1 of 3</div>
+<h2>Your top 3 priorities</h2>
+<p style="color:#6b6250;margin-bottom:10px">Name the three things your time <em>should</em> be serving. Be specific ("finish the novel draft", not "writing").</p>
+<label class="fld">Priority 1<input type="text" id="pri0" maxlength="80" placeholder="e.g., Launch the side business"></label>
+<label class="fld">Priority 2<input type="text" id="pri1" maxlength="80" placeholder="e.g., Get fit and healthy"></label>
+<label class="fld">Priority 3<input type="text" id="pri2" maxlength="80" placeholder="e.g., Be present with family"></label>
+</div>
+
+<div class="appcard">
+<div class="step">Step 2 of 3</div>
+<h2>Where do your hours go?</h2>
+<p style="color:#6b6250;margin-bottom:10px">Enter your best estimate of hours <strong>per week</strong> for each category. Use a real 7-day log if you have one, or reconstruct a typical week from estimates &mdash; honest guesses beat no data.</p>
+<div class="grid2" id="catgrid"></div>
+<div class="totalbar" id="totalbar">Weekly total: 0 of 168 hours</div>
+<div id="totalwarn"></div>
+<button class="btn ghost small" id="examplebtn">Load an example week</button>
+</div>
+
+<div class="appcard">
+<div class="step">Step 3 of 3</div>
+<h2>What does each category serve?</h2>
+<p style="color:#6b6250;margin-bottom:10px">For each category with hours logged, say which priority it mostly serves. "Maintenance" = necessary upkeep (sleep, chores). "Drain" = adds little to what matters.</p>
+<div id="mapgrid"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn" id="analyze">Analyze my week</button>
+<button class="btn ghost" id="resetbtn">Start over</button>
+</div>
+<div id="formerr" style="color:#a33;margin-top:10px"></div>
+</div>
+
+<div class="appcard hidden" id="results">
+<div class="step">Your results</div>
+<h2>Weekly breakdown</h2>
+<div id="bars"></div>
+<h3>Alignment score</h3>
+<div class="score-big" id="scorebig">&mdash;</div>
+<div class="score-band" id="scoreband"></div>
+<p id="scoreexplain" style="color:#6b6250"></p>
+<div id="sleepnote"></div>
+<h3>Your 3 biggest time leaks</h3>
+<div id="leaks"></div>
+<h3>Reallocation plan</h3>
+<p style="color:#6b6250;margin-bottom:8px">Adjust how much of each leak to reclaim, and choose where the hours go. The plan updates live.</p>
+<div id="plan"></div>
+<div class="totalbar" id="plantotal"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn ghost small" id="copybtn">Copy my plan</button>
+<button class="btn ghost small" id="printbtn">Print</button>
+</div>
+<div id="copymsg" style="color:#8a6d1c;margin-top:8px"></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Time Audit Analyzer is just the start. <em>Time Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic &mdash; practical systems for spending your hours on what matters.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/time-made-simple/">Get Time Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action. Educational purposes only.</p>
+</div></footer>
+<script>
+var KEY="app-time-audit-analyzer-v1";
+var CATS=[
+ {id:"sleep",label:"Sleep",hint:"Night sleep plus naps",w:0,def:"maint"},
+ {id:"deep",label:"Deep work",hint:"Focused, cognitively demanding work",w:0,def:"p1"},
+ {id:"shallow",label:"Shallow work",hint:"Email, meetings, admin, busywork",w:.8,def:"drain"},
+ {id:"chores",label:"Chores & errands",hint:"Cooking, cleaning, shopping, life admin",w:.25,def:"maint"},
+ {id:"commute",label:"Commute & travel",hint:"Getting around",w:.4,def:"maint"},
+ {id:"leisure",label:"Leisure & hobbies",hint:"Intentional fun, exercise, people time",w:.7,def:"p2"},
+ {id:"screen",label:"Screen time",hint:"Phone, TV, scrolling (not work)",w:1,def:"drain"},
+ {id:"other",label:"Everything else",hint:"Uncategorized hours",w:.5,def:"drain"}
+];
+var MAPNAMES={p1:"Priority 1",p2:"Priority 2",p3:"Priority 3",maint:"Maintenance",drain:"Drain"};
+var S=null;
+function blank(){var o={pri:["","",""],hrs:{},map:{},pct:{},dest:{},analyzed:false};
+ CATS.forEach(function(c){o.hrs[c.id]=0;o.map[c.id]=c.def;o.pct[c.id]=30;o.dest[c.id]="p1";});return o;}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&o.hrs){S=o;return;}}}catch(e){}S=blank();}
+function num(v){v=parseFloat(v);if(isNaN(v)||v<0)return 0;if(v>168)return 168;return v;}
+function priName(i){var t=(S.pri[i]||"").trim();return t?t:MAPNAMES["p"+(i+1)];}
+function mapLabel(m){
+ if(m==="p1")return "P1: "+priName(0);
+ if(m==="p2")return "P2: "+priName(1);
+ if(m==="p3")return "P3: "+priName(2);
+ return MAPNAMES[m];
+}
+function buildCats(){
+ var g=document.getElementById("catgrid");g.innerHTML="";
+ CATS.forEach(function(c){
+  var l=document.createElement("label");l.className="fld";l.setAttribute("for","h_"+c.id);
+  l.innerHTML=c.label+' <small>'+c.hint+'</small>';
+  var inp=document.createElement("input");
+  inp.type="number";inp.id="h_"+c.id;inp.min="0";inp.max="168";inp.step="0.5";
+  inp.value=S.hrs[c.id]||"";inp.setAttribute("aria-label",c.label+" hours per week");
+  inp.addEventListener("input",function(){S.hrs[c.id]=num(inp.value);S.analyzed=false;save();updateTotal();buildMaps();});
+  l.appendChild(inp);g.appendChild(l);
+ });
+}
+function buildMaps(){
+ var g=document.getElementById("mapgrid");g.innerHTML="";
+ var any=false;
+ CATS.forEach(function(c){
+  if(!(S.hrs[c.id]>0))return;any=true;
+  var l=document.createElement("label");l.className="fld";
+  l.textContent=c.label+" ("+S.hrs[c.id]+"h)";
+  var s=document.createElement("select");s.id="m_"+c.id;s.setAttribute("aria-label","What does "+c.label+" serve");
+  ["p1","p2","p3","maint","drain"].forEach(function(m){
+   var o=document.createElement("option");o.value=m;o.textContent=mapLabel(m);
+   if(S.map[c.id]===m)o.selected=true;s.appendChild(o);
+  });
+  s.addEventListener("change",function(){S.map[c.id]=s.value;S.analyzed=false;save();});
+  l.appendChild(s);g.appendChild(l);
+ });
+ if(!any)g.innerHTML='<p style="color:#6b6250">Log some hours in Step 2 and the categories will appear here.</p>';
+}
+function total(){var t=0;CATS.forEach(function(c){t+=num(S.hrs[c.id]);});return Math.round(t*10)/10;}
+function updateTotal(){
+ var t=total(),bar=document.getElementById("totalbar"),w=document.getElementById("totalwarn");
+ bar.textContent="Weekly total: "+t+" of 168 hours";
+ w.innerHTML="";
+ if(t>168){w.innerHTML='<div class="warn">Your entries add up to more than 168 hours. Double-check for double-counted time.</div>';}
+ else if(t>0&&t<60){w.innerHTML='<div class="warn">That only accounts for '+t+' hours &mdash; a full week is 168. Estimates are fine, but the score is most useful when most of the week is accounted for.</div>';}
+ else if(t===0){w.innerHTML='<div class="warn">Enter your hours above to begin the analysis.</div>';}
+}
+function bandFor(s){
+ if(s>=75)return["Strongly aligned","Most of your waking time serves your priorities. Protect the system &mdash; the plan below finds the remaining leaks."];
+ if(s>=55)return["Mostly aligned","A solid base, but a meaningful chunk of your week drifts. The leaks below are your fastest wins."];
+ if(s>=35)return["Drifting","Less than half your waking time serves your top 3. Reallocation will make a visible difference."];
+ return["Misaligned","Your week is mostly serving other things. The good news: even small reallocations will feel big from here."];
+}
+function analyze(){
+ var err=document.getElementById("formerr");err.textContent="";
+ var anyPri=S.pri.some(function(p){return (p||"").trim().length>0;});
+ if(!anyPri){err.textContent="Name at least one priority in Step 1 first.";return;}
+ var t=total();
+ if(t<=0){err.textContent="Log some hours in Step 2 first.";return;}
+ var sleep=num(S.hrs.sleep),waking=168-sleep;
+ var aligned=0,maint=0,drainH=0;
+ CATS.forEach(function(c){
+  var h=num(S.hrs[c.id]),m=S.map[c.id];
+  if(m==="p1"||m==="p2"||m==="p3")aligned+=h;
+  else if(m==="maint")maint+=h;else drainH+=h;
+ });
+ var res=document.getElementById("results");res.classList.remove("hidden");
+ var bars=document.getElementById("bars");bars.innerHTML="";
+ CATS.forEach(function(c){
+  var h=num(S.hrs[c.id]);if(h<=0)return;
+  var pct=Math.round(h/168*100);
+  var row=document.createElement("div");row.className="bar-row";
+  row.innerHTML='<span>'+c.label+'</span><div class="bar-track"><div class="bar-fill" style="width:'+pct+'%"></div></div><strong>'+h+'h</strong>';
+  bars.appendChild(row);
+ });
+ var sb=document.getElementById("scorebig"),sbd=document.getElementById("scoreband"),se=document.getElementById("scoreexplain");
+ if(waking<=0){
+  sb.textContent="N/A";sbd.textContent="Can't score this week";
+  se.textContent="All 168 hours are logged as sleep, so there are no waking hours to score. Adjust your entries and run the analysis again.";
+ }else{
+  var score=Math.round(100*(aligned+0.5*maint)/waking);
+  var b=bandFor(score);
+  sb.textContent=score+" / 100";sbd.textContent=b[0];
+  se.textContent="Of your "+waking+" waking hours, "+Math.round(aligned*10)/10+"h directly serve your top 3 priorities ("+Math.round(100*aligned/waking)+"%"+(maint>0?", plus "+Math.round(maint*10)/10+"h of necessary maintenance counted at half weight":"")+". "+b[1];
+ }
+ var sn=document.getElementById("sleepnote");sn.innerHTML="";
+ if(sleep<42)sn.innerHTML='<div class="warn">Sleep note: you average under 6 hours a night. No reallocation plan works well on a sleep deficit &mdash; consider protecting sleep before cutting anything else.</div>';
+ var leaks=[];
+ CATS.forEach(function(c){
+  var h=num(S.hrs[c.id]);if(h>0&&c.w>0)leaks.push({id:c.id,label:c.label,hrs:h,leak:h*c.w});
+ });
+ var excess=Math.max(0,sleep-63);
+ if(excess>0)leaks.push({id:"sleepex",label:"Excess sleep (over 9h/night avg)",hrs:Math.round(excess*10)/10,leak:excess});
+ leaks.sort(function(a,b){return b.leak-a.leak;});
+ var top=leaks.slice(0,3);
+ var lk=document.getElementById("leaks");lk.innerHTML="";
+ if(top.length===0){lk.innerHTML='<p style="color:#6b6250">No significant leaks found &mdash; your logged categories are all priority-serving or necessary maintenance.</p>';}
+ top.forEach(function(L,i){
+  var d=document.createElement("div");d.className="leak";
+  d.innerHTML="<h4>#"+(i+1)+" &mdash; "+L.label+"</h4>"+
+   '<div class="nums">'+L.hrs+" hours/week logged &middot; flagged as low-value time</div>"+
+   '<p style="color:#6b6250;font-size:.92rem">Why it leaks: these hours are currently mapped to <strong>'+mapLabel(S.map[L.id]||"drain")+'</strong> rather than a priority. Even a partial cut here frees real time.</p>';
+  lk.appendChild(d);
+ });
+ S._leaks=top.map(function(L){return L.id;});
+ buildPlan();
+ S.analyzed=true;save();
+ res.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function reclaimHrs(id){
+ var L=null;CATS.forEach(function(c){if(c.id===id)L={hrs:num(S.hrs[c.id]),label:c.label};});
+ if(!L&&id==="sleepex")L={hrs:Math.max(0,num(S.hrs.sleep)-63),label:"Excess sleep"};
+ if(!L)return 0;
+ return Math.round(L.hrs*(S.pct[id]||30)/100*10)/10;
+}
+function buildPlan(){
+ var p=document.getElementById("plan");p.innerHTML="";
+ var ids=S._leaks||[];var totalR=0;
+ if(ids.length===0){p.innerHTML='<p style="color:#6b6250">Nothing to reallocate &mdash; run the analysis after logging your week.</p>';
+  document.getElementById("plantotal").textContent="";return;}
+ ids.forEach(function(id){
+  var label=id==="sleepex"?"Excess sleep":(function(){var f=null;CATS.forEach(function(c){if(c.id===id)f=c.label;});return f;})();
+  var base=id==="sleepex"?Math.max(0,num(S.hrs.sleep)-63):num(S.hrs[id]);
+  var box=document.createElement("div");box.className="leak";
+  var pct=S.pct[id]||30;
+  var rh=reclaimHrs(id);totalR+=rh;
+  box.innerHTML="<h4>Reclaim from: "+label+" ("+base+"h)</h4>";
+  var lab=document.createElement("label");lab.className="fld";
+  lab.innerHTML='Cut by <strong id="pv_'+id+'">'+pct+'%</strong> &rarr; reclaims <strong>'+rh+'h/week</strong>';
+  var r=document.createElement("input");r.type="range";r.min="10";r.max="80";r.step="5";r.value=pct;
+  r.setAttribute("aria-label","Percent to reclaim from "+label);
+  r.addEventListener("input",function(){S.pct[id]=parseInt(r.value,10);save();buildPlan();});
+  lab.appendChild(r);box.appendChild(lab);
+  var dl=document.createElement("label");dl.className="fld";dl.textContent="Reinvest these hours in:";
+  var s=document.createElement("select");s.setAttribute("aria-label","Reinvest destination for "+label);
+  [["p1","P1: "+priName(0)],["p2","P2: "+priName(1)],["p3","P3: "+priName(2)],["deep","Deep work block (unspecified)"]].forEach(function(o){
+   var op=document.createElement("option");op.value=o[0];op.textContent=o[1];
+   if((S.dest[id]||"p1")===o[0])op.selected=true;s.appendChild(op);
+  });
+  s.addEventListener("change",function(){S.dest[id]=s.value;save();buildPlan();});
+  dl.appendChild(s);box.appendChild(dl);
+  var dest=s.options[s.selectedIndex].textContent;
+  var line=document.createElement("div");line.className="planline";
+  line.innerHTML="&#10003; Reclaim <strong>"+rh+"h</strong> from "+label+" &rarr; invest in <strong>"+dest+"</strong>";
+  box.appendChild(line);p.appendChild(box);
+ });
+ totalR=Math.round(totalR*10)/10;
+ document.getElementById("plantotal").textContent="Total reclaimed: "+totalR+" hours/week";
+ S._totalR=totalR;
+}
+function planText(){
+ var L=[];
+ L.push("MY TIME REALLOCATION PLAN");
+ L.push("Priorities: 1) "+priName(0)+"  2) "+priName(1)+"  3) "+priName(2));
+ L.push("Weekly total logged: "+total()+"h");
+ var ids=S._leaks||[];
+ ids.forEach(function(id){
+  var label=id==="sleepex"?"Excess sleep":(function(){var f=null;CATS.forEach(function(c){if(c.id===id)f=c.label;});return f;})();
+  var dmap={p1:priName(0),p2:priName(1),p3:priName(2),deep:"Deep work block"};
+  L.push("- Reclaim "+reclaimHrs(id)+"h from "+label+" ("+(S.pct[id]||30)+"% cut) -> invest in "+(dmap[S.dest[id]||"p1"]));
+ });
+ L.push("Total reclaimed: "+(S._totalR||0)+" hours/week");
+ return L.join("\n");
+}
+document.getElementById("analyze").addEventListener("click",analyze);
+document.getElementById("resetbtn").addEventListener("click",function(){
+ if(!confirm("Clear all entries and start over?"))return;
+ S=blank();save();
+ ["pri0","pri1","pri2"].forEach(function(id,i){document.getElementById(id).value="";});
+ buildCats();buildMaps();updateTotal();
+ document.getElementById("results").classList.add("hidden");
+ document.getElementById("formerr").textContent="";
+ window.scrollTo(0,0);
+});
+document.getElementById("examplebtn").addEventListener("click",function(){
+ var ex={sleep:56,deep:20,shallow:18,chores:10,commute:6,leisure:14,screen:28,other:16};
+ CATS.forEach(function(c){S.hrs[c.id]=ex[c.id]||0;document.getElementById("h_"+c.id).value=ex[c.id]||"";});
+ S.pri=["Launch the side business","Get fit and healthy","Be present with family"];
+ document.getElementById("pri0").value=S.pri[0];document.getElementById("pri1").value=S.pri[1];document.getElementById("pri2").value=S.pri[2];
+ S.map={sleep:"maint",deep:"p1",shallow:"drain",chores:"maint",commute:"maint",leisure:"p2",screen:"drain",other:"drain"};
+ S.analyzed=false;save();updateTotal();buildMaps();
+});
+["pri0","pri1","pri2"].forEach(function(id,i){
+ document.getElementById(id).addEventListener("input",function(e){S.pri[i]=e.target.value;S.analyzed=false;save();buildMaps();});
+});
+document.getElementById("copybtn").addEventListener("click",function(){
+ var t=planText(),m=document.getElementById("copymsg");
+ function done(){m.textContent="Plan copied to clipboard.";setTimeout(function(){m.textContent="";},3000);}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){m.textContent="Copy failed — select the plan text manually.";});}
+ else{var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();
+  try{document.execCommand("copy");done();}catch(e){m.textContent="Copy failed — select the plan text manually.";}
+  document.body.removeChild(ta);}
+});
+document.getElementById("printbtn").addEventListener("click",function(){window.print();});
+load();
+["pri0","pri1","pri2"].forEach(function(id,i){document.getElementById(id).value=S.pri[i]||"";});
+buildCats();buildMaps();updateTotal();
+if(S.analyzed&&total()>0){analyze();document.getElementById("results").scrollIntoView();}
+</script>
+</body>
+</html>

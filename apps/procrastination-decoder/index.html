@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Procrastination Decoder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Diagnose why you're avoiding a specific task, then get a targeted 15-minute starter protocol for that exact cause. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/procrastination-decoder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Procrastination Decoder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Diagnose why you're avoiding a specific task, then get a targeted 15-minute starter protocol for that exact cause. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/procrastination-decoder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:6px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;margin:18px 0 8px;color:#141210}
+.appcard .step{font-size:.8rem;font-weight:bold;color:#8a6d1c;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.95rem}
+input[type=text],input[type=number],input[type=date],input[type=datetime-local],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.fld{display:block;margin:6px 0;font-weight:600}
+label.fld small{display:block;font-weight:normal;color:#6b6250;font-size:.85rem}
+.hidden{display:none!important}
+.q{border:1px solid #e3d5a8;border-radius:10px;padding:14px 16px;margin:12px 0;background:#fff}
+.q p{font-weight:600;margin-bottom:8px}
+.scale{display:flex;gap:6px;flex-wrap:wrap}
+.scale label{flex:1;min-width:56px;text-align:center;border:2px solid #e3d5a8;border-radius:8px;padding:10px 4px;cursor:pointer;font-size:.85rem;min-height:48px;display:flex;flex-direction:column;justify-content:center}
+.scale input{position:absolute;opacity:0;width:1px;height:1px}
+.scale label.sel{background:#c9a227;border-color:#c9a227;color:#141210;font-weight:bold}
+.diag{background:#141210;color:#f5efdd;border-radius:10px;padding:20px;margin:12px 0}
+.diag h3{font-family:Georgia,serif;color:#e8c84a;margin:0 0 6px}
+.proto-step{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #eee}
+.proto-step input[type=checkbox]{width:26px;height:26px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.proto-step.done span{text-decoration:line-through;color:#8a7a4a}
+.slip{background:#f7f1dc;border-left:4px solid #c9a227;border-radius:0 8px 8px 0;padding:14px 16px;margin:12px 0;font-style:italic}
+.timer-big{font-family:Georgia,serif;font-size:3.4rem;text-align:center;color:#141210}
+.commitbox{background:#f7f1dc;border-radius:10px;padding:16px;margin-top:12px;text-align:center;font-weight:bold}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Procrastination Decoder</h1>
+<p class="intro">Name the task you're avoiding, answer 6 quick questions, and get the exact 15-minute starter protocol for <em>your</em> reason &mdash; not generic advice.</p>
+
+<div class="appcard">
+<div class="step">Step 1 of 3</div>
+<h2>The avoided task</h2>
+<label class="fld">What task are you avoiding?<input type="text" id="taskname" maxlength="120" placeholder="e.g., Write the project proposal"></label>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0 16px">
+<label class="fld">Due date (optional)<input type="date" id="duedate"></label>
+<label class="fld">How long have you been avoiding it?
+<select id="avoidlen">
+<option value="">Choose&hellip;</option>
+<option value="hours">A few hours</option>
+<option value="days">A few days</option>
+<option value="weeks">Weeks</option>
+<option value="months">Months or longer</option>
+</select></label>
+</div>
+</div>
+
+<div class="appcard">
+<div class="step">Step 2 of 3</div>
+<h2>Diagnostic: how true is each statement?</h2>
+<p style="color:#6b6250;margin-bottom:6px">Answer honestly for <strong>this specific task</strong> &mdash; 0 = not true at all, 4 = very true.</p>
+<div id="qs"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn" id="diagnose">Decode my procrastination</button>
+<button class="btn ghost" id="resetbtn">Start over</button>
+</div>
+<div id="formerr" style="color:#a33;margin-top:10px"></div>
+</div>
+
+<div class="appcard hidden" id="results">
+<div class="step">Step 3 of 3</div>
+<h2>Your diagnosis &amp; protocol</h2>
+<div class="diag" id="diagbox"></div>
+<div id="driverbars"></div>
+<h3>Your 15-minute starter protocol</h3>
+<p id="protonote" style="color:#6b6250;margin-bottom:8px"></p>
+<div id="protosteps"></div>
+<div id="slipbox"></div>
+<h3>Commit to a start time</h3>
+<p style="color:#6b6250">Pick the exact date and time you'll run this protocol. A scheduled start beats "later."</p>
+<label class="fld">I will start at:<input type="datetime-local" id="startat"></label>
+<button class="btn small" id="commitbtn">Commit to this start time</button>
+<div class="commitbox hidden" id="commitbox"></div>
+<h3>15-minute timer</h3>
+<p style="color:#6b6250">Run your protocol with the timer. You have full permission to stop when it rings &mdash; starting is the win.</p>
+<div class="timer-big" id="tdisp">15:00</div>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px">
+<button class="btn small" id="tstart">Start</button>
+<button class="btn ghost small" id="treset">Reset</button>
+</div>
+<div id="tdone" style="text-align:center;color:#8a6d1c;font-weight:bold;margin-top:10px"></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Procrastination Decoder is just the start. <em>Procrastination Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic &mdash; practical systems for starting and finishing what matters.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/procrastination-made-simple/">Get Procrastination Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action. Educational purposes only; not psychological or medical advice.</p>
+</div></footer>
+<script>
+var KEY="app-procrastination-decoder-v1";
+var DRIVERS={
+ overwhelm:{name:"Overwhelm",what:"The task feels too big, so your brain treats starting like lifting the whole thing at once. The fix is to shrink the start until it feels trivial."},
+ unclear:{name:"Unclear next step",what:"You can't start what you can't picture. The block isn't laziness &mdash; it's a missing next physical action."},
+ fear:{name:"Fear / perfectionism",what:"Avoidance is protecting you from judgment &mdash; yours or someone else's. The fix is to make the first attempt deliberately bad and therefore safe."},
+ value:{name:"Low value / meaning gap",what:"Part of you isn't convinced this matters. The fix is to either connect it to something you care about &mdash; or honestly renegotiate it."},
+ energy:{name:"Low energy / bad timing",what:"You're trying to do hard work in low-energy windows. The fix is to match the task to your peak energy and warm up first."},
+ distract:{name:"Distraction / environment",what:"Your environment makes avoiding easier than starting. The fix is to add friction to distractions and remove friction from the task."}
+};
+var QS=[
+ {d:"overwhelm",t:"The task feels huge, vague, or has too many moving parts."},
+ {d:"unclear",t:"I don't know the very next physical action to take."},
+ {d:"fear",t:"I'm worried the result won't be good enough, or I'll be judged."},
+ {d:"value",t:"Honestly, this doesn't feel important or meaningful to me."},
+ {d:"energy",t:"I mostly avoid it when I'm tired &mdash; the timing never feels right."},
+ {d:"distract",t:"When I sit down to start, I drift to my phone or easier things."}
+];
+var PROTOS={
+ overwhelm:{title:"The 10-Minute Micro-Chunk",note:"Shrink the start until starting feels silly to refuse.",
+  steps:["Write the task at the top of a page, then list the 3 tiniest chunks of it (each under 10 minutes).","Circle chunk #1 &mdash; the smallest possible piece.","Set the timer below for 10 minutes and do ONLY chunk #1.","When it rings, stop. You may continue, but stopping counts as a win."],
+  slip:null},
+ unclear:{title:"Next-Action Clarifier",note:"You don't need the whole plan &mdash; just the next physical action.",
+  steps:["Write the done-state in one sentence: what does 'finished' look like?","Ask: what is the single next PHYSICAL action? (open, call, write, send &mdash; a verb with an object).","Ask: what do I need in front of me to do that action? Gather only that.","Set the timer for 10 minutes and do just that one action."],
+  slip:null},
+ fear:{title:"Bad First Draft Permission Slip",note:"Perfectionism can't survive a deliberately bad first attempt.",
+  steps:["Read the permission slip below out loud (seriously).","Set the timer for 15 minutes.","Produce the ugliest possible first version &mdash; typos, gaps, and all. Quantity over quality.","When it rings, stop. Editing a bad draft is 10x easier than facing a blank page."],
+  slip:"PERMISSION SLIP — I, the undersigned, am officially allowed to make a terrible first attempt at this task. It will be messy, incomplete, and embarrassing, and that is exactly the point. No one has to see it. I can fix it later. Signed, Me."},
+ value:{title:"Connect or Cut",note:"Either find the meaning or admit there isn't any.",
+  steps:["Set the timer for 5 minutes and finish this sentence three times: 'This matters because&hellip;'","If you found a real reason, write it at the top of the task and run the 10-minute start below.","If you found nothing: can it be delegated, automated, renegotiated, or dropped?","If it truly must be done anyway, pair it with something you enjoy (music, a favorite drink, a reward after)."],
+  slip:null},
+ energy:{title:"Energy Match + Warm-Up",note:"Stop fighting your biology; schedule around it.",
+  steps:["Identify your peak 2 hours of the day (when you think clearest).","Schedule this task inside that window &mdash; commit to it below.","Do a 3-minute warm-up first: tidy the workspace, review notes, make tea.","Set the timer for 15 minutes and start. Hard tasks get easier after 5 minutes in."],
+  slip:null},
+ distract:{title:"Friction Flip",note:"Make starting easy and drifting hard.",
+  steps:["Phone goes in another room (not face-down &mdash; another room).","Close every tab and app except the one this task needs.","Put the one thing you need to start already open and visible.","Set the timer for 15 minutes of single-tab work."],
+  slip:null}
+};
+var S=null;
+function blank(){return{task:"",due:"",avoid:"",ans:[null,null,null,null,null,null],primary:null,secondary:null,commit:"",protoDone:[],diagnosed:false};}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&o.ans){S=o;return;}}}catch(e){}S=blank();}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");}
+var TLEFT=900,TIMER=null;
+function drawT(){document.getElementById("tdisp").textContent=fmt(TLEFT);}
+function tickT(){TLEFT--;if(TLEFT<=0){TLEFT=0;clearInterval(TIMER);TIMER=null;chime();
+ document.getElementById("tstart").textContent="Start";
+ document.getElementById("tdone").textContent="Time. You started — that's the win. Keep going if you want.";}drawT();}
+function chime(){try{var a=new (window.AudioContext||window.webkitAudioContext)();
+ var o=a.createOscillator(),g=a.createGain();o.connect(g);g.connect(a.destination);
+ o.frequency.value=523;o.type="sine";g.gain.setValueAtTime(0.001,a.currentTime);
+ g.gain.exponentialRampToValueAtTime(0.4,a.currentTime+0.05);
+ g.gain.exponentialRampToValueAtTime(0.001,a.currentTime+1.2);
+ o.start();o.stop(a.currentTime+1.3);}catch(e){}}
+function buildQs(){
+ var box=document.getElementById("qs");box.innerHTML="";
+ QS.forEach(function(q,i){
+  var d=document.createElement("div");d.className="q";d.id="qwrap"+i;
+  var p=document.createElement("p");p.textContent=(i+1)+". "+q.t;d.appendChild(p);
+  var sc=document.createElement("div");sc.className="scale";sc.setAttribute("role","radiogroup");
+  sc.setAttribute("aria-label","Question "+(i+1));
+  var names=["Not true","Slightly","Somewhat","Mostly","Very true"];
+  for(var v=0;v<=4;v++){
+   (function(v){
+    var l=document.createElement("label");
+    l.innerHTML="<strong>"+v+"</strong><span>"+names[v]+"</span>";
+    var r=document.createElement("input");r.type="radio";r.name="q"+i;r.value=v;
+    if(S.ans[i]===v){r.checked=true;l.classList.add("sel");}
+    r.addEventListener("change",function(){
+     S.ans[i]=v;S.diagnosed=false;save();
+     var labs=sc.querySelectorAll("label");for(var k=0;k<labs.length;k++)labs[k].classList.remove("sel");
+     l.classList.add("sel");
+    });
+    l.appendChild(r);sc.appendChild(l);
+   })(v);
+  }
+  d.appendChild(sc);box.appendChild(d);
+ });
+}
+function diagnose(){
+ var err=document.getElementById("formerr");err.textContent="";
+ if(!(S.task||"").trim()){err.textContent="Name the avoided task in Step 1 first.";return;}
+ for(var i=0;i<6;i++){if(S.ans[i]===null){err.textContent="Please answer question "+(i+1)+".";document.getElementById("qwrap"+i).scrollIntoView({behavior:"smooth",block:"center"});return;}}
+ var scores={};QS.forEach(function(q,i){scores[q.d]=(scores[q.d]||0)+S.ans[i];});
+ var total=0,order=Object.keys(DRIVERS);
+ order.forEach(function(d){total+=scores[d]||0;});
+ var res=document.getElementById("results");
+ if(total===0){
+  err.textContent="Your answers were all neutral — no clear driver emerged. Answer again, thinking of your worst avoidance moments.";
+  return;
+ }
+ var sorted=order.slice().sort(function(a,b){return (scores[b]||0)-(scores[a]||0);});
+ S.primary=sorted[0];S.secondary=sorted[1];S.diagnosed=true;save();
+ var conf=Math.round(100*(scores[S.primary]||0)/total);
+ var task=S.task.trim();
+ var db=document.getElementById("diagbox");
+ db.innerHTML="<h3>Primary driver: "+DRIVERS[S.primary].name+"</h3>"+
+  "<p>"+DRIVERS[S.primary].what+"</p>"+
+  '<p style="color:#cbbf9a;font-size:.92rem;margin-top:8px">Secondary signal: <strong style="color:#e8c84a">'+DRIVERS[S.secondary].name+"</strong> ("+conf+"% of your avoidance score points to the primary driver). Diagnosis is specific to: <strong>"+escapeHtml(task)+"</strong>.</p>";
+ var bars=document.getElementById("driverbars");bars.innerHTML="";
+ sorted.forEach(function(d){
+  var pct=Math.round(100*(scores[d]||0)/16);
+  var row=document.createElement("div");
+  row.style.cssText="display:grid;grid-template-columns:150px 1fr 40px;gap:10px;align-items:center;margin:6px 0;font-size:.9rem";
+  row.innerHTML="<span>"+DRIVERS[d].name+"</span>"+
+   '<div style="background:#eee5c8;border-radius:6px;height:18px;overflow:hidden"><div style="background:'+(d===S.primary?"#c9a227":"#d9c98f")+";height:100%;width:"+pct+'%"></div></div><strong>'+(scores[d]||0)+"/4</strong>";
+  bars.appendChild(row);
+ });
+ var pr=PROTOS[S.primary];
+ document.getElementById("protonote").textContent=pr.note;
+ var ps=document.getElementById("protosteps");ps.innerHTML="";
+ pr.steps.forEach(function(st,i){
+  var d=document.createElement("label");d.className="proto-step";
+  if(S.protoDone&&S.protoDone[i])d.classList.add("done");
+  var c=document.createElement("input");c.type="checkbox";c.checked=!!(S.protoDone&&S.protoDone[i]);
+  c.setAttribute("aria-label","Protocol step "+(i+1));
+  c.addEventListener("change",function(){S.protoDone[i]=c.checked;save();d.classList.toggle("done",c.checked);});
+  var sp=document.createElement("span");sp.innerHTML="<strong>Step "+(i+1)+":</strong> "+st;
+  d.appendChild(c);d.appendChild(sp);ps.appendChild(d);
+ });
+ var sb=document.getElementById("slipbox");sb.innerHTML="";
+ if(pr.slip){sb.innerHTML='<div class="slip">'+escapeHtml(pr.slip)+"</div>";}
+ renderCommit();
+ res.classList.remove("hidden");
+ res.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function renderCommit(){
+ var cb=document.getElementById("commitbox");
+ if(S.commit){cb.classList.remove("hidden");
+  var dt=new Date(S.commit);
+  cb.innerHTML="&#10003; Committed: you start <strong>"+escapeHtml(S.task.trim())+"</strong><br>at <strong>"+dt.toLocaleString()+"</strong> with the "+escapeHtml(PROTOS[S.primary]?PROTOS[S.primary].title:"protocol")+".";
+ }else{cb.classList.add("hidden");cb.innerHTML="";}
+}
+document.getElementById("diagnose").addEventListener("click",diagnose);
+document.getElementById("commitbtn").addEventListener("click",function(){
+ var v=document.getElementById("startat").value,err=document.getElementById("formerr");err.textContent="";
+ if(!v){err.textContent="Pick a start date and time first.";return;}
+ var dt=new Date(v);
+ if(isNaN(dt.getTime())){err.textContent="That date/time isn't valid.";return;}
+ if(dt.getTime()<Date.now()-60000){err.textContent="Pick a time in the future — the past is already fully booked.";return;}
+ S.commit=v;save();renderCommit();
+});
+document.getElementById("tstart").addEventListener("click",function(){
+ if(TIMER){clearInterval(TIMER);TIMER=null;this.textContent="Resume";return;}
+ if(TLEFT<=0)TLEFT=900;
+ document.getElementById("tdone").textContent="";
+ chime();TIMER=setInterval(tickT,1000);this.textContent="Pause";
+});
+document.getElementById("treset").addEventListener("click",function(){
+ clearInterval(TIMER);TIMER=null;TLEFT=900;drawT();
+ document.getElementById("tstart").textContent="Start";
+ document.getElementById("tdone").textContent="";
+});
+document.getElementById("resetbtn").addEventListener("click",function(){
+ if(!confirm("Clear everything and start over?"))return;
+ clearInterval(TIMER);TIMER=null;TLEFT=900;drawT();
+ document.getElementById("tstart").textContent="Start";document.getElementById("tdone").textContent="";
+ S=blank();save();
+ document.getElementById("taskname").value="";document.getElementById("duedate").value="";
+ document.getElementById("avoidlen").value="";document.getElementById("startat").value="";
+ document.getElementById("formerr").textContent="";
+ buildQs();renderCommit();
+ document.getElementById("results").classList.add("hidden");
+ window.scrollTo(0,0);
+});
+document.getElementById("taskname").addEventListener("input",function(e){S.task=e.target.value;S.diagnosed=false;save();});
+document.getElementById("duedate").addEventListener("change",function(e){S.due=e.target.value;save();});
+document.getElementById("avoidlen").addEventListener("change",function(e){S.avoid=e.target.value;save();});
+load();
+document.getElementById("taskname").value=S.task||"";
+document.getElementById("duedate").value=S.due||"";
+document.getElementById("avoidlen").value=S.avoid||"";
+document.getElementById("startat").value=S.commit||"";
+buildQs();drawT();
+if(S.diagnosed&&S.primary){diagnose();}
+</script>
+</body>
+</html>

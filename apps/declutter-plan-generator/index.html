@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Declutter Plan Generator | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Generate a room-by-room decluttering plan sequenced for quick wins, matched to your available time. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/declutter-plan-generator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Declutter Plan Generator | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Generate a room-by-room decluttering plan sequenced for quick wins, matched to your available time. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/declutter-plan-generator/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;color:#141210;margin-bottom:12px}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;color:#141210;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.hidden{display:none!important}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.flabel{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.85rem;color:#6b6250}
+.err{color:#a33;font-weight:bold;margin-top:10px}
+.zonerow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee;flex-wrap:wrap}
+.zonerow .zname{font-weight:bold;flex:1 1 160px}
+.zonerow .zrate{display:none;align-items:center;gap:6px}
+.zonerow .zrate select{width:auto;margin:0;padding:10px 12px}
+.zonerow .zchk{width:26px;height:26px;accent-color:#c9a227;flex-shrink:0}
+.sess{border:2px solid #e3d9b8;border-radius:10px;padding:18px;margin-bottom:16px;background:#fff}
+.sess.done{border-color:#8a8;opacity:.85}
+.sess .shead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.sess .shead .t{font-family:Georgia,serif;font-size:1.15rem;font-weight:bold}
+.sess .shead .m{color:#6b6250;font-size:.9rem}
+.sess .ztip{font-size:.88rem;color:#6b6250;margin:6px 0 10px;font-style:italic}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid #f0ead6;cursor:pointer}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow span{flex:1}
+.checkrow.done span{text-decoration:line-through;color:#8a8574}
+.totgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.tot{background:#f4ecd8;border-radius:8px;padding:12px;text-align:center}
+.tot .n{font-size:1.4rem;font-weight:bold}
+.tot .l{font-size:.8rem;color:#6b6250}
+.methodbox{background:#f4ecd8;border-radius:8px;padding:18px 20px;margin:16px 0}
+.methodbox .boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:10px}
+.methodbox .bx{background:#fff;border:2px solid #c9a227;border-radius:8px;padding:10px;text-align:center}
+.methodbox .bx b{display:block;font-size:.95rem}
+.methodbox .bx span{font-size:.8rem;color:#6b6250}
+.rules{background:#eef3e6;border:2px solid #9ab87a;border-radius:8px;padding:18px 20px;margin-top:18px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Declutter Plan Generator</h1>
+<p class="intro">Generate a room-by-room decluttering plan sequenced for quick wins, matched to your available time. Pick your spaces, rate the clutter, and get a session-by-session plan built on the 4-box method.</p>
+
+<!-- INPUT -->
+<div class="appcard" id="inputCard">
+<h2>Your spaces</h2>
+<p class="hint">Check every space you want to tackle, then rate its clutter level: 1 = light tidy, 5 = can't see the floor.</p>
+<div id="zoneList"></div>
+<label class="flabel" for="sessMin">Minutes available per session</label>
+<input type="number" id="sessMin" min="10" max="240" step="5" value="45" inputmode="numeric" aria-label="Minutes available per session">
+<label class="flabel" for="sessWeek">Sessions per week</label>
+<select id="sessWeek" aria-label="Sessions per week">
+<option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="7">7</option>
+</select>
+<div class="btnrow"><button class="btn" id="genBtn">Generate My Plan</button></div>
+<p class="err hidden" id="genErr"></p>
+</div>
+
+<!-- PLAN -->
+<div class="appcard hidden" id="planCard">
+<h2>Your declutter plan</h2>
+<p class="hint">Sequenced quick-wins-first: high-visibility rooms before storage zones, smaller wins before bigger ones. Visible progress early keeps you going.</p>
+<div class="totgrid">
+<div class="tot"><div class="n" id="tSess">0</div><div class="l">Sessions</div></div>
+<div class="tot"><div class="n" id="tMin">0</div><div class="l">Minutes total</div></div>
+<div class="tot"><div class="n" id="tWeeks">0</div><div class="l">Weeks (est.)</div></div>
+<div class="tot"><div class="n" id="tDone">0%</div><div class="l">Complete</div></div>
+</div>
+<div id="sessions"></div>
+<div class="methodbox">
+<strong>The 4-Box Method</strong> — used in every session:
+<div class="boxes">
+<div class="bx"><b>KEEP</b><span>Belongs here and gets used</span></div>
+<div class="bx"><b>DONATE</b><span>Good condition, someone else needs it</span></div>
+<div class="bx"><b>TRASH</b><span>Broken, expired, or true junk</span></div>
+<div class="bx"><b>RELOCATE</b><span>Keep it — but it lives elsewhere</span></div>
+</div>
+<p class="hint" style="margin-top:10px">Touch each item once and decide immediately. The decision is the workout.</p>
+</div>
+<div class="rules">
+<strong>The "One In, One Out" Maintenance Rule</strong>
+<p style="margin-top:8px">From the day you finish: for every new item that comes into your home, one item must leave it. Keep a donate bag by the door at all times, and run a 15-minute reset of your quick-win rooms once a month.</p>
+</div>
+<div class="btnrow">
+<button class="btn ghost" id="editBtn">Edit My Spaces</button>
+<button class="btn ghost" id="resetBtn">Start Over</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Declutter Plan Generator is just the start. <em>Decluttering Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/decluttering-made-simple/">Get Decluttering Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-declutter-plan-generator-v1";
+var $=function(id){return document.getElementById(id);};
+var ZONES=[
+ {n:"Entryway",base:30,vis:3,tip:"First-impression zone: clear surfaces, shoes, and mail first."},
+ {n:"Living Room",base:75,vis:3,tip:"Start with visible surfaces: coffee table, couch, shelves."},
+ {n:"Kitchen",base:90,vis:3,tip:"Counters first, then one cabinet or drawer at a time."},
+ {n:"Dining Room",base:50,vis:3,tip:"Clear the table completely — it's a magnet zone."},
+ {n:"Bedroom",base:60,vis:2,tip:"Nightstands and dresser tops first, then floor piles."},
+ {n:"Closet",base:45,vis:2,tip:"Pull everything out; only put back what you actually wear."},
+ {n:"Bathroom",base:40,vis:2,tip:"Toss expired products; group by person or routine."},
+ {n:"Home Office",base:75,vis:2,tip:"Desk surface first, then one drawer or shelf per pass."},
+ {n:"Kids' Room",base:60,vis:2,tip:"Do it with them — one toy category at a time."},
+ {n:"Laundry Room",base:35,vis:1,tip:"Small zone, big win — finish it in one session."},
+ {n:"Car",base:25,vis:1,tip:"Trash bag plus one relocate box. Quick win."},
+ {n:"Garage",base:150,vis:1,tip:"Storage zone — do it last. Work in 4-foot sections."},
+ {n:"Attic / Basement",base:120,vis:1,tip:"Storage zone — label everything you decide to keep."}
+];
+var CHECKS=[
+ "Set out 4 boxes/bags: KEEP · DONATE · TRASH · RELOCATE.",
+ "Work one surface or shelf at a time — don't pull the whole zone apart.",
+ "Pick up each item once and decide immediately.",
+ "Trash goes straight into the bag; tie it off when full.",
+ "Move the DONATE box by the front door when the session ends.",
+ "Return RELOCATE items to their real homes before the next session."
+];
+var state={sel:{},sessMin:45,sessWeek:2,checks:{},plan:null};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify({sel:state.sel,sessMin:state.sessMin,sessWeek:state.sessWeek,checks:state.checks,hasPlan:!!state.plan}));}catch(e){}}
+function show(id){$(id).classList.remove("hidden");}
+function hide(id){$(id).classList.add("hidden");}
+function minsFor(z,level){return Math.max(10,Math.round(z.base*(0.5+0.3*level)/5)*5);}
+
+// build zone list
+var zl=$("zoneList");
+ZONES.forEach(function(z,i){
+  var row=document.createElement("div");row.className="zonerow";
+  var cb=document.createElement("input");cb.type="checkbox";cb.className="zchk";cb.id="zchk"+i;
+  cb.setAttribute("aria-label","Include "+z.n);
+  var nm=document.createElement("span");nm.className="zname";nm.textContent=z.n;
+  var rate=document.createElement("span");rate.className="zrate";
+  var lab=document.createElement("label");lab.textContent="Clutter:";lab.setAttribute("for","zrate"+i);
+  var sel=document.createElement("select");sel.id="zrate"+i;sel.setAttribute("aria-label","Clutter level for "+z.n);
+  ["1 — light","2","3","4","5 — extreme"].forEach(function(t,j){
+    var o=document.createElement("option");o.value=j+1;o.textContent=t;if(j===2)o.selected=true;sel.appendChild(o);
+  });
+  rate.appendChild(lab);rate.appendChild(sel);
+  row.appendChild(cb);row.appendChild(nm);row.appendChild(rate);
+  zl.appendChild(row);
+  cb.addEventListener("change",function(){
+    rate.style.display=cb.checked?"inline-flex":"none";
+    if(cb.checked){state.sel[i]=parseInt(sel.value,10);}else{delete state.sel[i];}
+    save();
+  });
+  sel.addEventListener("change",function(){if(cb.checked){state.sel[i]=parseInt(sel.value,10);save();}});
+});
+
+function generate(){
+  var err=$("genErr");err.classList.add("hidden");
+  var sm=parseInt($("sessMin").value,10),sw=parseInt($("sessWeek").value,10);
+  if(isNaN(sm)||sm<10){err.textContent="Enter at least 10 minutes per session.";err.classList.remove("hidden");return;}
+  if(sm>240)sm=240;
+  state.sessMin=sm;state.sessWeek=sw;
+  var keys=Object.keys(state.sel);
+  if(keys.length===0){err.textContent="Check at least one space to declutter.";err.classList.remove("hidden");return;}
+  var items=keys.map(function(k){
+    var z=ZONES[parseInt(k,10)],lv=state.sel[k];
+    return {z:z,level:lv,mins:minsFor(z,lv),score:z.vis*10-lv};
+  });
+  items.sort(function(a,b){return b.score-a.score||a.mins-b.mins;});
+  // pack into sessions (quick-wins-first order preserved)
+  var sessions=[];var cur=null;
+  items.forEach(function(it){
+    var parts=[];
+    if(it.mins<=sm){parts=[{z:it.z,level:it.level,mins:it.mins,whole:true}];}
+    else{
+      var n=Math.ceil(it.mins/sm),per=Math.ceil(it.mins/n);
+      for(var p=0;p<n;p++){
+        var pm=(p===n-1)?(it.mins-per*(n-1)):per;
+        parts.push({z:it.z,level:it.level,mins:pm,whole:false,part:p+1,of:n});
+      }
+    }
+    parts.forEach(function(pt){
+      if(!cur||cur.used+pt.mins>sm){cur={parts:[],used:0};sessions.push(cur);}
+      cur.parts.push(pt);cur.used+=pt.mins;
+    });
+  });
+  state.plan={sessions:sessions};
+  renderPlan();
+  hide("inputCard");show("planCard");
+  save();
+}
+function renderPlan(){
+  var sess=state.plan.sessions,wrap=$("sessions");wrap.innerHTML="";
+  var totalMin=0,totalChecks=0,doneChecks=0;
+  sess.forEach(function(s,si){
+    totalMin+=s.used;
+    var div=document.createElement("div");div.className="sess";
+    var head=document.createElement("div");head.className="shead";
+    var names=s.parts.map(function(p){
+      return p.z.n+(p.whole?"":" (Part "+p.part+" of "+p.of+")");
+    }).join(" + ");
+    var t=document.createElement("span");t.className="t";t.textContent="Session "+(si+1)+": "+names;
+    var m=document.createElement("span");m.className="m";m.textContent="≈ "+s.used+" min";
+    head.appendChild(t);head.appendChild(m);div.appendChild(head);
+    var tip=document.createElement("p");tip.className="ztip";
+    tip.textContent=s.parts[0].z.tip;div.appendChild(tip);
+    var allDone=true;
+    CHECKS.forEach(function(c,ci){
+      totalChecks++;
+      var key="s"+si+"c"+ci;var done=!!state.checks[key];if(done)doneChecks++;else allDone=false;
+      var row=document.createElement("label");row.className="checkrow"+(done?" done":"");
+      var cb=document.createElement("input");cb.type="checkbox";cb.checked=done;
+      cb.setAttribute("aria-label","Session "+(si+1)+": "+c);
+      var sp=document.createElement("span");sp.textContent=c;
+      cb.addEventListener("change",function(){
+        state.checks[key]=cb.checked;row.classList.toggle("done",cb.checked);save();updateTotals();
+      });
+      row.appendChild(cb);row.appendChild(sp);div.appendChild(row);
+    });
+    if(allDone)div.classList.add("done");
+    wrap.appendChild(div);
+  });
+  function updateTotals(){
+    var d=0,t=0;
+    Object.keys(state.checks).forEach(function(k){t++;if(state.checks[k])d++;});
+    $("tDone").textContent=(t>0?Math.round(d/t*100):0)+"%";
+    var sdivs=wrap.querySelectorAll(".sess");
+    sdivs.forEach(function(sd,i2){
+      var cbs=sd.querySelectorAll("input[type=checkbox]");
+      var all=true;cbs.forEach(function(c){if(!c.checked)all=false;});
+      sd.classList.toggle("done",all);
+    });
+  }
+  $("tSess").textContent=sess.length;
+  $("tMin").textContent=totalMin;
+  $("tWeeks").textContent=Math.max(1,Math.ceil(sess.length/Math.max(1,state.sessWeek)));
+  window.__app75update=updateTotals;
+  updateTotals();
+}
+$("genBtn").addEventListener("click",generate);
+$("editBtn").addEventListener("click",function(){hide("planCard");show("inputCard");});
+$("resetBtn").addEventListener("click",function(){
+  state={sel:{},sessMin:45,sessWeek:2,checks:{},plan:null};
+  $("sessions").innerHTML="";
+  var cbs=$("zoneList").querySelectorAll("input[type=checkbox]");
+  cbs.forEach(function(c){c.checked=false;});
+  var rates=$("zoneList").querySelectorAll(".zrate");
+  rates.forEach(function(r){r.style.display="none";});
+  $("sessMin").value=45;$("sessWeek").value=2;
+  hide("planCard");show("inputCard");save();
+});
+
+// restore
+try{
+  var raw=localStorage.getItem(KEY);
+  if(raw){
+    var s=JSON.parse(raw);
+    state.sel=s.sel||{};state.sessMin=s.sessMin||45;state.sessWeek=s.sessWeek||2;state.checks=s.checks||{};
+    $("sessMin").value=state.sessMin;$("sessWeek").value=state.sessWeek;
+    Object.keys(state.sel).forEach(function(k){
+      var i=parseInt(k,10);
+      var cb=$("zchk"+i),sel=$("zrate"+i);
+      if(cb&&sel){cb.checked=true;sel.value=state.sel[k];cb.dispatchEvent(new Event("change"));}
+    });
+    if(s.hasPlan){generate();}
+  }
+}catch(e){}
+})();
+</script>
+</body>
+</html>

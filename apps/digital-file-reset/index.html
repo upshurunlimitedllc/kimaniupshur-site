@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital File Reset | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Clean up your computer's chaos with a folder taxonomy, file-naming convention, and a 3-pass cleanup plan. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/digital-file-reset/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Digital File Reset | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Clean up your computer's chaos with a folder taxonomy, file-naming convention, and a 3-pass cleanup plan. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/digital-file-reset/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:820px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.4rem;margin-bottom:10px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;margin:18px 0 8px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:8px 16px;min-height:40px;font-size:.9rem}
+input[type=text],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:70px;resize:vertical}
+label.f{display:block;font-weight:bold;margin:14px 0 2px}
+label.f span.hint{display:block;font-weight:normal;font-size:.85rem;color:#6b6250}
+.err{color:#a33;background:#fdecea;border:1px solid #e5a;border-radius:8px;padding:10px 14px;margin:10px 0;display:none}
+.scorebadge{display:inline-block;font-family:Georgia,serif;font-size:2.4rem;font-weight:bold;border:4px solid #c9a227;border-radius:50%;width:110px;height:110px;line-height:102px;text-align:center;margin:10px 0}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow.done .ctext{text-decoration:line-through;color:#8a8271}
+.pass{border:1px solid #e0d6b8;border-radius:10px;padding:18px;margin:14px 0;background:#fff}
+.pass h3{margin:0 0 4px;font-family:Georgia,serif;color:#8a6d1c}
+.pass .tag{display:inline-block;font-size:.75rem;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#8a6d1c;border-radius:12px;padding:2px 10px;margin-bottom:8px}
+.tree{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem;background:#141210;color:#e8c84a;border-radius:10px;padding:20px;overflow-x:auto;margin:14px 0;line-height:1.8;white-space:pre}
+.naming{background:#f6f0dc;border-radius:10px;padding:16px 18px;margin:12px 0;font-size:.92rem}
+.naming code{background:#fff;border:1px solid #e0d6b8;border-radius:6px;padding:2px 8px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;display:inline-block;margin:3px 0}
+.pbar{height:16px;background:#eee3c4;border-radius:8px;overflow:hidden;margin:10px 0}
+.pbar>div{height:100%;background:#2f7d3b;transition:width .3s}
+.timerbox{text-align:center;border:2px dashed #c9a227;border-radius:10px;padding:18px;margin-top:14px;background:#fff}
+.timerbox .t{font-size:2.6rem;font-family:Georgia,serif;margin:6px 0}
+.warn{background:#fdf6e3;border:1px solid #c9a227;border-radius:8px;padding:12px 16px;font-size:.9rem;margin:12px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Digital File Reset</h1>
+<p class="intro">Clean up your computer&rsquo;s chaos in three passes. First, a 5-minute mess audit. Then you get a simple folder taxonomy, a date-first naming convention, and a phased cleanup checklist with a 25-minute sort timer.</p>
+
+<div id="auditView">
+<div class="appcard">
+<h2>Step 1 &mdash; The 5-Minute Mess Audit</h2>
+<p style="color:#6b6250;font-size:.95rem">Open your computer, look around, answer honestly. Rough estimates are fine.</p>
+
+<label class="f" for="qDesktop">How many items are sitting on your desktop?</label>
+<select id="qDesktop">
+<option value="0">0&ndash;10 (tidy)</option><option value="1">11&ndash;30 (cluttered)</option>
+<option value="2">31&ndash;75 (buried)</option><option value="3">76+ (I can't see the wallpaper)</option>
+</select>
+
+<label class="f" for="qDownloads">How big is your Downloads folder?</label>
+<select id="qDownloads">
+<option value="0">Under 100 items</option><option value="1">A few hundred items</option>
+<option value="2">Thousands of items</option><option value="3">I have never emptied it, ever</option>
+</select>
+
+<label class="f" for="qMisc">How many folders named things like "misc", "stuff", "new folder", or "temp"?</label>
+<select id="qMisc">
+<option value="0">None</option><option value="1">1&ndash;2</option>
+<option value="2">3&ndash;5</option><option value="3">Too many to count</option>
+</select>
+
+<label class="f" for="qDupes">Where do duplicates pile up? (check all that apply)</label>
+<div id="dupeRow">
+<label class="checkrow" style="border:none;padding:6px 0"><input type="checkbox" value="desktop"> Desktop</label>
+<label class="checkrow" style="border:none;padding:6px 0"><input type="checkbox" value="downloads"> Downloads</label>
+<label class="checkrow" style="border:none;padding:6px 0"><input type="checkbox" value="docs"> Documents</label>
+<label class="checkrow" style="border:none;padding:6px 0"><input type="checkbox" value="photos"> Photos</label>
+<label class="checkrow" style="border:none;padding:6px 0"><input type="checkbox" value="cloud"> Cloud drives (Drive, Dropbox, iCloud)</label>
+<label class="checkrow" style="border:none;padding:6px 0"><input type="checkbox" value="email"> Email attachments</label>
+</div>
+
+<label class="f" for="qFind">When you need an old file, what usually happens?</label>
+<select id="qFind">
+<option value="0">I find it in under a minute</option><option value="1">It takes a few minutes of digging</option>
+<option value="2">I search and hope</option><option value="3">I usually give up and recreate it</option>
+</select>
+
+<button class="btn" id="genPlan" style="margin-top:16px">Generate My Cleanup Plan</button>
+</div>
+</div>
+
+<div id="planView" style="display:none">
+
+<div class="appcard" style="text-align:center">
+<h2>Your Mess Score</h2>
+<div class="scorebadge" id="messScore">0</div>
+<p id="messLabel" style="font-weight:bold"></p>
+<p id="messNote" style="color:#6b6250;font-size:.95rem"></p>
+</div>
+
+<div class="appcard">
+<h2>Your Folder Taxonomy</h2>
+<p style="color:#6b6250;font-size:.95rem">Every file you own goes in exactly one of these four buckets. No exceptions, no new top-level folders.</p>
+<div class="tree" id="folderTree"></div>
+<h3>What goes where</h3>
+<div id="taxExplain"></div>
+<div class="warn"><strong>The golden rule:</strong> if a file doesn&rsquo;t have a home yet, it goes in <strong>00-Inbox</strong>. Never on the desktop. Never in Downloads. The Inbox is the only acceptable &ldquo;I&rsquo;ll deal with it later&rdquo; spot.</div>
+</div>
+
+<div class="appcard">
+<h2>File-Naming Convention</h2>
+<p style="color:#6b6250;font-size:.95rem">Date-first naming means your files sort themselves chronologically everywhere &mdash; any OS, any cloud drive, any search.</p>
+<div class="naming">
+<strong>The template:</strong><br>
+<code>YYYY-MM-DD_topic-or-project_v1.ext</code><br><br>
+<strong>Examples:</strong><br>
+<code>2026-10-08_sprint-plan_v2.docx</code><br>
+<code>2026-09-21_family-reunion-photos.zip</code><br>
+<code>2026-08-01_invoice-acme-corp_v1.pdf</code><br><br>
+<strong>The rules:</strong>
+<ul style="margin:8px 0 0 20px">
+<li>Date first, always <code>YYYY-MM-DD</code> &mdash; never <code>MM-DD-YY</code> (it won&rsquo;t sort).</li>
+<li>Lowercase, dashes instead of spaces (<code>client-proposal</code>, not <code>Client Proposal FINAL</code>).</li>
+<li>No words like <code>final</code>, <code>new</code>, or <code>updated</code> &mdash; use <code>_v1</code>, <code>_v2</code> version numbers.</li>
+<li>Topic beats type: name it what it <em>is</em> (<code>tax-return-2025</code>), not what program made it (<code>document1</code>).</li>
+</ul>
+</div>
+</div>
+
+<div class="appcard">
+<h2>The 3-Pass Cleanup Plan</h2>
+<p style="color:#6b6250;font-size:.95rem">Don&rsquo;t try to organize everything in one sitting. Three passes, one at a time.</p>
+
+<div class="pass">
+<span class="tag">Pass 1 &mdash; Today</span>
+<h3>Sweep Everything into the Inbox</h3>
+<p style="font-size:.95rem">Create <code>00-Inbox</code>. Drag <strong>everything</strong> from your desktop, Downloads, and every &ldquo;misc&rdquo; folder into it. No sorting, no deciding &mdash; just sweep. Goal: a clean desktop and empty Downloads by the end of today.</p>
+<div id="pass1List"></div>
+</div>
+
+<div class="pass">
+<span class="tag">Pass 2 &mdash; This Week</span>
+<h3>Sort in 25-Minute Passes</h3>
+<p style="font-size:.95rem">Open <code>00-Inbox</code>, start the timer, and sort as many files as you can into Active, Reference, or Archive &mdash; renaming each one with the date-first convention. When the timer ends, stop. Do 1&ndash;2 passes per day until the Inbox is empty.</p>
+<div class="timerbox">
+<div class="t" id="ttime">25:00</div>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+<button class="btn small" id="tstart">Start 25-min sort</button>
+<button class="btn small ghost" id="treset">Reset</button>
+</div>
+</div>
+<div id="pass2List"></div>
+</div>
+
+<div class="pass">
+<span class="tag">Pass 3 &mdash; Day 90</span>
+<h3>Archive Anything Untouched</h3>
+<p style="font-size:.95rem">Anything still sitting in <code>00-Inbox</code> after 90 days goes straight to <code>30-Archive</code>. You haven&rsquo;t needed it in three months &mdash; you won&rsquo;t miss it, and now it&rsquo;s out of your way but still findable.</p>
+<div id="pass3List"></div>
+</div>
+
+<h3>Cleanup Progress</h3>
+<div class="pbar"><div id="clBar" style="width:0%"></div></div>
+<p id="clText" style="font-size:.9rem"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+<button class="btn ghost small" id="copyPlan">Copy plan as text</button>
+<button class="btn ghost small" id="startOver">Start over</button>
+</div>
+<p id="copyMsg" style="font-size:.85rem;color:#6b6250;margin-top:8px"></p>
+</div>
+</div>
+
+<div class="appcard">
+<h3>Go Deeper with the Book</h3>
+<p><em>Digital Minimalism Made Simple</em> by Kimani Upshur, M.Ed. goes further &mdash; decluttering your digital life, taming notifications, and building a calmer relationship with your devices.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/digital-minimalism-made-simple/">Get Digital Minimalism Made Simple — $4.99</a></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:820px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and encouragement in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-digital-file-reset-v1";
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function load(){try{var r=localStorage.getItem(KEY);return r?JSON.parse(r):null;}catch(e){return null;}}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}}
+function selVal(id){var v=parseInt($(id).value,10);return isNaN(v)?0:v;}
+
+var PASS_ITEMS={
+  pass1:[
+    "Create the folder <strong>00-Inbox</strong> (in Documents, or wherever your files live).",
+    "Move every desktop item into 00-Inbox (keep only the Recycle Bin / Trash and 2\u20133 daily apps).",
+    "Move everything in Downloads into 00-Inbox.",
+    "Empty every \u201cmisc\u201d / \u201cstuff\u201d / \u201ctemp\u201d folder into 00-Inbox, then delete the empty folders.",
+    "Create the four main folders: 00-Inbox, 10-Active, 20-Reference, 30-Archive."
+  ],
+  pass2:[
+    "Run your first 25-minute sort pass today (timer above).",
+    "Sort each file into 10-Active, 20-Reference, or 30-Archive &mdash; no new top-level folders.",
+    "Rename every file you touch with the date-first convention (YYYY-MM-DD_topic_v1).",
+    "Delete obvious duplicates and anything you can re-download in seconds.",
+    "Do 1\u20132 passes a day until 00-Inbox is empty."
+  ],
+  pass3:[
+    "Set a calendar reminder for 90 days from today: \u201cArchive the Inbox.\u201d",
+    "On that day, move everything still in 00-Inbox into 30-Archive, no reviewing.",
+    "Run this audit again quarterly \u2014 the system only works if it gets maintenance."
+  ]
+};
+
+$("genPlan").addEventListener("click",function(){
+  var d=selVal("qDesktop"),dl=selVal("qDownloads"),m=selVal("qMisc"),f=selVal("qFind");
+  var dupes=Array.prototype.map.call(document.querySelectorAll("#dupeRow input:checked"),function(c){return c.value;});
+  var raw=d+dl+m+f+dupes.length*0.5;
+  var score=Math.min(100,Math.round(raw/14*100));
+  var st={score:score,dupes:dupes,checklist:{pass1:PASS_ITEMS.pass1.map(function(){return false;}),
+    pass2:PASS_ITEMS.pass2.map(function(){return false;}),pass3:PASS_ITEMS.pass3.map(function(){return false;})}};
+  save(st);renderPlan(st);
+  $("auditView").style.display="none";$("planView").style.display="block";window.scrollTo(0,0);
+});
+
+function renderPlan(st){
+  $("messScore").textContent=st.score;
+  var label,note;
+  if(st.score<=25){label="Mostly tidy";note="Your system is in decent shape. The taxonomy below will keep it that way \u2014 focus on the naming convention and the 90-day archive habit.";}
+  else if(st.score<=55){label="Cluttered";note="You have real clutter but nothing scary. Pass 1 (the sweep) will make the biggest visible difference today.";}
+  else if(st.score<=80){label="Buried";note="Your files are costing you time every week. Work the 3 passes in order \u2014 do not skip the sweep, and do not try to organize while sweeping.";}
+  else{label="Digital chaos";note="This is exactly what the 3-pass plan is for. Sweep first, sort second, archive third. One pass at a time \u2014 you will feel the difference by tonight.";}
+  $("messLabel").textContent=label;$("messNote").textContent=note;
+
+  $("folderTree").textContent=
+"Files/\n"+
+"\u251c\u2500\u2500 00-Inbox/          \u2190 new & unsorted files land here\n"+
+"\u251c\u2500\u2500 10-Active/         \u2190 what you are working on NOW\n"+
+"\u2502   \u251c\u2500\u2500 projects/\n"+
+"\u2502   \u251c\u2500\u2500 finances/\n"+
+"\u2502   \u2514\u2500\u2500 admin/\n"+
+"\u251c\u2500\u2500 20-Reference/      \u2190 look up often, rarely change\n"+
+"\u2502   \u251c\u2500\u2500 receipts/\n"+
+"\u2502   \u251c\u2500\u2500 manuals/\n"+
+"\u2502   \u2514\u2500\u2500 templates/\n"+
+"\u2514\u2500\u2500 30-Archive/        \u2190 done with it, might need it someday\n"+
+"    \u251c\u2500\u2500 2024/\n"+
+"    \u2514\u2500\u2500 2025/";
+
+  var dupNote=st.dupes.length?"Duplicate hotspots you flagged: "+st.dupes.join(", ")+". Start Pass 1 there.":"";
+  $("taxExplain").innerHTML=
+    "<p style='font-size:.92rem;margin:8px 0'><strong>00-Inbox</strong> &mdash; the landing pad. Every new file, download, and attachment starts here. Emptied regularly, never used for storage.</p>"+
+    "<p style='font-size:.92rem;margin:8px 0'><strong>10-Active</strong> &mdash; current work only. When a project ends, it moves to Archive. If everything is \u201cactive,\u201d nothing is.</p>"+
+    "<p style='font-size:.92rem;margin:8px 0'><strong>20-Reference</strong> &mdash; the library. Receipts, manuals, templates, records. Search here before recreating anything.</p>"+
+    "<p style='font-size:.92rem;margin:8px 0'><strong>30-Archive</strong> &mdash; the attic, organized by year. Finished projects and anything untouched for 90 days.</p>"+
+    (dupNote?"<p style='font-size:.92rem;margin:8px 0;color:#8a6d1c'><strong>"+esc(dupNote)+"</strong></p>":"");
+
+  renderPass("pass1List","pass1",st);
+  renderPass("pass2List","pass2",st);
+  renderPass("pass3List","pass3",st);
+  updateProgress(st);
+}
+
+function renderPass(elId,passKey,st){
+  var h=PASS_ITEMS[passKey].map(function(txt,i){
+    return '<div class="checkrow '+(st.checklist[passKey][i]?"done":"")+'"><input type="checkbox" data-pass="'+passKey+'" data-i="'+i+'" '+(st.checklist[passKey][i]?"checked":"")+' aria-label="Pass step '+(i+1)+'"><div class="ctext">'+txt+"</div></div>";
+  }).join("");
+  $(elId).innerHTML=h;
+  var boxes=$(elId).querySelectorAll("input[type=checkbox]");
+  boxes.forEach(function(b){
+    b.addEventListener("change",function(){
+      var s=load();s.checklist[b.getAttribute("data-pass")][parseInt(b.getAttribute("data-i"),10)]=b.checked;save(s);
+      b.closest(".checkrow").classList.toggle("done",b.checked);
+      updateProgress(s);
+    });
+  });
+}
+
+function updateProgress(st){
+  var total=0,done=0;
+  ["pass1","pass2","pass3"].forEach(function(p){st.checklist[p].forEach(function(v){total++;if(v)done++;});});
+  $("clBar").style.width=Math.round(done/total*100)+"%";
+  $("clText").innerHTML=done===total?
+    "<strong>Cleanup complete.</strong> Keep the Inbox empty and run the audit again in 90 days.":
+    done+" of "+total+" steps done. "+(PASS_ITEMS.pass1.some(function(_,i){return !st.checklist.pass1[i];})?"Start with Pass 1 \u2014 the sweep.":"Keep going \u2014 one 25-minute pass at a time.");
+}
+
+$("copyPlan").addEventListener("click",function(){
+  var st=load();if(!st)return;
+  var lines=["DIGITAL FILE RESET \u2014 my cleanup plan","Mess score: "+st.score+"/100","","TAXONOMY:","00-Inbox / 10-Active / 20-Reference / 30-Archive","",
+    "NAMING: YYYY-MM-DD_topic-or-project_v1.ext (e.g. 2026-10-08_sprint-plan_v2.docx)","","CHECKLIST:"];
+  ["pass1","pass2","pass3"].forEach(function(p,pi){
+    lines.push("","Pass "+(pi+1)+":");
+    PASS_ITEMS[p].forEach(function(txt,i){
+      var tmp=document.createElement("div");tmp.innerHTML=txt;
+      lines.push((st.checklist[p][i]?"[x] ":"[ ] ")+tmp.textContent);
+    });
+  });
+  var txt=lines.join("\n");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){$("copyMsg").textContent="Plan copied to clipboard.";},function(){$("copyMsg").textContent="Copy blocked by browser.";});
+  }else{$("copyMsg").textContent="Clipboard not available in this browser.";}
+});
+
+$("startOver").addEventListener("click",function(){
+  if(confirm("Start over? Your audit answers and checklist progress will be cleared.")){
+    try{localStorage.removeItem(KEY);}catch(e){}
+    $("planView").style.display="none";$("auditView").style.display="block";window.scrollTo(0,0);
+  }
+});
+
+/* 25-minute sort timer */
+var tleft=1500,ttimer=null;
+function tfmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");}
+$("tstart").addEventListener("click",function(){
+  if(ttimer){clearInterval(ttimer);ttimer=null;this.textContent="Resume";return;}
+  if(tleft<=0)tleft=1500;
+  ttimer=setInterval(function(){tleft--;
+    if(tleft<=0){clearInterval(ttimer);ttimer=null;$("tstart").textContent="Start 25-min sort";$("ttime").textContent="Pass done!";return;}
+    $("ttime").textContent=tfmt(tleft);},1000);
+  this.textContent="Pause";
+});
+$("treset").addEventListener("click",function(){clearInterval(ttimer);ttimer=null;tleft=1500;$("ttime").textContent=tfmt(tleft);$("tstart").textContent="Start 25-min sort";});
+
+/* restore */
+(function restore(){
+  var st=load();
+  if(st&&typeof st.score==="number"){
+    renderPlan(st);
+    $("auditView").style.display="none";$("planView").style.display="block";
+  }
+})();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habit Friction Mapper | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Redesign your environment so a good habit becomes obvious, easy, and attractive — and a bad one becomes hard. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/habit-friction-mapper/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Habit Friction Mapper | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Redesign your environment so a good habit becomes obvious, easy, and attractive — and a bad one becomes hard. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/habit-friction-mapper/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:820px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.4rem;margin-bottom:10px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;margin:18px 0 8px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:8px 16px;min-height:40px;font-size:.9rem}
+input[type=text],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:80px;resize:vertical}
+label.f{display:block;font-weight:bold;margin:14px 0 2px}
+label.f span.hint{display:block;font-weight:normal;font-size:.85rem;color:#6b6250}
+.err{color:#a33;background:#fdecea;border:1px solid #e5a;border-radius:8px;padding:10px 14px;margin:10px 0;display:none}
+.modeRow{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+.modeRow label{border:2px solid #c9a227;border-radius:8px;padding:12px 18px;cursor:pointer;min-height:48px;display:inline-flex;align-items:center;font-weight:bold}
+.modeRow input{margin-right:8px;accent-color:#8a6d1c;width:20px;height:20px}
+.modeRow label.sel{background:#c9a227;color:#141210}
+.lever{border:1px solid #e0d6b8;border-radius:10px;padding:18px;margin:14px 0;background:#fff}
+.lever h3{margin:0 0 4px;font-family:Georgia,serif;color:#8a6d1c;font-size:1.1rem}
+.lever .tag{display:inline-block;font-size:.75rem;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#fff;background:#8a6d1c;border-radius:12px;padding:2px 10px;margin-bottom:8px}
+.lever ul{margin:8px 0 0 20px}
+.lever li{margin:8px 0}
+.fmap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+@media (max-width:600px){.fmap{grid-template-columns:1fr}}
+.fbox{border:1px solid #e0d6b8;border-radius:10px;padding:14px;background:#fff}
+.fbox h4{font-size:.95rem;color:#8a6d1c;margin-bottom:6px}
+.fbox p{font-size:.9rem}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow .room{display:inline-block;font-size:.72rem;font-weight:bold;letter-spacing:.5px;text-transform:uppercase;background:#f6f0dc;color:#8a6d1c;border-radius:10px;padding:2px 10px;margin-bottom:4px}
+.checkrow.done .ctext{text-decoration:line-through;color:#8a8271}
+.pbar{height:16px;background:#eee3c4;border-radius:8px;overflow:hidden;margin:10px 0}
+.pbar>div{height:100%;background:#2f7d3b;transition:width .3s}
+.steps-nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.steps-nav span{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;border:2px solid #c9a227;color:#8a6d1c}
+.steps-nav span.on{background:#c9a227;color:#141210}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Habit Friction Mapper</h1>
+<p class="intro">You don&rsquo;t rise to your willpower; you fall to the design of your environment. Pick one habit, run a friction audit, and get a concrete redesign plan across four levers &mdash; so the good habit becomes obvious, easy, and attractive, and the bad one becomes hard.</p>
+
+<div class="steps-nav" id="navDots" aria-hidden="true"><span data-s="0">1</span><span data-s="1">2</span><span data-s="2">3</span></div>
+
+<div id="step1">
+<div class="appcard">
+<h2>Step 1 &mdash; Your Habit</h2>
+<label class="f">What do you want to do?</label>
+<div class="modeRow" id="modeRow">
+<label id="lblBuild"><input type="radio" name="mode" value="build" checked> Build a good habit</label>
+<label id="lblBreak"><input type="radio" name="mode" value="break"> Break a bad habit</label>
+</div>
+<label class="f" for="habitName">The habit, in plain words <span class="hint" id="habitHint">e.g. &ldquo;read 20 pages every evening&rdquo;</span></label>
+<input type="text" id="habitName" maxlength="120" placeholder="e.g. read 20 pages every evening">
+<label class="f" for="habitRoom">Where does it happen (or where should it happen)?</label>
+<select id="habitRoom">
+<option value="Living room">Living room</option><option value="Bedroom">Bedroom</option>
+<option value="Kitchen">Kitchen</option><option value="Home office">Home office / desk</option>
+<option value="Bathroom">Bathroom</option><option value="Entryway">Entryway / hallway</option>
+<option value="Car / commute">Car / commute</option><option value="Phone / digital">On my phone</option>
+<option value="Other">Somewhere else</option>
+</select>
+<label class="f" for="habitWhen">When &mdash; the routine it attaches to <span class="hint">Anchor it to something you already do, e.g. &ldquo;right after dinner&rdquo;</span></label>
+<input type="text" id="habitWhen" maxlength="120" placeholder="e.g. right after dinner">
+<div class="err" id="err1"></div>
+<button class="btn" id="toStep2">Continue to the Friction Audit</button>
+</div>
+</div>
+
+<div id="step2" style="display:none">
+<div class="appcard">
+<h2>Step 2 &mdash; Friction Audit</h2>
+<p style="color:#6b6250;font-size:.95rem">Answer honestly. The more specific you are, the more useful the plan.</p>
+<label class="f" for="aTrigger">What triggers it right now? <span class="hint" id="triggerHint">The cue &mdash; a time, place, person, feeling, or preceding action</span></label>
+<textarea id="aTrigger" maxlength="500" placeholder="e.g. I finish dinner, sit on the couch, and my phone is right there..."></textarea>
+<label class="f" for="aHard">What makes it HARD right now? <span class="hint">Friction: the steps, effort, or obstacles between you and doing it</span></label>
+<textarea id="aHard" maxlength="500" placeholder="e.g. the book is upstairs, my phone buzzes every minute..."></textarea>
+<label class="f" for="aEasy">What makes it EASY right now? <span class="hint">What already helps &mdash; keep and protect these</span></label>
+<textarea id="aEasy" maxlength="500" placeholder="e.g. I already sit in the reading chair after dinner..."></textarea>
+<label class="f" for="aReward">What reward follows it today? <span class="hint">The payoff your brain gets &mdash; or doesn't get</span></label>
+<textarea id="aReward" maxlength="500" placeholder="e.g. I feel good but it takes weeks to notice; scrolling gives instant laughs..."></textarea>
+<div class="err" id="err2"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+<button class="btn ghost small" id="backTo1">&larr; Back</button>
+<button class="btn" id="toStep3">Generate My Redesign Plan</button>
+</div>
+</div>
+</div>
+
+<div id="step3" style="display:none">
+<div class="appcard">
+<h2 id="planTitle">Your Friction Map &amp; Redesign Plan</h2>
+<h3>Your Friction Map</h3>
+<div class="fmap">
+<div class="fbox"><h4>Trigger (the cue)</h4><p id="mTrigger"></p></div>
+<div class="fbox"><h4>What makes it hard (friction)</h4><p id="mHard"></p></div>
+<div class="fbox"><h4>What already helps (keep it)</h4><p id="mEasy"></p></div>
+<div class="fbox"><h4>Current reward</h4><p id="mReward"></p></div>
+</div>
+<p style="font-size:.9rem;color:#6b6250" id="mapSummary"></p>
+</div>
+
+<div class="appcard">
+<h2>The Four Levers</h2>
+<p style="color:#6b6250;font-size:.95rem" id="leverIntro"></p>
+<div id="levers"></div>
+</div>
+
+<div class="appcard">
+<h2>Room-by-Room Change Checklist</h2>
+<p style="color:#6b6250;font-size:.95rem">Do these changes this week. Check each one off as you do it &mdash; the environment does the willpower for you.</p>
+<div class="pbar"><div id="clBar" style="width:0%"></div></div>
+<p id="clText" style="font-size:.9rem"></p>
+<div id="checklist"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+<button class="btn ghost small" id="copyPlan">Copy plan as text</button>
+<button class="btn ghost small" id="startOver">Start over</button>
+</div>
+<p id="copyMsg" style="font-size:.85rem;color:#6b6250;margin-top:8px"></p>
+</div>
+</div>
+
+<div class="appcard">
+<h3>Go Deeper with the Book</h3>
+<p><em>Habits Made Simple</em> by Kimani Upshur, M.Ed. goes deeper on habit design &mdash; cues, routines, environment, and the systems that make change stick.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/habits-made-simple/">Get Habits Made Simple — $4.99</a></p>
+</div>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:820px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and encouragement in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-habit-friction-mapper-v1";
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function load(){try{var r=localStorage.getItem(KEY);return r?JSON.parse(r):null;}catch(e){return null;}}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}}
+function showErr(id,msg){var e=$(id);e.textContent=msg;e.style.display="block";window.scrollTo(0,0);}
+function hideErr(id){$(id).style.display="none";}
+function nav(step){var dots=document.querySelectorAll("#navDots span");dots.forEach(function(d,i){d.classList.toggle("on",i===step);});}
+function go(step){
+  ["step1","step2","step3"].forEach(function(s,i){$(s).style.display=i===step?"block":"none";});
+  nav(step);window.scrollTo(0,0);
+}
+
+document.querySelectorAll('#modeRow input').forEach(function(r){
+  r.addEventListener("change",function(){
+    $("lblBuild").classList.toggle("sel",r.value==="build"&&r.checked);
+    $("lblBreak").classList.toggle("sel",r.value==="break"&&r.checked);
+    if(r.checked){
+      if(r.value==="build"){$("habitHint").textContent="e.g. \u201cread 20 pages every evening\u201d";$("habitName").placeholder="e.g. read 20 pages every evening";}
+      else{$("habitHint").textContent="e.g. \u201cscrolling social media in bed\u201d";$("habitName").placeholder="e.g. scrolling social media in bed";}
+    }
+  });
+});
+$("lblBuild").classList.add("sel");
+
+$("toStep2").addEventListener("click",function(){
+  hideErr("err1");
+  var mode=document.querySelector('input[name="mode"]:checked').value;
+  var habit=$("habitName").value.trim();
+  if(!habit){showErr("err1","Please name the habit in plain words (1\u20132 sentences is fine).");return;}
+  var st=load()||{};
+  st.mode=mode;st.habit=habit;st.room=$("habitRoom").value;st.when=$("habitWhen").value.trim();
+  save(st);go(1);
+});
+$("backTo1").addEventListener("click",function(){go(0);});
+
+$("toStep3").addEventListener("click",function(){
+  hideErr("err2");
+  var st=load()||{};
+  var trig=$("aTrigger").value.trim(),hard=$("aHard").value.trim(),easy=$("aEasy").value.trim(),reward=$("aReward").value.trim();
+  if(!trig){showErr("err2","Please answer the trigger question \u2014 even a rough guess works.");return;}
+  if(!hard){showErr("err2","Please answer what makes it hard \u2014 that is the heart of the audit.");return;}
+  st.trigger=trig;st.hard=hard;st.easy=easy||"(nothing listed \u2014 the plan will build from scratch)";st.reward=reward||"(no clear reward listed)";
+  save(st);renderPlan(st);go(2);
+});
+
+function lever(tag,title){
+  var items=Array.prototype.slice.call(arguments,2);
+  return '<div class="lever"><span class="tag">'+tag+'</span><h3>'+title+'</h3><ul>'+
+    items.map(function(i){return "<li>"+i+"</li>";}).join("")+"</ul></div>";
+}
+
+function renderPlan(st){
+  var build=st.mode==="build";
+  var H="<strong>"+esc(st.habit)+"</strong>";
+  var R=esc(st.room), W=st.when?esc(st.when):"your chosen time";
+  $("planTitle").textContent=(build?"Build":"Break")+" Plan: "+st.habit;
+  $("mTrigger").textContent=st.trigger;
+  $("mHard").textContent=st.hard;
+  $("mEasy").textContent=st.easy;
+  $("mReward").textContent=st.reward;
+  $("mapSummary").innerHTML=build?
+    "The friction map above shows why "+H+" keeps not happening. The plan below removes steps between you and the habit, and makes starting it the path of least resistance.":
+    "The friction map above shows why "+H+" keeps happening. The plan below does the opposite of building: hide cues, add steps, and make the payoff less attractive.";
+
+  $("leverIntro").textContent=build?
+    "Four levers to make "+st.habit+" obvious, attractive, easy, and satisfying:":
+    "Four levers, inverted, to make "+st.habit+" invisible, unattractive, hard, and unsatisfying:";
+
+  var levers=build?[
+    lever("Cue","Make it OBVIOUS","Place the tools for "+H+" where you cannot miss them: if it happens in the "+R+", put everything needed in your line of sight there before "+W+".",
+      "Stack it on an existing routine: \u201cAfter I "+W+", I will start "+esc(st.habit)+".\u201d Write this sentence on a sticky note and put it where "+W+" happens.",
+      "Make the trigger "+esc(st.trigger)+" work for you: pair the new habit with it instead of fighting it."),
+    lever("Craving","Make it ATTRACTIVE","Pair "+H+" with something you enjoy: your favorite drink, playlist, or spot. Only get that treat while doing the habit.",
+      "Join the right crowd: tell one person you are doing this, or do it alongside someone who already does it.",
+      "Reframe it: write one sentence about who you become by doing this (\u201cI am a reader\u201d), and read it before "+W+"."),
+    lever("Response","Make it EASY","Shrink the start to two minutes: just open the book / just lace the shoes / just open the doc. Starting is the habit.",
+      "Prep the night before: lay out everything in the "+R+" so "+H+" needs zero setup and zero decisions.",
+      "Reduce every step between you and the first action. If it takes more than 20 seconds to start, redesign the setup \u2014 the friction you named ("+esc(st.hard)+") is exactly what to attack."),
+    lever("Reward","Make it SATISFYING","Track it immediately: mark an X on a calendar right after you finish. Never break the chain twice.",
+      "Give yourself a small instant reward after each rep \u2014 the brain repeats what pays off now, not what pays off in a month.",
+      "Tell someone today: \u201cI did it.\u201d Social payoff makes the habit sticky.")
+  ]:[
+    lever("Cue","Make it INVISIBLE","Remove the cue: if "+esc(st.trigger)+" triggers "+H+", change the trigger \u2014 take a different route, move the phone, change the seat.",
+      "Make it hard to see: put the temptation out of sight and out of reach in the "+R+". If it is not visible, you will not crave it.",
+      "Break the chain at the earliest link: interrupt the routine that leads to "+H+" (change "+W+" so it no longer flows into the habit)."),
+    lever("Craving","Make it UNATTRACTIVE","Reframe the payoff: write down what "+H+" actually costs you (time, sleep, money, self-respect) and read it when the urge hits.",
+      "Change your crowd: spend less idle time with people or feeds that normalize "+H+".",
+      "Highlight the benefits of avoiding it: what does your evening look like without it? Make that picture vivid."),
+    lever("Response","Make it HARD","Add 20 seconds of friction: log out of the app, put the phone in another room, unplug the device, delete the shortcut. Small barriers stop autopilot.",
+      "Increase the steps: make starting "+H+" require effort \u2014 re-downloading, driving somewhere, asking someone. Friction you named ("+esc(st.hard)+") shows exactly where the habit is too easy.",
+      "Use a commitment device: tell a friend you will pay them or owe them something if you do it this week."),
+    lever("Reward","Make it UNSATISFYING","Add an immediate cost: every time you do it, you owe something (money to a jar, an extra chore, telling your accountability partner).",
+      "Track the misses, not just the wins: an empty day on the calendar stings more than a vague intention.",
+      "Replace the reward: the urge behind "+H+" ("+esc(st.reward)+") needs a substitute \u2014 name one specific alternative you will do instead.")
+  ];
+  $("levers").innerHTML=levers.join("");
+
+  /* Room-by-room checklist */
+  var rooms=[st.room];
+  ["Bedroom","Living room","Kitchen","Home office","Phone / digital"].forEach(function(r){if(rooms.indexOf(r)<0&&rooms.length<4)rooms.push(r);});
+  var items;
+  if(build){
+    items=[
+      [st.room,"Place everything needed for "+st.habit+" in plain sight in the "+st.room+" before "+(st.when||"it starts")+"."],
+      [st.room,"Remove or hide the #1 distraction named in your audit from the "+st.room+"."],
+      [st.room,"Put your written habit-stack sentence (\u201cAfter I "+(st.when||"___")+", I will "+st.habit+"\u201d) where you will see it."],
+      ["Bedroom","Charge your phone outside the bedroom, or face-down across the room, during habit time."],
+      ["Phone / digital","Turn off notifications for your top 3 distracting apps during the habit window."],
+      ["Home office","Clear the desk / workspace to one task: the habit and nothing else."],
+      ["Living room","Set up your habit spot in advance: chair, light, materials ready to go."],
+      ["Kitchen","Keep water or your habit drink ready so you never break momentum to fetch it."]
+    ];
+  }else{
+    items=[
+      [st.room,"Remove the #1 cue for "+st.habit+" from the "+st.room+" (move it, hide it, or unplug it)."],
+      [st.room,"Add one physical barrier between you and "+st.habit+" in the "+st.room+"."],
+      ["Phone / digital","Log out of / delete the app or site tied to "+st.habit+"; turn off its notifications."],
+      ["Bedroom","Move the temptation out of the bedroom entirely \u2014 another room, a locked drawer, a friend's house."],
+      ["Living room","Rearrange the spot where "+st.habit+" usually happens so the old routine no longer flows."],
+      ["Home office","Block the site or remove the shortcut from your computer and phone."],
+      ["Kitchen","If the habit involves food or drink, stop buying the trigger item \u2014 the store is the easiest friction point."],
+      ["Entryway","Put your replacement activity's gear by the door so the better choice is the easy choice."]
+    ];
+  }
+  var seen={};
+  items=items.filter(function(it){var k=it[0]+"|"+it[1];if(seen[k])return false;seen[k]=1;return true;});
+  st.checklist=st.checklist||items.map(function(){return false;});
+  while(st.checklist.length<items.length)st.checklist.push(false);
+  st.checklist=st.checklist.slice(0,items.length);
+  save(st);
+  renderChecklist(st,items);
+}
+
+function renderChecklist(st,items){
+  var h=items.map(function(it,i){
+    return '<div class="checkrow '+(st.checklist[i]?"done":"")+'"><input type="checkbox" data-i="'+i+'" '+(st.checklist[i]?"checked":"")+' aria-label="Change '+(i+1)+'">'+
+      '<div><span class="room">'+esc(it[0])+'</span><div class="ctext">'+it[1]+"</div></div></div>";
+  }).join("");
+  $("checklist").innerHTML=h;
+  var boxes=document.querySelectorAll("#checklist input[type=checkbox]");
+  boxes.forEach(function(b){
+    b.addEventListener("change",function(){
+      var s=load();s.checklist[parseInt(b.getAttribute("data-i"),10)]=b.checked;save(s);
+      b.closest(".checkrow").classList.toggle("done",b.checked);
+      updateClProgress(s);
+    });
+  });
+  updateClProgress(st);
+}
+function updateClProgress(st){
+  var done=st.checklist.filter(Boolean).length,total=st.checklist.length;
+  $("clBar").style.width=Math.round(done/total*100)+"%";
+  $("clText").innerHTML=done===total?
+    "<strong>All "+total+" changes done.</strong> Your environment now works for you. Revisit this map if the habit slips.":
+    done+" of "+total+" changes done. "+(total-done)+" to go \u2014 do one today.";
+}
+
+$("copyPlan").addEventListener("click",function(){
+  var st=load();if(!st)return;
+  var build=st.mode==="build";
+  var lines=["HABIT FRICTION MAP \u2014 "+(build?"BUILD":"BREAK")+": "+st.habit,"Where: "+st.room+" | When: "+(st.when||"(not set)"),"",
+    "FRICTION AUDIT:","Trigger: "+st.trigger,"Makes it hard: "+st.hard,"Already helps: "+st.easy,"Reward: "+st.reward,"",
+    "ROOM-BY-ROOM CHANGES:"];
+  var boxes=document.querySelectorAll("#checklist .checkrow");
+  boxes.forEach(function(row,i){
+    var done=row.querySelector("input").checked;
+    lines.push((done?"[x] ":"[ ] ")+row.querySelector(".ctext").textContent);
+  });
+  var txt=lines.join("\n");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){$("copyMsg").textContent="Plan copied to clipboard.";},function(){$("copyMsg").textContent="Copy blocked by browser.";});
+  }else{$("copyMsg").textContent="Clipboard not available in this browser.";}
+});
+
+$("startOver").addEventListener("click",function(){
+  if(confirm("Start over? Your habit, audit, and checklist progress will be cleared.")){
+    try{localStorage.removeItem(KEY);}catch(e){}
+    ["habitName","habitWhen","aTrigger","aHard","aEasy","aReward"].forEach(function(id){$(id).value="";});
+    document.querySelector('input[name="mode"][value="build"]').checked=true;
+    $("lblBuild").classList.add("sel");$("lblBreak").classList.remove("sel");
+    go(0);
+  }
+});
+
+/* restore */
+(function restore(){
+  var st=load();
+  if(!st)return;
+  if(st.habit){
+    document.querySelector('input[name="mode"][value="'+(st.mode||"build")+'"]').checked=true;
+    $("lblBuild").classList.toggle("sel",st.mode!=="break");$("lblBreak").classList.toggle("sel",st.mode==="break");
+    $("habitName").value=st.habit;$("habitRoom").value=st.room||"Living room";$("habitWhen").value=st.when||"";
+    if(st.trigger){$("aTrigger").value=st.trigger;$("aHard").value=st.hard||"";$("aEasy").value=st.easy||"";$("aReward").value=st.reward||"";}
+    if(st.trigger){renderPlan(st);go(2);}else go(1);
+  }
+})();
+})();
+</script>
+</body>
+</html>
