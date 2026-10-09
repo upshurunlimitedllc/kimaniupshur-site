@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing Strategy Wizard | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Find the right price for your product or service by comparing pricing models against your real numbers. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/pricing-strategy-wizard/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pricing Strategy Wizard | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Find the right price for your product or service by comparing pricing models against your real numbers. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/pricing-strategy-wizard/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:960px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.3rem;margin-bottom:12px;color:#141210}
+.appcard h3{font-size:1.05rem;margin:18px 0 8px;color:#5c4d15}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.field{display:block;margin-bottom:6px}
+label.field>span.lbl{display:block;font-weight:bold;font-size:.95rem;margin-top:10px}
+label.field small{display:block;color:#6b6250;font-weight:normal;font-size:.85rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+.err{background:#fdecea;border:2px solid #b3261e;border-radius:8px;padding:12px 16px;color:#7a1a14;margin:12px 0;display:none}
+.warn{background:#fff4d6;border:2px solid #c9a227;border-radius:8px;padding:12px 16px;color:#5c4d15;margin:12px 0;display:none}
+.models{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+@media(max-width:900px){.models{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.models{grid-template-columns:1fr}}
+.model{border:2px solid #e0d5b8;border-radius:10px;padding:16px;background:#fff}
+.model.winner{border-color:#c9a227;background:#fffbea;box-shadow:0 2px 10px rgba(201,162,39,.25)}
+.model h4{font-family:Georgia,serif;font-size:1.05rem;margin-bottom:4px}
+.model .price{font-size:1.5rem;font-weight:bold;color:#141210}
+.model .mline{font-size:.9rem;color:#6b6250}
+.model .big{font-size:1.05rem;font-weight:bold;color:#2e7d32;margin-top:6px}
+.model .bad{font-size:1.05rem;font-weight:bold;color:#b3261e;margin-top:6px}
+.model ul{margin:8px 0 0 18px;font-size:.88rem;color:#444}
+.model .tag{display:inline-block;font-size:.75rem;font-weight:bold;background:#c9a227;color:#141210;border-radius:4px;padding:2px 8px;margin-bottom:8px}
+.model .tag.na{background:#ccc;color:#555}
+.rec{border:3px solid #c9a227;background:#fffbea;border-radius:12px;padding:24px;margin-top:18px}
+.rec h3{font-family:Georgia,serif;font-size:1.3rem;margin-bottom:8px}
+.rec .rprice{font-size:2rem;font-weight:bold}
+.rec ol{margin:10px 0 0 20px}
+.rec ol li{margin-bottom:8px}
+.steps{margin:10px 0 0 20px}
+.steps li{margin-bottom:10px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #eee;font-size:.95rem}
+.kv b{text-align:right}
+.guard{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+@media(max-width:640px){.guard{grid-template-columns:1fr}}
+.gcard{border:2px solid #e0d5b8;border-radius:10px;padding:16px;background:#fff;text-align:center}
+.gcard .n{font-size:1.6rem;font-weight:bold;color:#8a6d1c}
+.gcard p{font-size:.88rem;color:#555;margin-top:6px}
+.disclaimer{font-size:.82rem;color:#8a7a4a;margin-top:18px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Pricing Strategy Wizard</h1>
+<p class="intro">Find the right price for your product or service. Enter your real costs and your market context, and the wizard compares four pricing models side by side — then recommends a price with the reasoning behind it.</p>
+
+<div class="appcard">
+<h2>1. Your costs</h2>
+<div class="grid2">
+<div>
+<label class="field"><span class="lbl">Materials / direct cost per unit ($)</span>
+<small>What each sale costs you in materials, ingredients, shipping, or fees.</small>
+<input type="number" id="f_materials" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 12.00"></label>
+</div>
+<div>
+<label class="field"><span class="lbl">Your time per unit (hours)</span>
+<small>Hands-on time each sale requires from you.</small>
+<input type="number" id="f_hours" min="0" step="0.1" inputmode="decimal" placeholder="e.g. 2"></label>
+</div>
+<div>
+<label class="field"><span class="lbl">Your hourly rate ($)</span>
+<small>What an hour of your time is worth. Be honest — underpricing your time is the #1 pricing mistake.</small>
+<input type="number" id="f_rate" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 50"></label>
+</div>
+<div>
+<label class="field"><span class="lbl">Monthly overhead ($)</span>
+<small>Rent, software, insurance, subscriptions — costs that exist whether you sell or not.</small>
+<input type="number" id="f_overhead" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 400"></label>
+</div>
+<div>
+<label class="field"><span class="lbl">Expected sales per month (units)</span>
+<small>Realistic estimate. Overhead is spread across these units.</small>
+<input type="number" id="f_volume" min="1" step="1" inputmode="numeric" placeholder="e.g. 50"></label>
+</div>
+<div>
+<label class="field"><span class="lbl">Desired profit margin (%)</span>
+<small>Your target margin on each sale, after all costs. 20–40% is typical for small businesses.</small>
+<input type="number" id="f_margin" min="0" max="95" step="1" inputmode="decimal" placeholder="e.g. 30"></label>
+</div>
+</div>
+</div>
+
+<div class="appcard">
+<h2>2. Your market</h2>
+<div class="grid2">
+<div>
+<label class="field"><span class="lbl">Competitor low price ($)</span>
+<small>Cheapest comparable offer you can find.</small>
+<input type="number" id="f_compLow" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 45"></label>
+</div>
+<div>
+<label class="field"><span class="lbl">Competitor high price ($)</span>
+<small>Priciest comparable offer.</small>
+<input type="number" id="f_compHigh" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 120"></label>
+</div>
+</div>
+<label class="field"><span class="lbl">Who is your customer?</span>
+<small>Price sensitivity differs by buyer type — this shapes the value-based model.</small>
+<select id="f_cust">
+<option value="individuals">Individuals / consumers (price-sensitive)</option>
+<option value="smallbiz">Small businesses (value-conscious)</option>
+<option value="enterprise">Larger organizations / premium buyers (least price-sensitive)</option>
+</select></label>
+<div class="err" id="errBox" role="alert"></div>
+<div class="warn" id="warnBox" role="status"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+<button class="btn" id="btnCalc">Compare Pricing Models</button>
+<button class="btn ghost" id="btnReset">Reset</button>
+</div>
+</div>
+
+<div class="appcard" id="resultsCard" style="display:none">
+<h2>3. Your cost breakdown</h2>
+<div id="costBreak"></div>
+<h3>Margin at your desired target</h3>
+<div id="targetLine"></div>
+</div>
+
+<div class="appcard" id="modelsCard" style="display:none">
+<h2>4. Four pricing models, side by side</h2>
+<p style="color:#6b6250;font-size:.95rem">Each model prices the same product differently. Monthly profit assumes a realistic volume trade-off: lower prices move more units, premium prices move fewer.</p>
+<div class="models" id="modelGrid"></div>
+<div class="rec" id="recBox"></div>
+</div>
+
+<div class="appcard" id="planCard" style="display:none">
+<h2>5. Your price-testing plan</h2>
+<p style="color:#6b6250;font-size:.95rem">Never set a price and forget it. Run this experiment to find what the market actually accepts:</p>
+<ol class="steps" id="testPlan"></ol>
+<h2 style="margin-top:24px">6. Discount guardrails</h2>
+<p style="color:#6b6250;font-size:.95rem">Discounts feel generous but quietly destroy margin. These guardrails keep you profitable:</p>
+<div class="guard" id="guardGrid"></div>
+</div>
+
+<div class="appcard">
+<h3>Go Deeper with the Book</h3>
+<p>The Pricing Strategy Wizard is just the start. <em>Marketing Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper — positioning, pricing psychology, and getting customers to say yes.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/marketing-made-simple/">Get Marketing Made Simple — $4.99</a></p>
+</div>
+
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+<p class="disclaimer">Educational purposes only — not professional financial or business advice. Calculations use the assumptions shown above; your real market, taxes, and costs may differ. Verify important pricing decisions with a qualified professional.</p>
+</main>
+<section style="max-width:960px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+var KEY="app-pricing-strategy-wizard-v1";
+var $=function(id){return document.getElementById(id);};
+var FIELDS=["f_materials","f_hours","f_rate","f_overhead","f_volume","f_margin","f_compLow","f_compHigh","f_cust"];
+function num(id){var v=parseFloat($(id).value);return isNaN(v)?0:v;}
+function money(x){return "$"+x.toFixed(2);}
+function pct(x){return (x*100).toFixed(1)+"%";}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function showErr(m){var b=$("errBox");b.style.display=m?"block":"none";b.innerHTML=m?esc(m):"";}
+function showWarn(m){var b=$("warnBox");b.style.display=m?"block":"none";b.innerHTML=m?esc(m):"";}
+
+function validate(){
+  var warns=[];
+  FIELDS.forEach(function(f){ if(f==="f_cust")return; var v=$(f).value; if(v!==""&&parseFloat(v)<0){$(f).value="0";warns.push("A negative value was reset to 0.");} });
+  var m=num("f_margin");
+  if(m>95){$("f_margin").value=95;warns.push("Margin capped at 95% — margins above that are rarely realistic.");}
+  var lo=num("f_compLow"),hi=num("f_compHigh");
+  if($("f_compLow").value!==""&&$("f_compHigh").value!==""&&lo>hi&&hi>0){
+    $("f_compLow").value=hi;$("f_compHigh").value=lo;warns.push("Competitor low/high were swapped so low comes first.");
+  }
+  var vol=$("f_volume").value;
+  if(vol===""||num("f_volume")<1){showErr("Enter your expected sales per month (at least 1) so overhead can be spread per unit.");return null;}
+  showErr("");
+  if(warns.length)showWarn(warns.join(" "));else showWarn("");
+  return true;
+}
+
+function compute(){
+  if(!validate())return null;
+  var materials=num("f_materials"),hours=num("f_hours"),rate=num("f_rate"),
+      overhead=num("f_overhead"),volume=num("f_volume"),marginPct=num("f_margin")/100,
+      compLow=num("f_compLow"),compHigh=num("f_compHigh"),cust=$("f_cust").value;
+  var hasComp=$("f_compLow").value!==""&&$("f_compHigh").value!==""&&compLow>0&&compHigh>0;
+  var timeCost=hours*rate, ohPerUnit=overhead/volume;
+  var cost=materials+timeCost+ohPerUnit;
+  var compMid=hasComp?(compLow+compHigh)/2:0;
+  var valMult={individuals:2.0,smallbiz:2.5,enterprise:3.0}[cust];
+  var valLabel={individuals:"Individuals / consumers",smallbiz:"Small businesses",enterprise:"Larger organizations"}[cust];
+  function mk(name,price,volFactor,tag,pros,cons,disabled,disabledMsg){
+    var m={name:name,price:price,volFactor:volFactor,tag:tag,pros:pros,cons:cons,disabled:!!disabled,disabledMsg:disabledMsg||""};
+    if(!disabled&&price>0){m.margin=(price-cost)/price;m.profit=(price-cost)*volume*volFactor;}
+    return m;
+  }
+  var models=[
+    mk("Cost-Plus",cost*(1+marginPct),1.0,"Guaranteed margin",
+      ["Guarantees your "+pct(marginPct)+" target margin on every sale","Simple to explain and defend","Protects you if costs rise (recalculate and adjust)"],
+      ["Ignores what competitors charge","May price you out of the market if costs are high","Leaves money on the table if customers would pay more"]),
+    hasComp?mk("Market-Match",compMid,1.1,"Competitive",
+      ["Sits inside the competitor band ("+money(compLow)+"–"+money(compHigh)+")","Familiar price range builds buyer trust","10% volume lift from competitive positioning"],
+      ["Margin is whatever the market allows: "+(compMid>cost?pct((compMid-cost)/compMid):"BELOW COST — loses money")+"","Race to the bottom if competitors cut prices","No differentiation story"])
+      :mk("Market-Match",0,1.1,"Competitive",[],[],true,"Enter competitor prices above to unlock this model."),
+    mk("Value-Based",cost*valMult,0.9,"Premium",
+      ["Captures the value "+valLabel+" place on outcomes, not inputs","Highest margin per sale","Positions you as the premium choice"],
+      ["Harder sell — you must prove the outcome","~10% fewer units at premium pricing","If the value story is weak, buyers balk"]),
+    mk("Penetration",cost*(1+Math.min(marginPct,0.15)),1.5,"Volume play",
+      ["Lowest price wins the most customers (~50% more units)","Fast market share and reviews","Good for launching something new"],
+      ["Thinnest margin per sale","Trains customers to expect cheap","Hard to raise prices later without backlash"])
+  ];
+  return {materials:materials,hours:hours,rate:rate,overhead:overhead,volume:volume,marginPct:marginPct,
+    compLow:compLow,compHigh:compHigh,hasComp:hasComp,compMid:compMid,cust:cust,valMult:valMult,valLabel:valLabel,
+    timeCost:timeCost,ohPerUnit:ohPerUnit,cost:cost,models:models};
+}
+
+function render(r){
+  var b=$("costBreak");
+  b.innerHTML=
+    kv("Materials per unit",money(r.materials))+
+    kv("Your time ("+r.hours+"h × "+money(r.rate)+"/h)",money(r.timeCost))+
+    kv("Overhead per unit ("+money(r.overhead)+" ÷ "+r.volume+")",money(r.ohPerUnit))+
+    kv("<b>True cost per unit</b>","<b>"+money(r.cost)+"</b>");
+  function kv(k,v){return '<div class="kv"><span>'+k+'</span><b>'+v+'</b></div>';}
+  $("targetLine").innerHTML='<div class="kv"><span>Price that hits your '+pct(r.marginPct)+' target margin</span><b>'+money(r.cost*(1+r.marginPct))+'</b></div>'+
+    '<div class="kv"><span>Profit per sale at that price</span><b>'+money(r.cost*r.marginPct)+'</b></div>';
+  $("resultsCard").style.display="block";
+
+  // recommendation: highest projected profit among money-making models, with sanity penalty
+  var best=null,reason=[];
+  r.models.forEach(function(m){
+    if(m.disabled||m.profit<=0)return;
+    var score=m.profit;
+    if(r.hasComp&&m.price>r.compHigh*1.6)score*=0.5; // far above market
+    if(!best||score>best.score)best={m:m,score:score};
+  });
+  if(!best){ // everything loses money or is disabled
+    var viable=r.models.filter(function(m){return !m.disabled&&m.price>0;});
+    best=viable.length?{m:viable[0],score:0}:null;
+  }
+  var grid=$("modelGrid");grid.innerHTML="";
+  r.models.forEach(function(m){
+    var d=document.createElement("div");
+    d.className="model"+(best&&m===best.m?" winner":"");
+    var h="<h4>"+esc(m.name)+"</h4>";
+    if(m.disabled){h+='<span class="tag na">NEEDS DATA</span><p style="font-size:.9rem;color:#6b6250">'+esc(m.disabledMsg)+'</p>';}
+    else{
+      if(best&&m===best.m)h+='<span class="tag">RECOMMENDED</span>';
+      h+='<div class="price">'+money(m.price)+'</div>';
+      h+='<div class="mline">'+esc(m.tag)+'</div>';
+      if(m.price>0&&m.margin!=null){
+        if(m.margin<0)h+='<div class="bad">Loses '+money(-(m.price-r.cost))+' per sale</div>';
+        else h+='<div class="big">'+pct(m.margin)+' margin</div>';
+        h+='<div class="mline">~'+Math.round(r.volume*m.volFactor)+' units/mo &rarr; '+money(Math.max(0,m.profit))+' profit/mo</div>';
+      }else{
+        h+='<div class="mline">Priced at $0.00 — enter your costs above to price this model.</div>';
+      }
+      h+='<ul>'+m.pros.map(function(p){return "<li><b>+</b> "+esc(p)+"</li>";}).join("")+
+           m.cons.map(function(c){return "<li><b>−</b> "+esc(c)+"</li>";}).join("")+"</ul>";
+    }
+    d.innerHTML=h;grid.appendChild(d);
+  });
+  $("modelsCard").style.display="block";
+
+  var rb=$("recBox");
+  if(best){
+    var m=best.m;var why=[];
+    if(m.name==="Cost-Plus")why.push("It is the only model that guarantees your "+pct(r.marginPct)+" target margin on every sale — no hoping the market cooperates.");
+    if(m.name==="Market-Match")why.push("It sits inside the proven competitor band ("+money(r.compLow)+"–"+money(r.compHigh)+"), so buyers already accept this price range.");
+    if(m.name==="Value-Based")why.push(r.valLabel+" buy outcomes, not hours — a "+r.valMult.toFixed(1)+"× cost multiple captures that willingness to pay.");
+    if(m.name==="Penetration")why.push("It trades margin for ~50% more volume, which maximizes total monthly profit with your numbers.");
+    if(m.profit>0)why.push("Projected monthly profit: <b>"+money(m.profit)+"</b> at ~"+Math.round(r.volume*m.volFactor)+" units/month.");
+    if(r.hasComp&&m.price>r.compHigh)why.push("Note: this sits above the competitor range — you will need a clear reason buyers should pay more (faster, better, guaranteed).");
+    if(r.hasComp&&m.price<r.compLow)why.push("Note: this undercuts every competitor — make sure the story is value, not desperation.");
+    if(m.margin<r.marginPct&&m.margin>=0)why.push("Trade-off: margin is "+pct(m.margin)+", below your "+pct(r.marginPct)+" target — you are choosing volume over per-sale margin.");
+    rb.innerHTML="<h3>Recommended: "+esc(m.name)+" at "+money(m.price)+"</h3>"+
+      '<div class="rprice">'+money(m.price)+'</div>'+
+      '<ol>'+why.map(function(w){return "<li>"+w+"</li>";}).join("")+"</ol>";
+  }else{
+    rb.innerHTML="<h3>No model works with these numbers</h3><p>Every model loses money at your current costs. Raise your expected volume (to spread overhead), lower costs, or accept a smaller margin — then recalculate.</p>";
+  }
+
+  // testing plan
+  var rec=r.models&&best?best.m.price:r.cost*(1+r.marginPct);
+  var up=rec*1.12, down=rec*0.88;
+  $("testPlan").innerHTML=[
+    "<b>Set your starting price at "+money(rec)+"</b> — the model's recommendation. Give it 2 weeks to collect a baseline: track visitors, conversion rate, and revenue.",
+    "<b>Test a 12% increase ("+money(up)+") for the next 2 weeks.</b> Send half your traffic (or alternate weeks) to the higher price. Measure conversion rate — not just sales.",
+    "<b>Read the result:</b> if revenue per visitor stays flat or rises at "+money(up)+", keep the higher price. If conversion drops more than 25%, revert to "+money(rec)+" — the market has spoken.",
+    "<b>Then test down ("+money(down)+") the same way</b> — only if you need volume. A lower price must earn its keep in clearly higher unit sales.",
+    "<b>Re-test every 6 months</b> or whenever costs, competitors, or your offer change. Prices are hypotheses, not tattoos."
+  ].map(function(s){return "<li>"+s+"</li>";}).join("");
+
+  // discount guardrails — keep margin >= 10%
+  var P=rec,C=r.cost,maxD=0;
+  if(P>C)maxD=Math.max(0,(0.9*P-C)/(0.9*P));
+  var safe=maxD/2, floor=P*(1-maxD);
+  $("guardGrid").innerHTML=
+    g("Never discount more than","<div class='n'>"+pct(maxD)+"</div>","Beyond this, your margin drops below 10% — you are working for free.")+
+    g("Safe everyday discount","<div class='n'>"+pct(safe)+"</div>","Coupons, friends-and-family, promos — stay at or under this without a second thought.")+
+    g("Absolute price floor","<div class='n'>"+money(floor)+"</div>","Never sell below this. If a deal needs a lower price, shrink the scope instead of cutting the price.");
+  function g(t,n,p){return '<div class="gcard"><b>'+t+'</b>'+n+'<p>'+p+'</p></div>';}
+  $("planCard").style.display="block";
+}
+
+function save(){
+  try{var s={};FIELDS.forEach(function(f){s[f]=$(f).value;});localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}
+}
+function restore(){
+  try{var s=JSON.parse(localStorage.getItem(KEY)||"null");if(!s)return false;
+    FIELDS.forEach(function(f){if(s[f]!==undefined)$(f).value=s[f];});return true;}catch(e){return false;}
+}
+$("btnCalc").addEventListener("click",function(){var r=compute();if(r){render(r);save();}});
+$("btnReset").addEventListener("click",function(){
+  FIELDS.forEach(function(f){$(f).value=f==="f_cust"?"individuals":"";});
+  ["resultsCard","modelsCard","planCard"].forEach(function(id){$(id).style.display="none";});
+  showErr("");showWarn("");
+  try{localStorage.removeItem(KEY);}catch(e){}
+});
+FIELDS.forEach(function(f){$(f).addEventListener("change",save);});
+if(restore()){var r=compute();if(r)render(r);}
+})();
+</script>
+</body>
+</html>

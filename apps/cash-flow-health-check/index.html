@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cash-Flow Health Check | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="See exactly where your business cash stands, how long it lasts, and what to fix first — runway, burn rate, margin, and 6 health checks with prioritized fixes. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/cash-flow-health-check/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cash-Flow Health Check | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="See exactly where your business cash stands, how long it lasts, and what to fix first — runway, burn rate, margin, and 6 health checks with prioritized fixes. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/cash-flow-health-check/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:820px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.45rem;color:#141210;margin-bottom:10px}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;color:#141210;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.9rem}
+label.fld{display:block;margin:14px 0}
+label.fld .lbl{display:block;font-weight:bold;margin-bottom:4px}
+label.fld .hint{display:block;font-size:.85rem;color:#6b6250;font-weight:normal}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+@media (max-width:600px){.frow{grid-template-columns:1fr}}
+.err{background:#fdecea;border:2px solid #c0392b;color:#7b241c;border-radius:8px;padding:12px 16px;margin:12px 0;display:none}
+.gradeband{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.gradecircle{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.6rem;font-weight:bold;font-family:Georgia,serif;color:#fff;flex-shrink:0}
+.gA{background:#1e7e34}.gB{background:#5a8f2b}.gC{background:#b8860b}.gD{background:#c2651a}.gF{background:#b02a20}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+@media (max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:#fff;border:2px solid #e5d9ae;border-radius:10px;padding:14px;text-align:center}
+.kpi .v{font-size:1.35rem;font-weight:bold;font-family:Georgia,serif;color:#141210}
+.kpi .k{font-size:.8rem;color:#6b6250;margin-top:4px}
+.flag{border:2px solid;border-radius:10px;padding:16px 18px;margin:14px 0;background:#fff}
+.flag.critical{border-color:#b02a20}
+.flag.high{border-color:#c2651a}
+.flag.watch{border-color:#b8860b}
+.flag .sev{display:inline-block;font-size:.75rem;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:#fff;border-radius:6px;padding:3px 10px;margin-bottom:8px}
+.flag.critical .sev{background:#b02a20}.flag.high .sev{background:#c2651a}.flag.watch .sev{background:#b8860b}
+.flag h4{font-size:1.05rem;margin-bottom:6px}
+.flag .fix{background:#faf7ef;border-left:4px solid #c9a227;padding:10px 14px;margin-top:10px;border-radius:0 8px 8px 0}
+.flag .fix strong{color:#8a6d1c}
+.pass{background:#f2f8ec;border:2px solid #5a8f2b;border-radius:10px;padding:12px 16px;margin:10px 0}
+.pass h4{color:#1e7e34;margin-bottom:6px}
+.pass ul{margin:6px 0 0 20px;font-size:.95rem}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.disclaimer{font-size:.85rem;color:#6b6250;background:#fffdf7;border:1px dashed #c9a227;border-radius:8px;padding:12px 16px;margin-top:16px}
+.backlink{text-align:center;margin-top:24px}
+.backlink a{color:#8a6d1c}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Cash-Flow Health Check</h1>
+<p class="intro">See exactly where your business cash stands, how long it lasts, and what to fix first. Enter your numbers — the app computes runway, burn rate, and margin, then runs 6 health checks and ranks your risks by urgency.</p>
+
+<div class="appcard">
+<h2>Your numbers</h2>
+<div class="err" id="err" role="alert"></div>
+<div class="frow">
+<label class="fld"><span class="lbl">Monthly revenue</span><span class="hint">Average cash coming in per month</span><input type="number" id="rev" min="0" step="any" inputmode="decimal" placeholder="e.g. 20000"></label>
+<label class="fld"><span class="lbl">Fixed costs / month</span><span class="hint">Rent, payroll, subscriptions — paid whether you sell or not</span><input type="number" id="fixed" min="0" step="any" inputmode="decimal" placeholder="e.g. 8000"></label>
+</div>
+<div class="frow">
+<label class="fld"><span class="lbl">Variable costs / month</span><span class="hint">Materials, contractors, fees that scale with sales</span><input type="number" id="variable" min="0" step="any" inputmode="decimal" placeholder="e.g. 5000"></label>
+<label class="fld"><span class="lbl">Cash on hand</span><span class="hint">Business bank balance right now</span><input type="number" id="cash" min="0" step="any" inputmode="decimal" placeholder="e.g. 30000"></label>
+</div>
+<div class="frow">
+<label class="fld"><span class="lbl">Receivables outstanding</span><span class="hint">Invoiced but not yet paid by customers</span><input type="number" id="recv" min="0" step="any" inputmode="decimal" placeholder="e.g. 25000"></label>
+<label class="fld"><span class="lbl">Largest client share of revenue</span><span class="hint">What % of revenue comes from your single biggest client? (0–100)</span><input type="number" id="clientpct" min="0" max="100" step="any" inputmode="decimal" placeholder="e.g. 50"></label>
+</div>
+<label class="fld"><span class="lbl">Average days to get paid</span><span class="hint">From invoice sent to cash received</span><input type="number" id="dso" min="0" step="any" inputmode="decimal" placeholder="e.g. 60"></label>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn" id="run">Run health check</button>
+<button class="btn ghost" id="reset">Clear</button>
+</div>
+</div>
+
+<div class="appcard" id="results" style="display:none">
+<h2>Your cash-flow report</h2>
+<div class="gradeband">
+<div class="gradecircle" id="gletter">–</div>
+<div>
+<div id="gword" style="font-family:Georgia,serif;font-size:1.5rem;font-weight:bold"></div>
+<div id="gscore" style="color:#6b6250"></div>
+<div id="gline" style="color:#6b6250;max-width:480px"></div>
+</div>
+</div>
+<div class="kpis">
+<div class="kpi"><div class="v" id="k-burn">–</div><div class="k">Monthly burn (expenses)</div></div>
+<div class="kpi"><div class="v" id="k-net">–</div><div class="k">Net cash flow / mo</div></div>
+<div class="kpi"><div class="v" id="k-margin">–</div><div class="k">Net margin</div></div>
+<div class="kpi"><div class="v" id="k-runway">–</div><div class="k">Runway</div></div>
+</div>
+<h3>Risks ranked by urgency</h3>
+<div id="flags"></div>
+<div id="passes"></div>
+<div class="disclaimer"><strong>Educational purposes only.</strong> This is a simple diagnostic model, not professional financial advice. It assumes your monthly numbers stay roughly constant — real cash flow fluctuates. For tax, legal, or major financial decisions, consult a qualified accountant or financial advisor.</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Cash-Flow Health Check is just the start. <em>Starting a Business Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — how to build a business with healthy finances from day one.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/starting-a-business-made-simple/">Get Starting a Business Made Simple — $4.99</a></p>
+</section>
+<p class="backlink"><a href="/apps.html">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-cash-flow-health-check-v1";
+var $=function(id){return document.getElementById(id);};
+function money(n){return "$"+Math.round(n).toLocaleString("en-US");}
+function months(m){if(!isFinite(m))return "∞";var r=Math.round(m*10)/10;return r+(r===1?" month":" months");}
+function sevRank(s){return s==="critical"?0:s==="high"?1:2;}
+
+function readInputs(){
+  var fields=["rev","fixed","variable","cash","recv","clientpct","dso"];
+  var vals={},bad=[];
+  fields.forEach(function(f){
+    var raw=$(f).value.trim();
+    if(raw===""){bad.push(f);return;}
+    var n=Number(raw);
+    if(!isFinite(n)||n<0){bad.push(f);return;}
+    vals[f]=n;
+  });
+  if(vals.clientpct!==undefined&&vals.clientpct>100)bad.push("clientpct");
+  return {vals:vals,bad:bad,fields:fields};
+}
+function showError(bad){
+  var names={rev:"Monthly revenue",fixed:"Fixed costs",variable:"Variable costs",cash:"Cash on hand",recv:"Receivables outstanding",clientpct:"Largest client share (must be 0–100)",dso:"Average days to get paid"};
+  var e=$("err");
+  e.style.display="block";
+  e.textContent="Please fix these fields (enter 0 or a positive number): "+bad.map(function(f){return names[f];}).join(", ");
+}
+function clearError(){$("err").style.display="none";}
+
+function analyze(v){
+  var expenses=v.fixed+v.variable;
+  var net=v.rev-expenses;
+  var margin=v.rev>0?net/v.rev*100:null;
+  var runway=expenses>0?v.cash/expenses:(v.cash>0?Infinity:0);
+  var flags=[],passes=[];
+  // 1. Runway
+  if(expenses<=0){
+    passes.push(["Cash burn","You have no monthly burn — cash is not shrinking."]);
+  }else if(runway<3){
+    var reserve3=3*expenses,short=reserve3-v.cash;
+    flags.push({sev:"critical",title:"Runway under 3 months",
+      why:"At current spending, your cash lasts "+months(runway)+". One bad month could stop the business.",
+      fix:"Build a 3-month reserve of "+money(reserve3)+". You are short by "+money(Math.max(0,short))+". Fastest levers: collect outstanding invoices this week, pause non-essential spending, and delay any big purchase until the reserve is funded."});
+  }else if(runway<6){
+    flags.push({sev:"watch",title:"Runway under 6 months",
+      why:"Your cash lasts "+months(runway)+" — workable, but thin for a downturn.",
+      fix:"Aim for 6 months of expenses in reserve ("+money(6*expenses)+"). Set aside a fixed amount each month until you get there."});
+  }else{
+    passes.push(["Healthy runway","Your cash lasts "+months(runway)+" — a solid buffer."]);
+  }
+  // 2. Burning cash
+  if(net<0){
+    var gap=-net,revPct=v.rev>0?Math.round(gap/v.rev*100):null;
+    flags.push({sev:"critical",title:"Burning cash each month",
+      why:"You spend "+money(expenses)+" but bring in "+money(v.rev)+" — a monthly loss of "+money(gap)+".",
+      fix:"Close the "+money(gap)+"/month gap first. Cut variable costs by "+money(gap)+"/mo, or raise revenue by "+(revPct!==null?revPct+"%":"an equivalent amount")+". The single biggest variable expense is your first place to look."});
+  }else if(net===0){
+    passes.push(["Breaking even","Revenue covers expenses exactly — now build margin."]);
+  }else{
+    passes.push(["Cash-positive month","You keep "+money(net)+" each month ("+(margin!==null?Math.round(margin)+"%":"—")+" margin)."]);
+  }
+  // 3. Client concentration
+  if(v.clientpct>40){
+    var atRisk=v.rev*v.clientpct/100;
+    flags.push({sev:"high",title:"One client is "+Math.round(v.clientpct)+"% of revenue",
+      why:"Losing that client would cut "+money(atRisk)+"/month from revenue instantly.",
+      fix:"Reduce dependence: win 2–3 new clients so no one is above 25%, raise this client's price (they value you most), and put them on a retainer so revenue is contractual, not optional."});
+  }else if(v.clientpct>25){
+    flags.push({sev:"watch",title:"Client concentration is climbing",
+      why:"Your biggest client is "+Math.round(v.clientpct)+"% of revenue — not critical yet, but trending toward the 40% danger line.",
+      fix:"Start diversifying now while it is comfortable, not urgent. One new mid-size client a quarter keeps any single account under 30%."});
+  }else{
+    passes.push(["Diversified revenue","No single client dominates — your biggest is only "+Math.round(v.clientpct)+"% of revenue."]);
+  }
+  // 4. Receivables lag
+  if(v.dso>45){
+    var freed=v.dso>0?v.recv*(v.dso-30)/v.dso:0;
+    flags.push({sev:"high",title:"Clients take "+Math.round(v.dso)+" days to pay",
+      why:money(v.recv)+" of your money is sitting in unpaid invoices instead of your bank.",
+      fix:"Tighten terms: invoice the day work ships, move to Net-15, require 50% deposits on new projects, and add a late fee. If clients paid in 30 days instead of "+Math.round(v.dso)+", you would free about "+money(Math.max(0,freed))+" in cash."});
+  }else{
+    passes.push(["Fast collections","Clients pay in about "+Math.round(v.dso)+" days — cash keeps moving."]);
+  }
+  // 5. Thin margin
+  if(margin!==null&&margin<15&&net>=0){
+    var need=0.20*v.rev-net;
+    flags.push({sev:"watch",title:"Thin margin of "+Math.round(margin)+"%",
+      why:"Healthy small businesses usually target 15–20%+ net margin. Yours leaves little room for a surprise.",
+      fix:"Raising prices just "+Math.ceil(need/v.rev*100)+"% would add "+money(need)+"/month and lift margin to 20%. Alternatively, trim variable costs by "+money(need)+"/month."});
+  }else if(margin!==null&&margin>=15&&net>=0){
+    passes.push(["Healthy margin",Math.round(margin)+"% net margin gives you room to invest and absorb surprises."]);
+  }
+  // 6. Cash trap
+  if(v.recv>v.cash&&v.recv>0){
+    flags.push({sev:"watch",title:"More money stuck in invoices than in the bank",
+      why:"Receivables of "+money(v.recv)+" exceed your cash on hand of "+money(v.cash)+" — your earnings are trapped on paper.",
+      fix:"Offer a 2% early-payment discount, send payment reminders at 7/14/30 days, and stop starting new work for clients with invoices past 60 days."});
+  }else if(v.recv>0){
+    passes.push(["Cash not trapped","Receivables ("+money(v.recv)+") are below cash on hand — your bank balance reflects your earnings."]);
+  }
+  // Grade
+  var score=100;
+  flags.forEach(function(f){score-=f.sev==="critical"?25:f.sev==="high"?15:10;});
+  score=Math.max(0,score);
+  var letter,word,line;
+  if(score>=90){letter="A";word="Cash-Healthy";line="Your cash position is strong. Keep the reserve funded and stay diversified.";}
+  else if(score>=75){letter="B";word="Stable";line="Solid foundation with a few things to watch. Fix the flags above before they grow.";}
+  else if(score>=60){letter="C";word="At Risk";line="Cash is workable but fragile. Address the flagged risks in order this month.";}
+  else if(score>=40){letter="D";word="Fragile";line="Multiple urgent risks. Treat the top flags as this week's priorities.";}
+  else{letter="F";word="Critical";line="Cash is in danger. Act on the critical flags immediately — cut spending and accelerate collections now.";}
+  flags.sort(function(a,b){return sevRank(a.sev)-sevRank(b.sev);});
+  return {expenses:expenses,net:net,margin:margin,runway:runway,flags:flags,passes:passes,score:score,letter:letter,word:word,line:line};
+}
+
+function render(v,r){
+  $("gletter").textContent=r.letter;
+  $("gletter").className="gradecircle g"+r.letter;
+  $("gword").textContent=r.word;
+  $("gscore").textContent="Health score: "+r.score+" / 100";
+  $("gline").textContent=r.line;
+  $("k-burn").textContent=money(r.expenses);
+  $("k-net").textContent=(r.net<0?"−":"")+money(Math.abs(r.net));
+  $("k-net").style.color=r.net<0?"#b02a20":"#1e7e34";
+  $("k-margin").textContent=r.margin===null?"—":Math.round(r.margin)+"%";
+  $("k-runway").textContent=r.runway===Infinity?"Not burning":months(r.runway);
+  var fh=$("flags");fh.innerHTML="";
+  if(r.flags.length===0){
+    fh.innerHTML='<div class="pass"><h4>No red flags</h4><p>All 6 health checks came back clean. Keep monitoring monthly.</p></div>';
+  }else{
+    r.flags.forEach(function(f){
+      var d=document.createElement("div");
+      d.className="flag "+f.sev;
+      var sevlbl=f.sev==="critical"?"Critical":f.sev==="high"?"High priority":"Watch";
+      d.innerHTML='<span class="sev">'+sevlbl+'</span><h4></h4><p></p><div class="fix"><strong>Fix it:</strong> <span></span></div>';
+      d.querySelector("h4").textContent=f.title;
+      d.querySelector("p").textContent=f.why;
+      d.querySelector(".fix span").textContent=f.fix;
+      fh.appendChild(d);
+    });
+  }
+  var ph=$("passes");ph.innerHTML="";
+  if(r.passes.length){
+    var box=document.createElement("div");box.className="pass";
+    box.innerHTML="<h4>What's working ("+r.passes.length+" of 6 checks clean)</h4>";
+    var ul=document.createElement("ul");
+    r.passes.forEach(function(p){
+      var li=document.createElement("li");
+      li.innerHTML="<strong></strong> — <span></span>";
+      li.querySelector("strong").textContent=p[0];
+      li.querySelector("span").textContent=p[1];
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);ph.appendChild(box);
+  }
+  $("results").style.display="block";
+  $("results").scrollIntoView({behavior:"smooth"});
+}
+
+function save(v){
+  try{localStorage.setItem(KEY,JSON.stringify({inputs:v,savedAt:Date.now()}));}catch(e){}
+}
+function load(){
+  try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&s.inputs){return s.inputs;}}catch(e){}
+  return null;
+}
+
+$("run").addEventListener("click",function(){
+  clearError();
+  var r=readInputs();
+  if(r.bad.length){showError(r.bad);return;}
+  save(r.vals);
+  render(r.vals,analyze(r.vals));
+});
+$("reset").addEventListener("click",function(){
+  if(!confirm("Clear all inputs and results?"))return;
+  ["rev","fixed","variable","cash","recv","clientpct","dso"].forEach(function(f){$(f).value="";});
+  $("results").style.display="none";clearError();
+  try{localStorage.removeItem(KEY);}catch(e){}
+});
+// restore saved inputs and re-run automatically
+(function init(){
+  var v=load();
+  if(v){
+    ["rev","fixed","variable","cash","recv","clientpct","dso"].forEach(function(f){if(v[f]!==undefined)$(f).value=v[f];});
+    var ok=["rev","fixed","variable","cash","recv","clientpct","dso"].every(function(f){return typeof v[f]==="number"&&isFinite(v[f])&&v[f]>=0;});
+    if(ok)render(v,analyze(v));
+  }
+})();
+})();
+</script>
+</body>
+</html>
