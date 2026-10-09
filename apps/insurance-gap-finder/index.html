@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insurance Gap Finder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Audit your life, disability, health, and property coverage against your actual needs and find your biggest gaps. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/insurance-gap-finder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Insurance Gap Finder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Audit your life, disability, health, and property coverage against your actual needs and find your biggest gaps. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/insurance-gap-finder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:20px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.3rem;color:#141210;margin-bottom:6px}
+.appcard h3{font-family:Georgia,serif;font-size:1.05rem;color:#141210;margin:16px 0 6px}
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:bold;font-size:.95rem;margin-bottom:2px}
+.field .hint{font-size:.82rem;color:#6b6250;margin-top:2px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+.seg{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.seg button{flex:1;min-width:100px;min-height:48px;border:2px solid #c9a227;border-radius:8px;background:#fff;font-size:.95rem;cursor:pointer;padding:10px}
+.seg button.on{background:#c9a227;font-weight:bold;color:#141210}
+.err{background:#fdecea;border:2px solid #b3402e;border-radius:8px;padding:12px 16px;margin-bottom:16px;color:#7c2418;display:none}
+.err.show{display:block}
+.disclaim{background:#f4efe0;border-left:4px solid #c9a227;padding:12px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5340;margin-bottom:20px}
+.gapcard{border:2px solid #e3d9bd;border-radius:12px;padding:22px;margin-bottom:16px;background:#fff;position:relative}
+.gapcard.rank1{border-color:#b3402e;box-shadow:0 2px 12px rgba(179,64,46,.15)}
+.rankbadge{position:absolute;top:-14px;left:18px;background:#b3402e;color:#fff;font-weight:bold;font-size:.8rem;padding:4px 14px;border-radius:12px}
+.gapcard.rank1 .rankbadge{background:#b3402e}
+.gapcard:not(.rank1) .rankbadge{background:#8a6d1c}
+.pill{display:inline-block;padding:4px 14px;border-radius:14px;font-weight:bold;font-size:.85rem;margin-left:8px}
+.pill.red{background:#fdecea;color:#b3402e}.pill.yellow{background:#fdf3e3;color:#8a5a10}.pill.green{background:#e9f4ec;color:#2e7d4f}
+.math{background:#f4efe0;border-radius:8px;padding:12px 16px;font-size:.92rem;margin:10px 0}
+.math div{display:flex;justify-content:space-between;padding:2px 0}
+.askavoid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media (max-width:560px){.askavoid{grid-template-columns:1fr}}
+.askavoid .col{background:#faf7ef;border-radius:8px;padding:12px 14px;font-size:.9rem}
+.askavoid .col h4{font-size:.9rem;margin-bottom:6px}
+.askavoid .ask h4{color:#2e7d4f}.askavoid .avoid h4{color:#b3402e}
+.askavoid li{margin-bottom:5px;margin-left:18px}
+.covered{background:#e9f4ec;border:2px solid #2e7d4f;border-radius:10px;padding:14px 18px;margin-bottom:12px}
+.assume{font-size:.85rem;color:#6b6250}
+.assume li{margin-bottom:6px}
+.headline{background:#141210;color:#f5efdd;border-radius:10px;padding:22px;margin:18px 0;text-align:center}
+.headline .big{font-family:Georgia,serif;font-size:1.7rem;color:#e8c84a;line-height:1.35}
+.headline p{color:#cbbf9a;font-size:.95rem;margin-top:6px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.hidden{display:none!important}
+@media print{.noprint{display:none!important}main.app{padding:0}.gapcard{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="site noprint"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1 class="noprint">Insurance Gap Finder</h1>
+<p class="intro noprint">Most people are over-insured in one area and dangerously exposed in another. Answer a few questions about your income, dependents, debts, and current policies — this tool estimates what you actually need, scores each area, and ranks your gaps by priority.</p>
+<div class="disclaim noprint"><strong>Educational estimates — not insurance advice.</strong> These are simplified rules of thumb to start a conversation with a licensed agent, not recommendations to buy, drop, or change any policy. See the assumptions before acting.</div>
+
+<div class="appcard noprint" id="form-card">
+<h2>1. About you</h2>
+<div class="field"><label for="g-income">Annual gross income ($)</label><input type="number" id="g-income" min="0" step="1000" value="90000" inputmode="decimal"></div>
+<div class="field"><label for="g-age">Your age</label><input type="number" id="g-age" min="18" max="100" step="1" value="35" inputmode="numeric"></div>
+<div class="field"><label>Does anyone depend on your income?</label><div class="seg" id="g-dependents">
+<button type="button" data-v="none">No dependents</button><button type="button" data-v="spouse" class="on">Spouse / partner</button><button type="button" data-v="kids">Spouse + kids</button></div></div>
+<div class="field"><label for="g-kids">Children under 18 (if any)</label>
+<select id="g-kids"><option value="0">0</option><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4+</option></select></div>
+<div class="field"><label for="g-mortgage">Mortgage balance ($)</label><input type="number" id="g-mortgage" min="0" step="1000" value="250000" inputmode="decimal"></div>
+<div class="field"><label for="g-debts">Other debts — car loans, student loans, credit cards ($)</label><input type="number" id="g-debts" min="0" step="500" value="15000" inputmode="decimal"></div>
+
+<h2 style="margin-top:22px">2. What you already have</h2>
+<div class="field"><label>Employer life insurance</label><div class="seg" id="g-emplife">
+<button type="button" data-v="0">None</button><button type="button" data-v="1" class="on">1× salary</button><button type="button" data-v="2">2× salary</button></div>
+<div class="hint">Most employers provide 1–2× salary free. It ends when you leave the job.</div></div>
+<div class="field"><label for="g-personallife">Personal life insurance (face amount, $)</label><input type="number" id="g-personallife" min="0" step="5000" value="0" inputmode="decimal"></div>
+<div class="field"><label>Employer disability coverage</label><div class="seg" id="g-empdis">
+<button type="button" data-v="0" class="on">None / don't know</button><button type="button" data-v="40">~40% of pay</button><button type="button" data-v="60">~60% of pay</button></div>
+<div class="hint">Group long-term disability usually replaces about 60% of salary — and it's often taxable and capped.</div></div>
+<div class="field"><label for="g-personaldis">Personal disability insurance (monthly benefit, $)</label><input type="number" id="g-personaldis" min="0" step="50" value="0" inputmode="decimal"></div>
+<div class="field"><label>Health insurance</label><div class="seg" id="g-health">
+<button type="button" data-v="yes" class="on">Yes, I have coverage</button><button type="button" data-v="no">No coverage</button></div></div>
+
+<h2 style="margin-top:22px">3. Property &amp; liability</h2>
+<div class="field"><label>Do you rent or own your home?</label><div class="seg" id="g-housing">
+<button type="button" data-v="rent" class="on">Rent</button><button type="button" data-v="own">Own</button></div></div>
+<div class="field" id="renters-wrap"><label>Renters insurance</label><div class="seg" id="g-renters">
+<button type="button" data-v="yes">Yes</button><button type="button" data-v="no" class="on">No</button></div>
+<div class="hint">Typically $15–25/month. Covers your belongings and liability.</div></div>
+<div class="field hidden" id="owners-wrap"><label>Homeowners insurance</label><div class="seg" id="g-homeowners">
+<button type="button" data-v="yes" class="on">Yes</button><button type="button" data-v="no">No</button></div></div>
+<div class="field"><label>Umbrella (excess liability) policy</label><div class="seg" id="g-umbrella">
+<button type="button" data-v="yes">Yes</button><button type="button" data-v="no" class="on">No</button></div>
+<div class="hint">Extra $1M+ liability protection — usually a few hundred dollars a year. Matters most if you own a home, have teen drivers, a dog, or a rental property.</div></div>
+<div class="field"><label>Any of these apply? (teen drivers, dog, rental property, high public profile)</label><div class="seg" id="g-liabrisk">
+<button type="button" data-v="yes">Yes</button><button type="button" data-v="no" class="on">No</button></div></div>
+</div>
+
+<div class="err noprint" id="g-err" role="alert"></div>
+<div class="btnrow noprint">
+<button class="btn" id="g-calc" type="button">Find my gaps</button>
+<button class="btn ghost" id="g-reset" type="button">Reset</button>
+</div>
+
+<div id="g-results" class="hidden">
+<div class="headline" id="g-headline"></div>
+<div id="g-gaps"></div>
+<div class="appcard" id="g-covered-wrap">
+<h2>Areas that look covered</h2>
+<div id="g-covered"></div>
+</div>
+<div class="appcard noprint">
+<h2>Assumptions (read before acting)</h2>
+<ul class="assume">
+<li><strong>Life need</strong> = 10 × annual income + mortgage + other debts − existing coverage. The 10× rule is a common starting point, not a precise measure — it ignores Social Security survivor benefits, college costs, and existing savings.</li>
+<li><strong>Disability need</strong> = 60% of gross monthly income until age 65. This matches what most individual policies target; it ignores taxes, Social Security disability, and employer sick leave.</li>
+<li>Scores compare what you have against these estimates: 80+ = solid, 50–79 = partial, under 50 = exposed.</li>
+<li>Priority ranking puts catastrophic, hard-to-recover risks first (no health coverage, uninsured home), then ranks income-protection gaps by their lifetime dollar size.</li>
+<li>This tool can't see policy fine print — exclusions, waiting periods, and definitions of disability matter enormously. That's what the "ask an agent" lists are for.</li>
+</ul>
+<div class="btnrow"><button class="btn ghost" id="g-print" type="button">Print this report</button></div>
+</div>
+</div>
+
+<section class="appcard noprint" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Insurance Gap Finder is just the start. <em>Insurance Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper — what each policy actually does, how much you need, and how to shop without getting sold.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/insurance-made-simple/">Get Insurance Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px" class="noprint"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="noprint" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site noprint"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-insurance-gap-finder-v1";
+function $(id){return document.getElementById(id);}
+function money(n){return "$"+Math.round(n).toLocaleString("en-US");}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+var ADVICE={
+ life:{title:"Life insurance",
+  why:"If people depend on your income, life insurance replaces the paycheck they'd lose — not just the funeral costs. Employer coverage usually ends when the job does, which is exactly when a family can least afford to lose it.",
+  ask:["How long a term matches my need? (Until the mortgage is paid / kids are grown.)","Is the policy convertible to permanent later without a new medical exam?","What is the insurer's financial strength rating (A.M. Best A or better)?","What are the exclusions — suicide clause period, hazardous activities?"],
+  avoid:["Buying whole or universal life when what you need is pure, cheap protection (term).","Replacing an old policy before the new one is approved and in force.","Counting on accidental-death-only coverage as your main protection — it pays only for accidents."]},
+ disability:{title:"Disability insurance",
+  why:"Your ability to earn is usually your biggest financial asset — bigger than your house. According to the Social Security Administration, about 1 in 4 of today's 20-year-olds will become disabled before reaching retirement age. Disability insurance protects the paycheck everything else depends on.",
+  ask:["Is this 'own occupation' or 'any occupation' — i.e., does it pay if I can't do <i>my</i> job?","How long do benefits last — to age 65, or just 2–5 years?","Is the policy non-cancelable and guaranteed renewable?","What is the elimination (waiting) period, and is there a cost-of-living rider?"],
+  avoid:["Assuming employer group coverage is enough — it's often taxable, capped, and disappears if you leave.","Skipping it because 'I'm healthy' — most disabilities come from illness, not accidents.","Waiting until a health scare — underwriting gets harder and pricier with age."]},
+ health:{title:"Health insurance",
+  why:"One serious illness or accident without coverage can erase a decade of savings. Medical debt remains one of the leading causes of personal bankruptcy. This is the gap to close first if you have one.",
+  ask:["Are my current doctors and hospital in-network?","What's the true worst case: premium × 12 + out-of-pocket maximum?","Is the plan HSA-eligible, and would that save me money?","What are the rules for prescriptions I take regularly?"],
+  avoid:["Short-term or fixed-indemnity plans as permanent coverage — they exclude pre-existing conditions and cap payouts.","Choosing the cheapest premium without checking the deductible and network.","Going uninsured 'to save money' — the risk is asymmetric and catastrophic."]},
+ property:{title:"Property & liability",
+  why:"Renters insurance is the cheapest policy most people skip — often under $25/month for tens of thousands in belongings coverage plus liability. Homeowners without coverage risk the entire asset; either way, liability protection matters if someone is hurt on your property.",
+  ask:["Is coverage based on replacement cost or actual cash value? (Replacement cost is what you want.)","What is the deductible, and what does the liability limit cover?","Are floods, earthquakes, or sewer backups excluded — do I need separate coverage?","For renters: is $30k+ personal property and $100k+ liability enough?"],
+  avoid:["Insuring a home for its market value instead of its rebuild cost.","Assuming the landlord's policy covers your belongings — it doesn't.","Skipping an inventory: photograph each room once a year."]},
+ umbrella:{title:"Umbrella liability",
+  why:"Auto and homeowners policies cap liability — usually at $100k–$300k. A serious accident can blow past that and put your savings, home equity, and future wages at risk. Umbrella coverage adds $1M+ for roughly a few hundred dollars a year.",
+  ask:["What underlying auto/home liability limits does the umbrella require?","Does it cover legal defense costs on top of the limit?","Are there exclusions for my situation (rental property, teen drivers, boats)?"],
+  avoid:["Assuming 'it won't happen to me' — umbrella is cheap precisely because claims are rare but devastating.","Buying it without raising underlying limits to the required minimums first."]}
+};
+
+function segVal(id){var b=document.querySelector("#"+id+" button.on");return b?b.getAttribute("data-v"):null;}
+function segInit(id,cb){
+  Array.prototype.forEach.call(document.querySelectorAll("#"+id+" button"),function(b){
+    b.addEventListener("click",function(){
+      Array.prototype.forEach.call(document.querySelectorAll("#"+id+" button"),function(x){x.classList.remove("on");});
+      b.classList.add("on");cb();
+    });
+  });
+}
+function segSet(id,v){
+  Array.prototype.forEach.call(document.querySelectorAll("#"+id+" button"),function(x){x.classList.toggle("on",x.getAttribute("data-v")===v);});
+}
+segInit("g-dependents",save);segInit("g-emplife",save);segInit("g-empdis",save);segInit("g-health",save);
+segInit("g-umbrella",save);segInit("g-liabrisk",save);
+segInit("g-housing",function(){
+  var h=segVal("g-housing")==="own";
+  $("renters-wrap").classList.toggle("hidden",h);
+  $("owners-wrap").classList.toggle("hidden",!h);
+  save();
+});
+segInit("g-renters",save);segInit("g-homeowners",save);
+
+function num(id){return parseFloat($(id).value);}
+function valid(){
+  var e=[],income=num("g-income"),age=num("g-age");
+  if(isNaN(income)||income<0||income>1e9)e.push("Annual income must be a number between 0 and 1 billion.");
+  if(isNaN(age)||age<18||age>100)e.push("Age must be between 18 and 100.");
+  [["g-mortgage","Mortgage balance"],["g-debts","Other debts"],["g-personallife","Personal life insurance"],["g-personaldis","Personal disability benefit"]].forEach(function(f){
+    var v=num(f[0]);if(isNaN(v)||v<0||v>1e10)e.push(f[1]+" must be a positive number.");
+  });
+  return e;
+}
+function pill(score){var c=score>=80?"green":score>=50?"yellow":"red";var t=score>=80?"Solid":score>=50?"Partial":"Exposed";return '<span class="pill '+c+'">'+t+" · "+score+"</span>";}
+
+function compute(){
+  var income=num("g-income"),age=num("g-age"),mort=num("g-mortgage"),debts=num("g-debts");
+  var dep=segVal("g-dependents"),housing=segVal("g-housing");
+  // life
+  var needLife=income>0&&dep!=="none"?Math.max(0,income*10+mort+debts):0;
+  var haveLife=parseFloat(segVal("g-emplife"))*income+num("g-personallife");
+  var gapLife=Math.max(0,needLife-haveLife);
+  var lifeScore=needLife<=0?100:Math.min(100,Math.round(haveLife/needLife*100));
+  // disability
+  var needDis=income>0?0.60*income/12:0;
+  var haveDis=(parseFloat(segVal("g-empdis"))/100)*income/12+num("g-personaldis");
+  var gapDisM=Math.max(0,needDis-haveDis);
+  var disScore=needDis<=0?100:Math.min(100,Math.round(haveDis/needDis*100));
+  var lifeDisDollars=gapDisM*12*Math.max(1,65-age);
+  // health
+  var noHealth=segVal("g-health")==="no";
+  // property
+  var propNote="",propGap=false,propScore=100;
+  if(housing==="rent"){
+    if(segVal("g-renters")==="no"){propGap=true;propScore=20;propNote="You rent and have no renters insurance — your belongings and personal liability are uncovered.";}
+    else{propNote="Renters insurance in place — the highest-value cheap policy there is.";}
+  }else{
+    if(segVal("g-homeowners")==="no"){propGap=true;propScore=0;propNote="You own a home with no homeowners insurance — the entire asset is exposed.";}
+    else{propScore=80;propNote="Homeowners insurance in place. This tool can't verify your coverage amount matches rebuild cost — ask your agent.";}
+  }
+  // umbrella
+  var umbRec=(housing==="own"||income>150000||segVal("g-liabrisk")==="yes");
+  var noUmb=segVal("g-umbrella")==="no";
+  var umbGap=umbRec&&noUmb;
+  if(umbGap){propScore=Math.max(0,propScore-30);}
+  return {income:income,age:age,dep:dep,needLife:needLife,haveLife:haveLife,gapLife:gapLife,lifeScore:lifeScore,
+    needDis:needDis,haveDis:haveDis,gapDisM:gapDisM,disScore:disScore,lifeDisDollars:lifeDisDollars,
+    noHealth:noHealth,propGap:propGap,propScore:propScore,propNote:propNote,umbGap:umbGap,housing:housing,mort:mort,debts:debts};
+}
+
+function gapCard(rank,title,score,headline,mathLines,why,key){
+  var d=document.createElement("div");d.className="gapcard"+(rank===1?" rank1":"");
+  var adv=ADVICE[key];
+  d.innerHTML='<span class="rankbadge">GAP #'+rank+'</span><h3 style="margin-top:6px">'+esc(title)+pill(score)+'</h3>'+
+   '<p><strong>'+headline+'</strong></p>'+
+   '<div class="math">'+mathLines.map(function(m){return "<div><span>"+m[0]+"</span><strong>"+m[1]+"</strong></div>";}).join("")+"</div>"+
+   '<p style="font-size:.93rem">'+adv.why+'</p>'+
+   '<div class="askavoid"><div class="col ask"><h4>Ask an agent</h4><ul>'+adv.ask.map(function(a){return "<li>"+a+"</li>";}).join("")+'</ul></div>'+
+   '<div class="col avoid"><h4>Watch out for</h4><ul>'+adv.avoid.map(function(a){return "<li>"+esc(a)+"</li>";}).join("")+'</ul></div></div>';
+  return d;
+}
+
+function run(){
+  var errs=valid(),eb=$("g-err");
+  if(errs.length){eb.innerHTML="<strong>Please fix:</strong><ul style='margin:6px 0 0 18px'>"+errs.map(function(m){return "<li>"+esc(m)+"</li>";}).join("")+"</ul>";eb.classList.add("show");return;}
+  eb.classList.remove("show");
+  var r=compute();
+  $("g-results").classList.remove("hidden");
+  var gaps=[],covered=[];
+  // build prioritized list
+  if(r.noHealth)gaps.push({key:"health",sev:1e15,cat:"catastrophic"});
+  if(r.housing==="own"&&r.propGap)gaps.push({key:"property",sev:9e14,cat:"catastrophic"});
+  if(r.gapLife>0)gaps.push({key:"life",sev:r.gapLife,cat:"income"});
+  if(r.gapDisM>0.5)gaps.push({key:"disability",sev:r.lifeDisDollars,cat:"income"});
+  if(r.housing==="rent"&&r.propGap)gaps.push({key:"property",sev:20000,cat:"property"});
+  if(r.umbGap)gaps.push({key:"umbrella",sev:5000,cat:"advisory"});
+  gaps.sort(function(a,b){return b.sev-a.sev;});
+  var box=$("g-gaps");box.innerHTML="";
+  var cov=$("g-covered");cov.innerHTML="";
+  if(!gaps.length){
+    $("g-headline").innerHTML='<div class="big">No major gaps found.</div><p>Against these rules of thumb, your coverage looks solid. Re-run this once a year or after big life changes — marriage, kids, a new mortgage, a new job.</p>';
+  }else{
+    var biggest=gaps[0].key;
+    var names={health:"health coverage",life:"life insurance",disability:"disability insurance",property:"property coverage",umbrella:"umbrella liability"};
+    $("g-headline").innerHTML='<div class="big">Your biggest gap: '+names[biggest]+'.</div><p>'+gaps.length+' area'+(gaps.length>1?"s":"")+' need'+(gaps.length>1?"":"s")+' attention, ranked below by priority. Start at the top.</p>';
+    gaps.forEach(function(g,i){
+      var card;
+      if(g.key==="health")card=gapCard(i+1,"Health insurance",0,"You have no health coverage.",
+        [["Estimated worst-case year uninsured","$50k–$250k+"],["Your current coverage","$0"]],"", "health");
+      else if(g.key==="life")card=gapCard(i+1,"Life insurance",r.lifeScore,"You need about "+money(r.gapLife)+" more coverage.",
+        [["Estimated need (10× income + debts)",money(r.needLife)],["You have (employer + personal)",money(r.haveLife)],["Gap",money(r.gapLife)]],"","life");
+      else if(g.key==="disability")card=gapCard(i+1,"Disability insurance",r.disScore,"You're short about "+money(Math.round(r.gapDisM))+"/month of income protection.",
+        [["Target benefit (60% of pay)",money(Math.round(r.needDis))+"/mo"],["You have",money(Math.round(r.haveDis))+"/mo"],["Monthly gap",money(Math.round(r.gapDisM))+"/mo"],["Lifetime value of gap (to 65)",money(Math.round(r.lifeDisDollars))]],"","disability");
+      else if(g.key==="property")card=gapCard(i+1,r.housing==="own"?"Homeowners insurance":"Renters insurance",r.propScore,r.propNote,[["Your property protection","Uncovered"]],"","property");
+      else card=gapCard(i+1,"Umbrella liability",Math.max(0,r.propScore),"Consider a $1M+ umbrella policy.",
+        [["Typical cost","A few hundred $/year"],["Your extra liability protection","$0"]],"","umbrella");
+      box.appendChild(card);
+    });
+  }
+  // covered
+  function covRow(t,detail){var d=document.createElement("div");d.className="covered";d.innerHTML="<strong>"+esc(t)+"</strong> — "+detail;$("g-covered").appendChild(d);}
+  if(r.gapLife<=0&&r.needLife>0)covRow("Life insurance","You have "+money(r.haveLife)+" against an estimated need of "+money(r.needLife)+". Keep beneficiaries updated.");
+  if(r.needLife<=0)covRow("Life insurance","No dependents on your income — no income-replacement need right now. Revisit if that changes.");
+  if(r.gapDisM<=0.5&&r.needDis>0)covRow("Disability insurance","Your "+money(Math.round(r.haveDis))+"/mo in coverage meets the 60%-of-pay target.");
+  if(!r.noHealth)covRow("Health insurance","Coverage in place. Re-shop the premium/deductible tradeoff once a year.");
+  if(!r.propGap&&!(r.housing==="own"))covRow("Renters insurance","In place — confirm personal-property limits still fit.");
+  if(r.housing==="own"&&segVal("g-homeowners")==="yes")covRow("Homeowners insurance","In place — verify coverage equals rebuild cost, not market value.");
+  if(!r.umbGap)covRow("Umbrella liability",segVal("g-umbrella")==="yes"?"Policy in place.":"Not flagged as a priority for your situation right now.");
+  $("g-covered-wrap").classList.toggle("hidden",$("g-covered").children.length===0);
+  save();
+  $("g-results").scrollIntoView({behavior:"smooth",block:"start"});
+}
+$("g-calc").addEventListener("click",run);
+$("g-reset").addEventListener("click",function(){
+  if(!confirm("Reset the Insurance Gap Finder? Your answers will be cleared."))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  $("g-income").value="90000";$("g-age").value="35";$("g-kids").value="2";
+  $("g-mortgage").value="250000";$("g-debts").value="15000";
+  $("g-personallife").value="0";$("g-personaldis").value="0";
+  segSet("g-dependents","spouse");segSet("g-emplife","1");segSet("g-empdis","0");
+  segSet("g-health","yes");segSet("g-housing","rent");segSet("g-renters","no");
+  segSet("g-homeowners","yes");segSet("g-umbrella","no");segSet("g-liabrisk","no");
+  $("renters-wrap").classList.remove("hidden");$("owners-wrap").classList.add("hidden");
+  $("g-results").classList.add("hidden");$("g-err").classList.remove("show");
+  window.scrollTo(0,0);
+});
+$("g-print").addEventListener("click",function(){window.print();});
+Array.prototype.forEach.call(document.querySelectorAll("#form-card input,#form-card select"),function(n){
+  n.addEventListener("input",save);n.addEventListener("change",save);
+});
+
+/* ---------- persistence ---------- */
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify({
+    income:$("g-income").value,age:$("g-age").value,kids:$("g-kids").value,mort:$("g-mortgage").value,debts:$("g-debts").value,
+    plife:$("g-personallife").value,pdis:$("g-personaldis").value,
+    dep:segVal("g-dependents"),emplife:segVal("g-emplife"),empdis:segVal("g-empdis"),health:segVal("g-health"),
+    housing:segVal("g-housing"),renters:segVal("g-renters"),owners:segVal("g-homeowners"),umb:segVal("g-umbrella"),liab:segVal("g-liabrisk"),
+    ran:$("g-results").classList.contains("hidden")?0:1}));}catch(e){}
+}
+function load(){
+  var d=null;try{d=JSON.parse(localStorage.getItem(KEY));}catch(e){}
+  if(!d)return;
+  $("g-income").value=d.income||"";$("g-age").value=d.age||"";$("g-kids").value=d.kids||"0";
+  $("g-mortgage").value=d.mort||"";$("g-debts").value=d.debts||"";
+  $("g-personallife").value=d.plife||"";$("g-personaldis").value=d.pdis||"";
+  segSet("g-dependents",d.dep||"none");segSet("g-emplife",d.emplife||"0");segSet("g-empdis",d.empdis||"0");
+  segSet("g-health",d.health||"yes");segSet("g-housing",d.housing||"rent");
+  segSet("g-renters",d.renters||"no");segSet("g-homeowners",d.owners||"yes");
+  segSet("g-umbrella",d.umb||"no");segSet("g-liabrisk",d.liab||"no");
+  var h=segVal("g-housing")==="own";
+  $("renters-wrap").classList.toggle("hidden",h);$("owners-wrap").classList.toggle("hidden",!h);
+  if(d.ran)run();
+}
+load();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Identity Theft Recovery Plan | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Build a step-by-step identity theft recovery checklist customized to what happened — lost wallet, breached SSN, fraudulent accounts, or tax fraud — with contacts, scripts, and a progress tracker. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/identity-theft-recovery-plan/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Identity Theft Recovery Plan | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Build a step-by-step identity theft recovery checklist customized to what happened — lost wallet, breached SSN, fraudulent accounts, or tax fraud — with contacts, scripts, and a progress tracker. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/identity-theft-recovery-plan/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.disclaim{background:#fff4e0;border:2px solid #d8a93c;border-radius:12px;padding:16px 20px;margin-bottom:20px;font-size:.9rem;color:#6b5510}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+input[type=text],input[type=date],select,textarea{width:100%;padding:12px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:6px 0}
+label.field{display:block;font-weight:bold;margin-top:12px;font-size:.95rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.82rem}
+.inclist{display:grid;gap:10px;margin:14px 0}
+.inc{border:2px solid #d8cfb0;border-radius:10px;padding:14px 16px;background:#fff;cursor:pointer;display:flex;gap:12px;align-items:flex-start;min-height:44px}
+.inc input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px;cursor:pointer}
+.inc.on{border-color:#c9a227;background:#fdf6e3}
+.inc b{display:block}.inc span{font-size:.88rem;color:#6b6250}
+.step{border:2px solid #d8cfb0;border-radius:10px;background:#fff;margin:12px 0;overflow:hidden}
+.step.done{border-color:#2e7d32;background:#f4faf3}
+.stephead{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;cursor:pointer;min-height:44px}
+.stephead input{width:26px;height:26px;accent-color:#2e7d32;flex-shrink:0;margin-top:2px;cursor:pointer}
+.stephead .n{background:#c9a227;color:#141210;font-weight:bold;border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem}
+.step.done .stephead .n{background:#2e7d32;color:#fff}
+.stephead h3{font-size:1.05rem}
+.stephead .tags{font-size:.8rem;color:#8a6d1c}
+.stepbody{padding:0 16px 16px 58px;font-size:.94rem}
+.stepbody h4{margin:12px 0 4px;font-size:.95rem}
+.stepbody .say{background:#f4f1e6;border-left:4px solid #c9a227;padding:10px 14px;margin:8px 0;font-style:italic}
+.stepbody ul{margin:6px 0 6px 20px}
+.stepbody .docs li{list-style:none;margin:6px 0}
+.stepbody .docs input{width:20px;height:20px;accent-color:#c9a227;vertical-align:middle;margin-right:8px}
+.trackgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+@media(max-width:560px){.trackgrid{grid-template-columns:1fr}}
+.trackgrid label{font-size:.85rem;font-weight:bold;color:#6b6250}
+.trackgrid input{margin-top:2px}
+.phase{font-family:Georgia,serif;font-size:1.25rem;color:#141210;margin:22px 0 6px;border-bottom:2px solid #c9a227;padding-bottom:4px}
+.progbar{background:#eee;border-radius:8px;height:18px;overflow:hidden;margin:10px 0}
+.progbar div{background:#2e7d32;height:100%;width:0;transition:width .3s}
+table.log{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+table.log th,table.log td{border:1px solid #d8cfb0;padding:8px;text-align:left;vertical-align:top}
+table.log th{background:#f4f1e6}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+  header.site,footer.site,.btnrow,.noprint,.devot-block,.disclaim{display:none!important}
+  main.app{max-width:100%;padding:10px}
+  .stepbody{display:block!important}
+  .step{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Identity Theft Recovery Plan</h1>
+<p class="intro">Tell the tool what happened, and it builds your recovery plan in the right order: what to do first, who to contact, exactly what to say, and which documents each step needs. A built-in tracker logs completed steps, reference numbers, and follow-up dates — then prints your contact log.</p>
+<div class="disclaim"><strong>Educational tool, not legal advice.</strong> This plan reflects standard U.S. consumer guidance (FTC, IRS, credit bureaus). Laws and agency procedures change — verify phone numbers and forms on official sites before acting. If losses are large, consider consulting an attorney.</div>
+
+<div class="appcard" id="pickcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">What happened? (check all that apply)</h2>
+<div class="inclist" id="inclist"></div>
+<div class="btnrow"><button class="btn" id="buildbtn">Build my recovery plan</button></div>
+</div>
+
+<div class="appcard" id="plancard" style="display:none">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px">Your recovery plan</h2>
+<p id="plansub" style="color:#6b6250;margin-bottom:8px"></p>
+<div class="progbar"><div id="progfill"></div></div>
+<p id="progtext" style="font-size:.9rem;color:#6b6250"></p>
+<div id="plansteps"></div>
+<div class="btnrow noprint">
+<button class="btn ghost" id="editbtn">Change what happened</button>
+<button class="btn ghost" id="printbtn">Print plan + contact log</button>
+<button class="btn ghost" id="resetbtn">Start over</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Identity Theft Recovery Plan is just the start. <em>Identity Theft Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — prevention, detection, and recovery explained step by step.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/identity-theft-made-simple/">Get Identity Theft Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devot-block" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action. This app is for educational purposes only and is not legal or financial advice. Phone numbers change — verify all contact numbers on the agencies' official websites before calling.</p>
+</div></footer>
+<script>
+var KEY="app-identity-theft-recovery-plan-v1";
+var INCIDENTS=[
+ {id:"wallet",t:"Lost or stolen wallet / purse",d:"Cards, license, and possibly other ID documents are in someone else's hands."},
+ {id:"ssn",t:"SSN exposed in a data breach",d:"Your Social Security number was leaked — the key to opening accounts in your name."},
+ {id:"fraudacct",t:"Fraudulent accounts opened in my name",d:"You see accounts, loans, or inquiries you never authorized."},
+ {id:"tax",t:"Tax identity fraud",d:"A return was filed in your name, or the IRS flagged suspicious tax activity."}];
+/* Step: id, phase, title, for:[incidents], contact, say, docs[], note */
+var STEPS=[
+{id:"freeze",phase:"Stop the bleeding — today",title:"Freeze your credit at all three bureaus",fors:["wallet","ssn","fraudacct","tax"],
+ contact:"Equifax 1-800-525-6285 · Experian 1-888-397-3742 · TransUnion 1-800-680-7289 (or freeze online at each bureau's site — free by federal law)",
+ say:"\u201cI'd like to place a security freeze on my credit file. My identity may have been compromised.\u201d Keep the PIN each bureau gives you — you'll need it to lift the freeze later.",
+ docs:["Full name, SSN, date of birth","Current and previous addresses","A copy of a government photo ID"],
+ note:"A freeze blocks new creditors from seeing your file, which stops most new-account fraud cold. Also ask one bureau to add a fraud alert — that bureau must notify the other two."},
+{id:"ftc",phase:"Stop the bleeding — today",title:"File an Identity Theft Report with the FTC",fors:["wallet","ssn","fraudacct","tax"],
+ contact:"IdentityTheft.gov (online) — free",
+ say:"Walk through the guided report; it generates a personalized recovery plan and an Identity Theft Affidavit — your official proof of the crime.",
+ docs:["Details of what happened and when","Any fraudulent account numbers you know of","The affidavit the site generates (save/print it)"],
+ note:"The FTC affidavit plus a police report unlocks stronger rights: 7-year extended fraud alerts and the ability to block fraudulent info on your credit file."},
+{id:"police",phase:"Stop the bleeding — today",title:"File a police report",fors:["wallet","fraudacct"],
+ contact:"Your local police non-emergency line (call, don't use 911)",
+ say:"\u201cI'd like to report identity theft. I have my FTC Identity Theft Affidavit.\u201d Bring the affidavit and ID; get the report number and a copy.",
+ docs:["FTC Identity Theft Affidavit","Government photo ID","Proof of address","List of fraudulent accounts/transactions"],
+ note:"Some departments take the report by phone or online. A police report number strengthens every dispute you file next."},
+{id:"cards",phase:"Stop the bleeding — today",title:"Cancel and replace bank + credit cards",fors:["wallet"],
+ contact:"The fraud/lost-card number on your bank's website (use the number you look up, not one from a text)",
+ say:"\u201cMy wallet was lost/stolen. Please cancel my cards, issue replacements, and review recent transactions for fraud.\u201d",
+ docs:["Account numbers (from statements or the bank app)","List of automatic payments tied to old card numbers"],
+ note:"Ask each issuer to flag the account and send written confirmation. Update autopay subscriptions with new card numbers."},
+{id:"license",phase:"Clean up — this week",title:"Replace your driver's license / state ID",fors:["wallet"],
+ contact:"Your state DMV (many allow online replacement)",
+ say:"Replacement for a lost/stolen license. Ask whether your state flags licenses reported stolen.",
+ docs:["Proof of identity (passport, birth certificate)","Proof of address","Police report number, if you have one"],
+ note:"A stolen license can be used for in-person fraud — replacing it quickly limits the window."},
+{id:"dispute",phase:"Clean up — this week",title:"Dispute fraudulent accounts with the credit bureaus",fors:["fraudacct"],
+ contact:"Equifax, Experian, TransUnion dispute departments (mail is best — creates a paper trail)",
+ say:"Written dispute: \u201cI am a victim of identity theft. The attached accounts are not mine. Please block/remove them under the Fair Credit Reporting Act.\u201d Include affidavit + police report + ID.",
+ docs:["FTC Identity Theft Affidavit","Police report","Government photo ID + proof of address","List of fraudulent accounts with dates"],
+ note:"Bureaus must investigate within 30 days. Send disputes by certified mail and keep copies of everything."},
+{id:"frauddept",phase:"Clean up — this week",title:"Close fraudulent accounts at the source",fors:["fraudacct"],
+ contact:"The fraud department of each company where an account was opened (find the number on the company's official site)",
+ say:"\u201cAn account was opened in my name fraudulently. Please close it, confirm in writing that I'm not liable, and send me a letter of clearance.\u201d Get a reference number.",
+ docs:["FTC Identity Theft Affidavit","Police report number","Any account numbers or confirmation emails"],
+ note:"Get the \u201cnot liable\u201d confirmation IN WRITING — collectors may come after the debt later."},
+{id:"chex",phase:"Clean up — this week",title:"Check ChexSystems (bank-account fraud)",fors:["fraudacct","wallet"],
+ contact:"ChexSystems 1-800-887-7652 or consumerdebit.com — free report + security freeze available",
+ say:"Request your free consumer report and ask about placing a security freeze on your ChexSystems file.",
+ docs:["SSN, name, address","Photo ID if disputing by mail"],
+ note:"Thieves also open checking accounts. ChexSystems is the credit bureau for bank accounts — most people never check it."},
+{id:"irspin",phase:"Lock the future — ongoing",title:"Get an IRS Identity Protection PIN (IP PIN)",fors:["ssn","tax"],
+ contact:"irs.gov/ippin (online; free)",
+ say:"Enroll online to receive a new 6-digit IP PIN each year. File Form 14039 (Identity Theft Affidavit) if tax fraud already occurred.",
+ docs:["SSN","Filing status and address from last return","Form 14039 if filing by mail"],
+ note:"An IP PIN stops anyone else from e-filing a return with your SSN — the single strongest tax-fraud defense."},
+{id:"ssa",phase:"Lock the future — ongoing",title:"Review your Social Security earnings record",fors:["ssn","fraudacct"],
+ contact:"ssa.gov/myaccount — create or log in to your my Social Security account",
+ say:"Check that all employers and earnings listed are actually yours. Report anything unfamiliar to the SSA fraud line.",
+ docs:["SSN","An email address you control (lock the account with two-factor)"],
+ note:"Thieves sometimes work under stolen SSNs for years. Catching it early protects your future benefits."},
+{id:"monitor",phase:"Lock the future — ongoing",title:"Monitor credit reports quarterly",fors:["wallet","ssn","fraudacct","tax"],
+ contact:"AnnualCreditReport.com — free reports from all three bureaus weekly",
+ say:"Pull one bureau's report every four months (rotating) so you're checking year-round.",
+ docs:["A calendar reminder or the follow-up dates you log below"],
+ note:"Freezing stops new accounts, but monitoring catches anything that slipped through — set a recurring reminder."},
+{id:"fileearly",phase:"Lock the future — ongoing",title:"File taxes early every year",fors:["ssn","tax"],
+ contact:"Your tax preparer or IRS Free File (irs.gov)",
+ say:"Once your SSN is exposed, filing early each year beats the thief to your return.",
+ docs:["Your annual IP PIN","W-2s and 1099s as they arrive"],
+ note:"Pair this with the IP PIN — early filing plus the PIN makes tax identity fraud extremely difficult."},
+{id:"med",phase:"Lock the future — ongoing",title:"Watch for medical identity theft",fors:["ssn","wallet"],
+ contact:"Your health insurer and providers — request an accounting of disclosures",
+ say:"\u201cI'd like a list of all claims and disclosures on my account for the past year to verify they're mine.\u201d",
+ docs:["Explanation-of-benefits statements","Insurer fraud hotline number (on your card)"],
+ note:"Medical ID theft corrupts your health records — wrong blood type or allergies in your file can be dangerous, not just expensive."}];
+var sel=[],prog={}; // prog: {stepId:{done,ref,follow,docs:[bool]}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({sel:sel,prog:prog}));}catch(e){}}
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&s.sel){sel=s.sel;prog=s.prog||{};}}catch(e){}}
+function planSteps(){return STEPS.filter(function(s){return s.fors.some(function(f){return sel.indexOf(f)>=0;});});}
+function drawIncidents(){var box=document.getElementById("inclist");box.innerHTML="";
+  INCIDENTS.forEach(function(ic){var lab=document.createElement("label");lab.className="inc"+(sel.indexOf(ic.id)>=0?" on":"");
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=sel.indexOf(ic.id)>=0;
+    cb.setAttribute("aria-label",ic.t);
+    cb.addEventListener("change",function(){if(cb.checked&&sel.indexOf(ic.id)<0)sel.push(ic.id);
+      if(!cb.checked)sel=sel.filter(function(x){return x!==ic.id;});
+      lab.classList.toggle("on",cb.checked);save();});
+    var sp=document.createElement("span");sp.innerHTML="<b>"+ic.t+"</b><span>"+ic.d+"</span>";
+    lab.appendChild(cb);lab.appendChild(sp);box.appendChild(lab);});}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function drawPlan(){var steps=planSteps();
+  document.getElementById("pickcard").style.display="none";
+  document.getElementById("plancard").style.display="block";
+  var names=sel.map(function(id){var f=INCIDENTS.filter(function(i){return i.id===id;})[0];return f?f.t:"";});
+  document.getElementById("plansub").textContent="Built for: "+names.join(" · ")+" — "+steps.length+" steps in priority order.";
+  var box=document.getElementById("plansteps");box.innerHTML="";
+  var lastPhase="";
+  steps.forEach(function(st,i){var p=prog[st.id]||{};prog[st.id]=p;
+    if(st.phase!==lastPhase){lastPhase=st.phase;
+      var ph=document.createElement("div");ph.className="phase";ph.textContent=st.phase;box.appendChild(ph);}
+    var d=document.createElement("div");d.className="step"+(p.done?" done":"");d.id="step-"+st.id;
+    var head=document.createElement("div");head.className="stephead";
+    head.innerHTML="<span class='n'>"+(i+1)+"</span><div><h3>"+esc(st.title)+"</h3><div class='tags'>"+st.contact+"</div></div>";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!p.done;cb.setAttribute("aria-label","Mark step complete: "+st.title);
+    head.insertBefore(cb,head.firstChild);
+    cb.addEventListener("click",function(ev){ev.stopPropagation();});
+    cb.addEventListener("change",function(){p.done=cb.checked;d.classList.toggle("done",p.done);save();drawProg();});
+    var body=document.createElement("div");body.className="stepbody";body.style.display="none";
+    var tags=st.fors.map(function(f){var m=INCIDENTS.filter(function(x){return x.id===f;})[0];return m?m.t:"";}).join(" · ");
+    body.innerHTML="<h4>Who to contact</h4><p>"+esc(st.contact)+"</p>"+
+      "<h4>What to say</h4><div class='say'>"+esc(st.say)+"</div>"+
+      "<h4>Documents to gather</h4><ul class='docs'>"+st.docs.map(function(doc,di){
+        var checked=(p.docs&&p.docs[di])?"checked":"";
+        return "<li><label><input type='checkbox' data-d='"+di+"' "+checked+"> "+esc(doc)+"</label></li>";}).join("")+"</ul>"+
+      "<h4>Why this matters</h4><p>"+esc(st.note)+"</p>"+
+      "<p style='font-size:.82rem;color:#8a6d1c;margin-top:8px'>Applies to: "+esc(tags)+"</p>"+
+      "<div class='trackgrid'><label>Reference / confirmation #<input type='text' data-f='ref' value='"+esc(p.ref||"")+"' placeholder='e.g. police report #'></label>"+
+      "<label>Follow-up date<input type='date' data-f='follow' value='"+esc(p.follow||"")+"'></label></div>";
+    body.querySelectorAll("input[data-d]").forEach(function(dc){dc.addEventListener("change",function(){
+      p.docs=p.docs||[];p.docs[parseInt(dc.getAttribute("data-d"),10)]=dc.checked;save();});});
+    body.querySelectorAll("input[data-f]").forEach(function(fi){fi.addEventListener("input",function(){
+      p[fi.getAttribute("data-f")]=fi.value;save();});});
+    head.addEventListener("click",function(){body.style.display=body.style.display==="none"?"block":"none";});
+    d.appendChild(head);d.appendChild(body);box.appendChild(d);});
+  drawProg();save();}
+function drawProg(){var steps=planSteps();var done=steps.filter(function(s){return prog[s.id]&&prog[s.id].done;}).length;
+  var pct=steps.length?Math.round(100*done/steps.length):0;
+  document.getElementById("progfill").style.width=pct+"%";
+  document.getElementById("progtext").textContent=done+" of "+steps.length+" steps complete ("+pct+"%).";}
+function resetAll(){sel=[];prog={};try{localStorage.removeItem(KEY);}catch(e){}drawIncidents();
+  document.getElementById("plancard").style.display="none";
+  document.getElementById("pickcard").style.display="block";
+  document.getElementById("pickcard").scrollIntoView();}
+document.getElementById("buildbtn").addEventListener("click",function(){
+  if(!sel.length){alert("Please check at least one thing that happened, then build your plan.");return;}
+  drawPlan();document.getElementById("plancard").scrollIntoView();});
+document.getElementById("editbtn").addEventListener("click",function(){
+  document.getElementById("plancard").style.display="none";
+  document.getElementById("pickcard").style.display="block";
+  document.getElementById("pickcard").scrollIntoView();});
+document.getElementById("resetbtn").addEventListener("click",function(){
+  if(confirm("Clear your selections and tracker progress?"))resetAll();});
+document.getElementById("printbtn").addEventListener("click",function(){
+  document.querySelectorAll(".stepbody").forEach(function(b){b.style.display="block";});
+  window.print();});
+load();drawIncidents();
+if(sel.length){drawPlan();}
+</script>
+</body>
+</html>

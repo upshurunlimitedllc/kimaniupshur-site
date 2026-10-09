@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diversification Checker | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Enter your holdings and get a concentration-risk score: hidden overlaps, sector bets, and asset-class gaps flagged in plain language with rebalancing ideas. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/diversification-checker/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diversification Checker | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Enter your holdings and get a concentration-risk score: hidden overlaps, sector bets, and asset-class gaps flagged in plain language with rebalancing ideas. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/diversification-checker/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:8px 16px;min-height:44px;font-size:.9rem}
+input[type=text],input[type=number],select{width:100%;padding:12px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:6px 0}
+label.field{display:block;font-weight:bold;margin-top:10px;font-size:.9rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.8rem}
+.notice{background:#fdecea;border:2px solid #b3261e;color:#7a1a14;border-radius:10px;padding:16px;margin-bottom:20px;font-size:.92rem}
+.notice strong{display:block;margin-bottom:4px}
+.disclaimer{background:#f7f1df;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5236;margin-top:18px}
+.hidden{display:none!important}
+.holding{border:1px solid #e3d9b8;border-radius:10px;padding:16px;margin:12px 0;background:#fff}
+.holding h3{font-size:1rem;margin-bottom:6px;color:#141210}
+.hrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.hrow{grid-template-columns:1fr}}
+.modetoggle{display:flex;gap:8px;margin:10px 0}
+.modetoggle button{flex:1;padding:12px;border:2px solid #c9a227;background:transparent;border-radius:8px;font-weight:bold;color:#8a6d1c;cursor:pointer;min-height:48px;font-size:.95rem}
+.modetoggle button.on{background:#c9a227;color:#141210}
+.scorewrap{text-align:center;margin:8px 0 16px}
+.scorenum{font-family:Georgia,serif;font-size:3.2rem;font-weight:bold;line-height:1}
+.scorelabel{font-weight:bold;font-size:1.1rem;margin-top:4px}
+.meter{height:22px;background:linear-gradient(90deg,#2e7d32,#c9a227,#b3261e);border-radius:11px;margin:12px 0 4px;position:relative}
+.meter .pin{position:absolute;top:-6px;width:4px;height:34px;background:#141210;border-radius:2px}
+.flag{background:#fff;border:1px solid #e3d9b8;border-left:4px solid #b3261e;border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0;font-size:.93rem}
+.flag.warn{border-left-color:#c9a227}
+.flag.good{border-left-color:#2e7d32}
+ul.tips{margin:8px 0 8px 20px;font-size:.93rem}
+ul.tips li{margin:6px 0}
+.splitbar{display:flex;height:36px;border-radius:8px;overflow:hidden;border:2px solid #c9a227;margin:10px 0;font-size:.8rem;font-weight:bold}
+.splitbar div{display:flex;align-items:center;justify-content:center;color:#fff;min-width:0;overflow:hidden;white-space:nowrap}
+.err{color:#b3261e;font-weight:bold;margin-top:10px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Diversification Checker</h1>
+<p class="intro">Enter what you own and this tool hunts for hidden concentration risk: one holding dominating everything, two funds secretly owning the same stocks, a whole portfolio betting on one sector or one country.</p>
+<div class="notice" role="alert"><strong>Educational purposes only — not financial or investment advice.</strong> This models general diversification concepts from the information you enter. It is not a recommendation to buy, sell, or hold anything. Consider talking with a qualified financial professional before making changes.</div>
+
+<div class="appcard" id="inputCard">
+<h2 style="font-family:Georgia,serif;font-size:1.3rem;margin-bottom:4px">Your holdings</h2>
+<p style="color:#6b6250;font-size:.92rem;margin-bottom:8px">Add each fund, stock, or cash position. Your best guess at the category is fine — the flags explain themselves.</p>
+<div class="modetoggle" role="group" aria-label="Amount entry mode">
+<button type="button" id="modeDollars" class="on">Enter dollar amounts</button>
+<button type="button" id="modePct">Enter percentages</button>
+</div>
+<div id="holdings"></div>
+<button class="btn ghost small" id="addHolding">+ Add a holding</button>
+<div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn" id="analyzeBtn">Check my diversification</button>
+<button class="btn ghost" id="resetBtn">Clear all</button>
+</div>
+<p class="err hidden" id="inputErr" role="alert"></p>
+</div>
+
+<div class="appcard hidden" id="resultsCard" aria-live="polite">
+<h2 style="font-family:Georgia,serif;font-size:1.3rem;margin-bottom:4px">Concentration-risk score</h2>
+<div class="scorewrap">
+<div class="scorenum" id="scoreNum"></div>
+<div class="scorelabel" id="scoreLabel"></div>
+<small style="color:#6b6250">0 = well spread out &nbsp;·&nbsp; 100 = dangerously concentrated</small>
+<div class="meter" aria-hidden="true"><div class="pin" id="scorePin"></div></div>
+</div>
+<h3 style="font-size:1.05rem;margin-top:14px">Where your money sits</h3>
+<div class="splitbar" id="assetBar" aria-hidden="true"></div>
+<p id="assetText" style="font-size:.92rem;color:#5c5236"></p>
+<h3 style="font-size:1.05rem;margin-top:14px">Flags</h3>
+<div id="flags"></div>
+<h3 style="font-size:1.05rem;margin-top:14px">Plain-language rebalancing ideas</h3>
+<ul class="tips" id="suggest"></ul>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn ghost" id="editBtn">Edit my holdings</button>
+</div>
+</div>
+
+<div class="disclaimer"><strong>Assumptions behind this tool.</strong> Categories come from your selections \u2014 the tool cannot see inside your funds. Overlap detection only uses the top-holding names you type. The score is a transparent rule-based sum (single-position size, asset-class mix, U.S. large-cap weight, international share, sector bets, fund overlap, holding count, cash drag, unclassified weight), capped at 100. It is educational modeling, not professional financial or investment advice.</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Diversification, asset allocation, and rebalancing are explained step by step in <em>Investing Made Simple</em> by Kimani Upshur, M.Ed.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/investing-made-simple/">Get Investing Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-diversification-checker-v1";
+var CATS=[
+ ["cash","Cash & equivalents (savings, money market)"],
+ ["usbond","U.S. bond fund / ETF"],
+ ["intlbond","International bond fund / ETF"],
+ ["uslarge","U.S. large-cap stock fund (total market, S&P 500)"],
+ ["ussmid","U.S. small/mid-cap stock fund"],
+ ["intldev","International developed-markets stock fund"],
+ ["intlem","International emerging-markets stock fund"],
+ ["sectorfund","Sector or thematic fund"],
+ ["indstock","Individual stock"],
+ ["other","Other / not sure"]
+];
+var SECTORS=["Technology","Healthcare","Financials","Energy","Consumer discretionary","Consumer staples","Industrials","Utilities","Real estate","Communication services","Materials"];
+var STOCKS=["uslarge","ussmid","intldev","intlem","sectorfund","indstock"];
+var BONDS=["usbond","intlbond"];
+var S={mode:"dollars",holdings:[]};
+try{var sv=JSON.parse(localStorage.getItem(KEY)||"null");if(sv&&typeof sv==="object"){if(sv.mode)S.mode=sv.mode;if(Array.isArray(sv.holdings))S.holdings=sv.holdings;}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function uid(){return "h"+Math.random().toString(36).slice(2,10);}
+function blankHolding(){return{id:uid(),name:"",amount:"",cat:"uslarge",sector:"Technology",region:"us",top:""};}
+function pct1(n){return (Math.round(n*10)/10)+"%";}
+function renderHoldings(){
+  var box=document.getElementById("holdings");box.innerHTML="";
+  document.getElementById("modeDollars").classList.toggle("on",S.mode==="dollars");
+  document.getElementById("modePct").classList.toggle("on",S.mode==="pct");
+  if(!S.holdings.length)S.holdings=[blankHolding(),blankHolding(),blankHolding()];
+  S.holdings.forEach(function(h,idx){
+    var d=document.createElement("div");d.className="holding";
+    var t=document.createElement("h3");t.textContent="Holding "+(idx+1);d.appendChild(t);
+    var lab=document.createElement("label");lab.className="field";lab.textContent="Name";lab.setAttribute("for","nm_"+h.id);
+    var nm=document.createElement("input");nm.type="text";nm.id="nm_"+h.id;nm.placeholder="e.g. Total Stock Market Index Fund";nm.value=h.name;
+    nm.setAttribute("aria-label","Holding "+(idx+1)+" name");
+    nm.addEventListener("input",function(){h.name=nm.value;save();});
+    lab.appendChild(nm);d.appendChild(lab);
+    var row=document.createElement("div");row.className="hrow";
+    var c1=document.createElement("div");
+    var l1=document.createElement("label");l1.className="field";l1.textContent=S.mode==="dollars"?"Amount ($)":"Percent (%)";l1.setAttribute("for","am_"+h.id);
+    var am=document.createElement("input");am.type="text";am.id="am_"+h.id;am.inputmode="decimal";am.placeholder=S.mode==="dollars"?"e.g. 25000":"e.g. 40";am.value=h.amount;
+    am.setAttribute("aria-label","Holding "+(idx+1)+" amount");
+    am.addEventListener("input",function(){h.amount=am.value;save();});
+    l1.appendChild(am);c1.appendChild(l1);row.appendChild(c1);
+    var c2=document.createElement("div");
+    var l2=document.createElement("label");l2.className="field";l2.textContent="Category";l2.setAttribute("for","ct_"+h.id);
+    var ct=document.createElement("select");ct.id="ct_"+h.id;ct.setAttribute("aria-label","Holding "+(idx+1)+" category");
+    CATS.forEach(function(c){var o=document.createElement("option");o.value=c[0];o.textContent=c[1];if(h.cat===c[0])o.selected=true;ct.appendChild(o);});
+    ct.addEventListener("change",function(){h.cat=ct.value;save();renderHoldings();});
+    l2.appendChild(ct);c2.appendChild(l2);row.appendChild(c2);
+    d.appendChild(row);
+    if(h.cat==="indstock"||h.cat==="sectorfund"){
+      var row2=document.createElement("div");row2.className="hrow";
+      var c3=document.createElement("div");
+      var l3=document.createElement("label");l3.className="field";l3.textContent="Sector";l3.setAttribute("for","sc_"+h.id);
+      var sc=document.createElement("select");sc.id="sc_"+h.id;sc.setAttribute("aria-label","Holding "+(idx+1)+" sector");
+      SECTORS.forEach(function(s){var o=document.createElement("option");o.value=s;o.textContent=s;if(h.sector===s)o.selected=true;sc.appendChild(o);});
+      sc.addEventListener("change",function(){h.sector=sc.value;save();});
+      l3.appendChild(sc);c3.appendChild(l3);row2.appendChild(c3);
+      if(h.cat==="indstock"){
+        var c4=document.createElement("div");
+        var l4=document.createElement("label");l4.className="field";l4.textContent="Region";l4.setAttribute("for","rg_"+h.id);
+        var rg=document.createElement("select");rg.id="rg_"+h.id;rg.setAttribute("aria-label","Holding "+(idx+1)+" region");
+        [["us","U.S. company"],["intl","International company"]].forEach(function(r){var o=document.createElement("option");o.value=r[0];o.textContent=r[1];if(h.region===r[0])o.selected=true;rg.appendChild(o);});
+        rg.addEventListener("change",function(){h.region=rg.value;save();});
+        l4.appendChild(rg);c4.appendChild(l4);row2.appendChild(c4);
+      }
+      d.appendChild(row2);
+    }
+    if(STOCKS.indexOf(h.cat)>=0){
+      var lt=document.createElement("label");lt.className="field";lt.setAttribute("for","tp_"+h.id);
+      lt.innerHTML="Top holdings (optional)<small>For overlap detection: list this fund's top 3\u20135 holdings, separated by commas (e.g. Apple, Microsoft, Nvidia). Found on any fund's web page.</small>";
+      var tp=document.createElement("input");tp.type="text";tp.id="tp_"+h.id;tp.placeholder="e.g. Apple, Microsoft, Nvidia";tp.value=h.top;
+      tp.setAttribute("aria-label","Holding "+(idx+1)+" top holdings");
+      tp.addEventListener("input",function(){h.top=tp.value;save();});
+      lt.appendChild(tp);d.appendChild(lt);
+    }
+    if(S.holdings.length>1){
+      var rm=document.createElement("button");rm.type="button";rm.className="btn ghost small";rm.textContent="Remove this holding";rm.style.marginTop="10px";
+      rm.setAttribute("aria-label","Remove holding "+(idx+1));
+      rm.addEventListener("click",function(){S.holdings=S.holdings.filter(function(x){return x.id!==h.id;});save();renderHoldings();});
+      d.appendChild(rm);
+    }
+    box.appendChild(d);
+  });
+}
+document.getElementById("modeDollars").addEventListener("click",function(){S.mode="dollars";save();renderHoldings();});
+document.getElementById("modePct").addEventListener("click",function(){S.mode="pct";save();renderHoldings();});
+document.getElementById("addHolding").addEventListener("click",function(){S.holdings.push(blankHolding());save();renderHoldings();});
+document.getElementById("resetBtn").addEventListener("click",function(){
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={mode:"dollars",holdings:[]};
+  renderHoldings();
+  document.getElementById("resultsCard").classList.add("hidden");
+  var e=document.getElementById("inputErr");e.classList.add("hidden");
+  window.scrollTo(0,0);
+});
+document.getElementById("editBtn").addEventListener("click",function(){
+  document.getElementById("resultsCard").classList.add("hidden");
+  document.getElementById("inputCard").scrollIntoView();
+});
+function err(msg){var e=document.getElementById("inputErr");if(msg){e.textContent=msg;e.classList.remove("hidden");}else{e.textContent="";e.classList.add("hidden");}}
+function parseHoldings(){
+  var out=[],problems=[];
+  S.holdings.forEach(function(h,i){
+    var a=parseFloat(String(h.amount).replace(/[^0-9.]/g,""));
+    if(!isFinite(a)||a<0){problems.push("Holding "+(i+1)+" ("+(h.name||"unnamed")+") has no valid amount \u2014 treated as $0.");a=0;}
+    out.push({name:h.name||("Holding "+(i+1)),amt:a,cat:h.cat,sector:h.sector,region:h.region,top:h.top});
+  });
+  return{rows:out,problems:problems};
+}
+function analyze(){
+  err(null);
+  var p=parseHoldings();
+  var rows=p.rows.filter(function(r){return r.amt>0;});
+  if(!rows.length){err("Enter at least one holding with an amount greater than zero.");return;}
+  var total=rows.reduce(function(s,r){return s+r.amt;},0);
+  var pctSum=null;
+  if(S.mode==="pct"){
+    pctSum=rows.reduce(function(s,r){return s+r.amt;},0);
+  }
+  rows.forEach(function(r){r.pct=r.amt/total*100;});
+  var cls={stocks:0,bonds:0,cash:0,other:0};
+  rows.forEach(function(r){
+    if(STOCKS.indexOf(r.cat)>=0)cls.stocks+=r.pct;
+    else if(BONDS.indexOf(r.cat)>=0)cls.bonds+=r.pct;
+    else if(r.cat==="cash")cls.cash+=r.pct;
+    else cls.other+=r.pct;
+  });
+  var usLarge=0;rows.forEach(function(r){if(r.cat==="uslarge"||r.cat==="sectorfund")usLarge+=r.pct;});
+  var intlStocks=0;rows.forEach(function(r){
+    if(r.cat==="intldev"||r.cat==="intlem")intlStocks+=r.pct;
+    else if(r.cat==="indstock"&&r.region==="intl")intlStocks+=r.pct;
+  });
+  var maxHold=rows.reduce(function(m,r){return r.pct>m.pct?r:m;},rows[0]);
+  var sectorMap={};
+  rows.forEach(function(r){
+    if(r.cat==="indstock"||r.cat==="sectorfund"){sectorMap[r.sector]=(sectorMap[r.sector]||0)+r.pct;}
+  });
+  var topSector=null,topSectorPct=0;
+  for(var s in sectorMap){if(sectorMap[s]>topSectorPct){topSectorPct=sectorMap[s];topSector=s;}}
+  // overlap detection from user-supplied top holdings
+  function normList(t){return String(t||"").split(",").map(function(x){return x.trim().toLowerCase();}).filter(function(x){return x.length>1;});}
+  var holderOf={};
+  rows.forEach(function(r){
+    normList(r.top).forEach(function(n){
+      holderOf[n]=holderOf[n]||[];
+      if(holderOf[n].indexOf(r.name)<0)holderOf[n].push(r.name);
+    });
+  });
+  var overlaps=[];
+  for(var n in holderOf){if(holderOf[n].length>1)overlaps.push({stock:n,holders:holderOf[n]});}
+  // ---- score ----
+  var score=0,why=[];
+  function add(pts,reason){score+=pts;why.push(reason);}
+  if(maxHold.pct>50)add(30,"One holding is over half the portfolio");
+  else if(maxHold.pct>35)add(20,"Largest holding is over 35%");
+  else if(maxHold.pct>25)add(12,"Largest holding is over 25%");
+  else if(maxHold.pct>20)add(6,"Largest holding is over 20%");
+  if(cls.stocks>=99.5)add(12,"100% in stocks \u2014 no bonds or cash cushion");
+  else if(cls.stocks>90)add(6,"Over 90% in stocks");
+  if(usLarge>70)add(12,"Over 70% in U.S. large-cap style holdings");
+  else if(usLarge>60)add(8,"Over 60% in U.S. large-cap style holdings");
+  else if(usLarge>50)add(4,"Over half in U.S. large-cap style holdings");
+  if(cls.stocks>0){
+    var intlShare=intlStocks/cls.stocks;
+    if(intlShare<0.10)add(8,"Under 10% of stocks are international");
+    else if(intlShare<0.20)add(4,"Under 20% of stocks are international");
+  }
+  if(topSectorPct>30)add(15,"One sector is over 30% of the portfolio");
+  else if(topSectorPct>20)add(8,"One sector is over 20% of the portfolio");
+  else if(topSectorPct>10)add(4,"One sector is over 10% of the portfolio");
+  var ovPts=Math.min(16,overlaps.length*8);
+  if(ovPts)add(ovPts,overlaps.length+" overlapping top holding"+(overlaps.length>1?"s":"")+" across funds");
+  if(rows.length<3)add(8,"Fewer than 3 holdings");
+  else if(rows.length<=4)add(4,"Only "+rows.length+" holdings");
+  if(cls.cash>20)add(6,"Over 20% sitting in cash");
+  if(cls.other>25)add(5,"Over 25% unclassified (\u201cother\u201d)");
+  score=Math.min(100,Math.round(score));
+  // ---- render ----
+  document.getElementById("scoreNum").textContent=score;
+  var label=score<=20?"Well diversified":score<=40?"Mild concentration":score<=60?"Moderate concentration":score<=80?"High concentration":"Severe concentration";
+  document.getElementById("scoreLabel").textContent=label;
+  document.getElementById("scoreLabel").style.color=score<=20?"#2e7d32":score<=60?"#8a6d1c":"#b3261e";
+  document.getElementById("scorePin").style.left="calc("+score+"% - 2px)";
+  var bar=document.getElementById("assetBar");bar.innerHTML="";
+  [["Stocks",cls.stocks,"#2e7d32"],["Bonds",cls.bonds,"#8a6d1c"],["Cash",cls.cash,"#b0a684"],["Other",cls.other,"#999"]].forEach(function(seg){
+    if(seg[1]<0.5)return;
+    var d=document.createElement("div");d.style.width=seg[1]+"%";d.style.background=seg[2];
+    d.textContent=seg[1]>=8?(seg[0]+" "+pct1(seg[1])):"";
+    d.title=seg[0]+": "+pct1(seg[1]);bar.appendChild(d);
+  });
+  document.getElementById("assetText").textContent=
+    "Stocks "+pct1(cls.stocks)+" \u00b7 Bonds "+pct1(cls.bonds)+" \u00b7 Cash "+pct1(cls.cash)+" \u00b7 Other "+pct1(cls.other)+
+    " across "+rows.length+" holding"+(rows.length>1?"s":"")+".";
+  var flags=document.getElementById("flags");flags.innerHTML="";
+  function flag(html,level){
+    var d=document.createElement("div");d.className="flag"+(level?" "+level:"");d.innerHTML=html;flags.appendChild(d);
+  }
+  if(pctSum!==null&&Math.abs(pctSum-100)>1)flag("<strong>Percentages add to "+pct1(pctSum)+", not 100%.</strong> Results are scaled to what you entered, but double-check the numbers.","warn");
+  p.problems.forEach(function(m){flag(m,"warn");});
+  flag("<strong>"+pct1(maxHold.pct)+"</strong> of your portfolio is in a single holding: \u201c"+maxHold.name+".\u201d"+(maxHold.pct>25?" That is a lot riding on one position.":""),maxHold.pct>25?"":"good");
+  if(usLarge>50)flag("<strong>"+pct1(usLarge)+" of your portfolio is U.S. large-cap style.</strong> Big American companies dominate \u2014 smaller companies and the rest of the world are underrepresented.","warn");
+  if(cls.stocks>0&&intlStocks/cls.stocks<0.20)flag("Only <strong>"+pct1(intlStocks)+"</strong> is in international stocks ("+pct1(cls.stocks?intlStocks/cls.stocks*100:0)+" of your stock portion). The U.S. is not the whole world economy.","warn");
+  if(topSector&&topSectorPct>10)flag("<strong>"+pct1(topSectorPct)+" sits in one sector ("+topSector+").</strong> A sector slump would hit harder than a broad-market dip.","warn");
+  overlaps.forEach(function(o){
+    flag("<strong>Hidden overlap:</strong> \u201c"+o.stock+"\u201d appears in the top holdings of "+o.holders.map(function(h){return "\u201c"+h+"\u201d";}).join(" and ")+". You may own the same stock twice without realizing it.");
+  });
+  if(cls.bonds<5&&cls.stocks>50)flag("Almost no bonds ("+pct1(cls.bonds)+"). Bonds will not make you rich, but they cushion the falls \u2014 worth considering as a stabilizer.","warn");
+  if(cls.cash>20)flag(pct1(cls.cash)+" is in cash. Fine for an emergency fund, but cash sitting inside an investment portfolio quietly loses buying power over time.","warn");
+  if(score<=20)flag("No major concentration issues detected. The boring portfolio is usually the winning portfolio.","good");
+  var sg=document.getElementById("suggest");sg.innerHTML="";
+  var ideas=[];
+  if(maxHold.pct>25)ideas.push("Consider trimming the largest position toward 10\u201320% of the portfolio and spreading the rest across your other holdings.");
+  if(usLarge>60)ideas.push("Add exposure beyond U.S. large-caps \u2014 for example an international stock fund or a small/mid-cap fund \u2014 so one corner of the market is not the whole bet.");
+  if(cls.stocks>0&&intlStocks/cls.stocks<0.20)ideas.push("Many educators suggest 20\u201340% of the stock portion in international stocks as a starting range for discussion with a professional.");
+  if(topSectorPct>20)ideas.push("Reduce the "+topSector+" bet by directing new contributions to broader funds instead of selling everything at once.");
+  if(overlaps.length)ideas.push("For overlapping funds, compare their top-10 holdings lists: if two funds are 80%+ the same, one of them may be redundant.");
+  if(cls.bonds<5&&cls.stocks>50)ideas.push("Even a 10\u201320% bond allocation can smooth the ride without giving up much long-term growth \u2014 a model range, not a prescription.");
+  if(cls.cash>20)ideas.push("Decide what the cash is for: emergency fund (keep it) vs. waiting-to-invest (set a date to put it to work).");
+  if(rows.length<5)ideas.push("You do not need dozens of holdings \u2014 three to six broad funds can cover stocks, bonds, and international exposure.");
+  ideas.push("Rebalance once a year: sell a little of what grew, buy a little of what lagged, back toward your target mix.");
+  ideas.forEach(function(t){var li=document.createElement("li");li.textContent=t;sg.appendChild(li);});
+  document.getElementById("resultsCard").classList.remove("hidden");
+  document.getElementById("resultsCard").scrollIntoView();
+  save();
+}
+document.getElementById("analyzeBtn").addEventListener("click",analyze);
+renderHoldings();
+</script>
+</body>
+</html>

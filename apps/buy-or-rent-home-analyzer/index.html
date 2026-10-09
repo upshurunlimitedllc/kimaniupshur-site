@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy or Rent Home Analyzer | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Compare buying vs. renting in your market: enter home price, mortgage, taxes, and rent to get a year-by-year cost chart, break-even timeline, and a plain-language verdict. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/buy-or-rent-home-analyzer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Buy or Rent Home Analyzer | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Compare buying vs. renting in your market: enter home price, mortgage, taxes, and rent to get a year-by-year cost chart, break-even timeline, and a plain-language verdict. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/buy-or-rent-home-analyzer/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:860px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.disclaim{background:#fff4e0;border:2px solid #d8a93c;border-radius:12px;padding:16px 20px;margin-bottom:20px;font-size:.9rem;color:#6b5510}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:12px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:6px 0}
+label.field{display:block;font-weight:bold;margin-top:12px;font-size:.95rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.82rem}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+@media(max-width:560px){.fgrid{grid-template-columns:1fr}}
+.fsec{font-family:Georgia,serif;font-size:1.15rem;margin:20px 0 4px;border-bottom:2px solid #c9a227;padding-bottom:4px}
+.verdict{font-family:Georgia,serif;font-size:1.5rem;text-align:center;line-height:1.4;margin:8px 0 4px}
+.verdict small{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:.95rem;color:#6b6250;margin-top:8px}
+.chartwrap{overflow-x:auto;margin:14px 0}
+table.data{width:100%;border-collapse:collapse;font-size:.88rem;margin:12px 0}
+table.data th,table.data td{border:1px solid #d8cfb0;padding:7px 9px;text-align:right}
+table.data th{background:#f4f1e6;text-align:right}
+table.data td:first-child,table.data th:first-child{text-align:center}
+table.data tr.win-buy td{background:#eef6ec}
+table.data tr.win-rent td{background:#fdf6e3}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem;margin:6px 0}
+.legend i{display:inline-block;width:22px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.err{color:#b3261e;font-weight:bold;font-size:.9rem;margin-top:6px}
+.warn{background:#fff4e0;border:1px solid #d8a93c;border-radius:8px;padding:10px 14px;font-size:.88rem;margin:10px 0}
+ul.assump{margin:8px 0 8px 20px;font-size:.9rem;color:#5b5340}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+  header.site,footer.site,.btnrow,.noprint,.devot-block,.disclaim,#inputcard{display:none!important}
+  main.app{max-width:100%;padding:10px}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Buy or Rent Home Analyzer</h1>
+<p class="intro">Enter your numbers and see buying vs. renting charted year by year — including the costs people forget (closing costs, selling costs, maintenance). You get a break-even timeline and a plain-language verdict. Educational modeling, not financial advice.</p>
+<div class="disclaim"><strong>Educational modeling only — not financial advice.</strong> This tool uses standard mortgage amortization and stated assumptions below. Real markets differ; taxes, insurance, and HOA fees vary widely. Talk to a qualified professional before a purchase decision.</div>
+
+<div class="appcard" id="inputcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your numbers</h2>
+<div class="fsec">The home (buying side)</div>
+<div class="fgrid">
+<div><label class="field">Home price ($)<input type="number" id="f_price" value="400000" min="1"></label></div>
+<div><label class="field">Down payment (%)<input type="number" id="f_down" value="20" min="0" max="100"></label></div>
+<div><label class="field">Mortgage rate (APR %)<input type="number" id="f_rate" value="7" min="0" max="25" step="0.125"></label></div>
+<div><label class="field">Loan term (years)<select id="f_term"><option>15</option><option selected>30</option></select></label></div>
+<div><label class="field">Property tax (% of value / yr)<input type="number" id="f_tax" value="1.1" min="0" max="5" step="0.05"></label></div>
+<div><label class="field">Homeowner's insurance ($ / yr)<input type="number" id="f_ins" value="1800" min="0"></label></div>
+<div><label class="field">Maintenance (% of value / yr)<small>1% is the standard rule of thumb</small><input type="number" id="f_maint" value="1" min="0" max="5" step="0.1"></label></div>
+<div><label class="field">HOA ($ / mo, 0 if none)<input type="number" id="f_hoa" value="0" min="0"></label></div>
+<div><label class="field">Closing costs (% of price)<input type="number" id="f_close" value="3" min="0" max="10" step="0.25"></label></div>
+<div><label class="field">Selling costs (% of price)<small>Agent commissions + fees</small><input type="number" id="f_sell" value="8" min="0" max="15" step="0.25"></label></div>
+<div><label class="field">Home appreciation (% / yr)<input type="number" id="f_app" value="3" min="-10" max="20" step="0.5"></label></div>
+</div>
+<div class="fsec">Renting side</div>
+<div class="fgrid">
+<div><label class="field">Current rent ($ / mo)<input type="number" id="f_rent" value="2600" min="0"></label></div>
+<div><label class="field">Rent growth (% / yr)<input type="number" id="f_rgrowth" value="3" min="-10" max="20" step="0.5"></label></div>
+<div><label class="field">Investment return (% / yr)<small>What the renter earns on the invested down payment + monthly savings</small><input type="number" id="f_inv" value="7" min="0" max="15" step="0.5"></label></div>
+<div><label class="field">Years to analyze<input type="number" id="f_years" value="10" min="1" max="30"></label></div>
+</div>
+<div class="err" id="err"></div>
+<div class="btnrow"><button class="btn" id="gobtn">Analyze buy vs. rent</button></div>
+</div>
+
+<div class="appcard" id="outcard" style="display:none">
+<h2 style="font-family:Georgia,serif">The verdict</h2>
+<p class="verdict" id="verdict"></p>
+<div id="warns"></div>
+<div class="fsec">Cumulative net cost: buying vs. renting</div>
+<div class="legend"><span><i style="background:#2e7d32"></i>Buying (net of equity)</span><span><i style="background:#c9a227"></i>Renting (net of investment growth)</span></div>
+<div class="chartwrap" id="chart"></div>
+<div class="fsec">Year-by-year breakdown</div>
+<div class="chartwrap"><table class="data" id="ytable"><thead><tr><th>Year</th><th>Buying<br>(net)</th><th>Renting<br>(net)</th><th>Cheaper</th></tr></thead><tbody></tbody></table></div>
+<div class="fsec">Key numbers</div>
+<div id="keynums"></div>
+<div class="fsec">Assumptions behind this model</div>
+<ul class="assump" id="assump"></ul>
+<div class="btnrow noprint">
+<button class="btn ghost" id="editbtn">Edit my numbers</button>
+<button class="btn ghost" id="printbtn">Print this analysis</button>
+<button class="btn ghost" id="resetbtn">Reset</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Buy or Rent Home Analyzer is just the start. <em>Home Buying Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — the full buying process explained in plain language.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/home-buying-made-simple/">Get Home Buying Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devot-block" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action. This app is for educational purposes only and is not financial, tax, or real-estate advice.</p>
+</div></footer>
+<script>
+var KEY="app-buy-or-rent-home-analyzer-v1";
+var F=["f_price","f_down","f_rate","f_term","f_tax","f_ins","f_maint","f_hoa","f_close","f_sell","f_app","f_rent","f_rgrowth","f_inv","f_years"];
+function num(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?NaN:v;}
+function fmt(x){var neg=x<0;var s=Math.abs(Math.round(x)).toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");return (neg?"-$":"$")+s;}
+function save(){try{var o={};F.forEach(function(id){o[id]=document.getElementById(id).value;});localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
+function load(){try{var o=JSON.parse(localStorage.getItem(KEY));if(o)F.forEach(function(id){if(o[id]!==undefined)document.getElementById(id).value=o[id];});}catch(e){}}
+/* Standard fixed-rate mortgage math */
+function pmt(principal,aprPct,termYrs){
+  var P=principal,n=termYrs*12;
+  if(n<=0)return 0;
+  if(aprPct<=0)return P/n;
+  var r=aprPct/100/12;
+  return P*r/(1-Math.pow(1+r,-n));
+}
+function balance(principal,aprPct,termYrs,k){
+  var P=principal,n=termYrs*12;
+  if(k>=n)return 0;
+  if(aprPct<=0)return P*(1-k/n);
+  var r=aprPct/100/12,M=pmt(principal,aprPct,termYrs);
+  return P*Math.pow(1+r,k)-M*(Math.pow(1+r,k)-1)/r;
+}
+// per-year investment contributions for the renting side (down payment + monthly savings)
+var contribTrack=[];
+function analyze2(){
+  contribTrack=[];
+  var price=num("f_price"),downPct=num("f_down"),rate=num("f_rate"),term=num("f_term"),
+      taxR=num("f_tax")/100,ins=num("f_ins"),maintR=num("f_maint")/100,hoa=num("f_hoa"),
+      closeR=num("f_close")/100,sellR=num("f_sell")/100,appR=num("f_app")/100,
+      rent0=num("f_rent"),rgrow=num("f_rgrowth")/100,invR=num("f_inv")/100,years=Math.round(num("f_years"));
+  var err=document.getElementById("err");
+  function fail(m){err.textContent=m;return null;}
+  if(isNaN(price)||price<=0)return fail("Please enter a home price greater than $0.");
+  var checks=[["f_down",downPct,0,100],["f_rate",rate,0,25],["f_tax",taxR*100,0,5],["f_ins",ins,0,1e8],["f_maint",maintR*100,0,5],["f_hoa",hoa,0,1e7],["f_close",closeR*100,0,10],["f_sell",sellR*100,0,15],["f_rent",rent0,0,1e8],["f_inv",invR*100,0,50]];
+  for(var i=0;i<checks.length;i++){var c=checks[i];if(isNaN(c[1])||c[1]<c[2]||c[1]>c[3])return fail("The value for "+c[0].replace("f_","")+" looks out of range — please check it.");}
+  if(isNaN(years)||years<1||years>30)return fail("Years to analyze must be between 1 and 30.");
+  if(isNaN(rgrow)||rgrow<-0.5||rgrow>0.5)return fail("Rent growth looks out of range (-50% to 50%).");
+  if(isNaN(appR)||appR<-0.5||appR>0.5)return fail("Home appreciation looks out of range (-50% to 50%).");
+  err.textContent="";
+  var down=price*downPct/100,loan=price-down,closing=price*closeR;
+  var M=pmt(loan,rate,term);
+  var rows=[],cumBuyMonthly=0,cumRent=0,invV=down,contrib=down;
+  for(var y=1;y<=years;y++){
+    var buyYear=0;
+    for(var m=(y-1)*12;m<y*12;m++){
+      var hv=price*Math.pow(1+appR,m/12);
+      var bm=M+(hv*taxR/12)+(ins/12)+(hv*maintR/12)+hoa;
+      var rm=rent0*Math.pow(1+rgrow,m/12);
+      buyYear+=bm;cumRent+=rm;cumBuyMonthly+=bm;
+      var d=bm-rm;if(d>0){invV+=d;contrib+=d;}
+      invV*=Math.pow(1+invR,1/12);
+    }
+    contribTrack.push(contrib);
+    var hvEnd=price*Math.pow(1+appR,y);
+    var bal=balance(loan,rate,term,y*12);
+    var equity=hvEnd*(1-sellR)-bal;
+    var buyNet=down+closing+cumBuyMonthly-equity;
+    var rentNet=cumRent-(invV-contrib);
+    rows.push({y:y,buyNet:buyNet,rentNet:rentNet,hv:hvEnd,bal:bal,invVal:invV});
+  }
+  var be=null;
+  for(var k=0;k<rows.length;k++){if(rows[k].buyNet<=rows[k].rentNet){be=rows[k].y;break;}}
+  return {rows:rows,be:be,down:down,closing:closing,M:M,loan:loan,
+    inputs:{price:price,downPct:downPct,rate:rate,term:term,taxR:taxR,ins:ins,maintR:maintR,hoa:hoa,closeR:closeR,sellR:sellR,appR:appR,rent0:rent0,rgrow:rgrow,invR:invR,years:years}};
+}
+function drawChart(res){
+  var rows=res.rows,W=680,H=340,pl=64,pr=14,pt=18,pb=44;
+  var maxV=0;rows.forEach(function(r){maxV=Math.max(maxV,r.buyNet,r.rentNet);});
+  maxV=Math.ceil(maxV/50000)*50000||50000;
+  function X(y){return pl+(W-pl-pr)*(y-1)/Math.max(1,res.inputs.years-1);}
+  function Y(v){return H-pb-(H-pt-pb)*v/maxV;}
+  var s="<svg viewBox='0 0 "+W+" "+H+"' style='width:100%;max-width:680px;height:auto' role='img' aria-label='Cumulative cost chart'>";
+  for(var g=0;g<=4;g++){var gv=maxV*g/4;
+    s+="<line x1='"+pl+"' y1='"+Y(gv)+"' x2='"+(W-pr)+"' y2='"+Y(gv)+"' stroke='#e3ddc8' stroke-width='1'/>"+
+       "<text x='"+(pl-6)+"' y='"+(Y(gv)+4)+"' font-size='11' text-anchor='end' fill='#6b6250'>$"+Math.round(gv/1000)+"k</text>";}
+  var step=Math.ceil(res.inputs.years/10);
+  for(var yy=1;yy<=res.inputs.years;yy+=step){
+    s+="<text x='"+X(yy)+"' y='"+(H-pb+18)+"' font-size='11' text-anchor='middle' fill='#6b6250'>Yr "+yy+"</text>";}
+  s+="<text x='"+X(res.inputs.years)+"' y='"+(H-pb+34)+"' font-size='11' text-anchor='middle' fill='#6b6250'>years</text>";
+  function path(key){var d="";rows.forEach(function(r,i){d+=(i?"L":"M")+X(r.y).toFixed(1)+","+Y(r[key]).toFixed(1)+" ";});return d;}
+  s+="<path d='"+path("rentNet")+"' fill='none' stroke='#c9a227' stroke-width='3'/>";
+  s+="<path d='"+path("buyNet")+"' fill='none' stroke='#2e7d32' stroke-width='3'/>";
+  rows.forEach(function(r){s+="<circle cx='"+X(r.y)+"' cy='"+Y(r.buyNet)+"' r='3.5' fill='#2e7d32'/><circle cx='"+X(r.y)+"' cy='"+Y(r.rentNet)+"' r='3.5' fill='#c9a227'/>";});
+  if(res.be){s+="<line x1='"+X(res.be)+"' y1='"+pt+"' x2='"+X(res.be)+"' y2='"+(H-pb)+"' stroke='#b3261e' stroke-dasharray='5,4' stroke-width='2'/>"+
+    "<text x='"+X(res.be)+"' y='"+(pt+2)+"' font-size='11' text-anchor='middle' fill='#b3261e'>break-even</text>";}
+  s+="</svg>";
+  document.getElementById("chart").innerHTML=s;
+}
+function render(res){
+  document.getElementById("inputcard").style.display="none";
+  var oc=document.getElementById("outcard");oc.style.display="block";
+  var v=document.getElementById("verdict"),inp=res.inputs;
+  if(res.be===1){v.innerHTML="Buying wins from year 1.<small>With these numbers, buying is cheaper than renting in every year analyzed — mostly because rent is high relative to the purchase price. Buying still ties up your down payment and carries maintenance risk.</small>";}
+  else if(res.be){v.innerHTML="Buying wins if you stay "+res.be+"+ years; renting wins below that.<small>Year "+res.be+" is the break-even point — the first year buying's total net cost drops below renting's. Move sooner than that and renting leaves you better off.</small>";}
+  else{v.innerHTML="Renting wins across all "+inp.years+" years analyzed.<small>With these numbers, buying never catches up within the window — usually because the home is expensive relative to rent, rates are high, or you move too soon for equity to build. Try a longer horizon or different numbers.</small>";}
+  var warns=document.getElementById("warns");warns.innerHTML="";
+  if(inp.downPct<20)warns.innerHTML+="<div class='warn'><strong>Note:</strong> with less than 20% down, most loans add PMI (private mortgage insurance) — this model does not include it, so buying looks slightly cheaper than reality.</div>";
+  if(inp.rate===0)warns.innerHTML+="<div class='warn'><strong>Note:</strong> a 0% rate is unusual — results assume interest-free borrowing.</div>";
+  drawChart(res);
+  var tb=document.querySelector("#ytable tbody");tb.innerHTML="";
+  res.rows.forEach(function(r){var tr=document.createElement("tr");
+    var cheaper=r.buyNet<=r.rentNet;
+    tr.className=cheaper?"win-buy":"win-rent";
+    tr.innerHTML="<td>"+r.y+"</td><td>"+fmt(r.buyNet)+"</td><td>"+fmt(r.rentNet)+"</td><td>"+(cheaper?"Buy":"Rent")+"</td>";
+    tb.appendChild(tr);});
+  var last=res.rows[res.rows.length-1];
+  var diff=Math.abs(last.buyNet-last.rentNet);
+  var kn=document.getElementById("keynums");
+  kn.innerHTML="<table class='data'><tbody>"+
+    "<tr><td style='text-align:left'>Monthly mortgage payment (P&amp;I)</td><td>"+fmt(res.M)+"</td></tr>"+
+    "<tr><td style='text-align:left'>Cash needed day one (down payment + closing)</td><td>"+fmt(res.down+res.closing)+"</td></tr>"+
+    "<tr><td style='text-align:left'>Home value at year "+inp.years+"</td><td>"+fmt(last.hv)+"</td></tr>"+
+    "<tr><td style='text-align:left'>Loan balance at year "+inp.years+"</td><td>"+fmt(last.bal)+"</td></tr>"+
+    "<tr><td style='text-align:left'>Net cost gap at year "+inp.years+" ("+(last.buyNet<=last.rentNet?"buying ahead":"renting ahead")+")</td><td>"+fmt(diff)+"</td></tr>"+
+    "</tbody></table>";
+  document.getElementById("assump").innerHTML=
+    "<li>Fixed-rate mortgage, standard amortization: payment = P&times;r/(1&minus;(1+r)<sup>&minus;n</sup>), balance tracked monthly.</li>"+
+    "<li>Property tax and maintenance are charged on the home's <em>current</em> value each month; insurance is flat; HOA is flat.</li>"+
+    "<li>Buying net cost = down payment + closing costs + all monthly housing costs &minus; equity at sale (home value minus selling costs minus loan balance).</li>"+
+    "<li>Renting net cost = total rent paid &minus; investment growth: the renter invests the down payment plus any monthly savings (buy cost minus rent) at "+(inp.invR*100)+"%/yr.</li>"+
+    "<li>Not modeled: income-tax effects, PMI (flagged above), moving costs, renters insurance, or the value of your time spent on maintenance.</li>"+
+    "<li>All growth rates are constant — real markets move in cycles. Treat the verdict as a planning guide, not a prediction.</li>";
+  oc.scrollIntoView();save();
+}
+document.getElementById("gobtn").addEventListener("click",function(){var r=analyze2();if(r)render(r);else document.getElementById("outcard").style.display="none";});
+document.getElementById("editbtn").addEventListener("click",function(){
+  document.getElementById("outcard").style.display="none";
+  document.getElementById("inputcard").style.display="block";
+  document.getElementById("inputcard").scrollIntoView();});
+document.getElementById("printbtn").addEventListener("click",function(){window.print();});
+document.getElementById("resetbtn").addEventListener("click",function(){
+  if(confirm("Reset all inputs to defaults?")){try{localStorage.removeItem(KEY);}catch(e){}
+    location.reload();}});
+load();
+F.forEach(function(id){document.getElementById(id).addEventListener("input",save);});
+</script>
+</body>
+</html>

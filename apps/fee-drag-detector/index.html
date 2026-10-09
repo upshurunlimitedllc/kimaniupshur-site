@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fee Drag Detector | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="See how much investment fees will cost you over your lifetime versus a low-cost alternative. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/fee-drag-detector/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fee Drag Detector | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="See how much investment fees will cost you over your lifetime versus a low-cost alternative. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/fee-drag-detector/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:20px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.3rem;color:#141210;margin-bottom:6px}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;color:#141210;margin:18px 0 8px}
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:bold;font-size:.95rem;margin-bottom:2px}
+.field .hint{font-size:.82rem;color:#6b6250;margin-top:2px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+input[type=checkbox]{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+.err{background:#fdecea;border:2px solid #b3402e;border-radius:8px;padding:12px 16px;margin-bottom:16px;color:#7c2418;display:none}
+.err.show{display:block}
+.disclaim{background:#f4efe0;border-left:4px solid #c9a227;padding:12px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5340;margin-bottom:20px}
+.fundrow{border:2px solid #e3d9bd;border-radius:10px;padding:14px;margin-bottom:12px;background:#fff}
+.fundrow .frow-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.fundrow .frow-head strong{font-family:Georgia,serif}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+@media (max-width:560px){.grid2{grid-template-columns:1fr}}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+@media (max-width:560px){.statgrid{grid-template-columns:1fr}}
+.stat{background:#fff;border:2px solid #e3d9bd;border-radius:10px;padding:14px}
+.stat .v{font-family:Georgia,serif;font-size:1.35rem;color:#141210}
+.stat .l{font-size:.82rem;color:#6b6250}
+.headline{background:#141210;color:#f5efdd;border-radius:10px;padding:22px;margin:18px 0;text-align:center}
+.headline .big{font-family:Georgia,serif;font-size:2rem;color:#e8c84a;line-height:1.3}
+.headline p{color:#cbbf9a;font-size:.95rem;margin-top:6px}
+canvas.chart{width:100%;height:340px;display:block;background:#fff;border:2px solid #e3d9bd;border-radius:10px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0;font-size:.9rem}
+.legend .sw{display:inline-block;width:22px;height:12px;border-radius:3px;margin-right:6px;vertical-align:middle}
+table.data{width:100%;border-collapse:collapse;margin-top:12px;font-size:.92rem}
+table.data th,table.data td{border:1px solid #e3d9bd;padding:8px 10px;text-align:right}
+table.data th{background:#f4efe0;color:#141210}
+table.data td:first-child,table.data th:first-child{text-align:left}
+.verdict{border-radius:10px;padding:18px;margin:18px 0;font-size:1rem}
+.verdict.good{background:#e9f4ec;border:2px solid #2e7d4f}
+.verdict.warn{background:#fdf3e3;border:2px solid #c9861a}
+.verdict.bad{background:#fdecea;border:2px solid #b3402e}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #eee}
+.checkrow:last-child{border-bottom:none}
+.checkrow input{margin-top:4px}
+.checkrow.done span{color:#8a8474;text-decoration:line-through}
+.assume{font-size:.85rem;color:#6b6250}
+.assume li{margin-bottom:6px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.hidden{display:none!important}
+@media print{.noprint{display:none!important}main.app{padding:0}.appcard{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Fee Drag Detector</h1>
+<p class="intro">A 1% fee sounds small. Over 30 years, it can quietly cost you six figures. Enter your funds, your contributions, and your time horizon — this tool projects what fees will actually cost you, side by side with a low-cost alternative.</p>
+<div class="disclaim"><strong>Educational modeling only — not financial advice.</strong> This is a simplified projection, not a prediction. See the assumptions at the bottom before making any investment decision.</div>
+
+<div class="appcard">
+<h2>1. Your situation</h2>
+<div class="grid2">
+<div class="field"><label for="f-portfolio">Current portfolio value ($)</label>
+<input type="number" id="f-portfolio" min="0" step="100" value="50000" inputmode="decimal"></div>
+<div class="field"><label for="f-contrib">Monthly contribution ($)</label>
+<input type="number" id="f-contrib" min="0" step="25" value="500" inputmode="decimal"></div>
+</div>
+<div class="grid2">
+<div class="field"><label for="f-years">Time horizon</label>
+<select id="f-years"><option value="20">20 years</option><option value="25" selected>25 years</option><option value="30">30 years</option><option value="35">35 years</option><option value="40">40 years</option></select></div>
+<div class="field"><label for="f-return">Assumed annual return before fees (%)</label>
+<input type="number" id="f-return" min="0.1" max="15" step="0.1" value="7" inputmode="decimal">
+<div class="hint">Long-run U.S. stock market average is roughly 7–10% nominal. 7% is conservative.</div></div>
+</div>
+</div>
+
+<div class="appcard">
+<h2>2. Your funds' fees</h2>
+<p style="color:#6b6250;font-size:.95rem;margin-bottom:12px">List the funds you hold (up to 3) with each fund's <strong>expense ratio</strong> — the % the fund takes every year. Pick a common example or type your own. Allocations must add up to 100%.</p>
+<div id="funds"></div>
+<div class="btnrow"><button class="btn ghost" id="add-fund" type="button">+ Add a fund</button></div>
+<p id="alloc-note" style="margin-top:10px;font-weight:bold"></p>
+</div>
+
+<div class="appcard">
+<h2>3. The low-cost alternative</h2>
+<div class="field"><label for="f-altfee">Alternative's expense ratio (%)</label>
+<input type="number" id="f-altfee" min="0" max="2" step="0.01" value="0.05" inputmode="decimal">
+<div class="hint">Broad index funds commonly charge 0.03%–0.10%. Adjust if your plan's cheapest option is different.</div></div>
+</div>
+
+<div class="err" id="errbox" role="alert"></div>
+<div class="btnrow noprint">
+<button class="btn" id="calc" type="button">Show me the fee drag</button>
+<button class="btn ghost" id="reset" type="button">Reset</button>
+</div>
+
+<div id="results" class="hidden">
+<div class="headline" id="headline"></div>
+<div class="statgrid" id="statgrid"></div>
+<div class="appcard">
+<h2>The two paths, visualized</h2>
+<canvas class="chart" id="chart" role="img" aria-label="Line chart comparing portfolio growth with your current fees versus the low-cost alternative"></canvas>
+<div class="legend"><span><span class="sw" style="background:#2e7d4f"></span>Low-cost alternative</span><span><span class="sw" style="background:#b3541e"></span>Your current fees</span><span><span class="sw" style="background:#f0c9a8"></span>The gap = fees you pay</span></div>
+<div style="overflow-x:auto"><table class="data" id="datatable"></table></div>
+</div>
+<div class="verdict" id="verdict"></div>
+<div class="appcard">
+<h2>Why this happens</h2>
+<p>An expense ratio doesn't just take money off the top — it takes money that would have compounded for decades. Every dollar paid in fees this year is a dollar that can't earn 7% next year, and the year after. That's why a "tiny" 1% fee can erase 25–30% of your ending balance over a career: fees compound against you the same way returns compound for you.</p>
+</div>
+<div class="appcard">
+<h2>Checklist: switching to lower-cost options</h2>
+<div id="checklist"></div>
+</div>
+<div class="appcard noprint">
+<h2>Assumptions (read before acting)</h2>
+<ul class="assume" id="assumelist"></ul>
+<div class="btnrow"><button class="btn ghost" id="printbtn" type="button">Print this report</button></div>
+</div>
+</div>
+
+<section class="appcard noprint" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Fee Drag Detector is just the start. <em>Investing Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — costs, diversification, and building a portfolio you can stick with.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/investing-made-simple/">Get Investing Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px" class="noprint"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="noprint" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-fee-drag-detector-v1";
+var PRESETS=[["Custom…",""],["Active mutual fund","0.90"],["Target-date fund","0.14"],["Typical 401(k) fund","0.45"],["Index fund","0.03"],["Advisor-managed (wrap + fund)","1.50"]];
+var CHECKS=[
+"Look up every fund's expense ratio — search \"[fund name] expense ratio\" or read your statement's fee disclosure.",
+"Ask your advisor the dollar question: \"What am I paying you in total this year — in dollars?\" Wrap fees hide in percentages.",
+"In a 401(k)/403(b): read the 404(a)-5 fee disclosure and find the lowest-cost index option in each category.",
+"Inside IRAs and 401(k)s, switching funds has no tax cost — you can move without penalty.",
+"In a taxable account, selling can trigger capital gains tax — compare the one-time tax bill against years of fee savings before you move.",
+"Set a yearly calendar reminder to re-check fees. Funds and plan menus change quietly."
+];
+function $(id){return document.getElementById(id);}
+function money(n){return "$"+Math.round(n).toLocaleString("en-US");}
+function moneyShort(n){if(n>=1e6)return "$"+(n/1e6).toFixed(2)+"M";if(n>=1e3)return "$"+(n/1e3).toFixed(0)+"k";return "$"+Math.round(n);}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+/* ---------- fund rows ---------- */
+function fundRow(i,name,fee,alloc){
+  var d=document.createElement("div");d.className="fundrow";d.dataset.row="1";
+  var opts=PRESETS.map(function(p){return '<option value="'+p[1]+'"'+(p[0]==="Custom…"?"":"")+'>'+esc(p[0])+(p[1]?" — "+p[1]+"%":"")+'</option>';}).join("");
+  d.innerHTML='<div class="frow-head"><strong>Fund '+(i+1)+'</strong><button type="button" class="btn ghost rm" style="padding:6px 14px;min-height:40px">Remove</button></div>'+
+  '<div class="field"><label>Fund name</label><input type="text" class="fname" value="'+esc(name||"")+'" placeholder="e.g. My 401(k) target fund"></div>'+
+  '<div class="grid2"><div class="field"><label>Common example</label><select class="fpreset">'+opts+'</select></div>'+
+  '<div class="field"><label>Expense ratio (%)</label><input type="number" class="ffee" min="0" max="5" step="0.01" value="'+fee+'" inputmode="decimal"></div></div>'+
+  '<div class="field"><label>Share of your portfolio (%)</label><input type="number" class="falloc" min="0" max="100" step="0.1" value="'+alloc+'" inputmode="decimal"></div>';
+  d.querySelector(".fpreset").addEventListener("change",function(){if(this.value!=="")d.querySelector(".ffee").value=this.value;save();});
+  d.querySelector(".rm").addEventListener("click",function(){if($("funds").querySelectorAll('[data-row]').length>1){d.remove();renumber();save();}});
+  Array.prototype.forEach.call(d.querySelectorAll("input"),function(n){n.addEventListener("input",function(){updateAllocNote();save();});});
+  return d;
+}
+function renumber(){Array.prototype.forEach.call($("funds").querySelectorAll('[data-row]'),function(r,i){r.querySelector(".frow-head strong").textContent="Fund "+(i+1);});updateAllocNote();}
+function readFunds(){
+  return Array.prototype.map.call($("funds").querySelectorAll('[data-row]'),function(r){
+    return {name:r.querySelector(".fname").value.trim(),fee:parseFloat(r.querySelector(".ffee").value),alloc:parseFloat(r.querySelector(".falloc").value)};
+  });
+}
+function updateAllocNote(){
+  var f=readFunds(),tot=f.reduce(function(s,x){return s+(isNaN(x.alloc)?0:x.alloc);},0);
+  var n=$("alloc-note");
+  n.textContent="Total allocation: "+(Math.round(tot*10)/10)+"%";
+  n.style.color=Math.abs(tot-100)<0.001?"#2e7d4f":"#b3402e";
+}
+$("add-fund").addEventListener("click",function(){
+  if($("funds").querySelectorAll('[data-row]').length>=3)return;
+  $("funds").appendChild(fundRow($("funds").querySelectorAll('[data-row]').length,"","0.50","0"));
+  renumber();save();
+});
+
+/* ---------- math ---------- */
+function project(P,C,years,gross,fee){
+  var n=years*12,gm=gross/100/12,fm=fee/100/12,bal=P,fees=0,series=[P];
+  for(var m=1;m<=n;m++){
+    bal+=C;
+    var f=bal*fm;fees+=f;bal=bal*(1+gm)-f;
+    if(m%12===0)series.push(bal);
+  }
+  return {end:bal,fees:fees,series:series};
+}
+
+/* ---------- checklist ---------- */
+function buildChecklist(saved){
+  var box=$("checklist");box.innerHTML="";
+  CHECKS.forEach(function(c,i){
+    var row=document.createElement("label");row.className="checkrow";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!(saved&&saved[i]);
+    if(cb.checked)row.classList.add("done");
+    cb.addEventListener("change",function(){row.classList.toggle("done",cb.checked);save();});
+    var sp=document.createElement("span");sp.textContent=c;
+    row.appendChild(cb);row.appendChild(sp);box.appendChild(row);
+  });
+}
+
+/* ---------- chart ---------- */
+function drawChart(cur,alt,years){
+  var cv=$("chart"),ctx=null;
+  try{ctx=cv.getContext("2d");}catch(e){ctx=null;}
+  if(!ctx)return; // canvas 2d unavailable (e.g. headless test env) — the data table below carries the same numbers
+  var W=cv.clientWidth||700,H=340,dpr=window.devicePixelRatio||1;
+  cv.width=W*dpr;cv.height=H*dpr;ctx.scale(dpr,dpr);
+  ctx.clearRect(0,0,W,H);
+  var padL=64,padR=16,padT=18,padB=34,w=W-padL-padR,h=H-padT-padB;
+  var max=Math.max(cur.end,alt.end)*1.05;
+  function X(y){return padL+w*y/years;} function Y(v){return padT+h*(1-v/max);}
+  ctx.strokeStyle="#e3d9bd";ctx.fillStyle="#8a8474";ctx.font="11px sans-serif";ctx.lineWidth=1;
+  for(var g=0;g<=4;g++){var v=max*g/4,y=Y(v);ctx.beginPath();ctx.moveTo(padL,y);ctx.lineTo(padL+w,y);ctx.stroke();ctx.fillText(moneyShort(v),8,y+4);}
+  var step=years<=20?5:10;
+  for(var yy=0;yy<=years;yy+=step){ctx.fillText("yr "+yy,X(yy)-10,padT+h+20);}
+  // gap fill
+  ctx.beginPath();
+  alt.series.forEach(function(v,i){var x=X(i),y=Y(v);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});
+  for(var j=cur.series.length-1;j>=0;j--){ctx.lineTo(X(j),Y(cur.series[j]));}
+  ctx.closePath();ctx.fillStyle="rgba(179,84,30,0.14)";ctx.fill();
+  // lines
+  function line(s,color,lw){ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=lw;s.forEach(function(v,i){var x=X(i),y=Y(v);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();}
+  line(alt.series,"#2e7d4f",3);line(cur.series,"#b3541e",3);
+  ctx.fillStyle="#2e7d4f";ctx.font="bold 12px sans-serif";ctx.fillText(moneyShort(alt.end),X(years)-52,Y(alt.end)-8);
+  ctx.fillStyle="#b3541e";ctx.fillText(moneyShort(cur.end),X(years)-52,Y(cur.end)+18);
+}
+var resizeT=null;
+window.addEventListener("resize",function(){clearTimeout(resizeT);resizeT=setTimeout(function(){if(!$("results").classList.contains("hidden")&&window.__last){drawChart(window.__last.cur,window.__last.alt,window.__last.years);}},200);});
+
+/* ---------- main ---------- */
+function showErr(msgs){var b=$("errbox");if(!msgs.length){b.classList.remove("show");b.innerHTML="";return;}b.innerHTML="<strong>Please fix:</strong><ul style='margin:6px 0 0 18px'>"+msgs.map(function(m){return "<li>"+esc(m)+"</li>";}).join("")+"</ul>";b.classList.add("show");}
+function valid(){
+  var e=[],P=parseFloat($("f-portfolio").value),C=parseFloat($("f-contrib").value),
+      R=parseFloat($("f-return").value),A=parseFloat($("f-altfee").value);
+  if(isNaN(P)||P<0||P>1e10)e.push("Portfolio value must be a number between 0 and 10 billion.");
+  if(isNaN(C)||C<0||C>1e7)e.push("Monthly contribution must be a number between 0 and 10 million.");
+  if(isNaN(R)||R<0.1||R>15)e.push("Assumed return must be between 0.1% and 15%.");
+  if(isNaN(A)||A<0||A>2)e.push("Alternative expense ratio must be between 0% and 2%.");
+  var funds=readFunds(),tot=0;
+  funds.forEach(function(f,i){
+    if(isNaN(f.fee)||f.fee<0||f.fee>5)e.push("Fund "+(i+1)+": expense ratio must be between 0% and 5%.");
+    if(isNaN(f.alloc)||f.alloc<0||f.alloc>100)e.push("Fund "+(i+1)+": allocation must be between 0% and 100%.");
+    tot+=isNaN(f.alloc)?0:f.alloc;
+  });
+  if(Math.abs(tot-100)>0.001)e.push("Fund allocations must add up to exactly 100% (currently "+(Math.round(tot*10)/10)+"%).");
+  var wfee=funds.reduce(function(s,f){return s+f.fee*(isNaN(f.alloc)?0:f.alloc)/100;},0);
+  return {errs:e,ok:e.length===0,P:P,C:C,R:R,A:A,wfee:wfee};
+}
+function run(){
+  var v=valid();showErr(v.errs);if(!v.ok)return;
+  var years=parseInt($("f-years").value,10);
+  var cur=project(v.P,v.C,years,v.R,v.wfee),alt=project(v.P,v.C,years,v.R,v.A);
+  var diff=alt.end-cur.end,totalIn=v.P+v.C*years*12;
+  window.__last={cur:cur,alt:alt,years:years};
+  $("results").classList.remove("hidden");
+  var hd=$("headline");
+  if(totalIn<=0){
+    hd.innerHTML='<div class="big">Nothing to project yet.</div><p>Enter a portfolio value or a monthly contribution above — with $0 invested and $0 contributed, there are no fees to detect.</p>';
+  }else if(diff<=0){
+    hd.innerHTML='<div class="big">You\'re already in low-cost territory.</div><p>Your weighted fee ('+v.wfee.toFixed(2)+'%) is at or below the alternative ('+v.A.toFixed(2)+'%). Keep doing what you\'re doing — and re-check once a year.</p>';
+  }else{
+    hd.innerHTML='<div class="big">Fees will cost you an estimated '+money(diff)+'</div><p>over '+years+' years, versus the low-cost alternative. That\'s money that compounds for someone else instead of you.</p>';
+  }
+  var sg=$("statgrid");sg.innerHTML="";
+  [["Your ending balance<br>(current fees)",money(cur.end)],
+   ["Ending balance<br>(low-cost alternative)",money(alt.end)],
+   ["Total fees paid<br>(current fees)",money(cur.fees)],
+   ["Total fees paid<br>(alternative)",money(alt.fees)],
+   ["Your weighted<br>expense ratio",v.wfee.toFixed(2)+"%"],
+   ["Alternative<br>expense ratio",v.A.toFixed(2)+"%"]
+  ].forEach(function(s){var d=document.createElement("div");d.className="stat";d.innerHTML='<div class="v">'+s[1]+'</div><div class="l">'+s[0]+'</div>';sg.appendChild(d);});
+  drawChart(cur,alt,years);
+  var dt=$("datatable");
+  var rows=["<tr><th>Year</th><th>Current fees</th><th>Low-cost alt.</th><th>Gap (fees cost)</th></tr>"];
+  var step=years<=25?5:10;
+  for(var y=0;y<=years;y+=step){rows.push("<tr><td>"+y+"</td><td>"+money(cur.series[y])+"</td><td>"+money(alt.series[y])+"</td><td>"+money(alt.series[y]-cur.series[y])+"</td></tr>");}
+  dt.innerHTML=rows.join("");
+  var vd=$("verdict"),ratio=alt.end>0?diff/alt.end:0,txt="",cls="";
+  if(diff<=0){cls="good";txt="<strong>Verdict: you're fee-efficient.</strong> Your weighted expense ratio of "+v.wfee.toFixed(2)+"% is at or below the alternative. The biggest risk for you isn't fees — it's changing something that already works. Re-check once a year.";}
+  else if(ratio<0.03){cls="good";txt="<strong>Verdict: small drag.</strong> Fees cost you about "+money(diff)+" — under 3% of what the low-cost path would have earned. Worth a look, but don't lose sleep or pay taxes to chase it.";}
+  else if(ratio<0.12){cls="warn";txt="<strong>Verdict: meaningful drag.</strong> About "+money(diff)+" — roughly "+Math.round(ratio*100)+"% of your potential ending balance — goes to fees instead of compounding for you. In a retirement account, switching costs you nothing in taxes. Worth an afternoon.";}
+  else if(ratio<0.30){cls="bad";txt="<strong>Verdict: heavy drag.</strong> Roughly "+Math.round(ratio*100)+"% of your potential ending balance — "+money(diff)+" — is consumed by fees. Over "+years+" years that's a second retirement you funded for someone else. This is worth fixing this month.";}
+  else{cls="bad";txt="<strong>Verdict: severe drag.</strong> Fees eat roughly "+Math.round(ratio*100)+"% of what the low-cost path would earn — "+money(diff)+" gone. At these fee levels, the fund has to beat the market by "+(v.wfee-v.A).toFixed(2)+"% every single year just to break even with the alternative. Almost none do, consistently.";}
+  vd.className="verdict "+cls;vd.innerHTML=txt;
+  var al=$("assumelist");al.innerHTML="";
+  ["Annual return of "+v.R.toFixed(1)+"% before fees, compounding monthly — a steady average, not what any real year looks like.",
+  "Fees are deducted monthly at 1/12 of each fund's annual expense ratio. Your weighted expense ratio: "+v.wfee.toFixed(2)+"%.",
+  "Contributions of "+money(v.C)+"/month are made at the start of each month; the starting balance is "+money(v.P)+".",
+  "No taxes, no inflation adjustment, no rebalancing costs, no advisor wrap fees beyond the expense ratios you entered.",
+  "This is a model of arithmetic, not a prediction. Markets don't return 7% every year — they swing wildly around the average."
+  ].forEach(function(a){var li=document.createElement("li");li.textContent=a;al.appendChild(li);});
+  buildChecklist(window.__checks);
+  save();
+  $("results").scrollIntoView({behavior:"smooth",block:"start"});
+}
+$("calc").addEventListener("click",run);
+
+/* ---------- persistence ---------- */
+function save(){
+  try{
+    var funds=readFunds();
+    var checks=Array.prototype.map.call($("checklist").querySelectorAll("input[type=checkbox]"),function(c){return c.checked;});
+    window.__checks=checks;
+    localStorage.setItem(KEY,JSON.stringify({p:$("f-portfolio").value,c:$("f-contrib").value,y:$("f-years").value,
+      r:$("f-return").value,a:$("f-altfee").value,funds:funds,checks:checks,ran:window.__last?1:0}));
+  }catch(e){}
+}
+function load(){
+  var d=null;try{d=JSON.parse(localStorage.getItem(KEY));}catch(e){}
+  $("funds").appendChild(fundRow(0,"","1.00","100"));
+  if(d){
+    $("f-portfolio").value=d.p||"";$("f-contrib").value=d.c||"";$("f-years").value=d.y||"25";
+    $("f-return").value=d.r||"7";$("f-altfee").value=d.a||"0.05";
+    $("funds").innerHTML="";
+    (d.funds&&d.funds.length?d.funds:[{name:"",fee:"1.00",alloc:"100"}]).slice(0,3).forEach(function(f,i){
+      $("funds").appendChild(fundRow(i,f.name||"",f.fee,f.alloc));
+    });
+    window.__checks=d.checks;
+    renumber();
+    if(d.ran){run();}
+  }else{updateAllocNote();}
+  Array.prototype.forEach.call(document.querySelectorAll("#results, #funds"),function(){});
+  ["f-portfolio","f-contrib","f-years","f-return","f-altfee"].forEach(function(id){$(id).addEventListener("input",save);$(id).addEventListener("change",save);});
+  buildChecklist(window.__checks);
+}
+$("reset").addEventListener("click",function(){
+  if(!confirm("Reset the Fee Drag Detector? Your inputs and checklist will be cleared."))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  window.__last=null;window.__checks=null;
+  $("f-portfolio").value="50000";$("f-contrib").value="500";$("f-years").value="25";$("f-return").value="7";$("f-altfee").value="0.05";
+  $("funds").innerHTML="";$("funds").appendChild(fundRow(0,"","1.00","100"));
+  buildChecklist(null);$("results").classList.add("hidden");showErr([]);updateAllocNote();
+  window.scrollTo(0,0);
+});
+$("printbtn").addEventListener("click",function(){window.print();});
+load();
+})();
+</script>
+</body>
+</html>
