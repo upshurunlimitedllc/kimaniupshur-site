@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scenario Planner | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Build best-case, worst-case, and most-likely futures around your two biggest uncertainties — with an early-warning trigger and a response for each. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/scenario-planner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scenario Planner | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Build best-case, worst-case, and most-likely futures around your two biggest uncertainties — with an early-warning trigger and a response for each. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/scenario-planner/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+/* app-specific */
+.dots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.dots button{width:44px;height:44px;border-radius:50%;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer;font-size:.78rem}
+.dots button.cur{background:#c9a227;color:#141210}
+.dots button:disabled{opacity:.35;cursor:default}
+.cardhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+.cardhead h2{font-family:Georgia,serif;font-size:1.35rem;color:#141210}
+.resetlink{background:none;border:none;color:#8a6d1c;text-decoration:underline;cursor:pointer;font-size:.85rem;min-height:44px;padding:10px}
+.stepnum{color:#8a6d1c;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.err{color:#b3261e;font-weight:bold;margin:10px 0}
+.hint{color:#6b6250;font-size:.92rem;margin:8px 0}
+.field label{font-weight:bold;display:block;margin:12px 0 2px}
+.navrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{padding:10px 16px;min-height:44px;border-radius:8px;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer}
+.seg button:hover{background:#f3e6bd}
+.seg button.sel{background:#c9a227;color:#141210}
+.uxblock{border:2px solid #e5d9b5;border-radius:8px;padding:16px;margin:14px 0;background:#fff}
+.uxblock h4{font-family:Georgia,serif;color:#141210;margin-bottom:4px}
+.axisrow{display:flex;gap:10px;flex-wrap:wrap}
+.axisrow .field{flex:1;min-width:200px}
+table.grid{width:100%;border-collapse:collapse;margin:16px 0}
+table.grid th,table.grid td{border:2px solid #c9a227;padding:10px;vertical-align:top;font-size:.9rem}
+table.grid th{background:#f3e6bd;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;color:#8a6d1c}
+table.grid td{background:#fff;min-height:90px}
+table.grid td .fname{font-weight:bold;margin-bottom:4px}
+table.grid td a{color:#141210;text-decoration:none}
+.fcard{border:2px solid #e5d9b5;border-radius:8px;padding:16px;margin:14px 0;background:#fff}
+.fcard .fends{font-size:.8rem;font-weight:bold;letter-spacing:.5px;text-transform:uppercase;color:#8a6d1c;margin-bottom:6px}
+.fcard h4{font-family:Georgia,serif;font-size:1.1rem;color:#141210}
+.tagbadge{display:inline-block;font-size:.75rem;font-weight:bold;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.tag-best{background:#dcebd8;color:#2e5d26}
+.tag-likely{background:#f3e6bd;color:#8a6d1c}
+.tag-worst{background:#f8dcd8;color:#b3261e}
+.tag-none{background:#e8e4d8;color:#5c574c}
+.tagradios{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.tagradios label{display:flex;align-items:center;gap:6px;font-size:.88rem;border:2px solid #e5d9b5;border-radius:8px;padding:8px 12px;cursor:pointer;background:#fffdf7;min-height:44px}
+.tagradios input{width:20px;height:20px;accent-color:#c9a227}
+.result{background:#fff;border:2px solid #c9a227;border-radius:12px;padding:24px;margin-top:20px}
+.result h3{font-family:Georgia,serif;color:#141210;margin:16px 0 6px}
+.result h3:first-child{margin-top:0}
+.result ol,.result ul{margin:6px 0 6px 22px}
+.result li{margin-bottom:6px}
+.pbsec{border-top:1px solid #e5d9b5;padding:14px 0}
+.pbsec:first-of-type{border-top:none}
+.pbsec h4{font-family:Georgia,serif;font-size:1.15rem;color:#141210}
+.kv{font-size:.92rem;margin:6px 0}
+.kv strong{color:#8a6d1c}
+.nextsteps{background:#f7f1de;border-radius:8px;padding:16px;margin-top:14px}
+@media print{header.site,footer.site,.navrow,.noprint,.dots,.resetlink{display:none!important}main.app{max-width:100%;padding:0}.appcard{border:none;padding:0}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Scenario Planner</h1>
+<p class="intro">Name the situation, pick your two biggest uncertainties, and build four futures — best-case, worst-case, and most-likely — each with an early-warning trigger and a pre-planned response.</p>
+<div class="appcard">
+<div class="cardhead">
+<div><div class="stepnum" id="stepnum"></div><h2 id="steptitle"></h2></div>
+<button class="resetlink noprint" id="resetTop" type="button">Start over</button>
+</div>
+<div class="dots noprint" id="dots" role="navigation" aria-label="Steps"></div>
+<div id="err" class="err" role="alert" style="display:none"></div>
+<div id="stepbody"></div>
+<div class="navrow noprint" id="navrow"></div>
+</div>
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p><em>Scenario Planning Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same method — mapping uncertainty, building scenarios, and planning for multiple futures.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/scenario-planning-made-simple/">Get Scenario Planning Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Faith Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-scenario-planner-v1";
+var STEPS=["Situation","Two Uncertainties","Sketch Four Futures","Triggers & Responses","Your Playbook"];
+var HORIZONS=["3 months","6 months","1 year","2 years","5 years"];
+var TAGS=[["none","No tag"],["likely","Most likely"],["best","Best case"],["worst","Worst case"]];
+var TAGCLS={none:"tag-none",likely:"tag-likely",best:"tag-best",worst:"tag-worst"};
+var TAGLBL={none:"",likely:"Most likely",best:"Best case",worst:"Worst case"};
+/* index map:
+   0 = u1 high + u2 high
+   1 = u1 low  + u2 high
+   2 = u1 high + u2 low
+   3 = u1 low  + u2 low */
+function endText(idx,which){
+  var u=which===1?state.u1:state.u2;
+  var e=(idx===0)?"high":(idx===1)?(which===1?"low":"high"):(idx===2)?(which===1?"high":"low"):"low";
+  return u[e].trim();
+}
+function freshFuture(){return{name:"",nameEdited:false,sketch:"",trigger:"",response:"",tag:"none"};}
+function freshState(){return{step:0,maxStep:0,situation:"",horizon:"1 year",context:"",u1:{label:"",high:"",low:""},u2:{label:"",high:"",low:""},futures:[freshFuture(),freshFuture(),freshFuture(),freshFuture()]};}
+function loadState(){
+  try{var raw=localStorage.getItem(KEY);
+    if(raw){var s=JSON.parse(raw);
+      if(s&&typeof s==="object"){
+        var d=freshState();
+        if(typeof s.situation==="string")d.situation=s.situation;
+        if(HORIZONS.indexOf(s.horizon)>=0)d.horizon=s.horizon;
+        if(typeof s.context==="string")d.context=s.context;
+        ["u1","u2"].forEach(function(k){
+          if(s[k]&&typeof s[k]==="object"){
+            if(typeof s[k].label==="string")d[k].label=s[k].label;
+            if(typeof s[k].high==="string")d[k].high=s[k].high;
+            if(typeof s[k].low==="string")d[k].low=s[k].low;
+          }
+        });
+        if(Array.isArray(s.futures)){
+          for(var i=0;i<4;i++){
+            var f=s.futures[i]||{};
+            if(typeof f.name==="string")d.futures[i].name=f.name;
+            if(f.nameEdited===true)d.futures[i].nameEdited=true;
+            if(typeof f.sketch==="string")d.futures[i].sketch=f.sketch;
+            if(typeof f.trigger==="string")d.futures[i].trigger=f.trigger;
+            if(typeof f.response==="string")d.futures[i].response=f.response;
+            if(TAGLBL[f.tag]!==undefined)d.futures[i].tag=f.tag;
+          }
+        }
+        if(typeof s.step==="number")d.step=Math.max(0,Math.min(STEPS.length-1,Math.floor(s.step)));
+        if(typeof s.maxStep==="number")d.maxStep=Math.max(0,Math.min(STEPS.length-1,Math.floor(s.maxStep)));
+        return d;
+      }
+    }
+  }catch(e){}
+  return freshState();
+}
+var state=loadState();
+var maxStep=(typeof state.maxStep==="number")?state.maxStep:0;
+if(state.step>maxStep)state.step=maxStep;
+function save(){state.maxStep=maxStep;try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function el(tag,cls,text){var d=document.createElement(tag);if(cls)d.className=cls;if(text!==undefined&&text!==null)d.textContent=text;return d;}
+function showErr(msg){var e=document.getElementById("err");if(msg){e.textContent=msg;e.style.display="block";}else{e.textContent="";e.style.display="none";}}
+function defaultName(idx){
+  var a=endText(idx,1),b=endText(idx,2);
+  if(a&&b)return a+" + "+b;
+  return "Future "+"ABCD"[idx];
+}
+function futName(idx){var f=state.futures[idx];return f.nameEdited&&f.name.trim()?f.name.trim():defaultName(idx);}
+function drawDots(){
+  var dots=document.getElementById("dots");dots.innerHTML="";
+  STEPS.forEach(function(name,i){
+    var b=el("button",i===state.step?"cur":"",String(i+1));
+    b.type="button";b.title=name;b.setAttribute("aria-label","Step "+(i+1)+": "+name);
+    if(i>maxStep)b.disabled=true;
+    b.addEventListener("click",function(){go(i);});
+    dots.appendChild(b);
+  });
+  document.getElementById("stepnum").textContent="Step "+(state.step+1)+" of "+STEPS.length;
+  document.getElementById("steptitle").textContent=STEPS[state.step];
+}
+function go(i){showErr("");state.step=i;if(i>maxStep)maxStep=i;save();render();}
+function resetAll(){
+  if(!window.confirm("Clear everything and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  state=freshState();maxStep=0;save();render();
+}
+function trunc(s,n){s=String(s||"");return s.length>n?s.slice(0,n-1)+"\u2026":s;}
+
+/* ---------- grid ---------- */
+function buildGrid(linkCells){
+  var t=el("table","grid");
+  var cap=el("caption");cap.style.captionSide="top";cap.style.fontSize=".85rem";cap.style.color="#6b6250";cap.style.padding="6px";
+  cap.textContent="Your scenario grid: the two uncertainties crossed into four futures.";
+  t.appendChild(cap);
+  var hr=el("tr");
+  hr.appendChild(el("th","",""));
+  hr.appendChild(el("th","",trunc(state.u2.high||"High end of "+(state.u2.label||"uncertainty 2"),60)));
+  hr.appendChild(el("th","",trunc(state.u2.low||"Low end of "+(state.u2.label||"uncertainty 2"),60)));
+  t.appendChild(hr);
+  var rows=[[0,2],[1,3]];
+  var rowEnds=["high","low"];
+  for(var r=0;r<2;r++){
+    var tr=el("tr");
+    tr.appendChild(el("th","",trunc((r===0?state.u1.high:state.u1.low)||(rowEnds[r]+" end of "+(state.u1.label||"uncertainty 1")),60)));
+    for(var c=0;c<2;c++){
+      var idx=rows[r][c];
+      var td=el("td");
+      var nm=el("div","fname",futName(idx));
+      var tg=state.futures[idx].tag;
+      if(tg!=="none")nm.appendChild(el("span","tagbadge "+TAGCLS[tg],TAGLBL[tg]));
+      td.appendChild(nm);
+      if(linkCells){
+        var a=el("a");a.href="#fcard"+idx;a.textContent="Edit this future \u2192";
+        a.style.color="#8a6d1c";a.style.fontSize=".85rem";
+        td.appendChild(a);
+      }
+      tr.appendChild(td);
+    }
+    t.appendChild(tr);
+  }
+  return t;
+}
+
+/* ---------- step renderers ---------- */
+function renderSituation(body){
+  body.appendChild(el("p","hint","Start with the decision or situation you are planning for. One clear sentence is enough — the uncertainties come next."));
+  var f=el("div","field");
+  var l1=el("label",null,"What situation are you planning for?");l1.setAttribute("for","sitName");f.appendChild(l1);
+  var t=el("input");t.type="text";t.id="sitName";t.value=state.situation;
+  t.placeholder="Example: Whether to open a second coffee shop location";
+  t.setAttribute("aria-label","The situation you are planning for");
+  t.addEventListener("input",function(){state.situation=t.value;save();});
+  f.appendChild(t);
+  var l2=el("label",null,"Time horizon");f.appendChild(l2);
+  var seg=el("div","seg");seg.setAttribute("role","group");seg.setAttribute("aria-label","Time horizon");
+  HORIZONS.forEach(function(h){
+    var b=el("button",state.horizon===h?"sel":"",h);b.type="button";
+    b.setAttribute("aria-pressed",state.horizon===h?"true":"false");
+    b.addEventListener("click",function(){state.horizon=h;save();render();});
+    seg.appendChild(b);
+  });
+  f.appendChild(seg);
+  var l3=el("label",null,"Background (optional)");l3.setAttribute("for","sitCtx");f.appendChild(l3);
+  var ta=el("textarea");ta.id="sitCtx";ta.rows=3;ta.value=state.context;
+  ta.placeholder="Any context that matters: what's at stake, who is involved, what has already happened.";
+  ta.setAttribute("aria-label","Background context, optional");
+  ta.addEventListener("input",function(){state.context=ta.value;save();});
+  f.appendChild(ta);
+  body.appendChild(f);
+}
+function renderUncertainties(body){
+  body.appendChild(el("p","hint","Pick the TWO uncertainties that matter most — the things you cannot control and cannot confidently predict. Name each end of the range in a few words."));
+  body.appendChild(el("p","hint","Example: uncertainty \"Customer demand\", high end \"Demand surges\", low end \"Demand stalls\"."));
+  ["u1","u2"].forEach(function(k,n){
+    var u=state[k];
+    var box=el("div","uxblock");
+    box.appendChild(el("h4",null,"Uncertainty "+(n+1)));
+    var f1=el("div","field");
+    var l1=el("label",null,"The uncertainty");l1.setAttribute("for",k+"label");f1.appendChild(l1);
+    var i1=el("input");i1.type="text";i1.id=k+"label";i1.value=u.label;
+    i1.placeholder=n===0?"Example: Customer demand":"Example: New competition";
+    i1.setAttribute("aria-label","Uncertainty "+(n+1)+" name");
+    i1.addEventListener("input",function(){u.label=i1.value;save();});
+    f1.appendChild(i1);box.appendChild(f1);
+    var row=el("div","axisrow");
+    var f2=el("div","field");
+    var l2=el("label",null,"High end");l2.setAttribute("for",k+"high");f2.appendChild(l2);
+    var i2=el("input");i2.type="text";i2.id=k+"high";i2.value=u.high;
+    i2.placeholder="Example: Demand surges";
+    i2.setAttribute("aria-label","Uncertainty "+(n+1)+" high end");
+    i2.addEventListener("input",function(){u.high=i2.value;save();});
+    f2.appendChild(i2);row.appendChild(f2);
+    var f3=el("div","field");
+    var l3=el("label",null,"Low end");l3.setAttribute("for",k+"low");f3.appendChild(l3);
+    var i3=el("input");i3.type="text";i3.id=k+"low";i3.value=u.low;
+    i3.placeholder="Example: Demand stalls";
+    i3.setAttribute("aria-label","Uncertainty "+(n+1)+" low end");
+    i3.addEventListener("input",function(){u.low=i3.value;save();});
+    f3.appendChild(i3);row.appendChild(f3);
+    box.appendChild(row);
+    body.appendChild(box);
+  });
+}
+function renderFutures(body){
+  body.appendChild(el("p","hint","Two uncertainties, two ends each, four combinations. Sketch each future in 3–5 sentences: what is happening, who is affected, what it feels like to live in it."));
+  body.appendChild(buildGrid(true));
+  for(var idx=0;idx<4;idx++){
+    (function(i){
+      var f=state.futures[i];
+      var card=el("div","fcard");card.id="fcard"+i;
+      card.appendChild(el("div","fends","Future "+"ABCD"[i]+" · "+endText(i,1)+" × "+endText(i,2)));
+      var fn=el("div","field");
+      var ln=el("label",null,"Name this future");ln.setAttribute("for","fname"+i);fn.appendChild(ln);
+      var inp=el("input");inp.type="text";inp.id="fname"+i;
+      inp.value=f.nameEdited?f.name:defaultName(i);
+      inp.setAttribute("aria-label","Name for future "+"ABCD"[i]);
+      inp.addEventListener("input",function(){f.name=inp.value;f.nameEdited=true;save();});
+      fn.appendChild(inp);card.appendChild(fn);
+      var fs=el("div","field");
+      var ls=el("label",null,"What does this future look like?");ls.setAttribute("for","fsketch"+i);fs.appendChild(ls);
+      var ta=el("textarea");ta.id="fsketch"+i;ta.rows=4;ta.value=f.sketch;
+      ta.placeholder="Describe it concretely: what is happening, and what does it mean for you?";
+      ta.setAttribute("aria-label","Sketch of future "+"ABCD"[i]);
+      ta.addEventListener("input",function(){f.sketch=ta.value;save();});
+      fs.appendChild(ta);card.appendChild(fs);
+      body.appendChild(card);
+    })(idx);
+  }
+}
+function renderTriggers(body){
+  body.appendChild(el("p","hint","A scenario you can't see coming is just a story. For each future, name one specific early-warning sign — a number, an event, a headline — and the move you would make if you saw it."));
+  for(var idx=0;idx<4;idx++){
+    (function(i){
+      var f=state.futures[i];
+      var card=el("div","fcard");
+      var h=el("h4",null,"Future "+"ABCD"[i]+": "+futName(i));
+      var tg=f.tag;
+      if(tg!=="none")h.appendChild(el("span","tagbadge "+TAGCLS[tg],TAGLBL[tg]));
+      card.appendChild(h);
+      var ft=el("div","field");
+      var lt=el("label",null,"Early-warning trigger — what would you SEE if this future were arriving?");lt.setAttribute("for","ftrig"+i);ft.appendChild(lt);
+      var tt=el("textarea");tt.id="ftrig"+i;tt.rows=2;tt.value=f.trigger;
+      tt.placeholder="Example: Two competitors announce openings within 5 miles in the same quarter.";
+      tt.setAttribute("aria-label","Early-warning trigger for future "+"ABCD"[i]);
+      tt.addEventListener("input",function(){f.trigger=tt.value;save();});
+      ft.appendChild(tt);card.appendChild(ft);
+      var fr=el("div","field");
+      var lr=el("label",null,"Your response — what would you DO?");lr.setAttribute("for","fresp"+i);fr.appendChild(lr);
+      var tr=el("textarea");tr.id="fresp"+i;tr.rows=2;tr.value=f.response;
+      tr.placeholder="Example: Pause the lease, renegotiate terms, and shift budget to delivery.";
+      tr.setAttribute("aria-label","Planned response for future "+"ABCD"[i]);
+      tr.addEventListener("input",function(){f.response=tr.value;save();});
+      fr.appendChild(tr);card.appendChild(fr);
+      body.appendChild(card);
+    })(idx);
+  }
+}
+function renderPlaybook(body){
+  var head=el("p",null,"");head.innerHTML="<strong>Situation:</strong> ";
+  head.appendChild(document.createTextNode(state.situation.trim()||"(unnamed)"));
+  head.appendChild(document.createTextNode(" · Horizon: "+state.horizon));
+  body.appendChild(head);
+  if(state.context.trim()){
+    var cx=el("p","hint","");cx.appendChild(document.createTextNode(state.context.trim()));body.appendChild(cx);
+  }
+  body.appendChild(buildGrid(false));
+  body.appendChild(el("p","hint","Tag each future: one most-likely, one best case, one worst case. A future can carry only one tag — pick the one that fits best."));
+  for(var idx=0;idx<4;idx++){
+    (function(i){
+      var f=state.futures[i];
+      var card=el("div","fcard");
+      var h=el("h4",null,"Future "+"ABCD"[i]+": "+futName(i));
+      card.appendChild(h);
+      var radios=el("div","tagradios");radios.setAttribute("role","radiogroup");radios.setAttribute("aria-label","Tag for future "+"ABCD"[i]);
+      TAGS.forEach(function(tg){
+        var lab=el("label",null,"");
+        var r=el("input");r.type="radio";r.name="tag"+i;r.value=tg[0];
+        r.checked=(f.tag===tg[0]);
+        r.setAttribute("aria-label",tg[1]+" for future "+"ABCD"[i]);
+        r.addEventListener("change",function(){f.tag=tg[0];save();render();});
+        lab.appendChild(r);lab.appendChild(document.createTextNode(tg[1]));
+        radios.appendChild(lab);
+      });
+      card.appendChild(radios);
+      var sk=el("p","kv","");sk.innerHTML="<strong>What it looks like:</strong> ";
+      sk.appendChild(document.createTextNode(f.sketch.trim()));card.appendChild(sk);
+      var w=el("p","kv","");w.innerHTML="<strong>Watch for:</strong> ";
+      w.appendChild(document.createTextNode(f.trigger.trim()));card.appendChild(w);
+      var rs=el("p","kv","");rs.innerHTML="<strong>If it happens:</strong> ";
+      rs.appendChild(document.createTextNode(f.response.trim()));card.appendChild(rs);
+      body.appendChild(card);
+    })(idx);
+  }
+  var ns=el("div","nextsteps");
+  ns.appendChild(el("strong",null,"How to use this playbook"));
+  var ol=el("ol");
+  ol.appendChild(el("li",null,"Review your four triggers on a fixed cadence — monthly is a good default. A trigger firing is your signal to act, not to start thinking."));
+  ol.appendChild(el("li",null,"Your responses are pre-commitments. When a trigger fires, execute the response before second-guessing it."));
+  ol.appendChild(el("li",null,"Revisit the grid when reality changes: new uncertainties outrank old ones."));
+  ol.appendChild(el("li",null,"Share the playbook with anyone who shares the risk — alignment now beats arguments later."));
+  ns.appendChild(ol);body.appendChild(ns);
+  var row=el("div","navrow");
+  var copy=el("button","btn ghost","Copy playbook");copy.type="button";
+  copy.addEventListener("click",copyPlaybook);
+  var pr=el("button","btn ghost","Print");pr.type="button";
+  pr.addEventListener("click",function(){window.print();});
+  row.appendChild(copy);row.appendChild(pr);body.appendChild(row);
+}
+function playbookText(){
+  var L=[];
+  L.push("SCENARIO PLAYBOOK");
+  L.push("Situation: "+state.situation.trim());
+  L.push("Horizon: "+state.horizon);
+  if(state.context.trim())L.push("Background: "+state.context.trim());
+  L.push("Uncertainties: "+state.u1.label.trim()+" ("+state.u1.high.trim()+" / "+state.u1.low.trim()+") × "+state.u2.label.trim()+" ("+state.u2.high.trim()+" / "+state.u2.low.trim()+")");
+  L.push("");
+  for(var i=0;i<4;i++){
+    var f=state.futures[i];
+    L.push("FUTURE "+"ABCD"[i]+": "+futName(i)+(f.tag!=="none"?" ["+TAGLBL[f.tag]+"]":""));
+    L.push("Ends: "+endText(i,1)+" × "+endText(i,2));
+    L.push("What it looks like: "+f.sketch.trim());
+    L.push("Watch for: "+f.trigger.trim());
+    L.push("If it happens: "+f.response.trim());
+    L.push("");
+  }
+  L.push("USE: review the four triggers monthly; execute the pre-planned response when a trigger fires; revisit the grid when reality changes.");
+  return L.join("\n");
+}
+function copyPlaybook(){
+  var t=playbookText();
+  function ok(){alert("Playbook copied to clipboard.");}
+  function fb(){
+    var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");alert("Playbook copied to clipboard.");}
+    catch(e){alert("Copy failed — select the text manually.");}
+    document.body.removeChild(ta);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(ok,fb);
+  else fb();
+}
+
+/* ---------- validation + nav ---------- */
+function validate(){
+  if(state.step===0&&state.situation.trim()==="")return "Name the situation first — one clear sentence is enough.";
+  if(state.step===1){
+    var miss=[];
+    if(!state.u1.label.trim())miss.push("uncertainty 1 name");
+    if(!state.u1.high.trim())miss.push("uncertainty 1 high end");
+    if(!state.u1.low.trim())miss.push("uncertainty 1 low end");
+    if(!state.u2.label.trim())miss.push("uncertainty 2 name");
+    if(!state.u2.high.trim())miss.push("uncertainty 2 high end");
+    if(!state.u2.low.trim())miss.push("uncertainty 2 low end");
+    if(miss.length)return "Fill in every field for both uncertainties (missing: "+miss.join(", ")+").";
+  }
+  if(state.step===2){
+    var missF=[];
+    for(var i=0;i<4;i++)if(!state.futures[i].sketch.trim())missF.push("ABCD"[i]);
+    if(missF.length)return "Sketch every future before continuing (missing: "+missF.join(", ")+"). A few sentences each is enough.";
+  }
+  if(state.step===3){
+    var missT=[];
+    for(var j=0;j<4;j++){
+      if(!state.futures[j].trigger.trim()||!state.futures[j].response.trim())missT.push("ABCD"[j]);
+    }
+    if(missT.length)return "Give every future a trigger AND a response (incomplete: "+missT.join(", ")+").";
+  }
+  return "";
+}
+function renderNav(){
+  var nav=document.getElementById("navrow");nav.innerHTML="";
+  if(state.step>0){
+    var back=el("button","btn ghost","Back");back.type="button";
+    back.addEventListener("click",function(){go(state.step-1);});nav.appendChild(back);
+  }
+  if(state.step<STEPS.length-1){
+    var next=el("button","btn","Next \u2192");next.type="button";
+    next.addEventListener("click",function(){
+      var v=validate();
+      if(v){showErr(v);return;}
+      showErr("");go(state.step+1);
+    });
+    nav.appendChild(next);
+  }
+}
+var RENDERERS=[renderSituation,renderUncertainties,renderFutures,renderTriggers,renderPlaybook];
+function render(){
+  drawDots();showErr("");
+  var body=document.getElementById("stepbody");body.innerHTML="";
+  RENDERERS[state.step](body);
+  renderNav();
+}
+document.getElementById("resetTop").addEventListener("click",resetAll);
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five Whys Root-Cause Finder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Drill past symptoms to the real root cause of any problem with a guided why chain — then target the fix there. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/five-whys-root-cause/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Five Whys Root-Cause Finder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Drill past symptoms to the real root cause of any problem with a guided why chain — then target the fix there. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/five-whys-root-cause/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.chain{margin:14px 0}
+.link{display:flex;gap:14px;align-items:flex-start;background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:14px;margin:10px 0}
+.link .why{background:#141210;color:#e8c84a;font-weight:bold;border-radius:50%;min-width:38px;height:38px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.link.root{border-color:#3d7a3d;border-width:3px}
+.arrow{text-align:center;color:#8a6d1c;font-size:1.4rem;line-height:1;margin:2px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag.bad{background:#fbeeee;border-left-color:#a33}
+.rowitem{display:flex;gap:8px;align-items:center;margin:6px 0}
+.rowitem input{margin:0;flex:1}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{header.site,footer.site,section.devotional,.noprint{display:none!important}main.app{max-width:100%}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Five Whys Root-Cause Finder</h1>
+<p class="intro">Drill past symptoms to the real root cause of any problem with a guided "why?" chain — up to five levels deep, with evidence at every step — then target your fix at the cause, not the symptom.</p>
+
+<div class="appcard">
+<label class="lbl" for="problem">Step 1 — State the problem</label>
+<p class="hint">Be specific and factual. "Sales dropped 30% in Q3" beats "sales are bad." Include what happened, and when.</p>
+<textarea id="problem" rows="3" placeholder="e.g., The website checkout broke on Saturday and we lost a full day of sales"></textarea>
+</div>
+
+<div class="appcard" id="chaincard">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Step 2 — Ask why, up to five times</h2>
+<p class="hint">Each "why" digs one level below the previous answer. Back every answer with evidence — facts, data, observations — not guesses. The app will nudge you if an answer looks like a restatement or a guess.</p>
+<div class="chain" id="chain"></div>
+<div id="whynudge"></div>
+<p class="err" id="err" role="alert"></p>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="nextWhy">Next why &rarr;</button>
+<button class="btn ghost" id="backWhy">&larr; Edit previous</button>
+<button class="btn ghost" id="stopHere">This is the root cause — stop</button>
+</div>
+</div>
+
+<div class="appcard" id="confirmcard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 3 — Confirm the root cause</h2>
+<p class="hint">A real root cause passes two tests: (1) fixing it would prevent the problem from recurring, and (2) it points to something you can actually change — a process, a decision, a habit.</p>
+<div id="confirmBody"></div>
+</div>
+
+<div class="appcard" id="cmcard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 4 — Countermeasure plan</h2>
+<p class="hint">Fix the root cause, not the symptom. Each countermeasure needs an owner and a way to verify it worked.</p>
+<div id="cms"></div>
+<div class="noprint"><button class="btn ghost small" id="addCm">+ Add countermeasure</button></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+<button class="btn" id="finish">Show my root-cause report</button>
+</div>
+<p class="err" id="cmerr" role="alert"></p>
+</div>
+
+<div class="appcard" id="out" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Root-Cause Report</h2>
+<div id="outBody" aria-live="polite"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn ghost" id="printBtn">Print / save as PDF</button>
+</div>
+</div>
+
+<div class="appcard noprint">
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn ghost" id="reset">Reset (clear saved work)</button>
+</div>
+<p class="note">Your work saves automatically on this device as you type.</p>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Root-cause thinking is systems thinking. <em>Systems Thinking Made Simple</em> by Kimani Upshur, M.Ed. teaches you to see the structures behind recurring problems in plain English.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/systems-thinking-made-simple/">Get Systems Thinking Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-five-whys-root-cause-v1";
+var MAXW=5;
+var S={problem:"",whys:[{answer:"",evidence:""}],stopped:false,actionable:"",cms:[{action:"",owner:"",verify:""}]};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"){
+  if(typeof o.problem==="string")S.problem=o.problem;
+  if(Array.isArray(o.whys)&&o.whys.length)S.whys=o.whys.slice(0,MAXW).map(function(x){return{answer:String(x.answer||""),evidence:String(x.evidence||"")};});
+  S.stopped=!!o.stopped;
+  if(o.actionable==="yes"||o.actionable==="no")S.actionable=o.actionable;
+  if(Array.isArray(o.cms)&&o.cms.length)S.cms=o.cms.map(function(x){return{action:String(x.action||""),owner:String(x.owner||""),verify:String(x.verify||"")};});
+}}}catch(e){}}
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function norm(t){return String(t||"").toLowerCase().replace(/^(because|since|due to|as)\s+/,"").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();}
+function similarity(a,b){
+  a=norm(a);b=norm(b);
+  if(!a||!b)return 0;
+  if(a===b)return 1;
+  var wa=a.split(" "),wb=b.split(" "),set={},i;
+  for(i=0;i<wa.length;i++)set[wa[i]]=1;
+  var inter=0;
+  for(i=0;i<wb.length;i++)if(set[wb[i]])inter++;
+  var longer=Math.max(wa.length,wb.length);
+  return longer?inter/longer:0;
+}
+function validateWhy(idx){
+  var notes=[];
+  var w=S.whys[idx],ans=w.answer.trim();
+  if(ans.length<12)notes.push("This answer is very short. One more sentence of specifics will make the next 'why' much stronger.");
+  var prev=idx===0?S.problem:S.whys[idx-1].answer;
+  var sim=similarity(ans,prev);
+  if(sim>=0.75)notes.push("This looks like it's restating the previous level rather than explaining it. Ask: what is the deeper mechanism behind it?");
+  else if(sim>=0.5)notes.push("This overlaps heavily with the previous level. Try to name the cause beneath the cause.");
+  if(!w.evidence.trim()&&/maybe|probably|i think|i guess|perhaps|might have/i.test(ans))
+    notes.push("This answer sounds like a guess. What evidence — data, logs, observations — supports it? If you have none, that tells you what to check next.");
+  if(/human error|people are lazy|just how it is|nobody knows/i.test(ans))
+    notes.push("'Human error' is a symptom, not a root cause. Ask what in the process, training, or incentives allowed the error to happen — and what allowed it to reach you.");
+  return notes;
+}
+function whyQuestion(idx){
+  var subj=idx===0?S.problem.trim():S.whys[idx-1].answer.trim();
+  if(subj.length>90)subj=subj.slice(0,90)+"…";
+  return "Why did this happen: \""+subj+"\"?";
+}
+function drawChain(){
+  var box=document.getElementById("chain");box.innerHTML="";
+  var nudgeBox=document.getElementById("whynudge");nudgeBox.innerHTML="";
+  var active=S.stopped?S.whys.length-1:S.whys.length-1;
+  S.whys.forEach(function(w,idx){
+    if(idx>0){var ar=document.createElement("div");ar.className="arrow";ar.innerHTML="&darr;";ar.setAttribute("aria-hidden","true");box.appendChild(ar);}
+    var d=document.createElement("div");d.className="link"+((S.stopped&&idx===S.whys.length-1)?" root":"");
+    var badge=document.createElement("div");badge.className="why";badge.textContent="W"+(idx+1);d.appendChild(badge);
+    var body=document.createElement("div");body.style.flex="1";
+    if(idx===S.whys.length-1&&!S.stopped){
+      var q=document.createElement("p");q.innerHTML="<b>"+esc(whyQuestion(idx))+"</b>";body.appendChild(q);
+      var al=document.createElement("label");al.className="lbl";al.textContent="Your answer";body.appendChild(al);
+      var ta=document.createElement("textarea");ta.rows=2;ta.value=w.answer;ta.placeholder="e.g., Because the payment code was deployed without running the test suite";
+      ta.setAttribute("aria-label","Answer to why number "+(idx+1));
+      ta.addEventListener("input",function(){w.answer=ta.value;save();});
+      body.appendChild(ta);
+      var el=document.createElement("label");el.className="lbl";el.textContent="Evidence";body.appendChild(el);
+      var ev=document.createElement("textarea");ev.rows=2;ev.value=w.evidence;ev.placeholder="Facts only: logs, numbers, dates, what you saw — e.g., 'Deploy log shows tests skipped at 2:14 PM'";
+      ev.setAttribute("aria-label","Evidence for why number "+(idx+1));
+      ev.addEventListener("input",function(){w.evidence=ev.value;save();showNudges(idx);});
+      body.appendChild(ev);
+      ta.addEventListener("input",function(){showNudges(idx);});
+    }else{
+      var disp=document.createElement("div");
+      disp.innerHTML="<p><b>"+esc(whyQuestion(idx))+"</b></p><p><b>Answer:</b> "+(w.answer.trim()?esc(w.answer.trim()):"<i>not answered</i>")+"</p>"+
+        (w.evidence.trim()?"<p class='note'><b>Evidence:</b> "+esc(w.evidence.trim())+"</p>":"<p class='note' style='color:#a33'>No evidence recorded.</p>");
+      body.appendChild(disp);
+    }
+    d.appendChild(body);box.appendChild(d);
+  });
+  showNudges(S.whys.length-1);
+  var nb=document.getElementById("nextWhy");
+  nb.disabled=S.stopped||S.whys.length>=MAXW;
+  nb.textContent=S.whys.length>=MAXW?"Five whys complete":"Next why →";
+  document.getElementById("stopHere").disabled=S.stopped;
+  document.getElementById("backWhy").disabled=S.stopped||S.whys.length<=1;
+}
+function showNudges(idx){
+  var box=document.getElementById("whynudge");box.innerHTML="";
+  if(S.stopped||idx!==S.whys.length-1||!S.whys[idx].answer.trim())return;
+  var notes=validateWhy(idx);
+  notes.forEach(function(n){
+    var f=document.createElement("div");f.className="flag";f.innerHTML="<b>Chain check:</b> "+esc(n);box.appendChild(f);
+  });
+}
+function lastWhy(){return S.whys[S.whys.length-1];}
+function nextWhy(){
+  var err=document.getElementById("err");err.textContent="";
+  if(!S.problem.trim()){err.textContent="State the problem first (step 1) — the chain needs something to drill into.";return;}
+  if(S.stopped)return;
+  var w=lastWhy();
+  if(!w.answer.trim()){err.textContent="Answer the current 'why' before moving deeper.";return;}
+  if(S.whys.length>=MAXW){err.textContent="Five whys complete — confirm the root cause below.";finishChain();return;}
+  S.whys.push({answer:"",evidence:""});save();drawChain();
+}
+function backWhy(){
+  if(S.stopped||S.whys.length<=1)return;
+  S.whys.pop();save();drawChain();
+}
+function finishChain(){
+  var err=document.getElementById("err");err.textContent="";
+  var w=lastWhy();
+  if(!S.problem.trim()){err.textContent="State the problem first (step 1).";return;}
+  if(!w.answer.trim()){err.textContent="Answer the current 'why' first — or go back and stop at the previous level.";return;}
+  S.stopped=true;save();drawChain();
+  var cb=document.getElementById("confirmBody");
+  cb.innerHTML='<div class="link root"><div class="why">★</div><div style="flex:1"><p><b>Candidate root cause:</b> '+esc(w.answer.trim())+'</p>'+
+    (w.evidence.trim()?"<p class='note'><b>Evidence:</b> "+esc(w.evidence.trim())+"</p>":"<p class='note' style='color:#a33'>No evidence recorded — weak chains get weak fixes.</p>")+'</div></div>'+
+    '<p class="hint">Would fixing this prevent the problem from coming back? Does it point at something you can change?</p>'+
+    '<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap">'+
+    '<button class="btn" id="actYes">Yes — this is the root cause</button>'+
+    '<button class="btn ghost" id="actNo">No — keep digging</button></div>'+
+    '<div id="actNote"></div>';
+  document.getElementById("confirmcard").hidden=false;
+  document.getElementById("actYes").addEventListener("click",function(){
+    S.actionable="yes";save();
+    document.getElementById("actNote").innerHTML='<div class="flag good"><b>Locked in.</b> Build your countermeasures around this cause in step 4.</div>';
+    document.getElementById("cmcard").hidden=false;
+  });
+  document.getElementById("actNo").addEventListener("click",function(){
+    S.actionable="no";save();
+    document.getElementById("actNote").innerHTML='<div class="flag"><b>Keep digging.</b> The chain is reopened — use "Edit previous" to step back, sharpen an earlier answer, then push one level deeper. If you\'re at five whys and still not actionable, treat the last answer as a <i>contributing cause</i> and run a second five-whys on it as a new problem.</div>';
+    S.stopped=false;save();drawChain();
+    document.getElementById("cmcard").hidden=false;
+  });
+  if(S.actionable==="yes"){document.getElementById("actYes").click();}
+  else if(S.actionable==="no"){document.getElementById("cmcard").hidden=false;document.getElementById("actNote").innerHTML='<div class="flag"><b>Previously marked "keep digging".</b> The chain is open for revision; you can also proceed to countermeasures on the best candidate cause.</div>';}
+  if(document.getElementById("confirmcard").scrollIntoView)document.getElementById("confirmcard").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function drawCms(){
+  var box=document.getElementById("cms");box.innerHTML="";
+  S.cms.forEach(function(c,idx){
+    var d=document.createElement("div");d.className="link";
+    var badge=document.createElement("div");badge.className="why";badge.textContent=(idx+1);d.appendChild(badge);
+    var body=document.createElement("div");body.style.flex="1";
+    var a=document.createElement("textarea");a.rows=2;a.value=c.action;a.placeholder="Countermeasure: what will you change? e.g., Add a required test-suite gate to the deploy pipeline";
+    a.setAttribute("aria-label","Countermeasure "+(idx+1)+" action");
+    a.addEventListener("input",function(){c.action=a.value;save();});
+    var al=document.createElement("label");al.className="lbl";al.textContent="Action";body.appendChild(al);body.appendChild(a);
+    var o=document.createElement("input");o.type="text";o.value=c.owner;o.placeholder="Owner, e.g., Priya";
+    o.setAttribute("aria-label","Countermeasure "+(idx+1)+" owner");
+    o.addEventListener("input",function(){c.owner=o.value;save();});
+    var ol=document.createElement("label");ol.className="lbl";ol.textContent="Owner";body.appendChild(ol);body.appendChild(o);
+    var v=document.createElement("input");v.type="text";v.value=c.verify;v.placeholder="How you'll know it worked, e.g., Zero skipped-test deploys for 60 days";
+    v.setAttribute("aria-label","Countermeasure "+(idx+1)+" verification");
+    v.addEventListener("input",function(){c.verify=v.value;save();});
+    var vl=document.createElement("label");vl.className="lbl";vl.textContent="Verification";body.appendChild(vl);body.appendChild(v);
+    d.appendChild(body);
+    if(S.cms.length>1){var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove";rm.setAttribute("aria-label","Remove countermeasure "+(idx+1));rm.style.alignSelf="flex-start";
+      rm.addEventListener("click",function(){S.cms.splice(idx,1);save();drawCms();});
+      d.appendChild(rm);}
+    box.appendChild(d);
+  });
+}
+function finish(){
+  var err=document.getElementById("cmerr");err.textContent="";
+  var cms=S.cms.filter(function(c){return c.action.trim();});
+  if(!cms.length){err.textContent="Add at least one countermeasure — a root cause without a fix is just an observation.";return;}
+  var b=document.getElementById("outBody");
+  var h='<h3 style="font-family:Georgia,serif;margin:10px 0 6px">Problem</h3><p>'+esc(S.problem.trim())+'</p>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 6px">The why chain</h3>';
+  S.whys.forEach(function(w,idx){
+    if(!w.answer.trim())return;
+    h+='<div class="link'+(idx===S.whys.length-1&&S.actionable!=="no"?" root":"")+'"><div class="why">W'+(idx+1)+'</div><div style="flex:1"><p>'+esc(w.answer.trim())+'</p>'+
+      (w.evidence.trim()?"<p class='note'><b>Evidence:</b> "+esc(w.evidence.trim())+"</p>":"<p class='note' style='color:#a33'>No evidence recorded.</p>")+'</div></div>';
+    if(idx<S.whys.length-1&&S.whys[idx+1].answer.trim())h+='<div class="arrow">&darr;</div>';
+  });
+  var root=lastWhy().answer.trim();
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 6px">Root cause</h3><div class="flag '+(S.actionable==="yes"?"good":"")+'"><b>'+esc(root)+'</b>'+(S.actionable==="no"?" (marked for further digging — treat as best current candidate)":"")+'</div>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 6px">Countermeasure plan</h3>';
+  cms.forEach(function(c,idx){
+    h+='<div class="link"><div class="why">'+(idx+1)+'</div><div style="flex:1"><p><b>Do:</b> '+esc(c.action.trim())+'</p>'+
+      '<p><b>Owner:</b> '+(c.owner.trim()?esc(c.owner.trim()):'<span style="color:#a33">unassigned</span>')+' &nbsp;·&nbsp; <b>Verify by:</b> '+(c.verify.trim()?esc(c.verify.trim()):'<span style="color:#a33">no verification defined</span>')+'</p></div></div>';
+  });
+  var noVerify=cms.filter(function(c){return !c.verify.trim();}).length;
+  var noOwner=cms.filter(function(c){return !c.owner.trim();}).length;
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 6px">Next steps</h3><ol style="margin-left:22px">'+
+    '<li>Share this report with the people closest to the problem — ask: "Does this cause ring true to you?" If they laugh, your chain is wrong.</li>'+
+    '<li>Start the countermeasures this week. Fixes decay; momentum matters.</li>'+
+    '<li>Check your verification criteria on the date you set. If the problem recurs, the chain missed a level — run it again.</li>'+
+    (noOwner?'<li>'+noOwner+' countermeasure'+(noOwner>1?"s have":" has")+' no owner — assign them.</li>':"")+
+    (noVerify?'<li>'+noVerify+' countermeasure'+(noVerify>1?"s lack":" lacks")+' a verification step — decide how you\'ll know it worked.</li>':"")+
+    '</ol>';
+  b.innerHTML=h;
+  document.getElementById("out").hidden=false;
+  if(document.getElementById("out").scrollIntoView)document.getElementById("out").scrollIntoView({behavior:"smooth",block:"start"});
+  save();
+}
+document.getElementById("nextWhy").addEventListener("click",nextWhy);
+document.getElementById("backWhy").addEventListener("click",backWhy);
+document.getElementById("stopHere").addEventListener("click",finishChain);
+document.getElementById("addCm").addEventListener("click",function(){if(S.cms.length>=8)return;S.cms.push({action:"",owner:"",verify:""});save();drawCms();});
+document.getElementById("finish").addEventListener("click",finish);
+document.getElementById("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={problem:"",whys:[{answer:"",evidence:""}],stopped:false,actionable:"",cms:[{action:"",owner:"",verify:""}]};
+  document.getElementById("problem").value="";
+  document.getElementById("confirmcard").hidden=true;document.getElementById("cmcard").hidden=true;document.getElementById("out").hidden=true;
+  document.getElementById("err").textContent="";document.getElementById("cmerr").textContent="";
+  drawChain();drawCms();
+});
+document.getElementById("problem").addEventListener("input",function(){S.problem=this.value;save();});
+load();
+document.getElementById("problem").value=S.problem||"";
+drawChain();drawCms();
+if(S.stopped&&lastWhy().answer.trim()){finishChain();}
+</script>
+</body>
+</html>

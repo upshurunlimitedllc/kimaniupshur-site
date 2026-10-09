@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Difficult Conversation Planner | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Plan the hard conversation you're avoiding — your goal, your opener, their likely reactions, and your responses — before you walk in. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/difficult-conversation-planner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Difficult Conversation Planner | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Plan the hard conversation you're avoiding — your goal, your opener, their likely reactions, and your responses — before you walk in. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/difficult-conversation-planner/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:90px;resize:vertical}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.stepdots{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.stepdots span{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;border:2px solid #c9a227;font-size:.8rem}
+.stepdots span.cur{background:#c9a227;color:#141210}
+.stepdots span.done{background:#141210;color:#e8c84a;border-color:#141210}
+.stepdots span.todo{background:transparent;color:#8a6d1c}
+.navrow{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:20px}
+.steplabel{display:inline-block;background:#141210;color:#e8c84a;font-weight:bold;border-radius:6px;padding:4px 12px;margin-bottom:8px;font-size:.9rem}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.checkrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee;cursor:pointer}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0}
+.optblock{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:16px;margin:12px 0}
+.optblock h4{font-family:Georgia,serif;margin-bottom:4px}
+.xycard{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:16px;margin:12px 0}
+.xycard .x{background:#fdf3e3;border-radius:8px;padding:10px 14px;margin-bottom:8px}
+.xycard .y{background:#eef6ee;border-radius:8px;padding:10px 14px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{header.site,footer.site,.navrow,.noprint,section{display:none}main.app{max-width:100%}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Difficult Conversation Planner</h1>
+<p class="intro">The conversation you're avoiding won't get easier by waiting. Plan it now: your <b>goal</b>, your <b>opener</b> in your own words, <b>their likely reactions</b> with your responses ready, and a clear <b>success criterion</b> plus <b>exit line</b>.</p>
+
+<div class="stepdots" id="dots" aria-label="Progress"></div>
+
+<div class="appcard" id="step1">
+<span class="steplabel">Step 1 — The goal</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">What is this conversation really about?</h2>
+<p class="hint">A hard conversation goes sideways when the goal is vague. Name it precisely — and name what you've been avoiding saying.</p>
+<label class="lbl" for="who">Who is the conversation with?</label>
+<input type="text" id="who" placeholder="e.g., My manager, Priya">
+<label class="lbl" for="goal">What outcome do you want to walk away with?</label>
+<textarea id="goal" placeholder="e.g., A clear agreement on my role in the new project and a timeline for the raise we discussed." style="min-height:80px"></textarea>
+<label class="lbl" for="avoiding">What have you been avoiding saying? (Be blunt — this stays between you and this page.)</label>
+<textarea id="avoiding" placeholder="e.g., I feel passed over and I'm starting to look for other jobs."></textarea>
+<p class="err" id="err1" role="alert"></p>
+<div class="navrow"><span></span><button class="btn" id="to2">Draft the opener &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step2" hidden>
+<span class="steplabel">Step 2 — The opener</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Say it in your own words</h2>
+<p class="hint">Write the first 2–3 sentences you'll actually say. A strong opener: states your <b>purpose</b>, stays <b>specific</b>, owns <b>your part</b>, and <b>invites them in</b> — not a lecture.</p>
+<label class="lbl" for="opener">My opener (word for word):</label>
+<textarea id="opener" placeholder='e.g., "Priya, I'd like to talk about my role in the new project. I want to make sure we're aligned on what success looks like for me — is now a good time?"'></textarea>
+<label class="lbl">Opener self-check</label>
+<div id="checks"></div>
+<p class="err" id="err2" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back1">&larr; Back</button><button class="btn" id="to3">Anticipate reactions &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step3" hidden>
+<span class="steplabel">Step 3 — If they say X, I say Y</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Prepare for the three most likely reactions</h2>
+<p class="hint">Think about how this person <i>actually</i> reacts under pressure — defensiveness, deflection, tears, silence, counterattack. Write what they'll probably say, then write your calm planned response. This is the whole game.</p>
+<div id="reactions"></div>
+<p class="err" id="err3" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back2">&larr; Back</button><button class="btn" id="to4">Define success &amp; the exit &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step4" hidden>
+<span class="steplabel">Step 4 — Success &amp; exit</span>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Know when you've won — and how to leave</h2>
+<p class="hint">Decide <b>before</b> you walk in what "good enough" looks like, and have a graceful exit line ready so you can close the conversation on your terms instead of trailing off.</p>
+<label class="lbl" for="success">Success criterion — how will I know this conversation went well?</label>
+<textarea id="success" placeholder="e.g., We agree on my responsibilities in writing and set a date to revisit compensation."></textarea>
+<label class="lbl" for="exitline">My exit line — how I'll close the conversation</label>
+<textarea id="exitline" placeholder='e.g., "Thanks for hearing me out. I feel clearer now — I\u2019ll send a quick summary of what we agreed on today."'></textarea>
+<label class="lbl" for="whenwhere">When and where will this happen?</label>
+<input type="text" id="whenwhere" placeholder="e.g., Thursday 10am, the small conference room — not over email">
+<p class="err" id="err4" role="alert"></p>
+<div class="navrow"><button class="btn ghost" id="back3">&larr; Back</button><button class="btn" id="to5">See my conversation plan &rarr;</button></div>
+</div>
+
+<div class="appcard" id="step5" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your conversation plan</h2>
+<div id="plan" aria-live="polite"></div>
+<div class="navrow noprint"><button class="btn ghost" id="back4">&larr; Back</button>
+<span style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn ghost" id="printBtn">Print plan</button><button class="btn danger" id="reset">Start over (clear saved work)</button></span></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>One planned conversation is a start; a skill you can reuse is better. <em>Difficult Conversations Made Simple</em> by Kimani Upshur, M.Ed. teaches you how to say the hard things clearly, calmly, and without damaging the relationship.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/difficult-conversations-made-simple/">Get Difficult Conversations Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-difficult-conversation-planner-v1";
+var CHECKS=[
+ "It states my purpose for the conversation (not just my complaint).",
+ "It is specific — it names the actual situation, not generalities.",
+ "It owns my part — no blame-language like \u201cyou always\u201d or \u201cyou never\u201d.",
+ "It invites them in — it asks, listens, or opens the floor."
+];
+var S={step:1,who:"",goal:"",avoiding:"",opener:"",checks:[false,false,false,false],
+       reacts:[{x:"",y:""},{x:"",y:""},{x:"",y:""}],success:"",exitline:"",whenwhere:""};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function rxGet(i){if(!S.reacts[i])S.reacts[i]={x:"",y:""};return S.reacts[i];}
+
+function drawDots(){
+  var names=["Goal","Opener","Reactions","Success","Plan"];
+  var d=document.getElementById("dots");d.innerHTML="";
+  names.forEach(function(n,i){
+    var sp=document.createElement("span");var n2=i+1;
+    sp.textContent=n2;sp.title="Step "+n2+": "+n;
+    sp.className=n2===S.step?"cur":(n2<S.step?"done":"todo");
+    d.appendChild(sp);
+  });
+}
+function goto(n){
+  S.step=n;save();drawDots();
+  for(var i=1;i<=5;i++){document.getElementById("step"+i).hidden=(i!==n);}
+  if(n===2)drawChecks();
+  if(n===3)drawReactions();
+  if(n===5)renderPlan();
+  window.scrollTo(0,0);
+}
+
+function drawChecks(){
+  var box=document.getElementById("checks");box.innerHTML="";
+  CHECKS.forEach(function(c,i){
+    var lab=document.createElement("label");lab.className="checkrow";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!S.checks[i];
+    cb.setAttribute("aria-label","Opener check "+(i+1)+": "+c);
+    cb.addEventListener("change",function(){S.checks[i]=cb.checked;save();});
+    var sp=document.createElement("span");sp.textContent=c;
+    lab.appendChild(cb);lab.appendChild(sp);box.appendChild(lab);
+  });
+}
+function drawReactions(){
+  var box=document.getElementById("reactions");box.innerHTML="";
+  var labels=["Most likely reaction","Second most likely","The hard one — the reaction you're most afraid of"];
+  for(var i=0;i<3;i++){
+    var r=rxGet(i);
+    var div=document.createElement("div");div.className="optblock";
+    div.innerHTML='<h4>Reaction '+(i+1)+' — '+esc(labels[i])+'</h4>'+
+      '<label class="lbl" for="rx'+i+'">If they say / do X \u2026</label>'+
+      '<textarea id="rx'+i+'" placeholder="e.g., She gets defensive and says I\u2019m not a team player." style="min-height:70px"></textarea>'+
+      '<label class="lbl" for="ry'+i+'">Then I say Y \u2026</label>'+
+      '<textarea id="ry'+i+'" placeholder="e.g., \u201cI hear you, and I want to be a team player \u2014 that\u2019s why I\u2019m raising this now instead of letting it fester. Can we talk about what \u2018team player\u2019 looks like here?\u201d" style="min-height:70px"></textarea>';
+    box.appendChild(div);
+    var x=div.querySelector("#rx"+i),y=div.querySelector("#ry"+i);
+    x.value=r.x;y.value=r.y;
+    (function(idx,xx,yy){
+      xx.addEventListener("input",function(){rxGet(idx).x=xx.value;save();});
+      yy.addEventListener("input",function(){rxGet(idx).y=yy.value;save();});
+    })(i,x,y);
+  }
+}
+function renderPlan(){
+  var h='<p class="hint">Conversation with: <b>'+esc(S.who||"(unnamed)")+'</b>'+(S.whenwhere.trim()?' · <b>'+esc(S.whenwhere.trim())+'</b>':"")+'</p>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">My goal</h3><p>'+esc(S.goal.trim())+'</p>';
+  if(S.avoiding.trim())h+='<div class="flag"><b>The thing I\u2019ve been avoiding saying:</b> '+esc(S.avoiding.trim())+'</div>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">My opener (word for word)</h3><div class="flag good"><p>'+esc(S.opener.trim())+'</p></div>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">If they say X, I say Y</h3>';
+  for(var i=0;i<3;i++){
+    var r=rxGet(i);
+    h+='<div class="xycard"><div class="x"><b>If they:</b> '+esc(r.x.trim())+'</div><div class="y"><b>I say:</b> '+esc(r.y.trim())+'</div></div>';
+  }
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Success looks like</h3><p>'+esc(S.success.trim())+'</p>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">My exit line</h3><div class="flag good"><p>'+esc(S.exitline.trim())+'</p></div>';
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Before you walk in</h3><ul style="margin-left:22px">'+
+    '<li>Read the opener and the three Y-responses <b>out loud</b> once — your mouth needs the rehearsal, not just your eyes.</li>'+
+    '<li>Lead with the goal, not the grievance. If you feel heat rising, pause and restate their last point before answering.</li>'+
+    '<li>If the conversation goes off the rails, use your exit line — you can always resume later, calmer.</li>'+
+    '<li>Right after: write down what was actually agreed, and send it in writing.</li></ul>';
+  document.getElementById("plan").innerHTML=h;
+}
+
+document.getElementById("to2").addEventListener("click",function(){
+  var e=document.getElementById("err1");
+  if(!S.who.trim()){e.textContent="Name who the conversation is with.";return;}
+  if(S.goal.trim().length<15){e.textContent="Spell out the outcome you want — a vague goal makes a vague conversation.";return;}
+  if(!S.avoiding.trim()){e.textContent="Say the thing you've been avoiding — naming it is the whole point of this step.";return;}
+  e.textContent="";goto(2);
+});
+document.getElementById("to3").addEventListener("click",function(){
+  var e=document.getElementById("err2");
+  if(S.opener.trim().length<20){e.textContent="Draft the opener in your actual words — at least a sentence or two.";return;}
+  var missing=[];
+  CHECKS.forEach(function(c,i){if(!S.checks[i])missing.push(i+1);});
+  if(missing.length){e.textContent="Revise the opener until checks "+missing.join(", ")+" pass — or uncheck nothing; every check is there to keep the conversation constructive.";return;}
+  e.textContent="";goto(3);
+});
+document.getElementById("to4").addEventListener("click",function(){
+  var e=document.getElementById("err3");
+  var labels=["most likely","second most likely","hardest"];
+  for(var i=0;i<3;i++){
+    var r=rxGet(i);
+    if(!r.x.trim()){e.textContent="Write the "+labels[i]+" reaction — what will they probably say or do?";return;}
+    if(!r.y.trim()){e.textContent="Write your planned response to reaction "+(i+1)+" — walking in without a response is walking in unprepared.";return;}
+  }
+  e.textContent="";goto(4);
+});
+document.getElementById("to5").addEventListener("click",function(){
+  var e=document.getElementById("err4");
+  if(!S.success.trim()){e.textContent="Define what success looks like — otherwise you'll never know if you got it.";return;}
+  if(!S.exitline.trim()){e.textContent="Write your exit line — every hard conversation needs a planned landing.";return;}
+  e.textContent="";goto(5);
+});
+document.getElementById("back1").addEventListener("click",function(){goto(1);});
+document.getElementById("back2").addEventListener("click",function(){goto(2);});
+document.getElementById("back3").addEventListener("click",function(){goto(3);});
+document.getElementById("back4").addEventListener("click",function(){goto(4);});
+document.getElementById("printBtn").addEventListener("click",function(){window.print();});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={step:1,who:"",goal:"",avoiding:"",opener:"",checks:[false,false,false,false],
+     reacts:[{x:"",y:""},{x:"",y:""},{x:"",y:""}],success:"",exitline:"",whenwhere:""};
+  document.getElementById("who").value="";document.getElementById("goal").value="";
+  document.getElementById("avoiding").value="";document.getElementById("opener").value="";
+  document.getElementById("success").value="";document.getElementById("exitline").value="";
+  document.getElementById("whenwhere").value="";
+  goto(1);
+});
+document.getElementById("who").addEventListener("input",function(){S.who=this.value;save();});
+document.getElementById("goal").addEventListener("input",function(){S.goal=this.value;save();});
+document.getElementById("avoiding").addEventListener("input",function(){S.avoiding=this.value;save();});
+document.getElementById("opener").addEventListener("input",function(){S.opener=this.value;save();});
+document.getElementById("success").addEventListener("input",function(){S.success=this.value;save();});
+document.getElementById("exitline").addEventListener("input",function(){S.exitline=this.value;save();});
+document.getElementById("whenwhere").addEventListener("input",function(){S.whenwhere=this.value;save();});
+
+load();
+document.getElementById("who").value=S.who||"";
+document.getElementById("goal").value=S.goal||"";
+document.getElementById("avoiding").value=S.avoiding||"";
+document.getElementById("opener").value=S.opener||"";
+document.getElementById("success").value=S.success||"";
+document.getElementById("exitline").value=S.exitline||"";
+document.getElementById("whenwhere").value=S.whenwhere||"";
+drawDots();
+for(var i=1;i<=5;i++){document.getElementById("step"+i).hidden=(i!==S.step);}
+if(S.step===2)drawChecks();
+if(S.step===3)drawReactions();
+if(S.step===5)renderPlan();
+</script>
+</body>
+</html>
