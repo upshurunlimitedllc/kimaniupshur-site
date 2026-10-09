@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscription Drain Audit | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Find every recurring charge quietly eating your budget and get a cancel-or-keep shortlist with your annual savings. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/subscription-drain-audit/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Subscription Drain Audit | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Find every recurring charge quietly eating your budget and get a cancel-or-keep shortlist with your annual savings. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/subscription-drain-audit/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:18px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag.bad{background:#fbeeee;border-left-color:#a33}
+.pill{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:bold;color:#fff;margin:4px 6px 4px 0}
+.p-low{background:#3d7a3d}.p-med{background:#8a6d1c}.p-high{background:#b45f06}.p-crit{background:#a33}
+.big{font-family:Georgia,serif;font-size:2rem;color:#141210;margin:6px 0}
+.subrow{border:2px solid #e0d6b8;border-radius:10px;padding:14px;margin:10px 0;background:#fff}
+.subrow .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.subrow .cols{grid-template-columns:1fr}}
+.subrow .top{display:flex;gap:8px;align-items:flex-start}
+.subrow .num{padding-top:16px;min-width:40px;color:#8a6d1c;font-weight:bold}
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+table.grid th,table.grid td{border:1px solid #e0d6b8;padding:8px;text-align:center}
+table.grid th{background:#141210;color:#e8c84a}
+table.grid td.l{text-align:left;background:#fffdf7}
+.twrap{overflow-x:auto}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:4px}
+ol.steps{margin:8px 0 8px 22px}
+ol.steps li{margin:6px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{header.site,footer.site,section.devotional,.noprint,#inputsCard{display:none!important}main.app{max-width:100%;padding:10px}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Subscription Drain Audit</h1>
+<p class="intro">List every recurring charge — streaming, apps, memberships, the works — and get a cancel-or-keep shortlist with the annual savings if you follow it.</p>
+<div class="flag"><b>Educational modeling, not professional financial advice.</b> The cancel/keep labels are rough rules of thumb from your own answers, not instructions. Check each service's cancellation and refund terms before you act.</div>
+
+<div class="appcard noprint" id="inputsCard">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px;font-size:1.25rem">Step 1 — List every recurring charge</h2>
+<p class="hint">Pull up your last two bank or card statements and enter <b>everything that bills you automatically</b> — the ones you forgot about are exactly the point. Be honest about "last actually used": a subscription you haven't touched in months is a subscription you're donating to.</p>
+<div id="subs"></div>
+<div class="noprint"><button class="btn ghost small" id="addSub">+ Add subscription</button></div>
+<h2 style="font-family:Georgia,serif;margin:18px 0 4px;font-size:1.25rem">Step 2 — Run the audit</h2>
+<p class="err" id="err" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="audit">Run my audit</button>
+<button class="btn ghost" id="reset">Reset (clear saved work)</button>
+</div>
+</div>
+
+<div class="appcard" id="totalsCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">The damage</h2>
+<div id="totalsBody" aria-live="polite"></div>
+</div>
+
+<div class="appcard" id="shortlistCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your cancel-or-keep shortlist</h2>
+<div id="shortlistBody" aria-live="polite"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn" id="printBtn">Print my shortlist</button>
+</div>
+</div>
+
+<div class="appcard" id="reauditCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Re-audit reminders</h2>
+<div id="reauditBody" aria-live="polite"></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>Plugging the drain is the start. <em>Where&rsquo;s My Money? Made Simple</em> by Kimani Upshur, M.Ed. goes deeper into finding where your money actually goes — in plain English.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/wheres-my-money-made-simple/">Get Where&rsquo;s My Money? Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-subscription-drain-audit-v1";
+var MAXS=30;
+var S={subs:[{name:"",cost:"",freq:"monthly",cat:"Streaming video",used:"month"}],checks:{}};
+var FREQS={"weekly":"Weekly","monthly":"Monthly","quarterly":"Quarterly","annual":"Annual"};
+var FREQ_MULT={weekly:52,monthly:12,quarterly:4,annual:1};
+var CATS=["Streaming video","Music","Gaming","Cloud storage","News & magazines","Fitness & wellness","Apps & software","Memberships & clubs","Other"];
+var USED_LBL={week:"Used this week",month:"Used this month",few:"2–3 months ago",long:"6+ months ago or not sure"};
+var USES_PER_YEAR={week:120,month:24,few:4,long:0};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"){
+  if(Array.isArray(o.subs)&&o.subs.length)S.subs=o.subs.map(function(x){return{name:String(x.name||""),cost:String(x.cost||""),freq:String(x.freq||"monthly"),cat:String(x.cat||"Other"),used:String(x.used||"month")};});
+  if(o.checks&&typeof o.checks==="object")S.checks=o.checks;
+}}}catch(e){}}
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function money0(n){return "$"+Math.round(n).toLocaleString("en-US");}
+function money2(n){return "$"+Number(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+function monthName(d){return d.toLocaleDateString("en-US",{month:"long",year:"numeric"});}
+function annualOf(s){var c=parseFloat(s.cost);if(!isFinite(c)||c<0)return NaN;return c*(FREQ_MULT[s.freq]||0);}
+function costPerUse(s){
+  var a=annualOf(s);if(isNaN(a))return null;
+  var u=USES_PER_YEAR[s.used]||0;
+  if(u<=0)return Infinity;
+  return a/u;
+}
+function drawSubs(){
+  var box=document.getElementById("subs");box.innerHTML="";
+  S.subs.forEach(function(s,idx){
+    var d=document.createElement("div");d.className="subrow";
+    var top=document.createElement("div");top.className="top";
+    var num=document.createElement("div");num.className="num";num.textContent=(idx+1);
+    var nm=document.createElement("input");nm.type="text";nm.value=s.name;nm.placeholder="e.g., StreamFlix Premium";
+    nm.setAttribute("aria-label","Subscription "+(idx+1)+" name");
+    nm.addEventListener("input",function(){s.name=nm.value;save();});
+    top.appendChild(num);top.appendChild(nm);
+    if(S.subs.length>1){var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove";rm.setAttribute("aria-label","Remove subscription "+(idx+1));rm.style.margin="8px 0";
+      rm.addEventListener("click",function(){S.subs.splice(idx,1);save();drawSubs();});
+      top.appendChild(rm);}
+    d.appendChild(top);
+    var cols=document.createElement("div");cols.className="cols";
+    // cost
+    var cwrap=document.createElement("div");
+    var cl=document.createElement("label");cl.className="lbl";cl.textContent="Cost per billing";cwrap.appendChild(cl);
+    var ci=document.createElement("input");ci.type="number";ci.min="0";ci.step="0.01";ci.inputMode="decimal";ci.value=s.cost;ci.placeholder="e.g., 15.99";
+    ci.setAttribute("aria-label","Cost for subscription "+(idx+1));
+    ci.addEventListener("input",function(){s.cost=ci.value;save();});
+    cwrap.appendChild(ci);cols.appendChild(cwrap);
+    // frequency
+    var fwrap=document.createElement("div");
+    var fl=document.createElement("label");fl.className="lbl";fl.textContent="Billing frequency";fwrap.appendChild(fl);
+    var fs=document.createElement("select");fs.setAttribute("aria-label","Billing frequency for subscription "+(idx+1));
+    Object.keys(FREQS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=FREQS[k];if(s.freq===k)o.selected=true;fs.appendChild(o);});
+    fs.addEventListener("change",function(){s.freq=fs.value;save();});
+    fwrap.appendChild(fs);cols.appendChild(fwrap);
+    // category
+    var gwrap=document.createElement("div");
+    var gl=document.createElement("label");gl.className="lbl";gl.textContent="Category";gwrap.appendChild(gl);
+    var gs=document.createElement("select");gs.setAttribute("aria-label","Category for subscription "+(idx+1));
+    CATS.forEach(function(c){var o=document.createElement("option");o.value=c;o.textContent=c;if(s.cat===c)o.selected=true;gs.appendChild(o);});
+    gs.addEventListener("change",function(){s.cat=gs.value;save();});
+    gwrap.appendChild(gs);cols.appendChild(gwrap);
+    // last used
+    var uwrap=document.createElement("div");
+    var ul=document.createElement("label");ul.className="lbl";ul.textContent="Last actually used";uwrap.appendChild(ul);
+    var us=document.createElement("select");us.setAttribute("aria-label","Last used for subscription "+(idx+1));
+    Object.keys(USED_LBL).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=USED_LBL[k];if(s.used===k)o.selected=true;us.appendChild(o);});
+    us.addEventListener("change",function(){s.used=us.value;save();});
+    uwrap.appendChild(us);cols.appendChild(uwrap);
+    d.appendChild(cols);
+    box.appendChild(d);
+  });
+}
+function namedSubs(){return S.subs.filter(function(s){return s.name.trim()!=="";});}
+function audit(){
+  var err=document.getElementById("err");err.textContent="";
+  var named=namedSubs();
+  if(named.length===0){err.textContent="Add at least one subscription with a name.";hideResults();return;}
+  for(var k=0;k<named.length;k++){
+    var s=named[k],nm=s.name.trim();
+    var c=parseFloat(s.cost);
+    if(!isFinite(c)||c<0){err.textContent='"'+nm+'" needs a cost of 0 or more.';hideResults();return;}
+    if(c>100000){err.textContent='"'+nm+'" looks unusually expensive — please double-check the cost.';hideResults();return;}
+  }
+  // duplicate categories: 2+ subs in same non-Other category
+  var byCat={};
+  named.forEach(function(s){if(s.cat!=="Other"){byCat[s.cat]=byCat[s.cat]||[];byCat[s.cat].push(s);}});
+  var dupCats=Object.keys(byCat).filter(function(c){return byCat[c].length>1;});
+  // verdicts
+  var rows=named.map(function(s){
+    var a=annualOf(s),cpu=costPerUse(s);
+    var v,why;
+    if(a===0){v="free";why="Costs nothing — no drain.";}
+    else if(s.used==="long"){v="cancel";why="Not used in 6+ months — likely forgotten.";}
+    else if(cpu!==Infinity&&cpu>5&&a>=50){v="review";why="Roughly "+money2(cpu)+" per use — expensive for how often it is used.";}
+    else{v="keep";why="Used recently enough to justify the cost.";}
+    return {s:s,a:a,cpu:cpu,v:v,why:why};
+  });
+  // duplicates: within each dup category, keep the most-recently-used (tie: cheapest); others become "pick one"
+  dupCats.forEach(function(c){
+    var group=byCat[c].map(function(s){return rows.filter(function(r){return r.s===s;})[0];});
+    var usedRank={week:0,month:1,few:2,long:3};
+    group.sort(function(x,y){return (usedRank[x.s.used]-usedRank[y.s.used])||(x.a-y.a);});
+    for(var i=1;i<group.length;i++){
+      if(group[i].v==="keep"||group[i].v==="review"){group[i].v="pickone";group[i].why="Duplicate: also paying for "+group[0].s.name.trim()+" in "+c+". Keep one, cut the rest.";}
+      else if(group[i].v==="cancel"){group[i].why+=" Also overlaps with "+group[0].s.name.trim()+" in "+c+".";}
+    }
+  });
+  var total=named.reduce(function(t,s){return t+annualOf(s);},0);
+  var savings=rows.filter(function(r){return r.v==="cancel"||r.v==="pickone";}).reduce(function(t,r){return t+r.a;},0);
+  renderTotals(rows,total,savings);
+  renderShortlist(rows,savings,dupCats);
+  renderReaudit();
+  document.getElementById("totalsCard").hidden=false;
+  document.getElementById("shortlistCard").hidden=false;
+  document.getElementById("reauditCard").hidden=false;
+  var t=document.getElementById("totalsCard");
+  if(t.scrollIntoView)t.scrollIntoView({behavior:"smooth",block:"start"});
+  save();
+}
+function hideResults(){
+  document.getElementById("totalsCard").hidden=true;
+  document.getElementById("shortlistCard").hidden=true;
+  document.getElementById("reauditCard").hidden=true;
+}
+function renderTotals(rows,total,savings){
+  var named=rows.map(function(r){return r.s;});
+  var b=document.getElementById("totalsBody");
+  var h='<div class="big">'+money0(total)+'<span style="font-size:1rem;color:#6b6250"> / year</span></div>';
+  h+='<p>That is about <b>'+money0(total/12)+'/month</b> across <b>'+named.length+' subscription'+(named.length===1?"":"s")+'</b>. Small monthly charges are the whole trick — '+money2(15.99)+' a month sounds like nothing and costs '+money0(15.99*12)+' a year.</p>';
+  if(savings>0)h+='<div class="flag good"><b>Potential annual savings if you follow the shortlist: '+money0(savings)+'</b> ('+money0(savings/12)+'/month back in your pocket).</div>';
+  else h+='<div class="flag good"><b>Clean bill:</b> nothing flagged for cancellation. Everything is either free, actively used, or cheap enough to ignore.</div>';
+  h+='<div class="twrap"><table class="grid" aria-label="Annualized charges"><tr><th style="text-align:left">Subscription</th><th>Billing</th><th>Annual cost</th><th>Est. cost/use</th><th>Verdict</th></tr>';
+  rows.slice().sort(function(a,b2){return b2.a-a.a;}).forEach(function(r){
+    h+='<tr><td class="l">'+esc(r.s.name.trim())+'</td><td>'+money2(parseFloat(r.s.cost))+' '+FREQS[r.s.freq].toLowerCase()+'</td><td><b>'+money0(r.a)+'</b></td><td>'+(r.cpu===Infinity?"—":money2(r.cpu))+'</td><td>'+verdictPill(r.v)+'</td></tr>';
+  });
+  h+='</table></div>';
+  h+='<p class="note">Annualized as: weekly × 52, monthly × 12, quarterly × 4, annual × 1. Cost-per-use is a rough estimate from your "last used" answer (this week ≈ 120 uses/year, this month ≈ 24, 2–3 months ago ≈ 4, 6+ months/not sure ≈ 0) — treat it as a ranking aid, not a precise measurement.</p>';
+  b.innerHTML=h;
+}
+function verdictPill(v){
+  if(v==="cancel")return '<span class="pill p-crit">Cancel</span>';
+  if(v==="pickone")return '<span class="pill p-high">Pick one</span>';
+  if(v==="review")return '<span class="pill p-med">Review</span>';
+  if(v==="free")return '<span class="pill p-low">Free</span>';
+  return '<span class="pill p-low">Keep</span>';
+}
+function renderShortlist(rows,savings,dupCats){
+  var b=document.getElementById("shortlistBody");
+  var h="";
+  var cancels=rows.filter(function(r){return r.v==="cancel";}).sort(function(a,c){return c.a-a.a;});
+  var pickones=rows.filter(function(r){return r.v==="pickone";}).sort(function(a,c){return c.a-a.a;});
+  var reviews=rows.filter(function(r){return r.v==="review";}).sort(function(a,c){return c.a-a.a;});
+  var keeps=rows.filter(function(r){return r.v==="keep"||r.v==="free";}).sort(function(a,c){return c.a-a.a;});
+  function itemList(list){
+    var t='<div class="twrap"><table class="grid"><tr><th style="text-align:left">Subscription</th><th>Annual cost</th><th style="text-align:left">Why</th></tr>';
+    list.forEach(function(r){t+='<tr><td class="l"><b>'+esc(r.s.name.trim())+'</b></td><td><b>'+money0(r.a)+'</b></td><td class="l">'+esc(r.why)+'</td></tr>';});
+    return t+'</table></div>';
+  }
+  h+='<div class="flag '+(savings>0?"bad":"good")+'"><b>Total on the table: '+money0(savings)+'/year</b>'+(savings>0?" — cancel the red and orange items below and it stays in your account.":" — nothing worth cutting found.")+'</div>';
+  if(cancels.length){h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Cancel now <span class="pill p-crit">saves '+money0(cancels.reduce(function(t,r){return t+r.a;},0))+'</span></h3>'+itemList(cancels);}
+  if(pickones.length){h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Pick one per category <span class="pill p-high">saves '+money0(pickones.reduce(function(t,r){return t+r.a;},0))+'</span></h3><p class="hint">You are paying for overlapping services. Keep your favorite in each category, cancel the rest.</p>'+itemList(pickones);}
+  if(reviews.length){h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Review <span class="pill p-med">your call</span></h3><p class="hint">Expensive per use, but maybe worth it to you. Decide consciously — that is the whole point.</p>'+itemList(reviews);}
+  if(keeps.length){h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Keep <span class="pill p-low">'+keeps.length+'</span></h3>'+itemList(keeps);}
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Before you cancel anything</h3>';
+  h+='<ol class="steps"><li><b>Check the terms:</b> annual plans may not refund the unused months; some services only let you cancel at renewal.</li><li><b>Turn off auto-renew first,</b> then cancel — some services bill one last time during the "processing" window.</li><li><b>Download anything you need</b> (files, playlists, data) before the account closes.</li><li><b>Keep the confirmation email.</b> Forgotten subscriptions have a way of resurrecting on the next statement.</li><li><b>Watch the next two statements</b> to confirm the charges actually stopped.</li></ol>';
+  h+='<p class="note">Rules of thumb used: "cancel" = unused 6+ months; "pick one" = 2+ paid subscriptions in the same category, keeping the most-used; "review" = roughly $5+ per use on a $50+/year service. Your judgment overrides all of it.</p>';
+  b.innerHTML=h;
+}
+function renderReaudit(){
+  var b=document.getElementById("reauditBody");
+  var today=new Date();
+  var h='<p class="hint">Subscriptions creep back. Check each box after you complete the quarterly re-audit — they save on this device.</p>';
+  for(var q=1;q<=4;q++){
+    var d=new Date(today.getFullYear(),today.getMonth()+q*3,today.getDate());
+    var key="q"+q;
+    var done=!!S.checks[key];
+    h+='<div class="checkrow"><input type="checkbox" id="reaudit-'+key+'" '+(done?"checked":"")+' aria-label="Quarter '+q+' re-audit due '+esc(monthName(d))+'">';
+    h+='<label for="reaudit-'+key+'"><b>Quarter '+q+' — due '+esc(monthName(d))+':</b> re-run this audit. Pull two fresh statements, re-enter anything new, re-rate "last used." Takes 15 minutes.</label></div>';
+  }
+  h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">The 15-minute re-audit checklist</h3>';
+  h+='<ol class="steps"><li>Open your last two bank/card statements.</li><li>Highlight every automatic/recurring charge.</li><li>Delete any you no longer recognize or use.</li><li>For keepers: could a cheaper tier do the job? Downgrades count as wins.</li><li>Note any price increases since last time — services raise prices quietly.</li></ol>';
+  b.innerHTML=h;
+  for(var q2=1;q2<=4;q2++){
+    (function(key){
+      document.getElementById("reaudit-"+key).addEventListener("change",function(){
+        S.checks[key]=this.checked;save();
+      });
+    })("q"+q2);
+  }
+}
+document.getElementById("addSub").addEventListener("click",function(){
+  if(S.subs.length>=MAXS){document.getElementById("err").textContent="Thirty subscriptions is the practical limit — merge or remove the tiny ones first.";return;}
+  S.subs.push({name:"",cost:"",freq:"monthly",cat:"Other",used:"month"});save();drawSubs();
+});
+document.getElementById("audit").addEventListener("click",audit);
+document.getElementById("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={subs:[{name:"",cost:"",freq:"monthly",cat:"Streaming video",used:"month"}],checks:{}};
+  document.getElementById("err").textContent="";
+  hideResults();drawSubs();
+});
+load();drawSubs();
+if(namedSubs().length>0&&namedSubs().every(function(s){var c=parseFloat(s.cost);return isFinite(c)&&c>=0;}))audit();
+</script>
+</body>
+</html>

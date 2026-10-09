@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loan Fine-Print Decoder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Translate any loan offer's APR, fees, and fine-print clauses into its true total cost — with red-flag checks, a sign/negotiate/walk-away verdict, and side-by-side comparison of up to three offers. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/loan-fine-print-decoder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Loan Fine-Print Decoder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Translate any loan offer's APR, fees, and fine-print clauses into its true total cost — with red-flag checks, a sign/negotiate/walk-away verdict, and side-by-side comparison of up to three offers. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/loan-fine-print-decoder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:16px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn.danger{background:transparent;color:#a33;border:2px solid #a33}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag.bad{background:#fdeeee;border-left-color:#a33}
+.offercard{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:18px;margin:16px 0}
+.offercard h3{font-family:Georgia,serif;margin-bottom:4px}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #eee;cursor:pointer;min-height:44px}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow .ct b{display:block}
+.checkrow .ct span{font-size:.88rem;color:#6b6250}
+.frow{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.frow>div{flex:1;min-width:130px}
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+table.grid th,table.grid td{border:1px solid #e0d6b8;padding:8px;text-align:center}
+table.grid th{background:#141210;color:#e8c84a}
+table.grid td.l{text-align:left;font-weight:bold}
+.twrap{overflow-x:auto}
+.win{background:#eef6ee}
+.verdict{display:inline-block;font-weight:bold;padding:8px 18px;border-radius:8px;margin:8px 0}
+.verdict.walk{background:#fdeeee;color:#a33;border:2px solid #a33}
+.verdict.neg{background:#fdf3e3;color:#8a6d1c;border:2px solid #c9a227}
+.verdict.sign{background:#eef6ee;color:#3d7a3d;border:2px solid #3d7a3d}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{
+  header.site,footer.site,.screenonly,.noprint,#devotional,#godeeper{display:none!important}
+  main.app{max-width:100%;padding:0}
+  .appcard{border:1px solid #999;break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Loan Fine-Print Decoder</h1>
+<p class="intro">Paste in any loan offer's numbers and check the clauses hiding in the fine print. This tool computes the <b>true total cost</b> (not just the APR), translates each clause into plain language, and gives you a <b>sign / negotiate / walk-away</b> verdict — for up to three competing offers side by side.</p>
+<p class="hint" style="margin-bottom:16px"><b>Educational modeling only — not professional financial advice.</b> This estimates costs from the terms you enter; it can't see the full legal agreement. Always read the complete contract before signing anything.</p>
+
+<div class="appcard screenonly">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px">The offers</h2>
+<p class="hint">Fill in one, two, or three offers. Everything decodes live as you type — no button needed.</p>
+<div id="offers"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+<button class="btn ghost small" id="reset">Reset (clear saved work)</button>
+</div>
+</div>
+
+<div class="appcard" id="results" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Decoded</h2>
+<div id="decoded"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Side-by-side comparison</h3>
+<div class="twrap" id="compare"></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Assumptions behind these numbers</h3>
+<ul class="note" style="margin-left:22px">
+<li>Monthly payment uses standard fixed-rate amortization: payment = principal × r(1+r)<sup>n</sup> ÷ ((1+r)<sup>n</sup> − 1), with r = APR ÷ 12.</li>
+<li>Upfront fees are treated as paid out of pocket (not rolled into the loan). If your lender rolls fees into the balance, the true cost is higher than shown.</li>
+<li>On-time payments, no extra payments, no late fees, no rate changes (except the variable-rate shock illustration).</li>
+<li>A balloon payment is modeled as an extra lump sum due at the stated month, on top of the regular schedule — a conservative simplification; the real structure may differ.</li>
+<li>The verdict weighs only what you entered. A "signable" verdict is not approval — read the full agreement.</li>
+</ul>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn" id="printBtn">Print decoded offers</button>
+</div>
+</div>
+
+<section class="appcard screenonly" id="godeeper" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>For the full picture — interest, credit, borrowing wisely, and building wealth instead of debt — read <em>Personal Finance Made Simple</em> by Kimani Upshur, M.Ed.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/personal-finance-made-simple/">Get Personal Finance Made Simple — $4.99</a></p>
+</section>
+<p class="screenonly" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section id="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-loan-fine-print-decoder-v1";
+function blankOffer(){return{name:"",amount:"",apr:"",term:"",fees:"",variable:false,cap:"",prepay:false,balloon:false,balloonAmt:"",balloonMo:"",arbitration:false,penaltyApr:false,addons:false};}
+var S={offers:[blankOffer(),blankOffer(),blankOffer()]};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&o.offers&&o.offers.length===3){for(var i=0;i<3;i++){for(var k in S.offers[i]){if(k in o.offers[i])S.offers[i][k]=o.offers[i][k];}}}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function money(n){
+  if(n===null||n===undefined||!isFinite(n))return "—";
+  var neg=n<0;var a=Math.abs(n);
+  return (neg?"−$":"$")+a.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+function strictNum(v){
+  var t=String(v).trim().replace(/[$,%\s]/g,"");
+  if(t==="")return NaN;
+  if(!/^-?(\d+(\.\d+)?|\.\d+)$/.test(t))return NaN;
+  var n=parseFloat(t);return isFinite(n)?n:NaN;
+}
+function monthlyPayment(L,aprPct,n){
+  if(n<=0)return NaN;
+  if(aprPct<=0)return L/n;
+  var r=aprPct/1200;
+  var f=Math.pow(1+r,n);
+  return L*r*f/(f-1);
+}
+
+var CLAUSES=[
+ {id:"variable",t:"Variable (adjustable) rate",d:"Your rate — and your monthly payment — can go UP after you sign. Only a written cap limits how high."},
+ {id:"prepay",t:"Prepayment penalty",d:"Paying the loan off early, refinancing, or selling triggers a fee. You're punished for escaping debt faster."},
+ {id:"balloon",t:"Balloon payment",d:"A large lump sum comes due on one fixed date. If you can't pay it, you must refinance — at whatever rates exist then."},
+ {id:"arbitration",t:"Mandatory arbitration",d:"You give up your right to sue in court or join a class action. Disputes go to a private arbitrator, often chosen under rules the lender prefers."},
+ {id:"penaltyApr",t:"Penalty APR on late payment",d:"One late payment can permanently jack your rate to a penalty APR (often ~30%). A single slip reprices the whole loan."},
+ {id:"addons",t:"Required add-on products",d:"Insurance, warranties, or memberships bundled into the loan — you pay interest on them too. Ask for the loan WITHOUT the add-ons."}
+];
+
+function fieldRow(id,label,ph,hintText){
+  return {id:id,label:label,ph:ph,hint:hintText};
+}
+function drawOffers(){
+  var box=document.getElementById("offers");box.innerHTML="";
+  var fields=[
+    fieldRow("amount","Loan amount ($)","e.g., 25000",""),
+    fieldRow("apr","APR (%)","e.g., 8.9","The annual rate on the offer — not the whole story."),
+    fieldRow("term","Term (months)","e.g., 60","Use months: 60 = 5 years, 360 = 30 years."),
+    fieldRow("fees","Upfront fees ($)","e.g., 500","Origination, application, doc fees — anything paid at signing.")
+  ];
+  S.offers.forEach(function(o,i){
+    var card=document.createElement("div");card.className="offercard";
+    var h=document.createElement("h3");h.textContent="Offer "+(i+1);card.appendChild(h);
+    var nm=document.createElement("input");nm.type="text";nm.id="o"+i+"_name";nm.value=o.name;nm.placeholder="Lender name (e.g., First Bank)";
+    nm.setAttribute("aria-label","Offer "+(i+1)+" lender name");
+    nm.addEventListener("input",function(){S.offers[i].name=nm.value;save();decodeAll();});
+    card.appendChild(nm);
+    var fr=document.createElement("div");fr.className="frow";card.appendChild(fr);
+    fields.forEach(function(f){
+      var wrap=document.createElement("div");
+      var lb=document.createElement("label");lb.className="lbl";lb.style.fontSize=".92rem";
+      lb.setAttribute("for","o"+i+"_"+f.id);lb.textContent=f.label;wrap.appendChild(lb);
+      var inp=document.createElement("input");inp.type="text";inp.id="o"+i+"_"+f.id;inp.inputMode="decimal";
+      inp.value=o[f.id];inp.placeholder=f.ph;inp.setAttribute("aria-label","Offer "+(i+1)+" "+f.label);
+      (function(idx,fid,el){el.addEventListener("input",function(){S.offers[idx][fid]=el.value;save();decodeAll();});})(i,f.id,inp);
+      wrap.appendChild(inp);
+      if(f.hint){var hh=document.createElement("p");hh.className="hint";hh.textContent=f.hint;wrap.appendChild(hh);}
+      fr.appendChild(wrap);
+    });
+    var ch=document.createElement("h4");ch.style.margin="14px 0 4px";ch.textContent="Fine-print clauses — check all that appear in the offer";card.appendChild(ch);
+    CLAUSES.forEach(function(c){
+      var lab=document.createElement("label");lab.className="checkrow";
+      var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!o[c.id];
+      cb.setAttribute("aria-label","Offer "+(i+1)+": "+c.t);
+      (function(idx,cid,el){el.addEventListener("change",function(){S.offers[idx][cid]=el.checked;save();drawOffers();decodeAll();});})(i,c.id,cb);
+      var tx=document.createElement("span");tx.className="ct";
+      var b=document.createElement("b");b.textContent=c.t;tx.appendChild(b);
+      lab.appendChild(cb);lab.appendChild(tx);card.appendChild(lab);
+      /* conditional sub-fields */
+      if(c.id==="variable"&&o.variable){
+        var capw=document.createElement("div");
+        capw.innerHTML='<label class="lbl" style="font-size:.92rem" for="o'+i+'_cap">Rate cap % (if the offer states one)</label>';
+        var cap=document.createElement("input");cap.type="text";cap.id="o"+i+"_cap";cap.inputMode="decimal";
+        cap.value=o.cap;cap.placeholder="e.g., 12 — leave blank if none";
+        cap.setAttribute("aria-label","Offer "+(i+1)+" variable rate cap percent");
+        (function(idx,el){el.addEventListener("input",function(){S.offers[idx].cap=el.value;save();decodeAll();});})(i,cap);
+        capw.appendChild(cap);card.appendChild(capw);
+      }
+      if(c.id==="balloon"&&o.balloon){
+        var blw=document.createElement("div");blw.className="frow";
+        blw.innerHTML='<div><label class="lbl" style="font-size:.92rem" for="o'+i+'_bamt">Balloon amount ($)</label></div><div><label class="lbl" style="font-size:.92rem" for="o'+i+'_bmo">Due at month #</label></div>';
+        var bamt=document.createElement("input");bamt.type="text";bamt.id="o"+i+"_bamt";bamt.inputMode="decimal";bamt.value=o.balloonAmt;bamt.placeholder="e.g., 8000";
+        bamt.setAttribute("aria-label","Offer "+(i+1)+" balloon payment amount");
+        var bmo=document.createElement("input");bmo.type="text";bmo.id="o"+i+"_bmo";bmo.inputMode="decimal";bmo.value=o.balloonMo;bmo.placeholder="e.g., 60";
+        bmo.setAttribute("aria-label","Offer "+(i+1)+" balloon due month");
+        (function(idx,el){el.addEventListener("input",function(){S.offers[idx].balloonAmt=el.value;save();decodeAll();});})(i,bamt);
+        (function(idx,el){el.addEventListener("input",function(){S.offers[idx].balloonMo=el.value;save();decodeAll();});})(i,bmo);
+        blw.children[0].appendChild(bamt);blw.children[1].appendChild(bmo);
+        card.appendChild(blw);
+      }
+    });
+    var res=document.createElement("div");res.id="res"+i;card.appendChild(res);
+    box.appendChild(card);
+  });
+}
+
+function decodeOffer(o){
+  var errs=[];
+  var L=strictNum(o.amount),apr=strictNum(o.apr),n=strictNum(o.term),feesRaw=String(o.fees||"").trim();
+  var fees=feesRaw===""?0:strictNum(o.fees);
+  if(isNaN(L)||L<=0)errs.push("loan amount must be a positive number");
+  if(isNaN(apr)||apr<0)errs.push("APR must be 0 or higher");
+  if(isNaN(n)||n<=0||Math.round(n)!==n)errs.push("term must be a whole number of months");
+  if(isNaN(fees)||fees<0)errs.push("fees must be 0 or higher");
+  if(L>1000000000||apr>1000)errs.push("a number here looks unrealistic — please double-check it");
+  var balloonAmt=0,balloonMo=0;
+  if(o.balloon){
+    balloonAmt=strictNum(o.balloonAmt);balloonMo=strictNum(o.balloonMo);
+    if(isNaN(balloonAmt)||balloonAmt<0)errs.push("balloon amount must be 0 or higher");
+    if(isNaN(balloonMo)||balloonMo<=0||Math.round(balloonMo)!==balloonMo)errs.push("balloon due month must be a whole month number");
+  }
+  var capRate=NaN;
+  if(o.variable){var cr=String(o.cap||"").trim();capRate=cr===""?NaN:strictNum(cr);if(!isNaN(capRate)&&(capRate<0||capRate>1000))errs.push("rate cap looks unrealistic");}
+  if(errs.length)return{ok:false,errs:errs};
+  n=Math.round(n);
+  var mo=monthlyPayment(L,apr,n);
+  var total=mo*n,interest=total-L;
+  var trueCost=total+fees+(o.balloon?balloonAmt:0);
+  var per1k=L>0?trueCost/(L/1000):NaN;
+  var flags=[];
+  if(o.balloon&&balloonAmt>0)flags.push({sev:"red",t:"Balloon payment",d:"You owe "+money(balloonAmt)+" in ONE lump sum at month "+Math.round(balloonMo)+". Miss it and you face default or forced refinancing."});
+  if(apr>36)flags.push({sev:"red",t:"Very high APR ("+apr+"%)",d:"Above 36% is widely considered predatory territory. The interest alone may exceed what you borrow."});
+  if(o.penaltyApr)flags.push({sev:"red",t:"Penalty APR clause",d:"One late payment can permanently raise your rate — often to ~30% — repricing the entire remaining loan."});
+  if(o.variable&&isNaN(capRate))flags.push({sev:"amber",t:"Variable rate with no cap",d:"Payments can rise without limit. Ask for the lifetime cap in writing — 'no cap' means no ceiling."});
+  if(o.variable&&!isNaN(capRate)&&capRate>apr){
+    var moCap=monthlyPayment(L,capRate,n);
+    flags.push({sev:"amber",t:"Variable rate (cap "+capRate+"%)",d:"If rates rise to the cap, your payment jumps from "+money(mo)+" to "+money(moCap)+" (+"+money(moCap-mo)+"/mo). Budget for the cap, not the teaser rate."});
+  }
+  if(o.prepay)flags.push({sev:"amber",t:"Prepayment penalty",d:"Paying off early or refinancing triggers a fee — your escape hatch has a toll."});
+  if(o.addons)flags.push({sev:"amber",t:"Required add-on products",d:"Bundled insurance or warranties accrue interest too. Get a quote for the loan WITHOUT add-ons and compare."});
+  if(fees>0.05*L)flags.push({sev:"amber",t:"High upfront fees ("+money(fees)+")",d:"Fees top 5% of the loan amount. Everything here is negotiable — ask which fees can be waived or reduced."});
+  if(o.arbitration)flags.push({sev:"amber",t:"Mandatory arbitration",d:"You waive court and class-action rights. If the lender cheats you, your only forum is private arbitration."});
+  var reds=flags.filter(function(f){return f.sev==="red";}).length;
+  var ambers=flags.filter(function(f){return f.sev==="amber";}).length;
+  var verdict=reds>0?["walk","WALK AWAY"]:ambers>0?["neg","NEGOTIATE"]:["sign","LOOKS SIGNABLE"];
+  return{ok:true,L:L,apr:apr,n:n,fees:fees,mo:mo,total:total,interest:interest,trueCost:trueCost,per1k:per1k,
+    flags:flags,reds:reds,ambers:ambers,verdict:verdict,balloonAmt:o.balloon?balloonAmt:0,balloonMo:o.balloon?Math.round(balloonMo):0,
+    varShock:(o.variable&&!isNaN(capRate)&&capRate>apr)?monthlyPayment(L,capRate,n)-mo:null};
+}
+
+function decodeAll(){
+  var results=[];
+  for(var i=0;i<3;i++){
+    var r=decodeOffer(S.offers[i]);
+    r.idx=i;r.name=String(S.offers[i].name||"").trim()||("Offer "+(i+1));
+    results.push(r);
+    var el=document.getElementById("res"+i);
+    if(!el)continue;
+    if(!r.ok){
+      var anyIn=String(S.offers[i].amount||"").trim()!==""||String(S.offers[i].apr||"").trim()!==""||String(S.offers[i].term||"").trim()!=="";
+      el.innerHTML=anyIn?'<p class="err">'+esc(r.errs[0])+'</p>':'<p class="hint">Enter this offer\'s numbers above to decode it.</p>';
+      continue;
+    }
+    var h='<div style="border-top:2px solid #e0d6b8;margin-top:14px;padding-top:10px">';
+    h+='<p style="font-size:1.25rem"><b>True total cost: '+money(r.trueCost)+'</b></p>';
+    h+='<p class="note">Monthly payment '+money(r.mo)+' × '+r.n+' months = '+money(r.total)+
+       ' &nbsp;·&nbsp; Total interest '+money(r.interest)+
+       ' &nbsp;·&nbsp; Fees '+money(r.fees)+
+       (r.balloonAmt>0?' &nbsp;·&nbsp; Balloon '+money(r.balloonAmt)+' at month '+r.balloonMo:'')+
+       '<br>You pay <b>'+money(r.per1k)+'</b> for every $1,000 borrowed.</p>';
+    if(r.varShock!==null&&r.varShock>0.005){
+      h+='<p class="note">⚠ Variable-rate shock: at the '+esc(String(S.offers[i].cap))+'% cap your payment rises by '+money(r.varShock)+'/mo.</p>';
+    }
+    if(r.flags.length){
+      h+='<h4 style="margin:10px 0 4px">Red-flag checklist</h4>';
+      r.flags.forEach(function(f){
+        h+='<div class="flag'+(f.sev==="red"?" bad":"")+'"><b>'+(f.sev==="red"?"🔴":"🟡")+' '+esc(f.t)+'</b><br><span class="note">'+esc(f.d)+'</span></div>';
+      });
+    }else{
+      h+='<div class="flag good"><b>✓ No red flags</b> in the terms you entered.</div>';
+    }
+    var vv=r.verdict;
+    h+='<p><span class="verdict '+vv[0]+'">'+vv[1]+'</span></p>';
+    if(vv[0]==="walk")h+='<p class="note">This offer has deal-breaker terms. Don\'t sign it as-is — find another lender.</p>';
+    else if(vv[0]==="neg")h+='<p class="note">Fixable, but not as written. Use the flags above as a negotiation checklist: ask for each clause to be removed or capped, in writing.</p>';
+    else h+='<p class="note">Nothing alarming in what you entered — but this only covers the terms you entered. Read the full agreement before signing.</p>';
+    h+='<p class="hint">What each checked clause means, in plain language:</p><ul class="note" style="margin-left:22px">';
+    CLAUSES.forEach(function(c){
+      if(S.offers[i][c.id])h+='<li><b>'+esc(c.t)+':</b> '+esc(c.d)+'</li>';
+    });
+    h+='</ul></div>';
+    el.innerHTML=h;
+  }
+  renderCompare(results);
+  var anyOk=results.some(function(r){return r.ok;});
+  document.getElementById("results").hidden=!anyOk;
+}
+
+function renderCompare(results){
+  var okRs=results.filter(function(r){return r.ok;});
+  var box=document.getElementById("compare");
+  if(okRs.length<1){box.innerHTML='<p class="hint">Decode at least one offer to compare.</p>';return;}
+  var best=okRs.slice().sort(function(a,b){return a.trueCost-b.trueCost;})[0];
+  function row(label,fn,isBestRow){
+    var h='<tr><td class="l">'+label+'</td>';
+    okRs.forEach(function(r){
+      var cell=fn(r);
+      var cls=(isBestRow&&r===best)?' class="win"':"";
+      h+='<td'+cls+'>'+cell+(isBestRow&&r===best?' ★':'')+'</td>';
+    });
+    return h+'</tr>';
+  }
+  var h='<table class="grid" aria-label="Offer comparison"><tr><th></th>';
+  okRs.forEach(function(r){h+='<th>'+esc(r.name)+'</th>';});
+  h+='</tr>';
+  h+=row("Monthly payment",function(r){return money(r.mo);},false);
+  h+=row("APR",function(r){return r.apr+"%";},false);
+  h+=row("Term",function(r){return r.n+" mo";},false);
+  h+=row("Total interest",function(r){return money(r.interest);},false);
+  h+=row("Upfront fees",function(r){return money(r.fees);},false);
+  h+=row("Balloon",function(r){return r.balloonAmt>0?money(r.balloonAmt)+" @ mo "+r.balloonMo:"—";},false);
+  h+=row("TRUE TOTAL COST",function(r){return "<b>"+money(r.trueCost)+"</b>";},true);
+  h+=row("Cost per $1,000 borrowed",function(r){return money(r.per1k);},false);
+  h+=row("Red flags",function(r){return (r.reds?"🔴 "+r.reds+" ":"")+(r.ambers?"🟡 "+r.ambers:"")||"none";},false);
+  h+=row("Verdict",function(r){return r.verdict[1];},false);
+  h+='</table><p class="note">★ marks the cheapest true total cost'+(okRs.length>1?": <b>"+esc(best.name)+"</b>":"")+'. Cheapest isn\'t always best — weigh the red flags too.</p>';
+  box.innerHTML=h;
+}
+
+document.getElementById("reset").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={offers:[blankOffer(),blankOffer(),blankOffer()]};
+  document.getElementById("results").hidden=true;
+  drawOffers();decodeAll();
+});
+document.getElementById("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+
+load();
+drawOffers();
+decodeAll();
+</script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Windfall Plan Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn a bonus, inheritance, or refund into a written allocation plan — tax reserve, debt, emergency fund, investing, and a capped fun portion — with a 30-day checklist. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/windfall-plan-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Windfall Plan Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Turn a bonus, inheritance, or refund into a written allocation plan — tax reserve, debt, emergency fund, investing, and a capped fun portion — with a 30-day checklist. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/windfall-plan-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;justify-content:space-between}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.field{display:block;font-weight:bold;margin-top:14px;font-size:.95rem}
+label.field small{display:block;font-weight:normal;color:#6b6250;font-size:.82rem}
+input[type=range]{width:100%;height:44px;accent-color:#c9a227;cursor:pointer;margin:4px 0}
+.steps{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.steps span{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:bold;border:2px solid #c9a227;color:#8a6d1c;cursor:pointer}
+.steps span.cur{background:#c9a227;color:#141210}
+.steps span.done{background:#e9f5e6;color:#2e7d32;border-color:#2e7d32}
+.step{display:none}.step.on{display:block}
+.bucket{border:1px solid #e3d9b8;border-radius:10px;padding:14px;margin:12px 0;background:#fff}
+.bucket h4{font-size:1rem;margin-bottom:2px}
+.bucket .amt{font-size:1.3rem;font-weight:bold;color:#141210}
+.bucket p{font-size:.85rem;color:#6b6250}
+.debtrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.debtrow input{flex:1;min-width:110px}
+.debtrow .rm{background:transparent;border:2px solid #b3261e;color:#b3261e;border-radius:8px;min-width:44px;min-height:48px;cursor:pointer;font-weight:bold}
+table.plan{width:100%;border-collapse:collapse;margin-top:12px}
+table.plan th,table.plan td{padding:10px 8px;border-bottom:1px solid #e3d9b8;text-align:left;vertical-align:top}
+table.plan th{font-size:.85rem;color:#8a6d1c}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #eee;cursor:pointer}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow.done span{color:#8a7a4a;text-decoration:line-through}
+.dest{font-size:.85rem;color:#6b6250}
+.disclaimer{background:#f7f1df;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;font-size:.88rem;color:#5c5236;margin-top:18px}
+.warn{background:#fdecea;border:2px solid #b3261e;color:#7a1a14;border-radius:10px;padding:14px;margin:12px 0;font-size:.92rem}
+.totalbar{height:24px;background:#eee;border-radius:12px;overflow:hidden;margin:8px 0}
+.totalbar>div{height:100%;background:#2e7d32}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{header.site,footer.site,.btnrow,.steps,.noprint{display:none!important}main.app{max-width:100%}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Windfall Plan Builder</h1>
+<p class="intro">A bonus, inheritance, or refund disappears fast without a plan. Walk the steps, and this builder turns it into a written allocation with a 30-day execution checklist — before lifestyle creep spends it.</p>
+<div class="disclaimer"><strong>Educational tool only.</strong> This is a planning framework, not tax or financial advice. Tax treatment of windfalls varies — confirm your situation with a qualified tax professional.</div>
+
+<div class="steps" id="stepDots" aria-label="Steps"></div>
+
+<div class="appcard">
+<!-- STEP 1 -->
+<div class="step" id="s1">
+<h2 style="font-family:Georgia,serif">Step 1 — The windfall</h2>
+<label class="field">How much is it?
+<input type="number" id="wAmount" min="0" step="100" value="10000"></label>
+<label class="field">Where did it come from?
+<select id="wSource">
+<option value="bonus">Work bonus</option>
+<option value="inheritance">Inheritance</option>
+<option value="refund">Tax refund</option>
+<option value="sale">Sale (car, property, business, investments)</option>
+<option value="other">Other</option>
+</select></label>
+<label class="field">Give this plan a name (optional)
+<small>e.g. "Q3 bonus plan" — it makes the plan feel real.</small>
+<input type="text" id="wName" maxlength="60" placeholder="My windfall plan"></label>
+<div class="btnrow"><span></span><button class="btn" data-go="2">Next &rarr;</button></div>
+</div>
+
+<!-- STEP 2 -->
+<div class="step" id="s2">
+<h2 style="font-family:Georgia,serif">Step 2 — Tax reserve (first!)</h2>
+<p style="color:#6b6250">Some windfalls arrive with a tax bill attached. Reserve for it <em>before</em> you allocate a single dollar elsewhere — the IRS doesn't care that you already spent it.</p>
+<div class="slider-row" style="display:flex;align-items:center;gap:12px"><input type="range" id="taxPct" min="0" max="50" step="1" value="30" aria-label="Tax reserve percent" style="flex:1"><output id="taxPctOut" style="font-weight:bold;min-width:60px;text-align:right">30%</output></div>
+<p id="taxNote" style="font-size:.9rem;color:#6b6250"></p>
+<div class="btnrow"><button class="btn ghost" data-go="1">&larr; Back</button><button class="btn" data-go="3">Next &rarr;</button></div>
+</div>
+
+<!-- STEP 3 -->
+<div class="step" id="s3">
+<h2 style="font-family:Georgia,serif">Step 3 — High-interest debt</h2>
+<p style="color:#6b6250">List debts charging high interest (credit cards, personal loans — roughly 10% APR and up). The plan pays them highest-APR first.</p>
+<label style="display:block;margin:10px 0"><input type="checkbox" id="noDebt" style="width:20px;height:20px;accent-color:#c9a227;vertical-align:middle"> I have no high-interest debt</label>
+<div id="debtList"></div>
+<p><button class="btn ghost" id="addDebt" type="button">+ Add a debt</button></p>
+<div class="btnrow"><button class="btn ghost" data-go="2">&larr; Back</button><button class="btn" data-go="4">Next &rarr;</button></div>
+</div>
+
+<!-- STEP 4 -->
+<div class="step" id="s4">
+<h2 style="font-family:Georgia,serif">Step 4 — Emergency fund top-up</h2>
+<p style="color:#6b6250">A windfall is the painless way to finish your emergency fund. Enter your numbers and the builder computes the top-up.</p>
+<label class="field">Monthly essential expenses
+<input type="number" id="efExp" min="0" step="100" value="3500"></label>
+<label class="field">Current emergency savings
+<input type="number" id="efCur" min="0" step="100" value="4000"></label>
+<label class="field">Target (months of expenses)
+<select id="efMonths"><option value="3">3 months (minimum)</option><option value="6" selected>6 months (recommended)</option><option value="9">9 months</option><option value="12">12 months</option></select></label>
+<p id="efNote" style="font-size:.9rem;color:#6b6250"></p>
+<div class="btnrow"><button class="btn ghost" data-go="3">&larr; Back</button><button class="btn" data-go="5">Next &rarr;</button></div>
+</div>
+
+<!-- STEP 5 -->
+<div class="step" id="s5">
+<h2 style="font-family:Georgia,serif">Step 5 — Adjust the split</h2>
+<p style="color:#6b6250">Move any slider — the others rebalance so the total always equals your windfall. "Enjoy some" is capped at 10%: fun is budgeted, not accidental.</p>
+<p><button class="btn ghost" id="recBtn" type="button">Apply recommended priority order</button></p>
+<div id="bucketBox"></div>
+<div class="totalbar"><div id="totalFill" style="width:100%"></div></div>
+<p style="font-size:.9rem;color:#6b6250">Total allocated: <strong id="totalPct">100%</strong> of <strong id="totalAmt"></strong></p>
+<div id="bucketWarn"></div>
+<div class="btnrow"><button class="btn ghost" data-go="4">&larr; Back</button><button class="btn" data-go="6">See my written plan &rarr;</button></div>
+</div>
+
+<!-- STEP 6 -->
+<div class="step" id="s6">
+<h2 style="font-family:Georgia,serif">Your one-page windfall plan</h2>
+<p style="color:#6b6250" id="planHead"></p>
+<table class="plan" id="planTable">
+<thead><tr><th>Bucket</th><th>Amount</th><th>Goes to (tap to edit)</th></tr></thead>
+<tbody></tbody>
+</table>
+<div id="planWarn"></div>
+<h3 style="font-family:Georgia,serif;margin-top:24px">30-day execution checklist</h3>
+<p style="color:#6b6250;font-size:.9rem">Check each off as you do it. Your progress is saved on this device.</p>
+<div id="checklist"></div>
+<div class="btnrow noprint"><button class="btn ghost" data-go="5">&larr; Adjust</button><button class="btn" id="printBtn">Print plan</button></div>
+</div>
+</div>
+
+<p style="text-align:center"><button class="btn ghost noprint" id="resetBtn">Start over</button></p>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>A plan is step one; a system keeps you wealthy. <em>Wealth Made Simple</em> by Kimani Upshur, M.Ed. lays out the money system in plain language.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/wealth-made-simple/">Get Wealth Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-windfall-plan-builder-v1";
+function $(id){return document.getElementById(id);}
+function num(v,d){v=parseFloat(v);return isFinite(v)?v:d;}
+function money(n){if(!isFinite(n))return "—";var neg=n<0;n=Math.abs(Math.round(n));return (neg?"−$":"$")+n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");}
+var BUCKETS=[
+ {id:"tax",name:"Tax reserve",desc:"Set aside before anything else. Park it in a separate savings account so it's never 'available.'",dest:"Separate savings account (tax bill)"},
+ {id:"debt",name:"High-interest debt",desc:"Highest-APR first. Killing 20%+ debt is a guaranteed return.",dest:"Pay highest-APR debt first"},
+ {id:"ef",name:"Emergency fund top-up",desc:"Finish your 3–6 month cushion in one painless move.",dest:"High-yield savings account"},
+ {id:"inv",name:"Investing",desc:"Put the remainder to work for your future self.",dest:"Brokerage / retirement account"},
+ {id:"fun",name:"Enjoy some",desc:"Capped at 10%. Planned fun beats guilty fun.",dest:"Checking — spend guilt-free",cap:10}
+];
+var S={
+ step:1,amount:10000,source:"bonus",name:"",
+ taxPct:30,noDebt:false,debts:[{name:"Credit card",bal:2500,apr:24}],
+ efExp:3500,efCur:4000,efMonths:6,
+ pct:{tax:30,debt:0,ef:0,inv:65,fun:5},
+ dest:{},checks:[]
+};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){
+ try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&typeof s==="object"){for(var k in S){if(s[k]!==undefined)S[k]=s[k];}}}catch(e){}
+}
+function debtTotal(){return S.debts.reduce(function(a,d){return a+Math.max(0,num(d.bal,0));},0);}
+function efNeed(){var t=num(S.efMonths,6)*num(S.efExp,0)-num(S.efCur,0);return Math.max(0,t);}
+function taxDefaults(src){var d={bonus:30,inheritance:5,refund:0,sale:25,other:15};return Object.prototype.hasOwnProperty.call(d,src)?d[src]:15;}
+function taxNoteTxt(src){
+ return {bonus:"Bonuses are usually withheld at ~22% federal plus state tax — 25–35% is a safe reserve. Confirm with a tax pro.",
+ inheritance:"Inheritances are often tax-free to the recipient, but estates and some states differ. 5% is a caution buffer — confirm with a tax pro.",
+ refund:"A refund is your own money coming back — no tax reserve needed.",
+ sale:"Sales can trigger capital-gains or income tax. 20–30% is a starting reserve — confirm with a tax pro.",
+ other:"When in doubt, reserve 10–20% until a tax pro confirms."}[src]||"";
+}
+function go(n){
+ S.step=n;save();
+ document.querySelectorAll(".step").forEach(function(el){el.classList.remove("on");});
+ $("s"+n).classList.add("on");
+ var dots=$("stepDots").children;
+ for(var i=0;i<dots.length;i++){
+   dots[i].className=i+1<n?"done":(i+1===n?"cur":"");
+ }
+ if(n===5)renderBuckets();
+ if(n===6)renderPlan();
+ try{window.scrollTo(0,0);}catch(e){}
+}
+// ---- step 1 ----
+$("wAmount").addEventListener("input",function(){S.amount=Math.max(0,num(this.value,0));save();});
+$("wSource").addEventListener("change",function(){
+ S.source=this.value;S.taxPct=taxDefaults(S.source);
+ $("taxPct").value=S.taxPct;$("taxPctOut").textContent=S.taxPct+"%";
+ $("taxNote").textContent=taxNoteTxt(S.source);save();
+});
+$("wName").addEventListener("input",function(){S.name=this.value;save();});
+// ---- step 2 ----
+$("taxPct").addEventListener("input",function(){S.taxPct=num(this.value,0);$("taxPctOut").textContent=S.taxPct+"%";save();});
+// ---- step 3 ----
+function renderDebts(){
+ var box=$("debtList");box.innerHTML="";
+ S.debts.forEach(function(d,i){
+  var row=document.createElement("div");row.className="debtrow";
+  var n=document.createElement("input");n.type="text";n.value=d.name;n.placeholder="Debt name";n.setAttribute("aria-label","Debt "+(i+1)+" name");
+  n.addEventListener("input",function(){d.name=this.value;save();});
+  var b=document.createElement("input");b.type="number";b.min="0";b.value=d.bal;b.placeholder="Balance $";b.setAttribute("aria-label","Debt "+(i+1)+" balance");
+  b.addEventListener("input",function(){d.bal=Math.max(0,num(this.value,0));save();});
+  var a=document.createElement("input");a.type="number";a.min="0";a.max="100";a.value=d.apr;a.placeholder="APR %";a.setAttribute("aria-label","Debt "+(i+1)+" APR");
+  a.addEventListener("input",function(){d.apr=Math.max(0,num(this.value,0));save();});
+  var rm=document.createElement("button");rm.type="button";rm.className="rm";rm.textContent="×";rm.setAttribute("aria-label","Remove debt");
+  rm.addEventListener("click",function(){S.debts.splice(i,1);save();renderDebts();});
+  row.appendChild(n);row.appendChild(b);row.appendChild(a);row.appendChild(rm);
+  box.appendChild(row);
+ });
+ box.style.display=S.noDebt?"none":"block";
+}
+$("noDebt").addEventListener("change",function(){S.noDebt=this.checked;save();renderDebts();});
+$("addDebt").addEventListener("click",function(){S.debts.push({name:"",bal:0,apr:0});S.noDebt=false;$("noDebt").checked=false;save();renderDebts();});
+// ---- step 4 ----
+[["efExp","efExp"],["efCur","efCur"]].forEach(function(p){
+ $(p[0]).addEventListener("input",function(){S[p[1]]=Math.max(0,num(this.value,0));save();updateEfNote();});
+});
+$("efMonths").addEventListener("change",function(){S.efMonths=num(this.value,6);save();updateEfNote();});
+function updateEfNote(){
+ var need=efNeed(),target=num(S.efMonths,6)*num(S.efExp,0);
+ $("efNote").textContent=need>0
+  ?"Top-up needed: "+money(need)+" (target "+money(target)+")."
+  :"Your emergency fund is already at target — nothing to top up. That share flows to investing.";
+}
+// ---- step 5: balanced sliders ----
+function bucketAmounts(){var o={};BUCKETS.forEach(function(b){o[b.id]=S.amount*S.pct[b.id]/100;});return o;}
+function renderBuckets(){
+ var box=$("bucketBox");box.innerHTML="";
+ BUCKETS.forEach(function(b){
+  var wrap=document.createElement("div");wrap.className="bucket";
+  var h=document.createElement("h4");h.textContent=b.name+(b.cap?" (max "+b.cap+"%)":"");
+  var amt=document.createElement("div");amt.className="amt";amt.id="amt-"+b.id;
+  var p=document.createElement("p");p.textContent=b.desc;
+  var row=document.createElement("div");row.style.display="flex";row.style.alignItems="center";row.style.gap="12px";
+  var sl=document.createElement("input");sl.type="range";sl.min="0";sl.max=b.cap||100;sl.step="1";sl.value=S.pct[b.id];
+  sl.setAttribute("aria-label",b.name+" percent");sl.style.flex="1";
+  var out=document.createElement("output");out.style.fontWeight="bold";out.style.minWidth="52px";out.style.textAlign="right";
+  sl.addEventListener("input",function(){setBucket(b.id,num(this.value,0));});
+  row.appendChild(sl);row.appendChild(out);out.id="out-"+b.id;
+  wrap.appendChild(h);wrap.appendChild(amt);wrap.appendChild(p);wrap.appendChild(row);
+  box.appendChild(wrap);
+ });
+ refreshBuckets();
+}
+function setBucket(id,v){
+ var cap=null;BUCKETS.forEach(function(b){if(b.id===id)cap=b.cap||100;});
+ v=Math.max(0,Math.min(cap,v));
+ var delta=v-S.pct[id];
+ S.pct[id]=v;
+ var others=BUCKETS.map(function(b){return b.id;}).filter(function(x){return x!==id;});
+ var sumOthers=others.reduce(function(a,x){return a+S.pct[x];},0);
+ if(delta>0){ // taking from others proportionally
+   var rem=delta;
+   others.forEach(function(x){
+     if(sumOthers<=0)return;
+     var take=Math.min(S.pct[x],delta*S.pct[x]/sumOthers);
+     S.pct[x]=Math.round((S.pct[x]-take)*10)/10;rem-=take;
+   });
+ }else if(delta<0){ // giving to others proportionally
+   var give=-delta;
+   others.forEach(function(x){
+     if(sumOthers<=0){S.pct[x]=Math.round((S.pct[x]+give/others.length)*10)/10;return;}
+     S.pct[x]=Math.round((S.pct[x]+give*S.pct[x]/sumOthers)*10)/10;
+   });
+ }
+ // fix rounding so total is exactly 100
+ var tot=BUCKETS.reduce(function(a,b){return a+S.pct[b.id];},0);
+ var diff=Math.round((100-tot)*10)/10;
+ if(diff!==0){var t=others[others.length-1];S.pct[t]=Math.round((S.pct[t]+diff)*10)/10;}
+ save();refreshBuckets();
+}
+function refreshBuckets(){
+ var amts=bucketAmounts();
+ BUCKETS.forEach(function(b){
+  $("amt-"+b.id).textContent=money(amts[b.id]);
+  var sl=$("bucketBox").querySelector('input[aria-label="'+b.name+' percent"]');
+  if(sl)sl.value=S.pct[b.id];
+  $("out-"+b.id).textContent=Math.round(S.pct[b.id]*10)/10+"%";
+ });
+ $("totalPct").textContent="100%";
+ $("totalAmt").textContent=money(S.amount);
+ var w=$("bucketWarn");w.innerHTML="";
+ var dt=debtTotal();
+ if(!S.noDebt&&amts.debt>dt+0.5){
+   var d=document.createElement("div");d.className="warn";
+   d.textContent="You've allocated "+money(amts.debt)+" to debt but only owe "+money(dt)+". Move the extra "+money(amts.debt-dt)+" to investing.";
+   w.appendChild(d);
+ }
+ if(S.noDebt&&S.pct.debt>0){
+   var d2=document.createElement("div");d2.className="warn";
+   d2.textContent="You marked 'no high-interest debt' but allocated "+money(amts.debt)+" to debt. Move it to investing or your emergency fund.";
+   w.appendChild(d2);
+ }
+}
+$("recBtn").addEventListener("click",function(){
+ var A=S.amount;
+ var tax=A*S.taxPct/100,rem=A-tax;
+ var dt=S.noDebt?0:debtTotal();
+ var debt=Math.min(dt,rem);rem-=debt;
+ var ef=Math.min(efNeed(),rem);rem-=ef;
+ var fun=Math.min(A*0.05,rem);rem-=fun;
+ var inv=Math.max(0,rem);
+ S.pct={tax:tax/A*100,debt:debt/A*100,ef:ef/A*100,inv:inv/A*100,fun:fun/A*100};
+ if(A<=0)S.pct={tax:0,debt:0,ef:0,inv:0,fun:0};
+ save();refreshBuckets();
+});
+// ---- step 6: written plan ----
+function renderPlan(){
+ var srcName={bonus:"Work bonus",inheritance:"Inheritance",refund:"Tax refund",sale:"Sale proceeds",other:"Windfall"}[S.source]||"Windfall";
+ var nm=S.name?S.name+" — ":"";
+ $("planHead").textContent=nm+srcName+" of "+money(S.amount)+" · plan written "+new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+ var amts=bucketAmounts();
+ var tb=$("planTable").querySelector("tbody");tb.innerHTML="";
+ BUCKETS.forEach(function(b){
+  var tr=document.createElement("tr");
+  var td1=document.createElement("td");var strong=document.createElement("strong");strong.textContent=b.name;td1.appendChild(strong);
+  var small=document.createElement("div");small.className="dest";small.textContent=Math.round(S.pct[b.id]*10)/10+"%";td1.appendChild(small);
+  var td2=document.createElement("td");td2.textContent=money(amts[b.id]);
+  var td3=document.createElement("td");
+  var inp=document.createElement("input");inp.type="text";inp.value=S.dest[b.id]||b.dest;inp.setAttribute("aria-label","Destination for "+b.name);
+  inp.addEventListener("input",function(){S.dest[b.id]=this.value;save();});
+  td3.appendChild(inp);
+  tr.appendChild(td1);tr.appendChild(td2);tr.appendChild(td3);tb.appendChild(tr);
+ });
+ var pw=$("planWarn");pw.innerHTML="";
+ var dt=debtTotal();
+ if(!S.noDebt&&amts.debt>dt+0.5){
+   var d=document.createElement("div");d.className="warn";
+   d.textContent="Debt allocation ("+money(amts.debt)+") exceeds what you owe ("+money(dt)+"). Trim the debt slider and add the difference to investing.";
+   pw.appendChild(d);
+ }
+ // debt payoff order
+ var payoff=[];
+ if(!S.noDebt&&amts.debt>0.5&&S.debts.length){
+   var sorted=S.debts.slice().sort(function(a,b){return b.apr-a.apr;});
+   var left=amts.debt;
+   sorted.forEach(function(x){
+     if(left<=0)return;
+     var pay=Math.min(x.bal,left);left-=pay;
+     payoff.push({name:x.name||"Unnamed debt",apr:x.apr,pay:pay,bal:x.bal});
+   });
+ }
+ // checklist
+ var items=[];
+ items.push({t:"Move "+money(amts.tax)+" to a SEPARATE savings account labeled 'Tax Reserve.' Do this before spending anything else.",k:"c-tax"});
+ payoff.forEach(function(x,i){
+   items.push({t:"Pay "+money(x.pay)+" toward "+x.name+" ("+x.apr+"% APR)"+(x.pay<x.bal-0.5?" — "+money(x.bal-x.pay)+" will remain":" — pays it off in full!"),k:"c-debt"+i});
+ });
+ if(!S.noDebt&&amts.debt<0.5&&dt>0.5)items.push({t:"You allocated $0 to debt but still owe "+money(dt)+". Reconsider — or confirm this is intentional.",k:"c-debt0"});
+ if(amts.ef>0.5)items.push({t:"Move "+money(amts.ef)+" to your high-yield savings account. Emergency fund target: "+money(num(S.efMonths,6)*num(S.efExp,0))+".",k:"c-ef"});
+ items.push({t:"Invest "+money(amts.inv)+" into "+(S.dest.inv||"your brokerage / retirement account")+".",k:"c-inv"});
+ if(amts.fun>0.5)items.push({t:"Spend up to "+money(amts.fun)+" on something you enjoy — guilt-free. This was the plan.",k:"c-fun"});
+ items.push({t:"Tell one trusted person your plan. Accountability beats willpower.",k:"c-share"});
+ items.push({t:"In 30 days, confirm every dollar landed where this plan says. Then close the loop.",k:"c-review"});
+ var cl=$("checklist");cl.innerHTML="";
+ items.forEach(function(it,idx){
+   var lab=document.createElement("label");lab.className="checkrow"+(S.checks.indexOf(it.k)>=0?" done":"");
+   var cb=document.createElement("input");cb.type="checkbox";cb.checked=S.checks.indexOf(it.k)>=0;
+   cb.setAttribute("aria-label",it.t);
+   cb.addEventListener("change",function(){
+     var i=S.checks.indexOf(it.k);
+     if(this.checked&&i<0)S.checks.push(it.k);
+     if(!this.checked&&i>=0)S.checks.splice(i,1);
+     lab.classList.toggle("done",this.checked);save();
+   });
+   var sp=document.createElement("span");sp.textContent=it.t;
+   lab.appendChild(cb);lab.appendChild(sp);cl.appendChild(lab);
+ });
+}
+$("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+// nav
+document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){go(num(b.getAttribute("data-go"),1));});});
+var dots=$("stepDots");
+["1","2","3","4","5","6"].forEach(function(n){
+ var s=document.createElement("span");s.textContent=n;s.setAttribute("role","button");s.setAttribute("tabindex","0");s.setAttribute("aria-label","Go to step "+n);
+ s.addEventListener("click",function(){go(num(n,1));});
+ s.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go(num(n,1));}});
+ dots.appendChild(s);
+});
+$("resetBtn").addEventListener("click",function(){
+ if(!window.confirm("Start over? This clears your windfall plan."))return;
+ try{localStorage.removeItem(KEY);}catch(e){}
+ location.reload();
+});
+// init from storage
+load();
+$("wAmount").value=S.amount;$("wSource").value=S.source;$("wName").value=S.name;
+$("taxPct").value=S.taxPct;$("taxPctOut").textContent=S.taxPct+"%";
+$("taxNote").textContent=taxNoteTxt(S.source);
+$("noDebt").checked=S.noDebt;
+$("efExp").value=S.efExp;$("efCur").value=S.efCur;$("efMonths").value=String(S.efMonths);
+updateEfNote();renderDebts();go(S.step>=1&&S.step<=6?S.step:1);
+</script>
+</body>
+</html>

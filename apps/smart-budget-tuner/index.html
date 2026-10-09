@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Budget Tuner | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn your real spending into a balanced 50/30/20-style budget with interactive sliders, trade-off suggestions, and a one-page budget rules summary. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/smart-budget-tuner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Smart Budget Tuner | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Turn your real spending into a balanced 50/30/20-style budget with interactive sliders, trade-off suggestions, and a one-page budget rules summary. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/smart-budget-tuner/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:16px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #8a6d1c;outline-offset:2px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+input[type=range]{width:100%;padding:0;accent-color:#c9a227;min-height:44px;border:none;background:transparent;margin:4px 0}
+label.lbl{display:block;font-weight:bold;margin:14px 0 2px;color:#141210}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 6px}
+.err{color:#a33;font-weight:bold;margin:8px 0}
+.note{font-size:.88rem;color:#6b6250;margin:8px 0}
+.flag{background:#fdf3e3;border-left:5px solid #c9a227;padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+.flag.good{background:#eef6ee;border-left-color:#3d7a3d}
+.flag.bad{background:#fdeeee;border-left-color:#a33}
+.catgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+@media (max-width:560px){.catgrid{grid-template-columns:1fr}}
+.catgrid label{font-size:.9rem}
+.ghead{font-family:Georgia,serif;font-size:1.15rem;color:#141210;margin:18px 0 4px;border-bottom:2px solid #e0d6b8;padding-bottom:4px}
+.srow{background:#fff;border:2px solid #e0d6b8;border-radius:10px;padding:10px 14px;margin:10px 0}
+.srow .stop{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.srow .sval{font-weight:bold;font-size:1.05rem}
+.srow .sdelta{font-size:.85rem;color:#6b6250}
+.srow .sdelta.cut{color:#3d7a3d}
+.srow .sdelta.over{color:#a33}
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+table.grid th,table.grid td{border:1px solid #e0d6b8;padding:8px;text-align:center}
+table.grid th{background:#141210;color:#e8c84a}
+table.grid td.l{text-align:left;font-weight:bold}
+.twrap{overflow-x:auto}
+.splitbar{display:flex;height:26px;border-radius:13px;overflow:hidden;margin:10px 0;border:2px solid #e0d6b8}
+.splitbar div{min-width:0}
+.tinputs{display:flex;gap:10px;flex-wrap:wrap}
+.tinputs>div{flex:1;min-width:120px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media (max-width:600px){.appcard{padding:20px 16px}}
+@media print{
+  header.site,footer.site,.screenonly,.noprint,#devotional,#godeeper{display:none!important}
+  main.app{max-width:100%;padding:0}
+  .appcard{border:1px solid #999;break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Smart Budget Tuner</h1>
+<p class="intro">Enter your take-home pay and what you actually spend. This tool scores your current split against a 50/30/20-style target (needs / wants / savings), then gives you sliders to rebalance — with concrete trade-off suggestions when savings fall short.</p>
+<p class="hint" style="margin-bottom:16px"><b>Educational tool only — not professional financial advice.</b> This models your numbers against a common budgeting framework; it doesn't know your obligations, debts, or goals. Treat targets as starting points, not prescriptions.</p>
+
+<div class="appcard screenonly" id="inputCard">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px">Step 1 — Your real numbers</h2>
+<p class="hint">Use a typical month. Take-home pay = what actually lands in your account after taxes. Leave categories at 0 if they don't apply.</p>
+<label class="lbl" for="income">Monthly take-home pay</label>
+<input type="text" id="income" inputmode="decimal" placeholder="e.g., 4500">
+<div id="actuals"></div>
+<p class="err" id="err1" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="score">Score my budget</button>
+<button class="btn ghost" id="reset1">Reset</button>
+</div>
+</div>
+
+<div class="appcard screenonly" id="tunerCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:4px">Step 2 — Tune it with sliders</h2>
+<p class="hint">Drag any slider to change that category's <b>planned</b> amount. Everything below updates live: your split, your score, and trade-off ideas.</p>
+<h3 class="ghead">Your targets (% of take-home pay)</h3>
+<p class="hint">The classic 50/30/20 is a starting point — adjust to fit your life. The three must add to 100%.</p>
+<div class="tinputs">
+<div><label class="lbl" for="tN">Needs %</label><input type="text" id="tN" inputmode="decimal" value="50" aria-label="Needs target percent"></div>
+<div><label class="lbl" for="tW">Wants %</label><input type="text" id="tW" inputmode="decimal" value="30" aria-label="Wants target percent"></div>
+<div><label class="lbl" for="tS">Savings %</label><input type="text" id="tS" inputmode="decimal" value="20" aria-label="Savings target percent"></div>
+</div>
+<p class="err" id="errT" role="alert"></p>
+<div id="scorebox" aria-live="polite"></div>
+<h3 class="ghead">Sliders</h3>
+<div id="sliders"></div>
+<h3 class="ghead">Trade-off ideas</h3>
+<div id="ideas" aria-live="polite"></div>
+<p class="err" id="err2" role="alert"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+<button class="btn" id="finalize">Finalize my budget</button>
+<button class="btn ghost" id="backToInput">Edit my numbers</button>
+</div>
+</div>
+
+<div class="appcard" id="summaryCard" hidden>
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your finalized monthly budget</h2>
+<div id="summaryBody"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn" id="printBtn">Print one-page summary</button>
+<button class="btn ghost" id="keepTuning">Keep tuning</button>
+</div>
+</div>
+
+<section class="appcard screenonly" id="godeeper" style="margin-top:24px">
+<h3>Go Deeper</h3>
+<p>For the full budgeting system — zero-based budgets, sinking funds, and killing lifestyle creep — read <em>Budgeting Made Simple</em> by Kimani Upshur, M.Ed.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/budgeting-made-simple/">Get Budgeting Made Simple — $4.99</a></p>
+</section>
+<p class="screenonly" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section id="devotional" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+"use strict";
+var KEY="app-smart-budget-tuner-v1";
+var CATS=[
+ {id:"housing",label:"Housing (rent/mortgage)",g:"needs"},
+ {id:"transport",label:"Transportation",g:"needs"},
+ {id:"groceries",label:"Groceries",g:"needs"},
+ {id:"utilities",label:"Utilities & bills",g:"needs"},
+ {id:"insurance",label:"Insurance",g:"needs"},
+ {id:"health",label:"Healthcare",g:"needs"},
+ {id:"debtmin",label:"Debt minimum payments",g:"needs"},
+ {id:"childcare",label:"Childcare / dependents",g:"needs"},
+ {id:"dining",label:"Dining out & takeout",g:"wants"},
+ {id:"entertain",label:"Entertainment & streaming",g:"wants"},
+ {id:"shopping",label:"Shopping & clothes",g:"wants"},
+ {id:"travel",label:"Travel & vacations",g:"wants"},
+ {id:"personal",label:"Personal & hobbies",g:"wants"},
+ {id:"emergency",label:"Emergency fund",g:"savings"},
+ {id:"retire",label:"Retirement",g:"savings"},
+ {id:"invest",label:"Other savings & investing",g:"savings"}
+];
+var GROUPS={needs:"Needs",wants:"Wants",savings:"Savings"};
+var S={income:"",actual:{},planned:{},tN:"50",tW:"30",tS:"20"};
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}}}catch(e){}}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function money(n){
+  if(n===null||n===undefined||!isFinite(n))return "—";
+  var neg=n<0;var a=Math.abs(n);
+  return (neg?"−$":"$")+a.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+function money0(n){
+  if(n===null||n===undefined||!isFinite(n))return "—";
+  var neg=n<0;var a=Math.abs(n);
+  return (neg?"−$":"$")+Math.round(a).toLocaleString("en-US");
+}
+function strictNum(v){
+  var t=String(v).trim().replace(/[$,%\s]/g,"");
+  if(t==="")return 0;
+  if(!/^-?(\d+(\.\d+)?|\.\d+)$/.test(t))return NaN;
+  var n=parseFloat(t);return isFinite(n)?n:NaN;
+}
+function catById(id){for(var i=0;i<CATS.length;i++){if(CATS[i].id===id)return CATS[i];}return null;}
+
+function groupSum(vals,g){
+  var s=0;
+  for(var i=0;i<CATS.length;i++){if(CATS[i].g===g)s+=vals[CATS[i].id]||0;}
+  return s;
+}
+function targets(){
+  var n=strictNum(S.tN),w=strictNum(S.tW),s=strictNum(S.tS);
+  return {n:n,w:w,s:s,ok:!isNaN(n)&&!isNaN(w)&&!isNaN(s)&&n>=0&&w>=0&&s>=0&&Math.abs(n+w+s-100)<0.001};
+}
+function grade(dev){
+  if(dev<=6)return["A","On track"];
+  if(dev<=15)return["B","Needs tuning"];
+  return["C","Needs an overhaul"];
+}
+
+function drawActuals(){
+  var box=document.getElementById("actuals");box.innerHTML="";
+  ["needs","wants","savings"].forEach(function(g){
+    var h=document.createElement("h3");h.className="ghead";h.textContent=GROUPS[g];box.appendChild(h);
+    var grid=document.createElement("div");grid.className="catgrid";box.appendChild(grid);
+    CATS.forEach(function(c){
+      if(c.g!==g)return;
+      var wrap=document.createElement("div");
+      var lb=document.createElement("label");lb.className="lbl";lb.style.fontSize=".92rem";
+      lb.setAttribute("for","a_"+c.id);lb.textContent=c.label;wrap.appendChild(lb);
+      var inp=document.createElement("input");inp.type="text";inp.id="a_"+c.id;inp.inputMode="decimal";
+      inp.value=(S.actual[c.id]!==undefined&&S.actual[c.id]!==""?S.actual[c.id]:"");
+      inp.placeholder="0";inp.setAttribute("aria-label",c.label+" actual monthly spending");
+      inp.addEventListener("input",function(){S.actual[c.id]=inp.value;save();});
+      wrap.appendChild(inp);grid.appendChild(wrap);
+    });
+  });
+}
+
+function sliderMax(income,actual){
+  return Math.max(Math.ceil(actual*2),Math.ceil(income),500);
+}
+function buildSliders(){
+  var box=document.getElementById("sliders");box.innerHTML="";
+  var income=strictNum(S.income);
+  ["needs","wants","savings"].forEach(function(g){
+    var h=document.createElement("h3");h.className="ghead";h.textContent=GROUPS[g];box.appendChild(h);
+    CATS.forEach(function(c){
+      if(c.g!==g)return;
+      var actual=parseFloat(S.actual[c.id])||0;
+      var planned=S.planned[c.id];
+      if(planned===undefined||planned===null||planned==="")planned=actual;
+      S.planned[c.id]=planned;
+      var row=document.createElement("div");row.className="srow";
+      var top=document.createElement("div");top.className="stop";
+      var lab=document.createElement("span");lab.innerHTML="<b>"+esc(c.label)+"</b>";
+      var val=document.createElement("span");val.className="sval";val.id="sv_"+c.id;
+      var dlt=document.createElement("span");dlt.className="sdelta";dlt.id="sd_"+c.id;
+      top.appendChild(lab);top.appendChild(val);top.appendChild(dlt);
+      row.appendChild(top);
+      var rng=document.createElement("input");rng.type="range";rng.id="sl_"+c.id;
+      rng.min="0";rng.max=String(sliderMax(income,actual));rng.step="1";rng.value=String(Math.round(planned));
+      rng.setAttribute("aria-label",c.label+" planned monthly amount");
+      (function(id,range,actualV){
+        range.addEventListener("input",function(){
+          S.planned[id]=parseFloat(range.value)||0;save();updateLive();
+        });
+      })(c.id,rng,actual);
+      row.appendChild(rng);
+      box.appendChild(row);
+    });
+  });
+}
+
+function currentState(){
+  var income=strictNum(S.income);
+  var t=targets();
+  var n=groupSum(S.planned,"needs"),w=groupSum(S.planned,"wants"),s=groupSum(S.planned,"savings");
+  var total=n+w+s,unalloc=income-total;
+  return{income:income,t:t,n:n,w:w,s:s,total:total,unalloc:unalloc,
+    nPct:income>0?n/income*100:0,wPct:income>0?w/income*100:0,sPct:income>0?s/income*100:0};
+}
+
+function updateLive(){
+  var st=currentState();
+  var box=document.getElementById("scorebox");
+  var terr=document.getElementById("errT");
+  if(!st.t.ok){terr.textContent="Targets must be numbers that add to 100%.";box.innerHTML="";document.getElementById("ideas").innerHTML="";return;}
+  terr.textContent="";
+  var dev=Math.abs(st.nPct-st.t.n)+Math.abs(st.wPct-st.t.w)+Math.abs(st.sPct-st.t.s);
+  var gr=grade(dev);
+  function status(pct,tgt){
+    var d=pct-tgt;
+    if(Math.abs(d)<=2)return '<span style="color:#3d7a3d">on target</span>';
+    return d>0?'<span style="color:#a33">over by '+d.toFixed(1)+' pts</span>':'<span style="color:#8a6d1c">under by '+Math.abs(d).toFixed(1)+' pts</span>';
+  }
+  var splitMax=Math.max(st.nPct,st.wPct,st.sPct,st.t.n,st.t.w,st.t.s,1);
+  var h='<div class="flag'+(gr[0]==="A"?" good":gr[0]==="C"?" bad":"")+'"><b>Budget score: '+gr[0]+' — '+gr[1]+'</b> (deviation '+dev.toFixed(1)+' points from your targets)</div>';
+  h+='<div class="splitbar" aria-hidden="true"><div style="width:'+(st.nPct)+ '%;background:#c9a227"></div><div style="width:'+(st.wPct)+'%;background:#8a6d1c"></div><div style="width:'+(st.sPct)+'%;background:#3d7a3d"></div></div>';
+  h+='<table class="grid" aria-label="Budget split"><tr><th></th><th>Planned</th><th>% of pay</th><th>Target</th><th>Status</th></tr>';
+  h+='<tr><td class="l">Needs</td><td>'+money(st.n)+'</td><td>'+st.nPct.toFixed(1)+'%</td><td>'+st.t.n+'%</td><td>'+status(st.nPct,st.t.n)+'</td></tr>';
+  h+='<tr><td class="l">Wants</td><td>'+money(st.w)+'</td><td>'+st.wPct.toFixed(1)+'%</td><td>'+st.t.w+'%</td><td>'+status(st.wPct,st.t.w)+'</td></tr>';
+  h+='<tr><td class="l">Savings</td><td>'+money(st.s)+'</td><td>'+st.sPct.toFixed(1)+'%</td><td>'+st.t.s+'%</td><td>'+status(st.sPct,st.t.s)+'</td></tr></table>';
+  h+='<p class="note">Planned total '+money(st.total)+' of '+money(st.income)+' take-home. '+
+     (st.unalloc>=0?'<b>'+money(st.unalloc)+' unallocated</b> — give it a job below.':'<b style="color:#a33">Over budget by '+money(-st.unalloc)+'.</b> Trim sliders until this is zero or positive.')+'</p>';
+  box.innerHTML=h;
+
+  /* per-slider readouts */
+  CATS.forEach(function(c){
+    var actual=parseFloat(S.actual[c.id])||0;
+    var planned=S.planned[c.id]||0;
+    var sv=document.getElementById("sv_"+c.id),sd=document.getElementById("sd_"+c.id);
+    if(!sv)return;
+    sv.textContent=money0(planned)+"/mo";
+    var d=planned-actual;
+    if(Math.abs(d)<0.5){sd.textContent="= actual";sd.className="sdelta";}
+    else if(d<0){sd.textContent="−"+money0(-d)+" vs actual";sd.className="sdelta cut";}
+    else{sd.textContent="+"+money0(d)+" vs actual";sd.className="sdelta over";}
+  });
+
+  /* trade-off ideas */
+  var ideas=document.getElementById("ideas");
+  var ih="";
+  var saveTgt=st.t.s/100*st.income;
+  var gap=saveTgt-st.s;
+  if(gap>0.5){
+    var wants=CATS.filter(function(c){return c.g==="wants"&&(S.planned[c.id]||0)>0;})
+                  .sort(function(a,b){return (S.planned[b.id]||0)-(S.planned[a.id]||0);});
+    ih+='<div class="flag bad"><b>Savings shortfall: '+money(gap)+'/mo.</b> You\'re at '+st.sPct.toFixed(1)+'% vs your '+st.t.s+'% target.</div>';
+    if(wants.length){
+      var top=wants[0];
+      var move=Math.min(S.planned[top.id],gap);
+      var newPct=(st.s+move)/st.income*100;
+      var tgtWord=newPct>=st.t.s-0.05?"hits":"moves you toward";
+      ih+='<div class="flag"><b>Trade-off:</b> move <b>'+money(move)+'</b> from <b>'+esc(top.label)+'</b> to savings ('+esc(top.label)+' drops to '+money0(S.planned[top.id]-move)+'). That '+tgtWord+' your '+st.t.s+'% savings target ('+newPct.toFixed(1)+'%).</div>';
+      if(wants.length>1&&gap-move>0.5){
+        var top2=wants[1];
+        var move2=Math.min(S.planned[top2.id],gap-move);
+        ih+='<div class="flag"><b>Second lever:</b> another '+money(move2)+' could come from <b>'+esc(top2.label)+'</b> ('+money0(S.planned[top2.id])+'/mo planned).</div>';
+      }
+    }else{
+      ih+='<div class="flag">No wants spending left to trim — the gap must come from needs. Biggest needs category: '+esc(biggestCat("needs"))+'.</div>';
+    }
+  }else{
+    ih+='<div class="flag good"><b>Savings target met</b> — '+st.sPct.toFixed(1)+'% vs your '+st.t.s+'% target. Any unallocated '+money(Math.max(0,st.unalloc))+' can go straight to savings.</div>';
+  }
+  if(st.nPct>st.t.n+0.5){
+    ih+='<div class="flag"><b>Needs are heavy:</b> '+st.nPct.toFixed(1)+'% vs '+st.t.n+'% target. Biggest lever is usually '+esc(biggestCat("needs"))+' — housing costs move the needle most.</div>';
+  }
+  if(st.unalloc<-0.5){
+    ih+='<div class="flag bad"><b>Over budget by '+money(-st.unalloc)+'.</b> The fastest fix: cut the two biggest wants categories ('+esc(biggestCat("wants"))+') before touching needs.</div>';
+  }
+  ideas.innerHTML=ih;
+}
+function biggestCat(g){
+  var best=null,bv=-1;
+  CATS.forEach(function(c){if(c.g!==g)return;var v=S.planned[c.id]||0;if(v>bv){bv=v;best=c.label;}});
+  return best||"—";
+}
+
+function validateActuals(){
+  var errs=[];
+  CATS.forEach(function(c){
+    var raw=S.actual[c.id];
+    if(raw===undefined||raw===null||String(raw).trim()===""){S.actual[c.id]="0";return;}
+    var v=strictNum(raw);
+    if(isNaN(v)){errs.push(c.label+": enter a number (or leave it blank for 0).");return;}
+    if(v<0){errs.push(c.label+": spending can't be negative.");return;}
+    if(v>100000000){errs.push(c.label+": that number looks unrealistic — please double-check it.");return;}
+    S.actual[c.id]=String(v);
+  });
+  return errs;
+}
+
+document.getElementById("income").addEventListener("input",function(){S.income=this.value;save();});
+document.getElementById("score").addEventListener("click",function(){
+  var e1=document.getElementById("err1");e1.textContent="";
+  var income=strictNum(S.income);
+  if(isNaN(income)||income<=0){e1.textContent="Enter your monthly take-home pay (a positive number).";return;}
+  if(income>100000000){e1.textContent="That income looks unrealistic — please double-check it.";return;}
+  S.income=String(income);
+  var errs=validateActuals();
+  if(errs.length){e1.textContent=errs[0];return;}
+  CATS.forEach(function(c){
+    var a=parseFloat(S.actual[c.id])||0;
+    if(S.planned[c.id]===undefined)S.planned[c.id]=a;
+  });
+  save();
+  document.getElementById("tunerCard").hidden=false;
+  buildSliders();
+  updateLive();
+  try{document.getElementById("tunerCard").scrollIntoView();}catch(e){}
+});
+["tN","tW","tS"].forEach(function(id){
+  document.getElementById(id).addEventListener("input",function(){
+    S[id]=document.getElementById(id).value;save();updateLive();
+  });
+});
+document.getElementById("backToInput").addEventListener("click",function(){
+  document.getElementById("tunerCard").hidden=true;
+  document.getElementById("summaryCard").hidden=true;
+  try{document.getElementById("inputCard").scrollIntoView();}catch(e){}
+});
+document.getElementById("reset1").addEventListener("click",function(){
+  if(!confirm("Clear all saved work for this app and start over?"))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  S={income:"",actual:{},planned:{},tN:"50",tW:"30",tS:"20"};
+  document.getElementById("income").value="";
+  document.getElementById("tN").value="50";document.getElementById("tW").value="30";document.getElementById("tS").value="20";
+  document.getElementById("err1").textContent="";
+  document.getElementById("tunerCard").hidden=true;document.getElementById("summaryCard").hidden=true;
+  drawActuals();
+});
+
+document.getElementById("finalize").addEventListener("click",function(){
+  var e2=document.getElementById("err2");e2.textContent="";
+  var st=currentState();
+  if(!st.t.ok){e2.textContent="Targets must add to 100% before finalizing.";return;}
+  if(st.unalloc<-0.005){e2.textContent="Your planned spending exceeds income by "+money(-st.unalloc)+". Trim categories first — a finalized budget can't run a deficit.";return;}
+  var saveCats=CATS.filter(function(c){return c.g==="savings";});
+  var bigSave=saveCats.sort(function(a,b){return (S.planned[b.id]||0)-(S.planned[a.id]||0);})[0];
+  var h='<p class="note">Take-home pay <b>'+money(st.income)+'</b>/mo · Planned <b>'+money(st.total)+'</b> · Unallocated <b>'+money(st.unalloc)+'</b></p>';
+  h+='<div class="twrap"><table class="grid" aria-label="Finalized budget"><tr><th>Category</th><th>Group</th><th>Final amount</th><th>% of pay</th></tr>';
+  CATS.forEach(function(c){
+    var v=S.planned[c.id]||0;
+    h+='<tr><td class="l">'+esc(c.label)+'</td><td>'+GROUPS[c.g]+'</td><td>'+money(v)+'</td><td>'+(st.income>0?(v/st.income*100).toFixed(1):"0.0")+'%</td></tr>';
+  });
+  h+='</table></div>';
+  h+='<h3 style="font-family:Georgia,serif;margin:16px 0 6px">Your budget rules</h3><ol style="margin-left:22px" class="note">';
+  h+='<li><b>Pay yourself first:</b> move '+money(st.s)+' to savings on payday, before any spending.</li>';
+  var cuts=CATS.filter(function(c){var a=parseFloat(S.actual[c.id])||0;return (S.planned[c.id]||0)<a-0.5;});
+  cuts.slice(0,4).forEach(function(c){
+    h+='<li><b>Cap '+esc(c.label)+':</b> '+money(S.planned[c.id])+'/mo (was '+money(parseFloat(S.actual[c.id]))+').</li>';
+  });
+  if(st.unalloc>0.5)h+='<li><b>Sweep the surplus:</b> the unallocated '+money(st.unalloc)+' goes to '+esc(bigSave.label)+' at month-end.</li>';
+  h+='<li><b>Needs ceiling:</b> keep needs at or under '+money(st.t.n/100*st.income)+'/mo ('+st.t.n+'% of pay).</li>';
+  h+='<li><b>Review monthly:</b> on the 1st, compare actual vs. planned for 10 minutes and adjust — don\'t abandon the plan.</li>';
+  h+='</ol>';
+  h+='<p class="note"><b>Educational summary only — not financial advice.</b> Targets are a framework starting point; adjust for your real obligations.</p>';
+  document.getElementById("summaryBody").innerHTML=h;
+  document.getElementById("summaryCard").hidden=false;
+  try{document.getElementById("summaryCard").scrollIntoView();}catch(e){}
+});
+document.getElementById("keepTuning").addEventListener("click",function(){
+  document.getElementById("summaryCard").hidden=true;
+  try{document.getElementById("tunerCard").scrollIntoView();}catch(e){}
+});
+document.getElementById("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+
+load();
+document.getElementById("income").value=S.income||"";
+document.getElementById("tN").value=S.tN;document.getElementById("tW").value=S.tW;document.getElementById("tS").value=S.tS;
+drawActuals();
+</script>
+</body>
+</html>
