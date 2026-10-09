@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work Boundary Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Take a 12-question boundary audit, get your boundary-leak score, and install a personal boundary code with copy-paste scripts and a 2-week enforcement tracker. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/work-boundary-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Work Boundary Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Take a 12-question boundary audit, get your boundary-leak score, and install a personal boundary code with copy-paste scripts and a 2-week enforcement tracker. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/work-boundary-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:820px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.45rem;color:#141210;margin-bottom:10px}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;color:#141210;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:9px 16px;min-height:44px;font-size:.92rem}
+input[type=text],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.q{display:block;margin-bottom:20px;background:#fff;border:2px solid #e8ddb8;border-radius:10px;padding:16px 18px}
+label.q .qt{display:block;font-weight:bold;margin-bottom:10px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opts button{flex:1 1 100px;min-height:44px;border:2px solid #c9a227;border-radius:8px;background:#fffdf7;color:#6b6250;font-size:.92rem;cursor:pointer;padding:8px 6px}
+.opts button.sel{background:#c9a227;color:#141210;font-weight:bold;border-color:#c9a227}
+.catbar{display:flex;align-items:center;gap:12px;margin:10px 0}
+.catbar .nm{flex:0 0 150px;font-weight:bold;font-size:.95rem}
+.catbar .track{flex:1;height:18px;background:#eee5c8;border-radius:9px;overflow:hidden}
+.catbar .fill{height:100%;border-radius:9px}
+.catbar .pct{flex:0 0 52px;text-align:right;font-weight:bold}
+.scorebig{font-family:Georgia,serif;font-size:3.2rem;color:#141210;line-height:1.1}
+.scorelab{display:inline-block;font-weight:bold;padding:6px 16px;border-radius:20px;margin-top:8px}
+.script{background:#fff;border:2px solid #e8ddb8;border-radius:10px;padding:16px 18px;margin:12px 0}
+.script .aud{display:inline-block;font-size:.78rem;font-weight:bold;background:#141210;color:#e8c84a;border-radius:12px;padding:3px 12px;margin-bottom:8px}
+.script p{margin:6px 0 12px;font-size:1rem}
+.ruleedit{display:flex;gap:10px;align-items:flex-start;margin:10px 0;background:#fff;border:2px solid #e8ddb8;border-radius:10px;padding:12px 14px}
+.ruleedit .num{flex:0 0 34px;height:34px;border-radius:50%;background:#c9a227;color:#141210;font-weight:bold;display:flex;align-items:center;justify-content:center}
+.ruleedit input{margin:0}
+.tracker{overflow-x:auto}
+.tracker table{border-collapse:collapse;min-width:640px;width:100%;margin-top:12px}
+.tracker th,.tracker td{border:1px solid #e8ddb8;padding:8px;text-align:center;font-size:.85rem}
+.tracker th{background:#141210;color:#e8c84a}
+.tracker td.rule{text-align:left;font-size:.88rem;max-width:180px}
+.tracker input[type=checkbox]{width:24px;height:24px;accent-color:#c9a227;cursor:pointer}
+.done{background:#e6f2df}
+.err{background:#fdeceb;border:2px solid #d66;border-radius:8px;padding:12px 16px;margin-bottom:16px;color:#8a1f1f;font-weight:bold;display:none}
+.prog{font-weight:bold;color:#8a6d1c;margin:12px 0}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{header.site,footer.site,.noprint,.devot-block,.godeeper,.backlink{display:none}main.app{max-width:100%;padding:0}.appcard{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Work Boundary Builder</h1>
+<p class="intro">Find out exactly where work is bleeding into your life, then install specific, sayable boundaries to stop it. Take the 12-question audit, get your boundary code, and enforce it for two weeks.</p>
+
+<div class="appcard" id="auditcard">
+<h2>Step 1 — The Boundary Audit</h2>
+<p style="color:#6b6250;margin-bottom:18px">Answer honestly. For each statement, choose how often it is true for you.</p>
+<div class="err" id="auditerr" role="alert"></div>
+<div id="questions"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+<button class="btn" id="scorebtn">Get My Results</button>
+</div>
+</div>
+
+<div class="appcard" id="resultscard" style="display:none">
+<h2>Step 2 — Your Boundary-Leak Report</h2>
+<div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin:14px 0">
+<div style="text-align:center"><div class="scorebig" id="healthscore">–</div><div style="color:#6b6250;font-size:.9rem">Boundary Health Score</div></div>
+<div style="flex:1;min-width:220px"><span class="scorelab" id="healthlabel">–</span>
+<p id="healthnote" style="margin-top:10px;color:#6b6250;font-size:.95rem"></p></div>
+</div>
+<h3>Leak by category</h3>
+<div id="catbars"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn ghost small" id="retakebtn">Retake the audit</button>
+</div>
+</div>
+
+<div class="appcard" id="codecard" style="display:none">
+<h2>Step 3 — Your Personal Boundary Code</h2>
+<p style="color:#6b6250;margin-bottom:12px">Five rules, chosen from your biggest leaks. Edit any rule so it fits your real life — the words you write are the words you will enforce.</p>
+<div id="rules"></div>
+<div class="noprint" style="margin-top:14px"><button class="btn ghost small" id="regenrules">Regenerate from audit</button></div>
+</div>
+
+<div class="appcard" id="scriptcard" style="display:none">
+<h2>Step 4 — The Script Bank</h2>
+<p style="color:#6b6250;margin-bottom:12px">Copy-paste scripts for each leak, tailored to the audience. The first time is the hardest — these words do the heavy lifting for you.</p>
+<div id="scripts"></div>
+</div>
+
+<div class="appcard" id="trackercard" style="display:none">
+<h2>Step 5 — 2-Week Enforcement Tracker</h2>
+<p style="color:#6b6250;margin-bottom:12px">A boundary only works if you enforce it. Check off each rule every day you keep it. The tracker starts today — you can change the start date.</p>
+<div class="noprint" style="display:flex;gap:12px;align-items:end;flex-wrap:wrap">
+<div style="flex:1;min-width:200px"><label for="startdate" style="font-weight:bold">Start date</label><input type="date" id="startdate"></div>
+<button class="btn small" id="printcode">Print my code &amp; tracker</button>
+</div>
+<div class="prog" id="trackprog"></div>
+<div class="tracker"><table id="tracktable" aria-label="Two-week boundary enforcement tracker"></table></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn ghost small" id="resetall">Start over (clear everything)</button>
+</div>
+</div>
+
+<section class="appcard godeeper" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Work Boundary Builder is just the start. <em>Boundaries Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — how to set limits that protect your time, energy, and relationships.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/boundaries-made-simple/">Get Boundaries Made Simple — $4.99</a></p>
+</section>
+<p class="backlink" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devot-block" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-work-boundary-builder-v1";
+var CATS=[
+ {id:"after",name:"After Hours",color:"#c0392b"},
+ {id:"breaks",name:"Breaks & Rest",color:"#d67e0c"},
+ {id:"timeoff",name:"Time Off",color:"#8a6d1c"},
+ {id:"scope",name:"Scope & Availability",color:"#5b7a3a"}];
+var QUESTIONS=[
+ ["after","I check or answer work messages after my workday ends."],
+ ["after","I do actual work tasks (email, documents, planning) on evenings or weekends."],
+ ["after","My work notifications stay on all the time, including nights and weekends."],
+ ["breaks","I skip lunch or eat it while working."],
+ ["breaks","I take fewer breaks than I need during the workday."],
+ ["breaks","I keep work chat or email open while I'm supposedly on a break."],
+ ["timeoff","I feel guilty when I take vacation or PTO."],
+ ["timeoff","I check messages or do work while on vacation."],
+ ["timeoff","I take fewer vacation days than I am given."],
+ ["scope","I say yes to tasks I don't really have time for."],
+ ["scope","My projects get expanded without anyone asking me first (scope creep)."],
+ ["scope","Other people routinely reschedule my priorities on the fly."]];
+var OPTS=["Never","Rarely","Often","Always"];
+var SCRIPTS={
+ after:[
+  ["Boss","To do my best work, I keep evenings offline and pick messages back up at 9 AM. If something is truly urgent, a phone call reaches me \u2014 otherwise I'll handle it first thing in the morning."],
+  ["Coworker","I don't check messages after 7 PM \u2014 I'll pick this up at 9 AM tomorrow."],
+  ["Client","My working hours are 9 to 6, and I don't monitor email after hours. Anything you send tonight gets my full attention first thing in the morning."]],
+ breaks:[
+  ["Coworker","I'm taking a real lunch break away from my desk today \u2014 ping me at 1 and I'll be back on."],
+  ["Boss","I'm blocking 30 minutes for lunch on my calendar so I can recharge. It's how I stay sharp through the afternoon."]],
+ timeoff:[
+  ["Boss","I'm taking my vacation days next month and I'll be fully offline. I'll hand off all open items before I go."],
+  ["Coworker","I'm out next week and won't be checking messages \u2014 [name] has my open items and can reach me only for a true emergency."]],
+ scope:[
+  ["Boss","I'd like to take this on. To fit it in, which of these should move: [A], [B], or the deadline?"],
+  ["Client","Happy to add that \u2014 it changes the scope we agreed on, so it shifts the timeline and cost. Want me to send a revised estimate?"],
+  ["Coworker","I can't take this on this week without dropping [X]. Can we revisit next Monday?"]]};
+var RULEPOOL={
+ after:["No work messages after 7 PM \u2014 phone calls only for true emergencies.","Weekends are work-free unless I choose otherwise."],
+ breaks:["Lunch is a real 30-minute break, away from the screen.","One mid-afternoon reset break every workday \u2014 non-negotiable."],
+ timeoff:["I take every vacation day I'm given, fully offline.","No \u2018just checking in\u2019 on PTO \u2014 I hand off, then disconnect."],
+ scope:["Every new yes names what moves or slips.","No scope changes without a revised timeline \u2014 mine, not just theirs."]};
+
+var S={answers:[],rules:[],tracker:{},start:""};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var d=JSON.parse(r);if(d&&typeof d==="object"){S=d;}}}catch(e){}}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function renderQuestions(){
+ var box=document.getElementById("questions");box.innerHTML="";
+ QUESTIONS.forEach(function(q,i){
+  var lab=document.createElement("label");lab.className="q";
+  var t=document.createElement("span");t.className="qt";t.textContent=(i+1)+". "+q[1];lab.appendChild(t);
+  var wrap=document.createElement("div");wrap.className="opts";wrap.setAttribute("role","radiogroup");wrap.setAttribute("aria-label","Question "+(i+1));
+  OPTS.forEach(function(o,v){
+   var b=document.createElement("button");b.type="button";b.textContent=o;
+   b.setAttribute("aria-pressed",(S.answers[i]===v)?"true":"false");
+   if(S.answers[i]===v)b.className="sel";
+   b.addEventListener("click",function(){
+    S.answers[i]=v;save();
+    var btns=wrap.querySelectorAll("button");
+    for(var k=0;k<btns.length;k++){btns[k].className="";btns[k].setAttribute("aria-pressed","false");}
+    b.className="sel";b.setAttribute("aria-pressed","true");
+    hideErr();
+   });
+   wrap.appendChild(b);
+  });
+  lab.appendChild(wrap);box.appendChild(lab);
+ });
+}
+function hideErr(){document.getElementById("auditerr").style.display="none";}
+function catLeak(){
+ var out={};
+ CATS.forEach(function(c){out[c.id]={sum:0,pct:0};});
+ QUESTIONS.forEach(function(q,i){
+  var v=S.answers[i]||0;out[q[0]].sum+=v;
+ });
+ CATS.forEach(function(c){out[c.id].pct=Math.round(out[c.id].sum/9*100);});
+ return out;
+}
+function showErr(msg){
+ var e=document.getElementById("auditerr");e.textContent=msg;e.style.display="block";
+ e.scrollIntoView({behavior:"smooth",block:"center"});
+}
+document.getElementById("scorebtn").addEventListener("click",function(){
+ var missing=[];
+ for(var i=0;i<QUESTIONS.length;i++){if(S.answers[i]===undefined||S.answers[i]===null){missing.push(i+1);}}
+ if(missing.length){showErr("Please answer all 12 questions. Missing: "+missing.join(", ")+".");return;}
+ var leaks=catLeak();
+ var total=0;CATS.forEach(function(c){total+=leaks[c.id].sum;});
+ var health=100-Math.round(total/36*100);
+ var label,note,color;
+ if(health>=80){label="Strong";color="#3a7a2e";note="Your boundaries are holding. Keep enforcing the code below so they stay that way.";}
+ else if(health>=60){label="Holding";color="#8a6d1c";note="A few leaks are starting. The boundary code below targets exactly where they're happening.";}
+ else if(health>=40){label="Leaking";color="#d67e0c";note="Work is seeping into your personal life in specific, fixable places. Pick your code, use the scripts, and run the tracker.";}
+ else{label="Flooded";color="#c0392b";note="Your boundaries need immediate attention. Start with the first rule in your code \u2014 just one \u2014 and enforce it this week.";}
+ document.getElementById("healthscore").textContent=health;
+ var lab=document.getElementById("healthlabel");lab.textContent=label;lab.style.background=color;lab.style.color="#fff";
+ document.getElementById("healthnote").textContent=note;
+ var bars=document.getElementById("catbars");bars.innerHTML="";
+ CATS.forEach(function(c){
+  var row=document.createElement("div");row.className="catbar";
+  var nm=document.createElement("div");nm.className="nm";nm.textContent=c.name;row.appendChild(nm);
+  var track=document.createElement("div");track.className="track";
+  var fill=document.createElement("div");fill.className="fill";
+  fill.style.width=leaks[c.id].pct+"%";fill.style.background=c.color;track.appendChild(fill);row.appendChild(track);
+  var pct=document.createElement("div");pct.className="pct";pct.textContent=leaks[c.id].pct+"%";row.appendChild(pct);
+  bars.appendChild(row);
+ });
+ genRules(leaks);renderRules();renderScripts(leaks);ensureStart();renderTracker();
+ document.getElementById("resultscard").style.display="block";
+ document.getElementById("codecard").style.display="block";
+ document.getElementById("scriptcard").style.display="block";
+ document.getElementById("trackercard").style.display="block";
+ document.getElementById("resultscard").scrollIntoView({behavior:"smooth"});
+});
+document.getElementById("retakebtn").addEventListener("click",function(){
+ document.getElementById("resultscard").style.display="none";
+ document.getElementById("codecard").style.display="none";
+ document.getElementById("scriptcard").style.display="none";
+ document.getElementById("trackercard").style.display="none";
+ document.getElementById("auditcard").scrollIntoView({behavior:"smooth"});
+});
+function genRules(leaks){
+ var order=CATS.slice().sort(function(a,b){return leaks[b.id].pct-leaks[a.id].pct;});
+ var rules=[];
+ for(var pass=0;pass<2&&rules.length<5;pass++){
+  for(var i=0;i<order.length&&rules.length<5;i++){
+   var r=RULEPOOL[order[i].id][pass];
+   if(r&&rules.indexOf(r)<0)rules.push(r);
+  }
+ }
+ S.rules=rules.slice(0,5);save();
+}
+function renderRules(){
+ var box=document.getElementById("rules");box.innerHTML="";
+ S.rules.forEach(function(r,i){
+  var row=document.createElement("div");row.className="ruleedit";
+  var num=document.createElement("div");num.className="num";num.textContent=i+1;row.appendChild(num);
+  var inp=document.createElement("input");inp.type="text";inp.value=r;
+  inp.setAttribute("aria-label","Boundary rule "+(i+1));
+  inp.addEventListener("input",function(){S.rules[i]=inp.value;save();renderTrackerHead();});
+  row.appendChild(inp);box.appendChild(row);
+ });
+}
+document.getElementById("regenrules").addEventListener("click",function(){
+ genRules(catLeak());renderRules();renderTracker();
+});
+function renderScripts(leaks){
+ var box=document.getElementById("scripts");box.innerHTML="";
+ var order=CATS.slice().sort(function(a,b){return leaks[b.id].pct-leaks[a.id].pct;});
+ order.forEach(function(c){
+  var h=document.createElement("h3");
+  h.textContent=c.name+(leaks[c.id].pct>=34?" \u2014 needs attention":"");
+  box.appendChild(h);
+  SCRIPTS[c.id].forEach(function(s){
+   var card=document.createElement("div");card.className="script";
+   var aud=document.createElement("span");aud.className="aud";aud.textContent="For your "+s[0].toLowerCase();card.appendChild(aud);
+   var p=document.createElement("p");p.textContent="\u201C"+s[1]+"\u201D";card.appendChild(p);
+   var btn=document.createElement("button");btn.type="button";btn.className="btn small noprint";btn.textContent="Copy script";
+   btn.addEventListener("click",function(){copyScript(s[1],btn);});
+   card.appendChild(btn);box.appendChild(card);
+  });
+ });
+}
+function copyScript(text,btn){
+ var done=function(){var old=btn.textContent;btn.textContent="Copied!";setTimeout(function(){btn.textContent=old;},1500);};
+ try{
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+   navigator.clipboard.writeText(text).then(done,done);return;
+  }
+ }catch(e){}
+ try{
+  var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";
+  document.body.appendChild(ta);ta.select();
+  if(document.execCommand)document.execCommand("copy");
+  document.body.removeChild(ta);done();
+ }catch(e){btn.textContent="Select & copy manually";}
+}
+function todayStr(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function ensureStart(){
+ if(!S.start){S.start=todayStr();save();}
+ var inp=document.getElementById("startdate");
+ if(!inp.value)inp.value=S.start;else S.start=inp.value;
+}
+document.getElementById("startdate").addEventListener("change",function(){
+ if(this.value){S.start=this.value;save();renderTracker();}
+});
+function ruleKey(){return S.rules.slice(0,5);}
+function getCell(r,d){
+ var k=r+"-"+d;
+ return S.tracker[k]?true:false;
+}
+function renderTrackerHead(){renderTracker();}
+function renderTracker(){
+ var tbl=document.getElementById("tracktable");tbl.innerHTML="";
+ if(!S.rules.length){tbl.innerHTML="<tr><td>No rules yet \u2014 score the audit first.</td></tr>";return;}
+ var start=new Date(S.start+"T12:00:00");
+ var thead=document.createElement("thead");var hr=document.createElement("tr");
+ var th0=document.createElement("th");th0.textContent="Rule";hr.appendChild(th0);
+ var days=[];
+ for(var d=0;d<14;d++){
+  var dt=new Date(start.getTime()+d*86400000);
+  days.push(dt);
+  var th=document.createElement("th");
+  th.innerHTML=esc(["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][dt.getDay()])+"<br>"+esc((dt.getMonth()+1)+"/"+dt.getDate());
+  hr.appendChild(th);
+ }
+ var thp=document.createElement("th");thp.textContent="%";hr.appendChild(thp);
+ thead.appendChild(hr);tbl.appendChild(thead);
+ var tbody=document.createElement("tbody");
+ var totalDone=0,totalCells=0;
+ S.rules.slice(0,5).forEach(function(r,ri){
+  var tr=document.createElement("tr");
+  var td=document.createElement("td");td.className="rule";td.textContent=r||("Rule "+(ri+1));tr.appendChild(td);
+  var rd=0;
+  for(var d2=0;d2<14;d2++){
+   (function(rri,dd){
+    var td2=document.createElement("td");
+    var cb=document.createElement("input");cb.type="checkbox";
+    cb.setAttribute("aria-label",(S.rules[rri]||("Rule "+(rri+1)))+", day "+(dd+1));
+    cb.checked=getCell(rri,dd);
+    if(cb.checked)td2.className="done";
+    cb.addEventListener("change",function(){
+     S.tracker[rri+"-"+dd]=cb.checked;save();
+     td2.className=cb.checked?"done":"";
+     updateProg();
+    });
+    td2.appendChild(cb);tr.appendChild(td2);
+   })(ri,d2);
+  }
+  for(var d3=0;d3<14;d3++){if(getCell(ri,d3))rd++;}
+  totalDone+=rd;totalCells+=14;
+  var tp=document.createElement("td");tp.style.fontWeight="bold";
+  tp.textContent=Math.round(rd/14*100)+"%";tr.appendChild(tp);
+  tbody.appendChild(tr);
+ });
+ tbl.appendChild(tbody);
+ updateProg(totalDone,totalCells);
+}
+function updateProg(td,tc){
+ var done=0,cells=0;
+ if(td===undefined){
+  S.rules.slice(0,5).forEach(function(r,ri){
+   for(var d=0;d<14;d++){cells++;if(getCell(ri,d))done++;}
+  });
+ }else{done=td;cells=tc;}
+ var pct=cells?Math.round(done/cells*100):0;
+ document.getElementById("trackprog").textContent="Enforcement so far: "+done+" of "+cells+" days kept ("+pct+"%).";
+}
+document.getElementById("printcode").addEventListener("click",function(){window.print();});
+document.getElementById("resetall").addEventListener("click",function(){
+ if(!confirm("Clear your answers, rules, scripts and tracker, and start over?"))return;
+ S={answers:[],rules:[],tracker:{},start:""};
+ save();renderQuestions();
+ document.getElementById("resultscard").style.display="none";
+ document.getElementById("codecard").style.display="none";
+ document.getElementById("scriptcard").style.display="none";
+ document.getElementById("trackercard").style.display="none";
+ document.getElementById("startdate").value="";
+ document.getElementById("auditcard").scrollIntoView({behavior:"smooth"});
+});
+load();
+if(!Array.isArray(S.answers))S.answers=[];
+if(!Array.isArray(S.rules))S.rules=[];
+if(!S.tracker)S.tracker={};
+renderQuestions();
+if(S.answers.length===12&&S.answers.every(function(a){return a!==undefined&&a!==null;})){
+ document.getElementById("scorebtn").click();
+}
+</script>
+</body>
+</html>

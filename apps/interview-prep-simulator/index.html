@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interview Prep Simulator | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Turn interview anxiety into a rehearsed, confident performance with timed mock questions and a scored STAR self-review. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/interview-prep-simulator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Interview Prep Simulator | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Turn interview anxiety into a rehearsed, confident performance with timed mock questions and a scored STAR self-review. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/interview-prep-simulator/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.4rem;margin-bottom:10px}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.95rem}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.f{display:block;font-weight:bold;margin-top:14px}
+.hint{color:#6b6250;font-size:.92rem}
+.rolegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+@media (max-width:560px){.rolegrid{grid-template-columns:1fr}}
+.rolecard{border:2px solid #c9a227;border-radius:10px;padding:14px;cursor:pointer;background:#fff}
+.rolecard.sel{background:#fdf3d7;border-color:#8a6d1c}
+.rolecard b{display:block;font-size:1.02rem}
+.rolecard span{font-size:.88rem;color:#6b6250}
+.diffrow{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.diffbtn{border:2px solid #c9a227;background:#fff;border-radius:8px;padding:10px 18px;min-height:44px;cursor:pointer;font-size:.95rem}
+.diffbtn.sel{background:#c9a227;font-weight:bold}
+.timer{font-size:3.2rem;font-family:Georgia,serif;text-align:center;margin:6px 0;color:#141210}
+.timer.low{color:#a33b2e}
+.qtext{font-size:1.25rem;font-family:Georgia,serif;text-align:center;max-width:600px;margin:0 auto 6px}
+.follow{background:#fdf3d7;border-left:4px solid #c9a227;padding:10px 14px;margin:12px auto;max-width:600px;font-size:.95rem}
+.btnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.progress{text-align:center;color:#8a6d1c;font-weight:bold;letter-spacing:1px;font-size:.9rem}
+fieldset.dim{border:2px solid #e3d9bd;border-radius:10px;padding:14px;margin:12px 0;background:#fff}
+fieldset.dim legend{font-weight:bold;padding:0 8px}
+.dhint{font-weight:normal;color:#6b6250;font-size:.9rem}
+.scale{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.scale label{flex:1;min-width:52px;border:2px solid #c9a227;border-radius:8px;text-align:center;padding:10px 4px;cursor:pointer;font-size:.85rem;min-height:48px}
+.scale input{position:absolute;opacity:0;pointer-events:none}
+.scale label.on{background:#c9a227;font-weight:bold}
+.err{color:#a33b2e;font-weight:bold;margin-top:10px}
+table.sc{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92rem}
+table.sc th,table.sc td{border:1px solid #e3d9bd;padding:8px;text-align:center}
+table.sc th{background:#f7efdb}
+table.sc td.q{text-align:left}
+.bigscore{font-size:2.6rem;font-family:Georgia,serif;text-align:center}
+.grade{text-align:center;font-weight:bold;font-size:1.15rem;color:#8a6d1c}
+.weak{background:#fdf3d7;border:2px solid #c9a227;border-radius:10px;padding:16px;margin:14px 0}
+.drill{border:1px solid #e3d9bd;border-radius:10px;padding:14px;margin:10px 0;background:#fff}
+.drill b{color:#8a6d1c}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.hist{font-size:.9rem;color:#6b6250}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+  header.site,footer.site,.noprint,nav.main{display:none!important}
+  main.app{max-width:100%;padding:0}
+  .appcard{border:1px solid #999;break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Interview Prep Simulator</h1>
+<p class="intro">Turn interview anxiety into a rehearsed, confident performance. Pick a role type and difficulty, answer 5 timed mock questions out loud, then score yourself against the STAR rubric and get targeted drills for your weakest area.</p>
+
+<!-- SETUP -->
+<section class="appcard" id="scr-setup">
+<h2>Set up your mock round</h2>
+<label class="f">1. Role type</label>
+<div class="rolegrid" id="roleGrid" role="radiogroup" aria-label="Role type"></div>
+<label class="f">2. Difficulty</label>
+<div class="diffrow" id="diffRow" role="radiogroup" aria-label="Difficulty"></div>
+<p class="hint" id="diffNote"></p>
+<label class="f" for="secs">3. Answer time per question</label>
+<select id="secs" aria-label="Answer time per question">
+<option value="60">60 seconds</option>
+<option value="90" selected>90 seconds</option>
+<option value="120">120 seconds</option>
+<option value="180">180 seconds</option>
+</select>
+<p class="hint">How scoring works: after each answer you rate yourself 1&ndash;5 on Situation, Task, Action, Result, Clarity, and Relevance. The app finds your weakest area and prescribes 3 drills to fix it.</p>
+<div class="btnrow noprint"><button class="btn" id="startBtn">Start mock round</button></div>
+<div id="histWrap" style="margin-top:18px"></div>
+</section>
+
+<!-- QUESTION -->
+<section class="appcard" id="scr-question" hidden>
+<p class="progress" id="qprog">Question 1 of 5</p>
+<p class="qtext" id="qtext"></p>
+<div class="follow" id="qfollow" hidden></div>
+<div class="timer" id="qtime">1:30</div>
+<p class="hint" style="text-align:center" id="qstate">Press start, then answer out loud.</p>
+<div class="btnrow noprint">
+<button class="btn ghost small" id="qSkip">Skip question</button>
+<button class="btn small" id="qTimerBtn">Start timer</button>
+<button class="btn small" id="qDone">Done &mdash; score this answer</button>
+</div>
+</section>
+
+<!-- SCORING -->
+<section class="appcard" id="scr-score" hidden>
+<h2>Score your answer</h2>
+<p class="hint" id="scoreQ"></p>
+<div id="dims"></div>
+<p class="err" id="scoreErr" hidden>Please rate all six areas before continuing.</p>
+<div class="btnrow noprint">
+<button class="btn ghost" id="scoreBack">Back to setup</button>
+<button class="btn" id="scoreNext">Save &amp; continue</button>
+</div>
+</section>
+
+<!-- RESULTS -->
+<section class="appcard" id="scr-results" hidden>
+<h2>Your mock round results</h2>
+<div class="bigscore" id="rScore"></div>
+<p class="grade" id="rGrade"></p>
+<h3>Per-question scores</h3>
+<div style="overflow-x:auto"><table class="sc" id="rTable"></table></div>
+<div class="weak" id="rWeak"></div>
+<h3>Your 3 targeted drills</h3>
+<div id="rDrills"></div>
+<h3>10 most-asked questions <span class="hint" id="rTopRole"></span></h3>
+<p class="hint">Check off each one as you practice it. Your checks are saved on this device.</p>
+<div id="rTop"></div>
+<div class="btnrow noprint" style="margin-top:18px">
+<button class="btn small" id="printBtn">Print report &amp; checklist</button>
+<button class="btn ghost small" id="newRoundBtn">New round</button>
+<button class="btn ghost small" id="changeBtn">Change setup</button>
+</div>
+</section>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Pair this simulator with <em>Job Interviewing Made Simple</em> by Kimani Upshur, M.Ed. &mdash; more practice questions, answer frameworks, and strategies for every interview stage.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/job-interviewing-made-simple/">Get Job Interviewing Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">One practical reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-interview-prep-simulator-v1";
+var ROLES={
+behavioral:{label:"Behavioral",blurb:"General fit & past-experience questions",
+ follow:"Stretch follow-up they may ask: \u201cWhat would you do differently next time?\u201d",
+ bank:[
+  "Tell me about yourself \u2014 walk me through your background.",
+  "Tell me about a time you faced a difficult problem at work. How did you solve it?",
+  "Describe a time you disagreed with a manager or teammate. What happened?",
+  "Tell me about a time you failed. What did you learn?",
+  "Describe a situation where you had to meet a tight deadline.",
+  "Tell me about a time you went above and beyond for a customer or colleague.",
+  "Describe a time you had to learn something new quickly.",
+  "Tell me about your proudest professional accomplishment."],
+ top10:["Tell me about yourself.","Why do you want this job?","What are your greatest strengths?","What is your biggest weakness?","Tell me about a challenge you overcame.","Describe a conflict you resolved at work.","Tell me about a time you failed.","Where do you see yourself in five years?","Why are you leaving your current role?","Do you have any questions for us?"]},
+technical:{label:"Technical-adjacent",blurb:"Problem-solving, tools & process questions",
+ follow:"Stretch follow-up they may ask: \u201cWalk me through your exact troubleshooting steps.\u201d",
+ bank:[
+  "Walk me through how you would troubleshoot a system that suddenly stopped working.",
+  "Explain a technical concept from your field to someone non-technical.",
+  "Tell me about a time you used data to make a decision.",
+  "How do you stay current with tools and technology in your field?",
+  "Describe a time you automated or improved a manual process.",
+  "Tell me about a project where requirements changed mid-way. How did you adapt?",
+  "How do you prioritize when everything is marked urgent?",
+  "Describe a time you caught an error before it became a bigger problem."],
+ top10:["Walk me through your technical background.","How do you troubleshoot a problem you have never seen before?","Explain a complex concept in simple terms.","Tell me about a project you are proud of.","How do you stay current with new tools?","Describe a time you improved a process with technology.","How do you handle shifting priorities?","Tell me about a mistake you caught before launch.","How do you document your work?","What tools do you use daily, and why?"]},
+leadership:{label:"Leadership",blurb:"Leading people, decisions & accountability",
+ follow:"Stretch follow-up they may ask: \u201cWhat was the outcome six months later?\u201d",
+ bank:[
+  "Tell me about a time you led a team through a difficult change.",
+  "Describe how you handle an underperforming team member.",
+  "Tell me about a decision you made with incomplete information.",
+  "How do you build trust with a new team?",
+  "Describe a time you had to deliver bad news to your team or stakeholders.",
+  "Tell me about a conflict between two team members that you resolved.",
+  "How do you set goals and hold people accountable?",
+  "Describe a time you developed someone on your team."],
+ top10:["What is your leadership style?","Tell me about a time you led through change.","How do you handle underperformance?","Describe a tough decision you made.","How do you motivate your team?","Tell me about a conflict you mediated.","How do you give feedback?","Describe how you set team goals.","Tell me about someone you mentored.","How do you handle pressure from above and below?"]},
+customer:{label:"Customer-facing",blurb:"Service, patience & communication",
+ follow:"Stretch follow-up they may ask: \u201cWhat did the customer say afterward?\u201d",
+ bank:[
+  "Tell me about a time you dealt with an angry or upset customer.",
+  "How do you handle a customer asking for something you cannot provide?",
+  "Describe a time you turned a negative experience into a positive one.",
+  "Tell me about a time you had to explain a complex policy or product simply.",
+  "How do you prioritize when multiple customers need help at once?",
+  "Describe a time you received tough feedback from a customer.",
+  "Tell me about a time you went the extra mile for a customer.",
+  "How do you stay patient and professional under pressure?"],
+ top10:["Why do you want a customer-facing role?","Tell me about a difficult customer interaction.","How do you stay calm under pressure?","Describe a time you went above and beyond.","How do you handle saying no to a customer?","Tell me about a time you received negative feedback.","How do you learn a new product quickly?","Describe your approach to solving a customer's problem.","How do you handle multiple urgent requests?","What does great service mean to you?"]}};
+var DIFFS={
+foundations:{label:"Foundations",secs:120,note:"Gentle pace: 2 minutes per answer, no follow-up twists. Best for your first few rounds."},
+standard:{label:"Standard",secs:90,note:"Realistic pace: 90 seconds per answer, the length of a strong interview answer."},
+stretch:{label:"Stretch",secs:60,note:"Pressure pace: 60 seconds per answer plus a likely follow-up question shown under each prompt."}};
+var DIMS=[
+ {id:"situation",name:"Situation",hint:"Did you set the scene clearly? Who, what, when."},
+ {id:"task",name:"Task",hint:"Did you state YOUR specific responsibility?"},
+ {id:"action",name:"Action",hint:"Did you describe what YOU did, step by step?"},
+ {id:"result",name:"Result",hint:"Did you share a concrete outcome or number?"},
+ {id:"clarity",name:"Clarity",hint:"Was it concise and easy to follow?"},
+ {id:"relevance",name:"Relevance",hint:"Did it connect to the role you want?"}];
+var LEVELS={1:"Missing",2:"Weak",3:"Solid",4:"Strong",5:"Exceptional"};
+var DRILLS={
+situation:{flag:"your Situations are vague",why:"Interviewers cannot picture your story, so the rest of your answer loses impact.",
+ drills:[["The 20-second scene-setter","Open every answer with who, what, and when in under 20 seconds. Pick 3 stories from your past and say the setup out loud, timed."],
+ ["One-detail rule","Add exactly one concrete detail \u2014 a number, a name, a date \u2014 to the setup of each story."],
+ ["Context cards","Write a one-line context card for 5 stories from your work history. Reuse them as openers."]]},
+task:{flag:"your Tasks are unclear",why:"It is not obvious what YOU were responsible for versus the team.",
+ drills:[["Name your assignment","State your responsibility in one sentence: \u201cI was responsible for\u2026\u201d Practice on 5 stories."],
+ ["Stakes line","Add what was at stake if you failed. Stakes make your task memorable."],
+ ["Role clarity","For each story, write one line the team did and one line YOU did. Say only your line."]]},
+action:{flag:"your Actions are fuzzy",why:"Vague verbs like \u201chelped\u201d hide your real contribution.",
+ drills:[["Verb upgrade","Replace \u201chelped\u201d and \u201cworked on\u201d with specific verbs: built, negotiated, redesigned, persuaded. List 10 from your real work."],
+ ["Step-by-step replay","Narrate 3 actions in order, each starting with \u201cI\u2026\u201d Record yourself and listen back."],
+ ["Decision point","Name one choice you made and why. Interviewers score decisions, not activity."]]},
+result:{flag:"your Results are vague",why:"Without outcomes or numbers, strong work sounds like effort instead of impact.",
+ drills:[["Number hunt","Attach a number to every result: %, dollars, time saved, people affected. Dig up 5 real metrics from past work."],
+ ["Before \/ after","Frame each result as before \u2192 after. Contrast is what interviewers remember."],
+ ["Lesson line","Close each story with what you would repeat \u2014 or change \u2014 next time."]]},
+clarity:{flag:"your Clarity needs work",why:"Rambling answers lose the interviewer before you reach the point.",
+ drills:[["90-second cap","Record yourself answering. Cut anything that runs past 90 seconds."],
+ ["No-filler pass","Count your \u201cum,\u201d \u201clike,\u201d and \u201cyou know\u201d in a recording, then redo the answer with zero."],
+ ["Headline first","Start with the conclusion, then tell the story. Practice 5 headline-first openers."]]},
+relevance:{flag:"your Relevance is off-target",why:"Good stories that do not connect to THIS role will not move the hiring decision.",
+ drills:[["Job-post mirror","Highlight 3 keywords in the job posting and weave one into each answer."],
+ ["So-what test","After every answer ask: \u201cSo what does this prove about me for THIS role?\u201d If nothing, pick a better story."],
+ ["Cut the tangent","Practice stopping a story the moment it drifts. Rehearse clean 10-second endings."]]}};
+var S={screen:"setup",role:"behavioral",diff:"standard",secs:90,qs:[],qi:0,left:0,timer:null,running:false,scores:[],finished:false};
+function $(id){return document.getElementById(id);}
+function show(id){["scr-setup","scr-question","scr-score","scr-results"].forEach(function(s){$(s).hidden=(s!==id);});S.screen=id.replace("scr-","");}
+function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||"{}");return d;}catch(e){return {};}}
+function save(patch){try{var d=load();for(var k in patch)d[k]=patch[k];localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}}
+function chime(){try{var A=window.AudioContext||window.webkitAudioContext;if(!A)return;var a=new A();var o=a.createOscillator(),g=a.createGain();o.connect(g);g.connect(a.destination);o.type="sine";o.frequency.value=523;g.gain.setValueAtTime(0.001,a.currentTime);g.gain.exponentialRampToValueAtTime(0.35,a.currentTime+0.05);g.gain.exponentialRampToValueAtTime(0.001,a.currentTime+1.1);o.start();o.stop(a.currentTime+1.2);}catch(e){}}
+function fmt(s){s=Math.max(0,s);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0");}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+/* setup UI */
+function buildSetup(){
+ var g=$("roleGrid");g.innerHTML="";
+ Object.keys(ROLES).forEach(function(k){
+  var d=document.createElement("div");d.className="rolecard"+(k===S.role?" sel":"");d.setAttribute("role","radio");d.setAttribute("aria-checked",k===S.role);d.tabIndex=0;
+  d.innerHTML="<b>"+ROLES[k].label+"</b><span>"+ROLES[k].blurb+"</span>";
+  function pick(){S.role=k;buildSetup();}
+  d.addEventListener("click",pick);
+  d.addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();pick();}});
+  g.appendChild(d);});
+ var r=$("diffRow");r.innerHTML="";
+ Object.keys(DIFFS).forEach(function(k){
+  var b=document.createElement("button");b.type="button";b.className="diffbtn"+(k===S.diff?" sel":"");b.textContent=DIFFS[k].label;
+  b.addEventListener("click",function(){S.diff=k;$("secs").value=String(DIFFS[k].secs);S.secs=DIFFS[k].secs;buildSetup();});
+  r.appendChild(b);});
+ $("diffNote").textContent=DIFFS[S.diff].note;
+ renderHistory();
+}
+/* round flow */
+function startRound(){
+ if(S.screen!=="setup"&&S.screen!=="results")return;
+ var bank=ROLES[S.role].bank;
+ S.qs=shuffle(bank).slice(0,5);S.qi=0;S.scores=[];S.finished=false;
+ renderQuestion();
+}
+function renderQuestion(){
+ if(S.qi>=S.qs.length){finishRound();return;}
+ show("scr-question");
+ stopTimer();
+ S.left=S.secs;
+ $("qprog").textContent="Question "+(S.qi+1)+" of "+S.qs.length+" \u00b7 "+ROLES[S.role].label+" \u00b7 "+DIFFS[S.diff].label;
+ $("qtext").textContent=S.qs[S.qi];
+ var f=$("qfollow");
+ if(S.diff==="stretch"){f.hidden=false;f.textContent=ROLES[S.role].follow;}else{f.hidden=true;f.textContent="";}
+ drawTime();
+ $("qstate").textContent="Press start, then answer out loud.";
+ $("qTimerBtn").textContent="Start timer";
+}
+function drawTime(){$("qtime").textContent=fmt(S.left);$("qtime").classList.toggle("low",S.left<=10&&S.running);}
+function stopTimer(){if(S.timer){clearInterval(S.timer);S.timer=null;}S.running=false;}
+function startTimer(){
+ if(S.screen!=="question")return;
+ if(S.running){stopTimer();$("qTimerBtn").textContent="Resume timer";drawTime();return;}
+ if(S.left<=0)S.left=S.secs;
+ chime();
+ S.running=true;$("qTimerBtn").textContent="Pause timer";
+ S.timer=setInterval(function(){
+  S.left--;drawTime();
+  if(S.left<=0){timeUp();}
+ },1000);
+}
+function timeUp(){
+ stopTimer();chime();
+ $("qstate").textContent="Time is up. Score the answer you gave \u2014 or skip to the next question.";
+ $("qTimerBtn").textContent="Start timer";
+}
+function skipQuestion(){
+ if(S.screen!=="question")return;
+ S.scores.push(null);S.qi++;
+ renderQuestion();
+}
+function doneAnswer(){
+ if(S.screen!=="question")return;
+ stopTimer();
+ renderScore();
+}
+function renderScore(){
+ show("scr-score");
+ $("scoreQ").textContent="Question "+(S.qi+1)+": \u201c"+S.qs[S.qi]+"\u201d";
+ var w=$("dims");w.innerHTML="";
+ DIMS.forEach(function(d){
+  var fs=document.createElement("fieldset");fs.className="dim";
+  var lg=document.createElement("legend");lg.innerHTML=d.name+' <span class="dhint">\u2014 '+d.hint+"</span>";
+  fs.appendChild(lg);
+  var sc=document.createElement("div");sc.className="scale";sc.setAttribute("role","radiogroup");sc.setAttribute("aria-label",d.name);
+  for(var v=1;v<=5;v++){
+   (function(val){
+    var lab=document.createElement("label");lab.title=LEVELS[val];
+    var inp=document.createElement("input");inp.type="radio";inp.name="d-"+d.id;inp.value=val;inp.setAttribute("aria-label",d.name+" "+val+" "+LEVELS[val]);
+    inp.addEventListener("change",function(){var ls=sc.querySelectorAll("label");ls.forEach(function(x){x.classList.remove("on");});lab.classList.add("on");});
+    lab.appendChild(inp);lab.appendChild(document.createTextNode(val+" \u00b7 "+LEVELS[val]));
+    sc.appendChild(lab);
+   })(v);
+  }
+  fs.appendChild(sc);w.appendChild(fs);
+ });
+ $("scoreErr").hidden=true;
+ $("scoreNext").textContent=(S.qi>=S.qs.length-1)?"Finish round":"Save & continue";
+}
+function scoreNext(){
+ if(S.screen!=="score")return;
+ var vals=[];
+ for(var i=0;i<DIMS.length;i++){
+  var sel=document.querySelector('input[name="d-'+DIMS[i].id+'"]:checked');
+  if(!sel){$("scoreErr").hidden=false;return;}
+  vals.push(parseInt(sel.value,10));
+ }
+ S.scores.push(vals);S.qi++;
+ if(S.qi>=S.qs.length){finishRound();}else{renderQuestion();}
+}
+/* results */
+function avg(a){return a.reduce(function(x,y){return x+y;},0)/a.length;}
+function gradeOf(a){if(a>=4.5)return"Exceptional \u2014 you are interview-ready at a high bar.";if(a>=3.75)return"Interview-ready \u2014 tighten the weak spots below.";if(a>=3.0)return"Getting close \u2014 focused drills will move you up a level.";if(a>=2.0)return"Needs work \u2014 run the drills, then re-take the round.";return"Foundation stage \u2014 every round from here is progress.";}
+function shortQ(q){return q.length>64?q.slice(0,61)+"...":q;}
+function finishRound(){
+ var scored=S.scores.map(function(s,i){return s?{i:i,v:s}:null;}).filter(Boolean);
+ if(!scored.length){
+  show("scr-setup");buildSetup();
+  alert("You skipped every question, so there is nothing to score. Start a new round when you are ready.");
+  return;
+ }
+ S.finished=true;show("scr-results");
+ var perQ=scored.map(function(o){return {q:S.qs[o.i],vals:o.v,a:avg(o.v)};});
+ var overall=avg(perQ.map(function(p){return p.a;}));
+ $("rScore").textContent=overall.toFixed(2)+" / 5";
+ $("rGrade").textContent=gradeOf(overall)+"  ("+Math.round(overall/5*100)+"%)";
+ var t='<tr><th>#</th><th style="text-align:left">Question</th>'+DIMS.map(function(d){return"<th>"+d.name.slice(0,4)+".</th>";}).join("")+"<th>Avg</th></tr>";
+ perQ.forEach(function(p,ix){
+  t+="<tr><td>"+(ix+1)+'</td><td class="q">'+shortQ(p.q)+"</td>"+p.vals.map(function(v){return"<td>"+v+"</td>";}).join("")+"<td><b>"+p.a.toFixed(1)+"</b></td></tr>";
+ });
+ $("rTable").innerHTML=t;
+ /* weakest dimension */
+ var dimAvg=DIMS.map(function(d,di){
+  return {d:d,a:avg(perQ.map(function(p){return p.vals[di];}))};
+ });
+ dimAvg.sort(function(x,y){return x.a-y.a;});
+ var w=dimAvg[0],dr=DRILLS[w.d.id];
+ $("rWeak").innerHTML="<b>Weakest area: "+dr.flag+"</b> (avg "+w.a.toFixed(1)+"/5 across this round).<br>"+dr.why;
+ var dh=$("rDrills");dh.innerHTML="";
+ dr.drills.forEach(function(x,i){
+  var dv=document.createElement("div");dv.className="drill";
+  dv.innerHTML="<b>Drill "+(i+1)+": "+x[0]+"</b><br>"+x[1];
+  dh.appendChild(dv);
+ });
+ /* top 10 checklist */
+ $("rTopRole").textContent="\u2014 "+ROLES[S.role].label;
+ var saved=load();var checks=(saved.checks&&saved.checks[S.role])||{};
+ var tw=$("rTop");tw.innerHTML="";
+ ROLES[S.role].top10.forEach(function(q,ix){
+  var row=document.createElement("label");row.className="checkrow";
+  var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!checks[ix];
+  cb.setAttribute("aria-label","Practiced: "+q);
+  cb.addEventListener("change",function(){
+   var d2=load();d2.checks=d2.checks||{};d2.checks[S.role]=d2.checks[S.role]||{};d2.checks[S.role][ix]=cb.checked;save(d2);
+  });
+  var sp=document.createElement("span");sp.textContent=(ix+1)+". "+q;
+  row.appendChild(cb);row.appendChild(sp);tw.appendChild(row);
+ });
+ /* history */
+ var d3=load();d3.history=d3.history||[];
+ d3.history.unshift({d:new Date().toISOString().slice(0,10),role:ROLES[S.role].label,diff:DIFFS[S.diff].label,avg:Math.round(overall*100)/100,n:perQ.length});
+ d3.history=d3.history.slice(0,10);
+ save(d3);
+}
+function renderHistory(){
+ var d=load();var w=$("histWrap");
+ if(!d.history||!d.history.length){w.innerHTML="";return;}
+ var h='<h3>Recent rounds</h3><p class="hist">'+d.history.map(function(x){return x.d+" \u00b7 "+x.role+" ("+x.diff+") \u2014 <b>"+x.avg.toFixed(2)+"/5</b> over "+x.n+" questions";}).join("<br>")+'</p><p style="margin-top:8px"><button class="btn ghost small noprint" id="clearHist">Clear history</button></p>';
+ w.innerHTML=h;
+ $("clearHist").addEventListener("click",function(){if(confirm("Clear your saved round history?")){save({history:[]});renderHistory();}});
+}
+function resetAll(){
+ stopTimer();
+ S={screen:"setup",role:"behavioral",diff:"standard",secs:90,qs:[],qi:0,left:0,timer:null,running:false,scores:[],finished:false};
+ $("secs").value="90";
+ buildSetup();show("scr-setup");
+ window.scrollTo(0,0);
+}
+/* wire up */
+$("startBtn").addEventListener("click",startRound);
+$("qTimerBtn").addEventListener("click",startTimer);
+$("qDone").addEventListener("click",doneAnswer);
+$("qSkip").addEventListener("click",skipQuestion);
+$("scoreNext").addEventListener("click",scoreNext);
+$("scoreBack").addEventListener("click",function(){stopTimer();show("scr-setup");buildSetup();});
+$("secs").addEventListener("change",function(){var v=parseInt($("secs").value,10);if(v>=15&&v<=600)S.secs=v;});
+$("printBtn").addEventListener("click",function(){if(S.screen==="results")window.print();});
+$("newRoundBtn").addEventListener("click",function(){if(S.screen==="results")startRound();});
+$("changeBtn").addEventListener("click",function(){stopTimer();show("scr-setup");buildSetup();});
+/* restore setup prefs */
+(function(){var d=load();if(d.role&&ROLES[d.role])S.role=d.role;if(d.diff&&DIFFS[d.diff])S.diff=d.diff;S.secs=DIFFS[S.diff].secs;$("secs").value=String(S.secs);})();
+window.addEventListener("beforeunload",function(){save({role:S.role,diff:S.diff});});
+buildSetup();show("scr-setup");
+/* test hooks (harmless in production) */
+window.__sim41={S:S,expire:function(){if(S.screen==="question"){S.left=1;timeUp();}},version:1};
+})();
+</script>
+</body>
+</html>

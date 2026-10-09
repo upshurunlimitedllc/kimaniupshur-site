@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinkedIn Profile Audit | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Score your LinkedIn profile section by section and get exact fixes to make recruiters stop scrolling. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/linkedin-profile-audit/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LinkedIn Profile Audit | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Score your LinkedIn profile section by section and get exact fixes to make recruiters stop scrolling. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/linkedin-profile-audit/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.sm{padding:10px 18px;min-height:44px;font-size:.92rem}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.flabel{display:block;font-weight:bold;margin:14px 0 2px}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 8px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.q{padding:14px 0;border-bottom:1px solid #eee}
+.q:last-child{border-bottom:none}
+.q legend,.q .qtext{font-weight:600;margin-bottom:8px;display:block}
+.yn{display:flex;gap:10px}
+.yn button{flex:1;padding:12px;border-radius:8px;border:2px solid #c9a227;background:#fff;font-weight:bold;font-size:1rem;cursor:pointer;min-height:48px;color:#222}
+.yn button.yes.on{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.yn button.no.on{background:#b3261e;border-color:#b3261e;color:#fff}
+.secscore{font-size:.9rem;color:#8a6d1c;font-weight:bold}
+.bar{height:10px;background:#eee;border-radius:6px;overflow:hidden;margin:6px 0 2px}
+.bar i{display:block;height:100%;background:#c9a227}
+.grade{font-family:Georgia,serif;font-size:4rem;line-height:1;color:#141210}
+.glabel{font-size:1.15rem;font-weight:bold;margin-top:4px}
+.badge{display:inline-block;font-size:.75rem;font-weight:bold;padding:3px 10px;border-radius:20px;margin-right:6px;vertical-align:middle}
+.b-high{background:#b3261e;color:#fff}
+.b-med{background:#c9a227;color:#141210}
+.b-low{background:#ddd;color:#444}
+.fix{border-left:4px solid #c9a227;padding:12px 14px;margin:12px 0;background:#fff;border-radius:0 8px 8px 0}
+.fix.high{border-color:#b3261e}
+.fix strong.t{display:block;margin-bottom:4px}
+.fix .sec{font-size:.8rem;color:#8a6d1c;font-weight:bold;text-transform:uppercase;letter-spacing:.5px}
+.bah{border:1px solid #ddd;border-radius:8px;padding:14px;margin:12px 0;background:#fff}
+.bah .before{color:#b3261e}
+.bah .after{color:#2e7d32}
+.bah .tag{font-weight:bold;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px}
+.hl{border:2px solid #c9a227;border-radius:8px;padding:14px;margin:10px 0;background:#fff;cursor:pointer}
+.hl.sel{border-color:#2e7d32;background:#f2f9f2}
+.hl p{margin:4px 0}
+.hl .fm{font-size:.8rem;color:#8a6d1c;font-weight:bold}
+.progress{font-size:.9rem;color:#6b6250;margin-bottom:16px}
+.progress strong{color:#141210}
+.fixhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hidden{display:none!important}
+.copyok{color:#2e7d32;font-weight:bold;font-size:.9rem;margin-left:8px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>LinkedIn Profile Audit</h1>
+<p class="intro">Score your LinkedIn profile section by section and get exact fixes to make recruiters stop scrolling. Answer honestly — a "no" is just a fix waiting to happen.</p>
+
+<div class="appcard">
+<label class="flabel" for="field">Your field (used to tailor the bullet-rewrite examples)</label>
+<select id="field" aria-label="Your professional field">
+<option value="engineering">Engineering / Software</option>
+<option value="sales">Sales</option>
+<option value="marketing">Marketing</option>
+<option value="finance">Finance / Accounting</option>
+<option value="healthcare">Healthcare</option>
+<option value="education">Education</option>
+<option value="operations">Operations / Logistics</option>
+<option value="design">Design / Creative</option>
+<option value="customersuccess">Customer Success / Support</option>
+<option value="data">Data / Analytics</option>
+<option value="other">Other / General</option>
+</select>
+<p class="hint">Your answers auto-save in this browser as you go.</p>
+</div>
+
+<div id="sections"></div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Headline Formula Generator</h2>
+<p class="hint">Fill in the blanks — the three proven headline formulas below will do the rest. Then pick your favorite.</p>
+<label class="flabel" for="h_who">Who do you help?</label>
+<input type="text" id="h_who" maxlength="80" placeholder="e.g., SaaS founders, hospital teams, first-time buyers">
+<label class="flabel" for="h_what">What outcome do you deliver?</label>
+<input type="text" id="h_what" maxlength="80" placeholder="e.g., cut churn 30%, pass audits pain-free, close faster">
+<label class="flabel" for="h_role">Your role</label>
+<input type="text" id="h_role" maxlength="60" placeholder="e.g., Customer Success Manager">
+<label class="flabel" for="h_proof">One proof point (years, metric, scale)</label>
+<input type="text" id="h_proof" maxlength="60" placeholder="e.g., 8 yrs · 40+ enterprise accounts">
+<div style="margin:12px 0"><button class="btn" id="hgen">Generate Headlines</button></div>
+<div id="hls"></div>
+</div>
+
+<div class="appcard" id="resultcard" style="display:none">
+<h2 style="font-family:Georgia,serif;margin-bottom:4px">Your Audit Results</h2>
+<p class="hint" id="rdate"></p>
+<div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin:12px 0 20px">
+<div style="text-align:center"><div class="grade" id="rgrade">–</div><div class="glabel" id="rlabel"></div></div>
+<div style="flex:1;min-width:220px">
+<div style="font-size:1.05rem"><strong id="rscore"></strong> <span style="color:#6b6250" id="rcount"></span></div>
+<div class="bar" style="height:14px"><i id="rbar"></i></div>
+<p class="hint" id="rblurb"></p>
+</div>
+</div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 8px">Section scores</h3>
+<div id="secscores"></div>
+<h3 style="font-family:Georgia,serif;margin:22px 0 8px">Prioritized fix list <span style="font-size:.85rem;font-weight:normal;color:#6b6250">(highest recruiter impact first)</span></h3>
+<div id="fixlist"></div>
+<h3 style="font-family:Georgia,serif;margin:22px 0 8px">Before / after bullet rewrites <span style="font-size:.85rem;font-weight:normal;color:#6b6250" id="bafor"></span></h3>
+<p class="hint">Study the pattern — specific verb, numbers, outcome — then rewrite your own bullets the same way.</p>
+<div id="balist"></div>
+<div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn ghost sm" id="printbtn">Print my report</button>
+<button class="btn ghost sm" id="resetbtn">Start over</button>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The LinkedIn Profile Audit is just the start. <em>LinkedIn Optimization Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/linkedin-optimization-made-simple/">Get LinkedIn Optimization Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-linkedin-profile-audit-v1";
+var SECTIONS=[
+{id:"headline",name:"Headline",qs:[
+ {q:"Does your headline say what you DO and who you help — not just your job title?",fix:"Lead with the outcome: \u201CI help [who] [achieve what].\u201D Titles belong in the experience section, not the headline. Try the generator below.",impact:"high"},
+ {q:"Does it contain the keywords recruiters actually search for your role?",fix:"Add 2\u20133 searchable role or skill keywords (e.g. \u201CB2B SaaS sales\u201D, \u201CReact\u201D, \u201CFP&A\u201D). Check live job postings for the exact terms.",impact:"high"},
+ {q:"Is it 220 characters or fewer and easy to scan in about 3 seconds?",fix:"Cut filler (\u201Cresults-driven\u201D, \u201Cpassionate\u201D). Use pipes or short phrases: Role | Specialty | Proof.",impact:"med"},
+ {q:"Would a stranger know whether to message you after reading it?",fix:"End with a direction: \u201COpen to [roles]\u201D or \u201CDM me about [topic].\u201D",impact:"med"}]},
+{id:"photo",name:"Photo & Banner",qs:[
+ {q:"Is your photo a professional-looking headshot — not a cropped group photo, logo, or blank avatar?",fix:"Use a clear, well-lit head-and-shoulders photo with a simple background.",impact:"high"},
+ {q:"Is your face clearly visible — taking up roughly 60% of the frame?",fix:"Recrop so your face fills most of the circle. Tiny, distant faces read as low effort.",impact:"med"},
+ {q:"Is your banner image customized — not the default blue background?",fix:"Add a custom banner: your value proposition, company branding, or a clean graphic with contact info.",impact:"med"},
+ {q:"Do your photo and banner look current and right for your industry?",fix:"Update photos older than about 3 years; match dress code and tone to your field.",impact:"low"}]},
+{id:"about",name:"About Section",qs:[
+ {q:"Do the first 2 lines hook the reader? (That\u2019s all most people ever see.)",fix:"Open with the outcome you deliver and who it\u2019s for — never \u201CWelcome to my profile.\u201D",impact:"high"},
+ {q:"Does it tell a story — not just repeat your r\u00E9sum\u00E9?",fix:"Write in first person: what drives you, what you\u2019re known for, what you\u2019re looking for next.",impact:"med"},
+ {q:"Does it include keywords for the roles you want?",fix:"Weave 4\u20136 target-role keywords naturally into the text.",impact:"high"},
+ {q:"Does it end with a call to action (how to reach you)?",fix:"Close with: \u201CBest way to reach me: [email / DM]\u201D — make the next step effortless.",impact:"med"}]},
+{id:"experience",name:"Experience Bullets",qs:[
+ {q:"Does each role start bullets with strong action verbs — not \u201Cresponsible for\u201D?",fix:"Swap \u201Cresponsible for\u201D \u2192 Built, Led, Grew, Cut, Launched, Drove.",impact:"high"},
+ {q:"Do at least half your bullets include numbers or measurable results?",fix:"Add metrics: revenue, percentages, time saved, team size, users, costs avoided.",impact:"high"},
+ {q:"Is your experience focused on the last ~10 years and your most relevant roles?",fix:"Trim or compress roles older than 10 years; keep the spotlight on relevant work.",impact:"low"},
+ {q:"Does your current role read like a pitch for your NEXT role?",fix:"Frame recent wins around the skills your target role requires.",impact:"med"}]},
+{id:"skills",name:"Skills",qs:[
+ {q:"Are your top 3 pinned skills the ones you want to be hired for?",fix:"Reorder: pin the 3 skills that match your target job descriptions.",impact:"high"},
+ {q:"Do you have endorsements on your key skills?",fix:"Ask 5 colleagues to endorse your top skills — endorse theirs first.",impact:"low"},
+ {q:"Do your skills match the language in target job postings?",fix:"Mirror posting terminology exactly (\u201Cdemand generation\u201D vs \u201Cmarketing\u201D).",impact:"med"}]},
+{id:"recommendations",name:"Recommendations",qs:[
+ {q:"Do you have at least 2 recommendations from the last 3 years?",fix:"Request 3: a manager, a peer, and a client — with a specific prompt about results.",impact:"high"},
+ {q:"Do they describe specific results — not just \u201Cgreat to work with\u201D?",fix:"When asking, suggest the project and outcome you\u2019d like them to mention.",impact:"med"},
+ {q:"Do they come from different levels (manager, peer, report)?",fix:"Variety signals credibility. Over time, aim for one of each.",impact:"low"}]},
+{id:"activity",name:"Activity",qs:[
+ {q:"Have you posted, commented on, or shared something in the last 2 weeks?",fix:"Comment thoughtfully on 3 posts a week in your field; share one insight a month.",impact:"med"},
+ {q:"Is your activity relevant to the field you want to work in?",fix:"Engage with content in your target field so your activity reads like a portfolio.",impact:"med"},
+ {q:"Is your Featured section showcasing your best work?",fix:"Pin 3 items: a project, a post that performed well, and external proof (a talk, an article).",impact:"low"}]},
+{id:"settings",name:"Settings & Visibility",qs:[
+ {q:"Is your profile set to public — visible to people outside your network?",fix:"Settings \u2192 Visibility \u2192 Public profile: turn on all sections.",impact:"high"},
+ {q:"Is \u201COpen to Work\u201D set appropriately for your situation?",fix:"Job hunting: enable it (recruiters-only if you\u2019re employed). Not hunting: disable it to avoid noise.",impact:"med"},
+ {q:"Do you have a custom profile URL (linkedin.com/in/yourname)?",fix:"Edit your public profile URL — short, professional, no random numbers.",impact:"low"},
+ {q:"Is your contact info current and complete?",fix:"Verify your email and any portfolio or website links actually work.",impact:"med"}]}
+];
+var FIELDS={
+engineering:[["Responsible for backend services and APIs.","Built 12 REST APIs serving 2M+ requests/day; cut p95 latency 38% by moving to async workers."],["Worked on the mobile app with the team.","Shipped offline-first iOS/Android sync used by 40k users; reduced crash rate from 2.1% to 0.3%."],["Helped improve code quality.","Introduced PR templates and unit-test coverage gates; lifted coverage from 41% to 86% across 3 repos."]],
+sales:[["Responsible for selling software to clients.","Closed $1.2M in new ARR across 34 mid-market accounts; 118% of quota in FY2025."],["Managed customer relationships.","Grew a 22-account book from $410k to $680k ARR through upsell plays and quarterly business reviews."],["Worked on outbound prospecting.","Built a 400-prospect outbound sequence converting at 6.2% meeting rate — 2x team average."]],
+marketing:[["Responsible for social media and campaigns.","Ran LinkedIn campaigns generating 3,400 MQLs at $41 CPL — 28% below target."],["Helped with email marketing.","Redesigned nurture flows; lifted email-attributed pipeline 52% to $860k in two quarters."],["Worked on brand awareness.","Launched a podcast series with 12 episodes; drove 18k downloads and 9 demo requests per episode."]],
+finance:[["Responsible for monthly reporting.","Automated month-end close reporting; cut close time from 9 days to 4 and eliminated 20+ hours of manual work."],["Helped with budgeting.","Built driver-based budget model covering 14 departments; forecast accuracy improved to \u00B12.5%."],["Worked on audits.","Led 2 clean external audits with zero material findings; documented 40+ key controls."]],
+healthcare:[["Responsible for patient care.","Managed a 24-bed unit; cut patient fall incidents 31% through a new rounding protocol."],["Helped with scheduling.","Redesigned nurse scheduling across 3 shifts; reduced overtime costs $96k/year while keeping coverage."],["Worked on quality improvement.","Led a sepsis-bundle initiative; compliance rose from 58% to 94% in 6 months."]],
+education:[["Responsible for teaching 5th grade.","Taught 5th-grade ELA to 28 students; 82% met or exceeded state proficiency, up from 61%."],["Helped with curriculum.","Designed a project-based science unit adopted by 6 teachers across the district."],["Worked with parents.","Ran monthly family literacy nights; parent engagement rose from 35% to 71% attendance."]],
+operations:[["Responsible for warehouse operations.","Ran a 120k sq-ft distribution center; lifted on-time shipment rate from 91% to 98.4%."],["Helped reduce costs.","Renegotiated 3 carrier contracts and optimized routes; saved $240k annually."],["Worked on process improvement.","Led 5S rollout across 4 lines; cut changeover time 42% and recordable incidents to zero."]],
+design:[["Responsible for website design.","Redesigned checkout flow; conversion rose 19% and cart abandonment fell 11 points."],["Helped with branding.","Built a 60-component design system adopted by 4 product teams; cut design-to-dev handoff time in half."],["Worked on user research.","Ran 24 usability sessions; findings drove 3 roadmap pivots and a 4.6\u2605 app-store rating."]],
+customersuccess:[["Responsible for handling customer issues.","Resolved 95% of tier-2 tickets within SLA; CSAT held at 96% across 1,800 tickets."],["Helped onboard new clients.","Built a 30-day onboarding playbook; time-to-first-value dropped from 21 to 9 days."],["Worked on renewals.","Managed 60 renewals at a 94% gross retention rate; expanded 12 accounts by $180k total."]],
+data:[["Responsible for reports and dashboards.","Built a self-serve sales dashboard used by 80+ reps; killed 15 hours/week of ad-hoc requests."],["Helped with data analysis.","Modeled churn drivers across 50k accounts; insights informed a save play that cut churn 2.3 points."],["Worked on data pipelines.","Rebuilt ETL pipeline; cut runtime from 6 hours to 40 minutes and data errors 70%."]],
+other:[["Responsible for daily operations and team tasks.","Streamlined daily workflow for a 12-person team; cut turnaround time 25% in one quarter."],["Helped improve customer satisfaction.","Launched a feedback loop with 200+ customers; satisfaction scores rose from 3.8 to 4.6."],["Worked on special projects.","Led 3 cross-functional projects delivered on time and 8% under budget."]]
+};
+var IMPLBL={high:"High impact",med:"Medium impact",low:"Lower impact"};
+var state={field:"engineering",ans:{},hl:{who:"",what:"",role:"",proof:""},picked:null};
+SECTIONS.forEach(function(s){state.ans[s.id]=s.qs.map(function(){return null;});});
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(!r)return;var s=JSON.parse(r);if(!s||typeof s!=="object")return;
+ if(s.field&&FIELDS[s.field])state.field=s.field;
+ SECTIONS.forEach(function(sec){if(s.ans&&Array.isArray(s.ans[sec.id])&&s.ans[sec.id].length===sec.qs.length)state.ans[sec.id]=s.ans[sec.id];});
+ if(s.hl)state.hl=Object.assign(state.hl,s.hl);
+ if(typeof s.picked==="number")state.picked=s.picked;}catch(e){}}
+function answeredCount(){var n=0,t=0;SECTIONS.forEach(function(s){s.qs.forEach(function(_,i){t++;if(state.ans[s.id][i]!==null)n++;});});return[n,t];}
+function buildSections(){
+ var host=document.getElementById("sections");host.innerHTML="";
+ SECTIONS.forEach(function(sec,si){
+  var card=document.createElement("div");card.className="appcard";
+  var h=document.createElement("h2");h.style.cssText="font-family:Georgia,serif;margin-bottom:2px";h.textContent=(si+1)+". "+sec.name;
+  card.appendChild(h);
+  var sc=document.createElement("div");sc.className="secscore";sc.id="sc-"+sec.id;card.appendChild(sc);
+  sec.qs.forEach(function(q,qi){
+   var fs=document.createElement("fieldset");fs.className="q";fs.style.border="none";
+   var lg=document.createElement("legend");lg.className="qtext";lg.textContent=q.q;fs.appendChild(lg);
+   var yn=document.createElement("div");yn.className="yn";yn.setAttribute("role","group");yn.setAttribute("aria-label",q.q);
+   var yb=document.createElement("button");yb.type="button";yb.className="yes";yb.textContent="Yes";
+   var nb=document.createElement("button");nb.type="button";nb.className="no";nb.textContent="No";
+   yb.addEventListener("click",function(){setAns(sec.id,qi,true);});
+   nb.addEventListener("click",function(){setAns(sec.id,qi,false);});
+   yn.appendChild(yb);yn.appendChild(nb);fs.appendChild(yn);
+   card.appendChild(fs);
+  });
+  host.appendChild(card);
+ });
+ refreshSecScores();
+}
+function setAns(sid,qi,val){state.ans[sid][qi]=val;save();paintAnswers();refreshSecScores();maybeShowResults();}
+function paintAnswers(){
+ SECTIONS.forEach(function(sec){
+  sec.qs.forEach(function(_,qi){
+   var fs=document.querySelectorAll("#sections .appcard")[SECTIONS.indexOf(sec)].querySelectorAll("fieldset")[qi];
+   var btns=fs.querySelectorAll("button");var v=state.ans[sec.id][qi];
+   btns[0].classList.toggle("on",v===true);btns[1].classList.toggle("on",v===false);
+   btns[0].setAttribute("aria-pressed",v===true);btns[1].setAttribute("aria-pressed",v===false);
+  });
+ });
+}
+function secPct(sid){var a=state.ans[sid];var y=a.filter(function(x){return x===true;}).length;return[Math.round(y/a.length*100),y,a.length];}
+function refreshSecScores(){
+ SECTIONS.forEach(function(sec){
+  var el=document.getElementById("sc-"+sec.id);if(!el)return;
+  var p=secPct(sec.id);
+  el.textContent=p[1]+" of "+p[2]+" yes ("+p[0]+"%)";
+ });
+}
+function gradeFor(p){if(p>=90)return["A","All-Star — recruiter-ready"];if(p>=80)return["B","Strong — a few fixes away from great"];if(p>=70)return["C","Average — recruiters will scroll past"];if(p>=60)return["D","Weak — needs real work"];return["F","Invisible — start with the high-impact fixes"];}
+function maybeShowResults(){
+ var c=answeredCount();
+ if(c[0]===c[1])renderResults();
+}
+function renderResults(){
+ var c=answeredCount(),yes=0;
+ SECTIONS.forEach(function(s){yes+=state.ans[s.id].filter(function(x){return x===true;}).length;});
+ var pct=Math.round(yes/c[1]*100),g=gradeFor(pct);
+ var rc=document.getElementById("resultcard");rc.style.display="block";
+ document.getElementById("rgrade").textContent=g[0];
+ document.getElementById("rlabel").textContent=g[1];
+ document.getElementById("rscore").textContent=pct+"%";
+ document.getElementById("rcount").textContent="("+yes+" of "+c[1]+" yes)";
+ document.getElementById("rbar").style.width=pct+"%";
+ document.getElementById("rblurb").textContent=pct<70?"Fix the high-impact items first — they decide whether a recruiter keeps scrolling.":"Nice work. Polish the remaining items to stand out.";
+ var d=new Date();document.getElementById("rdate").textContent="Audited "+d.toLocaleDateString()+" · your answers are saved in this browser";
+ var ss=document.getElementById("secscores");ss.innerHTML="";
+ SECTIONS.forEach(function(sec){
+  var p=secPct(sec.id);
+  var row=document.createElement("div");row.style.marginBottom="10px";
+  row.innerHTML='<div style="display:flex;justify-content:space-between;font-size:.92rem"><strong>'+sec.name+'</strong><span>'+p[0]+'%</span></div><div class="bar"><i style="width:'+p[0]+'%"></i></div>';
+  ss.appendChild(row);
+ });
+ var fixes=[];
+ SECTIONS.forEach(function(sec){
+  sec.qs.forEach(function(q,qi){
+   if(state.ans[sec.id][qi]===false)fixes.push({sec:sec.name,q:q.q,fix:q.fix,impact:q.impact});
+  });
+ });
+ var w={high:3,med:2,low:1};
+ fixes.sort(function(a,b){return w[b.impact]-w[a.impact];});
+ var fl=document.getElementById("fixlist");fl.innerHTML="";
+ if(!fixes.length){fl.innerHTML='<p style="color:#2e7d32;font-weight:bold">No fixes needed — every answer was yes. Outstanding.</p>';}
+ fixes.forEach(function(f,i){
+  var div=document.createElement("div");div.className="fix "+f.impact;
+  div.innerHTML='<div class="fixhead"><span class="badge b-'+f.impact+'">'+IMPLBL[f.impact]+'</span><span class="sec">'+f.sec+'</span></div><strong class="t">'+(i+1)+'. '+f.q+'</strong><div>'+f.fix+'</div>';
+  fl.appendChild(div);
+ });
+ var pairs=FIELDS[state.field]||FIELDS.other;
+ var fn=document.getElementById("field").options[document.getElementById("field").selectedIndex].text;
+ document.getElementById("bafor").textContent="— "+fn;
+ var bl=document.getElementById("balist");bl.innerHTML="";
+ pairs.forEach(function(p,i){
+  var div=document.createElement("div");div.className="bah";
+  div.innerHTML='<div style="margin-bottom:8px"><span class="tag before">Before &nbsp;</span><span class="before">\u201C'+p[0]+'\u201D</span></div><div><span class="tag after">After &nbsp;&nbsp;</span><span class="after">\u201C'+p[1]+'\u201D</span></div>';
+  bl.appendChild(div);
+ });
+}
+function genHeadlines(){
+ var h=state.hl;
+ var who=h.who.trim()||"[who you help]",what=h.what.trim()||"[outcome you deliver]",role=h.role.trim()||"[Your Role]",proof=h.proof.trim();
+ var list=[
+  {f:"Formula 1 — Helper",t:"I help "+who+" "+what+" | "+role},
+  {f:"Formula 2 — Specialist",t:role+" \u00B7 "+what+" for "+who},
+  {f:"Formula 3 — Proof",t:role+" | "+(proof?proof+" \u00B7 ":"")+("helping "+who+" "+what)}
+ ];
+ var host=document.getElementById("hls");host.innerHTML="";
+ list.forEach(function(o,i){
+  var div=document.createElement("div");div.className="hl"+(state.picked===i?" sel":"");
+  div.setAttribute("role","button");div.tabIndex=0;div.setAttribute("aria-label","Choose headline "+(i+1));
+  div.innerHTML='<div class="fm">'+o.f+' · '+(o.t.length<=220?o.t.length+" characters \u2713":'<span style="color:#b3261e">'+o.t.length+" characters — over the 220 limit, trim it</span>")+'</div><p style="font-size:1.05rem">'+o.t.replace(/</g,"&lt;")+'</p><button class="btn ghost sm" data-cp="'+i+'">Copy</button><span class="copyok" style="display:none">Copied!</span>';
+  function pick(){state.picked=i;save();host.querySelectorAll(".hl").forEach(function(x){x.classList.remove("sel");});div.classList.add("sel");}
+  div.addEventListener("click",function(e){if(e.target.tagName==="BUTTON")return;pick();});
+  div.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pick();}});
+  host.appendChild(div);
+ });
+ host.querySelectorAll("[data-cp]").forEach(function(b){
+  b.addEventListener("click",function(e){
+   e.stopPropagation();
+   var t=list[parseInt(b.getAttribute("data-cp"),10)].t;
+   copyText(t,b.parentElement.querySelector(".copyok"));
+  });
+ });
+}
+function copyText(t,okEl){
+ function done(){if(okEl){okEl.style.display="inline";setTimeout(function(){okEl.style.display="none";},1800);}}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}
+ else{var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);done();}
+}
+document.getElementById("hgen").addEventListener("click",function(){genHeadlines();});
+document.getElementById("printbtn").addEventListener("click",function(){window.print();});
+document.getElementById("resetbtn").addEventListener("click",function(){
+ if(!confirm("Clear all your audit answers and start over?"))return;
+ try{localStorage.removeItem(KEY);}catch(e){}
+ SECTIONS.forEach(function(s){state.ans[s.id]=s.qs.map(function(){return null;});});
+ state.picked=null;state.hl={who:"",what:"",role:"",proof:""};
+ ["h_who","h_what","h_role","h_proof"].forEach(function(id){document.getElementById(id).value="";});
+ document.getElementById("hls").innerHTML="";
+ document.getElementById("resultcard").style.display="none";
+ paintAnswers();refreshSecScores();
+ window.scrollTo(0,0);
+});
+["h_who","h_what","h_role","h_proof"].forEach(function(id){
+ document.getElementById(id).addEventListener("input",function(){
+  state.hl={who:document.getElementById("h_who").value,what:document.getElementById("h_what").value,role:document.getElementById("h_role").value,proof:document.getElementById("h_proof").value};
+  save();
+ });
+});
+document.getElementById("field").addEventListener("change",function(){state.field=this.value;save();if(document.getElementById("resultcard").style.display==="block")renderResults();});
+load();
+document.getElementById("field").value=state.field;
+document.getElementById("h_who").value=state.hl.who;document.getElementById("h_what").value=state.hl.what;
+document.getElementById("h_role").value=state.hl.role;document.getElementById("h_proof").value=state.hl.proof;
+buildSections();paintAnswers();
+if(state.hl.who||state.hl.what||state.hl.role||state.hl.proof)genHeadlines();
+maybeShowResults();
+</script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delegation Decision Aid | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Decide what to hand off, to whom, and how: run tasks through a delegation matrix, match them to the right person, and generate a printable delegation brief. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/delegation-decision-aid/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Delegation Decision Aid | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Decide what to hand off, to whom, and how: run tasks through a delegation matrix, match them to the right person, and generate a printable delegation brief. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/delegation-decision-aid/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:860px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.45rem;color:#141210;margin-bottom:10px}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;color:#141210;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:9px 16px;min-height:44px;font-size:.92rem}
+input[type=text],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label.mq{display:block;background:#fff;border:2px solid #e8ddb8;border-radius:10px;padding:14px 16px;margin:10px 0}
+label.mq .qt{display:block;font-weight:bold;margin-bottom:10px}
+.yn{display:flex;gap:8px}
+.yn button{flex:1;min-height:48px;border:2px solid #c9a227;border-radius:8px;background:#fffdf7;font-size:1rem;cursor:pointer;font-weight:bold}
+.yn button.sel{background:#c9a227;color:#141210}
+.verdict{display:inline-block;font-weight:bold;padding:8px 18px;border-radius:20px;color:#fff;margin:8px 0}
+.v-del{background:#3a7a2e}.v-guard{background:#d67e0c}.v-keep{background:#5b6b7a}
+.taskcard{background:#fff;border:2px solid #e8ddb8;border-radius:10px;padding:14px 16px;margin:10px 0;cursor:pointer}
+.taskcard.sel{border-color:#c9a227;background:#fffdf7}
+.taskcard .tt{font-weight:bold;font-size:1.05rem}
+.fitrow{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e8ddb8;border-radius:8px;padding:10px 12px;margin:8px 0}
+.fitrow .fn{flex:1;font-weight:bold}
+.fitrow .fs{background:#141210;color:#e8c84a;border-radius:12px;padding:3px 12px;font-size:.85rem;font-weight:bold}
+.tag{display:inline-block;background:#eee5c8;border-radius:10px;padding:2px 10px;font-size:.82rem;margin:2px 4px 2px 0}
+.brief{background:#fff;border:3px solid #c9a227;border-radius:12px;padding:22px;margin:16px 0}
+.brief h3{font-family:Georgia,serif;margin-top:0}
+.brief .blab{font-weight:bold;color:#8a6d1c;margin:12px 0 4px}
+table.keep{border-collapse:collapse;width:100%;margin-top:10px}
+table.keep th,table.keep td{border:1px solid #e8ddb8;padding:10px;text-align:left;font-size:.92rem}
+table.keep th{background:#141210;color:#e8c84a}
+.err{background:#fdeceb;border:2px solid #d66;border-radius:8px;padding:12px 16px;margin-bottom:16px;color:#8a1f1f;font-weight:bold;display:none}
+.note{font-size:.92rem;color:#6b6250}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{header.site,footer.site,.noprint,.devot-block,.godeeper,.backlink,#teamcard,#taskcard,#workcard,#outcard{display:none}main.app{max-width:100%;padding:0}.brief{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Delegation Decision Aid</h1>
+<p class="intro">Decide what to hand off, to whom, and how — so delegation stops feeling like dumping. List your tasks, run each through the delegation matrix, match it to the right person, and generate a clear brief.</p>
+
+<div class="appcard" id="teamcard">
+<h2>1 — Your team</h2>
+<div class="err" id="teamerr" role="alert"></div>
+<p class="note">Add each person you could delegate to. Skills are what they're already good at; stretch areas are what they'd like to grow into.</p>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;align-items:end">
+<div style="flex:1;min-width:160px"><label for="pname" style="font-weight:bold">Name</label><input type="text" id="pname" placeholder="e.g. Priya Nair" autocomplete="off"></div>
+<div style="flex:1;min-width:160px"><label for="pskills" style="font-weight:bold">Skills (comma-separated)</label><input type="text" id="pskills" placeholder="e.g. writing, data analysis" autocomplete="off"></div>
+<div style="flex:1;min-width:160px"><label for="pstretch" style="font-weight:bold">Stretch areas (comma-separated)</label><input type="text" id="pstretch" placeholder="e.g. presenting, client calls" autocomplete="off"></div>
+<div style="flex:0 0 140px"><label for="pload" style="font-weight:bold">Current load</label><select id="pload"><option value="0">Light</option><option value="1">OK</option><option value="2">Full</option></select></div>
+<div><button class="btn small" id="addperson">Add</button></div>
+</div>
+<div id="people"></div>
+</div>
+
+<div class="appcard" id="taskcard">
+<h2>2 — Your tasks</h2>
+<div class="err" id="taskerr" role="alert"></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;align-items:end">
+<div style="flex:2;min-width:200px"><label for="tname" style="font-weight:bold">Task</label><input type="text" id="tname" placeholder="e.g. Draft the Q4 marketing report" autocomplete="off"></div>
+<div style="flex:3;min-width:220px"><label for="tdetail" style="font-weight:bold">Details (optional)</label><input type="text" id="tdetail" placeholder="Context, deadline, why it matters" autocomplete="off"></div>
+<div><button class="btn small" id="addtask">Add task</button></div>
+</div>
+<div id="tasks"></div>
+</div>
+
+<div class="appcard" id="workcard" style="display:none">
+<h2 id="worktitle">3 — Work the task</h2>
+<div class="err" id="workerr" role="alert"></div>
+<div id="matrixbox"></div>
+<div id="matchbox"></div>
+<div id="briefbox"></div>
+</div>
+
+<div class="appcard" id="outcard">
+<h2>Your keep / delegate list</h2>
+<div id="keeplist"><p class="note">Add tasks and run them through the matrix — your keep/delegate list builds here.</p></div>
+<div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+<button class="btn ghost small" id="printall">Print all briefs</button>
+<button class="btn ghost small" id="resetall">Start over (clear everything)</button>
+</div>
+</div>
+
+<section class="appcard godeeper" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Delegation Decision Aid is just the start. <em>Delegation Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — how to hand off work with clarity so your team grows and nothing drops.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/delegation-made-simple/">Get Delegation Made Simple — $4.99</a></p>
+</section>
+<p class="backlink" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section class="devot-block" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-delegation-decision-aid-v1";
+var MQ=[
+ ["m1","Does this need YOUR authority, signature, or final judgment?","Yes = only you can truly own it."],
+ ["m2","Could doing this grow a real skill in someone on your team?","Delegation is a development tool, not just offloading."],
+ ["m3","If this goes wrong, is the cost acceptable or easily fixable?","Low-stakes tasks are the safest place to delegate."],
+ ["m4","Does this eat time better spent on higher-value work?","Your hours are the scarcest resource on the team."]];
+var S={people:[],tasks:[],selTask:null};
+var nid=1;
+function save(){try{localStorage.setItem(KEY,JSON.stringify({people:S.people,tasks:S.tasks}));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var d=JSON.parse(r);if(d){S.people=d.people||[];S.tasks=d.tasks||[];}}}catch(e){}}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function showErr(id,msg){var e=document.getElementById(id);e.textContent=msg;e.style.display="block";e.scrollIntoView({behavior:"smooth",block:"center"});}
+function hideErr(id){document.getElementById(id).style.display="none";}
+function tags(str){return String(str||"").split(",").map(function(t){return t.trim().toLowerCase();}).filter(function(t){return t;});}
+function getTask(){for(var i=0;i<S.tasks.length;i++)if(S.tasks[i].id===S.selTask)return S.tasks[i];return null;}
+function verdictFor(t){
+ var m=t.matrix;
+ if(!m||m.m1===null||m.m2===null||m.m3===null||m.m4===null)return null;
+ var keep=(m.m1?3:0)+(m.m3?0:2);
+ var del=(m.m2?2:0)+(m.m3?2:0)+(m.m4?1:0);
+ var reasons=[];
+ if(m.m1)reasons.push("needs your authority");
+ if(!m.m1)reasons.push("doesn't need your authority");
+ if(m.m2)reasons.push("grows someone's skill");
+ if(m.m3)reasons.push("failure cost is acceptable");
+ if(!m.m3)reasons.push("failure cost is high");
+ if(m.m4)reasons.push("frees your time for higher-value work");
+ if(m.m1&&keep>del)return{v:"keep",label:"KEEP",cls:"v-keep",why:"This "+reasons.join(", ")+". Keep it — or keep the judgment call and delegate only the legwork."};
+ if(!m.m1&&del>=4)return{v:"delegate",label:"DELEGATE",cls:"v-del",why:"This "+reasons.join(", ")+". It's a clean handoff — match it to the right person below."};
+ if(del>=2)return{v:"guardrails",label:"DELEGATE WITH GUARDRAILS",cls:"v-guard",why:"This "+reasons.join(", ")+". Delegate it, but set tight check-ins and review points in the brief."};
+ return{v:"keep",label:"KEEP",cls:"v-keep",why:"This "+reasons.join(", ")+". The case for delegating isn't strong enough yet — revisit when someone has capacity to grow into it."};
+}
+
+function renderPeople(){
+ var box=document.getElementById("people");box.innerHTML="";
+ if(!S.people.length){box.innerHTML='<p class="note">No team members yet.</p>';return;}
+ var loads=["Light","OK","Full"];
+ S.people.forEach(function(p,i){
+  var d=document.createElement("div");d.className="fitrow";
+  var nm=document.createElement("div");nm.className="fn";
+  nm.innerHTML=esc(p.name)+' <span class="note">('+esc(loads[p.load]||"OK")+' load)</span><div>'+
+   p.skills.map(function(s){return'<span class="tag">'+esc(s)+'</span>';}).join("")+
+   p.stretch.map(function(s){return'<span class="tag" style="background:#f3e6c8">'+esc(s)+' (stretch)</span>';}).join("")+'</div>';
+  d.appendChild(nm);
+  var rb=document.createElement("button");rb.type="button";rb.className="btn ghost small noprint";rb.textContent="Remove";
+  rb.addEventListener("click",function(){S.people.splice(i,1);S.tasks.forEach(function(t){if(t.assignee===p.id)t.assignee=null;});save();renderAll();});
+  d.appendChild(rb);box.appendChild(d);
+ });
+}
+document.getElementById("addperson").addEventListener("click",function(){
+ var n=document.getElementById("pname").value.trim();
+ if(!n){showErr("teamerr","Enter a name to add a team member.");return;}
+ hideErr("teamerr");
+ S.people.push({id:"p"+Date.now()+"_"+(nid++),name:n,skills:tags(document.getElementById("pskills").value),stretch:tags(document.getElementById("pstretch").value),load:parseInt(document.getElementById("pload").value,10)||0});
+ document.getElementById("pname").value="";document.getElementById("pskills").value="";document.getElementById("pstretch").value="";
+ save();renderAll();
+});
+function renderTasks(){
+ var box=document.getElementById("tasks");box.innerHTML="";
+ if(!S.tasks.length){box.innerHTML='<p class="note">No tasks yet. Add the first one above.</p>';return;}
+ S.tasks.forEach(function(t,i){
+  var d=document.createElement("div");d.className="taskcard"+(t.id===S.selTask?" sel":"");
+  var v=verdictFor(t);
+  d.innerHTML='<div class="tt">'+esc(t.name)+'</div>'+
+   (t.details?'<div class="note">'+esc(t.details)+'</div>':"")+
+   '<div style="margin-top:6px">'+(v?'<span class="verdict '+v.cls+'">'+v.label+'</span>':'<span class="note">Matrix not completed</span>')+
+   (t.assignee&&memberName(t.assignee)?' <span class="note">\u2192 '+esc(memberName(t.assignee))+'</span>':"")+'</div>';
+  d.addEventListener("click",function(){S.selTask=t.id;renderAll();
+   document.getElementById("workcard").scrollIntoView({behavior:"smooth"});});
+  var del=document.createElement("button");del.type="button";del.className="btn ghost small noprint";del.style.marginTop="8px";del.textContent="Delete task";
+  del.addEventListener("click",function(ev){ev.stopPropagation();
+   if(!confirm("Delete task \""+t.name+"\"?"))return;
+   S.tasks.splice(i,1);if(S.selTask===t.id)S.selTask=null;save();renderAll();});
+  d.appendChild(del);box.appendChild(d);
+ });
+}
+function memberName(id){for(var i=0;i<S.people.length;i++)if(S.people[i].id===id)return S.people[i].name;return"";}
+
+function renderWork(){
+ var t=getTask();
+ var card=document.getElementById("workcard");
+ if(!t){card.style.display="none";return;}
+ card.style.display="block";
+ document.getElementById("worktitle").textContent="3 — Work the task: "+t.name;
+ renderMatrix(t);renderMatch(t);renderBrief(t);
+}
+function renderMatrix(t){
+ var box=document.getElementById("matrixbox");box.innerHTML="";
+ var h=document.createElement("h3");h.textContent="The delegation matrix";box.appendChild(h);
+ if(!t.matrix)t.matrix={m1:null,m2:null,m3:null,m4:null};
+ MQ.forEach(function(q){
+  var lab=document.createElement("label");lab.className="mq";
+  var qt=document.createElement("span");qt.className="qt";qt.textContent=q[1];lab.appendChild(qt);
+  var sub=document.createElement("div");sub.className="note";sub.textContent=q[2];lab.appendChild(sub);
+  var yn=document.createElement("div");yn.className="yn";yn.style.marginTop="10px";
+  [["Yes",true],["No",false]].forEach(function(o){
+   var b=document.createElement("button");b.type="button";b.textContent=o[0];
+   if(t.matrix[q[0]]===o[1])b.className="sel";
+   b.setAttribute("aria-pressed",t.matrix[q[0]]===o[1]?"true":"false");
+   b.addEventListener("click",function(){t.matrix[q[0]]=o[1];save();renderMatrix(t);renderMatch(t);renderBrief(t);renderOut();});
+   yn.appendChild(b);
+  });
+  lab.appendChild(yn);box.appendChild(lab);
+ });
+ var v=verdictFor(t);
+ var vd=document.createElement("div");vd.style.marginTop="12px";
+ if(v){
+  vd.innerHTML='<span class="verdict '+v.cls+'">'+v.label+'</span><p style="margin-top:8px">'+esc(v.why)+'</p>';
+ }else{
+  vd.innerHTML='<p class="note">Answer all four matrix questions to get a verdict.</p>';
+ }
+ box.appendChild(vd);
+}
+function fitScore(p,reqSkills){
+ var s=0,notes=[];
+ var sm=p.skills.map(function(x){return x.toLowerCase();});
+ var st=p.stretch.map(function(x){return x.toLowerCase();});
+ var hits=[],stretchHits=[];
+ reqSkills.forEach(function(r){
+  if(sm.indexOf(r)>=0){s+=2;hits.push(r);}
+  else if(st.indexOf(r)>=0){s+=1;stretchHits.push(r);}
+ });
+ var pen=[0,1,3][p.load]||0;s-=pen;
+ if(hits.length)notes.push("matches skills: "+hits.join(", "));
+ if(stretchHits.length)notes.push("stretch fit: "+stretchHits.join(", "));
+ if(pen)notes.push(["light load","ok load","full load"][p.load]+"");
+ return{score:s,notes:notes.join(" \u00b7 ")};
+}
+function renderMatch(t){
+ var box=document.getElementById("matchbox");box.innerHTML="";
+ var v=verdictFor(t);
+ if(!v||v.v==="keep"){
+  if(v)box.innerHTML='<h3>Match to a person</h3><p class="note">Verdict is KEEP, so no match needed. If you change your mind after answering the matrix, the matcher appears here.</p>';
+  return;
+ }
+ var h=document.createElement("h3");h.textContent="Match to the right person";box.appendChild(h);
+ if(!S.people.length){
+  box.innerHTML+='<p class="note">Add team members in step 1 first.</p>';return;
+ }
+ var lab=document.createElement("label");lab.style.fontWeight="bold";lab.textContent="Skills this task needs (comma-separated)";
+ lab.setAttribute("for","reqskills");box.appendChild(lab);
+ var inp=document.createElement("input");inp.type="text";inp.id="reqskills";
+ inp.placeholder="e.g. writing, spreadsheets";inp.value=(t.reqSkills||[]).join(", ");
+ inp.addEventListener("input",function(){t.reqSkills=tags(inp.value);save();renderFitList(t);});
+ box.appendChild(inp);
+ var fl=document.createElement("div");fl.id="fitlist";box.appendChild(fl);
+ renderFitList(t);
+}
+function renderFitList(t){
+ var fl=document.getElementById("fitlist");if(!fl)return;fl.innerHTML="";
+ var req=t.reqSkills||[];
+ var ranked=S.people.map(function(p){var f=fitScore(p,req);return{p:p,f:f};})
+  .sort(function(a,b){return b.f.score-a.f.score;});
+ if(!ranked.length){fl.innerHTML='<p class="note">No people to rank.</p>';return;}
+ ranked.forEach(function(r,i){
+  var d=document.createElement("div");d.className="fitrow";
+  if(i===0&&r.f.score>0)d.style.border="2px solid #c9a227";
+  var nm=document.createElement("div");nm.className="fn";
+  nm.innerHTML=(i===0?'<span class="tag" style="background:#c9a227;font-weight:bold">Best fit</span> ':"")+esc(r.p.name)+
+   '<div class="note">'+esc(r.f.notes||"no skill overlap recorded")+'</div>';
+  d.appendChild(nm);
+  var fs=document.createElement("div");fs.className="fs";fs.textContent="fit "+r.f.score;d.appendChild(fs);
+  var b=document.createElement("button");b.type="button";
+  b.className="btn small noprint"+(t.assignee===r.p.id?"":" ghost");
+  b.textContent=t.assignee===r.p.id?"Assigned":"Assign";
+  b.addEventListener("click",function(){t.assignee=r.p.id;save();renderMatch(t);renderBrief(t);renderTasks();renderOut();});
+  d.appendChild(b);fl.appendChild(d);
+ });
+ if(!req.length){var w=document.createElement("p");w.className="note";w.textContent="Tip: enter the task's required skills above for a sharper match.";fl.appendChild(w);}
+}
+function renderBrief(t){
+ var box=document.getElementById("briefbox");box.innerHTML="";
+ var v=verdictFor(t);
+ if(!v||v.v==="keep"||!t.assignee)return;
+ var h=document.createElement("h3");h.textContent="Delegation brief";box.appendChild(h);
+ if(!t.brief)t.brief={outcome:"",done:"",constraints:"",cadence:"Weekly"};
+ var p=document.createElement("p");p.className="note";
+ p.textContent="A good brief answers four questions: what outcome do you want, what does \u2018done\u2019 look like, what are the constraints, and how often will you check in?";box.appendChild(p);
+ var fields=[["outcome","Outcome definition","What result should "+memberName(t.assignee)+" produce?"],
+  ["done","What \u2018done\u2019 looks like","Specific, observable finish line."],
+  ["constraints","Constraints","Budget, tools, approvals, things NOT to do."]];
+ fields.forEach(function(f){
+  var lab=document.createElement("label");lab.style.fontWeight="bold";lab.textContent=f[1];lab.setAttribute("for","bf_"+f[0]);box.appendChild(lab);
+  var ta=document.createElement("textarea");ta.id="bf_"+f[0];ta.rows=2;ta.placeholder=f[2];ta.value=t.brief[f[0]];
+  ta.addEventListener("input",function(){t.brief[f[0]]=ta.value;save();renderOut();});
+  box.appendChild(ta);
+ });
+ var cl=document.createElement("label");cl.style.fontWeight="bold";cl.textContent="Check-in cadence";cl.setAttribute("for","bf_cad");box.appendChild(cl);
+ var cs=document.createElement("select");cs.id="bf_cad";
+ ["Daily","Twice a week","Weekly","Milestones only","As needed"].forEach(function(o){
+  var op=document.createElement("option");op.value=o;op.textContent=o;if(t.brief.cadence===o)op.selected=true;cs.appendChild(op);
+ });
+ cs.addEventListener("change",function(){t.brief.cadence=cs.value;save();renderOut();});
+ box.appendChild(cs);
+ var b=document.createElement("button");b.type="button";b.className="btn small noprint";b.style.marginTop="10px";b.textContent="Print this brief";
+ b.addEventListener("click",function(){window.print();});
+ box.appendChild(b);
+}
+function briefHTML(t){
+ if(!t.brief||!t.assignee)return"";
+ return '<div class="brief"><h3>Delegation brief: '+esc(t.name)+'</h3>'+
+  '<div class="blab">To</div><div>'+esc(memberName(t.assignee))+'</div>'+
+  '<div class="blab">Outcome</div><div>'+esc(t.brief.outcome||"\u2014")+'</div>'+
+  '<div class="blab">What \u2018done\u2019 looks like</div><div>'+esc(t.brief.done||"\u2014")+'</div>'+
+  '<div class="blab">Constraints</div><div>'+esc(t.brief.constraints||"\u2014")+'</div>'+
+  '<div class="blab">Check-in cadence</div><div>'+esc(t.brief.cadence||"Weekly")+'</div></div>';
+}
+function renderOut(){
+ var box=document.getElementById("keeplist");box.innerHTML="";
+ if(!S.tasks.length){box.innerHTML='<p class="note">Add tasks and run them through the matrix \u2014 your keep/delegate list builds here.</p>';return;}
+ var tbl=document.createElement("table");tbl.className="keep";
+ tbl.innerHTML='<thead><tr><th>Task</th><th>Verdict</th><th>Why</th><th>Assigned to</th></tr></thead>';
+ var tb=document.createElement("tbody");
+ var briefs=[];
+ S.tasks.forEach(function(t){
+  var v=verdictFor(t);
+  var tr=document.createElement("tr");
+  tr.innerHTML='<td><b>'+esc(t.name)+'</b>'+(t.details?'<div class="note">'+esc(t.details)+'</div>':"")+'</td>'+
+   '<td>'+(v?'<span class="verdict '+v.cls+'">'+v.label+'</span>':'<span class="note">Incomplete</span>')+'</td>'+
+   '<td>'+esc(v?v.why:"Finish the matrix.")+'</td>'+
+   '<td>'+esc(t.assignee?memberName(t.assignee):"\u2014")+'</td>';
+  tb.appendChild(tr);
+  if(v&&v.v!=="keep"&&t.assignee)briefs.push(t);
+ });
+ tbl.appendChild(tb);box.appendChild(tbl);
+ briefs.forEach(function(t){var d=document.createElement("div");d.innerHTML=briefHTML(t);box.appendChild(d);});
+}
+document.getElementById("addtask").addEventListener("click",function(){
+ var n=document.getElementById("tname").value.trim();
+ if(!n){showErr("taskerr","Enter a task name first.");return;}
+ hideErr("taskerr");
+ var t={id:"t"+Date.now()+"_"+(nid++),name:n,details:document.getElementById("tdetail").value.trim(),matrix:null,reqSkills:[],assignee:null,brief:null};
+ S.tasks.push(t);S.selTask=t.id;
+ document.getElementById("tname").value="";document.getElementById("tdetail").value="";
+ save();renderAll();
+ document.getElementById("workcard").scrollIntoView({behavior:"smooth"});
+});
+document.getElementById("printall").addEventListener("click",function(){window.print();});
+document.getElementById("resetall").addEventListener("click",function(){
+ if(!confirm("Clear all people, tasks, and briefs, and start over?"))return;
+ S={people:[],tasks:[],selTask:null};save();renderAll();
+});
+function renderAll(){renderPeople();renderTasks();renderWork();renderOut();}
+load();
+if(!Array.isArray(S.people))S.people=[];
+if(!Array.isArray(S.tasks))S.tasks=[];
+renderAll();
+</script>
+</body>
+</html>

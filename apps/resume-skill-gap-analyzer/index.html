@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume Skill-Gap Analyzer | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Paste a job posting, compare your real skills against it, and get a prioritized 2-week plan to close the gaps. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/resume-skill-gap-analyzer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Resume Skill-Gap Analyzer | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Paste a job posting, compare your real skills against it, and get a prioritized 2-week plan to close the gaps. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/resume-skill-gap-analyzer/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.4rem;margin-bottom:10px}
+.appcard h3{font-family:Georgia,serif;font-size:1.15rem;margin:18px 0 8px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.95rem}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:180px;font-family:inherit}
+label.f{display:block;font-weight:bold;margin-top:14px}
+.hint{color:#6b6250;font-size:.92rem}
+.err{color:#a33b2e;font-weight:bold;margin-top:10px}
+.btnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.skillrow{border:1px solid #e3d9bd;border-radius:10px;padding:12px;margin:10px 0;background:#fff}
+.skillrow .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.skillrow b{font-size:1.02rem}
+.badge{font-size:.78rem;background:#f7efdb;border:1px solid #c9a227;border-radius:20px;padding:2px 10px;color:#8a6d1c;white-space:nowrap}
+.seg{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.seg label{flex:1;min-width:90px;border:2px solid #c9a227;border-radius:8px;text-align:center;padding:10px 4px;cursor:pointer;font-size:.9rem;min-height:44px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label.on{background:#c9a227;font-weight:bold}
+.seg label.on.miss{background:#f3d9d4;border-color:#a33b2e}
+.rm{background:none;border:none;color:#a33b2e;cursor:pointer;font-size:.85rem;text-decoration:underline;min-height:44px;padding:8px}
+.bigscore{font-size:2.6rem;font-family:Georgia,serif;text-align:center}
+.grade{text-align:center;font-weight:bold;font-size:1.15rem;color:#8a6d1c}
+table.gap{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9rem}
+table.gap th,table.gap td{border:1px solid #e3d9bd;padding:8px;text-align:left;vertical-align:top}
+table.gap th{background:#f7efdb}
+.sev-db{color:#a33b2e;font-weight:bold}
+.sev-im{color:#8a6d1c;font-weight:bold}
+.sev-nh{color:#4a7a3f;font-weight:bold}
+.planweek{background:#fdf3d7;border:2px solid #c9a227;border-radius:10px;padding:16px;margin:12px 0}
+.planweek ol{margin:8px 0 0 20px}
+.planweek li{margin-bottom:8px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{
+  header.site,footer.site,.noprint,nav.main{display:none!important}
+  main.app{max-width:100%;padding:0}
+  .appcard{border:1px solid #999;break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Resume Skill-Gap Analyzer</h1>
+<p class="intro">Paste a real job posting. The app pulls out the skills it asks for, you mark what you have, and you get an honest match score plus a 2-week plan to close the gaps &mdash; what to learn, what to reframe on your resume, and what to address in your cover letter.</p>
+
+<!-- INPUT -->
+<section class="appcard" id="scr-input">
+<h2>1. Paste the job description</h2>
+<label class="f" for="jd">Job posting text</label>
+<textarea id="jd" aria-label="Job posting text" placeholder="Copy the full job description here &mdash; responsibilities, requirements, qualifications, all of it."></textarea>
+<label class="f" for="trole">Target role title (optional)</label>
+<input type="text" id="trole" placeholder="e.g., Marketing Manager">
+<p class="err" id="jdErr" hidden>Please paste a job description first &mdash; even a rough one works.</p>
+<div class="btnrow noprint">
+<button class="btn ghost" id="sampleBtn">Load sample posting</button>
+<button class="btn" id="analyzeBtn">Analyze job description</button>
+</div>
+<p class="hint" style="margin-top:10px">Nothing leaves your browser. The analysis runs entirely on this page.</p>
+</section>
+
+<!-- REVIEW -->
+<section class="appcard" id="scr-review" hidden>
+<h2>2. Confirm the skills &mdash; mark what you have</h2>
+<p class="hint" id="foundNote"></p>
+<div id="skillList"></div>
+<h3>Add a skill the scan missed</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<input type="text" id="cName" placeholder="Skill name" aria-label="Custom skill name">
+<select id="cCat" aria-label="Custom skill category"></select>
+<select id="cLearn" aria-label="Custom skill learnability">
+<option value="easy">Quick to learn (1&ndash;2 wks)</option>
+<option value="medium" selected>Medium (3&ndash;8 wks)</option>
+<option value="hard">Long-term (3+ months)</option>
+</select>
+<select id="cStatus" aria-label="Custom skill status">
+<option value="have">I have it</option>
+<option value="partial">Partial</option>
+<option value="missing" selected>Missing</option>
+</select>
+</div>
+<div class="btnrow noprint"><button class="btn ghost small" id="addBtn">Add skill</button></div>
+<p class="err" id="revErr" hidden>Add or confirm at least one skill to get a report.</p>
+<div class="btnrow noprint">
+<button class="btn ghost" id="backBtn">Back</button>
+<button class="btn" id="reportBtn">Calculate my gap report</button>
+</div>
+</section>
+
+<!-- REPORT -->
+<section class="appcard" id="scr-report" hidden>
+<h2>3. Your gap report</h2>
+<div class="bigscore" id="matchPct"></div>
+<p class="grade" id="verdict"></p>
+<p class="hint" id="matchExplain" style="text-align:center"></p>
+<h3>Gaps, ranked</h3>
+<div style="overflow-x:auto"><table class="gap" id="gapTable"></table></div>
+<h3>Your 2-week action plan</h3>
+<div class="planweek"><b>Week 1 &mdash; Learn &amp; reframe</b><ol id="week1"></ol></div>
+<div class="planweek"><b>Week 2 &mdash; Prove &amp; apply</b><ol id="week2"></ol></div>
+<div class="btnrow noprint" style="margin-top:18px">
+<button class="btn small" id="printBtn">Print plan</button>
+<button class="btn ghost small" id="editBtn">Edit skills</button>
+<button class="btn ghost small" id="resetBtn">Start over</button>
+</div>
+</section>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Pair this analyzer with <em>Resume Writing Made Simple</em> by Kimani Upshur, M.Ed. &mdash; how to frame every skill, close gaps on paper, and write a cover letter that gets interviews.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/resume-writing-made-simple/">Get Resume Writing Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">One practical reflection in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action. This tool is for educational purposes only and is not professional career counseling.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-resume-skill-gap-analyzer-v1";
+/* name, category, learn(easy|medium|hard), core(0/1), aliases */
+var RAW=[
+["JavaScript","Programming","medium",1,"javascript","js","es6"],
+["TypeScript","Programming","medium",1,"typescript","ts"],
+["Python","Programming","medium",1,"python"],
+["Java","Programming","hard",1,"java"],
+["C#","Programming","medium",1,"c#","c sharp"],
+["SQL","Programming","medium",1,"sql","mysql","postgresql","postgres"],
+["React","Programming","medium",1,"react"],
+["Node.js","Programming","medium",1,"node.js","nodejs","node"],
+["HTML/CSS","Programming","easy",1,"html","css"],
+["Git","Programming","easy",1,"git","github","version control"],
+["REST APIs","Programming","medium",1,"rest api","restful","rest","api development"],
+["Docker","Programming","medium",0,"docker","containerization"],
+["Kubernetes","Programming","hard",0,"kubernetes","k8s"],
+["AWS","Programming","hard",1,"aws","amazon web services"],
+["Azure","Programming","hard",0,"azure"],
+["Linux","Programming","medium",0,"linux","unix","command line"],
+["CI/CD","Programming","medium",0,"ci/cd","continuous integration","jenkins"],
+["Agile/Scrum","Programming","easy",1,"agile","scrum"],
+["Unit testing","Programming","medium",0,"unit testing","tdd","jest","pytest"],
+["Excel","Data","easy",1,"excel","spreadsheets"],
+["Data analysis","Data","medium",1,"data analysis","analyze data","analyzing data"],
+["Tableau","Data","medium",0,"tableau"],
+["Power BI","Data","medium",0,"power bi","powerbi"],
+["Statistics","Data","hard",0,"statistics","statistical"],
+["Machine learning","Data","hard",0,"machine learning"],
+["Data modeling","Data","hard",0,"data modeling"],
+["A/B testing","Data","medium",0,"a/b testing","ab testing","experimentation"],
+["SEO","Marketing","medium",1,"seo","search engine optimization"],
+["Content marketing","Marketing","medium",1,"content marketing"],
+["Email marketing","Marketing","easy",0,"email marketing","mailchimp","mailerlite","newsletter"],
+["Social media marketing","Marketing","easy",1,"social media"],
+["Google Ads","Marketing","medium",0,"google ads","ppc","paid search"],
+["Meta Ads","Marketing","medium",0,"meta ads","facebook ads"],
+["Copywriting","Marketing","medium",1,"copywriting","copywriter"],
+["Marketing analytics","Marketing","medium",0,"marketing analytics","google analytics"],
+["Prospecting","Sales","easy",1,"prospecting","lead generation"],
+["Cold calling","Sales","easy",0,"cold calling","cold outreach"],
+["Negotiation","Sales","medium",1,"negotiation","negotiating"],
+["Salesforce / CRM","Sales","medium",1,"salesforce","crm","hubspot"],
+["Pipeline management","Sales","medium",1,"pipeline"],
+["Discovery calls","Sales","easy",0,"discovery call"],
+["Forecasting","Sales","medium",0,"forecasting","sales forecast"],
+["Team leadership","Leadership","medium",1,"team lead","leading a team","leadership"],
+["People management","Leadership","medium",1,"people management","managing people","manage a team"],
+["Hiring","Leadership","medium",0,"hiring","recruiting","recruitment"],
+["Coaching & mentoring","Leadership","medium",0,"coaching","mentoring","mentorship"],
+["Performance reviews","Leadership","easy",0,"performance review","performance management"],
+["Stakeholder management","Leadership","medium",1,"stakeholder"],
+["Strategic planning","Leadership","hard",0,"strategic planning","strategy"],
+["Budget management","Leadership","medium",0,"budget management","budgeting"],
+["Change management","Leadership","medium",0,"change management"],
+["Conflict resolution","Leadership","medium",0,"conflict resolution"],
+["Public speaking","Communication","medium",0,"public speaking","presenting","presentation skills"],
+["Business writing","Communication","easy",1,"business writing","writing skills","strong writer"],
+["Presentation skills","Communication","easy",1,"presentation"],
+["Cross-functional collaboration","Communication","easy",1,"cross-functional","collaborat"],
+["Client communication","Communication","easy",1,"client-facing","client communication"],
+["Financial modeling","Finance","hard",1,"financial modeling"],
+["Financial reporting","Finance","medium",1,"financial reporting"],
+["QuickBooks","Finance","easy",0,"quickbooks"],
+["Variance analysis","Finance","medium",0,"variance analysis"],
+["Project management","Project","medium",1,"project management"],
+["Jira","Project","easy",0,"jira"],
+["Risk management","Project","medium",0,"risk management"],
+["PMP certification","Project","hard",0,"pmp","project management professional"],
+["Customer support","Support","easy",1,"customer support","customer service"],
+["Zendesk","Support","easy",0,"zendesk"],
+["Troubleshooting","Support","medium",1,"troubleshooting"],
+["De-escalation","Support","easy",0,"de-escalation","escalation"],
+["Figma","Design","easy",1,"figma"],
+["UI design","Design","medium",1,"ui design","user interface"],
+["UX research","Design","medium",0,"ux research","user research"],
+["Wireframing","Design","easy",0,"wirefram"],
+["Adobe Photoshop","Design","medium",0,"photoshop"],
+["Data entry","Operations","easy",0,"data entry"],
+["Process documentation","Operations","easy",0,"documentation","sop","standard operating procedure"],
+["Microsoft Office","Operations","easy",1,"microsoft office","ms office","powerpoint","microsoft word"],
+["Google Workspace","Operations","easy",0,"google workspace","g suite"],
+["Bookkeeping","Operations","medium",0,"bookkeeping"],
+["Vendor management","Operations","medium",0,"vendor"]
+];
+var SKILLS=RAW.map(function(r){return {n:r[0],c:r[1],l:r[2],core:!!r[3],a:r.slice(4)};});
+var CATS=[];SKILLS.forEach(function(s){if(CATS.indexOf(s.c)<0)CATS.push(s.c);});
+var LEARNL={easy:"Quick win (1\u20132 wks)",medium:"Medium (3\u20138 wks)",hard:"Long-term (3+ mo)"};
+var RESH={
+"Programming":"a focused online course plus one small portfolio project",
+"Data":"a public-dataset project you can show in the interview",
+"Marketing":"a practice campaign for a fictional or volunteer client",
+"Sales":"role-play practice plus one documented win from your past",
+"Leadership":"a leadership book plus one real stretch assignment at work",
+"Communication":"recorded practice reps with feedback from someone honest",
+"Finance":"a practice model built from a public company's filings",
+"Project":"running one real project end-to-end with a written plan",
+"Support":"practice scenarios plus shadowing an experienced rep",
+"Design":"redesigning one real screen or page, before-and-after",
+"Operations":"documenting one real process you own, start to finish"};
+var REFH={
+"Programming":"point to adjacent languages or projects that prove the same thinking",
+"Data":"show any analysis you have actually done, even in spreadsheets",
+"Marketing":"cite metrics from anything you have promoted, even volunteer work",
+"Sales":"translate any persuasion or quota-like experience into sales language",
+"Leadership":"cite leading anything: projects, volunteers, shifts, teams",
+"Communication":"name specific audiences you have written or presented for",
+"Finance":"cite budgets, forecasts, or numbers you have owned",
+"Project":"describe anything you coordinated start-to-finish",
+"Support":"cite real experience calming frustrated people down",
+"Design":"show a before-and-after of anything you made clearer",
+"Operations":"cite processes you have followed, fixed, or documented"};
+var SAMPLE="ABOUT THE ROLE\nWe are hiring a Marketing Manager to own our organic growth engine. You will lead SEO and content marketing, run our email program, and partner with Sales to turn traffic into pipeline.\n\nWHAT YOU WILL DO\n- Own SEO strategy: keyword research, on-page optimization, and reporting\n- Plan and publish content marketing across blog, guides, and landing pages\n- Run email marketing (Mailchimp) including newsletters and nurture sequences\n- Track marketing analytics in Google Analytics and report weekly\n- Manage social media marketing across LinkedIn and Instagram\n- Collaborate cross-functionally with the sales team on campaigns\n\nREQUIREMENTS\n- 3+ years in content marketing or a related role\n- Strong SEO skills with measurable results\n- Excellent business writing and presentation skills\n- Data-driven: comfortable with marketing analytics\n- Experience with Salesforce / CRM is a plus";
+var S={screen:"input",jd:"",role:"",skills:[],custom:[]};
+function $(id){return document.getElementById(id);}
+function show(id){["scr-input","scr-review","scr-report"].forEach(function(s){$(s).hidden=(s!==id);});S.screen=id.replace("scr-","");}
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){return {};}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({jd:S.jd,role:S.role,skills:S.skills.map(function(s){return {n:s.n,st:s.st,custom:!!s.custom,c:s.c,l:s.l,core:s.core};})}));}catch(e){}}
+function restore(){var d=load();if(d.jd){S.jd=d.jd;$("jd").value=d.jd;}if(d.role){S.role=d.role;$("trole").value=d.role;}
+ if(d.skills&&d.skills.length){S.skills=d.skills.map(function(x){return {n:x.n,c:x.c,l:x.l,core:x.core,st:x.st||"missing",custom:!!x.custom};});}}
+function escRx(s){return s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");}
+function hit(alias,text){var rx=new RegExp("(^|[^a-z0-9#+.])"+escRx(alias.toLowerCase())+"([^a-z0-9#+.]|$)","i");return rx.test(text);}
+function extract(jd){
+ var found=[],seen={};
+ SKILLS.forEach(function(s){
+  for(var i=0;i<s.a.length;i++){ if(hit(s.a[i],jd)){ if(!seen[s.n]){seen[s.n]=1;found.push({n:s.n,c:s.c,l:s.l,core:s.core,st:"missing",custom:false});} break; } }
+ });
+ return found;
+}
+function analyze(){
+ var jd=$("jd").value.trim();
+ if(!jd){$("jdErr").hidden=false;return;}
+ $("jdErr").hidden=true;
+ S.jd=jd;S.role=$("trole").value.trim();
+ var prev={};S.skills.forEach(function(s){prev[s.n]=s.st;});
+ var customs=S.skills.filter(function(s){return s.custom;});
+ S.skills=extract(jd).concat(customs);
+ S.skills.forEach(function(s){if(prev[s.n])s.st=prev[s.n];});
+ save();renderReview();show("scr-review");
+}
+function learnRank(l){return l==="easy"?0:l==="medium"?1:2;}
+function renderReview(){
+ var w=$("skillList");w.innerHTML="";
+ $("foundNote").textContent=S.skills.length?
+  "Found "+S.skills.length+" likely required skills in the posting. Mark each one honestly \u2014 Have, Partial, or Missing. Remove anything that is a false match.":
+  "No recognizable skills found in the posting. Add the requirements manually below \u2014 check the posting's requirements section and type each one in.";
+ S.skills.forEach(function(s){w.appendChild(skillRow(s));});
+ $("revErr").hidden=true;
+}
+function skillRow(s){
+ var row=document.createElement("div");row.className="skillrow";
+ var top=document.createElement("div");top.className="top";
+ var nm=document.createElement("b");nm.textContent=s.n;top.appendChild(nm);
+ var badges=document.createElement("span");
+ var b1=document.createElement("span");b1.className="badge";b1.textContent=s.c;b1.style.marginRight="6px";
+ var b2=document.createElement("span");b2.className="badge";b2.textContent=LEARNL[s.l]+(s.core?" \u00b7 core":"");
+ badges.appendChild(b1);badges.appendChild(b2);top.appendChild(badges);
+ var rm=document.createElement("button");rm.type="button";rm.className="rm";rm.textContent="Remove";
+ rm.setAttribute("aria-label","Remove "+s.n);
+ rm.addEventListener("click",function(){S.skills=S.skills.filter(function(x){return x.n!==s.n;});save();renderReview();});
+ top.appendChild(rm);
+ row.appendChild(top);
+ var seg=document.createElement("div");seg.className="seg";seg.setAttribute("role","radiogroup");seg.setAttribute("aria-label",s.n+" status");
+ [["have","Have it"],["partial","Partial"],["missing","Missing"]].forEach(function(o){
+  var lab=document.createElement("label");if(o[0]===s.st)lab.classList.add("on");if(o[0]==="missing")lab.classList.add("miss");
+  var inp=document.createElement("input");inp.type="radio";inp.name="st-"+s.n;inp.value=o[0];inp.setAttribute("aria-label",s.n+": "+o[1]);
+  if(o[0]===s.st)inp.checked=true;
+  inp.addEventListener("change",function(){s.st=o[0];save();
+   var ls=seg.querySelectorAll("label");ls.forEach(function(x){x.classList.remove("on");});lab.classList.add("on");});
+  lab.appendChild(inp);lab.appendChild(document.createTextNode(o[1]));seg.appendChild(lab);
+ });
+ row.appendChild(seg);
+ return row;
+}
+function addCustom(){
+ var n=$("cName").value.trim();
+ if(!n){$("cName").focus();return;}
+ if(S.skills.some(function(s){return s.n.toLowerCase()===n.toLowerCase();})){$("cName").value="";return;}
+ S.skills.push({n:n,c:$("cCat").value,l:$("cLearn").value,core:false,st:$("cStatus").value,custom:true});
+ $("cName").value="";save();renderReview();
+}
+function sevOf(s){
+ if(s.st==="missing"&&s.core)return {k:"db",t:"Dealbreaker",r:0};
+ if(s.st==="partial"&&s.core)return {k:"im",t:"Important",r:1};
+ if(s.st==="missing")return {k:"nh",t:"Nice-to-have",r:2};
+ return {k:"po",t:"Polish",r:3};
+}
+function moveOf(s,sev){
+ if(sev.k==="db"&&s.l==="easy")return "LEARN NOW \u2014 put this in Week 1; it is close enough to grab before you apply.";
+ if(sev.k==="db"&&s.l==="medium")return "START LEARNING NOW and address it honestly in your cover letter: name the gap, show adjacent strength, state your plan.";
+ if(sev.k==="db")return "COVER LETTER move: acknowledge it directly and show your learning plan. Also weigh honestly whether this role fits yet.";
+ if(sev.k==="im")return "REFRAME ON RESUME: rewrite a bullet to prove this with adjacent experience \u2014 "+(REFH[s.c]||"show adjacent proof")+".";
+ if(sev.k==="nh"&&s.l==="easy")return "QUICK WIN: pick this up in Week 1 \u2014 "+(RESH[s.c]||"a short focused course")+".";
+ if(sev.k==="nh")return "COVER LETTER line: express interest and a learning plan; learn it after applying.";
+ return "RESUME POLISH: make sure a bullet already shows this \u2014 "+(REFH[s.c]||"highlight adjacent proof")+".";
+}
+function calcReport(){
+ if(S.screen!=="review")return;
+ if(!S.skills.length){$("revErr").hidden=false;return;}
+ save();show("scr-report");
+ var tot=S.skills.length;
+ var pts=S.skills.reduce(function(a,s){return a+(s.st==="have"?1:s.st==="partial"?0.5:0);},0);
+ var pct=Math.round(pts/tot*100);
+ $("matchPct").textContent=pct+"%";
+ var v,ex;
+ if(pct>=85){v="Strong match \u2014 apply with confidence.";ex="You cover nearly everything asked. Polish the resume, tailor keywords, apply this week.";}
+ else if(pct>=65){v="Competitive \u2014 a real contender.";ex="You clear most requirements. Close the top gaps below and you are a credible candidate.";}
+ else if(pct>=45){v="Stretch \u2014 winnable with work.";ex="Real gaps, but the 2-week plan below targets exactly what moves the needle.";}
+ else{v="Major gaps \u2014 be strategic.";ex="This posting asks for a lot you do not have yet. Follow the plan, or target a closer-fit role first.";}
+ $("verdict").textContent=v;$("matchExplain").textContent=ex;
+ var gaps=S.skills.filter(function(s){return s.st!=="have";}).map(function(s){return {s:s,sev:sevOf(s)};});
+ gaps.sort(function(a,b){return (a.sev.r-b.sev.r)||(learnRank(a.s.l)-learnRank(b.s.l));});
+ var t='<tr><th>Skill</th><th>Severity</th><th>Learnability</th><th>Recommended move</th></tr>';
+ if(!gaps.length)t+='<tr><td colspan="4">No gaps \u2014 you marked everything as Have. Tailor the resume to the posting\u2019s keywords and apply.</td></tr>';
+ gaps.forEach(function(g){
+  var cls=g.sev.k==="db"?"sev-db":g.sev.k==="im"?"sev-im":"sev-nh";
+  t+="<tr><td><b>"+g.s.n+"</b> ("+g.s.st+")<br><span class=\"hint\">"+g.s.c+"</span></td><td class=\""+cls+"\">"+g.sev.t+"</td><td>"+LEARNL[g.s.l]+"</td><td>"+moveOf(g.s,g.sev)+"</td></tr>";
+ });
+ $("gapTable").innerHTML=t;
+ buildPlan(gaps);
+}
+function li(t){var e=document.createElement("li");e.innerHTML=t;return e;}
+function buildPlan(gaps){
+ var w1=$("week1"),w2=$("week2");w1.innerHTML="";w2.innerHTML="";
+ var learn=gaps.filter(function(g){return /LEARN NOW|START LEARNING|QUICK WIN/.test(moveOf(g.s,g.sev));}).slice(0,3);
+ var refr=gaps.filter(function(g){return /REFRAME|POLISH/.test(moveOf(g.s,g.sev));}).slice(0,4);
+ var db=gaps.filter(function(g){return g.sev.k==="db";})[0];
+ if(learn.length)learn.forEach(function(g){
+  w1.appendChild(li("<b>Learn "+g.s.n+":</b> spend ~4 hours on "+(RESH[g.s.c]||"a focused course")+". End the week able to demo one small piece of proof."));
+ });
+ refr.forEach(function(g){
+  w1.appendChild(li("<b>Resume reframe \u2014 "+g.s.n+":</b> add or rewrite one bullet to prove it ("+(REFH[g.s.c]||"show adjacent proof")+")."));
+ });
+ if(db)w1.appendChild(li("<b>Cover letter paragraph:</b> address <b>"+db.s.n+"</b> honestly \u2014 name the gap, show your adjacent strength, and state your 30-day learning plan. Hiring managers respect candor paired with a plan."));
+ if(!learn.length&&!refr.length&&!db)w1.appendChild(li("No gaps to close \u2014 spend Week 1 tailoring the resume to this posting's exact keywords and gathering 3 strong references."));
+ learn.forEach(function(g){
+  w2.appendChild(li("<b>Finish "+g.s.n+" proof:</b> complete the small project or demo; add it to your resume and LinkedIn profile."));
+ });
+ w2.appendChild(li("<b>Mock answers:</b> prepare 2-minute stories proving your top 3 matched skills \u2014 interviewers will probe them."));
+ w2.appendChild(li("<b>Apply by day 14:</b> submit the tailored resume plus the cover letter. Then keep the learning going regardless of the outcome."));
+}
+/* wire up */
+(function(){var c=$("cCat");CATS.forEach(function(x){var o=document.createElement("option");o.value=x;o.textContent=x;c.appendChild(o);});})();
+$("analyzeBtn").addEventListener("click",analyze);
+$("sampleBtn").addEventListener("click",function(){$("jd").value=SAMPLE;$("jdErr").hidden=true;});
+$("addBtn").addEventListener("click",function(){if(S.screen==="review")addCustom();});
+$("reportBtn").addEventListener("click",calcReport);
+$("backBtn").addEventListener("click",function(){if(S.screen==="review")show("scr-input");});
+$("editBtn").addEventListener("click",function(){if(S.screen==="report"){renderReview();show("scr-review");}});
+$("resetBtn").addEventListener("click",function(){if(S.screen!=="report")return;if(confirm("Start over? This clears the posting and all skill marks.")){try{localStorage.removeItem(KEY);}catch(e){}S={screen:"input",jd:"",role:"",skills:[],custom:[]};$("jd").value="";$("trole").value="";show("scr-input");window.scrollTo(0,0);}});
+$("printBtn").addEventListener("click",function(){if(S.screen==="report")window.print();});
+restore();
+if(S.skills.length&&S.jd){renderReview();show("scr-review");}else{show("scr-input");}
+window.__sim42={S:S,extract:extract,version:1};
+})();
+</script>
+</body>
+</html>

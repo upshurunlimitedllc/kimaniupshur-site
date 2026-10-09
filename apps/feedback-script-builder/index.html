@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback Script Builder | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Write feedback that actually lands — clear, specific, and kind — with a guided sentence-by-sentence builder. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/feedback-script-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Feedback Script Builder | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Write feedback that actually lands — clear, specific, and kind — with a guided sentence-by-sentence builder. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/feedback-script-builder/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.sm{padding:10px 18px;min-height:44px;font-size:.92rem}
+input[type=text],input[type=number],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:110px;font-family:inherit}
+label.flabel{display:block;font-weight:bold;margin:14px 0 2px}
+.hint{font-size:.88rem;color:#6b6250;margin:2px 0 8px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+.typegrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:10px 0}
+@media (max-width:560px){.typegrid{grid-template-columns:1fr}}
+.tcard{border:2px solid #c9a227;border-radius:10px;padding:16px;background:#fff;cursor:pointer;text-align:left;min-height:48px}
+.tcard .tt{font-weight:bold;display:block;margin-bottom:4px}
+.tcard .td{font-size:.88rem;color:#6b6250;display:block}
+.tcard.sel{background:#c9a227;color:#141210}
+.tcard.sel .td{color:#141210}
+.script{background:#fff;border:2px solid #c9a227;border-radius:10px;padding:22px;font-size:1.02rem}
+.script .part{margin-bottom:14px}
+.script .plabel{font-size:.78rem;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:#8a6d1c;display:block;margin-bottom:4px}
+.flag{border-left:4px solid #b3261e;background:#fff;border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0}
+.flag .fw{font-weight:bold;color:#b3261e}
+.flag .fx{font-size:.92rem;color:#2e7d32;margin-top:4px}
+.okline{border-left:4px solid #2e7d32;background:#fff;border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0;color:#1b5e20;font-weight:bold}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #eee}
+.checkrow:last-child{border-bottom:none}
+.checkrow input{width:26px;height:26px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow label{cursor:pointer}
+.checkrow small{display:block;color:#6b6250;font-weight:normal}
+.err{color:#b3261e;font-weight:bold;font-size:.92rem;margin-top:8px}
+.copyok{color:#2e7d32;font-weight:bold;font-size:.9rem;margin-left:8px}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Feedback Script Builder</h1>
+<p class="intro">Write feedback that actually lands — clear, specific, and kind. Pick the type, fill in the guided prompts sentence by sentence, and get a polished script plus a tone check.</p>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">1. What kind of feedback is this?</h2>
+<div class="typegrid" role="radiogroup" aria-label="Feedback type">
+<button type="button" class="tcard sel" data-t="recognize" role="radio" aria-checked="true"><span class="tt">Recognize great work</span><span class="td">Reinforce a specific win so they repeat it.</span></button>
+<button type="button" class="tcard" data-t="correct" role="radio" aria-checked="false"><span class="tt">Correct a problem</span><span class="td">Address something that went wrong, directly and kindly.</span></button>
+<button type="button" class="tcard" data-t="redirect" role="radio" aria-checked="false"><span class="tt">Redirect a habit</span><span class="td">Shift a recurring pattern before it becomes a problem.</span></button>
+</div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">2. Fill in the prompts</h2>
+<p class="hint">Stick to what a camera could have recorded — observable behavior, not character judgments. Your draft auto-saves.</p>
+<label class="flabel" for="f_name">Their first name (optional)</label>
+<input type="text" id="f_name" maxlength="40" placeholder="e.g., Jordan">
+<label class="flabel" for="f_sit">Situation — what was happening, and when?</label>
+<textarea id="f_sit" maxlength="600" placeholder="e.g., During yesterday's client demo with Acme Corp..."></textarea>
+<label class="flabel" for="f_beh">Behavior — what exactly did they do or say?</label>
+<textarea id="f_beh" maxlength="600" placeholder="e.g., You walked the client through the backup plan without being asked..."></textarea>
+<p class="hint">Describe actions, not motives. "You interrupted Priya twice" beats "you were rude."</p>
+<label class="flabel" for="f_imp">Impact — what resulted from it?</label>
+<textarea id="f_imp" maxlength="600" placeholder="e.g., The client said they felt confident, and we kept the renewal..."></textarea>
+<div class="err" id="f_err" role="alert"></div>
+<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn" id="buildbtn">Build my script</button>
+<button class="btn ghost sm" id="resetbtn">Start over</button>
+</div>
+</div>
+
+<div class="appcard hidden" id="outcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">3. Your feedback script</h2>
+<div class="script" id="scriptbox"></div>
+<div style="margin:12px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+<button class="btn ghost sm" id="copybtn">Copy script</button><span class="copyok" id="copyok" style="display:none">Copied!</span>
+</div>
+<h3 style="font-family:Georgia,serif;margin:20px 0 8px">Tone check</h3>
+<p class="hint">Scans your draft for language that triggers defensiveness. Fix any flags before you deliver.</p>
+<div id="tonelist"></div>
+<h3 style="font-family:Georgia,serif;margin:20px 0 8px">Calendar invite line</h3>
+<p class="hint">Paste this as your meeting title — honest about the topic, not alarming.</p>
+<div class="script" style="border-style:dashed"><strong id="caline"></strong></div>
+<div style="margin:12px 0"><button class="btn ghost sm" id="copycal">Copy invite line</button><span class="copyok" id="copycalok" style="display:none">Copied!</span></div>
+<h3 style="font-family:Georgia,serif;margin:20px 0 8px">Delivery checklist</h3>
+<div id="checklist">
+<label class="checkrow"><input type="checkbox" data-c="private"><span>Private setting<small>One-on-one, not in front of the team. Praise can be public; correction never is.</small></span></label>
+<label class="checkrow"><input type="checkbox" data-c="timely"><span>Timely<small>Within 48 hours of the event — feedback decays fast.</small></span></label>
+<label class="checkrow"><input type="checkbox" data-c="twoway"><span>Two-way dialogue planned<small>You asked their perspective instead of delivering a verdict.</small></span></label>
+<label class="checkrow"><input type="checkbox" data-c="next"><span>Clear next step agreed<small>One specific action or change, with a follow-up date.</small></span></label>
+<label class="checkrow"><input type="checkbox" data-c="documented"><span>Documented<small>A short note to yourself: date, what was said, what was agreed.</small></span></label>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Feedback Script Builder is just the start. <em>Behavioral Feedback Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into the same topic — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/behavioral-feedback-made-simple/">Get Behavioral Feedback Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-feedback-script-builder-v1";
+var OPEN={
+ recognize:"I wanted to talk about something specific you did — because it mattered, and I want you to know I noticed.",
+ correct:"I want to talk through something I observed. I\u2019m bringing it up because I want us to get this right together — not to put you on the spot.",
+ redirect:"I\u2019ve noticed a pattern I\u2019d like us to work on together — while it\u2019s small and fixable."};
+var CLOSE={
+ recognize:"Thank you. How can I help you do more of this?",
+ correct:"What got in the way, and what would help next time? I want to hear your side.",
+ redirect:"What would make the new approach easier to stick with? Let\u2019s design it together."};
+var CALBL={recognize:"Recognition",correct:"Feedback conversation",redirect:"Growth check-in"};
+var FLAGS=[
+ {re:/\balways\b/i,note:"\u201CAlways\u201D is an absolute — it puts people on defense instantly.",fix:"Swap for the specific instance: \u201COn Tuesday\u2026\u201D instead of \u201CYou always\u2026\u201D."},
+ {re:/\bnever\b/i,note:"\u201CNever\u201D is an absolute — one counterexample discredits the whole point.",fix:"Name the specific time it happened instead."},
+ {re:/you should have/i,note:"\u201CYou should have\u201D sounds like a scolding — it argues about the past.",fix:"Try: \u201CNext time, what would work better is\u2026\u201D"},
+ {re:/you need to\b/i,note:"\u201CYou need to\u201D can read as a command, not a conversation.",fix:"Try: \u201CI\u2019d like us to agree on\u2026\u201D or \u201CCan we try\u2026?\u201D"},
+ {re:/you don'?t care/i,note:"\u201CYou don\u2019t care\u201D attacks motive — you can\u2019t observe caring.",fix:"Describe the observable action and its impact instead."},
+ {re:/\b(obviously|clearly)\b/i,note:"\u201CObviously / clearly\u201D sounds condescending — it implies they should have known.",fix:"Drop the word; the facts carry the point."},
+ {re:/\b(lazy|stupid|incompetent|useless|dumb)\b/i,note:"Character labels end the conversation — they defend the label, not the behavior.",fix:"Replace with the observable behavior: what they did, when, and the impact."},
+ {re:/\beveryone (thinks|knows|says|feels)\b/i,note:"\u201CEveryone thinks\u201D is vague pressure — nobody can respond to \u201Ceveryone.\u201D",fix:"Speak for yourself: \u201CI noticed\u2026\u201D"},
+ {re:/as i('ve| have) (already )?(told|said)/i,note:"\u201CAs I\u2019ve told you\u201D shames them for not listening.",fix:"Try: \u201CLet\u2019s revisit what we agreed on\u2026\u201D"},
+ {re:/\bwhatever\b/i,note:"\u201CWhatever\u201D reads as dismissive, even when you don\u2019t mean it.",fix:"Say what you actually mean, plainly and kindly."}];
+var state={type:"recognize",name:"",sit:"",beh:"",imp:"",checks:{}};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(!r)return;var s=JSON.parse(r);if(!s||typeof s!=="object")return;
+ if(s.type&&OPEN[s.type])state.type=s.type;
+ ["name","sit","beh","imp"].forEach(function(k){if(typeof s[k]==="string")state[k]=s[k];});
+ if(s.checks&&typeof s.checks==="object")state.checks=s.checks;}catch(e){}}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function paintType(){
+ document.querySelectorAll(".tcard").forEach(function(b){
+  var on=b.getAttribute("data-t")===state.type;
+  b.classList.toggle("sel",on);b.setAttribute("aria-checked",on);
+ });
+}
+document.querySelectorAll(".tcard").forEach(function(b){
+ b.addEventListener("click",function(){state.type=b.getAttribute("data-t");save();paintType();if(!document.getElementById("outcard").classList.contains("hidden"))build();});
+});
+[["f_name","name"],["f_sit","sit"],["f_beh","beh"],["f_imp","imp"]].forEach(function(p){
+ document.getElementById(p[0]).addEventListener("input",function(){state[p[1]]=this.value;save();});
+});
+document.querySelectorAll("#checklist input").forEach(function(cb){
+ cb.addEventListener("change",function(){state.checks[cb.getAttribute("data-c")]=cb.checked;save();});
+});
+function toneCheck(text){
+ var hits=[];
+ FLAGS.forEach(function(f){var m=text.match(f.re);if(m)hits.push({word:m[0],note:f.note,fix:f.fix});});
+ return hits;
+}
+function build(){
+ var err=document.getElementById("f_err");err.textContent="";
+ var sit=state.sit.trim(),beh=state.beh.trim(),imp=state.imp.trim();
+ if(!sit||!beh||!imp){err.textContent="Fill in all three prompts (situation, behavior, impact) to build the script.";return false;}
+ var name=state.name.trim();
+ var greet=name?name+", ":"";
+ var box=document.getElementById("scriptbox");
+ box.innerHTML=
+ '<div class="part"><span class="plabel">Opening</span>'+esc(greet+OPEN[state.type])+'</div>'+
+ '<div class="part"><span class="plabel">Situation</span>'+esc(sit)+'</div>'+
+ '<div class="part"><span class="plabel">Behavior</span>'+esc(beh)+'</div>'+
+ '<div class="part"><span class="plabel">Impact</span>'+esc(imp)+'</div>'+
+ '<div class="part"><span class="plabel">Closing question</span>'+esc(CLOSE[state.type])+'</div>';
+ var tl=document.getElementById("tonelist");tl.innerHTML="";
+ var hits=toneCheck(sit+" "+beh+" "+imp);
+ if(!hits.length){tl.innerHTML='<div class="okline">Tone check passed — no accusatory or absolute language detected in your draft.</div>';}
+ hits.forEach(function(h){
+  var div=document.createElement("div");div.className="flag";
+  div.innerHTML='<span class="fw">Flagged: \u201C'+esc(h.word)+'\u201D</span><div>'+h.note+'</div><div class="fx">Try instead: '+h.fix+'</div>';
+  tl.appendChild(div);
+ });
+ var topic=(beh.length>60?beh.slice(0,60).trim()+"\u2026":beh);
+ document.getElementById("caline").textContent=CALBL[state.type]+(name?": "+name:"")+" — "+topic;
+ document.getElementById("outcard").classList.remove("hidden");
+ return true;
+}
+document.getElementById("buildbtn").addEventListener("click",function(){if(build())document.getElementById("outcard").scrollIntoView();});
+document.getElementById("resetbtn").addEventListener("click",function(){
+ if(!confirm("Clear your draft and start over?"))return;
+ try{localStorage.removeItem(KEY);}catch(e){}
+ state={type:"recognize",name:"",sit:"",beh:"",imp:"",checks:{}};
+ ["f_name","f_sit","f_beh","f_imp"].forEach(function(id){document.getElementById(id).value="";});
+ document.getElementById("tonelist").innerHTML="";document.getElementById("scriptbox").innerHTML="";
+ document.getElementById("outcard").classList.add("hidden");
+ document.querySelectorAll("#checklist input").forEach(function(cb){cb.checked=false;});
+ paintType();window.scrollTo(0,0);
+});
+function copyOf(id,okId){
+ var el=document.getElementById(id),ok=document.getElementById(okId);
+ var sb=document.getElementById("scriptbox");
+ var t=id==="caline"?el.textContent:((sb.innerText!==undefined)?sb.innerText:sb.textContent);
+ function done(){ok.style.display="inline";setTimeout(function(){ok.style.display="none";},1800);}
+ if(!t||!t.trim())return;
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}
+ else{var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);done();}
+}
+document.getElementById("copybtn").addEventListener("click",function(){copyOf("scriptbox","copyok");});
+document.getElementById("copycal").addEventListener("click",function(){copyOf("caline","copycalok");});
+load();
+document.getElementById("f_name").value=state.name;document.getElementById("f_sit").value=state.sit;
+document.getElementById("f_beh").value=state.beh;document.getElementById("f_imp").value=state.imp;
+document.querySelectorAll("#checklist input").forEach(function(cb){cb.checked=!!state.checks[cb.getAttribute("data-c")];});
+paintType();
+if(state.sit&&state.beh&&state.imp)build();
+</script>
+</body>
+</html>
