@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Base Starter | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Design your personal note-taking system: categories, starter templates, and a 15-minute weekly review ritual. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/knowledge-base-starter/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Knowledge Base Starter | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Design your personal note-taking system: categories, starter templates, and a 15-minute weekly review ritual. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/knowledge-base-starter/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:20px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.92rem}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.steps button{min-width:44px;min-height:44px;border-radius:50%;border:2px solid #c9a227;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer}
+.steps button.on{background:#c9a227;color:#141210}
+.steps button.done{background:#1e7d34;border-color:#1e7d34;color:#fff}
+.q{margin:18px 0 6px;font-weight:bold;font-size:1.02rem}
+.opts label{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1.5px solid #e3d9bd;border-radius:8px;margin:6px 0;cursor:pointer;font-size:.98rem}
+.opts label:hover{border-color:#c9a227}
+.opts input{margin-top:4px;width:20px;height:20px;accent-color:#c9a227;flex-shrink:0}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:10px 4px;border-bottom:1px solid #eee}
+.checkrow input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.checkrow label{font-size:.98rem;cursor:pointer}
+.catcard{border:1.5px solid #e3d9bd;border-radius:10px;padding:14px 16px;margin:10px 0;background:#fff}
+.catcard h4{font-family:Georgia,serif;font-size:1.08rem;color:#141210}
+.catcard p{font-size:.94rem;color:#4a4436;margin:4px 0}
+.catcard .ex{font-size:.88rem;color:#8a6d1c}
+.templatenav{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.templatenav button{padding:10px 16px;min-height:44px;border:2px solid #c9a227;border-radius:20px;background:transparent;color:#8a6d1c;font-weight:bold;cursor:pointer;font-size:.92rem}
+.templatenav button.on{background:#c9a227;color:#141210}
+pre.template{background:#141210;color:#f5efdd;border-radius:10px;padding:18px;font-size:.9rem;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.55}
+.timerbox{text-align:center;background:#f4efe0;border-radius:10px;padding:20px;margin:14px 0}
+.timerbox .t{font-size:3rem;font-family:Georgia,serif;color:#141210}
+.reviewstep{display:flex;align-items:flex-start;gap:12px;padding:12px 4px;border-bottom:1px solid #eee}
+.reviewstep input{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:2px}
+.reviewstep .rt{font-weight:bold}
+.reviewstep .rd{font-size:.9rem;color:#6b6250}
+.onepage{background:#fff;border:1px solid #d8cfae;border-radius:8px;padding:32px 30px}
+.onepage h3{font-family:Georgia,serif;text-align:center;margin-bottom:4px}
+.onepage .sub{text-align:center;color:#6b6250;font-size:.9rem;margin-bottom:18px}
+.onepage h4{font-family:Georgia,serif;color:#8a6d1c;margin:16px 0 6px}
+.onepage ul{margin-left:20px;font-size:.96rem}
+.onepage li{margin:5px 0}
+.onepage ol{margin-left:20px;font-size:.96rem}
+.small{font-size:.85rem;color:#8a8069}
+.eduframe{background:#f4efe0;border-radius:10px;padding:14px 16px;font-size:.9rem;color:#5a5342;margin:18px 0}
+h3.sec{font-family:Georgia,serif;font-size:1.35rem;margin:0 0 10px;color:#141210}
+.mt{margin-top:22px}
+.hidden{display:none!important}
+@media print{header.site,footer.site,.btn,.ml-sec,.backlink,.go-deeper,.noprint,.steps{display:none!important}.appcard{border:1px solid #999}}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Knowledge Base Starter</h1>
+<p class="intro">Design your personal note-taking system in one sitting: answer a few questions, get a recommended structure of 5&ndash;7 categories, starter templates for each, and a 15-minute weekly review ritual.</p>
+
+<div class="steps noprint" id="kbs-steps" aria-label="Setup steps"></div>
+
+<div class="appcard" id="kbs-pane0">
+<h3 class="sec">Step 1 &mdash; What do you want to remember?</h3>
+<p class="q">Check everything you want your system to hold:</p>
+<div class="opts" id="kbs-wants"></div>
+<p class="q">How much do you expect to capture in a typical week?</p>
+<div class="opts" id="kbs-vol"></div>
+<p class="q">When you need something later, how do you usually look for it?</p>
+<div class="opts" id="kbs-find"></div>
+<p class="q">Where do your notes live right now?</p>
+<div class="opts" id="kbs-now"></div>
+<p class="small hidden" id="kbs-needwant" style="color:#c0392b;font-weight:bold">Check at least one thing you want to remember first.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px" class="noprint">
+<button class="btn" id="kbs-next0">Design my system &rarr;</button>
+</div>
+</div>
+
+<div class="appcard hidden" id="kbs-pane1">
+<h3 class="sec">Step 2 &mdash; Your recommended structure</h3>
+<p class="small">Based on your answers, here is a 5&ndash;7 category system. Simple rule: every note lives in exactly one category; link between notes instead of duplicating them.</p>
+<div id="kbs-cats"></div>
+<div class="eduframe"><strong>Why these categories?</strong> &ldquo;Inbox&rdquo; catches everything unprocessed so nothing gets lost. &ldquo;Projects&rdquo; holds active work. The rest mirror <em>what you said you want to remember</em> &mdash; filing by topic, not by date, is what makes things findable months later.</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px" class="noprint">
+<button class="btn ghost" id="kbs-back1">&larr; Back</button>
+<button class="btn" id="kbs-next1">Get my templates &rarr;</button>
+</div>
+</div>
+
+<div class="appcard hidden" id="kbs-pane2">
+<h3 class="sec">Step 3 &mdash; Starter templates</h3>
+<p class="small">One template per note type. Copy one into your notes app of choice and fill it in &mdash; the structure does the organizing for you.</p>
+<div class="templatenav noprint" id="kbs-tnav"></div>
+<pre class="template" id="kbs-tbody"></pre>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px" class="noprint">
+<button class="btn small" id="kbs-copy">Copy template</button>
+<span class="small" id="kbs-copymsg" role="status"></span>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px" class="noprint">
+<button class="btn ghost" id="kbs-back2">&larr; Back</button>
+<button class="btn" id="kbs-next2">Set up my weekly review &rarr;</button>
+</div>
+</div>
+
+<div class="appcard hidden" id="kbs-pane3">
+<h3 class="sec">Step 4 &mdash; Your 15-minute weekly review ritual</h3>
+<p class="small">A system only works if you maintain it. Once a week, set the timer and walk the checklist. Pick a fixed day and time &mdash; put it on your calendar now.</p>
+<div class="timerbox noprint">
+<div class="t" id="kbs-time">15:00</div>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px">
+<button class="btn small" id="kbs-tstart">Start timer</button>
+<button class="btn small ghost" id="kbs-treset">Reset</button>
+</div>
+</div>
+<div id="kbs-review"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px" class="noprint">
+<button class="btn ghost" id="kbs-back3">&larr; Back</button>
+<button class="btn" id="kbs-next3">My system on one page &rarr;</button>
+</div>
+</div>
+
+<div class="appcard hidden" id="kbs-pane4">
+<h3 class="sec">Step 5 &mdash; My system on one page</h3>
+<p class="small">Your complete reference: categories, templates, review ritual, and the four rules that keep it working. Print it and keep it where you take notes.</p>
+<div class="onepage" id="kbs-onepage"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px" class="noprint">
+<button class="btn" id="kbs-print">Print my system</button>
+<button class="btn ghost" id="kbs-restart">Start over</button>
+</div>
+</div>
+
+<div class="eduframe"><strong>A note on tools:</strong> this app designs your <em>system</em>, not your software. Any notes app with folders/tags and search will do &mdash; the categories, templates, and weekly review are what make it work, not the brand on the tin. For educational purposes only; adapt freely to what you already use.</div>
+
+<section class="appcard go-deeper" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Knowledge Base Starter is just the start. <em>Knowledge Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into organizing what you know &mdash; clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/knowledge-made-simple/">Get Knowledge Made Simple</a></p>
+</section>
+<p class="backlink" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Made Simple Apps</a></p>
+</main>
+<section class="ml-sec" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Made Simple Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-knowledge-base-starter-v1";
+var WANTS=[
+ ["books","Books & articles","What you read: summaries, key points, quotes worth keeping."],
+ ["ideas","Ideas & sparks","Business ideas, creative concepts, 'what if' thoughts."],
+ ["projects","Project notes","Active work: decisions, status, next steps."],
+ ["meetings","Meetings & people","Who you met, what was said, follow-ups."],
+ ["quotes","Quotes & references","Lines worth reusing, stats, links to sources."],
+ ["learning","Skills I'm learning","Courses, tutorials, practice notes."],
+ ["records","Personal records","Health, home, finances, warranties \u2014 the boring-but-vital stuff."],
+ ["goals","Goals & plans","Quarterly goals, plans, annual reviews."]
+];
+var VOLS=[["light","Light \u2014 a few notes a week"],["moderate","Moderate \u2014 notes most days"],["heavy","Heavy \u2014 constant capture, lots of sources"]];
+var FINDS=[["search","I search for keywords"],["browse","I browse folders/lists"],["both","A bit of both"]];
+var NOWS=[["scattered","Scattered across apps"],["paper","Mostly paper"],["memory","Mostly my memory"],["onenote","One notes app already"]];
+var CATS={
+ inbox:{t:"\uD83D\uDCE5 Inbox",d:"The landing pad. Every new note starts here, unfiled. Nothing lives here permanently.",ex:"Example: a quick voice memo, a screenshot, a half-formed thought."},
+ projects:{t:"\uD83D\uDEE0\uFE0F Projects",d:"Active work only. One note per project: goal, status, decisions, next actions.",ex:"Example: 'Kitchen remodel', 'Job search', 'Novel draft'."},
+ books:{t:"\uD83D\uDCDA Reading notes",d:"One note per book or article: the 3 big ideas, favorite quotes, how you'll use it.",ex:"Example: 'Deep Work \u2014 Cal Newport'."},
+ ideas:{t:"\uD83D\uDCA1 Idea bank",d:"Sparks and 'what ifs', dated. Review monthly; promote the good ones to Projects.",ex:"Example: 'Neighborhood tool library \u2014 2026-10'."},
+ meetings:{t:"\uD83D\uDC65 People & meetings",d:"One note per person you meet often, plus dated meeting notes linked to it.",ex:"Example: 'Meeting \u2014 Priya, Oct 8'."},
+ quotes:{t:"\u275D\uFE0F Quotes & references",d:"Quotable lines, statistics, and links \u2014 always with the source attached.",ex:"Example: 'On focus \u2014 three sourced quotes'."},
+ learning:{t:"\uD83C\uDF93 Learning log",d:"One note per skill or course: what you tried, what worked, what's next.",ex:"Example: 'Spanish \u2014 week 6 notes'."},
+ records:{t:"\uD83D\uDDD2\uFE0F Personal records",d:"The boring-but-vital file: warranties, health notes, home maintenance, account lists.",ex:"Example: 'Water heater \u2014 installed 2026'."},
+ goals:{t:"\uD83C\uDFAF Goals & plans",d:"Quarterly goals, annual reviews, life plans. Reviewed weekly, rewritten quarterly.",ex:"Example: 'Q4 goals'."}
+};
+var REVIEW=[
+ ["Empty the inbox (4 min)","Move every inbox note into its category, or delete it. Inbox ends at zero."],
+ ["Review active projects (4 min)","Open each project note: update status, confirm the next action is clear."],
+ ["Scan ideas & learning (3 min)","Skim the idea bank and learning log. Promote anything ready; delete the stale."],
+ ["Check goals (2 min)","Read your quarterly goals. Is this week's work pointed at them?"],
+ ["Plan the capture week (2 min)","Any books, meetings, or events coming? Pre-make their notes from templates."]
+];
+var TEMPLATES={
+ "Book notes":{body:"BOOK NOTES\nTitle: \nAuthor: \nDate finished: \n\nTHE 3 BIG IDEAS\n1. \n2. \n3. \n\nQUOTES WORTH KEEPING\n- \"\" (p. )\n- \"\" (p. )\n\nHOW I'LL USE IT\n- \n\nRATING:  / 5 \u2014 Would I re-read or recommend? ",
+  use:"Use for: books, long articles, courses."},
+ "Meeting notes":{body:"MEETING NOTES\nWho: \nDate: \nPurpose: \n\nDISCUSSED\n- \n\nDECISIONS\n- \n\nMY ACTION ITEMS\n- [ ]  (due: )\n\nTHEIR ACTION ITEMS\n- [ ]  (due: )\n\nFOLLOW-UP DATE: ",
+  use:"Use for: any meeting, call, or coffee worth remembering."},
+ "Idea capture":{body:"IDEA\nDate: \nOne-line summary: \n\nTHE SPARK\nWhat is it, in 3 sentences?\n\nWHY IT MIGHT WORK\n- \n\nBIGGEST RISK / UNKNOWN\n- \n\nNEXT TINY STEP\n- \n\nSTATUS: parked | exploring | promoted to project",
+  use:"Use for: business ideas, creative concepts, 'what ifs'."},
+ "Project brief":{body:"PROJECT\nName: \nGoal (one sentence): \nStatus: not started | active | paused | done\n\nDEFINITION OF DONE\n- \n\nCURRENT NEXT ACTION\n- [ ] \n\nDECISION LOG\n- (date) decided: \n\nNOTES & LINKS\n- ",
+  use:"Use for: anything active with an outcome."},
+ "Weekly review":{body:"WEEKLY REVIEW \u2014 week of: \n\nINBOX EMPTIED: yes / no\nPROJECTS UPDATED: /  active\nIDEAS PROMOTED: \nGOALS CHECK: on track / drifting \u2014 adjustment: \n\nTOP 3 NEXT WEEK\n1. \n2. \n3. ",
+  use:"Use for: your 15-minute review session."}
+};
+var state={wants:{},vol:null,find:null,now:null,step:0,tpl:"Book notes",review:{}};
+function $(id){return document.getElementById(id);}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&typeof s==="object"){for(var k in state){if(s[k]!==undefined)state[k]=s[k];}}}catch(e){}}
+function radioGroup(id,name,items,cur){
+  var host=$(id),html="";
+  items.forEach(function(it){
+    var checked=(cur===it[0])?' checked':'';
+    html+='<label><input type="radio" name="'+name+'" value="'+it[0]+'"'+checked+'><span>'+it[1]+'</span></label>';
+  });
+  host.innerHTML=html;
+  host.querySelectorAll('input').forEach(function(r){
+    r.addEventListener('change',function(){state[name]=r.value;save();});
+  });
+}
+function renderStep1(){
+  var host=$("kbs-wants"),html="";
+  WANTS.forEach(function(w){
+    var ch=state.wants[w[0]]?' checked':'';
+    html+='<label><input type="checkbox" data-w="'+w[0]+'"'+ch+'><span><strong>'+w[1]+'</strong><br><span class="small">'+w[2]+'</span></span></label>';
+  });
+  host.innerHTML=html;
+  host.querySelectorAll('input').forEach(function(cb){
+    cb.addEventListener('change',function(){state.wants[cb.getAttribute('data-w')]=cb.checked;save();});
+  });
+  radioGroup("kbs-vol","vol",VOLS,state.vol);
+  radioGroup("kbs-find","find",FINDS,state.find);
+  radioGroup("kbs-now","now",NOWS,state.now);
+}
+function recCats(){
+  var keys=["inbox"];
+  WANTS.forEach(function(w){if(state.wants[w[0]])keys.push(w[0]);});
+  if(keys.indexOf("projects")===-1)keys.push("projects");
+  if(state.find==="browse"&&keys.indexOf("records")===-1&&keys.length<7)keys.push("records");
+  keys=keys.slice(0,7);
+  if(keys.length<5){["goals","quotes","learning"].forEach(function(k){if(keys.length<5&&keys.indexOf(k)===-1)keys.push(k);});}
+  return keys;
+}
+function renderStep2(){
+  var keys=recCats(),html="";
+  keys.forEach(function(k){
+    var c=CATS[k];
+    html+='<div class="catcard"><h4>'+c.t+'</h4><p>'+c.d+'</p><p class="ex">'+c.ex+'</p></div>';
+  });
+  $("kbs-cats").innerHTML=html;
+}
+function renderTemplates(){
+  var nav=$("kbs-tnav");nav.innerHTML="";
+  Object.keys(TEMPLATES).forEach(function(name){
+    var b=document.createElement("button");
+    b.type="button";b.textContent=name;
+    if(name===state.tpl)b.classList.add("on");
+    b.addEventListener("click",function(){state.tpl=name;save();renderTemplates();});
+    nav.appendChild(b);
+  });
+  var t=TEMPLATES[state.tpl];
+  $("kbs-tbody").textContent=t.body+"\n"+t.use;
+  $("kbs-copymsg").textContent="";
+}
+function renderReview(){
+  var host=$("kbs-review"),html="";
+  REVIEW.forEach(function(r,i){
+    var ch=state.review[i]?' checked':'';
+    html+='<div class="reviewstep"><input type="checkbox" id="kbs-r'+i+'" data-r="'+i+'"'+ch+'><label for="kbs-r'+i+'"><span class="rt">'+r[0]+'</span><br><span class="rd">'+r[1]+'</span></label></div>';
+  });
+  host.innerHTML=html;
+  host.querySelectorAll('input').forEach(function(cb){
+    cb.addEventListener('change',function(){state.review[cb.getAttribute('data-r')]=cb.checked;save();});
+  });
+}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function renderOnePage(){
+  var keys=recCats();
+  var html='<h3>My Knowledge System</h3><div class="sub">Designed '+new Date().toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"})+' \u2014 review this page quarterly</div>';
+  html+='<h4>My categories ('+keys.length+')</h4><ul>';
+  keys.forEach(function(k){html+='<li><strong>'+esc(CATS[k].t)+'</strong> \u2014 '+esc(CATS[k].d)+'</li>';});
+  html+='</ul><h4>Templates I use</h4><ul>';
+  Object.keys(TEMPLATES).forEach(function(n){html+='<li><strong>'+esc(n)+'</strong> \u2014 '+esc(TEMPLATES[n].use)+'</li>';});
+  html+='</ul><h4>Weekly review (15 min)</h4><ol>';
+  REVIEW.forEach(function(r){html+='<li><strong>'+esc(r[0])+'</strong> \u2014 '+esc(r[1])+'</li>';});
+  html+='</ol><h4>The four rules</h4><ol><li><strong>Capture everything, file weekly.</strong> If it matters, it goes in the inbox first \u2014 never straight to memory.</li><li><strong>One home per note.</strong> File in exactly one category; link between notes instead of copying.</li><li><strong>Templates do the thinking.</strong> Start every book, meeting, idea, and project from its template.</li><li><strong>Never skip the review.</strong> Fifteen minutes a week is the whole maintenance cost \u2014 the system rots without it.</li></ol>';
+  $("kbs-onepage").innerHTML=html;
+}
+var STEPNAMES=["Questions","Structure","Templates","Review","One page"];
+function renderSteps(){
+  var host=$("kbs-steps");host.innerHTML="";
+  STEPNAMES.forEach(function(n,i){
+    var b=document.createElement("button");
+    b.type="button";b.textContent=(i+1);b.title=n;b.setAttribute("aria-label","Step "+(i+1)+": "+n);
+    if(i===state.step)b.classList.add("on");
+    if(i<state.step)b.classList.add("done");
+    b.addEventListener("click",function(){if(i<=maxReached()){state.step=i;save();renderAll();}});
+    host.appendChild(b);
+  });
+}
+function maxReached(){
+  var m=state.step;
+  if(anyWant())m=Math.max(m,1);
+  return m;
+}
+function anyWant(){for(var k in state.wants){if(state.wants[k])return true;}return false;}
+function gotoStep(i){state.step=i;save();renderAll();try{$("kbs-steps").scrollIntoView();}catch(e){}}
+function renderAll(){
+  renderSteps();
+  for(var i=0;i<5;i++)$("kbs-pane"+i).classList.add("hidden");
+  $("kbs-pane"+state.step).classList.remove("hidden");
+  if(state.step===1)renderStep2();
+  if(state.step===2)renderTemplates();
+  if(state.step===3)renderReview();
+  if(state.step===4)renderOnePage();
+}
+$("kbs-next0").addEventListener("click",function(){
+  if(!anyWant()){$("kbs-needwant").classList.remove("hidden");try{$("kbs-wants").scrollIntoView();}catch(e){}return;}
+  $("kbs-needwant").classList.add("hidden");
+  gotoStep(1);
+});
+$("kbs-back1").addEventListener("click",function(){gotoStep(0);});
+$("kbs-next1").addEventListener("click",function(){gotoStep(2);});
+$("kbs-back2").addEventListener("click",function(){gotoStep(1);});
+$("kbs-next2").addEventListener("click",function(){gotoStep(3);});
+$("kbs-back3").addEventListener("click",function(){gotoStep(2);});
+$("kbs-next3").addEventListener("click",function(){gotoStep(4);});
+$("kbs-copy").addEventListener("click",function(){
+  var txt=$("kbs-tbody").textContent,msg=$("kbs-copymsg");
+  function done(t){msg.textContent=t;}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){done("Copied! Paste it into your notes app.");},function(){done("Copy didn't work \u2014 select the text above and copy manually.");});
+  }else{done("Select the text above and copy it manually.");}
+});
+/* 15-minute timer */
+var tLeft=900,timer=null;
+function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");}
+function drawT(){$("kbs-time").textContent=fmt(tLeft);}
+function tick(){tLeft--;if(tLeft<=0){clearInterval(timer);timer=null;tLeft=0;$("kbs-tstart").textContent="Start timer";drawT();return;}drawT();}
+$("kbs-tstart").addEventListener("click",function(){
+  if(timer){clearInterval(timer);timer=null;this.textContent="Resume";return;}
+  if(tLeft<=0)tLeft=900;
+  timer=setInterval(tick,1000);this.textContent="Pause";
+});
+$("kbs-treset").addEventListener("click",function(){clearInterval(timer);timer=null;tLeft=900;$("kbs-tstart").textContent="Start timer";drawT();});
+$("kbs-print").addEventListener("click",function(){if(typeof window.print==="function")window.print();});
+var armed=false;
+$("kbs-restart").addEventListener("click",function(){
+  var b=this;
+  if(!armed){armed=true;b.textContent="Click again to confirm";
+    setTimeout(function(){if(armed){armed=false;b.textContent="Start over";}},4000);}
+  else{armed=false;b.textContent="Start over";
+    state={wants:{},vol:null,find:null,now:null,step:0,tpl:"Book notes",review:{}};
+    save();renderStep1();gotoStep(0);}
+});
+load();
+if(state.step>4||state.step<0)state.step=0;
+renderStep1();renderAll();drawT();
+</script>
+</body>
+</html>

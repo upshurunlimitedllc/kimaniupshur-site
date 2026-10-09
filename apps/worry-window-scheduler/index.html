@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worry Window Scheduler | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Contain runaway worry with a scheduled daily worry window and a structured worry log. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/worry-window-scheduler/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Worry Window Scheduler | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Contain runaway worry with a scheduled daily worry window and a structured worry log. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/worry-window-scheduler/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.small{padding:10px 18px;min-height:44px;font-size:.95rem}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+.disclaimer{background:#f6f1e2;border:2px solid #a68b4a;border-radius:10px;padding:16px 18px;font-size:.92rem;color:#5b5138;margin-bottom:20px}
+input[type=text],input[type=number],input[type=time],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+label{font-weight:bold;display:block;margin-top:6px}
+.worry{background:#fff;border:2px solid #d9cfae;border-radius:10px;padding:14px 16px;margin:10px 0}
+.worry.done{opacity:.75}
+.badge{display:inline-block;font-size:.78rem;font-weight:bold;padding:3px 10px;border-radius:20px;margin-left:8px}
+.badge.action{background:#dcefd8;color:#2d5a27}
+.badge.release{background:#f0e4d4;color:#7a4a1f}
+.listitem{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #eee}
+.listitem input[type=checkbox]{width:24px;height:24px;accent-color:#c9a227;flex-shrink:0;margin-top:4px}
+.windowbanner{background:#141210;color:#f5efdd;border-radius:10px;padding:16px 18px;margin-bottom:20px}
+.windowbanner strong{color:#e8c84a}
+.trend{display:flex;align-items:flex-end;gap:6px;height:120px;margin:14px 0 6px}
+.tcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0}
+.tbar{width:100%;max-width:34px;background:#c9a227;border-radius:4px 4px 0 0;min-height:3px}
+.tday{font-size:.7rem;color:#8a7a5a;margin-top:4px}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Worry Window Scheduler</h1>
+<p class="intro">Worry feels urgent, but it rarely is. Postpone each worry to one fixed daily window, then process it there — systematically — instead of letting it run your whole day.</p>
+
+<div class="disclaimer"><strong>Educational framing:</strong> This tool uses a scheduling technique from cognitive-behavioral psychology as an educational self-reflection exercise. It is not professional mental-health advice and does not diagnose or treat anxiety. If worry is interfering with your sleep, work, or daily life, please consider talking with a licensed mental-health professional.</div>
+
+<div class="windowbanner" id="window-banner">
+<strong>Your worry window:</strong> <span id="window-summary">not set yet</span><br>
+<span id="window-status" style="color:#cbbf9a"></span>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">1. Set your daily window</h2>
+<p style="color:#6b6250;margin-bottom:8px">Pick one 10–30 minute slot at the same time each day. Outside the window, you log worries — you don't work them.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap">
+<div style="flex:1;min-width:180px"><label for="wtime">Window start time</label><input type="time" id="wtime" value="18:00"></div>
+<div style="flex:1;min-width:180px"><label for="wdur">Length</label><select id="wdur"><option value="10">10 minutes</option><option value="15" selected>15 minutes</option><option value="20">20 minutes</option><option value="30">30 minutes</option></select></div>
+</div>
+<div class="btnrow"><button class="btn" id="save-window">Save my window</button></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">2. Log a worry (anytime)</h2>
+<p style="color:#6b6250;margin-bottom:8px">A worry pops up? Write it down here, then let it go until your window. One sentence is enough.</p>
+<label for="worry-input">What's on your mind?</label>
+<textarea id="worry-input" rows="2" maxlength="280" placeholder="e.g., The electric bill is higher than I expected"></textarea>
+<div class="btnrow"><button class="btn" id="add-worry">Log it and let it go</button></div>
+<h3 style="font-family:Georgia,serif;margin:18px 0 6px">Waiting for your window (<span id="pending-count">0</span>)</h3>
+<div id="pending-list"></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">3. Process your worries (in your window)</h2>
+<p style="color:#6b6250;margin-bottom:8px">Walk each worry through three questions, then put it on your action list or your release list.</p>
+<div id="processor"></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">My action list</h2>
+<div id="action-list"><p style="color:#8a7a5a">Nothing here yet — processed worries with a next step land here.</p></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">My release list</h2>
+<p style="color:#6b6250;margin-bottom:8px">Worries you can't act on get released — written down, acknowledged, and set aside.</p>
+<div id="release-list"><p style="color:#8a7a5a">Nothing released yet.</p></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:8px">Worry trends — last 14 days</h2>
+<p style="color:#6b6250;margin-bottom:8px">Worries logged per day. Most people see the count drop once the window habit sticks.</p>
+<div class="trend" id="trend"></div>
+<div class="btnrow"><button class="btn ghost small" id="reset-all">Reset all data</button></div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>Worry Window Scheduler is just the start. <em>Worry Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into handling worry well — clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/worry-made-simple/">Get Worry Made Simple — $4.99</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">All Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-worry-window-scheduler-v1";
+function todayKey(){var d=new Date();return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2);}
+function uid(){return "w"+Date.now().toString(36)+Math.floor(Math.random()*1e6).toString(36);}
+var state={windowTime:"18:00",windowDur:15,worries:[],counts:{}};
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&s.worries){state=s;if(!state.counts)state.counts={};}}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function fmtTime(t){var p=t.split(":"),h=parseInt(p[0],10),m=p[1];var ap=h>=12?"PM":"AM";h=h%12;if(h===0)h=12;return h+":"+m+" "+ap;}
+function windowOpen(){
+  var now=new Date(),p=state.windowTime.split(":"),start=new Date(now);
+  start.setHours(parseInt(p[0],10),parseInt(p[1],10),0,0);
+  var end=new Date(start.getTime()+state.windowDur*60000);
+  return now>=start&&now<=end;
+}
+function drawBanner(){
+  document.getElementById("window-summary").textContent=fmtTime(state.windowTime)+" for "+state.windowDur+" minutes";
+  document.getElementById("window-status").textContent=windowOpen()?"You are inside your window right now — a good time to process worries.":"Outside your window right now: just log worries; process them at window time.";
+}
+function drawPending(){
+  var pend=state.worries.filter(function(w){return !w.processed;});
+  document.getElementById("pending-count").textContent=pend.length;
+  var box=document.getElementById("pending-list");box.innerHTML="";
+  if(!pend.length){box.innerHTML="<p style='color:#8a7a5a'>No worries waiting — enjoy the calm.</p>";return;}
+  pend.forEach(function(w){
+    var d=document.createElement("div");d.className="worry";
+    d.innerHTML="<strong>"+esc(w.text)+"</strong><br><span style='font-size:.85rem;color:#8a7a5a'>logged "+w.day+"</span> <button class='btn ghost small' data-del='"+w.id+"' style='float:right'>Delete</button>";
+    box.appendChild(d);
+  });
+  box.querySelectorAll("[data-del]").forEach(function(b){b.addEventListener("click",function(){
+    state.worries=state.worries.filter(function(w){return w.id!==b.getAttribute("data-del");});save();drawAll();
+  });});
+}
+function drawLists(){
+  var acts=state.worries.filter(function(w){return w.processed&&w.list==="action";});
+  var rels=state.worries.filter(function(w){return w.processed&&w.list==="release";});
+  var ab=document.getElementById("action-list");ab.innerHTML="";
+  if(!acts.length)ab.innerHTML="<p style='color:#8a7a5a'>Nothing here yet — processed worries with a next step land here.</p>";
+  acts.forEach(function(w){
+    var d=document.createElement("div");d.className="listitem";
+    var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!w.stepDone;
+    cb.setAttribute("aria-label","Mark done: "+w.text);
+    cb.addEventListener("change",function(){w.stepDone=cb.checked;save();});
+    var t=document.createElement("div");
+    t.innerHTML="<strong>"+esc(w.text)+"</strong><br><span style='color:#5b5138'>Next step: "+esc(w.nextStep||"(none written)")+"</span>";
+    if(w.stepDone)t.style.opacity="0.6";
+    d.appendChild(cb);d.appendChild(t);ab.appendChild(d);
+  });
+  var rb=document.getElementById("release-list");rb.innerHTML="";
+  if(!rels.length)rb.innerHTML="<p style='color:#8a7a5a'>Nothing released yet.</p>";
+  rels.forEach(function(w){
+    var d=document.createElement("div");d.className="worry done";
+    d.innerHTML="<strong>"+esc(w.text)+"</strong><span class='badge release'>released</span><br><span style='font-size:.9rem;color:#5b5138'>Worst realistic outcome: "+esc(w.worst||"(not written)")+"</span>";
+    rb.appendChild(d);
+  });
+}
+var procIdx=0,procAns={};
+function drawProcessor(){
+  var box=document.getElementById("processor");box.innerHTML="";
+  var pend=state.worries.filter(function(w){return !w.processed;});
+  if(!pend.length){box.innerHTML="<p style='color:#8a7a5a'>All caught up. Log new worries above as they come.</p>";return;}
+  if(procIdx>=pend.length)procIdx=0;
+  var w=pend[procIdx];
+  var card=document.createElement("div");card.className="worry";
+  card.innerHTML="<p style='color:#8a6d1c;font-size:.9rem'>Worry "+(procIdx+1)+" of "+pend.length+"</p><h3 style='font-family:Georgia,serif'>"+esc(w.text)+"</h3>";
+  var stage=document.createElement("div");stage.style.marginTop="10px";
+  var s=procAns.stage||0;
+  function q1(){
+    stage.innerHTML="<p><strong>Question 1 of 3:</strong> Is there anything you can actually do about this — a concrete step within your control?</p>";
+    var row=document.createElement("div");row.className="btnrow";
+    var y=document.createElement("button");y.className="btn small";y.textContent="Yes, it's actionable";
+    var n=document.createElement("button");n.className="btn ghost small";n.textContent="No, not really";
+    y.addEventListener("click",function(){procAns.actionable=true;procAns.stage=1;saveProc();drawProcessor();});
+    n.addEventListener("click",function(){procAns.actionable=false;procAns.stage=2;saveProc();drawProcessor();});
+    row.appendChild(y);row.appendChild(n);stage.appendChild(row);
+  }
+  function q2(){
+    stage.innerHTML="<p><strong>Question 2 of 3:</strong> What's the single next step? (Small and specific.)</p>";
+    var ta=document.createElement("textarea");ta.rows=2;ta.maxLength=280;ta.value=procAns.nextStep||"";
+    ta.setAttribute("aria-label","Next step");
+    var done=document.createElement("button");done.className="btn small";done.textContent="Continue";
+    done.addEventListener("click",function(){procAns.nextStep=ta.value.trim();procAns.stage=2;saveProc();drawProcessor();});
+    stage.appendChild(ta);stage.appendChild(done);
+  }
+  function q3(){
+    stage.innerHTML="<p><strong>Question 3 of 3:</strong> What's the worst realistic outcome — not the catastrophic fantasy, the realistic one?</p>";
+    var ta=document.createElement("textarea");ta.rows=2;ta.maxLength=280;ta.value=procAns.worst||"";
+    ta.setAttribute("aria-label","Worst realistic outcome");
+    var row=document.createElement("div");row.className="btnrow";
+    var fin=document.createElement("button");fin.className="btn small";fin.textContent="Finish worry";
+    fin.addEventListener("click",function(){
+      w.processed=true;w.actionable=procAns.actionable;
+      w.nextStep=procAns.nextStep||"";w.worst=ta.value.trim();
+      w.list=procAns.actionable?"action":"release";
+      procAns={stage:0};save();procIdx=0;drawAll();
+    });
+    row.appendChild(fin);stage.appendChild(ta);stage.appendChild(row);
+  }
+  if(s===0)q1();else if(s===1)q2();else q3();
+  card.appendChild(stage);
+  var skip=document.createElement("div");skip.className="btnrow";
+  var sk=document.createElement("button");sk.className="btn ghost small";sk.textContent="Skip for now →";
+  sk.addEventListener("click",function(){procAns={stage:0};procIdx=(procIdx+1)%pend.length;drawProcessor();});
+  skip.appendChild(sk);card.appendChild(skip);
+  box.appendChild(card);
+}
+function saveProc(){/* processor answers live in memory; worry text itself is persisted on add */}
+function drawTrend(){
+  var box=document.getElementById("trend");box.innerHTML="";
+  var days=[];var now=new Date();
+  for(var i=13;i>=0;i--){var d=new Date(now.getTime()-i*86400000);days.push(d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2));}
+  var max=1;days.forEach(function(k){var n=state.counts[k]||0;if(n>max)max=n;});
+  days.forEach(function(k){
+    var n=state.counts[k]||0;
+    var col=document.createElement("div");col.className="tcol";
+    var bar=document.createElement("div");bar.className="tbar";bar.style.height=Math.max(3,Math.round(n/max*100))+"px";
+    bar.title=k+": "+n+" worries";
+    var lab=document.createElement("div");lab.className="tday";lab.textContent=k.slice(5);
+    col.appendChild(bar);col.appendChild(lab);box.appendChild(col);
+  });
+}
+function drawAll(){drawBanner();drawPending();drawLists();drawProcessor();drawTrend();}
+load();
+document.getElementById("wtime").value=state.windowTime||"18:00";
+document.getElementById("wdur").value=String(state.windowDur||15);
+document.getElementById("save-window").addEventListener("click",function(){
+  var t=document.getElementById("wtime").value||"18:00";
+  var d=parseInt(document.getElementById("wdur").value,10);
+  if(!/^\d{2}:\d{2}$/.test(t))t="18:00";
+  if(!(d>=5&&d<=120))d=15;
+  state.windowTime=t;state.windowDur=d;save();drawBanner();
+});
+document.getElementById("add-worry").addEventListener("click",function(){
+  var ta=document.getElementById("worry-input");
+  var text=ta.value.trim().slice(0,280);
+  if(!text)return;
+  var k=todayKey();
+  state.worries.push({id:uid(),text:text,day:k,processed:false,stepDone:false});
+  state.counts[k]=(state.counts[k]||0)+1;
+  ta.value="";save();drawAll();
+});
+document.getElementById("reset-all").addEventListener("click",function(){
+  if(!confirm("Delete all worry data and settings?"))return;
+  state={windowTime:"18:00",windowDur:15,worries:[],counts:{}};procIdx=0;procAns={};save();
+  document.getElementById("wtime").value="18:00";document.getElementById("wdur").value="15";drawAll();
+});
+drawAll();
+</script>
+</body>
+</html>
