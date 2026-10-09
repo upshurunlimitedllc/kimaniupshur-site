@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Prompt Coach | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Build effective AI prompts through a guided flow and get a reusable template. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/ai-prompt-coach/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Prompt Coach | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Build effective AI prompts through a guided flow and get a reusable template. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/ai-prompt-coach/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+textarea,input[type=text]{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0;font-family:inherit}
+textarea{min-height:90px}
+label.fld{display:block;font-weight:bold;margin-top:10px;font-size:.95rem}
+label.fld small{display:block;font-weight:normal;color:#6b6250;font-size:.85rem}
+.taskgrid{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.taskgrid button{flex:1;min-width:120px;min-height:56px;border:2px solid #c9a227;border-radius:10px;background:#fff;font-size:1rem;cursor:pointer;padding:10px}
+.taskgrid button.sel{background:#c9a227;color:#141210;font-weight:bold}
+.promptbox{background:#141210;color:#f5efdd;border-radius:10px;padding:20px;white-space:pre-wrap;font-family:Georgia,serif;font-size:1.02rem;margin:14px 0}
+.why li{margin-left:20px;margin-bottom:8px;font-size:.95rem}
+.example{border:1px solid #e3d9b8;border-radius:10px;padding:18px;margin:12px 0;background:#fff}
+.example .weak{color:#8a4a1c;background:#fdf3e7;border-radius:8px;padding:10px;margin-bottom:8px}
+.example .strong{color:#1c5c2a;background:#eef7ee;border-radius:8px;padding:10px;margin-bottom:8px}
+.example li{margin-left:20px;font-size:.92rem;color:#6b6250;margin-bottom:4px}
+.librow{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #f0e9d2;flex-wrap:wrap}
+.librow .tname{flex:1;min-width:140px;font-weight:bold}
+.callout{background:#fdf6e3;border-left:4px solid #c9a227;padding:14px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.hidden{display:none!important}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+@media print{header.site,footer.site,.btn,.ml-sec,.backlink,.go-deeper{display:none}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>AI Prompt Coach</h1>
+<p class="intro">Better prompts get better answers. Answer a few guided questions and this tool assembles a clear, copy-paste AI prompt &mdash; then shows you <em>why</em> each part works so you can write strong prompts on your own.</p>
+
+<div class="callout"><strong>Honest framing first:</strong> AI tools are powerful drafting partners, but they can be confidently wrong, make up facts, and reflect biases. Never paste private information into an AI tool, and always verify important facts yourself. This coach teaches <em>how to ask well</em> &mdash; it does not connect to any AI service.</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 1: What do you want the AI to do?</h2>
+<div class="taskgrid" id="taskGrid" role="radiogroup" aria-label="Task type"></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Step 2: Answer the guided questions</h2>
+<label class="fld" for="fGoal">What exactly should the AI produce?<small>One sentence. Vague goal = vague answer.</small></label>
+<textarea id="fGoal"></textarea>
+<label class="fld" for="fContext">Context / background<small>What does the AI need to know to do this well? Give it the facts it can't guess.</small></label>
+<textarea id="fContext"></textarea>
+<label class="fld" for="fAudience">Who is it for?<small>e.g., "busy small-business owners," "my 8th-grade students."</small></label>
+<input type="text" id="fAudience">
+<label class="fld" for="fConstraints">Constraints<small>What must it avoid or respect? Budget, length limits, rules, things to leave out.</small></label>
+<textarea id="fConstraints"></textarea>
+<label class="fld" for="fFormat">Format &amp; length<small>How should the answer look? Bullets, table, email, outline \u2014 and roughly how long?</small></label>
+<input type="text" id="fFormat">
+<label class="fld" for="fTone">Tone<small>e.g., friendly and plain-spoken, professional, playful.</small></label>
+<input type="text" id="fTone">
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+<button class="btn" id="buildBtn">Build My Prompt</button>
+<button class="btn ghost" id="resetBtn">Clear</button>
+</div>
+</div>
+
+<div class="appcard hidden" id="resultCard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your polished prompt</h2>
+<div class="promptbox" id="promptOut"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+<div style="flex:2;min-width:180px"><label for="libName" style="font-weight:bold;font-size:.9rem">Template name</label>
+<input type="text" id="libName" placeholder="e.g., Bakery taglines"></div>
+<button class="btn" id="copyBtn">Copy Prompt</button>
+<button class="btn ghost" id="saveLibBtn">Save to Template Library</button>
+</div>
+<p id="copyMsg" style="color:#1c5c2a;font-size:.9rem;margin-top:8px"></p>
+<h3 style="font-family:Georgia,serif;margin:20px 0 6px">Why each part works</h3>
+<ul class="why" id="whyList"></ul>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Your template library</h2>
+<p style="color:#6b6250;margin-bottom:10px">Saved prompts live here, in your browser. Reuse them anytime.</p>
+<div id="libList"></div>
+</div>
+
+<div class="appcard">
+<h2 style="font-family:Georgia,serif;margin-bottom:6px">Study: five weak vs. strong prompts</h2>
+<div id="examples"></div>
+</div>
+
+<section class="appcard go-deeper" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>AI Prompt Coach is just the start. <em>AI and Work Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper into using AI well at work &mdash; clear chapters and practical guidance you can use today.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/ai-and-work-made-simple/">Get AI and Work Made Simple</a></p>
+</section>
+<p class="backlink" style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Free Made Simple Apps</a></p>
+</main>
+<section class="ml-sec" style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Made Simple Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. &mdash; practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+var KEY="app-ai-prompt-coach-v1";
+var TASKS={
+ write:{label:"Write something",ph:{
+  goal:"Write a 600-word welcome email sequence for new customers.",
+  context:"We sell handmade soap. Most customers find us at craft fairs. They care about natural ingredients.",
+  audience:"First-time buyers, mostly women 30-55.",
+  constraints:"No medical or health claims. Keep paragraphs short.",
+  format:"3 emails, each under 200 words, with subject lines.",
+  tone:"Warm, friendly, plain-spoken."}},
+ summarize:{label:"Summarize something",ph:{
+  goal:"Summarize this 12-page report into the key points I need for a meeting.",
+  context:"The report covers Q3 sales by region. I have 5 minutes to present.",
+  audience:"My manager and two teammates.",
+  constraints:"Only facts from the report \u2014 no guessing or added opinions.",
+  format:"5 bullet points, each one line.",
+  tone:"Professional and direct."}},
+ brainstorm:{label:"Brainstorm ideas",ph:{
+  goal:"Generate 15 name ideas for my dog-walking business.",
+  context:"Based in Austin. Friendly, trustworthy vibe. No puns about fetching.",
+  audience:"Dog owners in my neighborhood.",
+  constraints:"Avoid clich\u00e9s. Must be easy to spell.",
+  format:"Numbered list with a one-line feel for each name.",
+  tone:"Playful but professional."}},
+ analyze:{label:"Analyze something",ph:{
+  goal:"Analyze which of my three product lines is worth expanding.",
+  context:"Sales data: Line A $80k/yr steady, Line B $50k/yr growing 40%, Line C $30k/yr shrinking.",
+  audience:"Me \u2014 I'm deciding where to invest next year.",
+  constraints:"Consider only the data given; flag any assumption you make.",
+  format:"Short comparison table, then a one-paragraph recommendation.",
+  tone:"Analytical and honest."}},
+ plan:{label:"Plan something",ph:{
+  goal:"Plan my study schedule for a certification exam 6 weeks out.",
+  context:"I work full-time and have about 90 minutes free each evening. The exam has 4 topic areas.",
+  audience:"Me \u2014 I need a plan I can actually stick to.",
+  constraints:"No study on Sundays. Build in one review week before the exam.",
+  format:"Week-by-week schedule with daily tasks.",
+  tone:"Encouraging and realistic."}}
+};
+var EXAMPLES=[
+{task:"Write",weak:"Write a blog post about productivity.",
+ strong:"You are a writing assistant. Write a 700-word blog post: '5 morning habits that actually stick for busy parents.'\nCONTEXT: My readers are working parents with kids under 10; they have 20 free minutes a day.\nAUDIENCE: Tired parents who have tried and failed at morning routines.\nCONSTRAINTS: No medical claims. Each habit must take under 5 minutes.\nFORMAT: Numbered list, each habit with a bold title and 3 short paragraphs.\nTONE: Encouraging, like a friend \u2014 no guilt trips.",
+ notes:["Names the exact deliverable (700 words, 5 habits, the audience's situation).","Gives context the AI can't guess (20 free minutes, failed before).","Constraints prevent useless output (no 30-minute meditation suggestions).","Format + tone control the shape of the answer."]},
+{task:"Summarize",weak:"Summarize this.",
+ strong:"Summarize the attached 10-page vendor contract into what I need to know before signing.\nCONTEXT: I'm a freelance designer; this is a 3-month project.\nAUDIENCE: Me \u2014 I need risks and obligations, not legalese.\nCONSTRAINTS: Do not invent terms; quote any clause about payment timing or termination exactly.\nFORMAT: 8 bullets max, then a one-sentence bottom line.\nTONE: Plain English.",
+ notes:["Says what 'summarize' means here: risks and obligations.","Demands exact quotes for the high-stakes parts.","Length limit forces the AI to prioritize, not dump."]},
+{task:"Brainstorm",weak:"Give me business ideas.",
+ strong:"Brainstorm 12 low-cost business ideas I could start on weekends.\nCONTEXT: I have $500 to start, a reliable car, and 10 free hours a week. I live in a mid-size college town.\nAUDIENCE: Me \u2014 I want realistic options, not 'become an influencer.'\nCONSTRAINTS: Startup cost under $500. No ideas requiring a license I don't have.\nFORMAT: Numbered list; each idea gets a name, one-line description, and rough startup cost.\nTONE: Practical and encouraging.",
+ notes:["Context (budget, car, town) filters out 90% of bad ideas automatically.","Constraints define 'realistic' so the AI doesn't have to guess.","Format makes the output scannable and comparable."]},
+{task:"Analyze",weak:"Which phone should I buy?",
+ strong:"Help me decide between three phones: A ($400, great battery, weak camera), B ($700, great camera, average battery), C ($950, best of both).\nCONTEXT: I take photos for my small business daily and charge my phone overnight.\nAUDIENCE: Me \u2014 a one-person business owner watching costs.\nCONSTRAINTS: Consider total cost over 3 years, not just sticker price. Ask clarifying questions if needed.\nFORMAT: Comparison table, then a recommendation with the top 2 reasons.\nTONE: Straightforward, no sales pitch.",
+ notes:["Supplies the decision facts instead of making the AI guess them.","Asks for the reasoning, not just the pick \u2014 you can check the logic.","Constraints keep the answer honest about trade-offs."]},
+{task:"Plan",weak:"Help me plan a trip.",
+ strong:"Plan a 4-day weekend trip for two adults to Chicago in October.\nCONTEXT: Budget $1,500 total. We love food and architecture; we hate tourist traps and long lines.\nAUDIENCE: Us \u2014 we walk a lot and don't mind the cold.\nCONSTRAINTS: No flights (we're driving from Indianapolis). Keep each day under $400.\nFORMAT: Day-by-day plan with morning, afternoon, evening blocks and rough costs.\nTONE: Relaxed and practical.",
+ notes:["Context (budget, tastes, hates) is what makes a plan personal.","Constraints rule out the generic top-10 list the AI would otherwise give.","Day-block format is immediately usable \u2014 no re-formatting needed."]}
+];
+function state(){try{var d=JSON.parse(localStorage.getItem(KEY));if(d&&typeof d==="object")return d;}catch(e){}return null;}
+function freshState(){return{task:"write",fields:{goal:"",context:"",audience:"",constraints:"",format:"",tone:""},library:[]};}
+var S=freshState();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function normalize(){
+  var f=freshState();
+  if(!TASKS[S.task])S.task="write";
+  if(typeof S.fields!=="object"||!S.fields)S.fields=f.fields;
+  ["goal","context","audience","constraints","format","tone"].forEach(function(k){if(typeof S.fields[k]!=="string")S.fields[k]="";});
+  if(!Array.isArray(S.library))S.library=[];
+  S.library=S.library.filter(function(e){return e&&typeof e.name==="string"&&typeof e.prompt==="string";});
+}
+var FIDS=["goal","context","audience","constraints","format","tone"];
+function renderTasks(){
+  var g=document.getElementById("taskGrid");g.innerHTML="";
+  Object.keys(TASKS).forEach(function(k){
+    var b=document.createElement("button");
+    b.type="button";b.textContent=TASKS[k].label;b.setAttribute("role","radio");
+    b.setAttribute("aria-checked",k===S.task?"true":"false");
+    if(k===S.task)b.classList.add("sel");
+    b.addEventListener("click",function(){S.task=k;applyPlaceholders();save();renderTasks();});
+    g.appendChild(b);
+  });
+}
+function applyPlaceholders(){
+  FIDS.forEach(function(k){document.getElementById("f"+k.charAt(0).toUpperCase()+k.slice(1)).placeholder=TASKS[S.task].ph[k];});
+}
+function readFields(){
+  FIDS.forEach(function(k){S.fields[k]=document.getElementById("f"+k.charAt(0).toUpperCase()+k.slice(1)).value;});
+}
+function fid(k){return "f"+k.charAt(0).toUpperCase()+k.slice(1);}
+function buildPrompt(){
+  var t=TASKS[S.task],f=S.fields;
+  var lines=[];
+  lines.push("You are a helpful assistant acting as a "+t.label.toLowerCase()+" partner.");
+  lines.push("");
+  lines.push("TASK: "+(f.goal||"[describe what you want produced]"));
+  lines.push("");
+  if(f.context)lines.push("CONTEXT: "+f.context+"\n");
+  if(f.audience)lines.push("AUDIENCE: "+f.audience+"\n");
+  if(f.constraints)lines.push("CONSTRAINTS: "+f.constraints+"\n");
+  if(f.format)lines.push("FORMAT AND LENGTH: "+f.format+"\n");
+  if(f.tone)lines.push("TONE: "+f.tone+"\n");
+  lines.push("Before you produce the final output, briefly state your plan in 2-3 bullets so I can check your approach.");
+  lines.push("If something important is unclear, ask me up to 3 clarifying questions first instead of guessing.");
+  lines.push("");
+  lines.push("REMEMBER: stick to the facts and context given above. Do not invent details.");
+  return lines.join("\n");
+}
+function whyItems(){
+  var f=S.fields;
+  var items=[
+   ["Clear task ("+(f.goal?"provided":"missing")+")","The AI answers the question you actually asked. A one-sentence task beats a paragraph of rambling."],
+   ["Context ("+(f.context?"provided":"missing")+")","AI tools can't read your mind. Background facts are what turn a generic answer into a useful one."],
+   ["Audience ("+(f.audience?"provided":"missing")+")","Who it's for changes everything: vocabulary, examples, depth. Name them."],
+   ["Constraints ("+(f.constraints?"provided":"missing")+")","Rules and limits are how you get an answer you can actually use instead of one you have to fix."],
+   ["Format and length ("+(f.format?"provided":"missing")+")","Telling the AI the shape (bullets, table, email) saves you reformatting its answer."],
+   ["Tone ("+(f.tone?"provided":"missing")+")","Tone is the difference between an answer that fits your voice and one that fights it."],
+   ["Plan-first + clarifying questions","Makes the AI show its approach before committing \u2014 and ask instead of guess when confused."],
+   ["No-invention rule","The single most important guardrail: AI tools can sound confident while making things up. Verify important facts yourself."]
+  ];
+  return items;
+}
+function doBuild(){
+  readFields();save();
+  var p=buildPrompt();
+  document.getElementById("promptOut").textContent=p;
+  var ul=document.getElementById("whyList");ul.innerHTML="";
+  whyItems().forEach(function(w){
+    var li=document.createElement("li");
+    li.innerHTML="<strong></strong> ";
+    li.firstChild.textContent=w[0];
+    li.appendChild(document.createTextNode("\u2014 "+w[1]));
+    ul.appendChild(li);
+  });
+  document.getElementById("copyMsg").textContent="";
+  document.getElementById("resultCard").classList.remove("hidden");
+  document.getElementById("resultCard").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function copyPrompt(){
+  var txt=document.getElementById("promptOut").textContent;
+  var msg=document.getElementById("copyMsg");
+  function done(ok){msg.textContent=ok?"Copied to clipboard.":"Copy didn't work automatically \u2014 select the text above and copy it manually.";}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){done(true);},function(){
+      fallback();
+    });
+  }else{fallback();}
+  function fallback(){
+    try{
+      var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);
+      ta.select();var ok=document.execCommand("copy");document.body.removeChild(ta);done(!!ok);
+    }catch(e){done(false);}
+  }
+}
+function saveToLibrary(){
+  var p=document.getElementById("promptOut").textContent;
+  if(!p){return;}
+  var name=(document.getElementById("libName").value||"").trim()||"Untitled template";
+  S.library.unshift({name:name,prompt:p});
+  document.getElementById("libName").value="";
+  save();renderLibrary();
+}
+function renderLibrary(){
+  var box=document.getElementById("libList");box.innerHTML="";
+  if(!S.library.length){
+    box.innerHTML="<p style='color:#6b6250'>No saved templates yet. Build a prompt above, then save it here.</p>";
+    return;
+  }
+  S.library.forEach(function(e,i){
+    var row=document.createElement("div");row.className="librow";
+    var n=document.createElement("span");n.className="tname";n.textContent=e.name;row.appendChild(n);
+    var load=document.createElement("button");load.className="btn ghost";load.style.cssText="padding:8px 16px;min-height:44px";load.textContent="Load";
+    load.addEventListener("click",function(){
+      var parts=parsePrompt(e.prompt);
+      FIDS.forEach(function(k){document.getElementById(fid(k)).value=parts[k]||"";});
+      readFields();save();
+      document.getElementById("promptOut").textContent=e.prompt;
+      document.getElementById("resultCard").classList.remove("hidden");
+      document.getElementById("resultCard").scrollIntoView({behavior:"smooth",block:"start"});
+    });
+    var del=document.createElement("button");del.className="btn ghost";del.style.cssText="padding:8px 16px;min-height:44px";del.textContent="Delete";
+    del.addEventListener("click",function(){
+      if(!confirm("Delete template \u201c"+e.name+"\u201d?"))return;
+      S.library.splice(i,1);save();renderLibrary();
+    });
+    row.appendChild(load);row.appendChild(del);box.appendChild(row);
+  });
+}
+function parsePrompt(p){
+  var out={};
+  var map={TASK:"goal",CONTEXT:"context",AUDIENCE:"audience",CONSTRAINTS:"constraints","FORMAT AND LENGTH":"format",TONE:"tone"};
+  var lines=p.split("\n");
+  var cur=null;
+  lines.forEach(function(line){
+    if(/^(Before you produce|If something important|REMEMBER:)/.test(line)){cur=null;return;}
+    var m=line.match(/^(TASK|CONTEXT|AUDIENCE|CONSTRAINTS|FORMAT AND LENGTH|TONE):\s*(.*)$/);
+    if(m){cur=map[m[1]];out[cur]=m[2];}
+    else if(cur&&line.trim()){out[cur]+=" "+line.trim();}
+  });
+  return out;
+}
+function renderExamples(){
+  var box=document.getElementById("examples");box.innerHTML="";
+  EXAMPLES.forEach(function(e,i){
+    var d=document.createElement("div");d.className="example";
+    var h=document.createElement("h3");h.style.fontFamily="Georgia,serif";h.textContent=(i+1)+". "+e.task+" prompt";d.appendChild(h);
+    var w=document.createElement("div");w.className="weak";w.innerHTML="<strong>Weak:</strong> ";w.appendChild(document.createTextNode(e.weak));d.appendChild(w);
+    var s=document.createElement("div");s.className="strong";var st=document.createElement("div");st.innerHTML="<strong>Strong:</strong>";s.appendChild(st);var pre=document.createElement("div");pre.style.whiteSpace="pre-wrap";pre.textContent=e.strong;s.appendChild(pre);d.appendChild(s);
+    var ul=document.createElement("ul");
+    e.notes.forEach(function(n){var li=document.createElement("li");li.textContent=n;ul.appendChild(li);});
+    d.appendChild(ul);box.appendChild(d);
+  });
+}
+document.getElementById("buildBtn").addEventListener("click",doBuild);
+document.getElementById("copyBtn").addEventListener("click",copyPrompt);
+document.getElementById("saveLibBtn").addEventListener("click",saveToLibrary);
+document.getElementById("resetBtn").addEventListener("click",function(){
+  if(!confirm("Clear all answers?"))return;
+  S=freshState();save();
+  FIDS.forEach(function(k){document.getElementById(fid(k)).value="";});
+  applyPlaceholders();renderTasks();
+  document.getElementById("resultCard").classList.add("hidden");
+});
+FIDS.forEach(function(k){
+  document.getElementById(fid(k)).addEventListener("input",function(){readFields();save();});
+});
+var loaded=state();if(loaded)S=loaded;
+normalize();save();
+FIDS.forEach(function(k){document.getElementById(fid(k)).value=S.fields[k];});
+renderTasks();applyPlaceholders();renderLibrary();renderExamples();
+</script>
+</body>
+</html>

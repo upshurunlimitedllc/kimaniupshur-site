@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spaced Repetition Memory Coach | Free Made Simple App | Upshur Unlimited, LLC</title>
+<meta name="description" content="Memorize anything with a guided spaced-repetition schedule, flashcard self-testing, and a due-today review queue. Free app by Kimani Upshur, M.Ed.">
+<link rel="canonical" href="https://kimaniupshur.com/apps/spaced-repetition-memory-coach/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spaced Repetition Memory Coach | Free Made Simple App | Upshur Unlimited, LLC">
+<meta property="og:description" content="Memorize anything with a guided spaced-repetition schedule, flashcard self-testing, and a due-today review queue. Free app by Kimani Upshur, M.Ed.">
+<meta property="og:url" content="https://kimaniupshur.com/apps/spaced-repetition-memory-coach/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#faf7ef;color:#222;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{background:#141210;color:#f5efdd;border-bottom:4px solid #c9a227}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#e8c84a;text-decoration:none;font-weight:bold;letter-spacing:.5px}
+.brand small{display:block;font-size:.7rem;color:#b8a05a;letter-spacing:2px;font-weight:normal}
+nav.main a{color:#f5efdd;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a:hover{color:#e8c84a}
+@media (max-width:600px){nav.main{display:flex;flex-wrap:wrap;gap:8px 16px}nav.main a{margin-left:0;white-space:nowrap}.brand{margin-left:12px}}
+main.app{max-width:760px;margin:0 auto;padding:44px 20px;min-height:50vh}
+main.app h1{font-family:Georgia,serif;font-size:2rem;color:#141210;margin-bottom:8px;line-height:1.25}
+main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
+.appcard{background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:28px;margin-bottom:20px}
+.appcard h2{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:12px;color:#141210}
+.appcard h3{font-family:Georgia,serif;font-size:1.1rem;margin:16px 0 8px;color:#141210}
+.btn{display:inline-block;background:#c9a227;color:#141210;font-weight:bold;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;min-height:48px}
+.btn:hover{background:#e8c84a}
+.btn.ghost{background:transparent;color:#8a6d1c;border:2px solid #c9a227}
+.btn.danger{background:transparent;color:#a33;border:2px solid #c66}
+.btn.small{padding:8px 14px;min-height:44px;font-size:.9rem}
+.hidden{display:none!important}
+.err{background:#fdecea;border:2px solid #c66;color:#a33;border-radius:8px;padding:10px 14px;margin:10px 0;font-weight:bold}
+.okmsg{background:#eef7e6;border:2px solid #6a6;color:#2a5;border-radius:8px;padding:10px 14px;margin:10px 0}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:14px;font-size:1rem;border:2px solid #c9a227;border-radius:8px;background:#fff;color:#222;margin:8px 0}
+textarea{min-height:90px}
+label.f{display:block;font-weight:bold;margin-top:14px;color:#141210}
+label.f small{font-weight:normal;color:#6b6250}
+.stats{display:flex;gap:12px;flex-wrap:wrap}
+.stat{flex:1;min-width:130px;background:#141210;color:#f5efdd;border-radius:10px;padding:14px;text-align:center}
+.stat .n{font-size:1.9rem;font-weight:bold;color:#e8c84a;font-family:Georgia,serif}
+.stat .l{font-size:.8rem;color:#cbbf9a}
+.deckrow{display:flex;align-items:center;gap:12px;padding:14px 4px;border-bottom:1px solid #e6ddc2;flex-wrap:wrap}
+.deckrow .nm{flex:1;min-width:160px}
+.deckrow .nm a{font-weight:bold;color:#141210;text-decoration:none;font-size:1.05rem}
+.deckrow .nm a:hover{color:#8a6d1c;text-decoration:underline}
+.badge{display:inline-block;font-size:.75rem;font-weight:bold;padding:3px 10px;border-radius:20px;background:#e8c84a;color:#141210;margin-left:8px;white-space:nowrap}
+.badge.over{background:#c66;color:#fff}
+.badge.cal{background:#eee;color:#6b6250}
+.cardrow{display:flex;align-items:center;gap:10px;padding:12px 4px;border-bottom:1px solid #e6ddc2;flex-wrap:wrap}
+.cardrow .term{font-weight:bold;flex:1;min-width:140px}
+.cardrow .def{color:#6b6250;flex:2;min-width:160px}
+.cardrow .due{font-size:.85rem;color:#8a6d1c;white-space:nowrap}
+.flash{max-width:520px;margin:8px auto;background:#fff;border:3px solid #c9a227;border-radius:14px;min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;cursor:pointer;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.flash .side{font-size:.75rem;letter-spacing:2px;color:#8a6d1c;font-weight:bold;margin-bottom:10px}
+.flash .big{font-size:1.6rem;font-family:Georgia,serif;color:#141210}
+.flash .tap{font-size:.85rem;color:#6b6250;margin-top:14px}
+.raterow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.rate{flex:1;min-width:130px;max-width:180px;padding:14px;border-radius:10px;border:2px solid #c9a227;background:#fffdf7;font-weight:bold;cursor:pointer;min-height:52px;font-size:1rem}
+.rate small{display:block;font-weight:normal;font-size:.75rem;color:#6b6250}
+.rate:hover{background:#f5efdd}
+.rate.easy{border-color:#6a6}.rate.hard{border-color:#c66}
+.prog{height:12px;background:#e6ddc2;border-radius:6px;overflow:hidden;margin:12px 0}
+.prog>div{height:100%;background:#c9a227;width:0;transition:width .2s}
+.sumline{padding:8px 0;border-bottom:1px solid #e6ddc2}
+footer.site{background:#141210;color:#cbbf9a;padding:40px 0 30px;margin-top:50px;border-top:4px solid #c9a227;font-size:.9rem}
+footer.site a{color:#e8c84a;text-decoration:none}
+.flink{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:20px}
+.fine{font-size:.78rem;color:#8a7a4a;max-width:800px;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap topbar">
+<a class="brand" href="/">UPSHUR UNLIMITED, LLC<small>THE MADE SIMPLE FRAMEWORK</small></a>
+<nav class="main" aria-label="Main"><a href="/">Home</a><a href="/books/">Books</a><a href="/categories/">Categories</a><a href="/apps.html">Apps</a><a href="/ai.html">Made Simple AI</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="app">
+<h1>Spaced Repetition Memory Coach</h1>
+<p class="intro">Memorize anything — vocabulary, facts, names, concepts — with a guided spaced-repetition schedule. Build decks, test yourself with flip cards, rate each card easy or hard, and the app schedules your next review automatically (1, 3, 7, 14, 30 days). Keep your daily streak alive.</p>
+
+<div class="appcard">
+<div class="stats" id="srStats">
+<div class="stat"><div class="n" id="srStDecks">0</div><div class="l">Decks</div></div>
+<div class="stat"><div class="n" id="srStCards">0</div><div class="l">Cards</div></div>
+<div class="stat"><div class="n" id="srStDue">0</div><div class="l">Due today</div></div>
+<div class="stat"><div class="n" id="srStStreak">0</div><div class="l">Day streak</div></div>
+</div>
+<div id="srDueBanner" style="margin-top:14px;text-align:center"></div>
+</div>
+
+<!-- HOME -->
+<div id="srHome">
+<div class="appcard">
+<h2>Your Decks</h2>
+<div id="srDeckList"></div>
+<h3 style="margin-top:20px">Create a new deck</h3>
+<label class="f" for="srNewDeckName">Deck name <small>(e.g., "Spanish Vocabulary", "Anatomy Terms")</small></label>
+<input type="text" id="srNewDeckName" maxlength="120" placeholder="Deck name">
+<div class="err hidden" id="srDeckErr"></div>
+<button class="btn" id="srAddDeck" style="margin-top:10px">Create Deck</button>
+</div>
+</div>
+
+<!-- DECK DETAIL -->
+<div id="srDeck" class="hidden">
+<div class="appcard">
+<div id="srDeckCrumb" style="margin-bottom:10px"><button class="btn ghost small" id="srBackHome">&larr; All decks</button></div>
+<h2 id="srDeckName"></h2>
+<div id="srDeckMeta" style="color:#6b6250;margin-bottom:10px"></div>
+<div class="err hidden" id="srDeckDetailErr"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0">
+<button class="btn" id="srStartReview">Start Review Session</button>
+<button class="btn ghost" id="srReviewAll">Practice All Cards Early</button>
+</div>
+<label class="f" for="srRename">Rename deck</label>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<input type="text" id="srRename" maxlength="120" style="flex:1;min-width:200px" aria-label="New deck name">
+<button class="btn ghost small" id="srRenameBtn" style="min-height:56px">Rename</button>
+<button class="btn danger small" id="srDeleteDeck" style="min-height:56px">Delete Deck</button>
+</div>
+</div>
+<div class="appcard">
+<h2>Add cards</h2>
+<label class="f" for="srTerm">Term <small>(the question / prompt)</small></label>
+<input type="text" id="srTerm" maxlength="500" placeholder="e.g., Japan">
+<label class="f" for="srDef">Definition <small>(the answer)</small></label>
+<input type="text" id="srDef" maxlength="2000" placeholder="e.g., Tokyo">
+<input type="hidden" id="srEditId" value="">
+<div class="err hidden" id="srCardErr"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+<button class="btn" id="srAddCard">Add Card</button>
+<button class="btn ghost hidden" id="srCancelEdit">Cancel Edit</button>
+</div>
+<h3>Or bulk-add (one per line: term | definition)</h3>
+<textarea id="srBulk" placeholder="Spain | Madrid&#10;Italy | Rome&#10;Germany | Berlin" aria-label="Bulk add cards, one per line"></textarea>
+<button class="btn ghost" id="srBulkAdd">Add All Lines</button>
+<div class="okmsg hidden" id="srBulkMsg"></div>
+</div>
+<div class="appcard">
+<h2>Cards in this deck</h2>
+<div id="srCardList"></div>
+</div>
+</div>
+
+<!-- REVIEW -->
+<div id="srReview" class="hidden">
+<div class="appcard" style="text-align:center">
+<div id="srRevHead" style="margin-bottom:6px"></div>
+<div class="prog" role="progressbar" aria-label="Review progress"><div id="srRevBar"></div></div>
+<div class="flash" id="srFlash" role="button" tabindex="0" aria-label="Flashcard: tap to flip">
+<div class="side" id="srFlashSide">QUESTION</div>
+<div class="big" id="srFlashText"></div>
+<div class="tap" id="srFlashTap">Tap to reveal the answer</div>
+</div>
+<div class="raterow hidden" id="srRateRow">
+<button class="rate hard" data-r="hard">Hard<small>forgot it — review tomorrow</small></button>
+<button class="rate" data-r="good">Good<small>remembered with effort</small></button>
+<button class="rate easy" data-r="easy">Easy<small>knew it cold — longer gap</small></button>
+</div>
+<div style="margin-top:16px"><button class="btn ghost small" id="srQuitReview">End Session</button></div>
+<div class="err hidden" id="srRateErr" style="max-width:420px;margin:12px auto 0"></div>
+</div>
+</div>
+
+<!-- SESSION SUMMARY -->
+<div id="srDone" class="hidden">
+<div class="appcard" style="text-align:center">
+<h2>Session complete</h2>
+<div id="srDoneBody"></div>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px">
+<button class="btn" id="srDoneHome">Back to Decks</button>
+<button class="btn ghost" id="srDoneDeck">Back to Deck</button>
+</div>
+</div>
+</div>
+
+<section class="appcard" style="margin-top:24px">
+<h3>Go Deeper with the Book</h3>
+<p>The Spaced Repetition Memory Coach is just the start. <em>Memory Made Simple</em> by Kimani Upshur, M.Ed. takes you deeper — practical memory systems, study tactics, and recall strategies you can use for school, work, and life.</p>
+<p><a class="btn" href="https://kimaniupshur.com/books/memory-made-simple/">Get Memory Made Simple</a></p>
+</section>
+<p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
+</main>
+<section style="max-width:760px;margin:0 auto;padding:28px 20px;text-align:center">
+<div style="background:#fffdf7;border:2px solid #c9a227;border-radius:12px;padding:24px 20px">
+<h2 style="font-family:Georgia,serif;font-size:1.4rem;color:#141210;margin-bottom:6px;border-bottom:3px solid #c9a227;display:inline-block;padding-bottom:6px">Get the Daily Devotional</h2>
+<p style="color:#6b6250;margin:8px 0 14px;font-size:.95rem">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+<div class="ml-embedded" data-form="91hYnJ"></div>
+</div>
+</section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
+<p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var KEY="app-spaced-repetition-memory-coach-v1";
+var INTERVALS=[1,3,7,14,30]; // days per mastery level 0..4
+var CAPITALS=[["France","Paris"],["Japan","Tokyo"],["Brazil","Brasília"],["Egypt","Cairo"],["Canada","Ottawa"],["Australia","Canberra"],["India","New Delhi"],["Germany","Berlin"],["Italy","Rome"],["Spain","Madrid"],["Mexico","Mexico City"],["Argentina","Buenos Aires"],["South Korea","Seoul"],["China","Beijing"],["Russia","Moscow"],["United Kingdom","London"],["Nigeria","Abuja"],["Kenya","Nairobi"],["Peru","Lima"],["Thailand","Bangkok"]];
+function p2(n){return String(n).padStart(2,"0");}
+function dstr(d){return d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate());}
+function todayStr(){return dstr(new Date());}
+function parseLocal(s){var p=String(s).split("-");return new Date(parseInt(p[0],10),parseInt(p[1],10)-1,parseInt(p[2],10));}
+function addDaysStr(s,n){var d=parseLocal(s);d.setDate(d.getDate()+n);return dstr(d);}
+function friendlyDate(s){var d=parseLocal(s);return d.toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});}
+function daysLate(due){var a=parseLocal(due),b=parseLocal(todayStr());return Math.round((b-a)/86400000);}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+var _u=1;function uid(){return "x"+Date.now().toString(36)+(_u++).toString(36)+Math.floor(Math.random()*1e6).toString(36);}
+function $(id){return document.getElementById(id);}
+function showErr(id,msg){var e=$(id);e.textContent=msg;e.classList.remove("hidden");}
+function hideErr(id){$(id).classList.add("hidden");}
+function blank(){return {decks:[],streak:{last:null,count:0},seeded:false};}
+var S=blank();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if(o&&typeof o==="object"&&Array.isArray(o.decks)){S=o;if(!S.streak||typeof S.streak!=="object")S.streak={last:null,count:0};if(!Array.isArray(S.decks))S.decks=[];return;}}}catch(e){}S=blank();}
+function seed(){if(S.seeded)return;S.seeded=true;var d={id:uid(),name:"Sample Deck: World Capitals",created:todayStr(),cards:[]};CAPITALS.forEach(function(p){d.cards.push({id:uid(),term:p[0],def:p[1],level:0,due:todayStr(),reviews:0});});S.decks.push(d);save();}
+function findDeck(id){for(var i=0;i<S.decks.length;i++)if(S.decks[i].id===id)return S.decks[i];return null;}
+function totalCards(){return S.decks.reduce(function(n,d){return n+d.cards.length;},0);}
+function dueCount(){var t=todayStr();return S.decks.reduce(function(n,d){return n+d.cards.filter(function(c){return c.due<=t;}).length;},0);}
+function dueInDeck(deck){var t=todayStr();return deck.cards.filter(function(c){return c.due<=t;}).sort(function(a,b){return a.due<b.due?-1:a.due>b.due?1:0;});}
+function dueLabel(c){var t=todayStr();if(c.due===t)return "Due today";if(c.due<t)return "Overdue "+daysLate(c.due)+"d";return "Due "+friendlyDate(c.due);}
+function nextLevel(level,rating){if(rating==="hard")return 0;if(rating==="easy")return Math.min(4,level+2);return Math.min(4,level+1);}
+function schedule(card,rating){var t=todayStr();card.level=nextLevel(card.level,rating);card.due=addDaysStr(t,INTERVALS[card.level]);card.reviews=(card.reviews||0)+1;}
+function show(which){["srHome","srDeck","srReview","srDone"].forEach(function(id){$(id).classList.toggle("hidden",id!==which);});}
+var currentDeckId=null;
+// ---------- HOME ----------
+function renderHome(){
+  var list=$("srDeckList");list.innerHTML="";
+  if(S.decks.length===0){list.innerHTML='<p style="color:#6b6250">No decks yet. Create one above — or start with the sample deck below.</p>';}
+  S.decks.forEach(function(d){
+    var row=document.createElement("div");row.className="deckrow";
+    var due=dueInDeck(d).length;
+    var nm=document.createElement("div");nm.className="nm";
+    var a=document.createElement("a");a.href="#";a.textContent=d.name;
+    a.addEventListener("click",function(ev){ev.preventDefault();openDeck(d.id);});
+    nm.appendChild(a);
+    var info=document.createElement("div");info.style.cssText="font-size:.85rem;color:#6b6250";
+    info.textContent=d.cards.length+" card"+(d.cards.length===1?"":"s");
+    nm.appendChild(document.createTextNode(" "));
+    var b=document.createElement("span");b.className="badge"+(due>0?" over":" cal");
+    b.textContent=due>0?due+" due":"caught up";
+    nm.appendChild(info);nm.appendChild(b);
+    row.appendChild(nm);
+    var open=document.createElement("button");open.className="btn small";open.textContent="Open";
+    open.addEventListener("click",function(){openDeck(d.id);});
+    var rev=document.createElement("button");rev.className="btn ghost small";rev.textContent="Review";rev.disabled=(due===0);
+    rev.title=due===0?"Nothing due in this deck right now":"Start review session";
+    rev.addEventListener("click",function(){startReview(d.id,false);});
+    row.appendChild(open);row.appendChild(rev);
+    list.appendChild(row);
+  });
+  var seedBtn=document.createElement("div");seedBtn.style.marginTop="14px";
+  if(!S.seeded){var sb=document.createElement("button");sb.className="btn ghost";sb.textContent="Load sample deck (20 world capitals)";sb.addEventListener("click",function(){seed();renderAll();});seedBtn.appendChild(sb);list.appendChild(seedBtn);}
+  $("srStDecks").textContent=S.decks.length;
+  $("srStCards").textContent=totalCards();
+  $("srStDue").textContent=dueCount();
+  $("srStStreak").textContent=S.streak.count||0;
+  var due=dueCount(),banner=$("srDueBanner");
+  if(due>0){banner.innerHTML='<button class="btn" id="srReviewEverything">Review Everything Due ('+due+' cards)</button>';$("srReviewEverything").addEventListener("click",function(){startReview(null,false);});}
+  else banner.innerHTML='<span style="color:#6b6250">All caught up. Come back tomorrow to keep your streak alive.</span>';
+}
+function renderAll(){renderHome();if(currentDeckId&&!$("srDeck").classList.contains("hidden"))renderDeckDetail();}
+// ---------- DECK DETAIL ----------
+function openDeck(id){currentDeckId=id;renderDeckDetail();show("srDeck");window.scrollTo(0,0);}
+function renderDeckDetail(){
+  var d=findDeck(currentDeckId);if(!d){currentDeckId=null;renderHome();show("srHome");return;}
+  $("srDeckName").textContent=d.name;
+  var mastered=d.cards.filter(function(c){return c.level>=3;}).length;
+  $("srDeckMeta").textContent=d.cards.length+" cards · "+dueInDeck(d).length+" due today · "+mastered+" mastered";
+  $("srRename").value=d.name;
+  var list=$("srCardList");list.innerHTML="";
+  if(d.cards.length===0){list.innerHTML='<p style="color:#6b6250">No cards yet — add your first card above.</p>';return;}
+  d.cards.forEach(function(c){
+    var row=document.createElement("div");row.className="cardrow";
+    var t=document.createElement("div");t.className="term";t.textContent=c.term;row.appendChild(t);
+    var df=document.createElement("div");df.className="def";df.textContent=c.def.length>80?c.def.slice(0,80)+"…":c.def;row.appendChild(df);
+    var dl=document.createElement("div");dl.className="due";
+    var overdue=c.due<todayStr();
+    dl.innerHTML='<span class="badge'+(overdue?" over":(c.due===todayStr()?"":" cal"))+'">L'+(c.level+1)+'</span> '+esc(dueLabel(c));
+    row.appendChild(dl);
+    var ed=document.createElement("button");ed.className="btn ghost small";ed.textContent="Edit";
+    ed.addEventListener("click",function(){$("srTerm").value=c.term;$("srDef").value=c.def;$("srEditId").value=c.id;$("srAddCard").textContent="Save Changes";$("srCancelEdit").classList.remove("hidden");$("srTerm").focus();});
+    var del=document.createElement("button");del.className="btn danger small";del.textContent="Delete";
+    del.addEventListener("click",function(){if(confirm('Delete card "'+c.term+'"?')){d.cards=d.cards.filter(function(x){return x.id!==c.id;});save();renderDeckDetail();renderHome();}});
+    row.appendChild(ed);row.appendChild(del);
+    list.appendChild(row);
+  });
+}
+function addCardFromForm(){
+  hideErr("srCardErr");
+  var d=findDeck(currentDeckId);if(!d){showErr("srCardErr","Open a deck first.");return;}
+  var term=$("srTerm").value.trim(),def=$("srDef").value.trim();
+  if(!term||!def){showErr("srCardErr","Both a term and a definition are required.");return;}
+  var eid=$("srEditId").value;
+  if(eid){for(var i=0;i<d.cards.length;i++)if(d.cards[i].id===eid){d.cards[i].term=term;d.cards[i].def=def;break;}$("srEditId").value="";$("srAddCard").textContent="Add Card";$("srCancelEdit").classList.add("hidden");}
+  else d.cards.push({id:uid(),term:term,def:def,level:0,due:todayStr(),reviews:0});
+  $("srTerm").value="";$("srDef").value="";save();renderDeckDetail();renderHome();$("srTerm").focus();
+}
+function bulkAdd(){
+  hideErr("srCardErr");var m=$("srBulkMsg");m.classList.add("hidden");
+  var d=findDeck(currentDeckId);if(!d){showErr("srCardErr","Open a deck first.");return;}
+  var lines=$("srBulk").value.split("\n"),added=0,skipped=0;
+  lines.forEach(function(ln){
+    var line=ln.trim();if(!line)return;
+    var parts=line.split("|");
+    if(parts.length<2){parts=line.split(/\s+[–—-]\s+/);}
+    if(parts.length<2){skipped++;return;}
+    var term=parts[0].trim(),def=parts.slice(1).join("|").trim();
+    if(!term||!def){skipped++;return;}
+    d.cards.push({id:uid(),term:term,def:def,level:0,due:todayStr(),reviews:0});added++;
+  });
+  $("srBulk").value="";save();renderDeckDetail();renderHome();
+  m.textContent="Added "+added+" card"+(added===1?"":"s")+(skipped?"; skipped "+skipped+" line"+(skipped===1?"":"s")+" (need term | definition)":"")+".";
+  m.classList.remove("hidden");
+}
+// ---------- REVIEW ----------
+var queue=[],qi=0,flipped=false,ratedCount=0,tally={easy:0,good:0,hard:0},sessionDeckLabel="";
+function startReview(deckId,practiceAll){
+  hideErr("srRateErr");ratedCount=0;tally={easy:0,good:0,hard:0};flipped=false;qi=0;
+  if(deckId){var d=findDeck(deckId);if(!d)return;
+    queue=practiceAll?d.cards.slice():dueInDeck(d);
+    sessionDeckLabel=d.name;
+  }else{
+    queue=[];sessionDeckLabel="All decks";
+    S.decks.forEach(function(d){dueInDeck(d).forEach(function(c){c._deck=d.name;queue.push(c);});});
+  }
+  if(queue.length===0){
+    // nothing due: show deck/home with notice
+    if(deckId){openDeck(deckId);showErr("srDeckDetailErr","Nothing is due in this deck right now. Use “Practice All Cards Early” to drill anyway.");}
+    return;
+  }
+  show("srReview");renderFlash();
+}
+function currentCard(){return queue[qi];}
+function renderFlash(){
+  var c=currentCard();if(!c){finishReview();return;}
+  flipped=false;$("srRateRow").classList.add("hidden");
+  $("srFlashSide").textContent="QUESTION";
+  $("srFlashText").textContent=c.term;
+  $("srFlashTap").textContent="Tap to reveal the answer";
+  var label=(sessionDeckLabel?sessionDeckLabel+" · ":"")+"Card "+(qi+1)+" of "+queue.length;
+  $("srRevHead").textContent=label;
+  $("srRevBar").style.width=Math.round(qi/queue.length*100)+"%";
+}
+function flip(){var c=currentCard();if(!c||flipped)return;flipped=true;$("srFlashSide").textContent="ANSWER";$("srFlashText").textContent=c.def;$("srFlashTap").textContent="How well did you know it?";$("srRateRow").classList.remove("hidden");hideErr("srRateErr");}
+function rate(rating){
+  var c=currentCard();if(!c)return;
+  if(!flipped){showErr("srRateErr","Flip the card first — test your recall before rating.");return;}
+  hideErr("srRateErr");
+  schedule(c,rating);tally[rating]++;ratedCount++;
+  save();qi++;renderFlash();
+}
+function touchStreak(){
+  var t=todayStr(),y=addDaysStr(t,-1);
+  if(S.streak.last!==t){S.streak.count=(S.streak.last===y)?(S.streak.count||0)+1:1;S.streak.last=t;save();}
+}
+function finishReview(){
+  $("srRevBar").style.width="100%";
+  if(ratedCount>0)touchStreak();
+  var b=$("srDoneBody");
+  var html='<div class="stats" style="max-width:460px;margin:0 auto 14px">';
+  html+='<div class="stat"><div class="n">'+ratedCount+'</div><div class="l">Reviewed</div></div>';
+  html+='<div class="stat"><div class="n">'+tally.easy+'</div><div class="l">Easy</div></div>';
+  html+='<div class="stat"><div class="n">'+tally.good+'</div><div class="l">Good</div></div>';
+  html+='<div class="stat"><div class="n">'+tally.hard+'</div><div class="l">Hard</div></div></div>';
+  html+='<p style="color:#6b6250">Current streak: <strong style="color:#141210">'+(S.streak.count||0)+' day'+((S.streak.count||0)===1?"":"s")+'</strong>. '+(ratedCount>0?"Hard cards return tomorrow; easy ones take a longer break — that spacing is what locks memory in.":"No cards were rated, so your streak is unchanged.")+'</p>';
+  b.innerHTML=html;
+  show("srDone");renderHome();
+}
+// ---------- events ----------
+$("srAddDeck").addEventListener("click",function(){
+  hideErr("srDeckErr");
+  var name=$("srNewDeckName").value.trim();
+  if(!name){showErr("srDeckErr","Give your deck a name first.");return;}
+  var dup=S.decks.some(function(d){return d.name.toLowerCase()===name.toLowerCase();});
+  if(dup){showErr("srDeckErr","You already have a deck with that name.");return;}
+  var d={id:uid(),name:name,created:todayStr(),cards:[]};
+  S.decks.push(d);save();$("srNewDeckName").value="";renderHome();openDeck(d.id);
+});
+$("srBackHome").addEventListener("click",function(){currentDeckId=null;renderHome();show("srHome");window.scrollTo(0,0);});
+$("srAddCard").addEventListener("click",addCardFromForm);
+$("srCancelEdit").addEventListener("click",function(){$("srEditId").value="";$("srTerm").value="";$("srDef").value="";$("srAddCard").textContent="Add Card";this.classList.add("hidden");});
+$("srBulkAdd").addEventListener("click",bulkAdd);
+$("srStartReview").addEventListener("click",function(){startReview(currentDeckId,false);});
+$("srReviewAll").addEventListener("click",function(){startReview(currentDeckId,true);});
+$("srRenameBtn").addEventListener("click",function(){
+  hideErr("srDeckDetailErr");var d=findDeck(currentDeckId);if(!d)return;
+  var name=$("srRename").value.trim();
+  if(!name){showErr("srDeckDetailErr","Deck name cannot be empty.");return;}
+  var dup=S.decks.some(function(x){return x.id!==d.id&&x.name.toLowerCase()===name.toLowerCase();});
+  if(dup){showErr("srDeckDetailErr","Another deck already uses that name.");return;}
+  d.name=name;save();renderDeckDetail();renderHome();
+});
+$("srDeleteDeck").addEventListener("click",function(){
+  var d=findDeck(currentDeckId);if(!d)return;
+  if(confirm('Delete the deck "'+d.name+'" and its '+d.cards.length+' cards? This cannot be undone.')){
+    S.decks=S.decks.filter(function(x){return x.id!==d.id;});save();currentDeckId=null;renderHome();show("srHome");
+  }
+});
+$("srFlash").addEventListener("click",flip);
+$("srFlash").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();flip();}});
+document.querySelectorAll(".rate").forEach(function(btn){btn.addEventListener("click",function(){rate(btn.getAttribute("data-r"));});});
+$("srQuitReview").addEventListener("click",function(){finishReview();});
+$("srDoneHome").addEventListener("click",function(){currentDeckId=null;renderHome();show("srHome");});
+$("srDoneDeck").addEventListener("click",function(){if(currentDeckId){renderDeckDetail();show("srDeck");}else{renderHome();show("srHome");}});
+// init
+load();if(!S.seeded)seed();renderHome();show("srHome");
+// test hooks (not part of UI)
+window.__srApi={state:function(){return S;},save:save,load:load,renderHome:renderHome,openDeck:openDeck,startReview:startReview,flip:flip,rate:rate,finishReview:finishReview,todayStr:todayStr,addDaysStr:addDaysStr,parseLocal:parseLocal,nextLevel:nextLevel,dueInDeck:dueInDeck,queue:function(){return queue;},findDeck:findDeck};
+})();
+</script>
+</body>
+</html>
