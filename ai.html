@@ -114,6 +114,75 @@ footer.site a:hover{text-decoration:underline}
 </div>
 <p style="margin-top:14px;font-size:.95rem"><b>$4.99/month</b> or <b>$39.99/year</b> (two months free). Built on the wisdom of 859+ Made Simple books by Kimani Upshur, M.Ed. Cancel anytime.</p>
 </div>
+<!-- Made Simple AI chat — GATED. MSAI_ENABLED=false until Kimani approves launch. -->
+<section class="block" id="msai-chat" hidden>
+<h2 class="sec">Chat with Made Simple AI</h2>
+<p class="sec-sub">Ask any faith question. Short, Scripture-rooted answers in the Made Simple style.</p>
+<div id="msai-thread" style="max-width:640px;margin:0 auto 16px;text-align:left"></div>
+<div style="max-width:640px;margin:0 auto;display:flex;gap:8px">
+<input id="msai-input" type="text" placeholder="Ask a faith question…" style="flex:1;padding:12px 16px;font-size:1rem;border:2px solid #c9a227;border-radius:8px" maxlength="2000">
+<button id="msai-send" class="btn" type="button">Ask</button>
+</div>
+<div id="msai-books" style="max-width:640px;margin:16px auto 0;text-align:left"></div>
+<p class="fine" style="max-width:640px;margin:16px auto 0">AI-generated guidance. Always verify with Scripture — not a replacement for pastoral counsel.</p>
+</section>
+<script>
+(function(){
+  // PRODUCTION CONFIG — set by deploy. Stays disabled until Kimani approves launch.
+  var MSAI_ENABLED = false;
+  var MSAI_API_BASE = "https://REPLACE-WITH-RAILWAY-URL"; // e.g. https://made-simple-ai-backend.up.railway.app
+  var SUPABASE_URL = "";   // set at launch
+  var SUPABASE_ANON_KEY = ""; // set at launch (anon key only — safe for browser)
+  if (!MSAI_ENABLED) return;
+  document.getElementById('msai-chat').hidden = false;
+  var thread = document.getElementById('msai-thread');
+  var input = document.getElementById('msai-input');
+  var booksBox = document.getElementById('msai-books');
+  var history = [];
+  function addMsg(role, text) {
+    var d = document.createElement('div');
+    d.style.cssText = 'padding:10px 14px;margin:8px 0;border-radius:8px;line-height:1.5;' +
+      (role === 'user' ? 'background:#f4ecd4;text-align:right' : 'background:#fffdf7;border:1px solid #e5dcc2');
+    d.textContent = text;
+    thread.appendChild(d);
+    thread.scrollTop = thread.scrollHeight;
+  }
+  function showBooks(books) {
+    booksBox.innerHTML = '';
+    (books || []).forEach(function(b) {
+      var a = document.createElement('a');
+      a.href = b.url; a.textContent = b.title; a.target = '_blank'; a.rel = 'noopener';
+      a.style.cssText = 'display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #c9a227;border-radius:8px;text-decoration:none;color:#141210;background:#fffdf7';
+      booksBox.appendChild(a);
+    });
+  }
+  async function ask() {
+    var q = input.value.trim();
+    if (!q) return;
+    input.value = '';
+    addMsg('user', q);
+    addMsg('assistant', '…');
+    try {
+      var headers = { 'Content-Type': 'application/json' };
+      // Supabase magic-link session token goes here at launch:
+      // var token = (await supabaseClient.auth.getSession()).data.session?.access_token;
+      // if (token) headers['Authorization'] = 'Bearer ' + token;
+      var r = await fetch(MSAI_API_BASE + '/chat', {
+        method: 'POST', headers: headers,
+        body: JSON.stringify({ message: q, history: history.slice(-6) })
+      });
+      var data = await r.json();
+      thread.lastChild.textContent = data.answer || data.error || 'Something went wrong. Please try again.';
+      showBooks(data.books);
+      history.push({ role: 'user', text: q }, { role: 'assistant', text: data.answer || '' });
+    } catch (e) {
+      thread.lastChild.textContent = 'Made Simple AI is temporarily unavailable. Please try again shortly.';
+    }
+  }
+  document.getElementById('msai-send').addEventListener('click', ask);
+  input.addEventListener('keydown', function(e){ if (e.key === 'Enter') ask(); });
+})();
+</script>
 <section class="block">
 <h2 class="sec">Go Deeper With the Books</h2>
 <p class="sec-sub">Every answer points back to God's Word — and the Made Simple books that unpack it.</p>
