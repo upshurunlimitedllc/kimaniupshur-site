@@ -101,7 +101,7 @@ let mins=5,secs=5*60,timer=null,breathT=null;
 function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
 function showV(){$('verseShow').innerHTML='&ldquo;'+$('verseSel').value+'&rdquo; (KJV)';}
 $('verseSel').onchange=showV;showV();
-document.querySelectorAll('.tbtn').forEach(b=>b.onclick=()=>{mins=+b.dataset.m;secs=mins*60;$('clock').textContent=fmt(secs);stopAll();});
+document.querySelectorAll('.tbtn').forEach(b=>b.onclick=()=>{mins=+b.dataset.m;secs=mins*60;$('clock').textContent=fmt(secs);stopAll();$('tStart').textContent='Begin';});
 function breathCycle(){
   const el=$('breath');let phase=0;
   const phases=['Breathe in…','Hold…','Breathe out…','Rest in His presence…'];
