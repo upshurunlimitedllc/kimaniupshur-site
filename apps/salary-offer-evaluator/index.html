@@ -168,6 +168,7 @@ var F=["a_name","a_base","a_bonus","a_eq","a_vest","a_match","a_health","a_pto",
 function num(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
 function fmt(x){var neg=x<0;var s=Math.abs(Math.round(x)).toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");return (neg?"-$":"$")+s;}
 function fmtS(x){var neg=x<0;var s=Math.abs(Math.round(x)).toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");return (neg?"\u2212$":"+$")+s;}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
 function save(){try{var o={};F.forEach(function(id){var el=document.getElementById(id);if(el)o[id]=el.value;});
   var fx=[];document.querySelectorAll("#factors input").forEach(function(c,i){if(c.checked)fx.push(i);});o.fx=fx;
   localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
@@ -217,7 +218,7 @@ function render(c){
   document.getElementById("h_b").textContent=c.B.name;
   var gap=Math.abs(Math.round(c.dAdj));
   var pct=c.loser.adj>0?Math.round(100*gap/c.loser.adj):0;
-  document.getElementById("winner").innerHTML=c.winner.name+" wins on money.<small>"+
+  document.getElementById("winner").innerHTML=esc(c.winner.name)+" wins on money.<small>"+
     "Effective compensation, adjusted for cost of living: <strong>"+fmt(c.winner.adj)+"</strong> vs. "+fmt(c.loser.adj)+
     " — a difference of <strong>"+fmt(gap)+"/yr (~"+pct+"%)</strong>. Remember: the table shows <em>effective</em> comp, and the non-money factors below can outweigh a gap like this.</small>";
   var tb=document.querySelector("#cmptable tbody");tb.innerHTML="";
