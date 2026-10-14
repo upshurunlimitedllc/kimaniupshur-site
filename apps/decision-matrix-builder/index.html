@@ -142,10 +142,27 @@ footer.site a{color:#e8c84a;text-decoration:none}
 "use strict";
 var KEY="app-decision-matrix-builder-v1";
 var TIE_EPS=0.01;
-var S={decision:"",options:["",""],criteria:[{name:"",weight:""},{name:"",weight:""}],scores:{},gut:"",offWhat:""};
+var S={decision:"",options:["",""],criteria:[{name:"",weight:""},{name:"",weight:""}],scores:{},gut:"",offWhat:"",optIds:[1,2],critIds:[1,2],nextId:3,v:2};
 
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
-function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}}}catch(e){}}
+function load(){try{var r=localStorage.getItem(KEY);if(!r)return;var o=JSON.parse(r);var legacy=!o.optIds;
+  for(var k in o){if(k in S)S[k]=o[k];}
+  if(legacy){
+    /* Pre-ID saves keyed scores by array position ("oi:ci"). Assign stable IDs and
+       remap every score onto its option/criterion IDs so nothing shifts or is lost. */
+    S.optIds=S.options.map(function(_,i){return i+1;});
+    S.critIds=S.criteria.map(function(_,i){return i+1;});
+    S.nextId=Math.max(S.options.length,S.criteria.length)+1;
+    var remapped={};
+    for(var key in S.scores){var p=key.split(":");var oi=parseInt(p[0],10),ci=parseInt(p[1],10);
+      if(p.length===2&&isFinite(oi)&&isFinite(ci)&&S.optIds[oi]!==undefined&&S.critIds[ci]!==undefined){remapped[S.optIds[oi]+":"+S.critIds[ci]]=S.scores[key];}}
+    S.scores=remapped;S.v=2;save();
+  }else{
+    /* Defensive: keep the ID arrays parallel to the option/criterion lists. */
+    while(S.optIds.length<S.options.length)S.optIds.push(S.nextId++);
+    while(S.critIds.length<S.criteria.length)S.critIds.push(S.nextId++);
+    S.optIds.length=S.options.length;S.critIds.length=S.criteria.length;
+  }}catch(e){}}
 function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function num(v,def){var n=parseFloat(v);return isFinite(n)?n:def;}
 function fmt(n){if(!isFinite(n))return "—";return (Math.round(n*100)/100).toString();}
@@ -160,7 +177,9 @@ function drawOptions(){
     row.appendChild(inp);
     if(S.options.length>2){var rm=document.createElement("button");rm.className="btn danger small rm";rm.textContent="Remove";
       rm.setAttribute("aria-label","Remove option "+(i+1));
-      rm.addEventListener("click",function(){S.options.splice(i,1);save();drawOptions();drawScoreTable();});
+      rm.addEventListener("click",function(){var oid=S.optIds[i];S.options.splice(i,1);S.optIds.splice(i,1);
+        for(var key in S.scores){if(key.split(":")[0]===String(oid))delete S.scores[key];}
+        save();drawOptions();drawScoreTable();});
       row.appendChild(rm);}
     box.appendChild(row);
   });
@@ -179,7 +198,9 @@ function drawCriteria(){
     row.appendChild(inp);row.appendChild(w);
     if(S.criteria.length>1){var rm=document.createElement("button");rm.className="btn danger small rm";rm.textContent="Remove";
       rm.setAttribute("aria-label","Remove criterion "+(i+1));
-      rm.addEventListener("click",function(){S.criteria.splice(i,1);save();drawCriteria();drawScoreTable();});
+      rm.addEventListener("click",function(){var cid=S.critIds[i];S.criteria.splice(i,1);S.critIds.splice(i,1);
+        for(var key in S.scores){if(key.split(":")[1]===String(cid))delete S.scores[key];}
+        save();drawCriteria();drawScoreTable();});
       row.appendChild(rm);}
     box.appendChild(row);
   });
@@ -211,7 +232,7 @@ function drawScoreTable(){
   crits.forEach(function(cn,ci){
     h+='<tr><td class="l">'+esc(cn)+'</td>';
     opts.forEach(function(o,oi){
-      var key=oi+":"+ci;var v=S.scores[key];if(v===undefined)v="";
+      var key=S.optIds[oi]+":"+S.critIds[ci];var v=S.scores[key];if(v===undefined)v="";
       h+='<td><input type="number" step="any" data-key="'+key+'" value="'+esc(v)+'" aria-label="Score for '+esc(o)+' on '+esc(cn)+'"></td>';
     });
     h+='</tr>';
@@ -225,10 +246,10 @@ function drawScoreTable(){
 
 function compute(){
   var errEl=document.getElementById("err");errEl.textContent="";
-  var optNames=S.options.map(function(o){return o.trim();}).filter(function(o){return o;});
+  var opts=S.options.map(function(o,i){return {name:o.trim(),id:S.optIds[i]};}).filter(function(x){return x.name;});
   var critIdx=S.criteria.map(function(c,i){return i;}).filter(function(i){return S.criteria[i].name.trim();});
   if(S.decision.trim()===""){/* decision name optional */}
-  if(optNames.length<2){errEl.textContent="Add at least two named options.";return null;}
+  if(opts.length<2){errEl.textContent="Add at least two named options.";return null;}
   if(critIdx.length<1){errEl.textContent="Add at least one named criterion.";return null;}
   for(var k=0;k<critIdx.length;k++){
     var cw=num(S.criteria[critIdx[k]].weight,NaN);
@@ -239,18 +260,18 @@ function compute(){
   if(sum<=0){errEl.textContent="All weights are zero — the math can't rank anything. Give at least one criterion a positive weight.";return null;}
   var norm=critIdx.map(function(i){return num(S.criteria[i].weight,0)/sum;});
   var totals=[],notes=[];
-  optNames.forEach(function(on,oi){
+  opts.forEach(function(x){
     var t=0,raw=0;
     critIdx.forEach(function(ci,j){
-      var key=oi+":"+ci;var s=num(S.scores[key],0);
-      if(S.scores[key]===undefined||S.scores[key]==="")notes.push("Blank score for \""+on+"\" on \""+S.criteria[ci].name.trim()+"\" counted as 0.");
-      else if(isNaN(num(S.scores[key],NaN))){notes.push("Non-numeric score for \""+on+"\" on \""+S.criteria[ci].name.trim()+"\" counted as 0.");}
+      var key=x.id+":"+S.critIds[ci];var s=num(S.scores[key],0);
+      if(S.scores[key]===undefined||S.scores[key]==="")notes.push("Blank score for \""+x.name+"\" on \""+S.criteria[ci].name.trim()+"\" counted as 0.");
+      else if(isNaN(num(S.scores[key],NaN))){notes.push("Non-numeric score for \""+x.name+"\" on \""+S.criteria[ci].name.trim()+"\" counted as 0.");}
       t+=norm[j]*s;raw+=num(S.criteria[ci].weight,0)*s;
     });
-    totals.push({name:on,total:t,raw:raw,idx:oi});
+    totals.push({name:x.name,total:t,raw:raw,id:x.id});
   });
   totals.sort(function(a,b){return b.total-a.total;});
-  return {optNames:optNames,critIdx:critIdx,norm:norm,totals:totals,notes:notes,sum:sum};
+  return {opts:opts,critIdx:critIdx,norm:norm,totals:totals,notes:notes,sum:sum};
 }
 
 function renderResults(r){
@@ -273,7 +294,7 @@ function renderResults(r){
     var ci=r.critIdx,ns=r.norm;
     var bestJ=0,bestC=-Infinity;
     ci.forEach(function(cidx,j){
-      var sW=num(S.scores[first.idx+":"+cidx],0),sR=num(S.scores[second.idx+":"+cidx],0);
+      var sW=num(S.scores[first.id+":"+S.critIds[cidx]],0),sR=num(S.scores[second.id+":"+S.critIds[cidx]],0);
       var contrib=ns[j]*(sW-sR);
       if(contrib>bestC){bestC=contrib;bestJ=j;}
     });
@@ -289,8 +310,8 @@ function renderResults(r){
     w2[halfIdx]=w2[halfIdx]/2;
     var sum2=w2.reduce(function(a,x){return a+x;},0);
     if(sum2>0){
-      var t2=r.optNames.map(function(on,oi){
-        var t=0;ci.forEach(function(cidx,j){t+=(w2[cidx]/sum2)*num(S.scores[oi+":"+cidx],0);});return {name:on,total:t};
+      var t2=r.opts.map(function(x){
+        var t=0;ci.forEach(function(cidx,j){t+=(w2[cidx]/sum2)*num(S.scores[x.id+":"+S.critIds[cidx]],0);});return {name:x.name,total:t};
       }).sort(function(a,c){return c.total-a.total;});
       if(t2[0].name!==first.name){h+='<div class="flag"><b>Sensitivity check:</b> if '+esc(critName)+' mattered half as much, <b>'+esc(t2[0].name)+'</b> would win instead. Your weights are doing real work here — make sure they reflect what you truly value.</div>';}
       else{h+='<div class="flag good"><b>Sensitivity check:</b> even if '+esc(critName)+' mattered half as much, <b>'+esc(first.name)+'</b> would still win. That\'s a robust result.</div>';}
@@ -309,11 +330,11 @@ function renderResults(r){
 
 document.getElementById("addOpt").addEventListener("click",function(){
   if(S.options.length>=10){document.getElementById("err").textContent="Ten options is the practical limit — if you have more, drop the weakest first.";return;}
-  S.options.push("");save();drawOptions();drawScoreTable();
+  S.options.push("");S.optIds.push(S.nextId++);save();drawOptions();drawScoreTable();
 });
 document.getElementById("addCrit").addEventListener("click",function(){
   if(S.criteria.length>=10){document.getElementById("err").textContent="Ten criteria is the practical limit — merge or drop the least important.";return;}
-  S.criteria.push({name:"",weight:""});save();drawCriteria();drawScoreTable();
+  S.criteria.push({name:"",weight:""});S.critIds.push(S.nextId++);save();drawCriteria();drawScoreTable();
 });
 document.getElementById("compute").addEventListener("click",function(){
   var r=compute();
@@ -322,7 +343,7 @@ document.getElementById("compute").addEventListener("click",function(){
 document.getElementById("reset").addEventListener("click",function(){
   if(!confirm("Clear all saved work for this app and start over?"))return;
   try{localStorage.removeItem(KEY);}catch(e){}
-  S={decision:"",options:["",""],criteria:[{name:"",weight:""},{name:"",weight:""}],scores:{},gut:"",offWhat:""};
+  S={decision:"",options:["",""],criteria:[{name:"",weight:""},{name:"",weight:""}],scores:{},gut:"",offWhat:"",optIds:[1,2],critIds:[1,2],nextId:3,v:2};
   document.getElementById("decision").value="";
   document.getElementById("results").hidden=true;document.getElementById("gutcard").hidden=true;
   document.getElementById("err").textContent="";
