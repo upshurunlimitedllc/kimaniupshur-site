@@ -143,6 +143,12 @@ function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"
 function money0(n){return "$"+Math.round(n).toLocaleString("en-US");}
 function money2(n){return "$"+Number(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
 function monthName(d){return d.toLocaleDateString("en-US",{month:"long",year:"numeric"});}
+function addMonthsClamped(date,months){ // calendar-month addition: same day-of-month, clamped to the target month's last day (Jan 31 + 3 months = Apr 30, never May 1)
+  var total=date.getFullYear()*12+date.getMonth()+months;
+  var ty=Math.floor(total/12),tm=total-ty*12;
+  var last=new Date(ty,tm+1,0).getDate();
+  return new Date(ty,tm,Math.min(date.getDate(),last));
+}
 function annualOf(s){var c=parseFloat(s.cost);if(!isFinite(c)||c<0)return NaN;return c*(FREQ_MULT[s.freq]||0);}
 function costPerUse(s){
   var a=annualOf(s);if(isNaN(a))return null;
@@ -298,7 +304,7 @@ function renderReaudit(){
   var today=new Date();
   var h='<p class="hint">Subscriptions creep back. Check each box after you complete the quarterly re-audit — they save on this device.</p>';
   for(var q=1;q<=4;q++){
-    var d=new Date(today.getFullYear(),today.getMonth()+q*3,today.getDate());
+    var d=addMonthsClamped(today,q*3);
     var key="q"+q;
     var done=!!S.checks[key];
     h+='<div class="checkrow"><input type="checkbox" id="reaudit-'+key+'" '+(done?"checked":"")+' aria-label="Quarter '+q+' re-audit due '+esc(monthName(d))+'">';
