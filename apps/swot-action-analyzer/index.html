@@ -195,9 +195,10 @@ var QUADS=[
  {id:"O",name:"Opportunities",inner:"External — openings you could seize",cls:"O",prompts:["What trends could you ride?","What are competitors ignoring?","What do customers wish someone offered?"]},
  {id:"T",name:"Threats",inner:"External — what could hurt you",cls:"T",prompts:["What could put you out of business?","What are competitors doing that worries you?","What changes in the market could blindside you?"]}
 ];
-var state={items:{S:[],W:[],O:[],T:[]},scores:{},moves:[],selected:[],plan:[{},{},{}]};
+var state={items:{S:[],W:[],O:[],T:[]},scores:{},moves:[],selected:[],plan:{}};
 var nextId=1;
 function nid(){return "i"+(nextId++);}
+function moveId(m){return m.type+":"+((m.a&&m.a.id)||"")+":"+((m.b&&m.b.id)||"");}
 function save(){try{localStorage.setItem(KEY,JSON.stringify({state:state,nextId:nextId}));}catch(e){}}
 function load(){
   try{var s=JSON.parse(localStorage.getItem(KEY));
@@ -205,6 +206,21 @@ function load(){
       Object.keys(state.items).forEach(function(q){
         state.items[q].forEach(function(it){if(typeof it.id==="string"&&it.id[0]==="i"){var n=parseInt(it.id.slice(1),10);if(n>=nextId)nextId=n+1;}});
       });
+      if(!state.moves)state.moves=[];
+      if(!state.selected)state.selected=[];
+      state.moves.forEach(function(m){if(!m.id)m.id=moveId(m);});
+      // Migrate legacy saves: the plan was a positional array aligned with the sorted selection order,
+      // so re-key each entry to the stable identity of the move it was written for.
+      if(Array.isArray(state.plan)){
+        var migrated={};
+        var sortedSel=state.selected.slice().sort(function(a,b){return a-b;});
+        sortedSel.forEach(function(mi,k){
+          var mv=state.moves[mi],pl=state.plan[k];
+          if(mv&&pl&&(pl.first||pl.owner||pl.deadline))migrated[moveId(mv)]=pl;
+        });
+        state.plan=migrated;
+      }
+      if(!state.plan||typeof state.plan!=="object")state.plan={};
       return true;}}catch(e){}
   return false;
 }
@@ -333,7 +349,7 @@ function generateMoves(){
     as.forEach(function(a){
       bs.forEach(function(b){
         var sa=scoreOf(a.id),sb=scoreOf(b.id);
-        moves.push({type:p[2],a:a,b:b,combo:sa+sb,prod:sa*sb,
+        moves.push({id:p[2]+":"+a.id+":"+b.id,type:p[2],a:a,b:b,combo:sa+sb,prod:sa*sb,
           text:MOVE_TYPES[p[2]].tpl(a.text,b.text),
           firstHint:MOVE_TYPES[p[2]].first});
       });
@@ -381,7 +397,7 @@ function renderPlan(){
   var list=$("planlist");list.innerHTML="";
   state.selected.slice().sort(function(a,b){return a-b;}).forEach(function(mi,k){
     var m=state.moves[mi];
-    var p=state.plan[k]||{};
+    var p=state.plan[m.id]||{};
     var d=document.createElement("div");d.className="planblock";
     d.innerHTML='<h4></h4><div class="pm"></div>';
     d.querySelector("h4").textContent="Action "+(k+1)+": "+m.text;
@@ -395,7 +411,10 @@ function renderPlan(){
       inp.setAttribute("aria-label",f[1]);
       if(f[0]==="first")inp.placeholder="e.g. Email three past clients for referrals by Friday";
       if(f[0]==="owner")inp.placeholder="e.g. Me / Jordan / the team";
-      inp.addEventListener("input",function(){state.plan[k][f[0]]=inp.value;save();});
+      inp.addEventListener("input",function(){
+        if(!state.plan[m.id])state.plan[m.id]={};
+        state.plan[m.id][f[0]]=inp.value;save();
+      });
       lab.appendChild(inp);d.appendChild(lab);
     });
     list.appendChild(d);
@@ -418,7 +437,7 @@ function renderSummary(){
   });
   var a=$("sumactions");a.innerHTML="<h3 style='font-family:Georgia,serif;font-size:1.25rem;margin-bottom:6px'>Top 3 Strategic Actions</h3>";
   state.selected.slice().sort(function(x,y){return x-y;}).forEach(function(mi,k){
-    var m=state.moves[mi],p=state.plan[k]||{};
+    var m=state.moves[mi],p=state.plan[m.id]||{};
     var d=document.createElement("div");d.className="actrow";
     d.innerHTML="<h4></h4><p style='font-size:.9rem;color:#6b6250'></p><div class='meta'></div>";
     d.querySelector("h4").textContent=(k+1)+". "+m.text;
@@ -459,7 +478,7 @@ $("back3").addEventListener("click",function(){show(3);});
 $("finish").addEventListener("click",function(){
   var missing=[];
   state.selected.slice().sort(function(a,b){return a-b;}).forEach(function(mi,k){
-    var p=state.plan[k]||{};
+    var p=state.plan[state.moves[mi].id]||{};
     if(!p.first||!p.first.trim())missing.push("Action "+(k+1)+" first step");
     if(!p.owner||!p.owner.trim())missing.push("Action "+(k+1)+" owner");
     if(!p.deadline)missing.push("Action "+(k+1)+" deadline");
@@ -471,7 +490,7 @@ $("back4").addEventListener("click",function(){show(4);});
 $("printbtn").addEventListener("click",function(){window.print();});
 function hardReset(){
   if(!confirm("Start a new analysis? Everything will be cleared."))return;
-  state={items:{S:[],W:[],O:[],T:[]},scores:{},moves:[],selected:[],plan:[{},{},{}]};
+  state={items:{S:[],W:[],O:[],T:[]},scores:{},moves:[],selected:[],plan:{}};
   save();renderQuads();show(1);
 }
 $("reset1").addEventListener("click",hardReset);
