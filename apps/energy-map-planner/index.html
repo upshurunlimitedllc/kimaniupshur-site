@@ -113,6 +113,7 @@ footer.site a{color:#e8c84a;text-decoration:none}
 <button class="btn small ghost" id="printbtn" type="button">Print schedule</button>
 </div>
 <div id="assignments"></div>
+<p class="err" id="assignerr" role="alert"></p>
 <div id="schedulewrap" style="overflow-x:auto"><table class="sched" id="schedule" aria-label="Weekly energy-mapped schedule"></table></div>
 <h3 style="font-family:Georgia,serif;margin-top:26px">Protect Your Peaks — rules for your week</h3>
 <div id="rules"></div>
@@ -160,10 +161,35 @@ var CHRONO={
  lark:{name:"Morning Lark",peak:"Morning",rule:"Guard your mornings: schedule nothing social or shallow before 10 AM. Do your hardest thinking before lunch, and wind down early — your evenings are for rest, not decisions."},
  bear:{name:"Daytime Bear",peak:"Afternoon",rule:"Your sweet spot is late morning through mid-afternoon. Protect 10 AM–3 PM for hard work, keep mornings warm-up, and stop demanding sharpness after dinner."},
  owl:{name:"Night Owl",peak:"Evening",rule:"Your brain wakes up late. Protect your afternoons and evenings for hard work, keep mornings mechanical, and resist judging yourself against 5 AM routines."}};
-var state={step:1,quiz:[null,null,null,null,null],ratings:{m:3,a:3,e:3},weekend:true,tasks:[],assign:{},auto:true};
+var state={step:1,quiz:[null,null,null,null,null],ratings:{m:3,a:3,e:3},weekend:true,tasks:[],assign:{},auto:true,nextTaskId:1};
 
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
-function load(){try{var s=localStorage.getItem(KEY);if(s){var p=JSON.parse(s);if(p&&typeof p==="object")state=p;}}catch(e){}}
+function load(){
+  try{var s=localStorage.getItem(KEY);if(s){var p=JSON.parse(s);if(p&&typeof p==="object")state=p;}}catch(e){}
+  if(!state.tasks)state.tasks=[];
+  if(!state.assign)state.assign={};
+  // Migrate legacy saves: tasks had no ids and assignments were keyed by task position.
+  var legacy=state.tasks.some(function(t){return typeof t.id!=="number";});
+  if(legacy){
+    var mx=0;
+    state.tasks.forEach(function(t){if(typeof t.id==="number"&&t.id>mx)mx=t.id;});
+    state.tasks.forEach(function(t){if(typeof t.id!=="number")t.id=++mx;});
+    var remapped={};
+    Object.keys(state.assign).forEach(function(k){
+      var t=state.tasks[parseInt(k,10)];
+      if(t)remapped[t.id]=state.assign[k];
+    });
+    state.assign=remapped;
+  }
+  var maxId=0;
+  state.tasks.forEach(function(t){if(typeof t.id==="number"&&t.id>maxId)maxId=t.id;});
+  if(typeof state.nextTaskId!=="number"||state.nextTaskId<=maxId)state.nextTaskId=maxId+1;
+  // Drop assignments that point at tasks which no longer exist.
+  var ids={};
+  state.tasks.forEach(function(t){ids[t.id]=true;});
+  Object.keys(state.assign).forEach(function(k){if(!ids[k])delete state.assign[k];});
+  if(legacy)save();
+}
 
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 
@@ -240,11 +266,10 @@ function drawTasks(){
     DIFFS.forEach(function(d){var o=document.createElement("option");o.value=d;o.textContent=d;if(t.diff===d)o.selected=true;sel.appendChild(o);});
     sel.addEventListener("change",function(){t.diff=sel.value;save();});
     var del=document.createElement("button");del.type="button";del.className="btn small ghost";del.textContent="Remove";
-    del.addEventListener("click",function(){state.tasks.splice(i,1);delete state.assign[i];renumberAssign();save();drawTasks();});
+    del.addEventListener("click",function(){state.tasks.splice(i,1);delete state.assign[t.id];save();drawTasks();});
     row.appendChild(inp);row.appendChild(sel);row.appendChild(del);w.appendChild(row);
   });
 }
-function renumberAssign(){ /* assignments keyed by task name; nothing to renumber */ }
 
 function autoPlace(){
   var cls=classify(),days=activeDays(),slots={Peak:[],Steady:[],Low:[]};
@@ -254,40 +279,75 @@ function autoPlace(){
     return DIFFS.indexOf(state.tasks[x].diff)-DIFFS.indexOf(state.tasks[y].diff);
   });
   order.forEach(function(i){
-    var want=map[state.tasks[i].diff]||"Steady",placed=false;
+    var t=state.tasks[i];
+    var want=map[t.diff]||"Steady",placed=false;
     var pref=[want].concat(["Peak","Steady","Low"].filter(function(x){return x!==want;}));
     for(var k=0;k<pref.length&&!placed;k++){
       for(var s=0;s<slots[pref[k]].length;s++){
-        if(!used[slots[pref[k]][s]]){used[slots[pref[k]][s]]=true;a[i]=slots[pref[k]][s];placed=true;break;}
+        if(!used[slots[pref[k]][s]]){used[slots[pref[k]][s]]=true;a[t.id]=slots[pref[k]][s];placed=true;break;}
       }
     }
-    if(!placed)a[i]=days[0]+"|"+BLOCKS[0][0];
+    // No free slot anywhere: leave the task unplaced (Step 4 flags it) instead of double-booking a slot.
   });
   state.assign=a;state.auto=true;save();
 }
 
+function blockName(code){var f=BLOCKS.filter(function(b){return b[0]===code;});return f.length?f[0][1]:code;}
+function flagAssignIssues(extra){
+  var e=document.getElementById("assignerr");if(!e)return;
+  var msgs=[];
+  if(extra)msgs.push(extra);
+  var bySlot={};
+  state.tasks.forEach(function(t){
+    var a=state.assign[t.id];
+    if(a){if(!bySlot[a])bySlot[a]=[];bySlot[a].push(t.name||"(untitled task)");}
+  });
+  Object.keys(bySlot).forEach(function(slot){
+    if(bySlot[slot].length>1){
+      var parts=slot.split("|");
+      msgs.push("⚠ "+bySlot[slot].map(function(n){return "\""+n+"\"";}).join(" and ")+" share "+slotLabel(parts[0],blockName(parts[1]))+" — each slot holds one task. Move one to a free slot.");
+    }
+  });
+  var unplaced=state.tasks.filter(function(t){return !state.assign[t.id];});
+  if(unplaced.length)msgs.push("⚠ Not placed: "+unplaced.map(function(t){return "\""+(t.name||"untitled")+"\"";}).join(", ")+" — pick a free slot for each, or remove a task (slots run out when tasks outnumber day blocks).");
+  e.textContent=msgs.join(" ");
+}
 function drawAssign(){
   var w=document.getElementById("assignments");w.innerHTML="";
   var cls=classify(),days=activeDays();
-  var opts=[];
+  var opts=[{v:"",l:"(not placed)"}];
   days.forEach(function(d){BLOCKS.forEach(function(b){opts.push({v:d+"|"+b[0],l:d+" · "+b[1]+" ("+cls[b[0]]+")"});});});
-  if(state.tasks.length===0){w.innerHTML="<p class='muted'>Add tasks in Step 3 to place them.</p>";drawSchedule();drawRules();return;}
-  state.tasks.forEach(function(t,i){
+  if(state.tasks.length===0){w.innerHTML="<p class='muted'>Add tasks in Step 3 to place them.</p>";drawSchedule();drawRules();flagAssignIssues();return;}
+  state.tasks.forEach(function(t){
     var row=document.createElement("div");row.className="taskrow";
     var lab=document.createElement("span");lab.style.minWidth="180px";lab.style.fontWeight="bold";
     lab.innerHTML=esc(t.name||"(untitled task)")+" <span class='chip'>"+esc(t.diff)+"</span>";
     var sel=document.createElement("select");sel.setAttribute("aria-label","Placement for "+(t.name||"task"));
-    opts.forEach(function(o){var op=document.createElement("option");op.value=o.v;op.textContent=o.l;if(state.assign[i]===o.v)op.selected=true;sel.appendChild(op);});
-    (function(idx){sel.addEventListener("change",function(){state.assign[idx]=sel.value;state.auto=false;save();drawSchedule();drawRules();});})(i);
+    opts.forEach(function(o){var op=document.createElement("option");op.value=o.v;op.textContent=o.l;if((state.assign[t.id]||"")===o.v)op.selected=true;sel.appendChild(op);});
+    sel.addEventListener("change",function(){
+      var v=sel.value;
+      if(v){
+        var other=null;
+        state.tasks.forEach(function(x){if(x.id!==t.id&&state.assign[x.id]===v)other=x;});
+        if(other){
+          sel.value=state.assign[t.id]||"";
+          var parts=v.split("|");
+          flagAssignIssues("⚠ "+slotLabel(parts[0],blockName(parts[1]))+" is already taken by \""+(other.name||"another task")+"\" — each slot holds one task. Pick a free slot.");
+          return;
+        }
+      }
+      if(v)state.assign[t.id]=v;else delete state.assign[t.id];
+      state.auto=false;save();drawSchedule();drawRules();flagAssignIssues();
+    });
     row.appendChild(lab);row.appendChild(sel);w.appendChild(row);
   });
-  drawSchedule();drawRules();
+  drawSchedule();drawRules();flagAssignIssues();
 }
 function drawSchedule(){
   var tbl=document.getElementById("schedule"),cls=classify(),days=activeDays();
   var bySlot={};
-  state.tasks.forEach(function(t,i){
-    var a=state.assign[i];if(!a)return;
+  state.tasks.forEach(function(t){
+    var a=state.assign[t.id];if(!a)return;
     if(!bySlot[a])bySlot[a]=[];
     bySlot[a].push(t);
   });
@@ -353,14 +413,14 @@ document.getElementById("nextbtn").addEventListener("click",function(){
   go(state.step+1);
 });
 document.getElementById("backbtn").addEventListener("click",function(){go(state.step-1);});
-document.getElementById("addtask").addEventListener("click",function(){state.tasks.push({name:"",diff:"Medium"});save();drawTasks();});
+document.getElementById("addtask").addEventListener("click",function(){state.tasks.push({id:state.nextTaskId++,name:"",diff:"Medium"});save();drawTasks();});
 document.getElementById("autoplace").addEventListener("click",function(){autoPlace();drawAssign();});
 document.getElementById("weekend").addEventListener("change",function(){state.weekend=this.checked;save();showTemplateMsg();});
 document.getElementById("printbtn").addEventListener("click",function(){if(window.print)window.print();});
 document.getElementById("resetbtn").addEventListener("click",function(){
   if(confirm("Start over? This clears your quiz, ratings, tasks, and schedule.")){
     try{localStorage.removeItem(KEY);}catch(e){}
-    state={step:1,quiz:[null,null,null,null,null],ratings:{m:3,a:3,e:3},weekend:true,tasks:[],assign:{},auto:true};
+    state={step:1,quiz:[null,null,null,null,null],ratings:{m:3,a:3,e:3},weekend:true,tasks:[],assign:{},auto:true,nextTaskId:1};
     drawQuiz();go(1);
   }
 });
