@@ -91,7 +91,7 @@ function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){re
 function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
 (function(){
-  var v=GVERSES[Math.floor(Date.now()/86400000)%GVERSES.length];
+  var _ld=new Date();var v=GVERSES[Math.floor(Date.UTC(_ld.getFullYear(),_ld.getMonth(),_ld.getDate())/86400000)%GVERSES.length];
   document.getElementById("gverse").innerHTML="<p style='font-style:italic'>&ldquo;"+v[1]+"&rdquo;</p><p style='font-weight:bold;margin-top:6px;color:#8a6d1c'>"+v[0]+" (KJV)</p>";
 })();
 function render(){
