@@ -122,8 +122,9 @@ startIn.value=st.start;
 function dayNum(){
   if(!st.start)return 1;
   var s=new Date(st.start+"T12:00:00");if(isNaN(s))return 1;
-  var n=new Date();n.setHours(12,0,0,0);
-  return Math.min(Math.max(Math.floor((n-s)/86400000)+1,1),TOTAL);
+  var n=new Date();
+  var diff=Math.round((Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())-Date.UTC(s.getFullYear(),s.getMonth(),s.getDate()))/86400000);
+  return Math.min(Math.max(diff+1,1),TOTAL);
 }
 var view=null;
 function render(){
