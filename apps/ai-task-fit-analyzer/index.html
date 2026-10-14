@@ -159,7 +159,7 @@ function pillFor(band,label){
   var s=document.createElement("span");s.className="pill "+band;
   s.textContent=label||WORKFLOWS[band].label;return s;
 }
-function fitScoreOf(risk){return Math.round(100*(30-risk)/24);}
+function fitScoreOf(risk){return Math.max(0,Math.min(100,Math.round(100*(30-risk)/24)));}
 function renderFactors(){
   var box=document.getElementById("factors");box.innerHTML="";
   FACTORS.forEach(function(f,i){
@@ -173,7 +173,7 @@ function renderFactors(){
       r.type="radio";r.name="fac"+i;r.value=String(v+1);r.id="fac"+i+"v"+v;
       lab.appendChild(r);
       var sp=document.createElement("span");sp.textContent=(v+1)+" \u2014 "+lbl;lab.appendChild(sp);
-      r.addEventListener("change",function(){updateSel(i);save();});
+      r.addEventListener("change",function(){updateSel(i);save();refreshIfShown();});
       lab.insertBefore(r,sp);
       s.appendChild(lab);
     });
@@ -216,6 +216,18 @@ function doAnalyze(){
   var ratings=getRatings();
   if(ratings.some(function(r){return r===0;})){alert("Please rate all six factors before analyzing.");return;}
   save();
+  renderResult();
+  document.getElementById("resultCard").classList.remove("hidden");
+  document.getElementById("resultCard").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function refreshIfShown(){
+  if(document.getElementById("resultCard").classList.contains("hidden"))return;
+  var ratings=getRatings();
+  if(ratings.some(function(r){return r===0;}))return;
+  renderResult();
+}
+function renderResult(){
+  var ratings=getRatings();
   var risk=ratings.reduce(function(a,b){return a+b;},0);
   var band=bandOf(risk),wf=WORKFLOWS[band];
   document.getElementById("fitScore").textContent=fitScoreOf(risk)+" / 100";
@@ -237,8 +249,6 @@ function doAnalyze(){
     li.appendChild(document.createTextNode(" \u2014 "+FACTORS[x.i].guide));
     rl.appendChild(li);
   });
-  document.getElementById("resultCard").classList.remove("hidden");
-  document.getElementById("resultCard").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderRedFlags(){
   var ul=document.getElementById("redFlags");ul.innerHTML="";
@@ -254,14 +264,14 @@ function renderLibrary(){
     var b=document.createElement("button");b.className="btn ghost mini";b.textContent="Analyze";
     b.addEventListener("click",function(){
       document.getElementById("taskDesc").value=row[0];
-      save();
+      save();refreshIfShown();
       document.getElementById("taskDesc").scrollIntoView({behavior:"smooth",block:"start"});
       document.getElementById("taskDesc").focus();
     });
     td2.appendChild(b);tr.appendChild(td2);tb.appendChild(tr);
   });
 }
-document.getElementById("taskDesc").addEventListener("input",save);
+document.getElementById("taskDesc").addEventListener("input",function(){save();refreshIfShown();});
 document.getElementById("analyzeBtn").addEventListener("click",doAnalyze);
 document.getElementById("printBtn").addEventListener("click",function(){if(typeof window.print==="function")window.print();});
 document.getElementById("resetBtn").addEventListener("click",function(){
