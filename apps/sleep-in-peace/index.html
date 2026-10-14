@@ -147,7 +147,7 @@ $("bstart").addEventListener("click",function(){
   if(count>=30){$("breath").textContent="Amen";$("phase").textContent="Sleep in peace. The LORD watches over you.";return}
   const p=PHASES[step%3];
   $("breath").textContent=p[0];$("breath").style.transform="scale("+p[1]+")";
-  $("phase").textContent=p[0]+"... ("+Math.floor(count/3)+1+" of 10 rounds)";
+  $("phase").textContent=p[0]+"... ("+(Math.floor(count/3)+1)+" of 10 rounds)";
   step++;count++;
   timer=setTimeout(next,4000);
  }
