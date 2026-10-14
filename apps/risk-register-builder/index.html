@@ -272,7 +272,13 @@ function drawMits(ranked){
   });
 }
 function finalize(){
-  var ranked=validRisks().map(function(r){var s=score(r);return {r:r,s:s,lv:level(s)};})
+  var err=document.getElementById("err");err.textContent="";
+  var named=validRisks();
+  if(named.length===0){err.textContent="Add at least one risk with a description.";return;}
+  for(var k=0;k<named.length;k++){
+    if(score(named[k])==null){err.textContent="Risk \""+(named[k].desc.trim().slice(0,40))+"…\" is missing a likelihood or impact rating. Rate all risks 1–5.";if(err.scrollIntoView)err.scrollIntoView({behavior:"smooth",block:"center"});return;}
+  }
+  var ranked=named.map(function(r){var s=score(r);return {r:r,s:s,lv:level(s)};})
     .sort(function(a,b){return b.s-a.s||b.r.i-a.r.i||(a.r.desc<b.r.desc?-1:1);});
   var missing=ranked.filter(function(x){return (x.lv.cls==="p-crit"||x.lv.cls==="p-high")&&(!x.r.mit.trim()||!x.r.owner.trim()||!x.r.warn.trim());});
   var b=document.getElementById("finalBody");
