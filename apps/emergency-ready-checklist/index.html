@@ -207,8 +207,9 @@ function drawProgress(){
 }
 function drawRefresh(){
   if(state.lastRefresh){
-    var d=new Date(state.lastRefresh),now=new Date();
-    var days=Math.floor((now-d)/86400000);
+    var _rp=String(state.lastRefresh).split("-"),now=new Date();
+    var days=Math.round((Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())-Date.UTC(+_rp[0],+_rp[1]-1,+_rp[2]))/86400000);
+    if(!(days>=0))days=0;
     var label=state.lastRefresh+" ("+days+(days===1?" day":" days")+" ago"+(days>180?" — overdue, time to refresh":"")+")";
     document.getElementById("last-refresh").textContent=label;
   }else{document.getElementById("last-refresh").textContent="never — mark one when your kit is packed";}
