@@ -272,8 +272,11 @@ function renderPlan(){
   var validKeys={};
   sess.forEach(function(s){var sk=sessionKey(s);CHECKS.forEach(function(c,ci){validKeys[sk+"c"+ci]=1;});});
   function updateTotals(){
-    var d=0,t=0;
-    Object.keys(state.checks).forEach(function(k){if(!validKeys[k])return;t++;if(state.checks[k])d++;});
+    // Completion is a share of the WHOLE plan: the denominator is every check
+    // the current plan renders (validKeys), never just the keys present in
+    // state.checks — dividing by touched keys showed 100% after one check.
+    var d=0,t=Object.keys(validKeys).length;
+    Object.keys(validKeys).forEach(function(k){if(state.checks[k])d++;});
     $("tDone").textContent=(t>0?Math.round(d/t*100):0)+"%";
     var sdivs=wrap.querySelectorAll(".sess");
     sdivs.forEach(function(sd,i2){
