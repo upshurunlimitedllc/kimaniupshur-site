@@ -101,10 +101,15 @@ var DEVS=[
 var KEY="app-daily-devotional-v1";
 var offset=0;
 try{offset=parseInt(localStorage.getItem(KEY))||0;}catch(e){offset=0;}
+function dayOfYear(d){
+  // Day of year from the LOCAL CALENDAR DATE via UTC date math.
+  // Elapsed-millisecond division breaks across DST transitions (23/25-hour days),
+  // which rolled the devotion to the wrong day; calendar dates never shift.
+  return Math.round((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-Date.UTC(d.getFullYear(),0,0))/86400000);
+}
 function dayIndex(off){
   var d=new Date(); d.setDate(d.getDate()+off);
-  var start=new Date(d.getFullYear(),0,0);
-  var doy=Math.floor((d-start)/86400000);
+  var doy=dayOfYear(d);
   return {idx:((doy%DEVS.length)+DEVS.length)%DEVS.length, date:d};
 }
 function render(){
