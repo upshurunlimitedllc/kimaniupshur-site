@@ -96,10 +96,10 @@ footer.site a{color:#e8c84a;text-decoration:none}
 <div class="twrap" id="compare"></div>
 <h3 style="font-family:Georgia,serif;margin:18px 0 6px">Assumptions behind these numbers</h3>
 <ul class="note" style="margin-left:22px">
-<li>Monthly payment uses standard fixed-rate amortization: payment = principal × r(1+r)<sup>n</sup> ÷ ((1+r)<sup>n</sup> − 1), with r = APR ÷ 12.</li>
-<li>Upfront fees are treated as paid out of pocket (not rolled into the loan). If your lender rolls fees into the balance, the true cost is higher than shown.</li>
+<li>Monthly payment uses standard fixed-rate amortization: payment = principal × r(1+r)<sup>n</sup> ÷ ((1+r)<sup>n</sup> − 1), with r = APR ÷ 12. Payments are modeled at the end of each month.</li>
+<li>Upfront fees are treated as paid out of pocket at signing (not rolled into the loan) and are added once to the total cost. If your lender rolls fees into the balance, the true cost is higher than shown.</li>
 <li>On-time payments, no extra payments, no late fees, no rate changes (except the variable-rate shock illustration).</li>
-<li>A balloon payment is modeled as an extra lump sum due at the stated month, on top of the regular schedule — a conservative simplification; the real structure may differ.</li>
+<li><b>Balloon loans:</b> the monthly payment is sized so the balance falls to exactly the balloon amount by the balloon month — payment = (principal − balloon ÷ (1+r)<sup>k</sup>) × r ÷ (1 − (1+r)<sup>−k</sup>), with k = the balloon month. The balloon is paid together with that month's regular payment and the loan ends there; any later term months are not charged. The balloon is counted exactly once — it is NOT added on top of a fully-amortizing payment (that would count the same principal twice). A balloon equal to the full loan amount means interest-only payments until the balloon month.</li>
 <li>The verdict weighs only what you entered. A "signable" verdict is not approval — read the full agreement.</li>
 </ul>
 <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
@@ -152,6 +152,18 @@ function monthlyPayment(L,aprPct,n){
   var r=aprPct/1200;
   var f=Math.pow(1+r,n);
   return L*r*f/(f-1);
+}
+/* Balloon loan: the monthly payment is sized so the balance falls to exactly
+   the balloon amount B after k payments (k = the balloon month, when the loan
+   ends). PMT = (L - B/(1+r)^k) * r / (1 - (1+r)^-k). B=0 reduces exactly to
+   monthlyPayment(); B=L gives interest-only payments (L*r). */
+function balloonPayment(L,aprPct,k,B){
+  if(k<=0)return NaN;
+  if(B<=0)return monthlyPayment(L,aprPct,k);
+  if(aprPct<=0)return (L-B)/k;
+  var r=aprPct/1200;
+  var vn=Math.pow(1+r,-k);
+  return (L-B*vn)*r/(1-vn);
 }
 
 var CLAUSES=[
@@ -244,22 +256,31 @@ function decodeOffer(o){
     balloonAmt=strictNum(o.balloonAmt);balloonMo=strictNum(o.balloonMo);
     if(isNaN(balloonAmt)||balloonAmt<0)errs.push("balloon amount must be 0 or higher");
     if(isNaN(balloonMo)||balloonMo<=0||Math.round(balloonMo)!==balloonMo)errs.push("balloon due month must be a whole month number");
+    if(!isNaN(balloonAmt)&&!isNaN(L)&&balloonAmt>L)errs.push("balloon amount can't exceed the loan amount — a bigger balloon means the balance grows (negative amortization), which this tool doesn't model");
+    if(!isNaN(balloonMo)&&!isNaN(n)&&balloonMo>n)errs.push("balloon due month can't be later than the term — the loan ends at the term");
   }
   var capRate=NaN;
   if(o.variable){var cr=String(o.cap||"").trim();capRate=cr===""?NaN:strictNum(cr);if(!isNaN(capRate)&&(capRate<0||capRate>1000))errs.push("rate cap looks unrealistic");}
   if(errs.length)return{ok:false,errs:errs};
   n=Math.round(n);
-  var mo=monthlyPayment(L,apr,n);
-  var total=mo*n,interest=total-L;
-  var trueCost=total+fees+(o.balloon?balloonAmt:0);
+  /* Balloon model: when a balloon is due, the loan ENDS at the balloon month.
+     The monthly payment amortizes the balance down TO the balloon amount (it
+     is NOT a fully-amortizing payment with the balloon added on top — that
+     would count the balloon principal twice). The balloon is paid together
+     with the final monthly payment. */
+  var hasBalloon=o.balloon&&balloonAmt>0;
+  var nPay=hasBalloon?Math.round(balloonMo):n;
+  var mo=hasBalloon?balloonPayment(L,apr,nPay,balloonAmt):monthlyPayment(L,apr,n);
+  var total=mo*nPay+(hasBalloon?balloonAmt:0),interest=total-L;
+  var trueCost=total+fees;
   var per1k=L>0?trueCost/(L/1000):NaN;
   var flags=[];
-  if(o.balloon&&balloonAmt>0)flags.push({sev:"red",t:"Balloon payment",d:"You owe "+money(balloonAmt)+" in ONE lump sum at month "+Math.round(balloonMo)+". Miss it and you face default or forced refinancing."});
+  if(o.balloon&&balloonAmt>0)flags.push({sev:"red",t:"Balloon payment",d:"You owe "+money(balloonAmt)+" in ONE lump sum at month "+Math.round(balloonMo)+", together with that month's regular payment — and your monthly payments until then are lower because they only amortize the balance down to the balloon. Miss it and you face default or forced refinancing."});
   if(apr>36)flags.push({sev:"red",t:"Very high APR ("+apr+"%)",d:"Above 36% is widely considered predatory territory. The interest alone may exceed what you borrow."});
   if(o.penaltyApr)flags.push({sev:"red",t:"Penalty APR clause",d:"One late payment can permanently raise your rate — often to ~30% — repricing the entire remaining loan."});
   if(o.variable&&isNaN(capRate))flags.push({sev:"amber",t:"Variable rate with no cap",d:"Payments can rise without limit. Ask for the lifetime cap in writing — 'no cap' means no ceiling."});
   if(o.variable&&!isNaN(capRate)&&capRate>apr){
-    var moCap=monthlyPayment(L,capRate,n);
+    var moCap=hasBalloon?balloonPayment(L,capRate,nPay,balloonAmt):monthlyPayment(L,capRate,n);
     flags.push({sev:"amber",t:"Variable rate (cap "+capRate+"%)",d:"If rates rise to the cap, your payment jumps from "+money(mo)+" to "+money(moCap)+" (+"+money(moCap-mo)+"/mo). Budget for the cap, not the teaser rate."});
   }
   if(o.prepay)flags.push({sev:"amber",t:"Prepayment penalty",d:"Paying off early or refinancing triggers a fee — your escape hatch has a toll."});
@@ -269,9 +290,9 @@ function decodeOffer(o){
   var reds=flags.filter(function(f){return f.sev==="red";}).length;
   var ambers=flags.filter(function(f){return f.sev==="amber";}).length;
   var verdict=reds>0?["walk","WALK AWAY"]:ambers>0?["neg","NEGOTIATE"]:["sign","LOOKS SIGNABLE"];
-  return{ok:true,L:L,apr:apr,n:n,fees:fees,mo:mo,total:total,interest:interest,trueCost:trueCost,per1k:per1k,
+  return{ok:true,L:L,apr:apr,n:n,nPay:nPay,fees:fees,mo:mo,total:total,interest:interest,trueCost:trueCost,per1k:per1k,
     flags:flags,reds:reds,ambers:ambers,verdict:verdict,balloonAmt:o.balloon?balloonAmt:0,balloonMo:o.balloon?Math.round(balloonMo):0,
-    varShock:(o.variable&&!isNaN(capRate)&&capRate>apr)?monthlyPayment(L,capRate,n)-mo:null};
+    varShock:(o.variable&&!isNaN(capRate)&&capRate>apr)?(hasBalloon?balloonPayment(L,capRate,nPay,balloonAmt):monthlyPayment(L,capRate,n))-mo:null};
 }
 
 function decodeAll(){
@@ -289,11 +310,19 @@ function decodeAll(){
     }
     var h='<div style="border-top:2px solid #e0d6b8;margin-top:14px;padding-top:10px">';
     h+='<p style="font-size:1.25rem"><b>True total cost: '+money(r.trueCost)+'</b></p>';
-    h+='<p class="note">Monthly payment '+money(r.mo)+' × '+r.n+' months = '+money(r.total)+
-       ' &nbsp;·&nbsp; Total interest '+money(r.interest)+
-       ' &nbsp;·&nbsp; Fees '+money(r.fees)+
-       (r.balloonAmt>0?' &nbsp;·&nbsp; Balloon '+money(r.balloonAmt)+' at month '+r.balloonMo:'')+
-       '<br>You pay <b>'+money(r.per1k)+'</b> for every $1,000 borrowed.</p>';
+    if(r.balloonAmt>0){
+      h+='<p class="note">Monthly payment '+money(r.mo)+' × '+r.nPay+' months = '+money(r.mo*r.nPay)+
+         ' &nbsp;·&nbsp; plus the '+money(r.balloonAmt)+' balloon paid with the final payment at month '+r.balloonMo+' = '+money(r.total)+' in loan payments'+
+         ' &nbsp;·&nbsp; Total interest '+money(r.interest)+
+         ' &nbsp;·&nbsp; Fees '+money(r.fees)+
+         '<br>The monthly payment is lower than a fully-amortizing loan because it only pays the balance down to the balloon — the balloon itself is counted once, above.'+
+         '<br>You pay <b>'+money(r.per1k)+'</b> for every $1,000 borrowed.</p>';
+    }else{
+      h+='<p class="note">Monthly payment '+money(r.mo)+' × '+r.n+' months = '+money(r.total)+
+         ' &nbsp;·&nbsp; Total interest '+money(r.interest)+
+         ' &nbsp;·&nbsp; Fees '+money(r.fees)+
+         '<br>You pay <b>'+money(r.per1k)+'</b> for every $1,000 borrowed.</p>';
+    }
     if(r.varShock!==null&&r.varShock>0.005){
       h+='<p class="note">⚠ Variable-rate shock: at the '+esc(String(S.offers[i].cap))+'% cap your payment rises by '+money(r.varShock)+'/mo.</p>';
     }
