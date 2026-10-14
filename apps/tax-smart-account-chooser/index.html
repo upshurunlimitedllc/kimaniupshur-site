@@ -163,7 +163,12 @@ function collect(){
  hsa:$("hsa").value,future:$("future").value,checks:readJanChecks()};
 }
 function readJanChecks(){
- var out=[];document.querySelectorAll("#janList input[type=checkbox]").forEach(function(cb,i){if(cb.checked)out.push(i);});
+ var boxes=document.querySelectorAll("#janList input[type=checkbox]");
+ if(!boxes.length){ // checklist not rendered yet (e.g. the save inside compute during page load): keep the stored checks instead of wiping them
+   try{var prev=JSON.parse(localStorage.getItem(KEY));if(prev&&prev.checks)return prev.checks;}catch(e){}
+   return [];
+ }
+ var out=[];boxes.forEach(function(cb,i){if(cb.checked)out.push(i);});
  return out;
 }
 function restore(s){
@@ -191,7 +196,7 @@ function compute(showAlert){
  var bb=document.createElement("div");
  var b1=document.createElement("strong");b1.textContent="Your estimated marginal federal bracket: "+marg+"%";
  var b2=document.createElement("div");b2.style.fontSize=".85rem";b2.style.color="#6b6250";
- b2.textContent="Rough 2026 estimate from "+money(s.income)+" income ("+s.filing==="single"?"single":"married filing jointly"+" standard deduction). Ignores other deductions — confirm with a tax pro.";
+ b2.textContent="Rough 2026 estimate from "+money(s.income)+" income ("+(s.filing==="single"?"single":"married filing jointly")+" standard deduction). Ignores other deductions — confirm with a tax pro.";
  bb.appendChild(b1);bb.appendChild(b2);$("bracketBox").appendChild(bb);
  var ranks=[];
  var n=1;
