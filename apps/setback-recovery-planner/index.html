@@ -185,7 +185,7 @@ confidence:["EMPHASIS — Confidence took a big hit: write down 5 things you hav
 routine:["EMPHASIS — Routine took a big hit: plan tomorrow the night before, in writing, for the next 14 days."],
 relationships:["EMPHASIS — Relationships took a big hit: name two people you can lean on, and tell each one what you need.","EMPHASIS — Relationships took a big hit: repair one strained connection with a short, honest message."],
 direction:["EMPHASIS — Direction took a big hit: write 200 words on the life you want 2 years from now — then pick the first step."]};
-var state={name:"",impacts:{finances:3,confidence:3,routine:3,relationships:3,direction:3},built:false,triage:[],p1:[],p2:[],p3:[],wins:[]};
+var state={name:"",impacts:{finances:3,confidence:3,routine:3,relationships:3,direction:3},built:false,done:{},wins:[]};
 function load(){try{var s=JSON.parse(localStorage.getItem(KEY));if(s&&s.impacts){state=s;}}catch(e){}}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
@@ -213,11 +213,13 @@ function drawImpacts(){
     upd();row.appendChild(head);row.appendChild(r);box.appendChild(row);
   });
 }
-function taskRow(text,arr,idx){
-  var d=document.createElement("div");d.className="task"+(arr[idx]?" done":"");
-  var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!arr[idx];
+function taskRow(text){
+  // Completion is keyed by the task's TEXT — its stable identity — never by
+  // its position in a list that regeneration rebuilds from the sliders.
+  var d=document.createElement("div");d.className="task"+(state.done[text]?" done":"");
+  var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!state.done[text];
   cb.setAttribute("aria-label",text);
-  cb.addEventListener("change",function(){arr[idx]=cb.checked;save();drawProgress();d.classList.toggle("done",cb.checked);});
+  cb.addEventListener("change",function(){if(cb.checked)state.done[text]=true;else delete state.done[text];save();drawProgress();d.classList.toggle("done",cb.checked);});
   var s=document.createElement("span");
   if(text.indexOf("EMPHASIS")==0){var em=document.createElement("div");em.className="emph";em.textContent=text;s.appendChild(em);}else{s.textContent=text;}
   d.appendChild(cb);d.appendChild(s);
@@ -227,17 +229,16 @@ function drawTasks(tasks){
   var T=[["triage","triage"],["phase1","p1"],["phase2","p2"],["phase3","p3"]];
   T.forEach(function(pair){
     var box=document.getElementById(pair[0]);box.innerHTML="";
-    tasks[pair[1]].forEach(function(t,i){
-      if(state[pair[1]].length<=i)state[pair[1]][i]=false;
-      box.appendChild(taskRow(t,state[pair[1]],i));
+    tasks[pair[1]].forEach(function(t){
+      box.appendChild(taskRow(t));
     });
   });
 }
 function countTasks(tasks){var n=0;["triage","p1","p2","p3"].forEach(function(k){n+=tasks[k].length;});return n;}
-function countDone(){var n=0;["triage","p1","p2","p3"].forEach(function(k){state[k].forEach(function(v){if(v)n++;});});return n;}
+function countDone(tasks){var n=0;["triage","p1","p2","p3"].forEach(function(k){tasks[k].forEach(function(t){if(state.done[t])n++;});});return n;}
 function drawProgress(){
-  var tasks=buildTaskLists(),total=countTasks(tasks),done=countDone();
-  var pct=total?Math.round(done/total*100):0;
+  var tasks=buildTaskLists(),total=countTasks(tasks),done=countDone(tasks);
+  var pct=total?Math.min(100,Math.round(done/total*100)):0;
   document.getElementById("prog-pct").textContent=pct+"% ("+done+" of "+total+" tasks)";
   document.getElementById("prog-fill").style.width=pct+"%";
 }
@@ -259,7 +260,23 @@ function showPlan(){
   document.getElementById("plan-focus").innerHTML=head+"Hardest-hit area: <strong>"+top[1]+"</strong> ("+state.impacts[top[0]]+"/5). Your plan emphasizes it first.";
   drawTasks(tasks);drawProgress();drawWins();
 }
+function migrateDone(){
+  // Legacy saves stored completion as positional boolean arrays over the
+  // plan generated from the saved impacts. Rebuild that exact plan and
+  // re-key every true flag to its task's text, so each mark lands on the
+  // task it was made on and follows it across regeneration.
+  var keys=["triage","p1","p2","p3"];
+  if(!keys.some(function(k){return Array.isArray(state[k]);}))return;
+  if(!state.done||typeof state.done!=="object")state.done={};
+  var tasks=buildTaskLists();
+  keys.forEach(function(k){
+    state[k].forEach(function(v,i){if(v&&tasks[k][i])state.done[tasks[k][i]]=true;});
+    delete state[k];
+  });
+  save();
+}
 load();
+migrateDone();
 document.getElementById("setback-name").value=state.name||"";
 drawImpacts();
 if(state.built)showPlan();
@@ -275,7 +292,7 @@ document.getElementById("add-win").addEventListener("click",function(){
 });
 document.getElementById("reset-plan").addEventListener("click",function(){
   if(!confirm("Clear your plan, tasks, and wins?"))return;
-  state={name:"",impacts:{finances:3,confidence:3,routine:3,relationships:3,direction:3},built:false,triage:[],p1:[],p2:[],p3:[],wins:[]};
+  state={name:"",impacts:{finances:3,confidence:3,routine:3,relationships:3,direction:3},built:false,done:{},wins:[]};
   save();document.getElementById("setback-name").value="";drawImpacts();
   document.getElementById("plan-view").style.display="none";
 });
