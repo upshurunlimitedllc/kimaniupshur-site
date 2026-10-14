@@ -98,7 +98,7 @@ var STEPS=[
 ["2. Reflect","Ask: What is God saying to me this morning? What do I need to surrender, trust, or obey today?"],
 ["3. Pray","Turn the verse into a prayer. Commit your day, your work, and your worries to the Lord."]];
 var total=300,left=300,timer=null,audio=null;
-var dayIdx=Math.floor(Date.now()/86400000)%VERSES.length;
+var _ld=new Date();var dayIdx=Math.floor(Date.UTC(_ld.getFullYear(),_ld.getMonth(),_ld.getDate())/86400000)%VERSES.length;
 function fmt(s){return Math.floor(s/60)+":"+String(s%60).padStart(2,"0");}
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
 function chime(){try{audio=audio||new (window.AudioContext||window.webkitAudioContext)();
