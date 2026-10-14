@@ -241,7 +241,7 @@ function saveProc(){/* processor answers live in memory; worry text itself is pe
 function drawTrend(){
   var box=document.getElementById("trend");box.innerHTML="";
   var days=[];var now=new Date();
-  for(var i=13;i>=0;i--){var d=new Date(now.getTime()-i*86400000);days.push(d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2));}
+  for(var i=13;i>=0;i--){var d=new Date(now.getFullYear(),now.getMonth(),now.getDate()-i);days.push(d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2));}
   var max=1;days.forEach(function(k){var n=state.counts[k]||0;if(n>max)max=n;});
   days.forEach(function(k){
     var n=state.counts[k]||0;
