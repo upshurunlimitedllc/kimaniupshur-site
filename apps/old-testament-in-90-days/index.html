@@ -139,8 +139,8 @@ function dayNum(){
   if(!st.start)return 1;
   if(!validDate(st.start))return 1;
   var s=new Date(st.start+"T12:00:00");if(isNaN(s))return 1;
-  var n=new Date();n.setHours(12,0,0,0);
-  var d=Math.floor((n-s)/86400000)+1;
+  var n=new Date();
+  var d=Math.round((Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())-Date.UTC(s.getFullYear(),s.getMonth(),s.getDate()))/86400000)+1;
   return Math.min(Math.max(d,1),DAYS);
 }
 function render(){
