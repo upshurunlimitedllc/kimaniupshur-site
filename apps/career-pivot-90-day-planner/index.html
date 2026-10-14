@@ -183,6 +183,7 @@ var GROUPS=[
 var S={screen:"input",cur:"",tgt:"",hrs:6,audit:{},checks:{}};
 var FLAT={};GROUPS.forEach(function(g){g.skills.forEach(function(s){FLAT[s.id]=s;});});
 function $(id){return document.getElementById(id);}
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function show(id){["scr-input","scr-audit","scr-plan"].forEach(function(s){$(s).hidden=(s!==id);});S.screen=id.replace("scr-","");}
 function load(){try{return JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){return {};}}
 function save(){try{localStorage.setItem(KEY,JSON.stringify({cur:S.cur,tgt:S.tgt,hrs:S.hrs,audit:S.audit,checks:S.checks}));}catch(e){}}
@@ -294,9 +295,9 @@ function renderPlan(){
  }
  /* cheat sheet */
  var cs=checkedSkills();
- var t='<tr><th>Skill</th><th>Your old language</th><th>New language for '+S.tgt+'</th><th>Relevance</th></tr>';
+ var t='<tr><th>Skill</th><th>Your old language</th><th>New language for '+esc(S.tgt)+'</th><th>Relevance</th></tr>';
  cs.forEach(function(s){
-  t+="<tr><td><b>"+s.n+"</b></td><td>"+s.tr[0]+"</td><td>"+s.tr[1]+"</td><td>"+s.rel+"</td></tr>";
+  t+="<tr><td><b>"+esc(s.n)+"</b></td><td>"+esc(s.tr[0])+"</td><td>"+esc(s.tr[1])+"</td><td>"+esc(s.rel)+"</td></tr>";
  });
  $("cheatTable").innerHTML=t;
 }
