@@ -347,9 +347,14 @@ document.getElementById("copyBtn").addEventListener("click",copyPrompt);
 document.getElementById("saveLibBtn").addEventListener("click",saveToLibrary);
 document.getElementById("resetBtn").addEventListener("click",function(){
   if(!confirm("Clear all answers?"))return;
-  S=freshState();save();
+  // Reset clears the ANSWERS (task + fields) only. The Template Library is
+  // the user's saved work, not an answer — carry it over untouched, and
+  // re-render it from the same state that was just persisted, so the
+  // displayed library always matches the stored one.
+  var lib=S.library;
+  S=freshState();S.library=lib;save();
   FIDS.forEach(function(k){document.getElementById(fid(k)).value="";});
-  applyPlaceholders();renderTasks();
+  applyPlaceholders();renderTasks();renderLibrary();
   document.getElementById("resultCard").classList.add("hidden");
 });
 FIDS.forEach(function(k){
