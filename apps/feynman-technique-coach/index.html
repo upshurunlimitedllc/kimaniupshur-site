@@ -243,6 +243,13 @@ function buildWhyQs(){
   var picks=s.slice(0,3);
   S.whyqs=picks.map(function(q){return {q:q,answer:"",isGap:false};});
   save();
+  renderWhyQs();
+}
+
+/* Draw step 3 from the CURRENT S.whyqs (answers and gap marks included).
+   Used both after a fresh build and when restoring saved work on load —
+   restoring must never rebuild the questions, or the saved answers are lost. */
+function renderWhyQs(){
   var box=document.getElementById("whyqs");box.innerHTML="";
   if(!S.whyqs.length){box.innerHTML='<p class="hint">Not enough sentences to probe — add more to your explanation in step 2.</p>';}
   S.whyqs.forEach(function(item,i){
@@ -253,29 +260,33 @@ function buildWhyQs(){
       '<textarea id="wq'+i+'" style="min-height:70px" placeholder="Because..."></textarea>'+
       '<button class="btn ghost small" data-gap="'+i+'">I don\'t know this yet — mark as gap</button>';
     box.appendChild(div);
-  });
-  box.querySelectorAll("button[data-gap]").forEach(function(b){
+    var ta=div.querySelector("textarea");
+    var b=div.querySelector("button[data-gap]");
+    ta.value=item.answer||"";
+    if(item.isGap){ta.disabled=true;b.disabled=true;b.textContent="Marked as a knowledge gap ✓";}
     b.addEventListener("click",function(){
-      var i=parseInt(b.getAttribute("data-gap"),10);
       S.whyqs[i].isGap=true;S.whyqs[i].answer="";
-      document.getElementById("wq"+i).value="";document.getElementById("wq"+i).disabled=true;
+      ta.value="";ta.disabled=true;
       b.disabled=true;b.textContent="Marked as a knowledge gap ✓";
       collectGaps();save();
     });
-  });
-  box.querySelectorAll("textarea").forEach(function(ta,ix){
-    ta.addEventListener("input",function(){S.whyqs[ix].answer=ta.value;S.whyqs[ix].isGap=false;save();});
+    ta.addEventListener("input",function(){S.whyqs[i].answer=ta.value;S.whyqs[i].isGap=false;save();});
   });
 }
 
 function collectGaps(){
+  /* Carry each existing item's done state into the rebuilt list (matched by
+     text) so re-study progress survives re-renders, navigation, and reloads. */
+  var prev={};
+  S.gaps.forEach(function(g){if(!prev[g.text])prev[g.text]=[];prev[g.text].push(!!g.done);});
+  function takeDone(text){var a=prev[text];return (a&&a.length)?a.shift():false;}
   S.gaps=[];
   S.whyqs.forEach(function(item){
-    if(item.isGap||(!item.answer.trim())){S.gaps.push({text:"\"But why?\" — "+item.q,answer:item.answer.trim(),unknown:true,done:false});}
+    if(item.isGap||(!item.answer.trim())){var t="\"But why?\" — "+item.q;S.gaps.push({text:t,answer:item.answer.trim(),unknown:true,done:takeDone(t)});}
   });
   if(S.score1&&S.score1.flags.length){
     S.score1.flags.slice(0,6).forEach(function(f){
-      S.gaps.push({text:"Simplify flagged wording: "+f.msg,answer:"",unknown:false,done:false});
+      var t="Simplify flagged wording: "+f.msg;S.gaps.push({text:t,answer:"",unknown:false,done:takeDone(t)});
     });
   }
 }
@@ -375,9 +386,7 @@ document.getElementById("teach").value=S.teach||"";
 document.getElementById("analogyLike").value=S.analogyLike||"";
 document.getElementById("analogyBecause").value=S.analogyBecause||"";
 document.getElementById("rewrite").value=S.rewrite||"";
-if(S.analyzed&&S.teach){showAnalysis("analysis","to3",S.score1||analyze(S.teach));buildWhyQs();
-  S.whyqs.forEach(function(item,i){var ta=document.getElementById("wq"+i);if(ta){ta.value=item.answer||"";if(item.isGap){ta.disabled=true;}}});
-}
+if(S.analyzed&&S.teach){showAnalysis("analysis","to3",S.score1||analyze(S.teach));renderWhyQs();}
 if(S.score2&&S.rewrite){showAnalysis("rescoreOut",null,S.score2);}
 drawDots();
 for(var i=1;i<=6;i++){document.getElementById("step"+i).hidden=(i!==S.step);}
