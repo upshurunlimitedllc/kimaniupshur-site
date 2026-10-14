@@ -121,22 +121,39 @@ var state=loadState();
 var maxStep=(typeof state.maxStep==="number")?state.maxStep:0;
 if(state.step>maxStep)state.step=maxStep;
 
-function freshState(){return{step:0,maxStep:0,problem:"",items:[],factsKept:[],restatement:"",restatementSeeded:false,lastAuto:"",solutions:[],ratings:{}};}
+function freshState(){return{step:0,maxStep:0,problem:"",nextId:1,items:[],factsKept:{},restatement:"",restatementSeeded:false,lastAuto:"",solutions:[],ratings:{}};}
 function loadState(){
   try{var raw=localStorage.getItem(KEY);
     if(raw){var s=JSON.parse(raw);
       if(s&&typeof s==="object"){
         var d=freshState();
         if(typeof s.problem==="string")d.problem=s.problem;
-        if(Array.isArray(s.items))d.items=s.items.filter(function(it){return it&&typeof it.t==="string";}).map(function(it){return{t:it.t,k:(it.k==="a"||it.k==="f")?it.k:null};});
-        if(Array.isArray(s.factsKept))d.factsKept=s.factsKept.filter(function(x){return x===true||x===false;});
+        var legacyItems=false;
+        if(Array.isArray(s.items))d.items=s.items.filter(function(it){return it&&typeof it.t==="string";}).map(function(it){if(typeof it.id!=="number")legacyItems=true;return{t:it.t,k:(it.k==="a"||it.k==="f")?it.k:null,id:(typeof it.id==="number"&&it.id>0)?Math.floor(it.id):null};});
+        // Items carry stable IDs. Legacy saves had no IDs and keyed ratings by item
+        // POSITION and factsKept by position in the filtered facts list — remap both.
+        var maxId=0;d.items.forEach(function(it){if(it.id&&it.id>maxId)maxId=it.id;});
+        d.items.forEach(function(it){if(!it.id)it.id=++maxId;});
+        d.nextId=Math.max((typeof s.nextId==="number"&&s.nextId>maxId)?Math.floor(s.nextId):0,maxId+1);
+        if(s.ratings&&typeof s.ratings==="object"){
+          if(legacyItems){var nr={};Object.keys(s.ratings).forEach(function(k){var idx=parseInt(k,10);var it=d.items[idx];var r=s.ratings[k];if(it&&r&&typeof r==="object")nr[it.id]={u:Math.max(0,Math.min(5,parseInt(r.u,10)||0)),s:Math.max(0,Math.min(5,parseInt(r.s,10)||0))};});d.ratings=nr;}
+          else d.ratings=s.ratings;
+        }
+        if(Array.isArray(s.factsKept)){
+          var fk={},fi=0;d.items.forEach(function(it){if(it.k==="f"){fk[it.id]=(fi<s.factsKept.length)?(s.factsKept[fi]!==false):true;fi++;}});
+          d.factsKept=fk;
+        }else if(s.factsKept&&typeof s.factsKept==="object"){
+          var fk2={};Object.keys(s.factsKept).forEach(function(k){fk2[k]=(s.factsKept[k]!==false);});
+          d.factsKept=fk2;
+        }
         if(typeof s.restatement==="string")d.restatement=s.restatement;
         if(s.restatementSeeded===true)d.restatementSeeded=true;
         if(typeof s.lastAuto==="string")d.lastAuto=s.lastAuto;
         if(Array.isArray(s.solutions))d.solutions=s.solutions.filter(function(x){return x&&typeof x.t==="string";}).map(function(x){return{t:x.t,d:typeof x.d==="string"?x.d:""};});
-        if(s.ratings&&typeof s.ratings==="object")d.ratings=s.ratings;
+        /* ratings handled above (stable-ID migration) */
         if(typeof s.step==="number")d.step=Math.max(0,Math.min(5,Math.floor(s.step)));
         if(typeof s.maxStep==="number")d.maxStep=Math.max(0,Math.min(5,Math.floor(s.maxStep)));
+        try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){} // persist the migrated (stable-ID) form
         return d;
       }
     }
@@ -146,8 +163,8 @@ function loadState(){
 function save(){state.maxStep=maxStep;try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
 function el(tag,cls,text){var d=document.createElement(tag);if(cls)d.className=cls;if(text!==undefined&&text!==null)d.textContent=text;return d;}
 function showErr(msg){var e=document.getElementById("err");if(msg){e.textContent=msg;e.style.display="block";}else{e.textContent="";e.style.display="none";}}
-function assumptions(){var out=[];state.items.forEach(function(it,i){if(it.k==="a")out.push({i:i,t:it.t});});return out;}
-function facts(){var out=[];state.items.forEach(function(it,i){if(it.k==="f")out.push({i:i,t:it.t});});return out;}
+function assumptions(){var out=[];state.items.forEach(function(it,i){if(it.k==="a")out.push({i:i,id:it.id,t:it.t});});return out;}
+function facts(){var out=[];state.items.forEach(function(it,i){if(it.k==="f")out.push({i:i,id:it.id,t:it.t});});return out;}
 
 function drawDots(){
   var dots=document.getElementById("dots");dots.innerHTML="";
@@ -192,7 +209,7 @@ function renderBeliefs(body){
   function doAdd(){
     var v=inp.value.trim();
     if(!v){inp.focus();return;}
-    state.items.push({t:v,k:null});save();render();
+    state.items.push({t:v,k:null,id:state.nextId++});save();render();
   }
   add.addEventListener("click",doAdd);
   inp.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();doAdd();}});
@@ -205,7 +222,7 @@ function renderBeliefs(body){
       var r=el("div","itemrow");r.setAttribute("role","listitem");
       r.appendChild(el("div","txt",it.t));
       var x=el("button","xbtn","\u00D7");x.type="button";x.setAttribute("aria-label","Remove: "+it.t);
-      x.addEventListener("click",function(){state.items.splice(i,1);save();render();});
+      x.addEventListener("click",function(){var gone=state.items[i];if(gone){delete state.ratings[gone.id];delete state.factsKept[gone.id];}state.items.splice(i,1);save();render();});
       r.appendChild(x);list.appendChild(r);
     });
     body.appendChild(list);
@@ -234,17 +251,15 @@ function renderClassify(body){
 }
 function renderFundamentals(body){
   var fs=facts();
-  while(state.factsKept.length<fs.length)state.factsKept.push(true);
-  state.factsKept=state.factsKept.slice(0,fs.length);
   body.appendChild(el("p","hint","Your irreducible facts — the solid ground you rebuild from. Uncheck anything that does not hold up on a second look."));
   if(fs.length===0){
     body.appendChild(el("p","hint","Everything you listed is an assumption. That is useful information — but you have no verified foundation yet. Either go back and reclassify anything you can prove, or write below what you would need to verify before deciding."));
   }else{
     fs.forEach(function(f,idx){
       var r=el("div","checkrow");
-      var cb=el("input");cb.type="checkbox";cb.checked=state.factsKept[idx]===true;
+      var cb=el("input");cb.type="checkbox";cb.checked=state.factsKept[f.id]!==false;
       cb.id="factkeep"+idx;cb.setAttribute("aria-label","Keep this fact: "+f.t);
-      cb.addEventListener("change",function(){state.factsKept[idx]=cb.checked;save();seedRestatement();});
+      cb.addEventListener("change",function(){state.factsKept[f.id]=cb.checked;save();seedRestatement();});
       var lab=el("label",null,f.t);lab.setAttribute("for","factkeep"+idx);lab.style.fontWeight="normal";
       r.appendChild(cb);r.appendChild(lab);body.appendChild(r);
     });
@@ -261,7 +276,7 @@ function renderFundamentals(body){
 }
 function seedRestatement(){
   var kept=[];
-  facts().forEach(function(f,idx){if(state.factsKept[idx])kept.push(f.t);});
+  facts().forEach(function(f){if(state.factsKept[f.id]!==false)kept.push(f.t);});
   var auto=kept.join(" ");
   if(!state.restatementSeeded||state.restatement.trim()===""||state.restatement===state.lastAuto)state.restatement=auto;
   state.lastAuto=auto;
@@ -307,22 +322,22 @@ function renderTest(body){
   }else{
     as.forEach(function(a){
       var r=el("div","rankrow");
-      var rt=state.ratings[a.i]||{u:"",s:""};
+      var rt=state.ratings[a.id]||{u:"",s:""};
       var txt=el("div","rtxt",a.t);
       var sels=el("div","ranksel");
-      var lu=el("label",null,"Uncertainty");lu.setAttribute("for","u"+a.i);
-      var su=el("select");su.id="u"+a.i;su.setAttribute("aria-label","How uncertain are you about: "+a.t);
+      var lu=el("label",null,"Uncertainty");lu.setAttribute("for","u"+a.id);
+      var su=el("select");su.id="u"+a.id;su.setAttribute("aria-label","How uncertain are you about: "+a.t);
       su.appendChild(new Option("—", ""));
       for(var k=1;k<=5;k++)su.appendChild(new Option(k+" - "+["","very sure","fairly sure","unsure","very unsure","complete guess"][k],String(k)));
       su.value=rt.u===""?"":String(rt.u);
-      var ls=el("label",null,"Stakes");ls.setAttribute("for","s"+a.i);
-      var ss=el("select");ss.id="s"+a.i;ss.setAttribute("aria-label","How much rides on: "+a.t);
+      var ls=el("label",null,"Stakes");ls.setAttribute("for","s"+a.id);
+      var ss=el("select");ss.id="s"+a.id;ss.setAttribute("aria-label","How much rides on: "+a.t);
       ss.appendChild(new Option("—", ""));
       for(var j=1;j<=5;j++)ss.appendChild(new Option(j+" - "+["","trivial","minor","moderate","major","decisive"][j],String(j)));
       ss.value=rt.s===""?"":String(rt.s);
       function upd(){
         var u=parseInt(su.value,10),s2=parseInt(ss.value,10);
-        state.ratings[a.i]={u:isNaN(u)?"":u,s:isNaN(s2)?"":s2};save();renderRanked();renderPlan(document.getElementById("planCard"));
+        state.ratings[a.id]={u:isNaN(u)?"":u,s:isNaN(s2)?"":s2};save();renderRanked();renderPlan(document.getElementById("planCard"));
       }
       su.addEventListener("change",upd);ss.addEventListener("change",upd);
       sels.appendChild(lu);sels.appendChild(su);sels.appendChild(ls);sels.appendChild(ss);
@@ -341,7 +356,7 @@ function renderTest(body){
 }
 function rankedList(){
   return assumptions().map(function(a){
-    var rt=state.ratings[a.i]||{u:"",s:""};
+    var rt=state.ratings[a.id]||{u:"",s:""};
     var u=parseInt(rt.u,10),s=parseInt(rt.s,10);
     var score=(isNaN(u)?0:u)*(isNaN(s)?0:s);
     return{t:a.t,score:score,rated:!(isNaN(u)||isNaN(s))};
@@ -366,7 +381,7 @@ function planText(){
   L.push("Problem: "+state.problem.trim());
   L.push("");
   L.push("IRREDUCIBLE FACTS:");
-  var kept=[];facts().forEach(function(f,idx){if(state.factsKept[idx])kept.push(f.t);});
+  var kept=[];facts().forEach(function(f){if(state.factsKept[f.id]!==false)kept.push(f.t);});
   if(kept.length)L.push("- "+kept.join("\n- "));else L.push("- (none verified yet — verify before deciding)");
   if(state.restatement.trim()){L.push("");L.push("Restatement: "+state.restatement.trim());}
   L.push("");
@@ -389,7 +404,7 @@ function renderPlan(card){
   var p=el("p",null,"");p.innerHTML="<strong>Problem:</strong> ";
   p.appendChild(document.createTextNode(state.problem.trim()||"(not stated)"));
   card.appendChild(p);
-  var kept=[];facts().forEach(function(f,idx){if(state.factsKept[idx])kept.push(f.t);});
+  var kept=[];facts().forEach(function(f){if(state.factsKept[f.id]!==false)kept.push(f.t);});
   card.appendChild(el("h3",null,"Irreducible facts"));
   if(kept.length){var ul=el("ul");kept.forEach(function(k){ul.appendChild(el("li",null,k));});card.appendChild(ul);}
   else card.appendChild(el("p","hint","None verified yet — verify before deciding."));
