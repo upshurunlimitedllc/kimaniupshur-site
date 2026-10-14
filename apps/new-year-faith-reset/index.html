@@ -117,7 +117,7 @@ function $(id){return document.getElementById(id)}
 function load(){try{return JSON.parse(localStorage.getItem(K))||{back:["","",""],go:"",goals:["","",""],yv:0}}catch(e){return{back:["","",""],go:"",goals:["","",""],yv:0}}}
 function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
 let st=load();let cur=0;
-function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;")}
 const STEPS=["Look Back","Let Go","Resolve","Your Verse"];
 function render(){
  $("dots").innerHTML=STEPS.map(function(s,i){return '<span data-i="'+i+'" class="'+(i===cur?"cur":"")+'" style="width:auto;padding:0 14px;border-radius:18px">'+s+'</span>'}).join("");
