@@ -149,7 +149,7 @@ footer.site a{color:#e8c84a;text-decoration:none}
 (function(){
 var KEY="app-hiring-scorecard-builder-v1";
 var $=function(id){return document.getElementById(id);};
-function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function showErr(m){var b=$("errBox");b.style.display=m?"block":"none";b.textContent=m||"";}
 var SCALE=[
  [1,"Below bar","Misses the requirement — clear gaps, couldn't demonstrate it."],
@@ -166,11 +166,12 @@ var DEFAULT_CRIT=[
  ["Growth potential",15],
  ["Role-specific test / work sample",10]
 ];
-var state={criteria:[],candidates:[]}; // criteria:[{name,weight}], candidates:[{name,scores:{ci:1..5},notes}]
+var state={criteria:[],candidates:[],nextCritId:1}; // criteria:[{id,name,weight}], candidates:[{name,scores:{critId:1..5},notes}]
+function mkCrit(name,weight){return {id:state.nextCritId++,name:name||"",weight:weight==null?10:Number(weight)||0};}
 
 function addCrit(name,weight){
   if(state.criteria.length>=7){showErr("Maximum 7 criteria — merge or drop the least important one.");return;}
-  state.criteria.push({name:name||"",weight:weight==null?10:Number(weight)||0});
+  state.criteria.push(mkCrit(name,weight));
   renderCrit();save();
 }
 function renderCrit(){
@@ -185,7 +186,10 @@ function renderCrit(){
     wi.addEventListener("input",function(){c.weight=Number(wi.value)||0;updateWeightWarn();save();});
     row.children[2].addEventListener("click",function(){
       if(state.criteria.length<=5){showErr("Keep at least 5 criteria — fewer makes the scorecard too thin to trust.");return;}
-      state.criteria.splice(i,1);renderCrit();renderCands();save();
+      var cid=c.id;
+      state.criteria.splice(i,1);
+      state.candidates.forEach(function(cand){delete cand.scores[cid];});
+      renderCrit();renderCands();save();
     });
     el.appendChild(row);
   });
@@ -209,13 +213,13 @@ function normWeights(){
 function weighted(cand){
   var w=normWeights(),tot=0,n=0;
   state.criteria.forEach(function(c,i){
-    var s=cand.scores[i];
+    var s=cand.scores[c.id];
     if(s){tot+=s*w[i];n++;}
   });
   return n?tot:0;
 }
 function scoredCount(cand){
-  var n=0;state.criteria.forEach(function(c,i){if(cand.scores[i])n++;});return n;
+  var n=0;state.criteria.forEach(function(c){if(cand.scores[c.id])n++;});return n;
 }
 
 function addCand(name){
@@ -238,8 +242,8 @@ function renderCands(){
       var cname=c.name||("Criterion "+(i+1));
       h+='<div class="scorerow"><div class="clabel">'+esc(cname)+'</div><div class="scale" role="radiogroup" aria-label="'+esc(cname+" for "+cand.name)+'">';
       SCALE.forEach(function(s){
-        var sel=cand.scores[i]===s[0]?" sel":"";
-        h+='<label class="'+sel.trim()+'"><input type="radio" name="sc_'+ci+'_'+i+'" value="'+s[0]+'"><b>'+s[0]+'</b>'+esc(s[1])+'</label>';
+        var sel=cand.scores[c.id]===s[0]?" sel":"";
+        h+='<label class="'+sel.trim()+'"><input type="radio" name="sc_'+ci+'_'+c.id+'" value="'+s[0]+'"><b>'+s[0]+'</b>'+esc(s[1])+'</label>';
       });
       h+='</div><div class="anchors"><b>What good looks like:</b> '+SCALE.map(function(s){return "<b>"+s[0]+"</b> — "+esc(s[2]);}).join(" · ")+'</div></div>';
     });
@@ -248,10 +252,11 @@ function renderCands(){
     d.innerHTML=h;
     d.querySelector(".rm").addEventListener("click",function(){state.candidates.splice(ci,1);renderCands();renderMatrix();save();});
     d.querySelectorAll(".scorerow").forEach(function(row,ci2){
+      var cid=state.criteria[ci2].id;
       row.querySelectorAll(".scale label").forEach(function(lbl){
         lbl.addEventListener("click",function(){
           var v=parseInt(lbl.querySelector("input").value,10);
-          cand.scores[ci2]=v;
+          cand.scores[cid]=v;
           row.querySelectorAll(".scale label").forEach(function(l){l.classList.remove("sel");});
           lbl.classList.add("sel");renderMatrix();save();
         });
@@ -276,8 +281,8 @@ function renderMatrix(){
   rows.forEach(function(r,ri){
     h+='<tr class="'+(ri===0?"top":"")+'"><td>'+(ri===0?'<span class="rank">1</span> ':'')+esc(r.cand.name)+
        (r.n<state.criteria.length?' <span style="color:#b3261e;font-size:.8rem">('+r.n+'/'+state.criteria.length+' scored)</span>':"")+"</td>";
-    state.criteria.forEach(function(c,i){
-      var s=r.cand.scores[i];
+    state.criteria.forEach(function(c){
+      var s=r.cand.scores[c.id];
       h+="<td>"+(s?("<b>"+s+"</b>"):"—")+"</td>";
     });
     h+="<td><b>"+r.score.toFixed(2)+"</b></td></tr>";
@@ -301,7 +306,7 @@ function decisionText(){
   if(rows.length>1)t+=" — leads runner-up by "+(top.score-rows[1].score).toFixed(2)+" points";
   t+="\n";
   var risks=[];
-  state.criteria.forEach(function(c,i){var s=top.cand.scores[i];if(s&&s<=2)risks.push((c.name||"Criterion "+(i+1))+" scored "+s+"/5");});
+  state.criteria.forEach(function(c,i){var s=top.cand.scores[c.id];if(s&&s<=2)risks.push((c.name||"Criterion "+(i+1))+" scored "+s+"/5");});
   if(risks.length)t+="RISKS: "+risks.join("; ")+"\n";
   var v=top.score;
   t+="VERDICT: "+(v>=4&&!risks.length?"PROCEED TO OFFER":v>=3?"FINAL ROUND / REFERENCE CHECKS":"KEEP SEARCHING")+"\n";
@@ -317,7 +322,7 @@ $("btnDecide").addEventListener("click",function(){
   if(top.n<state.criteria.length){showErr("Score "+top.cand.name+" on all "+state.criteria.length+" criteria before deciding — unscored boxes skew the result.");return;}
   showErr("");
   var risks=[];
-  state.criteria.forEach(function(c,i){var s=top.cand.scores[i];if(s&&s<=2)risks.push({name:c.name||("Criterion "+(i+1)),s:s});});
+  state.criteria.forEach(function(c,i){var s=top.cand.scores[c.id];if(s&&s<=2)risks.push({name:c.name||("Criterion "+(i+1)),s:s});});
   var v=top.score,verdict,vc;
   if(v>=4&&!risks.length){verdict="PROCEED TO OFFER";vc="#2e7d32";}
   else if(v>=3){verdict="FINAL ROUND / REFERENCE CHECKS";vc="#8a6d1c";}
@@ -346,26 +351,42 @@ $("btnCopy").addEventListener("click",function(){
   function fallback(){var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done();}catch(e){}document.body.removeChild(ta);}
 });
 $("btnReset").addEventListener("click",function(){
-  state={criteria:[],candidates:[]};
+  state={criteria:[],candidates:[],nextCritId:1};
   $("h_role").value="";
-  DEFAULT_CRIT.forEach(function(c){state.criteria.push({name:c[0],weight:c[1]});});
+  DEFAULT_CRIT.forEach(function(c){state.criteria.push(mkCrit(c[0],c[1]));});
   ["bias1","bias2","bias3","bias4"].forEach(function(id){$(id).checked=false;});
   $("decisionBox").style.display="none";$("biasWarn").style.display="none";
   showErr("");renderCrit();renderCands();
   try{localStorage.removeItem(KEY);}catch(e){}
 });
 function save(){
-  try{localStorage.setItem(KEY,JSON.stringify({role:$("h_role").value,criteria:state.criteria,candidates:state.candidates,
+  try{localStorage.setItem(KEY,JSON.stringify({role:$("h_role").value,criteria:state.criteria,candidates:state.candidates,nextCritId:state.nextCritId,
     bias:["bias1","bias2","bias3","bias4"].map(function(id){return $(id).checked;})}));}catch(e){}
 }
 function restore(){
   try{var s=JSON.parse(localStorage.getItem(KEY)||"null");
     if(s&&s.criteria&&s.criteria.length){$("h_role").value=s.role||"";state.criteria=s.criteria;state.candidates=s.candidates||[];
+      // Migrate legacy saves: criteria had no ids and scores were keyed by criterion position.
+      var legacy=state.criteria.some(function(c){return typeof c.id!=="number";});
+      if(legacy){
+        state.criteria.forEach(function(c,i){c.id=i+1;});
+        state.candidates.forEach(function(cand){
+          var remapped={};
+          Object.keys(cand.scores||{}).forEach(function(k){
+            var idx=parseInt(k,10);
+            if(state.criteria[idx])remapped[state.criteria[idx].id]=cand.scores[k];
+          });
+          cand.scores=remapped;
+        });
+      }
+      var maxId=state.criteria.reduce(function(a,c){return Math.max(a,c.id||0);},0);
+      state.nextCritId=Math.max(Number(s.nextCritId)||0,maxId+1);
       renderCrit();renderCands();
+      if(legacy)save();
       if(s.bias)s.bias.forEach(function(v,i){var b=$("bias"+(i+1));if(b)b.checked=!!v;});
       return;}
   }catch(e){}
-  DEFAULT_CRIT.forEach(function(c){state.criteria.push({name:c[0],weight:c[1]});});
+  DEFAULT_CRIT.forEach(function(c){state.criteria.push(mkCrit(c[0],c[1]));});
   renderCrit();renderCands();
 }
 restore();
