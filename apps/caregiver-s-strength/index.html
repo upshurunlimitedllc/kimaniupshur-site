@@ -113,10 +113,12 @@ const VERSES=[
 const CARE=["Rested when I was tired","Asked someone for help","Ate a real meal","Spent 10 quiet minutes in prayer","Took a short walk","Said no to one extra thing"];
 const PROMPTS=["Pray for their comfort and peace today.","Pray for wisdom for their doctors and helpers.","Pray for patience and gentleness in yourself.","Thank God for one good moment with them this week.","Pray for strength for tomorrow's tasks.","Pray that they would feel loved, not like a burden."];
 function $(id){return document.getElementById(id)}
-function weekKey(){const d=new Date();const one=new Date(d.getFullYear(),0,1);const w=Math.ceil((((d-one)/86400000)+one.getDay()+1)/7);return d.getFullYear()+"-W"+w}
+function weekKey(){const d=new Date();const one=new Date(d.getFullYear(),0,1);const n=Math.round((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-Date.UTC(d.getFullYear(),0,1))/86400000);const w=Math.ceil((n+one.getDay()+1)/7);return d.getFullYear()+"-W"+w}
+function legacyWeekKey(){const d=new Date();const one=new Date(d.getFullYear(),0,1);const w=Math.ceil((((d-one)/86400000)+one.getDay()+1)/7);return d.getFullYear()+"-W"+w}
 function load(){try{return JSON.parse(localStorage.getItem(K))||{}}catch(e){return{}}}
 function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
 let st=load();
+(function(){const nk=weekKey(),lk=legacyWeekKey();if(lk!==nk&&st[lk]){const cur=st[nk]||[],leg=st[lk];for(let i=0;i<leg.length;i++){cur[i]=!!(cur[i]||leg[i])}st[nk]=cur;delete st[lk];save()}})();
 $("need").addEventListener("click",function(){
  const v=VERSES[Math.floor(Math.random()*VERSES.length)];
  $("ct").textContent="\u201C"+v[0]+"\u201D";$("cr").textContent=v[1]+" (KJV)";
