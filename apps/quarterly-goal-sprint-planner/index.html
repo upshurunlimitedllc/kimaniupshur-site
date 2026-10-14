@@ -191,9 +191,8 @@ function $(id){return document.getElementById(id);}
 function todayISO(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
 function fmtDate(d){return (d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear();}
 function weekDate(start,w){var d=new Date(start.getTime());d.setDate(d.getDate()+w*7);return d;}
-function currentWeekIdx(start){var now=new Date();now.setHours(0,0,0,0);
-  var s=new Date(start.getTime());s.setHours(0,0,0,0);
-  var diff=Math.floor((now-s)/86400000);var idx=Math.floor(diff/7);
+function currentWeekIdx(start){var now=new Date();
+  var diff=Math.round((Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())-Date.UTC(start.getFullYear(),start.getMonth(),start.getDate()))/86400000);var idx=Math.floor(diff/7);
   if(idx<0)return 0; if(idx>11)return 11; return idx;}
 
 function goalInputHTML(i){
