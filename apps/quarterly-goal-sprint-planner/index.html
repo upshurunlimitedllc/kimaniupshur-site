@@ -208,22 +208,45 @@ function goalInputHTML(i){
   '<input type="text" id="gunit'+i+'" maxlength="30" placeholder="workouts"></div></div></div>';
 }
 var goalCount=3;
+function readGoalFields(){
+  var out=[];
+  for(var i=0;i<3;i++){
+    var n=$("gname"+i);if(!n)break;
+    out.push({name:n.value,indicator:$("glead"+i).value,target:$("gtarget"+i).value,unit:$("gunit"+i).value});
+  }
+  return out;
+}
 function renderGoalInputs(){
+  var prev=readGoalFields();
   var h='<div style="display:flex;gap:10px;align-items:center;margin-bottom:4px"><span style="font-weight:bold">Number of goals:</span>'+
   [1,2,3].map(function(n){return '<label style="margin-right:12px"><input type="radio" name="gcount" value="'+n+'" '+(n===goalCount?'checked':'')+' style="accent-color:#8a6d1c;width:18px;height:18px;vertical-align:middle"> '+n+'</label>';}).join("")+'</div>';
   for(var i=0;i<goalCount;i++)h+=goalInputHTML(i);
   $("goalInputs").innerHTML=h;
+  for(var j=0;j<goalCount&&j<prev.length;j++){
+    $("gname"+j).value=prev[j].name;$("glead"+j).value=prev[j].indicator;$("gtarget"+j).value=prev[j].target;$("gunit"+j).value=prev[j].unit;
+  }
   var rs=document.querySelectorAll('input[name="gcount"]');
-  rs.forEach(function(r){r.addEventListener("change",function(){goalCount=parseInt(r.value,10)||3;renderGoalInputs();});});
+  rs.forEach(function(r){r.addEventListener("change",function(){goalCount=parseInt(r.value,10)||3;renderGoalInputs();saveDraft();});});
+  $("goalInputs").querySelectorAll("input").forEach(function(inp){inp.addEventListener("input",saveDraft);});
 }
 renderGoalInputs();
 $("startDate").value=todayISO();
+$("sprintName").addEventListener("input",saveDraft);
+$("startDate").addEventListener("input",saveDraft);
+$("startDate").addEventListener("change",saveDraft);
 
 function showErr(msg){var e=$("setupErr");e.textContent=msg;e.style.display="block";}
 function hideErr(){$("setupErr").style.display="none";}
 
 function loadState(){try{var raw=localStorage.getItem(KEY);return raw?JSON.parse(raw):null;}catch(e){return null;}}
 function saveState(st){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+var DKEY=KEY+"-draft";
+function saveDraft(){
+  if($("setupView").style.display==="none")return;
+  var dr={name:$("sprintName").value,start:$("startDate").value,goalCount:goalCount,goals:readGoalFields()};
+  try{localStorage.setItem(DKEY,JSON.stringify(dr));}catch(e){}
+}
+function clearDraft(){try{localStorage.removeItem(DKEY);}catch(e){}}
 
 $("genSprint").addEventListener("click",function(){
   hideErr();
@@ -246,6 +269,7 @@ $("genSprint").addEventListener("click",function(){
   var st={name:name,start:fmtDate(start),startISO:start.toISOString(),goals:goals,
           scores:{},review:{q1:"",q2:"",q3:"",q4:"",q5:"",q5note:""}};
   saveState(st);
+  clearDraft();
   showSprint(st);
 });
 
@@ -325,6 +349,17 @@ $("saveReview").addEventListener("click",function(){
   setTimeout(function(){$("exportMsg").textContent="";},2500);
 });
 
+function autosaveReview(){
+  var st=loadState();if(!st||!st.goals)return;
+  st.review=st.review||{q1:"",q2:"",q3:"",q4:"",q5:"",q5note:""};
+  st.review.q1=$("q1").value;st.review.q3=$("q3").value;st.review.q4=$("q4").value;st.review.q5note=$("q5note").value;
+  var q2=document.querySelector('input[name="q2"]:checked');st.review.q2=q2?q2.value:"";
+  var q5=document.querySelector('input[name="q5"]:checked');st.review.q5=q5?q5.value:"";
+  saveState(st);
+}
+["q1","q3","q4","q5note"].forEach(function(id){$(id).addEventListener("input",autosaveReview);});
+document.querySelectorAll('input[name="q2"],input[name="q5"]').forEach(function(r){r.addEventListener("change",autosaveReview);});
+
 $("exportPlan").addEventListener("click",function(){
   var st=loadState();if(!st)return;
   var lines=["MY 12-WEEK SPRINT: "+st.name,"Weeks: "+st.start,"","GOALS:"];
@@ -349,6 +384,7 @@ $("exportPlan").addEventListener("click",function(){
 $("newSprint").addEventListener("click",function(){
   if(confirm("Start a new sprint? Your current sprint plan and scores will be cleared.")){
     try{localStorage.removeItem(KEY);}catch(e){}
+    clearDraft();
     $("sprintView").style.display="none";$("setupView").style.display="block";
     goalCount=3;renderGoalInputs();$("startDate").value=todayISO();$("sprintName").value="";
   }
@@ -368,6 +404,20 @@ $("rstart").addEventListener("click",function(){
 $("rreset").addEventListener("click",function(){clearInterval(rtimer);rtimer=null;rleft=600;$("rtime").textContent=rfmt(rleft);$("rstart").textContent="Start ritual timer";});
 
 /* restore */
+(function restoreDraft(){
+  var st=loadState();
+  if(st&&st.goals&&st.goals.length)return;
+  var dr=null;
+  try{dr=JSON.parse(localStorage.getItem(DKEY)||"null");}catch(e){}
+  if(!dr)return;
+  if(dr.goalCount>=1&&dr.goalCount<=3&&dr.goalCount!==goalCount){goalCount=dr.goalCount;renderGoalInputs();}
+  if(dr.name)$("sprintName").value=dr.name;
+  if(dr.start)$("startDate").value=dr.start;
+  (dr.goals||[]).forEach(function(g,i){
+    if(!$("gname"+i))return;
+    $("gname"+i).value=g.name||"";$("glead"+i).value=g.indicator||"";$("gtarget"+i).value=g.target||"";$("gunit"+i).value=g.unit||"";
+  });
+})();
 (function restore(){
   var st=loadState();
   if(st&&st.goals&&st.goals.length){showSprint(st);}
