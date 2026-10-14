@@ -112,7 +112,7 @@ footer.site a{color:#e8c84a;text-decoration:none}
 <div>
 <label class="field"><span class="lbl">Desired profit margin (%)</span>
 <small>Your target margin on each sale, after all costs. 20–40% is typical for small businesses.</small>
-<input type="number" id="f_margin" min="0" max="95" step="1" inputmode="decimal" placeholder="e.g. 30"></label>
+<input type="number" id="f_margin" min="0" step="1" inputmode="decimal" placeholder="e.g. 30"></label>
 </div>
 </div>
 </div>
@@ -206,7 +206,7 @@ function validate(){
   var warns=[];
   FIELDS.forEach(function(f){ if(f==="f_cust")return; var v=$(f).value; if(v!==""&&parseFloat(v)<0){$(f).value="0";warns.push("A negative value was reset to 0.");} });
   var m=num("f_margin");
-  if(m>95){$("f_margin").value=95;warns.push("Margin capped at 95% — margins above that are rarely realistic.");}
+  if(m>=100){showErr("A profit margin of 100% or more is impossible — it would require an infinite price. Enter a margin below 100%.");return null;}
   var lo=num("f_compLow"),hi=num("f_compHigh");
   if($("f_compLow").value!==""&&$("f_compHigh").value!==""&&lo>hi&&hi>0){
     $("f_compLow").value=hi;$("f_compHigh").value=lo;warns.push("Competitor low/high were swapped so low comes first.");
@@ -235,17 +235,17 @@ function compute(){
     return m;
   }
   var models=[
-    mk("Cost-Plus",cost*(1+marginPct),1.0,"Guaranteed margin",
-      ["Guarantees your "+pct(marginPct)+" target margin on every sale","Simple to explain and defend","Protects you if costs rise (recalculate and adjust)"],
+    mk("Cost-Plus",cost/(1-marginPct),1.0,"Target margin built in",
+      ["Builds your exact "+pct(marginPct)+" target margin into the price — at the costs you entered, every sale hits it","Simple to explain and defend","Protects you if costs rise (recalculate and adjust)"],
       ["Ignores what competitors charge","May price you out of the market if costs are high","Leaves money on the table if customers would pay more"]),
     hasComp?mk("Market-Match",compMid,1.1,"Competitive",
       ["Sits inside the competitor band ("+money(compLow)+"–"+money(compHigh)+")","Familiar price range builds buyer trust","10% volume lift from competitive positioning"],
       ["Margin is whatever the market allows: "+(compMid>cost?pct((compMid-cost)/compMid):"BELOW COST — loses money")+"","Race to the bottom if competitors cut prices","No differentiation story"])
       :mk("Market-Match",0,1.1,"Competitive",[],[],true,"Enter competitor prices above to unlock this model."),
     mk("Value-Based",cost*valMult,0.9,"Premium",
-      ["Captures the value "+valLabel+" place on outcomes, not inputs","Highest margin per sale","Positions you as the premium choice"],
+      ["Captures the value "+valLabel+" place on outcomes, not inputs","High margin per sale","Positions you as the premium choice"],
       ["Harder sell — you must prove the outcome","~10% fewer units at premium pricing","If the value story is weak, buyers balk"]),
-    mk("Penetration",cost*(1+Math.min(marginPct,0.15)),1.5,"Volume play",
+    mk("Penetration",cost/(1-Math.min(marginPct,0.15)),1.5,"Volume play",
       ["Lowest price wins the most customers (~50% more units)","Fast market share and reviews","Good for launching something new"],
       ["Thinnest margin per sale","Trains customers to expect cheap","Hard to raise prices later without backlash"])
   ];
@@ -262,8 +262,8 @@ function render(r){
     kv("Overhead per unit ("+money(r.overhead)+" ÷ "+r.volume+")",money(r.ohPerUnit))+
     kv("<b>True cost per unit</b>","<b>"+money(r.cost)+"</b>");
   function kv(k,v){return '<div class="kv"><span>'+k+'</span><b>'+v+'</b></div>';}
-  $("targetLine").innerHTML='<div class="kv"><span>Price that hits your '+pct(r.marginPct)+' target margin</span><b>'+money(r.cost*(1+r.marginPct))+'</b></div>'+
-    '<div class="kv"><span>Profit per sale at that price</span><b>'+money(r.cost*r.marginPct)+'</b></div>';
+  $("targetLine").innerHTML='<div class="kv"><span>Price that hits your '+pct(r.marginPct)+' target margin</span><b>'+money(r.cost/(1-r.marginPct))+'</b></div>'+
+    '<div class="kv"><span>Profit per sale at that price</span><b>'+money(r.cost/(1-r.marginPct)-r.cost)+'</b></div>';
   $("resultsCard").style.display="block";
 
   // recommendation: highest projected profit among money-making models, with sanity penalty
@@ -291,7 +291,7 @@ function render(r){
       if(m.price>0&&m.margin!=null){
         if(m.margin<0)h+='<div class="bad">Loses '+money(-(m.price-r.cost))+' per sale</div>';
         else h+='<div class="big">'+pct(m.margin)+' margin</div>';
-        h+='<div class="mline">~'+Math.round(r.volume*m.volFactor)+' units/mo &rarr; '+money(Math.max(0,m.profit))+' profit/mo</div>';
+        h+='<div class="mline">~'+Math.round(r.volume*m.volFactor)+' units/mo &rarr; '+money(m.profit)+' profit/mo</div>';
       }else{
         h+='<div class="mline">Priced at $0.00 — enter your costs above to price this model.</div>';
       }
@@ -305,11 +305,12 @@ function render(r){
   var rb=$("recBox");
   if(best){
     var m=best.m;var why=[];
-    if(m.name==="Cost-Plus")why.push("It is the only model that guarantees your "+pct(r.marginPct)+" target margin on every sale — no hoping the market cooperates.");
+    if(m.name==="Cost-Plus")why.push("It is the only model that builds your exact "+pct(r.marginPct)+" target margin into the price itself — no hoping the market cooperates.");
     if(m.name==="Market-Match")why.push("It sits inside the proven competitor band ("+money(r.compLow)+"–"+money(r.compHigh)+"), so buyers already accept this price range.");
     if(m.name==="Value-Based")why.push(r.valLabel+" buy outcomes, not hours — a "+r.valMult.toFixed(1)+"× cost multiple captures that willingness to pay.");
     if(m.name==="Penetration")why.push("It trades margin for ~50% more volume, which maximizes total monthly profit with your numbers.");
     if(m.profit>0)why.push("Projected monthly profit: <b>"+money(m.profit)+"</b> at ~"+Math.round(r.volume*m.volFactor)+" units/month.");
+    if(m.profit<0)why.push("Projected monthly result: <b>a loss of "+money(-m.profit)+"</b> at ~"+Math.round(r.volume*m.volFactor)+" units/month — with these numbers every workable model loses money; fix the costs or the volume, not just the price.");
     if(r.hasComp&&m.price>r.compHigh)why.push("Note: this sits above the competitor range — you will need a clear reason buyers should pay more (faster, better, guaranteed).");
     if(r.hasComp&&m.price<r.compLow)why.push("Note: this undercuts every competitor — make sure the story is value, not desperation.");
     if(m.margin<r.marginPct&&m.margin>=0)why.push("Trade-off: margin is "+pct(m.margin)+", below your "+pct(r.marginPct)+" target — you are choosing volume over per-sale margin.");
@@ -321,7 +322,7 @@ function render(r){
   }
 
   // testing plan
-  var rec=r.models&&best?best.m.price:r.cost*(1+r.marginPct);
+  var rec=r.models&&best?best.m.price:r.cost/(1-r.marginPct);
   var up=rec*1.12, down=rec*0.88;
   $("testPlan").innerHTML=[
     "<b>Set your starting price at "+money(rec)+"</b> — the model's recommendation. Give it 2 weeks to collect a baseline: track visitors, conversion rate, and revenue.",
