@@ -215,9 +215,11 @@ function analyze(){
  if(!anyPri){err.textContent="Name at least one priority in Step 1 first.";return;}
  var t=total();
  if(t<=0){err.textContent="Log some hours in Step 2 first.";return;}
+ if(t>168){err.textContent="Your entries add up to "+t+" hours \u2014 more than the 168 hours in a week. Double-check for double-counted time, then run the analysis again.";return;}
  var sleep=num(S.hrs.sleep),waking=168-sleep;
  var aligned=0,maint=0,drainH=0;
  CATS.forEach(function(c){
+  if(c.id==="sleep")return; /* Sleep is excluded from the score entirely: the denominator is waking time, so sleep counts in neither the aligned nor the maintenance numerator. */
   var h=num(S.hrs[c.id]),m=S.map[c.id];
   if(m==="p1"||m==="p2"||m==="p3")aligned+=h;
   else if(m==="maint")maint+=h;else drainH+=h;
@@ -236,7 +238,7 @@ function analyze(){
   sb.textContent="N/A";sbd.textContent="Can't score this week";
   se.textContent="All 168 hours are logged as sleep, so there are no waking hours to score. Adjust your entries and run the analysis again.";
  }else{
-  var score=Math.round(100*(aligned+0.5*maint)/waking);
+  var score=Math.max(0,Math.min(100,Math.round(100*(aligned+0.5*maint)/waking)));
   var b=bandFor(score);
   sb.textContent=score+" / 100";sbd.textContent=b[0];
   se.textContent="Of your "+waking+" waking hours, "+Math.round(aligned*10)/10+"h directly serve your top 3 priorities ("+Math.round(100*aligned/waking)+"%"+(maint>0?", plus "+Math.round(maint*10)/10+"h of necessary maintenance counted at half weight":"")+". "+b[1];
@@ -245,9 +247,12 @@ function analyze(){
  if(sleep<42)sn.innerHTML='<div class="warn">Sleep note: you average under 6 hours a night. No reallocation plan works well on a sleep deficit &mdash; consider protecting sleep before cutting anything else.</div>';
  var leaks=[];
  CATS.forEach(function(c){
-  var h=num(S.hrs[c.id]);if(h>0&&c.w>0)leaks.push({id:c.id,label:c.label,hrs:h,leak:h*c.w});
+  var h=num(S.hrs[c.id]);
+  /* A leak is time the user mapped to "Drain" in Step 3 \u2014 judged against the priorities the user actually selected, never a fixed per-category assumption. Hours serving a priority or logged as necessary maintenance are not leaks. */
+  if(h>0&&S.map[c.id]==="drain")leaks.push({id:c.id,label:c.label,hrs:h,leak:h});
  });
- var excess=Math.max(0,sleep-63);
+ var sleepMapped=S.map.sleep;
+ var excess=(sleepMapped==="maint")?Math.max(0,sleep-63):0;
  if(excess>0)leaks.push({id:"sleepex",label:"Excess sleep (over 9h/night avg)",hrs:Math.round(excess*10)/10,leak:excess});
  leaks.sort(function(a,b){return b.leak-a.leak;});
  var top=leaks.slice(0,3);
