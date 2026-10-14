@@ -308,7 +308,8 @@ function renderRemind(){
  var box=document.getElementById("remind");box.innerHTML="";box.style.display="none";
  if(!S.checks.length)return;
  var last=S.checks[S.checks.length-1];
- var days=Math.max(0,Math.floor((Date.now()-new Date(last.date+"T12:00:00").getTime())/86400000));
+ var _tp=last.date.split("-"),_tn=new Date();
+ var days=Math.max(0,Math.round((Date.UTC(_tn.getFullYear(),_tn.getMonth(),_tn.getDate())-Date.UTC(+_tp[0],+_tp[1]-1,+_tp[2]))/86400000));
  var due=30-days;
  var msg;
  if(due>0)msg="<b>Last check:</b> "+esc(fmtDate(last.date))+" \u2014 team health "+last.overall+". Your re-check is due in "+due+" day"+(due===1?"":"s")+" (30-day rhythm).";
