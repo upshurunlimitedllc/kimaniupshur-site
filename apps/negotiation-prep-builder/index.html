@@ -171,12 +171,12 @@ function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"
 function scriptTemplate(){
   var p=S.party.trim()||"there";
   return "Thanks for sitting down with me. Here's where I'm coming from:\n\n"+
-  "What matters most to me here is "+(S.interests.map(function(x){return x.trim();}).filter(Boolean)[0]||"[my key interest]")+
+  "What matters most to me here is "+(S.interests.map(function(x){return x.trim();}).filter(Boolean)[0]||"reaching an agreement that works well for both of us")+
   ". I'm hoping we can find something that works for both of us.\n\n"+
   "Before I share numbers, can I ask — what's most important to you on your side? What would a great outcome look like for "+p+"?\n\n"+
-  "[Listen. Take notes. Ask: 'What makes that important to you?']\n\n"+
-  "Here's what I had in mind: "+(S.position.trim()||"[my position]")+". I know that's a starting point — tell me what works and what doesn't on your end, and let's see where we land.\n\n"+
-  "[If they push back: 'Help me understand what's behind that — maybe there's another way to get you what you need.']";
+  "(Listen. Take notes. Ask: 'What makes that important to you?')\n\n"+
+  "Here's what I had in mind: "+(S.position.trim()||"a package built around the interests we've both named")+". I know that's a starting point — tell me what works and what doesn't on your end, and let's see where we land.\n\n"+
+  "(If they push back: 'Help me understand what's behind that — maybe there's another way to get you what you need.')";
 }
 function drawList(boxId,arr,minRows,placeholder,ariaBase){
   var box=document.getElementById(boxId);box.innerHTML="";
@@ -332,6 +332,12 @@ document.getElementById("batna").value=S.batna||"";
 document.getElementById("theirPos").value=S.theirPos||"";
 document.getElementById("theirBatna").value=S.theirBatna||"";
 document.getElementById("leverage").value=S.leverage||"";
+if(S.script.indexOf("[my key interest]")>=0||S.script.indexOf("[my position]")>=0){
+  var li=S.interests.map(function(x){return x.trim();}).filter(Boolean)[0];
+  S.script=S.script.split("[my key interest]").join(li||"reaching an agreement that works well for both of us");
+  S.script=S.script.split("[my position]").join(S.position.trim()||"a package built around the interests we've both named");
+  save();
+}
 if(!S.script.trim()){S.script=scriptTemplate();}
 document.getElementById("script").value=S.script;
 drawAll();
