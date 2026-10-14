@@ -152,6 +152,7 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 function uid(){return "h"+Math.random().toString(36).slice(2,10);}
 function blankHolding(){return{id:uid(),name:"",amount:"",cat:"uslarge",sector:"Technology",region:"us",top:""};}
 function pct1(n){return (Math.round(n*10)/10)+"%";}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
 function renderHoldings(){
   var box=document.getElementById("holdings");box.innerHTML="";
   document.getElementById("modeDollars").classList.toggle("on",S.mode==="dollars");
@@ -234,7 +235,7 @@ function parseHoldings(){
   var out=[],problems=[];
   S.holdings.forEach(function(h,i){
     var a=parseFloat(String(h.amount).replace(/[^0-9.]/g,""));
-    if(!isFinite(a)||a<0){problems.push("Holding "+(i+1)+" ("+(h.name||"unnamed")+") has no valid amount \u2014 treated as $0.");a=0;}
+    if(!isFinite(a)||a<0){problems.push("Holding "+(i+1)+" ("+esc(h.name||"unnamed")+") has no valid amount \u2014 treated as $0.");a=0;}
     out.push({name:h.name||("Holding "+(i+1)),amt:a,cat:h.cat,sector:h.sector,region:h.region,top:h.top});
   });
   return{rows:out,problems:problems};
@@ -329,12 +330,12 @@ function analyze(){
   }
   if(pctSum!==null&&Math.abs(pctSum-100)>1)flag("<strong>Percentages add to "+pct1(pctSum)+", not 100%.</strong> Results are scaled to what you entered, but double-check the numbers.","warn");
   p.problems.forEach(function(m){flag(m,"warn");});
-  flag("<strong>"+pct1(maxHold.pct)+"</strong> of your portfolio is in a single holding: \u201c"+maxHold.name+".\u201d"+(maxHold.pct>25?" That is a lot riding on one position.":""),maxHold.pct>25?"":"good");
+  flag("<strong>"+pct1(maxHold.pct)+"</strong> of your portfolio is in a single holding: \u201c"+esc(maxHold.name)+".\u201d"+(maxHold.pct>25?" That is a lot riding on one position.":""),maxHold.pct>25?"":"good");
   if(usLarge>50)flag("<strong>"+pct1(usLarge)+" of your portfolio is U.S. large-cap style.</strong> Big American companies dominate \u2014 smaller companies and the rest of the world are underrepresented.","warn");
   if(cls.stocks>0&&intlStocks/cls.stocks<0.20)flag("Only <strong>"+pct1(intlStocks)+"</strong> is in international stocks ("+pct1(cls.stocks?intlStocks/cls.stocks*100:0)+" of your stock portion). The U.S. is not the whole world economy.","warn");
   if(topSector&&topSectorPct>10)flag("<strong>"+pct1(topSectorPct)+" sits in one sector ("+topSector+").</strong> A sector slump would hit harder than a broad-market dip.","warn");
   overlaps.forEach(function(o){
-    flag("<strong>Hidden overlap:</strong> \u201c"+o.stock+"\u201d appears in the top holdings of "+o.holders.map(function(h){return "\u201c"+h+"\u201d";}).join(" and ")+". You may own the same stock twice without realizing it.");
+    flag("<strong>Hidden overlap:</strong> \u201c"+esc(o.stock)+"\u201d appears in the top holdings of "+o.holders.map(function(h){return "\u201c"+esc(h)+"\u201d";}).join(" and ")+". You may own the same stock twice without realizing it.");
   });
   if(cls.bonds<5&&cls.stocks>50)flag("Almost no bonds ("+pct1(cls.bonds)+"). Bonds will not make you rich, but they cushion the falls \u2014 worth considering as a stabilizer.","warn");
   if(cls.cash>20)flag(pct1(cls.cash)+" is in cash. Fine for an emergency fund, but cash sitting inside an investment portfolio quietly loses buying power over time.","warn");
