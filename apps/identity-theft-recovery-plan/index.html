@@ -209,7 +209,7 @@ function drawIncidents(){var box=document.getElementById("inclist");box.innerHTM
       lab.classList.toggle("on",cb.checked);save();});
     var sp=document.createElement("span");sp.innerHTML="<b>"+ic.t+"</b><span>"+ic.d+"</span>";
     lab.appendChild(cb);lab.appendChild(sp);box.appendChild(lab);});}
-function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
 function drawPlan(){var steps=planSteps();
   document.getElementById("pickcard").style.display="none";
   document.getElementById("plancard").style.display="block";
