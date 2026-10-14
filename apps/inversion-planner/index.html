@@ -136,6 +136,15 @@ function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);if
 }}}catch(e){}}
 function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function danger(f){var t=parseInt(f.trap,10),d=parseInt(f.damage,10);if(!(t>=1&&t<=5&&d>=1&&d<=5))return null;return t*d;}
+function cmpFails(a,b){
+  var sa=danger(a),sb=danger(b);
+  sa=(sa==null?-1:sa);sb=(sb==null?-1:sb);
+  if(sb!==sa)return sb-sa;
+  var da=parseInt(a.damage,10)||0,db=parseInt(b.damage,10)||0;
+  if(db!==da)return db-da;
+  var ma=a.mode.trim().toLowerCase(),mb=b.mode.trim().toLowerCase();
+  return ma<mb?-1:(ma>mb?1:0);
+}
 function level(s){if(s==null)return null;if(s<=4)return{label:"Minor trap",cls:"p-low"};if(s<=9)return{label:"Moderate trap",cls:"p-med"};if(s<=15)return{label:"Serious trap",cls:"p-high"};return{label:"Deadly trap",cls:"p-crit"};}
 var TS=["","1 — Unlikely","2 — Possible","3 — Plausible","4 — Probable","5 — Almost certain"];
 var DS=["","1 — Minor setback","2 — Noticeable","3 — Painful","4 — Severe","5 — Goal dead"];
@@ -160,11 +169,11 @@ function drawFails(){
     var tsel=document.createElement("select");tsel.setAttribute("aria-label","Trap likelihood for failure mode "+(idx+1));
     TS.forEach(function(t,v){var o=document.createElement("option");o.value=v;o.textContent=t||"Trap likelihood…";if(String(v)===f.trap)o.selected=true;tsel.appendChild(o);});
     if(f.trap==="")tsel.selectedIndex=0;
-    tsel.addEventListener("change",function(){f.trap=tsel.value;save();liveScore(d,f);});
+    tsel.addEventListener("change",function(){f.trap=tsel.value;save();liveScore(d,f);drawInvs();});
     var dsel=document.createElement("select");dsel.setAttribute("aria-label","Damage for failure mode "+(idx+1));
     DS.forEach(function(t,v){var o=document.createElement("option");o.value=v;o.textContent=t||"Damage if it happens…";if(String(v)===f.damage)o.selected=true;dsel.appendChild(o);});
     if(f.damage==="")dsel.selectedIndex=0;
-    dsel.addEventListener("change",function(){f.damage=dsel.value;save();liveScore(d,f);});
+    dsel.addEventListener("change",function(){f.damage=dsel.value;save();liveScore(d,f);drawInvs();});
     var tw=document.createElement("div");var tl=document.createElement("label");tl.className="lbl";tl.textContent="How likely is this trap?";tw.appendChild(tl);tw.appendChild(tsel);
     var dw=document.createElement("div");var dl=document.createElement("label");dl.className="lbl";dl.textContent="Damage if it happens?";dw.appendChild(dl);dw.appendChild(dsel);
     cols.appendChild(tw);cols.appendChild(dw);d.appendChild(cols);
@@ -189,7 +198,7 @@ function drawInvs(){
   var named=S.fails.filter(function(f){return f.mode.trim();});
   if(!named.length){document.getElementById("invcard").hidden=true;return;}
   document.getElementById("invcard").hidden=false;
-  var ranked=named.slice().sort(function(a,b){return (danger(b)||0)-(danger(a)||0);});
+  var ranked=named.slice().sort(cmpFails);
   ranked.forEach(function(f){
     var s=danger(f),lv=level(s);
     var d=document.createElement("div");d.className="inv"+(lv&&lv.cls==="p-crit"?" danger":"");
@@ -213,8 +222,8 @@ function build(){
   for(var k=0;k<named.length;k++){
     if(danger(named[k])==null){err.textContent="Failure mode \""+named[k].mode.trim().slice(0,40)+"…\" is missing a trap or damage rating. Rate all traps 1–5.";return;}
   }
-  var ranked=named.map(function(f){var s=danger(f);return {f:f,s:s,lv:level(s)};})
-    .sort(function(a,b){return b.s-a.s||(a.f.mode<b.f.mode?-1:1);});
+  var ranked=named.slice().sort(cmpFails)
+    .map(function(f){var s=danger(f);return {f:f,s:s,lv:level(s)};});
   var noInv=ranked.filter(function(x){return !x.f.invert.trim();});
   renderPlans(ranked,noInv);
   document.getElementById("out").hidden=false;
