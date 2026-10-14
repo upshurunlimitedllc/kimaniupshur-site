@@ -103,7 +103,7 @@ function calc(){
   var per=+document.getElementById("gfreq").value;
   var pct=+document.getElementById("gpct").value;
   document.getElementById("gpctlab").textContent=pct+"%";
-  var yearly=inc/per*pct/100;
+  var yearly=inc*per*pct/100;
   document.getElementById("gyr").textContent=money(yearly);
   document.getElementById("gmo").textContent=money(yearly/12);
   document.getElementById("gwk").textContent=money(yearly/52);
