@@ -155,6 +155,7 @@ var QS=[
  {d:"energy",t:"I mostly avoid it when I'm tired &mdash; the timing never feels right."},
  {d:"distract",t:"When I sit down to start, I drift to my phone or easier things."}
 ];
+var DRIVER_MAX={};QS.forEach(function(q){DRIVER_MAX[q.d]=(DRIVER_MAX[q.d]||0)+4;}); /* each question is scored 0-4, so a driver's true maximum is 4 x its question count (one question per driver today = 4, matching the "x/4" bar labels) */
 var PROTOS={
  overwhelm:{title:"The 10-Minute Micro-Chunk",note:"Shrink the start until starting feels silly to refuse.",
   steps:["Write the task at the top of a page, then list the 3 tiniest chunks of it (each under 10 minutes).","Circle chunk #1 &mdash; the smallest possible piece.","Set the timer below for 10 minutes and do ONLY chunk #1.","When it rings, stop. You may continue, but stopping counts as a win."],
@@ -238,7 +239,7 @@ function diagnose(){
   '<p style="color:#cbbf9a;font-size:.92rem;margin-top:8px">Secondary signal: <strong style="color:#e8c84a">'+DRIVERS[S.secondary].name+"</strong> ("+conf+"% of your avoidance score points to the primary driver). Diagnosis is specific to: <strong>"+escapeHtml(task)+"</strong>.</p>";
  var bars=document.getElementById("driverbars");bars.innerHTML="";
  sorted.forEach(function(d){
-  var pct=Math.round(100*(scores[d]||0)/16);
+  var pct=Math.round(100*(scores[d]||0)/(DRIVER_MAX[d]||4));
   var row=document.createElement("div");
   row.style.cssText="display:grid;grid-template-columns:150px 1fr 40px;gap:10px;align-items:center;margin:6px 0;font-size:.9rem";
   row.innerHTML="<span>"+DRIVERS[d].name+"</span>"+
