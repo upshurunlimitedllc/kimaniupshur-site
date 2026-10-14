@@ -124,6 +124,14 @@ function $(id){return document.getElementById(id)}
 function load(){try{return JSON.parse(localStorage.getItem(K))||{debts:[],paid:0}}catch(e){return{debts:[],paid:0}}}
 function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
 let st=load();
+/* BASELINE RULE (progress accounting): Progress = total paid / BASELINE, capped at 100%.
+   The baseline is the total of every debt ever added to the journey. Adding a debt
+   raises the baseline by that debt's starting balance. Removing a debt lowers what
+   is still owed but NEVER lowers the baseline, so deleting an account can never
+   inflate the progress percentage. Legacy saves (no "base" field) are migrated on
+   load: baseline = max(sum of the original balances of the accounts still present,
+   total paid so far) -- the closest faithful reading of the surviving data. */
+if(typeof st.base!=="number"||!(st.base>0)){const ob=st.debts.reduce(function(s,d){return s+(d.orig||d.bal)},0);st.base=Math.max(ob,st.paid||0);save()}
 function money(n){return "$"+n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
 function render(){
  const box=$("list");
@@ -141,8 +149,8 @@ function render(){
   }).join("");
  }
  const total=st.debts.reduce(function(s,d){return s+d.bal},0);
- const orig=st.debts.reduce(function(s,d){return s+(d.orig||d.bal)},0);
- const pct=orig>0?Math.round(st.paid/orig*100):0;
+ const base=(typeof st.base==="number"&&st.base>0)?st.base:st.debts.reduce(function(s,d){return s+(d.orig||d.bal)},0);
+ const pct=base>0?Math.min(100,Math.round(st.paid/base*100)):0;
  $("totals").innerHTML='<div class="tcard"><h3>Your Progress</h3>'+
   '<div class="row" style="margin:4px 0"><span>Total remaining: <strong>'+money(total)+'</strong></span><span>Total paid off: <strong>'+money(st.paid)+'</strong></span></div>'+
   '<div class="bar"><i style="width:'+pct+'%"></i></div><p class="muted">'+pct+'% of original debt paid. Keep going - steady plodding wins.</p></div>';
@@ -150,6 +158,7 @@ function render(){
   const i=parseInt(b.getAttribute("data-pay"),10);
   const amt=parseFloat($("pay"+i).value)||0;
   if(amt<=0)return;
+  if(amt>st.debts[i].bal){alert("That payment is more than this debt's remaining balance of "+money(st.debts[i].bal)+". Enter the balance or less.");return}
   st.debts[i].bal=Math.max(0,st.debts[i].bal-amt);st.paid+=amt;save();render();})});
  box.querySelectorAll("[data-del]").forEach(function(b){b.addEventListener("click",function(){
   st.debts.splice(parseInt(b.getAttribute("data-del"),10),1);save();render();})});
@@ -158,7 +167,7 @@ function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").repl
 $("add").addEventListener("click",function(){
  const n=$("dname").value.trim(),b=parseFloat($("dbal").value)||0,a=parseFloat($("dapr").value)||0;
  if(!n||b<=0){alert("Enter a debt name and a balance greater than zero.");return}
- st.debts.push({name:n,bal:b,orig:b,apr:a});
+ st.debts.push({name:n,bal:b,orig:b,apr:a});st.base=(typeof st.base==="number"?st.base:0)+b;
  $("dname").value="";$("dbal").value="";$("dapr").value="";save();render();});
 function showVerse(i){$("vtext").textContent="\u201C"+VERSES[i][0]+"\u201D";$("vref").textContent=VERSES[i][1]+" (KJV)"}
 $("newverse").addEventListener("click",function(){showVerse(Math.floor(Math.random()*VERSES.length))});
