@@ -157,10 +157,32 @@ footer.site a{color:#e8c84a;text-decoration:none}
 "use strict";
 var KEY="app-wrap-decision-guide-v1";
 var STEPS=["Widen","Reality-test","Distance","Tripwires","Brief"];
-var S={step:1,decision:"",options:["","",""],rt:{},ttt:{},friend:-1,final:-1,premortem:"",trips:[""],revisit:""};
+var S={step:1,decision:"",options:["","",""],optIds:[1,2,3],nextId:4,rt:{},ttt:{},friend:-1,final:-1,premortem:"",trips:[""],revisit:""};
 
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
-function load(){try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k in S)S[k]=o[k];}}}catch(e){}}
+function load(){var raw=null;try{var r=localStorage.getItem(KEY);if(r){raw=JSON.parse(r);for(var k in raw){if(k in S)S[k]=raw[k];}}}catch(e){}migrate(raw);}
+function migrate(raw){
+  // Options carry stable IDs; rt/ttt/friend/final are keyed by ID, never by position.
+  // Legacy saves keyed them by option position — remap position -> ID so saved work survives.
+  if(!Array.isArray(S.options))S.options=["","",""];
+  S.options=S.options.map(function(o){return typeof o==="string"?o:"";});
+  var legacy=!(raw&&Array.isArray(raw.optIds)&&raw.optIds.length===S.options.length);
+  if(legacy&&raw){
+    var oldRt=(S.rt&&typeof S.rt==="object")?S.rt:{},oldTtt=(S.ttt&&typeof S.ttt==="object")?S.ttt:{};
+    var oldFriend=S.friend,oldFinal=S.final;
+    S.optIds=S.options.map(function(_,i){return i+1;});
+    S.nextId=S.options.length+1;
+    var nRt={},nTtt={};
+    Object.keys(oldRt).forEach(function(k){var i=parseInt(k,10);if(S.optIds[i]!==undefined)nRt[S.optIds[i]]=oldRt[k];});
+    Object.keys(oldTtt).forEach(function(k){var i=parseInt(k,10);if(S.optIds[i]!==undefined)nTtt[S.optIds[i]]=oldTtt[k];});
+    S.rt=nRt;S.ttt=nTtt;
+    S.friend=(typeof oldFriend==="number"&&S.optIds[oldFriend]!==undefined)?S.optIds[oldFriend]:-1;
+    S.final=(typeof oldFinal==="number"&&S.optIds[oldFinal]!==undefined)?S.optIds[oldFinal]:-1;
+    save();
+  }
+  if(!Array.isArray(S.optIds)||S.optIds.length!==S.options.length)S.optIds=S.options.map(function(_,i){return i+1;});
+  if(typeof S.nextId!=="number"||!(S.nextId>0))S.nextId=S.optIds.length+1;
+}
 function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function optNames(){return S.options.map(function(o,i){return o.trim()||("Option "+(i+1));});}
 
@@ -193,7 +215,7 @@ function drawOpts(){
     row.appendChild(inp);
     if(S.options.length>3){var rm=document.createElement("button");rm.className="btn danger small";rm.textContent="Remove";
       rm.setAttribute("aria-label","Remove option "+(i+1));
-      rm.addEventListener("click",function(){S.options.splice(i,1);save();drawOpts();});
+      rm.addEventListener("click",function(){var id=S.optIds[i];S.options.splice(i,1);S.optIds.splice(i,1);delete S.rt[id];delete S.ttt[id];if(S.friend===id)S.friend=-1;if(S.final===id)S.final=-1;save();drawOpts();});
       row.appendChild(rm);}
     box.appendChild(row);
   });
@@ -202,7 +224,8 @@ function drawRT(){
   var box=document.getElementById("rtblocks");box.innerHTML="";
   var names=optNames();
   names.forEach(function(nm,i){
-    var d=S.rt[i]||{forA:"",against:"",conf:""};
+    var id=S.optIds[i];
+    var d=S.rt[id]||{forA:"",against:"",conf:""};
     var div=document.createElement("div");div.className="optblock";
     div.innerHTML='<h4>'+esc(nm)+'</h4>'+
       '<label class="lbl" for="rtf'+i+'">Evidence FOR '+esc(nm)+'</label>'+
@@ -214,9 +237,9 @@ function drawRT(){
     box.appendChild(div);
     var f=div.querySelector("#rtf"+i),a=div.querySelector("#rta"+i),c=div.querySelector("#rtc"+i);
     f.value=d.forA;a.value=d.against;c.value=d.conf;
-    f.addEventListener("input",function(){rtGet(i).forA=f.value;save();});
-    a.addEventListener("input",function(){rtGet(i).against=a.value;save();});
-    c.addEventListener("input",function(){rtGet(i).conf=c.value;save();});
+    f.addEventListener("input",function(){rtGet(id).forA=f.value;save();});
+    a.addEventListener("input",function(){rtGet(id).against=a.value;save();});
+    c.addEventListener("input",function(){rtGet(id).conf=c.value;save();});
   });
 }
 function rtGet(i){if(!S.rt[i])S.rt[i]={forA:"",against:"",conf:""};return S.rt[i];}
@@ -224,7 +247,8 @@ function drawTTT(){
   var box=document.getElementById("tttblocks");box.innerHTML="";
   var names=optNames();
   names.forEach(function(nm,i){
-    var d=S.ttt[i]||{m10:"",mo10:"",yr10:""};
+    var id=S.optIds[i];
+    var d=S.ttt[id]||{m10:"",mo10:"",yr10:""};
     var div=document.createElement("div");div.className="optblock";
     div.innerHTML='<h4>'+esc(nm)+'</h4>'+
       '<label class="lbl" for="t1'+i+'">In 10 minutes, how will you feel?</label><input type="text" id="t1'+i+'" placeholder="e.g., Relieved it\'s decided">'+
@@ -233,16 +257,17 @@ function drawTTT(){
     box.appendChild(div);
     var a=div.querySelector("#t1"+i),b=div.querySelector("#t2"+i),c=div.querySelector("#t3"+i);
     a.value=d.m10;b.value=d.mo10;c.value=d.yr10;
-    a.addEventListener("input",function(){tttGet(i).m10=a.value;save();});
-    b.addEventListener("input",function(){tttGet(i).mo10=b.value;save();});
-    c.addEventListener("input",function(){tttGet(i).yr10=c.value;save();});
+    a.addEventListener("input",function(){tttGet(id).m10=a.value;save();});
+    b.addEventListener("input",function(){tttGet(id).mo10=b.value;save();});
+    c.addEventListener("input",function(){tttGet(id).yr10=c.value;save();});
   });
   var fp=document.getElementById("friendPick");fp.innerHTML="";
   names.forEach(function(nm,i){
+    var id=S.optIds[i];
     var lab=document.createElement("label");
-    var r=document.createElement("input");r.type="radio";r.name="friend";r.value=i;r.checked=(S.friend===i);
+    var r=document.createElement("input");r.type="radio";r.name="friend";r.value=id;r.checked=(S.friend===id);
     r.setAttribute("aria-label","Advise friend: "+nm);
-    r.addEventListener("change",function(){S.friend=i;save();});
+    r.addEventListener("change",function(){S.friend=id;save();});
     lab.appendChild(r);lab.appendChild(document.createTextNode(nm));fp.appendChild(lab);
   });
 }
@@ -250,10 +275,11 @@ function tttGet(i){if(!S.ttt[i])S.ttt[i]={m10:"",mo10:"",yr10:""};return S.ttt[i
 function drawFinal(){
   var fp=document.getElementById("finalPick");fp.innerHTML="";
   optNames().forEach(function(nm,i){
+    var id=S.optIds[i];
     var lab=document.createElement("label");
-    var r=document.createElement("input");r.type="radio";r.name="final";r.value=i;r.checked=(S.final===i);
+    var r=document.createElement("input");r.type="radio";r.name="final";r.value=id;r.checked=(S.final===id);
     r.setAttribute("aria-label","Choose: "+nm);
-    r.addEventListener("change",function(){S.final=i;save();});
+    r.addEventListener("change",function(){S.final=id;save();});
     lab.appendChild(r);lab.appendChild(document.createTextNode(nm));fp.appendChild(lab);
   });
   var box=document.getElementById("trips");box.innerHTML="";
@@ -273,16 +299,17 @@ function drawFinal(){
 }
 function renderBrief(){
   var names=optNames();
-  var chosen=S.final>=0?names[S.final]:"(no choice recorded)";
+  var finalIdx=S.optIds.indexOf(S.final),friendIdx=S.optIds.indexOf(S.friend);
+  var chosen=finalIdx>=0?names[finalIdx]:"(no choice recorded)";
   var h='<p class="hint">Decision: <b>'+esc(S.decision||"(unnamed)")+'</b></p>';
   h+='<div class="flag good"><b>My decision: '+esc(chosen)+'</b></div>';
-  if(S.friend>=0&&S.friend!==S.final){
-    h+='<div class="flag"><b>Note:</b> you\'d advise a friend to pick "'+esc(names[S.friend])+'" — different from your own choice. Sit with that gap before acting; emotion may be pulling you off your own best advice.</div>';
+  if(friendIdx>=0&&S.friend!==S.final){
+    h+='<div class="flag"><b>Note:</b> you\'d advise a friend to pick "'+esc(names[friendIdx])+'" — different from your own choice. Sit with that gap before acting; emotion may be pulling you off your own best advice.</div>';
   }
-  var d=rtGet(S.final);
+  var d=S.final>=0?rtGet(S.final):{forA:"",against:"",conf:""};
   if(d.forA.trim()){h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">Why this choice</h3><p>'+esc(d.forA.trim())+'</p>';}
   if(d.against.trim()){h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">The honest counter-case (don\'t ignore it)</h3><p>'+esc(d.against.trim())+'</p>';}
-  var t=tttGet(S.final);
+  var t=S.final>=0?tttGet(S.final):{m10:"",mo10:"",yr10:""};
   if(t.m10||t.mo10||t.yr10){
     h+='<h3 style="font-family:Georgia,serif;margin:14px 0 4px">10-10-10 check</h3><ul style="margin-left:20px">'+
       (t.m10?'<li><b>10 minutes:</b> '+esc(t.m10)+'</li>':'')+
@@ -304,7 +331,7 @@ function renderBrief(){
 
 document.getElementById("addOpt").addEventListener("click",function(){
   if(S.options.length>=8){document.getElementById("err1").textContent="Eight options is plenty — if you have more, drop the weakest first.";return;}
-  S.options.push("");save();drawOpts();
+  S.options.push("");S.optIds.push(S.nextId++);save();drawOpts();
 });
 document.getElementById("addTrip").addEventListener("click",function(){
   if(S.trips.length>=6){document.getElementById("err4").textContent="Six tripwires is plenty — keep the sharpest ones.";return;}
@@ -320,7 +347,7 @@ document.getElementById("to2").addEventListener("click",function(){
 document.getElementById("to3").addEventListener("click",function(){
   var e=document.getElementById("err2");var names=optNames();
   for(var i=0;i<names.length;i++){
-    var d=rtGet(i);
+    var d=rtGet(S.optIds[i]);
     if(!d.forA.trim()||!d.against.trim()){e.textContent="Fill in both evidence FOR and AGAINST \""+names[i]+"\" — the \"against\" column is the whole point of this step.";return;}
     var conf=parseFloat(d.conf);
     if(!isNaN(conf)&&conf>=90&&d.against.trim().length<20){e.textContent="You're "+conf+"% confident in \""+names[i]+"\" but the case against it is thin. Add one more hard piece of disconfirming evidence first.";return;}
@@ -330,7 +357,7 @@ document.getElementById("to3").addEventListener("click",function(){
 document.getElementById("to4").addEventListener("click",function(){
   var e=document.getElementById("err3");var names=optNames();
   for(var i=0;i<names.length;i++){
-    var t=tttGet(i);
+    var t=tttGet(S.optIds[i]);
     if(!t.m10.trim()||!t.mo10.trim()||!t.yr10.trim()){e.textContent="Complete the 10-10-10 lens for \""+names[i]+"\" (all three timeframes).";return;}
   }
   if(S.friend<0){e.textContent="Pick what you'd advise your best friend — it's the distance check.";return;}
@@ -353,7 +380,7 @@ document.getElementById("printBtn").addEventListener("click",function(){window.p
 document.getElementById("reset").addEventListener("click",function(){
   if(!confirm("Clear all saved work for this app and start over?"))return;
   try{localStorage.removeItem(KEY);}catch(e){}
-  S={step:1,decision:"",options:["","",""],rt:{},ttt:{},friend:-1,final:-1,premortem:"",trips:[""],revisit:""};
+  S={step:1,decision:"",options:["","",""],optIds:[1,2,3],nextId:4,rt:{},ttt:{},friend:-1,final:-1,premortem:"",trips:[""],revisit:""};
   document.getElementById("decision").value="";document.getElementById("premortem").value="";document.getElementById("revisit").value="";
   drawOpts();goto(1);
 });
