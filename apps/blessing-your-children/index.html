@@ -92,6 +92,7 @@ var name="",count=0;
 try{var s=JSON.parse(localStorage.getItem(KEY)||"{}");name=s.name||"";count=s.count||0;}catch(e){}
 var grid=document.getElementById('ogrid'),card=document.getElementById('bcard'),cin=document.getElementById('cname');
 cin.value=name;
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 function save(){localStorage.setItem(KEY,JSON.stringify({name:cin.value,count:count}));}
 function paintCount(){document.getElementById('count').textContent=count>0?('Blessings spoken: '+count):'';}
 B.forEach(function(b){
@@ -99,7 +100,7 @@ var btn=document.createElement('button');btn.className='obtn';btn.type='button';
 btn.addEventListener('click',function(){
 Array.prototype.forEach.call(grid.children,function(x){x.classList.remove('active');});
 btn.classList.add('active');
-var n=(cin.value.trim()||'your child');
+var n=esc(cin.value.trim()||'your child');
 card.style.display='block';
 card.innerHTML='<small style="color:#8a6d1c;font-weight:bold;letter-spacing:1px">'+b.o.toUpperCase()+' BLESSING</small>'
 +'<p class="bt">\u201C'+b.say.replace(/\{N\}/g,n)+'\u201D</p>'
