@@ -89,14 +89,17 @@ var Q=["Where have you seen God at work this week?","What are you praying about 
 var deck=[],used={},cur=-1;
 try{var s=JSON.parse(localStorage.getItem(KEY)||"{}");deck=s.deck||[];used=s.used||{};}catch(e){}
 function save(){localStorage.setItem(KEY,JSON.stringify({deck:deck,used:used}));}
-function shuffle(){deck=Q.map(function(_,i){return i;});
-for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t;}
-used={};cur=-1;save();}
-if(!deck.length){shuffle();}
+function shuffled(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function shuffle(){deck=shuffled(Q.map(function(_,i){return i;}));used={};cur=-1;save();}
+function rebuild(){deck=shuffled(Q.map(function(_,i){return i;}).filter(function(i){return !used[i];}));save();}
+if(!deck.length&&Object.keys(used).length<Q.length){rebuild();}
 var card=document.getElementById('card'),draw=document.getElementById('draw'),disc=document.getElementById('discussed');
 function progress(){var n=Object.keys(used).length;document.getElementById('pfill').style.width=(n/Q.length*100)+'%';document.getElementById('ptext').textContent=n===Q.length?'\u2713 Whole deck discussed! Shuffle for a fresh round.':(n+' of '+Q.length+' conversations enjoyed.');}
 draw.addEventListener('click',function(){
-if(!deck.length){shuffle();}
+if(!deck.length){
+if(Object.keys(used).length>=Q.length){card.innerHTML='<p style="color:#6b6250">\u2713 Whole deck discussed! Shuffle a new deck for a fresh round.</p>';return;}
+rebuild();
+}
 cur=deck.shift();save();
 card.innerHTML='<p>\u201C'+Q[cur]+'\u201D</p>';
 disc.disabled=false;
