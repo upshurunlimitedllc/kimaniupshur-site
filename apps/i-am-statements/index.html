@@ -122,7 +122,7 @@ const STMTS=[
 ["I am strong in Christ","I can do all things through Christ which strengtheneth me.","Philippians 4:13"],
 ["I am a child of God","But as many as received him, to them gave he power to become the sons of God.","John 1:12"]];
 function $(id){return document.getElementById(id)}
-let cur=Math.floor((Date.now()/86400000))%STMTS.length;
+let _ld=new Date();let cur=Math.floor(Date.UTC(_ld.getFullYear(),_ld.getMonth(),_ld.getDate())/86400000)%STMTS.length;
 function show(i){
  cur=i;const s=STMTS[i];
  $("today").textContent=s[0];
