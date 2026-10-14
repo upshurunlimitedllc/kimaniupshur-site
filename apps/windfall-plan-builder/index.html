@@ -191,7 +191,7 @@ var BUCKETS=[
 ];
 var S={
  step:1,amount:10000,source:"bonus",name:"",
- taxPct:30,noDebt:false,debts:[{name:"Credit card",bal:2500,apr:24}],
+ taxPct:30,noDebt:false,debts:[{id:"d1",name:"Credit card",bal:2500,apr:24}],nextDebtId:2,
  efExp:3500,efCur:4000,efMonths:6,
  pct:{tax:30,debt:0,ef:0,inv:65,fun:5},
  dest:{},checks:[]
@@ -251,7 +251,7 @@ function renderDebts(){
  box.style.display=S.noDebt?"none":"block";
 }
 $("noDebt").addEventListener("change",function(){S.noDebt=this.checked;save();renderDebts();});
-$("addDebt").addEventListener("click",function(){S.debts.push({name:"",bal:0,apr:0});S.noDebt=false;$("noDebt").checked=false;save();renderDebts();});
+$("addDebt").addEventListener("click",function(){S.debts.push({id:"d"+(S.nextDebtId++),name:"",bal:0,apr:0});S.noDebt=false;$("noDebt").checked=false;save();renderDebts();});
 // ---- step 4 ----
 [["efExp","efExp"],["efCur","efCur"]].forEach(function(p){
  $(p[0]).addEventListener("input",function(){S[p[1]]=Math.max(0,num(this.value,0));save();updateEfNote();});
@@ -378,16 +378,16 @@ function renderPlan(){
    sorted.forEach(function(x){
      if(left<=0)return;
      var pay=Math.min(x.bal,left);left-=pay;
-     payoff.push({name:x.name||"Unnamed debt",apr:x.apr,pay:pay,bal:x.bal});
+     payoff.push({id:x.id,name:x.name||"Unnamed debt",apr:x.apr,pay:pay,bal:x.bal});
    });
  }
  // checklist
  var items=[];
  items.push({t:"Move "+money(amts.tax)+" to a SEPARATE savings account labeled 'Tax Reserve.' Do this before spending anything else.",k:"c-tax"});
  payoff.forEach(function(x,i){
-   items.push({t:"Pay "+money(x.pay)+" toward "+x.name+" ("+x.apr+"% APR)"+(x.pay<x.bal-0.5?" — "+money(x.bal-x.pay)+" will remain":" — pays it off in full!"),k:"c-debt"+i});
+   items.push({t:"Pay "+money(x.pay)+" toward "+x.name+" ("+x.apr+"% APR)"+(x.pay<x.bal-0.5?" — "+money(x.bal-x.pay)+" will remain":" — pays it off in full!"),k:"c-debt-"+x.id});
  });
- if(!S.noDebt&&amts.debt<0.5&&dt>0.5)items.push({t:"You allocated $0 to debt but still owe "+money(dt)+". Reconsider — or confirm this is intentional.",k:"c-debt0"});
+ if(!S.noDebt&&amts.debt<0.5&&dt>0.5)items.push({t:"You allocated $0 to debt but still owe "+money(dt)+". Reconsider — or confirm this is intentional.",k:"c-debtwarn"});
  if(amts.ef>0.5)items.push({t:"Move "+money(amts.ef)+" to your high-yield savings account. Emergency fund target: "+money(num(S.efMonths,6)*num(S.efExp,0))+".",k:"c-ef"});
  items.push({t:"Invest "+money(amts.inv)+" into "+(S.dest.inv||"your brokerage / retirement account")+".",k:"c-inv"});
  if(amts.fun>0.5)items.push({t:"Spend up to "+money(amts.fun)+" on something you enjoy — guilt-free. This was the plan.",k:"c-fun"});
@@ -425,6 +425,34 @@ $("resetBtn").addEventListener("click",function(){
 });
 // init from storage
 load();
+// Migration: debts carry stable IDs and payoff checks are keyed by debt ID.
+// Legacy saves keyed a payoff check by its POSITION in the APR-sorted payoff
+// list ("c-debt<i>"). Assign IDs in list order, rebuild the legacy payoff
+// list from the saved state exactly as the plan does, and remap each key to
+// the debt that occupied that position — existing users keep their check on
+// the right debt. (A legacy "c-debt0" with no payoff list was the $0-debt
+// warning item; it maps to its own key.)
+var needDebtIds=Array.isArray(S.debts)&&S.debts.some(function(x){return !x||typeof x.id!=="string";});
+var hasLegacyDebtChecks=Array.isArray(S.checks)&&S.checks.some(function(k){return /^c-debt\d+$/.test(k);});
+if(needDebtIds||hasLegacyDebtChecks){
+  if(Array.isArray(S.debts))S.debts.forEach(function(x,i){if(x&&typeof x.id!=="string")x.id="d"+(i+1);});
+  if(typeof S.nextDebtId!=="number"||S.nextDebtId<=(Array.isArray(S.debts)?S.debts.length:0))S.nextDebtId=(Array.isArray(S.debts)?S.debts.length:0)+1;
+  if(hasLegacyDebtChecks){
+    var amtsM=bucketAmounts(),payoffM=[];
+    if(!S.noDebt&&amtsM.debt>0.5&&S.debts.length){
+      var sortedM=S.debts.slice().sort(function(a,b){return b.apr-a.apr;}),leftM=amtsM.debt;
+      sortedM.forEach(function(x){if(leftM<=0)return;var pay=Math.min(x.bal,leftM);leftM-=pay;payoffM.push(x);});
+    }
+    var nc=[],seenC={};
+    S.checks.forEach(function(k){
+      var nk=k,mm=/^c-debt(\d+)$/.exec(k);
+      if(mm){var idx=parseInt(mm[1],10);nk=payoffM[idx]?("c-debt-"+payoffM[idx].id):(idx===0?"c-debtwarn":null);}
+      if(nk&&!seenC[nk]){seenC[nk]=1;nc.push(nk);}
+    });
+    S.checks=nc;
+  }
+  save();
+}
 $("wAmount").value=S.amount;$("wSource").value=S.source;$("wName").value=S.name;
 $("taxPct").value=S.taxPct;$("taxPctOut").textContent=S.taxPct+"%";
 $("taxNote").textContent=taxNoteTxt(S.source);
