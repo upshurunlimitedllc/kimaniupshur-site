@@ -125,10 +125,12 @@ lonely:{t:"Loneliness",v:"For the LORD thy God, he it is that doth go with thee;
 tempt:{t:"Temptation",v:"God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape.",r:"1 Corinthians 10:13",a:"Every temptation has an exit God provides. Decide your boundaries before the moment comes, and tell a trusted friend."},
 friends:{t:"Choosing friends",v:"He that walketh with wise men shall be wise: but a companion of fools shall be destroyed.",r:"Proverbs 13:20",a:"Look for friends who love Jesus and want you to grow. Watch how people treat others when no one important is watching."}};
 function $(id){return document.getElementById(id)}
-function weekKey(){const d=new Date();const one=new Date(d.getFullYear(),0,1);const w=Math.ceil((((d-one)/86400000)+one.getDay()+1)/7);return d.getFullYear()+"-W"+w}
+function weekKey(){const d=new Date();const one=new Date(d.getFullYear(),0,1);const n=Math.round((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-Date.UTC(d.getFullYear(),0,1))/86400000);const w=Math.ceil((n+one.getDay()+1)/7);return d.getFullYear()+"-W"+w}
+function legacyWeekKey(){const d=new Date();const one=new Date(d.getFullYear(),0,1);const w=Math.ceil((((d-one)/86400000)+one.getDay()+1)/7);return d.getFullYear()+"-W"+w}
 function load(){try{return JSON.parse(localStorage.getItem(K))||{}}catch(e){return{}}}
 function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
 let st=load();
+(function(){const nk=weekKey(),lk=legacyWeekKey();if(lk!==nk&&st[lk]){const cur=st[nk]||[],leg=st[lk];for(let i=0;i<leg.length;i++){cur[i]=!!(cur[i]||leg[i])}st[nk]=cur;delete st[lk];save()}})();
 function renderPrac(){
  const arr=st[weekKey()]||[];
  $("prac").innerHTML=PRAC.map(function(t,i){
