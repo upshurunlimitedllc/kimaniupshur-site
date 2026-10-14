@@ -93,8 +93,9 @@ const DEVS=[
 ["Shine Bright","Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven. — Matthew 5:16","You don't need a spotlight to shine. Kindness, honesty, and courage in ordinary moments point people to Jesus. Someone is watching your life — make it count.","Jesus, help me shine for You today."]
 ];
 const $=id=>document.getElementById(id);
-const today=new Date().toISOString().slice(0,10);
-const di=Math.floor((Date.now()/86400000))%7;
+const _ld=new Date(),_pad=function(n){return String(n).padStart(2,"0")};
+const today=_ld.getFullYear()+"-"+_pad(_ld.getMonth()+1)+"-"+_pad(_ld.getDate());
+const di=Math.floor(Date.UTC(_ld.getFullYear(),_ld.getMonth(),_ld.getDate())/86400000)%7;
 function show(){
   const d=DEVS[di];
   $('devBox').innerHTML='<p style="font-size:.85rem;color:#8a6d1c;font-weight:bold;letter-spacing:1px">DAY '+(di+1)+' — '+d[0].toUpperCase()+'</p><p style="font-size:1.15rem;font-family:Georgia,serif;margin:12px 0">&ldquo;'+d[1]+'&rdquo; (KJV)</p><p>'+d[2]+'</p><p style="margin-top:12px;font-style:italic;color:#6b6250">Pray: '+d[3]+'</p>';
@@ -110,7 +111,8 @@ function show(){
 $('doneToday').onchange=e=>{
   if(e.target.checked&&!S.done[today]){
     S.done[today]=true;
-    const y=new Date(Date.now()-86400000).toISOString().slice(0,10);
+    const _yd=new Date();_yd.setDate(_yd.getDate()-1);
+    const y=_yd.getFullYear()+"-"+_pad(_yd.getMonth()+1)+"-"+_pad(_yd.getDate());
     S.streak=(S.lastDay===y)?S.streak+1:1;S.lastDay=today;
   }else if(!e.target.checked){delete S.done[today];}
   save();$('streak').textContent=S.streak;
