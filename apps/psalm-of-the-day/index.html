@@ -94,8 +94,10 @@ function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
 function dkey(){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();}
 (function(){
   var now=new Date();
-  var start=new Date(now.getFullYear(),0,0);
-  var doy=Math.floor((now-start)/86400000);
+  // Day of year from the LOCAL CALENDAR DATE via UTC date math.
+  // Elapsed-millisecond division breaks across DST transitions (23/25-hour days),
+  // which selected the wrong day's psalm; calendar dates never shift.
+  var doy=Math.round((Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())-Date.UTC(now.getFullYear(),0,0))/86400000);
   var n=(doy%150)+1;
   document.getElementById("psdate").textContent=now.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"});
   document.getElementById("psnum").textContent=n;
