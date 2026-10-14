@@ -230,6 +230,14 @@ function generate(){
   hide("inputCard");show("planCard");
   save();
 }
+function sessionKey(sess){
+  // A session's identity is its CONTENT (which zones, at what clutter level, in
+  // what part) — never its position in the generated list. Identical sessions
+  // keep their checkmarks across regeneration; changed sessions start clean.
+  return "sk:"+sess.parts.map(function(p){
+    return p.z.n+"@"+p.level+"x"+p.mins+(p.whole?"":":"+p.part+"/"+p.of);
+  }).join("+");
+}
 function renderPlan(){
   var sess=state.plan.sessions,wrap=$("sessions");wrap.innerHTML="";
   var totalMin=0,totalChecks=0,doneChecks=0;
@@ -248,7 +256,7 @@ function renderPlan(){
     var allDone=true;
     CHECKS.forEach(function(c,ci){
       totalChecks++;
-      var key="s"+si+"c"+ci;var done=!!state.checks[key];if(done)doneChecks++;else allDone=false;
+      var key=sessionKey(s)+"c"+ci;var done=!!state.checks[key];if(done)doneChecks++;else allDone=false;
       var row=document.createElement("label");row.className="checkrow"+(done?" done":"");
       var cb=document.createElement("input");cb.type="checkbox";cb.checked=done;
       cb.setAttribute("aria-label","Session "+(si+1)+": "+c);
@@ -261,9 +269,11 @@ function renderPlan(){
     if(allDone)div.classList.add("done");
     wrap.appendChild(div);
   });
+  var validKeys={};
+  sess.forEach(function(s){var sk=sessionKey(s);CHECKS.forEach(function(c,ci){validKeys[sk+"c"+ci]=1;});});
   function updateTotals(){
     var d=0,t=0;
-    Object.keys(state.checks).forEach(function(k){t++;if(state.checks[k])d++;});
+    Object.keys(state.checks).forEach(function(k){if(!validKeys[k])return;t++;if(state.checks[k])d++;});
     $("tDone").textContent=(t>0?Math.round(d/t*100):0)+"%";
     var sdivs=wrap.querySelectorAll(".sess");
     sdivs.forEach(function(sd,i2){
@@ -303,7 +313,22 @@ try{
       var cb=$("zchk"+i),sel=$("zrate"+i);
       if(cb&&sel){cb.checked=true;sel.value=state.sel[k];cb.dispatchEvent(new Event("change"));}
     });
-    if(s.hasPlan){generate();}
+    if(s.hasPlan){
+      generate();
+      // Migration: legacy saves keyed checks by session POSITION ("s<idx>c<n>").
+      // generate() is deterministic for the restored selections, so the plan just
+      // rebuilt is the very plan those positions referred to — rewrite each
+      // positional key to its session's content key, then re-render.
+      var legacyKeys=Object.keys(state.checks).filter(function(k){return /^s\d+c\d+$/.test(k);});
+      if(legacyKeys.length&&state.plan){
+        legacyKeys.forEach(function(k){
+          var m=/^s(\d+)c(\d+)$/.exec(k),sess=state.plan.sessions[parseInt(m[1],10)];
+          if(sess)state.checks[sessionKey(sess)+"c"+m[2]]=state.checks[k];
+          delete state.checks[k];
+        });
+        renderPlan();save();
+      }
+    }
   }
 }catch(e){}
 })();
