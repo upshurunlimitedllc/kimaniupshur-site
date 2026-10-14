@@ -93,6 +93,7 @@ var KEY="app-business-gods-way-v1";
 var S={"open":{},"done":{},"week":""};
 try{var _s=JSON.parse(localStorage.getItem(KEY));if(_s)S=_s;}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+if(S.week&&S.week!==wk()&&S.week===legacyWk()){S.week=wk();save();}
 var PR=[
 ["Honest scales","Proverbs 11:1","The LORD delights in honest dealing &mdash; accurate invoices, true advertising, no fine-print tricks. Ask: would this price, claim, or contract survive being read aloud in church?"],
 ["Pay promptly and fairly","James 5:4; Leviticus 19:13","Workers and vendors are paid on time and in full. Delaying pay to manage your cash flow makes your problem their burden. Ask: is anyone waiting on money I already owe?"],
@@ -101,7 +102,8 @@ var PR=[
 ["Excellence as worship","Colossians 3:23&ndash;24","Work heartily, as for the Lord. Quality is a sermon your customers hear without words. Sloppy work is a false witness; excellent work is credibility for the gospel."],
 ["No unjust gain","Proverbs 28:20","A faithful man will abound with blessings, but whoever hastens to be rich will not go unpunished. Slow, clean growth beats fast, dirty growth every time."]];
 var CHK=["All invoices and quotes honest and accurate","Everyone who worked for me has been paid on time","I gave generously somewhere this week","I kept a real Sabbath &mdash; and let my people keep theirs","I refused one shortcut that would have compromised integrity","I prayed for my customers, staff, and competitors","My books would bear open inspection"];
-function wk(){var d=new Date();return d.getFullYear()+"-W"+Math.ceil((((d-new Date(d.getFullYear(),0,1))/86400000)+new Date(d.getFullYear(),0,1).getDay()+1)/7);}
+function wk(){var d=new Date();var n=Math.round((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-Date.UTC(d.getFullYear(),0,1))/86400000);return d.getFullYear()+"-W"+Math.ceil((n+new Date(d.getFullYear(),0,1).getDay()+1)/7);}
+function legacyWk(){var d=new Date();return d.getFullYear()+"-W"+Math.ceil((((d-new Date(d.getFullYear(),0,1))/86400000)+new Date(d.getFullYear(),0,1).getDay()+1)/7);}
 function render(){
   if(S.week!==wk()){S.week=wk();S.done={};save();}
   var h="";
