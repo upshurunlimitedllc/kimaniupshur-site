@@ -149,6 +149,7 @@ function parseLocal(s){var p=String(s).split("-");return new Date(parseInt(p[0],
 function addDaysStr(s,n){var d=parseLocal(s);d.setDate(d.getDate()+n);return dstr(d);}
 function fmtLong(s){return parseLocal(s).toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"});}
 function $(id){return document.getElementById(id);}
+function pl(n,singular,plural){return n+" "+(n===1?singular:(plural||singular+"s"));}
 function showErr(id,msg){var e=$(id);e.textContent=msg;e.classList.remove("hidden");}
 function hideErr(id){$(id).classList.add("hidden");}
 var LEARN_ACT=["Read & outline the material","Take notes & summarize in your own words","Teach it back / make flashcards","Draw a mind map of key connections"];
@@ -219,7 +220,7 @@ function render(){
   var t=todayStr();
   var remaining=Math.max(0,Math.round((parseLocal(p.examDate)-parseLocal(t))/86400000));
   $("ecCountdown").innerHTML=remaining+' <small>day'+(remaining===1?"":"s")+' until "'+p.name.replace(/</g,"&lt;")+'"</small>';
-  $("ecPlanSub").textContent=fmtLong(p.examDate)+" · "+p.topics.length+" topics · "+p.hoursPerWeek+" hrs/week · "+p.days.length+" study days";
+  $("ecPlanSub").textContent=fmtLong(p.examDate)+" · "+pl(p.topics.length,"topic")+" · "+pl(p.hoursPerWeek,"hr")+"/week · "+pl(p.days.length,"study day");
   renderDays();renderFinal();renderProgress();
 }
 function renderProgress(){
@@ -227,7 +228,7 @@ function renderProgress(){
   var done=p.days.filter(function(d){return d.done;}).length;
   var pct=p.days.length?Math.round(done/p.days.length*100):0;
   $("ecBar").style.width=pct+"%";
-  $("ecProgLabel").textContent=done+" of "+p.days.length+" study days done ("+pct+"%)";
+  $("ecProgLabel").textContent=done+" of "+pl(p.days.length,"study day")+" done ("+pct+"%)";
 }
 function renderDays(){
   var p=S.plan,box=$("ecDays");box.innerHTML="";
@@ -251,7 +252,7 @@ function renderDays(){
     ttl.textContent=day.detail+": "+day.focus;txt.appendChild(ttl);
     if(day.extra.length){var ex=document.createElement("div");ex.className="sub";
       ex.innerHTML='<span class="pill catchup">CATCH-UP</span> '+day.extra.map(function(e){return e.replace(/</g,"&lt;");}).join(" · ");txt.appendChild(ex);}
-    var sub=document.createElement("div");sub.className="sub";sub.textContent="≈ "+day.hours+" hrs · Day "+(i+1)+" of "+p.days.length;txt.appendChild(sub);
+    var sub=document.createElement("div");sub.className="sub";sub.textContent="≈ "+pl(day.hours,"hr")+" · Day "+(i+1)+" of "+p.days.length;txt.appendChild(sub);
     row.appendChild(txt);box.appendChild(row);
   });
 }
@@ -277,7 +278,7 @@ function rebalance(){
   var catchups=[];
   missed.forEach(function(d){d.missed=true;if(d.phase!=="review")catchups.push(d.detail.split(":")[0]+": "+d.focus);});
   var future=p.days.filter(function(d){return !d.done&&!d.missed&&d.date>=t;});
-  if(future.length===0){m.textContent=missed.length+" missed day(s), but there are no future study days left to move them to. Consider moving your exam date.";m.classList.remove("hidden");save();renderDays();return;}
+  if(future.length===0){m.textContent=missed.length+" missed day"+(missed.length===1?"":"s")+", but there are no future study days left to move them to. Consider moving your exam date.";m.classList.remove("hidden");save();renderDays();return;}
   catchups.forEach(function(c,i){future[i%future.length].extra.push(c);});
   save();renderDays();
   m.textContent="Rebalanced "+missed.length+" missed day"+(missed.length===1?"":"s")+": "+catchups.length+" catch-up item"+(catchups.length===1?"":"s")+" spread across your remaining days.";
