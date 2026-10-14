@@ -292,10 +292,13 @@ function drawFinal(){
   /* flags */
   var fw=document.getElementById("flags");fw.innerHTML="";
   var flags=[];
+  if(!state.milestones.length)flags.push({msg:"No milestones yet \u2014 a project with no milestones has nothing to execute. Add your milestones first.",fix:function(){go(2);}});
   state.milestones.forEach(function(m,mi){
     if(!m.name.trim())flags.push({msg:"Milestone "+(mi+1)+" has no name.",fix:function(){go(2);}});
+    if(!m.tasks.length)flags.push({msg:"Milestone "+(mi+1)+(m.name.trim()?" ("+m.name.trim()+")":"")+" has no tasks \u2014 every milestone needs at least one task before this list can be executed.",fix:function(){go(3);}});
     m.tasks.forEach(function(tk,ti){
       if(!tk.name.trim())flags.push({msg:"A task under milestone "+(mi+1)+" has no name.",fix:function(){go(3);}});
+      if(!tk.actions.length)flags.push({msg:'Task "'+(tk.name.trim()||"(unnamed)")+'" under milestone '+(mi+1)+" has no next actions \u2014 every task needs at least one concrete action.",fix:function(){go(4);}});
       tk.actions.forEach(function(a,ai){
         var v=isVague(a.name),e=estFlag(a.mins);
         if(v)flags.push({msg:'"'+(a.name||"(blank)")+'" — vague: '+v+".",fix:function(){go(4);}});
