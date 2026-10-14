@@ -108,7 +108,7 @@ const $=id=>document.getElementById(id);
 function text(){return PASSAGES[S.pi][1];}
 function renderPicker(){
   $('pPicker').innerHTML=PASSAGES.map((p,i)=>'<button class="btn'+(i===S.pi?'':' ghost')+'" data-i="'+i+'" style="min-height:48px">'+p[0]+'</button>').join('');
-  document.querySelectorAll('#pPicker button').forEach(b=>b.onclick=()=>{S.pi=+b.dataset.i;save();renderPicker();showFull();});
+  document.querySelectorAll('#pPicker button').forEach(b=>b.onclick=()=>{S.pi=+b.dataset.i;save();renderPicker();renderDays();showFull();});
 }
 function renderDays(){
   $('dayPlan').innerHTML=DAYSPLAN.map((d,i)=>'<label class="checkrow"><input type="checkbox" data-i="'+i+'" '+(S.done[S.pi+'-'+i]?'checked':'')+'><span>'+d+'</span></label>').join('');
