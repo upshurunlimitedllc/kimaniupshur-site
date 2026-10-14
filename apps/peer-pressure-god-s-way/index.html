@@ -100,7 +100,13 @@ const SCRIPTS=[
 ];
 const $=id=>document.getElementById(id);
 function show(){
-  const s=SCEN[S.idx%SCEN.length];
+  if(S.idx>=SCEN.length){
+    $('scenBox').innerHTML='<div style="background:#f7f1de;border-radius:8px;padding:20px"><p style="font-size:.85rem;color:#8a6d1c;font-weight:bold">SCENARIO '+SCEN.length+' OF '+SCEN.length+' — COMPLETE</p><p style="font-size:1.1rem;margin:10px 0">💪 <strong>You finished all '+SCEN.length+' scenarios.</strong></p><p style="margin-top:6px">Standing firm gets easier with practice. Run through them again any time — real life will give you plenty of chances to use what you rehearsed here.</p><button class="btn" id="againS" style="margin-top:10px">Start Over →</button></div>';
+    $('againS').onclick=()=>{S.idx=0;save();show();};
+    $('firmCount').textContent=S.firm;
+    return;
+  }
+  const s=SCEN[S.idx];
   $('scenBox').innerHTML='<div style="background:#f7f1de;border-radius:8px;padding:20px"><p style="font-size:.85rem;color:#8a6d1c;font-weight:bold">SCENARIO '+(S.idx+1)+' OF '+SCEN.length+'</p><p style="font-size:1.1rem;margin:10px 0">'+s[0]+'</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn ghost" id="cA">'+s[1]+'</button><button class="btn" id="cB">'+s[2]+'</button></div><div id="fb" style="margin-top:12px"></div></div>';
   $('cA').onclick=()=>{$('fb').innerHTML='<p><strong>Going along feels easier in the moment</strong> — but it usually costs more later. Here\u2019s the godly way:</p><p style="margin-top:6px;color:#6b6250">'+s[2]+'</p><p style="margin-top:6px;font-style:italic">'+s[3]+'</p>';};
   $('cB').onclick=()=>{S.firm++;save();$('firmCount').textContent=S.firm;$('fb').innerHTML='<p style="font-size:1.1rem">💪 <strong>You stood firm!</strong></p><p style="margin-top:6px;font-style:italic">'+s[3]+'</p><button class="btn" id="nextS" style="margin-top:10px">Next Scenario →</button>';$('nextS').onclick=()=>{S.idx++;save();show();};};
