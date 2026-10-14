@@ -208,7 +208,7 @@ function setRatings(r){
     updateSel(i);
   }
 }
-function scoreOf(ratings){return Math.round(ratings.reduce(function(a,b){return a+b;},0)/40*100);}
+function scoreOf(ratings){var sum=ratings.reduce(function(a,b){return a+b;},0);return Math.max(0,Math.min(100,Math.round((sum-8)/32*100)));} /* ratings are 1-5 per criterion, so totals run 8-40; map that range onto 0-100 (all 1s = 0, all 5s = 100) */
 function verdictFor(s){
   if(s>=85)return["Magnetic opener \u2014 publish-ready.","Your opening does the job. Do a final read-aloud pass and ship it."];
   if(s>=65)return["Strong \u2014 tighten the weak spots below.","You're close. Fixing the two weakest criteria will usually lift the whole opening."];
