@@ -239,22 +239,24 @@ function drawPlan(){
     "<div class='stat'><b>"+p.sessions+"</b><small>session"+(p.sessions>1?"s":"")+" today</small></div>"+
     "<div class='stat'><b>"+Math.floor(p.deepMin/60)+"h "+(p.deepMin%60)+"m</b><small>total deep work</small></div>";
   var sh=document.getElementById("shutdown");sh.innerHTML="";
-  var items=["Clear your desk — only what this task needs","Water bottle and bathroom before you start","Timer visible, everything else closed"];
+  // Steps carry stable keys: base steps b0-b2; a distraction step is keyed by the
+  // distraction's own ID ("d:<id>") — never by position in this derived list.
+  var items=[{key:"b0",text:"Clear your desk — only what this task needs"},{key:"b1",text:"Water bottle and bathroom before you start"},{key:"b2",text:"Timer visible, everything else closed"}];
   state.distractions.forEach(function(dk){
-    for(var i=0;i<DISTRACTIONS.length;i++)if(DISTRACTIONS[i][0]===dk)items.push(DISTRACTIONS[i][2]);
+    for(var i=0;i<DISTRACTIONS.length;i++)if(DISTRACTIONS[i][0]===dk)items.push({key:"d:"+dk,text:DISTRACTIONS[i][2]});
   });
-  items.forEach(function(t,i){
+  items.forEach(function(it){
     var row=document.createElement("label");row.className="checkrow";
     var c=document.createElement("input");c.type="checkbox";
-    c.setAttribute("aria-label","Shutdown step: "+t);
-    if(state.shutdownDone.indexOf(i)>=0){c.checked=true;row.classList.add("done");}
+    c.setAttribute("aria-label","Shutdown step: "+it.text);
+    if(state.shutdownDone.indexOf(it.key)>=0){c.checked=true;row.classList.add("done");}
     c.addEventListener("change",function(){
-      var k=state.shutdownDone.indexOf(i);
-      if(c.checked&&k<0)state.shutdownDone.push(i);
+      var k=state.shutdownDone.indexOf(it.key);
+      if(c.checked&&k<0)state.shutdownDone.push(it.key);
       if(!c.checked&&k>=0)state.shutdownDone.splice(k,1);
       row.classList.toggle("done",c.checked);save();
     });
-    var sp=document.createElement("span");sp.textContent=t;
+    var sp=document.createElement("span");sp.textContent=it.text;
     row.appendChild(c);row.appendChild(sp);sh.appendChild(row);
   });
   var bm=document.getElementById("breakmenu");bm.innerHTML="";
@@ -382,6 +384,20 @@ document.getElementById("worktype").addEventListener("change",function(){state.w
 document.getElementById("hours").addEventListener("input",function(){var v=parseFloat(this.value);if(!isNaN(v)){state.hours=v;save();}});
 
 load();
+// Migration: legacy saves stored shutdownDone as POSITIONS in the derived
+// checklist (3 base steps, then one per selected distraction in selection
+// order). Rebuild that list from the saved selection and rewrite each
+// position to its step's stable key, so checkmarks stay on their own steps.
+if(Array.isArray(state.shutdownDone)&&state.shutdownDone.some(function(x){return typeof x==="number";})){
+  var legacyKeys=["b0","b1","b2"];
+  (Array.isArray(state.distractions)?state.distractions:[]).forEach(function(dk){legacyKeys.push("d:"+dk);});
+  var nd=[],seenK={};
+  state.shutdownDone.forEach(function(x){
+    var k=(typeof x==="number")?legacyKeys[x]:x;
+    if(typeof k==="string"&&!seenK[k]){seenK[k]=1;nd.push(k);}
+  });
+  state.shutdownDone=nd;save();
+}
 drawInputs();
 if(state.plan){
   document.getElementById("inputcard").style.display="none";
