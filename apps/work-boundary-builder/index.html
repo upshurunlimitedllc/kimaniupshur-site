@@ -187,7 +187,7 @@ var RULEPOOL={
  timeoff:["I take every vacation day I'm given, fully offline.","No \u2018just checking in\u2019 on PTO \u2014 I hand off, then disconnect."],
  scope:["Every new yes names what moves or slips.","No scope changes without a revised timeline \u2014 mine, not just theirs."]};
 
-var S={answers:[],rules:[],tracker:{},start:""};
+var S={answers:[],rules:[],ruleIds:[],nextRuleId:1,tracker:{},start:""};
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 function load(){try{var r=localStorage.getItem(KEY);if(r){var d=JSON.parse(r);if(d&&typeof d==="object"){S=d;}}}catch(e){}}
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
@@ -276,7 +276,19 @@ function genRules(leaks){
    if(r&&rules.indexOf(r)<0)rules.push(r);
   }
  }
- S.rules=rules.slice(0,5);save();
+ rules=rules.slice(0,5);
+ // Rules keep stable IDs across regeneration: an ID follows its rule TEXT, so
+ // tracker checkmarks stay attached to the rule they were made on even when
+ // re-scoring reorders the list. A rule whose text no longer appears gets a
+ // fresh ID (its old checkmarks retire with it — never shifted to a neighbour).
+ var newIds=[],claimed={};
+ rules.forEach(function(t){
+  var found=-1;
+  for(var j=0;j<S.rules.length;j++){if(S.rules[j]===t&&!claimed[j]&&S.ruleIds[j]!==undefined){found=j;break;}}
+  if(found>=0){claimed[found]=1;newIds.push(S.ruleIds[found]);}
+  else newIds.push(S.nextRuleId++);
+ });
+ S.rules=rules;S.ruleIds=newIds;save();
 }
 function renderRules(){
  var box=document.getElementById("rules");box.innerHTML="";
@@ -333,9 +345,12 @@ document.getElementById("startdate").addEventListener("change",function(){
  if(this.value){S.start=this.value;save();renderTracker();}
 });
 function ruleKey(){return S.rules.slice(0,5);}
+function cellKey(r,d){
+ var id=(S.ruleIds&&S.ruleIds[r]!==undefined)?S.ruleIds[r]:r;
+ return id+"-"+d;
+}
 function getCell(r,d){
- var k=r+"-"+d;
- return S.tracker[k]?true:false;
+ return S.tracker[cellKey(r,d)]?true:false;
 }
 function renderTrackerHead(){renderTracker();}
 function renderTracker(){
@@ -368,7 +383,7 @@ function renderTracker(){
     cb.checked=getCell(rri,dd);
     if(cb.checked)td2.className="done";
     cb.addEventListener("change",function(){
-     S.tracker[rri+"-"+dd]=cb.checked;save();
+     S.tracker[cellKey(rri,dd)]=cb.checked;save();
      td2.className=cb.checked?"done":"";
      updateProg();
     });
@@ -397,7 +412,7 @@ function updateProg(td,tc){
 document.getElementById("printcode").addEventListener("click",function(){window.print();});
 document.getElementById("resetall").addEventListener("click",function(){
  if(!confirm("Clear your answers, rules, scripts and tracker, and start over?"))return;
- S={answers:[],rules:[],tracker:{},start:""};
+ S={answers:[],rules:[],ruleIds:[],nextRuleId:1,tracker:{},start:""};
  save();renderQuestions();
  document.getElementById("resultscard").style.display="none";
  document.getElementById("codecard").style.display="none";
@@ -410,6 +425,21 @@ load();
 if(!Array.isArray(S.answers))S.answers=[];
 if(!Array.isArray(S.rules))S.rules=[];
 if(!S.tracker)S.tracker={};
+// Migration: legacy saves keyed tracker cells by rule ROW ("row-day"). Give each
+// existing rule a stable ID in order and rewrite its cells to "ruleId-day".
+if(!Array.isArray(S.ruleIds)||S.ruleIds.length!==S.rules.length){
+ var oldT=S.tracker,nt={};
+ S.ruleIds=S.rules.map(function(_,i){return i+1;});
+ Object.keys(oldT).forEach(function(k){
+  var m=/^(\d+)-(\d+)$/.exec(k);
+  if(m&&S.ruleIds[parseInt(m[1],10)]!==undefined)nt[S.ruleIds[parseInt(m[1],10)]+"-"+m[2]]=oldT[k];
+  else nt[k]=oldT[k];
+ });
+ S.tracker=nt;
+ if(typeof S.nextRuleId!=="number"||S.nextRuleId<=S.rules.length)S.nextRuleId=S.rules.length+1;
+ save();
+}
+if(typeof S.nextRuleId!=="number"||!(S.nextRuleId>0))S.nextRuleId=S.rules.length+1;
 renderQuestions();
 if(S.answers.length===12&&S.answers.every(function(a){return a!==undefined&&a!==null;})){
  document.getElementById("scorebtn").click();
