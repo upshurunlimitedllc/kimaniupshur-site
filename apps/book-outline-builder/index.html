@@ -326,7 +326,11 @@ function loadBeatFields(){
   $("bobBeatSaved").classList.add("hidden");
 }
 function saveBeatFields(silent){
-  var c=getChap($("bobBeatChap").value);if(!c)return false;
+  // The fields hold the beats of beatChapId — the chapter they were loaded
+  // for. The dropdown's value may already point at the NEXT chapter (its
+  // change event fires after the selection changes), so resolving the save
+  // target from the dropdown wrote one chapter's edits into another.
+  var c=(beatChapId&&getChap(beatChapId))||getChap($("bobBeatChap").value);if(!c)return false;
   c.beats.a=$("bobBeatA").value.trim();c.beats.b=$("bobBeatB").value.trim();c.beats.c=$("bobBeatC").value.trim();
   c.notes=$("bobBeatNotes").value.trim();save();
   if(!silent){var m=$("bobBeatSaved");m.textContent="Beats saved for “"+c.title+"”. The outline preview below is up to date.";m.classList.remove("hidden");}
