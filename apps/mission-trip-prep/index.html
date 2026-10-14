@@ -145,7 +145,8 @@ function renderFund(){
 function renderCount(){
  const v=$("tdate").value;
  if(!v){$("count").textContent="Set your trip date to start the countdown.";return}
- const diff=Math.ceil((new Date(v+"T00:00:00")-new Date().setHours(0,0,0,0))/86400000);
+ const t=new Date(v+"T00:00:00"),n=new Date();
+ const diff=Math.round((Date.UTC(t.getFullYear(),t.getMonth(),t.getDate())-Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()))/86400000);
  $("count").textContent=diff>0?diff+" days until you go!":diff===0?"You leave today! Go with God!":"Your trip date has passed - praise God for the journey!";
 }
 $("tdate").value=st.tdate||"";$("goal").value=st.goal||"";$("raised").value=st.raised||"";
