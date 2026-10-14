@@ -113,6 +113,13 @@ textarea{min-height:110px}
 var KEY="app-old-testament-in-90-days-v1";
 function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
 function save(d){try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}}
+function validDate(v){
+  var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(v);if(!m)return false;
+  var y=+m[1],mo=+m[2],d=+m[3];
+  if(mo<1||mo>12||d<1||d>31)return false;
+  var dt=new Date(y,mo-1,d);
+  return dt.getFullYear()===y&&dt.getMonth()===mo-1&&dt.getDate()===d;
+}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 var BOOKS=[["Genesis",50],["Exodus",40],["Leviticus",27],["Numbers",36],["Deuteronomy",34],["Joshua",24],["Judges",21],["Ruth",4],["1 Samuel",31],["2 Samuel",24],["1 Kings",22],["2 Kings",25],["1 Chronicles",29],["2 Chronicles",36],["Ezra",10],["Nehemiah",13],["Esther",10],["Job",42],["Psalms",150],["Proverbs",31],["Ecclesiastes",12],["Song of Solomon",8],["Isaiah",66],["Jeremiah",52],["Lamentations",5],["Ezekiel",48],["Daniel",12],["Hosea",14],["Joel",3],["Amos",9],["Obadiah",1],["Jonah",4],["Micah",7],["Nahum",3],["Habakkuk",3],["Zephaniah",3],["Haggai",2],["Zechariah",14],["Malachi",4]];
 var DAYS=90,TOTAL=929;
@@ -130,6 +137,7 @@ var daysEl=document.getElementById("days"),todayEl=document.getElementById("toda
 startIn.value=st.start;
 function dayNum(){
   if(!st.start)return 1;
+  if(!validDate(st.start))return 1;
   var s=new Date(st.start+"T12:00:00");if(isNaN(s))return 1;
   var n=new Date();n.setHours(12,0,0,0);
   var d=Math.floor((n-s)/86400000)+1;
@@ -154,6 +162,7 @@ function render(){
 document.getElementById("setStart").onclick=function(){
   var v=startIn.value.trim();
   if(v&&!/^\d{4}-\d{2}-\d{2}$/.test(v)){stat.textContent="Use YYYY-MM-DD format, e.g. 2026-10-05.";return}
+  if(v&&!validDate(v)){stat.textContent="That is not a real calendar date \u2014 please check the day and month (February has 28 days, 29 in a leap year).";return}
   st.start=v;save(st);render();
 };
 render();
