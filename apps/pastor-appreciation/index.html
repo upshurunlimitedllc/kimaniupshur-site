@@ -93,10 +93,11 @@ const STARTERS=["Dear Pastor, thank you for...","One sermon I'll never forget is
 const $=id=>document.getElementById(id);
 const LSKEY='app-pastor-appreciation-v1';
 try{const r=localStorage.getItem(LSKEY);if(r)$('note').value=JSON.parse(r).draft||'';}catch(e){}
-$('note').addEventListener('input',()=>{try{localStorage.setItem(LSKEY,JSON.stringify({draft:$('note').value}));}catch(e){}});
+const saveDraft=()=>{try{localStorage.setItem(LSKEY,JSON.stringify({draft:$('note').value}));}catch(e){}};
+$('note').addEventListener('input',saveDraft);
 $('ideas').innerHTML=IDEAS.map(x=>'<div style="background:#f7f1de;border-radius:8px;padding:14px;margin-bottom:10px"><strong>'+x[0]+'</strong><p style="color:#6b6250">'+x[1]+'</p></div>').join('');
 $('starters').innerHTML=STARTERS.map((s,i)=>'<button class="btn ghost" data-i="'+i+'" style="padding:10px 14px;min-height:44px;font-weight:normal">'+s+'</button>').join('');
-document.querySelectorAll('#starters button').forEach(b=>b.onclick=()=>{const cur=$('note').value;if(!cur.includes(STARTERS[+b.dataset.i]))$('note').value=cur+(cur?'\n':'')+STARTERS[+b.dataset.i]+' ';$('note').focus();});
+document.querySelectorAll('#starters button').forEach(b=>b.onclick=()=>{const cur=$('note').value;if(!cur.includes(STARTERS[+b.dataset.i])){$('note').value=cur+(cur?'\n':'')+STARTERS[+b.dataset.i]+' ';saveDraft();}$('note').focus();});
 $('copyNote').onclick=()=>{
   const v=$('note').value.trim();if(!v){alert('Write your note first.');return;}
   if(navigator.clipboard){navigator.clipboard.writeText(v).then(()=>alert('Note copied!')).catch(()=>alert('Copy failed — select the text manually.'));}
