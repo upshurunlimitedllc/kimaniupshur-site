@@ -97,7 +97,7 @@ function streak(dates){
   return s;
 }
 (function(){
-  var v=HVERSES[Math.floor(Date.now()/86400000)%HVERSES.length];
+  var _ld=new Date();var v=HVERSES[Math.floor(Date.UTC(_ld.getFullYear(),_ld.getMonth(),_ld.getDate())/86400000)%HVERSES.length];
   document.getElementById("hverse").innerHTML="<em>&ldquo;"+v[1]+"&rdquo;</em><br><strong style='color:#8a6d1c'>"+v[0]+" (KJV)</strong>";
 })();
 function render(){
