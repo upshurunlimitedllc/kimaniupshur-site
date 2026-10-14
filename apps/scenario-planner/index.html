@@ -166,6 +166,16 @@ function loadState(){
             if(typeof f.response==="string")d.futures[i].response=f.response;
             if(TAGLBL[f.tag]!==undefined)d.futures[i].tag=f.tag;
           }
+          /* tags are exclusive (one most-likely, one best, one worst):
+             in a legacy save with duplicates, the first future keeps the tag */
+          var seenTag={};
+          for(var j=0;j<4;j++){
+            var tg2=d.futures[j].tag;
+            if(tg2!=="none"){
+              if(seenTag[tg2])d.futures[j].tag="none";
+              else seenTag[tg2]=true;
+            }
+          }
         }
         if(typeof s.step==="number")d.step=Math.max(0,Math.min(STEPS.length-1,Math.floor(s.step)));
         if(typeof s.maxStep==="number")d.maxStep=Math.max(0,Math.min(STEPS.length-1,Math.floor(s.maxStep)));
@@ -365,7 +375,7 @@ function renderPlaybook(body){
     var cx=el("p","hint","");cx.appendChild(document.createTextNode(state.context.trim()));body.appendChild(cx);
   }
   body.appendChild(buildGrid(false));
-  body.appendChild(el("p","hint","Tag each future: one most-likely, one best case, one worst case. A future can carry only one tag — pick the one that fits best."));
+  body.appendChild(el("p","hint","Tag each future: one most-likely, one best case, one worst case. A future can carry only one tag, and each tag can sit on only one future — assigning a tag to a future moves it off whichever future had it."));
   for(var idx=0;idx<4;idx++){
     (function(i){
       var f=state.futures[i];
@@ -378,7 +388,13 @@ function renderPlaybook(body){
         var r=el("input");r.type="radio";r.name="tag"+i;r.value=tg[0];
         r.checked=(f.tag===tg[0]);
         r.setAttribute("aria-label",tg[1]+" for future "+"ABCD"[i]);
-        r.addEventListener("change",function(){f.tag=tg[0];save();render();});
+        r.addEventListener("change",function(){
+          f.tag=tg[0];
+          if(tg[0]!=="none"){
+            state.futures.forEach(function(of,oi){if(oi!==i&&of.tag===tg[0])of.tag="none";});
+          }
+          save();render();
+        });
         lab.appendChild(r);lab.appendChild(document.createTextNode(tg[1]));
         radios.appendChild(lab);
       });
