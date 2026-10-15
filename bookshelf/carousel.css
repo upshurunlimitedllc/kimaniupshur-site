@@ -1,0 +1,160 @@
+/* Bookshelf carousel — INTEGRATION stylesheet for the Books page.
+   Derived from the standalone preview carousel.css by derive_css.py:
+   page-level rules scoped to #bookshelf so the host page is untouched;
+   standalone chrome rules (.bs-head/.bs-foot) dropped; compact-chrome
+   overrides appended at the end. Component rules otherwise identical. */
+/* The Bookshelf — 3D cover carousel (Upshur Unlimited preview)
+   Dark bookstore theme with the brand gold. Framework-free. */
+:root{
+  --gold:#d4af37; --gold-dim:#9a7d24; --ink:#f4ecd8; --ink-dim:#b8ad8f;
+  --bg:#0b0a08; --panel:#171410; --line:#3a3222; --cover-w:240px;
+}
+#bookshelf, #bookshelf *{box-sizing:border-box}
+#bookshelf{
+  background:radial-gradient(1200px 700px at 50% -10%, #241c0e 0%, var(--bg) 55%) , var(--bg);
+  color:var(--ink); font-family:Georgia,'Times New Roman',serif;
+  -webkit-font-smoothing:antialiased;
+  border-radius:16px; border:1px solid var(--line);
+  padding:2px 0 16px; margin:24px 0 6px;
+}
+
+/* ---------- controls ---------- */
+.bs-controls{
+  position:relative;display:flex;flex-wrap:wrap;gap:12px;align-items:end;justify-content:center;
+  max-width:1020px;margin:18px auto 6px;padding:0 14px;
+}
+.bs-field{display:flex;flex-direction:column;gap:5px;font-size:.78rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-dim)}
+.bs-field.bs-grow{flex:1 1 220px;max-width:420px}
+.bs-controls select,.bs-controls input[type=search]{
+  font:inherit;font-size:1rem;text-transform:none;letter-spacing:0;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:10px 12px;min-height:46px;width:100%;
+}
+.bs-controls select:focus,.bs-controls input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.bs-toggles{display:flex;align-items:center;gap:14px;padding-bottom:4px}
+#viewToggle{
+  font:inherit;font-size:.92rem;color:#141005;background:var(--gold);border:0;border-radius:9px;
+  padding:11px 16px;min-height:46px;cursor:pointer;font-weight:700;
+}
+#viewToggle[aria-pressed=true]{background:var(--panel);color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.bs-check{display:flex;align-items:center;gap:7px;font-size:.9rem;color:var(--ink-dim);cursor:pointer;min-height:46px}
+.bs-check input{width:20px;height:20px;accent-color:var(--gold)}
+.bs-results{
+  position:absolute;top:calc(100% + 4px);left:50%;transform:translateX(-50%);
+  width:min(560px,92vw);background:var(--panel);border:1px solid var(--gold-dim);border-radius:10px;
+  z-index:60;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.6);
+}
+.bs-results button{
+  display:flex;justify-content:space-between;gap:10px;width:100%;text-align:left;font:inherit;
+  background:none;border:0;border-bottom:1px solid #262015;color:var(--ink);padding:12px 14px;cursor:pointer;
+}
+.bs-results button:last-child{border-bottom:0}
+.bs-results button:hover,.bs-results button:focus{background:#241d10;outline:none}
+.bs-results .r-coll{color:var(--ink-dim);font-size:.8rem;white-space:nowrap}
+.bs-results .r-none{padding:12px 14px;color:var(--ink-dim)}
+
+/* ---------- A-Z ---------- */
+.bs-az{display:flex;flex-wrap:wrap;gap:2px;justify-content:center;max-width:1020px;margin:8px auto 0;padding:0 10px}
+.bs-az button{
+  font:inherit;font-size:.86rem;min-width:34px;min-height:38px;padding:4px 0;background:none;border:0;
+  color:var(--ink-dim);cursor:pointer;border-radius:6px;
+}
+.bs-az button:hover,.bs-az button:focus{color:var(--gold);outline:1px solid var(--gold-dim)}
+.bs-az button.cur{color:#141005;background:var(--gold);font-weight:700}
+
+/* ---------- stage ---------- */
+.bs-stage-wrap{position:relative;max-width:1180px;margin:4px auto 0;padding:0 6px}
+.bs-stage{
+  position:relative;height:calc(var(--cover-w)*1.6 + 74px);min-height:340px;overflow:hidden;
+  perspective:1150px;perspective-origin:50% 42%;
+  touch-action:none;cursor:grab;border-radius:14px;outline-offset:3px;
+}
+.bs-stage:active{cursor:grabbing}
+.bs-stage:focus-visible{outline:2px solid var(--gold)}
+.bs-stage::after{ /* shelf floor */
+  content:"";position:absolute;left:6%;right:6%;bottom:26px;height:44px;border-radius:50%;
+  background:radial-gradient(50% 100% at 50% 0%, rgba(212,175,55,.16), rgba(0,0,0,0) 70%);
+  pointer-events:none;
+}
+.bs-fade{position:absolute;top:0;bottom:0;width:12%;z-index:40;pointer-events:none}
+.bk{
+  position:absolute;left:50%;top:46%;width:var(--cover-w);height:calc(var(--cover-w)*1.6);
+  margin:0;padding:0;border:0;background:#1d1912;border-radius:4px 10px 10px 4px;
+  transform-style:preserve-3d;will-change:transform;
+  box-shadow:0 18px 34px rgba(0,0,0,.55);
+}
+.bk img{width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;background:#1d1912;
+  -webkit-user-drag:none;user-select:none;pointer-events:none}
+.bk::before{ /* spine shading on the left edge */
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(90deg, rgba(0,0,0,.38) 0%, rgba(0,0,0,0) 7%, rgba(255,255,255,.06) 9%, rgba(0,0,0,0) 16%);
+}
+.bk.is-center{box-shadow:0 30px 60px rgba(0,0,0,.7), 0 0 0 2px var(--gold)}
+.bs-arrow{
+  position:absolute;top:42%;z-index:50;width:52px;height:64px;font-size:2rem;line-height:1;
+  color:var(--gold);background:rgba(23,20,16,.82);border:1px solid var(--line);border-radius:10px;cursor:pointer;
+}
+.bs-arrow:hover{border-color:var(--gold)}
+.bs-arrow:disabled{opacity:.28;cursor:default}
+#prevBtn{left:6px}#nextBtn{right:6px}
+.bs-caption{text-align:center;padding:2px 14px 8px;position:relative;z-index:45}
+#capTitle{
+  color:var(--ink);font-size:clamp(1.15rem,3.4vw,1.55rem);text-decoration:none;font-weight:600;
+}
+#capTitle:hover{color:var(--gold);text-decoration:underline}
+#capMeta{color:var(--ink-dim);margin-top:3px;font-size:.94rem}
+.bs-hint{color:var(--gold-dim);font-size:.8rem;margin-top:2px}
+
+/* ---------- simple view ---------- */
+.bs-simple{max-width:1080px;margin:10px auto;padding:0 14px 8px}
+.bs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:16px 12px}
+.bs-cell{text-decoration:none;color:var(--ink);display:block}
+.bs-cell img{width:100%;aspect-ratio:5/8;object-fit:contain;background:#1d1912;border-radius:4px 8px 8px 4px;display:block}
+.bs-cell .c-title{display:block;margin-top:6px;font-size:.82rem;line-height:1.25;color:var(--ink-dim)}
+.bs-cell:hover .c-title{color:var(--gold)}
+.bs-cell-text{
+  aspect-ratio:5/8;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;
+  border:1px solid var(--gold-dim);border-radius:4px 8px 8px 4px;color:var(--gold);font-size:.86rem;background:#14110a;
+}
+#moreBtn{
+  display:block;margin:20px auto 4px;font:inherit;padding:12px 26px;min-height:48px;cursor:pointer;
+  background:var(--panel);color:var(--gold);border:1px solid var(--gold-dim);border-radius:9px;
+}
+#moreBtn[hidden]{display:none}
+
+/* ---------- footer ---------- */
+.bs-hud{
+  display:inline-block;margin-bottom:10px;padding:6px 12px;border:1px dashed var(--gold-dim);border-radius:8px;
+  color:var(--gold);font-size:.8rem;font-family:ui-monospace,Menlo,monospace;
+}
+body.reduced-motion #bookshelf *{transition:none !important;animation:none !important}
+
+@media (max-width:560px){
+  .bs-stage{height:calc(var(--cover-w)*1.6 + 58px)}
+  .bs-arrow{width:44px;height:56px;top:38%}
+  .bs-toggles{width:100%;justify-content:center}
+}
+
+/* ---------- integration: compact featured-section chrome ---------- */
+#bookshelf .bs-sec-head{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;
+  max-width:1020px;margin:0 auto;padding:14px 16px 0;
+}
+#bookshelf .bs-sec-title{
+  margin:0;font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:clamp(1.25rem,3.4vw,1.6rem);color:var(--gold);
+}
+#bookshelf .bs-sec-sub{margin:0;color:var(--ink-dim);font-size:.9rem}
+#bookshelf .bs-controls{margin:10px auto 2px}
+#bookshelf #hud{display:none}
+#bookshelf .bs-stats{text-align:center;color:var(--ink-dim);font-size:.84rem;margin:8px auto 0;max-width:1020px;padding:0 12px}
+@media (max-width:560px){
+  #bookshelf .bs-sec-head{padding:12px 12px 0}
+  #bookshelf .bs-sec-sub{display:none}
+  #bookshelf .bs-field > span{display:none}
+  #bookshelf .bs-controls{gap:8px;padding:0 10px}
+  #bookshelf .bs-az{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;
+    scrollbar-width:none;padding-bottom:2px}
+  #bookshelf .bs-az::-webkit-scrollbar{display:none}
+  #bookshelf .bs-az button{flex:0 0 auto}
+}
