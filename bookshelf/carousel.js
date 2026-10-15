@@ -533,7 +533,7 @@
   function statsText() {
     var coll = DATA.collections.filter(function (c) { return c.id === state.coll; })[0];
     var missing = state.fullList.length - state.list.length;
-    return totalBooks + " books in the catalog · " + totalCovers + " with covers" +
+    return totalBooks + " books on the shelf · " + totalCovers + " with covers" +
       " — now showing " + (coll ? coll.label : "") + ": " + state.fullList.length +
       " books · " + state.list.length + " with covers on the shelf" +
       (missing > 0 ? " · " + missing + " without a cover (Simple view, as a text tile)" : "");
