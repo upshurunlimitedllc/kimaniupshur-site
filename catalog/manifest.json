@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1071,
+  "unique_published_titles": 1072,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1071,
-  "carousel_with_covers": 1070,
+  "carousel_entries": 1072,
+  "carousel_with_covers": 1071,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -14388,6 +14388,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "the-wrestler",
+   "title": "The Wrestler",
+   "url": "/books/the-wrestler/",
+   "section": "books",
+   "cover": "/books/the-wrestler/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "thinking-bundle-made-simple",
