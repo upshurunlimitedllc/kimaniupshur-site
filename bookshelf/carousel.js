@@ -557,6 +557,15 @@
   var initPos = parseFloat(params.get("pos") || "0");
   setCollection(initColl, isNaN(initPos) ? 0 : initPos);
   if (params.get("view") === "simple") setView("simple");
+  else if (params.get("view") !== "carousel") {
+    /* Touch-first devices (iPad/tablets) default to the static simple
+       grid — the coverflow's drag physics are unreliable there. An
+       explicit ?view=carousel or the view toggle always wins, and
+       fine-pointer (mouse/trackpad) devices keep the carousel. */
+    var coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+    var touchOnly = coarse && !(window.matchMedia && window.matchMedia("(pointer: fine)").matches);
+    if (touchOnly || (coarse && navigator.maxTouchPoints > 1 && !window.matchMedia("(pointer: fine)").matches)) setView("simple");
+  }
   window.addEventListener("resize", function () { render(); });
   window.__bookshelf = {
     state: state, jumpTo: jumpTo, tweenTo: tweenTo, setCollection: setCollection,
