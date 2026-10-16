@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1068,
+  "unique_published_titles": 1069,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1068,
-  "carousel_with_covers": 1067,
+  "carousel_entries": 1069,
+  "carousel_with_covers": 1068,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -2545,7 +2545,7 @@
    "section": "books",
    "cover": "/books/court-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2577,7 +2577,7 @@
    "section": "books",
    "cover": "/books/credit-card-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2735,7 +2735,7 @@
    "section": "books",
    "cover": "/books/customer-service-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3116,7 +3116,7 @@
    "section": "books",
    "cover": "/books/decision-trees-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3148,7 +3148,7 @@
    "section": "books",
    "cover": "/books/dedication-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3164,7 +3164,7 @@
    "section": "books",
    "cover": "/books/deep-work-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3260,7 +3260,7 @@
    "section": "books",
    "cover": "/books/deliverance-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3276,7 +3276,7 @@
    "section": "books",
    "cover": "/books/dementia-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3292,7 +3292,7 @@
    "section": "books",
    "cover": "/books/dental-health-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3324,7 +3324,7 @@
    "section": "books",
    "cover": "/books/difficult-conversations-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3430,7 +3430,7 @@
    "section": "books",
    "cover": "/books/diligence-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3446,7 +3446,7 @@
    "section": "books",
    "cover": "/books/discernment-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3462,7 +3462,7 @@
    "section": "books",
    "cover": "/books/discipleship-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3478,7 +3478,7 @@
    "section": "books",
    "cover": "/books/discipline-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3526,7 +3526,7 @@
    "section": "books",
    "cover": "/books/divorce-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3574,7 +3574,7 @@
    "section": "books",
    "cover": "/books/dorcas-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3590,7 +3590,7 @@
    "section": "books",
    "cover": "/books/doubt-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3654,7 +3654,7 @@
    "section": "books",
    "cover": "/books/edification-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3686,7 +3686,7 @@
    "section": "books",
    "cover": "/books/elijah-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3718,7 +3718,7 @@
    "section": "books",
    "cover": "/books/emergence-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15964,9 +15964,9 @@
    "section": "kids",
    "cover": "/kids/saying-sorry-to-god/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "kids"
   },
@@ -16003,9 +16003,9 @@
    "section": "kids",
    "cover": "/kids/standing-tall-in-babylon/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "kids"
   },
@@ -16029,9 +16029,22 @@
    "section": "kids",
    "cover": "/kids/thank-you-god/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "the-baby-in-the-manger",
+   "title": "The Baby in the Manger",
+   "url": "/kids/the-baby-in-the-manger/",
+   "section": "kids",
+   "cover": "/kids/the-baby-in-the-manger/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "kids"
   },
@@ -16081,7 +16094,7 @@
    "section": "kids",
    "cover": "/kids/the-boy-who-heard-god-whisper/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -16094,9 +16107,9 @@
    "section": "kids",
    "cover": "/kids/the-first-christmas/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "kids"
   },
@@ -16107,9 +16120,9 @@
    "section": "kids",
    "cover": "/kids/the-first-easter/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "kids"
   },
@@ -16146,7 +16159,7 @@
    "section": "kids",
    "cover": "/kids/the-golden-rule/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -16172,9 +16185,9 @@
    "section": "kids",
    "cover": "/kids/the-kindness-club/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "kids"
   },
@@ -16185,9 +16198,9 @@
    "section": "kids",
    "cover": "/kids/the-lions-den/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "kids"
   },
@@ -16237,9 +16250,9 @@
    "section": "kids",
    "cover": "/kids/the-walls-came-down/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "kids"
   },
@@ -16523,9 +16536,9 @@
    "section": "teens",
    "cover": "/teens/running-on-empty/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "teens"
   },
