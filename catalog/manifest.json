@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1067,
+  "unique_published_titles": 1068,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1067,
-  "carousel_with_covers": 1066,
+  "carousel_entries": 1068,
+  "carousel_with_covers": 1067,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -15846,6 +15846,19 @@
    "url": "/kids/god-made-everything/",
    "section": "kids",
    "cover": "/kids/god-made-everything/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "god-made-the-night-sky",
+   "title": "God Made the Night Sky",
+   "url": "/kids/god-made-the-night-sky/",
+   "section": "kids",
+   "cover": "/kids/god-made-the-night-sky/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
