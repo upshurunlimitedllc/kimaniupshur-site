@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1066,
+  "unique_published_titles": 1067,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1066,
-  "carousel_with_covers": 1065,
+  "carousel_entries": 1067,
+  "carousel_with_covers": 1066,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -3340,7 +3340,7 @@
    "section": "books",
    "cover": "/books/difficult-people-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3542,7 +3542,7 @@
    "section": "books",
    "cover": "/books/doomscrolling-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6741,7 +6741,7 @@
    "section": "books",
    "cover": "/books/leadership-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15737,6 +15737,19 @@
    "collection": "personal-growth"
   },
   {
+   "slug": "bartimaeus-sees",
+   "title": "Bartimaeus Sees",
+   "url": "/kids/bartimaeus-sees/",
+   "section": "kids",
+   "cover": "/kids/bartimaeus-sees/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "big-feelings-bigger-god",
    "title": "Big Feelings, Bigger God",
    "url": "/kids/big-feelings-bigger-god/",
@@ -16432,7 +16445,7 @@
    "section": "teens",
    "cover": "/teens/making-the-team/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
