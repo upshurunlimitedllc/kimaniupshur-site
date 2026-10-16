@@ -137,6 +137,24 @@ def main():
             order[t["section"]].append(slug)
         added.append(url)
 
+    # --- page-link primacy ---
+    # A title whose page declares exactly ONE category belongs to that
+    # category, even if a stale carousel membership says otherwise.
+    # (Fixes the tranche template defect that filed 12 titles under
+    # Faith & Doctrine, + 1 legacy case: Overcoming Addiction.)
+    for url, t in titles.items():
+        distinct = sorted(set(t["category_links"]))
+        if t["section"] != "books" or len(distinct) != 1:
+            continue
+        cat = distinct[0]
+        if cat not in coll_ids or cat in ("all", "kids", "teens"):
+            continue
+        for cid in order:
+            if cid not in ("all", "kids", "teens") and t["slug"] in order[cid]:
+                order[cid].remove(t["slug"])
+        if t["slug"] not in order[cat]:
+            order[cat].append(t["slug"])
+
     for cid in order:  # deterministic: slug-sorted lists
         order[cid] = sorted(set(order[cid]))
     books = {k: books[k] for k in sorted(books)}
@@ -145,13 +163,19 @@ def main():
         c["count"] = len(ss)
         c["withCovers"] = sum(1 for s in ss if books[s].get("img"))
 
-    # collection per title (first collection containing it, carousel.js semantics)
+    # Collection per title, from the FINAL orders: topical collections win;
+    # the 'all'/'kids'/'teens' shelves are fallbacks only. (Two passes —
+    # a single first-match pass lets the 'all' shelf shadow real topics.)
     slug_coll = {}
     for c in bd["collections"]:
+        if c["id"] in ("all", "kids", "teens"):
+            continue
         for s in order[c["id"]]:
             slug_coll.setdefault(s, c["id"])
     for t in titles.values():
-        t["collection"] = slug_coll.get(t["slug"])
+        if t["slug"] not in slug_coll:
+            slug_coll[t["slug"]] = t["section"] if t["section"] in ("kids", "teens") else "all"
+        t["collection"] = slug_coll[t["slug"]]
 
     manifest = {
         "generated_from": "published title pages on disk (books/, kids/, teens/)",

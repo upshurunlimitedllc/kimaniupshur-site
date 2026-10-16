@@ -27,6 +27,11 @@ same scan, so the numbers cannot drift apart.
 - Existing display texts (carousel titles, search categories, A–Z anchor
   texts) are preserved verbatim; generation only adds missing entries and
   removes stub entries.
+- Category assignment follows "page-link primacy": a title whose page
+  declares exactly ONE category (breadcrumb/tag pill) belongs to that
+  category; multi-category pages keep their existing carousel membership.
+  (This corrected a tranche template defect that had filed 12 unrelated
+  titles under Faith & Doctrine, which verifiably contains 63 titles.)
 
 ## Adding a new book (repeatable process)
 
