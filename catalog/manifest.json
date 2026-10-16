@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1065,
+  "unique_published_titles": 1066,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1065,
-  "carousel_with_covers": 1064,
+  "carousel_entries": 1066,
+  "carousel_with_covers": 1065,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -88,7 +88,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "active-listening-made-simple",
@@ -104,7 +104,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "adaptation-made-simple",
@@ -152,7 +152,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "adaptive-leadership-made-simple",
@@ -168,7 +168,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "adaptive-systems-made-simple",
@@ -184,7 +184,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "adaptive-thinking-made-simple",
@@ -200,7 +200,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "addiction-made-simple",
@@ -216,7 +216,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "adhd-made-simple",
@@ -248,7 +248,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "advocacy-made-simple",
@@ -293,7 +293,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "ai-and-business-made-simple",
@@ -309,7 +309,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "ai-and-creativity-made-simple",
@@ -322,10 +322,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "tech-ai",
+    "tech-ai"
    ],
-   "collection": "faith-doctrine"
+   "collection": "tech-ai"
   },
   {
    "slug": "ai-and-cryptocurrency-made-simple",
@@ -341,7 +341,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "ai-and-education-made-simple",
@@ -358,7 +358,7 @@
     "tech-ai",
     "cluster-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "ai-and-healthcare-made-simple",
@@ -374,7 +374,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "ai-and-money-made-simple",
@@ -391,7 +391,7 @@
     "money-finance",
     "cluster-ai"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "ai-and-work-made-simple",
@@ -407,7 +407,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "ai-bundle",
@@ -423,7 +423,7 @@
     "box-sets",
     "box-sets"
    ],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "ai-ethics-made-simple",
@@ -439,7 +439,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "ai-intelligence-made-simple",
@@ -455,7 +455,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "ai-safety-made-simple",
@@ -468,10 +468,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "tech-ai",
+    "tech-ai"
    ],
-   "collection": "faith-doctrine"
+   "collection": "tech-ai"
   },
   {
    "slug": "ai-tools-made-simple",
@@ -487,7 +487,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "alignment-made-simple",
@@ -599,7 +599,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "antioch-made-simple",
@@ -632,7 +632,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "anxiety-made-simple",
@@ -648,7 +648,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "apologetics-made-simple",
@@ -696,7 +696,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "archippus-made-simple",
@@ -745,7 +745,7 @@
     "tech-ai",
     "cluster-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "artificial-intelligence-made-simple",
@@ -761,7 +761,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "assertiveness-made-simple",
@@ -777,7 +777,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "assurance-made-simple",
@@ -841,7 +841,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "attention-economics-made-simple",
@@ -857,7 +857,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "attention-made-simple",
@@ -873,7 +873,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "attention-management-made-simple",
@@ -889,7 +889,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "attention-systems-made-simple",
@@ -905,7 +905,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "authority-made-simple",
@@ -1014,7 +1014,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "behavioral-feedback-made-simple",
@@ -1046,7 +1046,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "behavioral-systems-made-simple",
@@ -1062,7 +1062,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "behold-the-man",
@@ -1150,7 +1150,7 @@
     "box-sets",
     "cluster-box-set"
    ],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "bible-prophecy-made-simple",
@@ -1179,7 +1179,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "bible-study-made-simple",
@@ -1211,7 +1211,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "bitterness-made-simple",
@@ -1259,7 +1259,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "blended-family-made-simple",
@@ -1275,7 +1275,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "blessing-made-simple",
@@ -1323,7 +1323,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "boaz-made-simple",
@@ -1355,7 +1355,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "body-language-made-simple",
@@ -1371,7 +1371,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "boldness-made-simple",
@@ -1400,7 +1400,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "bottlenecks-made-simple",
@@ -1432,7 +1432,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "boundaries-made-simple",
@@ -1449,7 +1449,7 @@
     "family-relationships",
     "cluster-communication"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "brain-lying-made-simple",
@@ -1465,7 +1465,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "brokenness-made-simple",
@@ -1497,7 +1497,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "burnout-made-simple",
@@ -1513,7 +1513,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "caleb-made-simple",
@@ -1594,7 +1594,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "car-buying-made-simple",
@@ -1642,7 +1642,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "caregiving-made-simple",
@@ -1767,7 +1767,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "circle-of-competence-made-simple",
@@ -1799,7 +1799,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "clear-thinking-made-simple",
@@ -1815,7 +1815,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "co-parenting-made-simple",
@@ -1831,7 +1831,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "codependency-made-simple",
@@ -1991,7 +1991,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "cognitive-recovery-made-simple",
@@ -2007,7 +2007,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "cognitive-resilience-made-simple",
@@ -2023,7 +2023,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "cognitive-stability-made-simple",
@@ -2055,7 +2055,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "college-made-simple",
@@ -2084,10 +2084,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "money-finance",
+    "money-finance"
    ],
-   "collection": "faith-doctrine"
+   "collection": "money-finance"
   },
   {
    "slug": "comfort-made-simple",
@@ -2119,7 +2119,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "communion-made-simple",
@@ -2265,7 +2265,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "conflict-resolution-made-simple",
@@ -2281,7 +2281,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "conscience-made-simple",
@@ -2344,7 +2344,7 @@
     "personal-growth",
     "cluster-psychology"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "constraints-made-simple",
@@ -2376,7 +2376,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "contemplation-made-simple",
@@ -2440,7 +2440,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "conviction-made-simple",
@@ -2584,7 +2584,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "credit-made-simple",
@@ -2600,7 +2600,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "credit-score-made-simple",
@@ -2616,7 +2616,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "crescendo",
@@ -2633,7 +2633,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "crispr-and-gene-editing-made-simple",
@@ -2646,7 +2646,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "critical-thinking-made-simple",
@@ -2662,7 +2662,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "criticism-made-simple",
@@ -2694,7 +2694,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "crypto-made-simple",
@@ -2710,7 +2710,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "curiosity-made-simple",
@@ -2726,7 +2726,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "customer-service-made-simple",
@@ -2742,7 +2742,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "cyber-security-made-simple",
@@ -2758,7 +2758,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "daniel-made-simple",
@@ -2790,7 +2790,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "daughters-of-the-promise",
@@ -2867,7 +2867,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "decision-architecture-made-simple",
@@ -2883,7 +2883,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-biases-made-simple",
@@ -2899,7 +2899,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-clarity-made-simple",
@@ -2915,7 +2915,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-environments-made-simple",
@@ -2931,7 +2931,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-fatigue-made-simple",
@@ -2947,7 +2947,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-framing-made-simple",
@@ -2963,7 +2963,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-hygiene-made-simple",
@@ -2979,7 +2979,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-making-made-simple",
@@ -2995,7 +2995,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-making-under-pressure",
@@ -3011,7 +3011,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-matrix-made-simple",
@@ -3027,7 +3027,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-pressure-made-simple",
@@ -3043,7 +3043,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-process-design-made-simple",
@@ -3059,7 +3059,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-process-made-simple",
@@ -3075,7 +3075,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-quality-made-simple",
@@ -3091,7 +3091,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-systems-made-simple",
@@ -3107,7 +3107,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-trees-made-simple",
@@ -3123,7 +3123,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "decision-velocity-made-simple",
@@ -3139,7 +3139,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "dedication-made-simple",
@@ -3171,7 +3171,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "deepfakes-made-simple",
@@ -3187,7 +3187,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "defaults-made-simple",
@@ -3219,7 +3219,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "delight-made-simple",
@@ -3299,7 +3299,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "depression-made-simple",
@@ -3315,7 +3315,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "difficult-conversations-made-simple",
@@ -3347,7 +3347,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "digital-detox-made-simple",
@@ -3363,7 +3363,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "digital-identity-made-simple",
@@ -3376,7 +3376,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "digital-minimalism-made-simple",
@@ -3392,7 +3392,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "digital-money-made-simple",
@@ -3405,7 +3405,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "dignity-made-simple",
@@ -3485,7 +3485,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "discretion-made-simple",
@@ -3517,7 +3517,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "divorce-made-simple",
@@ -3533,7 +3533,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "doomscrolling-made-simple",
@@ -3549,7 +3549,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "dopamine-made-simple",
@@ -3613,7 +3613,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "ecclesiastes-made-simple",
@@ -3757,7 +3757,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "emotional-intelligence-made-simple",
@@ -3773,7 +3773,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "emotional-regulation-made-simple",
@@ -3789,7 +3789,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "empty-nest-made-simple",
@@ -3933,7 +3933,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "error-rates-made-simple",
@@ -3965,7 +3965,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "esther-made-simple",
@@ -4061,7 +4061,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "executive-presence-made-simple",
@@ -4077,7 +4077,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "exercise-made-simple",
@@ -4093,7 +4093,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "ezekiel-made-simple",
@@ -4158,7 +4158,7 @@
     "box-sets",
     "cluster-box-set"
    ],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "faith-made-simple",
@@ -4167,8 +4167,8 @@
    "section": "books",
    "cover": "/books/faith-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "faith-doctrine",
@@ -4203,7 +4203,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "farlight-the-last-beacon",
@@ -4220,7 +4220,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "fast-thinking-made-simple",
@@ -4364,7 +4364,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "financial-literacy-made-simple",
@@ -4380,7 +4380,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "first-aid-made-simple",
@@ -4428,7 +4428,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "first-principles-thinking-made-simple",
@@ -4444,7 +4444,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "focus-made-simple",
@@ -4460,7 +4460,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "foolishness-made-simple",
@@ -4492,7 +4492,7 @@
     "christian-living",
     "christian-living"
    ],
-   "collection": "all"
+   "collection": "christian-living"
   },
   {
    "slug": "fortitude-made-simple",
@@ -4525,7 +4525,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "foster-care-made-simple",
@@ -4573,7 +4573,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "freelancing-made-simple",
@@ -4589,7 +4589,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "friction-made-simple",
@@ -4621,7 +4621,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "frugality-made-simple",
@@ -4846,7 +4846,7 @@
     "health-wellness",
     "cluster-health"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "godliness-made-simple",
@@ -4942,7 +4942,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "gratitude-made-simple",
@@ -4990,7 +4990,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "gut-health-made-simple",
@@ -5006,7 +5006,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "habit-formation-made-simple",
@@ -5022,7 +5022,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "habits-made-simple",
@@ -5038,7 +5038,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "haggai-made-simple",
@@ -5071,7 +5071,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "halcyon-protocol-the-compliance-problem",
@@ -5088,7 +5088,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "halcyon-protocol",
@@ -5105,7 +5105,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "hannah-made-simple",
@@ -5137,7 +5137,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "hard-decisions-made-simple",
@@ -5153,7 +5153,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "hard-work-made-simple",
@@ -5169,7 +5169,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "healing-made-simple",
@@ -5185,7 +5185,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "health-healing-the-complete-box-set",
@@ -5198,7 +5198,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "health-insurance-made-simple",
@@ -5227,7 +5227,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "hearing-god-made-simple",
@@ -5307,7 +5307,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "hezekiah-made-simple",
@@ -5371,7 +5371,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "hiring-made-simple",
@@ -5387,7 +5387,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "holiness-made-simple",
@@ -5419,7 +5419,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "homeschooling-made-simple",
@@ -5435,7 +5435,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "honesty-made-simple",
@@ -5563,7 +5563,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "humility-made-simple",
@@ -5736,7 +5736,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "influence-made-simple",
@@ -5752,7 +5752,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "info-ecology-made-simple",
@@ -5784,7 +5784,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "info-war-made-simple",
@@ -5848,7 +5848,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "information-dynamics-made-simple",
@@ -5896,7 +5896,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "information-flow-made-simple",
@@ -6024,7 +6024,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "information-warfare-made-simple",
@@ -6088,7 +6088,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "integrity-made-simple",
@@ -6168,7 +6168,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "inversion-made-simple",
@@ -6200,7 +6200,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "isaiah-made-simple",
@@ -6312,7 +6312,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "job-made-simple",
@@ -6344,7 +6344,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "john-the-baptist-made-simple",
@@ -6440,7 +6440,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "joy-in-chains",
@@ -6620,7 +6620,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "knowledge-made-simple",
@@ -6652,7 +6652,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "lag-made-simple",
@@ -6713,10 +6713,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "family-relationships",
+    "family-relationships"
    ],
-   "collection": "faith-doctrine"
+   "collection": "family-relationships"
   },
   {
    "slug": "layoffs-made-simple",
@@ -6748,7 +6748,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "learning-made-simple",
@@ -6764,7 +6764,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "legacy-made-simple",
@@ -6844,7 +6844,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "lindy-effect-made-simple",
@@ -6924,7 +6924,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "losing-a-parent-made-simple",
@@ -7020,7 +7020,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "made-simple-advanced-thinking",
@@ -7049,7 +7049,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "made-simple-decision-mastery",
@@ -7065,7 +7065,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "made-simple-emotional-resilience",
@@ -7094,7 +7094,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "made-simple-ten-mental-models",
@@ -7149,7 +7149,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "malachi-made-simple",
@@ -7229,7 +7229,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "marriage-made-simple",
@@ -7245,7 +7245,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "martha-made-simple",
@@ -7325,7 +7325,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "meal-prep-made-simple",
@@ -7341,7 +7341,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "medicare-made-simple",
@@ -7357,7 +7357,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "meditation-made-simple",
@@ -7437,7 +7437,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mental-clarity-made-simple",
@@ -7453,7 +7453,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mental-energy-made-simple",
@@ -7469,7 +7469,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mental-flexibility-made-simple",
@@ -7485,7 +7485,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mental-frameworks-made-simple",
@@ -7501,7 +7501,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mental-load-made-simple",
@@ -7517,7 +7517,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mental-models-made-simple",
@@ -7533,7 +7533,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mental-models-vol-2-the-complete-box-set",
@@ -7546,7 +7546,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "mental-recovery-made-simple",
@@ -7562,7 +7562,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mental-toughness-made-simple",
@@ -7578,7 +7578,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mentoring-made-simple",
@@ -7687,7 +7687,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "mindfulness-made-simple",
@@ -7719,7 +7719,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "mindset-reset-the-complete-box-set",
@@ -7732,7 +7732,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "minimalist-made-simple",
@@ -7829,7 +7829,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "moderation-made-simple",
@@ -7893,7 +7893,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "mordecai-made-simple",
@@ -7938,7 +7938,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "moses-made-simple",
@@ -8050,7 +8050,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "narrative-made-simple",
@@ -8082,7 +8082,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "negotiating-salary-made-simple",
@@ -8098,7 +8098,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "negotiation-made-simple",
@@ -8114,7 +8114,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "nehemiah-made-simple",
@@ -8178,7 +8178,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "networks-made-simple",
@@ -8242,7 +8242,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "new-mom-made-simple",
@@ -8271,10 +8271,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "health-wellness",
+    "health-wellness"
    ],
-   "collection": "faith-doctrine"
+   "collection": "health-wellness"
   },
   {
    "slug": "nicodemus-made-simple",
@@ -8351,7 +8351,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "nuclear-energy-made-simple",
@@ -8380,7 +8380,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "nyxari-the-awakening",
@@ -8397,7 +8397,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "obadiah-made-simple",
@@ -8490,10 +8490,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "tech-ai",
+    "tech-ai"
    ],
-   "collection": "faith-doctrine"
+   "collection": "tech-ai"
   },
   {
    "slug": "ooda-loop-made-simple",
@@ -8573,7 +8573,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "othniel-made-simple",
@@ -8605,7 +8605,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "christian-living"
+   "collection": "health-wellness"
   },
   {
    "slug": "overthinking-made-simple",
@@ -8621,7 +8621,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "ownership-made-simple",
@@ -8653,7 +8653,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "parenting-toddlers-made-simple",
@@ -8666,10 +8666,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "family-relationships",
+    "family-relationships"
    ],
-   "collection": "faith-doctrine"
+   "collection": "family-relationships"
   },
   {
    "slug": "pareto-principle-made-simple",
@@ -8746,7 +8746,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "peace-made-simple",
@@ -8858,7 +8858,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "perimenopause-made-simple",
@@ -8922,7 +8922,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "personal-finance-made-simple",
@@ -8938,7 +8938,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "persuasion-made-simple",
@@ -8954,7 +8954,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "pet-loss-made-simple",
@@ -8967,10 +8967,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "health-wellness",
+    "health-wellness"
    ],
-   "collection": "faith-doctrine"
+   "collection": "health-wellness"
   },
   {
    "slug": "peter-made-simple",
@@ -9050,7 +9050,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "podcasting-made-simple",
@@ -9130,7 +9130,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "praise-made-simple",
@@ -9179,7 +9179,7 @@
     "box-sets",
     "cluster-box-set"
    ],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "praying-for-your-kids-made-simple",
@@ -9307,7 +9307,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "probabilistic-thinking-made-simple",
@@ -9323,7 +9323,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "probability-made-simple",
@@ -9355,7 +9355,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "productivity-made-simple",
@@ -9371,7 +9371,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "project-management-made-simple",
@@ -9387,7 +9387,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "promotion-made-simple",
@@ -9403,7 +9403,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "prompt-engineering-made-simple",
@@ -9419,7 +9419,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "prostate-made-simple",
@@ -9435,7 +9435,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "proverbs-made-simple",
@@ -9499,7 +9499,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "public-relations-made-simple",
@@ -9531,7 +9531,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "purity-made-simple",
@@ -9656,7 +9656,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "raising-teenagers-made-simple",
@@ -9672,7 +9672,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "rational-thinking-made-simple",
@@ -9688,7 +9688,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "readiness-made-simple",
@@ -9720,7 +9720,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "real-estate-investing-made-simple",
@@ -9736,7 +9736,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "reality-testing-made-simple",
@@ -9765,10 +9765,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "personal-growth",
+    "personal-growth"
    ],
-   "collection": "faith-doctrine"
+   "collection": "personal-growth"
   },
   {
    "slug": "reconciliation-made-simple",
@@ -9784,7 +9784,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "red-teaming-made-simple",
@@ -9880,7 +9880,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "remembrance-made-simple",
@@ -9912,7 +9912,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "renewal-made-simple",
@@ -9944,7 +9944,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "repentance-made-simple",
@@ -9976,7 +9976,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "resilient-systems-made-simple",
@@ -9992,7 +9992,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "resilient-thinking-made-simple",
@@ -10008,7 +10008,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "responsibility-made-simple",
@@ -10069,7 +10069,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "resume-writing-made-simple",
@@ -10085,7 +10085,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "resurrection-made-simple",
@@ -10117,7 +10117,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "retreat-made-simple",
@@ -10322,7 +10322,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "salvation-made-simple",
@@ -10418,7 +10418,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "scale-made-simple",
@@ -10482,7 +10482,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "screen-time-made-simple",
@@ -10498,7 +10498,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "seasons-made-simple",
@@ -10546,7 +10546,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "self-control-made-simple",
@@ -10578,7 +10578,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "self-sabotage-made-simple",
@@ -10716,7 +10716,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "side-income-made-simple",
@@ -10732,7 +10732,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "signal-detection-made-simple",
@@ -10748,7 +10748,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "signal-processing-made-simple",
@@ -10764,7 +10764,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "signal-versus-noise-made-simple",
@@ -10780,7 +10780,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "silence-made-simple",
@@ -10860,7 +10860,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "singleness-made-simple",
@@ -10908,7 +10908,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "small-talk-made-simple",
@@ -10924,7 +10924,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "sobriety-made-simple",
@@ -10940,7 +10940,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "social-security-made-simple",
@@ -10956,7 +10956,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "solitude-made-simple",
@@ -11033,10 +11033,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "family-relationships",
+    "family-relationships"
    ],
-   "collection": "faith-doctrine"
+   "collection": "family-relationships"
   },
   {
    "slug": "spiritual-warfare-made-simple",
@@ -11065,7 +11065,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "starting-a-business-made-simple",
@@ -11081,7 +11081,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "status-made-simple",
@@ -11142,7 +11142,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "stoicism-made-simple",
@@ -11174,7 +11174,7 @@
     "fiction",
     "fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "stop-chasing",
@@ -11190,7 +11190,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "stop-explaining-yourself",
@@ -11206,7 +11206,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "stop-overthinking-made-simple",
@@ -11222,7 +11222,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "storytelling-made-simple",
@@ -11316,7 +11316,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "strategic-thinking-made-simple",
@@ -11332,7 +11332,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "strategic-thinking-under-pressure-made-simple",
@@ -11348,7 +11348,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "strategy-execution-made-simple",
@@ -11364,7 +11364,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "stress-made-simple",
@@ -11380,7 +11380,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "stroke-made-simple",
@@ -11396,7 +11396,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "student-loans-made-simple",
@@ -11412,7 +11412,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "submission-made-simple",
@@ -11476,7 +11476,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "system-failure-made-simple",
@@ -11492,7 +11492,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "systemic-risk-made-simple",
@@ -11524,7 +11524,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "systems-thinking-made-simple",
@@ -11540,7 +11540,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "taxes-made-simple",
@@ -11556,7 +11556,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "teaching-made-simple",
@@ -11662,10 +11662,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "tech-ai",
+    "tech-ai"
    ],
-   "collection": "faith-doctrine"
+   "collection": "tech-ai"
   },
   {
    "slug": "the-alpha-and-omega-made-simple",
@@ -12044,7 +12044,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "the-constitution-made-simple",
@@ -12263,7 +12263,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "the-empty-tomb-made-simple",
@@ -12376,7 +12376,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "the-fear-of-the-lord-made-simple",
@@ -12453,7 +12453,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "the-fruit-of-the-spirit-made-simple-collection",
@@ -12470,7 +12470,7 @@
     "box-sets",
     "cluster-box-set"
    ],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "the-gerasene-demoniac-made-simple",
@@ -12758,7 +12758,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "the-jubilee-made-simple",
@@ -12823,7 +12823,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "the-light-of-the-world-made-simple",
@@ -13096,7 +13096,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "the-mustard-seed-made-simple",
@@ -13321,7 +13321,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "the-parables-made-simple",
@@ -13433,7 +13433,7 @@
     "fiction",
     "fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "the-poor-made-simple",
@@ -14291,7 +14291,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "the-will-of-god-made-simple",
@@ -14403,7 +14403,7 @@
     "box-sets",
     "box-sets"
    ],
-   "collection": "all"
+   "collection": "box-sets"
   },
   {
    "slug": "thinking-clearly-under-pressure-made-simple",
@@ -14419,7 +14419,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "thinking-in-bets-made-simple",
@@ -14436,7 +14436,7 @@
     "personal-growth",
     "cluster-foundations"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "thinking-made-simple",
@@ -14452,7 +14452,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "thinking-traps-made-simple",
@@ -14468,7 +14468,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "thomas-made-simple",
@@ -14534,7 +14534,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "time-blocking-made-simple",
@@ -14550,7 +14550,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "time-made-simple",
@@ -14566,7 +14566,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "timothy-made-simple",
@@ -14614,7 +14614,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "titus-made-simple",
@@ -14646,7 +14646,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "tradeoffs-made-simple",
@@ -14691,7 +14691,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "trials-made-simple",
@@ -14771,7 +14771,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "tychicus-made-simple",
@@ -14913,7 +14913,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "variance-made-simple",
@@ -15039,7 +15039,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "vulnerability-made-simple",
@@ -15104,7 +15104,7 @@
     "fiction",
     "cluster-fiction"
    ],
-   "collection": "all"
+   "collection": "fiction"
   },
   {
    "slug": "wealth-made-simple",
@@ -15120,7 +15120,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "website-building-made-simple",
@@ -15152,7 +15152,7 @@
     "family-relationships",
     "family-relationships"
    ],
-   "collection": "all"
+   "collection": "family-relationships"
   },
   {
    "slug": "where-did-my-money-go",
@@ -15169,7 +15169,7 @@
     "money-finance",
     "cluster-commercial"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "wheres-my-money-made-simple",
@@ -15185,7 +15185,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "who-controls-the-future",
@@ -15201,7 +15201,7 @@
     "tech-ai",
     "tech-ai"
    ],
-   "collection": "all"
+   "collection": "tech-ai"
   },
   {
    "slug": "why-do-you-feel-stuck",
@@ -15217,7 +15217,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "why-nobody-takes-you-seriously",
@@ -15249,7 +15249,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "why-smart-people-stay-broke",
@@ -15265,7 +15265,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "why-the-world-doesnt-work-the-way-you-think-made-simple",
@@ -15281,7 +15281,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "why-you-cant-focus-made-simple",
@@ -15297,7 +15297,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "why-you-keep-getting-in-your-own-way",
@@ -15329,7 +15329,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "why-your-decisions-fail",
@@ -15346,7 +15346,7 @@
     "personal-growth",
     "cluster-commercial-psychology"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "why-your-life-feels-off",
@@ -15379,7 +15379,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "why-youre-still-broke-made-simple",
@@ -15395,7 +15395,7 @@
     "money-finance",
     "money-finance"
    ],
-   "collection": "all"
+   "collection": "money-finance"
   },
   {
    "slug": "widow-made-simple",
@@ -15427,7 +15427,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "wills-and-trusts-made-simple",
@@ -15440,10 +15440,10 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
-    "faith-doctrine",
-    "faith-doctrine"
+    "money-finance",
+    "money-finance"
    ],
-   "collection": "faith-doctrine"
+   "collection": "money-finance"
   },
   {
    "slug": "wonder-made-simple",
@@ -15491,7 +15491,7 @@
     "business-leadership",
     "business-leadership"
    ],
-   "collection": "all"
+   "collection": "business-leadership"
   },
   {
    "slug": "worry-made-simple",
@@ -15507,7 +15507,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "worship-made-simple",
@@ -15556,7 +15556,7 @@
     "personal-growth",
     "cluster-commercial-psychology"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "your-attention-is-being-sold",
@@ -15573,7 +15573,7 @@
     "personal-growth",
     "cluster-commercial-psychology"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "your-brain-is-lying-to-you",
@@ -15589,7 +15589,7 @@
     "health-wellness",
     "health-wellness"
    ],
-   "collection": "all"
+   "collection": "health-wellness"
   },
   {
    "slug": "youre-not-a-smart-made-simple",
@@ -15621,7 +15621,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "youre-overthinking-everything",
@@ -15638,7 +15638,7 @@
     "personal-growth",
     "cluster-commercial-psychology"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "youre-wasting-your-life-made-simple",
@@ -15734,7 +15734,7 @@
     "personal-growth",
     "personal-growth"
    ],
-   "collection": "all"
+   "collection": "personal-growth"
   },
   {
    "slug": "big-feelings-bigger-god",
@@ -16420,6 +16420,19 @@
    "cover": "/teens/learn-to-code/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "making-the-team",
+   "title": "Making the Team",
+   "url": "/teens/making-the-team/",
+   "section": "teens",
+   "cover": "/teens/making-the-team/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
