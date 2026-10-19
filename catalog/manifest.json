@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1073,
+  "unique_published_titles": 1077,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1073,
-  "carousel_with_covers": 1072,
+  "carousel_entries": 1077,
+  "carousel_with_covers": 1076,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -4919,8 +4919,8 @@
    "section": "books",
    "cover": "/books/grace-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "faith-doctrine",
@@ -5444,8 +5444,8 @@
    "section": "books",
    "cover": "/books/honesty-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "christian-living",
@@ -8707,8 +8707,8 @@
    "section": "books",
    "cover": "/books/path-dependence-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "christian-living",
@@ -8771,8 +8771,8 @@
    "section": "books",
    "cover": "/books/peacemaking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "christian-living",
@@ -8995,8 +8995,8 @@
    "section": "books",
    "cover": "/books/philemon-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "bible-people",
@@ -9777,8 +9777,8 @@
    "section": "books",
    "cover": "/books/reconciliation-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "family-relationships",
@@ -9889,8 +9889,8 @@
    "section": "books",
    "cover": "/books/remembrance-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "christian-living",
@@ -9921,8 +9921,8 @@
    "section": "books",
    "cover": "/books/renewal-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "christian-living",
@@ -10158,8 +10158,8 @@
    "section": "books",
    "cover": "/books/revival-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "church-ministry",
@@ -10379,8 +10379,8 @@
    "section": "books",
    "cover": "/books/sanctification-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "faith-doctrine",
@@ -10805,8 +10805,8 @@
    "section": "books",
    "cover": "/books/simeon-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "bible-people",
@@ -10981,8 +10981,8 @@
    "section": "books",
    "cover": "/books/solomon-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "bible-people",
@@ -11045,8 +11045,8 @@
    "section": "books",
    "cover": "/books/spiritual-warfare-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "faith-doctrine",
@@ -11783,8 +11783,8 @@
    "section": "books",
    "cover": "/books/the-bereans-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "christian-living",
@@ -14588,8 +14588,8 @@
    "section": "books",
    "cover": "/books/timothy-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "bible-people",
@@ -14636,8 +14636,8 @@
    "section": "books",
    "cover": "/books/titus-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "bible-people",
@@ -14870,8 +14870,8 @@
    "section": "books",
    "cover": "/books/unity-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "christian-living",
@@ -16205,11 +16205,37 @@
    "collection": "kids"
   },
   {
+   "slug": "the-good-samaritan",
+   "title": "The Good Samaritan",
+   "url": "/kids/the-good-samaritan/",
+   "section": "kids",
+   "cover": "/kids/the-good-samaritan/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-good-shepherds-lost-lamb",
    "title": "The Good Shepherd&#x27;s Lost Lamb",
    "url": "/kids/the-good-shepherds-lost-lamb/",
    "section": "kids",
    "cover": "/kids/the-good-shepherds-lost-lamb/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "the-hem-of-his-robe",
+   "title": "The Hem of His Robe",
+   "url": "/kids/the-hem-of-his-robe/",
+   "section": "kids",
+   "cover": "/kids/the-hem-of-his-robe/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -16296,6 +16322,19 @@
    "collection": "kids"
   },
   {
+   "slug": "the-thankful-heart",
+   "title": "The Thankful Heart",
+   "url": "/kids/the-thankful-heart/",
+   "section": "kids",
+   "cover": "/kids/the-thankful-heart/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-walls-came-down",
    "title": "The Walls Came Down",
    "url": "/kids/the-walls-came-down/",
@@ -16314,6 +16353,19 @@
    "url": "/kids/up-a-tree/",
    "section": "kids",
    "cover": "/kids/up-a-tree/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "when-thunder-roars",
+   "title": "When Thunder Roars",
+   "url": "/kids/when-thunder-roars/",
+   "section": "kids",
+   "cover": "/kids/when-thunder-roars/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
