@@ -1,9 +1,12 @@
 name: Site integrity validation
-# Narrow safeguard (owner directive 2026-10-19): on every push to main, verify the
-# homepage was not truncated and the approved revenue features are intact.
+# Narrow safeguard (owner directive 2026-10-19): on every push to main and every
+# pull request targeting main, verify the homepage was not truncated and the
+# approved revenue features are intact.
 # This workflow only REPORTS (fails the run loudly). It never edits the site.
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
 jobs:
   validate:
