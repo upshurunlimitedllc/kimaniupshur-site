@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1077,
+  "unique_published_titles": 1079,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1077,
-  "carousel_with_covers": 1076,
+  "carousel_entries": 1079,
+  "carousel_with_covers": 1078,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -6494,7 +6494,7 @@
    "section": "books",
    "cover": "/books/judgement-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -14458,7 +14458,7 @@
    "section": "books",
    "cover": "/books/thinking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -16439,6 +16439,19 @@
    "collection": "teens"
   },
   {
+   "slug": "church-clothes",
+   "title": "Church Clothes",
+   "url": "/teens/church-clothes/",
+   "section": "teens",
+   "cover": "/teens/church-clothes/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "civics-for-teens",
    "title": "Civics for Teens",
    "url": "/teens/civics-for-teens/",
@@ -16446,6 +16459,19 @@
    "cover": "/teens/civics-for-teens/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "class-clown",
+   "title": "Class Clown",
+   "url": "/teens/class-clown/",
+   "section": "teens",
+   "cover": "/teens/class-clown/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
