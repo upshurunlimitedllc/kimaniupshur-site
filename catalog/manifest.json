@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1079,
+  "unique_published_titles": 1082,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1079,
-  "carousel_with_covers": 1078,
+  "carousel_entries": 1082,
+  "carousel_with_covers": 1081,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -10216,6 +10216,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "robots-at-work-made-simple",
+   "title": "Robots at Work Made Simple",
+   "url": "/books/robots-at-work-made-simple/",
+   "section": "books",
+   "cover": "/books/robots-at-work-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "robustness-made-simple",
    "title": "Robustness Made Simple",
    "url": "/books/robustness-made-simple/",
@@ -12473,6 +12486,19 @@
    "collection": "box-sets"
   },
   {
+   "slug": "the-future-of-food-made-simple",
+   "title": "The Future of Food Made Simple",
+   "url": "/books/the-future-of-food-made-simple/",
+   "section": "books",
+   "cover": "/books/the-future-of-food-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "the-gerasene-demoniac-made-simple",
    "title": "The Gerasene Demoniac Made Simple",
    "url": "/books/the-gerasene-demoniac-made-simple/",
@@ -13818,6 +13844,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "the-space-economy-made-simple",
+   "title": "The Space Economy Made Simple",
+   "url": "/books/the-space-economy-made-simple/",
+   "section": "books",
+   "cover": "/books/the-space-economy-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "the-spies-made-simple",
