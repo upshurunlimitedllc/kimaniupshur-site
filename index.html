@@ -186,4 +186,59 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
 <script>
 (function(){
   var now = new Date();
-  var start = new Date(now.get
+  var start = new Date(now.getFullYear(), 0, 0);
+  var doy = Math.floor((now - start) / 86400000);
+  fetch('devotionals.json')
+    .then(function(r){ return r.json(); })
+    .then(function(all){
+      var d = all[(doy - 1) % all.length];
+      document.getElementById('d-date').textContent = now.toLocaleDateString(undefined, {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+      document.getElementById('d-verse').textContent = '\u201C' + d.verse + '\u201D';
+      document.getElementById('d-ref').textContent = d.reference + ' (KJV)';
+      document.getElementById('d-reflection').textContent = d.reflection;
+      document.getElementById('d-prayer').textContent = d.prayer;
+    })
+    .catch(function(){ document.getElementById('daily-devotional').style.display = 'none'; });
+})();
+</script>
+<section class="block"><div class="wrap" style="text-align:center">
+<div class="ml-embedded" data-form="91hYnJ"></div>
+<h3 style="font-size:1.05rem;color:#e8c84a;margin:14px 0 4px">Get the Daily Devotional</h3>
+<p style="font-size:.8rem;color:#8a7a4a;margin-top:0">A fresh Bible verse, reflection, and prayer in your inbox every morning.</p>
+</div></section>
+<section class="block" style="text-align:center"><h2 class="sec">Support the Work</h2>
+<p class="sec-sub">If you have benefited from these books, free faith apps, or informational videos, you can help support the continued creation of educational and faith-centered resources. Your support is voluntary and appreciated.</p>
+<div class="btnrow">
+<a class="btn" href="https://cash.app/$upshurunlimited" target="_blank" rel="noopener">Support via Cash App</a>
+</div>
+<p class="sec-sub" style="font-size:.78rem;margin-top:12px">Contributions go directly to Upshur Unlimited, LLC to support ongoing work.</p></section>
+<section class="block"><div class="wrap">
+<div class="catgrid">
+<div class="cat">
+<h3>Car Buying Made Simple</h3>
+<p>Buying a car doesn't have to be complicated.</p>
+<p>Practical guidance for researching, comparing, financing, negotiating, and owning a vehicle.</p>
+<p style="margin-top:16px"><a class="btn ghost" href="/car-buying/">Explore Car Buying Made Simple</a></p>
+</div>
+<div class="cat">
+<h3>Automotive Essentials</h3>
+<p>Useful products for your vehicle, available through Amazon.</p>
+<p>Emergency gear, maintenance basics, and everyday conveniences — in one place.</p>
+<p style="margin-top:16px"><a class="btn ghost" href="/car-buying/#automotive-essentials">Shop Automotive Essentials</a></p>
+</div>
+</div>
+</div></section>
+<footer class="site"><div class="wrap">
+<div class="flink"><a href="https://kimaniupshur.com/privacy">Privacy Policy</a>
+<a href="/books/">Books</a>
+
+<a href="/apps.html">Free Faith Apps</a>
+<a href="https://www.amazon.com/s?k=Kimani+Upshur&tag=upshurunlimit-20" rel="nofollow sponsored noopener">Amazon Author Page</a>
+<a href="https://upshurunlimitedllc.gumroad.com" rel="nofollow noopener">Gumroad Store</a>
+<a href="/contact.html">Contact</a>
+</div>
+<div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Books by Kimani Upshur, M.Ed.</div>
+<p class="fine">FTC Disclosure: As an Amazon Associate, Upshur Unlimited, LLC earns from qualifying purchases made through Amazon links on this site — at no extra cost to you. Every book is written from a Christian worldview: Scripture first, Christ at the center.</p>
+</div></footer>
+</body>
+</html>
