@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1123,
+  "unique_published_titles": 1124,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1123,
-  "carousel_with_covers": 1123,
+  "carousel_entries": 1124,
+  "carousel_with_covers": 1124,
   "missing_covers": []
  },
  "titles": [
@@ -17406,6 +17406,19 @@
    "cover": "/teens/when-the-dark-wont-lift/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "when-they-break-your-heart",
+   "title": "When They Break Your Heart",
+   "url": "/teens/when-they-break-your-heart/",
+   "section": "teens",
+   "cover": "/teens/when-they-break-your-heart/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
