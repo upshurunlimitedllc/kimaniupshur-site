@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1114,
+  "unique_published_titles": 1115,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1114,
-  "carousel_with_covers": 1114,
+  "carousel_entries": 1115,
+  "carousel_with_covers": 1115,
   "missing_covers": []
  },
  "titles": [
@@ -16910,6 +16910,19 @@
    "url": "/teens/heartbreak/",
    "section": "teens",
    "cover": "/teens/heartbreak/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "homesick",
+   "title": "Homesick",
+   "url": "/teens/homesick/",
+   "section": "teens",
+   "cover": "/teens/homesick/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
