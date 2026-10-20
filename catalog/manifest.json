@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1126,
+  "unique_published_titles": 1127,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1126,
-  "carousel_with_covers": 1126,
+  "carousel_entries": 1127,
+  "carousel_with_covers": 1127,
   "missing_covers": []
  },
  "titles": [
@@ -17105,6 +17105,19 @@
    "url": "/teens/more-than-music/",
    "section": "teens",
    "cover": "/teens/more-than-music/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "never-enough",
+   "title": "Never Enough",
+   "url": "/teens/never-enough/",
+   "section": "teens",
+   "cover": "/teens/never-enough/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
