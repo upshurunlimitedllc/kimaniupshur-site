@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1115,
+  "unique_published_titles": 1116,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1115,
-  "carousel_with_covers": 1115,
+  "carousel_entries": 1116,
+  "carousel_with_covers": 1116,
   "missing_covers": []
  },
  "titles": [
@@ -16730,6 +16730,19 @@
    "cover": "/teens/calm-in-the-chaos/cover.jpg",
    "has_cover": true,
    "purchase_links": 4,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "cash-rules-for-teens",
+   "title": "Cash Rules for Teens",
+   "url": "/teens/cash-rules-for-teens/",
+   "section": "teens",
+   "cover": "/teens/cash-rules-for-teens/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
