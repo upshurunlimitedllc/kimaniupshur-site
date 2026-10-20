@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""build_catalog.py — ONE catalog manifest + generation/validation for kimaniupshur.com.
+"""build_catalog.py — ONE catalog manifest + generation/validation for upshurunlimitedllc.com.
 
 Authoritative source = the published title pages on disk (books/, kids/, teens/).
 Everything else is DERIVED from them:
@@ -276,7 +276,7 @@ def sync_sitemap(stubs):
     p = os.path.join(ROOT, "sitemap.xml")
     xml = open(p, encoding="utf-8").read()
     for surl in stubs:
-        loc = f"<loc>https://kimaniupshur.com{surl}</loc>"
+        loc = f"<loc>https://upshurunlimitedllc.com{surl}</loc>"
         xml = re.sub(r"<url>[^<]*?" + re.escape(loc) + r".*?</url>\s*", "", xml, flags=re.S)
     open(p, "w", encoding="utf-8").write(xml)
 
@@ -305,7 +305,7 @@ def validate(bd, titles, stubs):
         errs.append(f"A-Z still links stubs {sorted(set(stubs) & az_urls)}")
     sm = open(os.path.join(ROOT, "sitemap.xml"), encoding="utf-8").read()
     for surl in stubs:
-        if f"kimaniupshur.com{surl}<" in sm:
+        if f"upshurunlimitedllc.com{surl}<" in sm:
             errs.append(f"sitemap still lists stub {surl}")
         can = stubs[surl]["canonical"]
         if can not in sm:

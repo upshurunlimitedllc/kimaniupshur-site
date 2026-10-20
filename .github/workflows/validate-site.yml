@@ -1,0 +1,42 @@
+name: Site integrity validation
+# Narrow safeguard (owner directive 2026-10-19): on every push to main and every
+# pull request targeting main, verify the homepage was not truncated and the
+# approved revenue features are intact.
+# This workflow only REPORTS (fails the run loudly). It never edits the site.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate homepage completeness and revenue features
+        run: |
+          python3 - << 'EOF'
+          import sys, glob
+          errors = []
+          s = open('index.html', encoding='utf-8', errors='replace').read()
+          def need(cond, msg):
+              if not cond: errors.append(msg)
+          need(s.rstrip().endswith('</html>'), 'index.html does not end with </html> (possible truncation)')
+          need(s.count('</html>') == 1, 'index.html: </html> count != 1')
+          need(s.count('<footer') == 1, 'index.html: footer missing or duplicated')
+          need(s.count('https://cash.app/$upshurunlimited') == 1, 'index.html: Cash App donation link missing/duplicated')
+          need('Support the Work' in s, 'index.html: Support the Work section missing')
+          need('Automotive Essentials' in s and '/car-buying/#automotive-essentials' in s, 'index.html: Automotive Essentials card missing')
+          need(s.count('As an Amazon Associate') == 1, 'index.html: Amazon Associates disclosure missing/duplicated')
+          need('&copy;' in s and 'Upshur Unlimited, LLC' in s, 'index.html: copyright line missing')
+          need("fetch('devotionals.json')" in s and 'getFullYear(), 0, 0' in s, 'index.html: Daily Devotional script incomplete')
+          need(s.count('tracker.metricool.com') == 0, 'index.html: Metricool tracker must be absent (owner-directed removal 2026-10-19)')
+          bad = [f for f in glob.glob('**/*.html', recursive=True)
+                 if '</html>' not in open(f, encoding='utf-8', errors='replace').read()]
+          need(not bad, f'truncated HTML files (missing </html>): {bad[:10]}')
+          if errors:
+              print('SITE INTEGRITY VALIDATION FAILED:')
+              [print(' -', e) for e in errors]
+              sys.exit(1)
+          print('Site integrity validation PASSED: homepage complete; Cash App, Automotive, disclosure, footer, devotional intact; Metricool tracker absent.')
+          EOF
