@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1125,
+  "unique_published_titles": 1126,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1125,
-  "carousel_with_covers": 1125,
+  "carousel_entries": 1126,
+  "carousel_with_covers": 1126,
   "missing_covers": []
  },
  "titles": [
@@ -16715,6 +16715,19 @@
    "url": "/teens/ai-and-your-future/",
    "section": "teens",
    "cover": "/teens/ai-and-your-future/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "alone-in-a-crowded-hallway",
+   "title": "Alone in a Crowded Hallway",
+   "url": "/teens/alone-in-a-crowded-hallway/",
+   "section": "teens",
+   "cover": "/teens/alone-in-a-crowded-hallway/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
