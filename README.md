@@ -1,6 +1,6 @@
 # kimaniupshur-site
 
-Source for [kimaniupshur.com](https://kimaniupshur.com) — the Upshur Unlimited, LLC website: books, apps, and resources from Kimani Upshur, M.Ed.
+Source for [upshurunlimitedllc.com](https://upshurunlimitedllc.com) — the Upshur Unlimited, LLC website: books, apps, and resources from Kimani Upshur, M.Ed.
 
 ## Contributing
 
