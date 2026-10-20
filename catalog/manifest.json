@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1129,
+  "unique_published_titles": 1130,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1129,
-  "carousel_with_covers": 1129,
+  "carousel_entries": 1130,
+  "carousel_with_covers": 1130,
   "missing_covers": []
  },
  "titles": [
@@ -17029,6 +17029,19 @@
    "cover": "/teens/how-to-make-friends/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "ill-do-it-tomorrow",
+   "title": "I'll Do It Tomorrow",
+   "url": "/teens/ill-do-it-tomorrow/",
+   "section": "teens",
+   "cover": "/teens/ill-do-it-tomorrow/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
