@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1103,
+  "unique_published_titles": 1112,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1103,
-  "carousel_with_covers": 1102,
+  "carousel_entries": 1112,
+  "carousel_with_covers": 1111,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -4032,6 +4032,19 @@
    "collection": "church-ministry"
   },
   {
+   "slug": "event-planning-made-simple",
+   "title": "Event Planning Made Simple",
+   "url": "/books/event-planning-made-simple/",
+   "section": "books",
+   "cover": "/books/event-planning-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "excellence-made-simple",
    "title": "Excellence Made Simple",
    "url": "/books/excellence-made-simple/",
@@ -4895,6 +4908,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "government-jobs-made-simple",
+   "title": "Government Jobs Made Simple",
+   "url": "/books/government-jobs-made-simple/",
+   "section": "books",
+   "cover": "/books/government-jobs-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "grace-alone-made-simple",
@@ -6524,6 +6550,19 @@
    "cover": "/books/junia-made-simple/cover.jpg",
    "has_cover": true,
    "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
+   "slug": "jury-duty-made-simple",
+   "title": "Jury Duty Made Simple",
+   "url": "/books/jury-duty-made-simple/",
+   "section": "books",
+   "cover": "/books/jury-duty-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -10261,6 +10300,19 @@
    "collection": "bible-people"
   },
   {
+   "slug": "romans-study-workbook",
+   "title": "Romans Study Workbook",
+   "url": "/books/romans-study-workbook/",
+   "section": "books",
+   "cover": "/books/romans-study-workbook/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "rumination-made-simple",
    "title": "Rumination Made Simple",
    "url": "/books/rumination-made-simple/",
@@ -10956,6 +11008,19 @@
    "collection": "health-wellness"
   },
   {
+   "slug": "social-credit-systems-made-simple",
+   "title": "Social Credit Systems Made Simple",
+   "url": "/books/social-credit-systems-made-simple/",
+   "section": "books",
+   "cover": "/books/social-credit-systems-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "social-security-made-simple",
    "title": "Social Security Made Simple",
    "url": "/books/social-security-made-simple/",
@@ -11476,6 +11541,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "surveillance-and-privacy-made-simple",
+   "title": "Surveillance and Privacy Made Simple",
+   "url": "/books/surveillance-and-privacy-made-simple/",
+   "section": "books",
+   "cover": "/books/surveillance-and-privacy-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "synthetic-media-made-simple",
    "title": "Synthetic Media Made Simple",
    "url": "/books/synthetic-media-made-simple/",
@@ -11602,6 +11680,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "technology-for-seniors-made-simple",
+   "title": "Technology for Seniors Made Simple",
+   "url": "/books/technology-for-seniors-made-simple/",
+   "section": "books",
+   "cover": "/books/technology-for-seniors-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "temptation-made-simple",
@@ -11740,6 +11831,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "the-armor-of-god-study-workbook",
+   "title": "The Armor of God Study Workbook",
+   "url": "/books/the-armor-of-god-study-workbook/",
+   "section": "books",
+   "cover": "/books/the-armor-of-god-study-workbook/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "the-ascension-made-simple",
@@ -12914,6 +13018,19 @@
     "prayer-worship"
    ],
    "collection": "prayer-worship"
+  },
+  {
+   "slug": "the-lords-prayer-study-workbook",
+   "title": "The Lord&#x27;s Prayer Study Workbook",
+   "url": "/books/the-lords-prayer-study-workbook/",
+   "section": "books",
+   "cover": "/books/the-lords-prayer-study-workbook/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "the-lords-supper-made-simple",
