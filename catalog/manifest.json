@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1117,
+  "unique_published_titles": 1118,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1117,
-  "carousel_with_covers": 1117,
+  "carousel_entries": 1118,
+  "carousel_with_covers": 1118,
   "missing_covers": []
  },
  "titles": [
@@ -17120,6 +17120,19 @@
    "cover": "/teens/stand-alone/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "stand-for-justice",
+   "title": "Stand for Justice",
+   "url": "/teens/stand-for-justice/",
+   "section": "teens",
+   "cover": "/teens/stand-for-justice/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
