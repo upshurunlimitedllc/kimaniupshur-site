@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1132,
+  "unique_published_titles": 1133,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1132,
-  "carousel_with_covers": 1132,
+  "carousel_entries": 1133,
+  "carousel_with_covers": 1133,
   "missing_covers": []
  },
  "titles": [
@@ -17287,6 +17287,19 @@
    "url": "/teens/stop-putting-it-off/",
    "section": "teens",
    "cover": "/teens/stop-putting-it-off/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "street-smarts-from-solomon",
+   "title": "Street Smarts from Solomon",
+   "url": "/teens/street-smarts-from-solomon/",
+   "section": "teens",
+   "cover": "/teens/street-smarts-from-solomon/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
