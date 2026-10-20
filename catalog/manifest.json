@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1116,
+  "unique_published_titles": 1121,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1116,
-  "carousel_with_covers": 1116,
+  "carousel_entries": 1121,
+  "carousel_with_covers": 1121,
   "missing_covers": []
  },
  "titles": [
@@ -1883,8 +1883,8 @@
    "section": "books",
    "cover": "/books/cognitive-awareness-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "christian-living",
@@ -16749,6 +16749,19 @@
    "collection": "teens"
   },
   {
+   "slug": "cash-rules-for-teens",
+   "title": "Cash Rules for Teens",
+   "url": "/teens/cash-rules-for-teens/",
+   "section": "teens",
+   "cover": "/teens/cash-rules-for-teens/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "church-clothes",
    "title": "Church Clothes",
    "url": "/teens/church-clothes/",
@@ -16944,6 +16957,19 @@
    "collection": "teens"
   },
   {
+   "slug": "hope-anchors",
+   "title": "Hope Anchors",
+   "url": "/teens/hope-anchors/",
+   "section": "teens",
+   "cover": "/teens/hope-anchors/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "how-to-make-friends",
    "title": "How to Make Friends",
    "url": "/teens/how-to-make-friends/",
@@ -17014,6 +17040,19 @@
    "url": "/teens/money-101-for-teens/",
    "section": "teens",
    "cover": "/teens/money-101-for-teens/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "more-than-music",
+   "title": "More Than Music",
+   "url": "/teens/more-than-music/",
+   "section": "teens",
+   "cover": "/teens/more-than-music/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -17120,6 +17159,19 @@
    "cover": "/teens/stand-alone/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "stand-for-justice",
+   "title": "Stand for Justice",
+   "url": "/teens/stand-for-justice/",
+   "section": "teens",
+   "cover": "/teens/stand-for-justice/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17291,6 +17343,19 @@
    "purchase_links": 0,
    "purchasable": false,
    "coming_soon": true,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "what-does-god-want",
+   "title": "What Does God Want?",
+   "url": "/teens/what-does-god-want/",
+   "section": "teens",
+   "cover": "/teens/what-does-god-want/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
    "category_links": [],
    "collection": "teens"
   },
