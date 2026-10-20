@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1120,
+  "unique_published_titles": 1121,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1120,
-  "carousel_with_covers": 1120,
+  "carousel_entries": 1121,
+  "carousel_with_covers": 1121,
   "missing_covers": []
  },
  "titles": [
@@ -16682,6 +16682,19 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "kids"
+  },
+  {
+   "slug": "after-gods-own-heart",
+   "title": "After God&#x27;s Own Heart",
+   "url": "/teens/after-gods-own-heart/",
+   "section": "teens",
+   "cover": "/teens/after-gods-own-heart/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "after-graduation",
