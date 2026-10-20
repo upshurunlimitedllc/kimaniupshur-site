@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deadline Backward Planner | Free Made Simple App | Upshur Unlimited, LLC</title>
 <meta name="description" content="Start from a fixed deadline and reverse-schedule every milestone with buffers so you finish early, not late. Free app by Kimani Upshur, M.Ed.">
-<link rel="canonical" href="https://kimaniupshur.com/apps/deadline-backward-planner/">
+<link rel="canonical" href="https://upshurunlimitedllc.com/apps/deadline-backward-planner/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Deadline Backward Planner | Free Made Simple App | Upshur Unlimited, LLC">
 <meta property="og:description" content="Start from a fixed deadline and reverse-schedule every milestone with buffers so you finish early, not late. Free app by Kimani Upshur, M.Ed.">
-<meta property="og:url" content="https://kimaniupshur.com/apps/deadline-backward-planner/">
+<meta property="og:url" content="https://upshurunlimitedllc.com/apps/deadline-backward-planner/">
 <meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -162,7 +162,7 @@ footer.site a{color:#e8c84a;text-decoration:none}
 <section class="appcard" style="margin-top:24px">
 <h3>Go Deeper</h3>
 <p>Backward planning is one of the most reliable ways to hit a hard date. Browse the <em>Made Simple</em> library for more practical tools on planning, productivity, and getting things done.</p>
-<p><a class="btn" href="https://kimaniupshur.com/books/">Browse the Made Simple Books</a></p>
+<p><a class="btn" href="https://upshurunlimitedllc.com/books/">Browse the Made Simple Books</a></p>
 </section>
 <p style="text-align:center;margin-top:24px"><a href="/apps.html" style="color:#8a6d1c">&larr; All Apps</a></p>
 </main>
@@ -174,7 +174,7 @@ footer.site a{color:#e8c84a;text-decoration:none}
 </div>
 </section>
 <footer class="site"><div class="wrap">
-<div class="flink"><a href="https://kimaniupshur.com/privacy">Privacy Policy</a><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
+<div class="flink"><a href="https://upshurunlimitedllc.com/privacy">Privacy Policy</a><a href="/books/">Books</a><a href="/apps.html">Free Apps</a><a href="/contact.html">Contact</a></div>
 <div>&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Apps by Kimani Upshur, M.Ed.</div>
 <p class="fine">Part of the Made Simple Framework by Kimani Upshur, M.Ed. — practical tools for clearer thinking and better action.</p>
 </div></footer>
@@ -301,7 +301,7 @@ function buildICS(r){
   function dstr(d){return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate());}
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Upshur Unlimited//Deadline Backward Planner//EN"];
   r.rows.forEach(function(row,i){
-    ics.push("BEGIN:VEVENT","UID:dbp-"+i+"-"+dstr(row.start)+"@kimaniupshur.com",
+    ics.push("BEGIN:VEVENT","UID:dbp-"+i+"-"+dstr(row.start)+"@upshurunlimitedllc.com",
       "DTSTAMP:20260101T000000Z","DTSTART;VALUE=DATE:"+dstr(row.start),"DTEND;VALUE=DATE:"+dstr(addDays(row.end,1)),
       "SUMMARY:"+(""+S.deliverable+": "+row.label).replace(/[\r\n]/g," ").slice(0,120),"END:VEVENT");});
   ics.push("END:VCALENDAR");return ics.join("\r\n");
