@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1124,
+  "unique_published_titles": 1125,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1124,
-  "carousel_with_covers": 1124,
+  "carousel_entries": 1125,
+  "carousel_with_covers": 1125,
   "missing_covers": []
  },
  "titles": [
@@ -16730,6 +16730,19 @@
    "cover": "/teens/anxiety/cover.jpg",
    "has_cover": true,
    "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "blowing-up",
+   "title": "Blowing Up",
+   "url": "/teens/blowing-up/",
+   "section": "teens",
+   "cover": "/teens/blowing-up/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
