@@ -5,9 +5,7 @@
   "redirect_stubs_excluded": 6,
   "carousel_entries": 1112,
   "carousel_with_covers": 1111,
-  "missing_covers": [
-   "/books/halcyon-protocol-the-compliance-problem/"
-  ]
+  "missing_covers": []
  },
  "titles": [
   {
@@ -5104,8 +5102,8 @@
    "title": "Halcyon Protocol: The Compliance Problem",
    "url": "/books/halcyon-protocol-the-compliance-problem/",
    "section": "books",
-   "cover": null,
-   "has_cover": false,
+   "cover": "/books/halcyon-protocol-the-compliance-problem/cover.jpg",
+   "has_cover": true,
    "purchase_links": 0,
    "purchasable": false,
    "coming_soon": false,
