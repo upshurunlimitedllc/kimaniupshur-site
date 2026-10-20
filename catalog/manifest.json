@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1113,
+  "unique_published_titles": 1114,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1113,
-  "carousel_with_covers": 1113,
+  "carousel_entries": 1114,
+  "carousel_with_covers": 1114,
   "missing_covers": []
  },
  "titles": [
@@ -1545,6 +1545,19 @@
     "cluster-decision-strategy"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "california-penal-code-made-simple",
+   "title": "California Penal Code Made Simple",
+   "url": "/books/california-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/california-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "calling-made-simple",
