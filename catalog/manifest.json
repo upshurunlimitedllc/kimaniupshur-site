@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1091,
+  "unique_published_titles": 1103,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1091,
-  "carousel_with_covers": 1090,
+  "carousel_entries": 1103,
+  "carousel_with_covers": 1102,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -16569,6 +16569,19 @@
    "collection": "teens"
   },
   {
+   "slug": "ai-and-your-future",
+   "title": "AI and Your Future",
+   "url": "/teens/ai-and-your-future/",
+   "section": "teens",
+   "cover": "/teens/ai-and-your-future/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "anxiety",
    "title": "Anxiety",
    "url": "/teens/anxiety/",
@@ -16660,6 +16673,19 @@
    "collection": "teens"
   },
   {
+   "slug": "crushes",
+   "title": "Crushes",
+   "url": "/teens/crushes/",
+   "section": "teens",
+   "cover": "/teens/crushes/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "everyones-doing-it",
    "title": "Everyone&#x27;s Doing It",
    "url": "/teens/everyones-doing-it/",
@@ -16725,6 +16751,45 @@
    "collection": "teens"
   },
   {
+   "slug": "freshman-year-survival-guide",
+   "title": "Freshman Year Survival Guide",
+   "url": "/teens/freshman-year-survival-guide/",
+   "section": "teens",
+   "cover": "/teens/freshman-year-survival-guide/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "heartbreak",
+   "title": "Heartbreak",
+   "url": "/teens/heartbreak/",
+   "section": "teens",
+   "cover": "/teens/heartbreak/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "how-to-make-friends",
+   "title": "How to Make Friends",
+   "url": "/teens/how-to-make-friends/",
+   "section": "teens",
+   "cover": "/teens/how-to-make-friends/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "its-okay-to-ask",
    "title": "It&#x27;s Okay to Ask",
    "url": "/teens/its-okay-to-ask/",
@@ -16751,6 +16816,19 @@
    "collection": "teens"
   },
   {
+   "slug": "let-it-go",
+   "title": "Let It Go",
+   "url": "/teens/let-it-go/",
+   "section": "teens",
+   "cover": "/teens/let-it-go/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "making-the-team",
    "title": "Making the Team",
    "url": "/teens/making-the-team/",
@@ -16758,6 +16836,32 @@
    "cover": "/teens/making-the-team/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "money-101-for-teens",
+   "title": "Money 101 for Teens",
+   "url": "/teens/money-101-for-teens/",
+   "section": "teens",
+   "cover": "/teens/money-101-for-teens/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "phones-and-your-brain",
+   "title": "Phones and Your Brain",
+   "url": "/teens/phones-and-your-brain/",
+   "section": "teens",
+   "cover": "/teens/phones-and-your-brain/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -16868,6 +16972,19 @@
    "collection": "teens"
   },
   {
+   "slug": "study-smarter",
+   "title": "Study Smarter",
+   "url": "/teens/study-smarter/",
+   "section": "teens",
+   "cover": "/teens/study-smarter/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "targeted",
    "title": "Targeted",
    "url": "/teens/targeted/",
@@ -16894,6 +17011,19 @@
    "collection": "teens"
   },
   {
+   "slug": "test-anxiety",
+   "title": "Test Anxiety",
+   "url": "/teens/test-anxiety/",
+   "section": "teens",
+   "cover": "/teens/test-anxiety/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-bible-is-not-boring",
    "title": "The Bible Is Not Boring",
    "url": "/teens/the-bible-is-not-boring/",
@@ -16907,6 +17037,19 @@
    "collection": "teens"
   },
   {
+   "slug": "the-comparison-game",
+   "title": "The Comparison Game",
+   "url": "/teens/the-comparison-game/",
+   "section": "teens",
+   "cover": "/teens/the-comparison-game/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-comparison-trap",
    "title": "The Comparison Trap",
    "url": "/teens/the-comparison-trap/",
@@ -16914,6 +17057,19 @@
    "cover": "/teens/the-comparison-trap/cover.jpg",
    "has_cover": true,
    "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "the-dad-shaped-hole",
+   "title": "The Dad-Shaped Hole",
+   "url": "/teens/the-dad-shaped-hole/",
+   "section": "teens",
+   "cover": "/teens/the-dad-shaped-hole/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
