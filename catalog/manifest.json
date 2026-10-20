@@ -15,7 +15,7 @@
    "section": "books",
    "cover": "/books/aaron-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -31,7 +31,7 @@
    "section": "books",
    "cover": "/books/abiding-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -63,7 +63,7 @@
    "section": "books",
    "cover": "/books/abraham-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -255,7 +255,7 @@
    "section": "books",
    "cover": "/books/advocacy-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1883,8 +1883,8 @@
    "section": "books",
    "cover": "/books/cognitive-awareness-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "christian-living",
@@ -4509,7 +4509,7 @@
    "section": "books",
    "cover": "/books/forgiveness-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -9205,7 +9205,7 @@
    "section": "books",
    "cover": "/books/prayer-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -16690,7 +16690,7 @@
    "section": "teens",
    "cover": "/teens/after-graduation/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
