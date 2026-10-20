@@ -316,7 +316,7 @@
    "section": "books",
    "cover": "/books/ai-and-creativity-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -462,7 +462,7 @@
    "section": "books",
    "cover": "/books/ai-safety-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1157,7 +1157,7 @@
    "section": "books",
    "cover": "/books/bible-prophecy-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2091,7 +2091,7 @@
    "section": "books",
    "cover": "/books/college-savings-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3191,7 +3191,7 @@
    "section": "books",
    "cover": "/books/deepfakes-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
