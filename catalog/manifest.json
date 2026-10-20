@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1130,
+  "unique_published_titles": 1131,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1130,
-  "carousel_with_covers": 1130,
+  "carousel_entries": 1131,
+  "carousel_with_covers": 1131,
   "missing_covers": []
  },
  "titles": [
@@ -17055,6 +17055,19 @@
    "cover": "/teens/its-okay-to-ask/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "just-five-more-minutes",
+   "title": "Just Five More Minutes",
+   "url": "/teens/just-five-more-minutes/",
+   "section": "teens",
+   "cover": "/teens/just-five-more-minutes/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
