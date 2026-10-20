@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1082,
+  "unique_published_titles": 1091,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1082,
-  "carousel_with_covers": 1081,
+  "carousel_entries": 1091,
+  "carousel_with_covers": 1090,
   "missing_covers": [
    "/books/halcyon-protocol-the-compliance-problem/"
   ]
@@ -15958,6 +15958,19 @@
    "collection": "kids"
   },
   {
+   "slug": "jesus-calms-the-storm",
+   "title": "Jesus Calms the Storm",
+   "url": "/kids/jesus-calms-the-storm/",
+   "section": "kids",
+   "cover": "/kids/jesus-calms-the-storm/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "jesus-walks-on-water",
    "title": "Jesus Walks on Water",
    "url": "/kids/jesus-walks-on-water/",
@@ -15984,11 +15997,50 @@
    "collection": "kids"
   },
   {
+   "slug": "josephs-colorful-coat",
+   "title": "Joseph&#x27;s Colorful Coat",
+   "url": "/kids/josephs-colorful-coat/",
+   "section": "kids",
+   "cover": "/kids/josephs-colorful-coat/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "moving-day",
    "title": "Moving Day",
    "url": "/kids/moving-day/",
    "section": "kids",
    "cover": "/kids/moving-day/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "naamans-seven-dips",
+   "title": "Naaman&#x27;s Seven Dips",
+   "url": "/kids/naamans-seven-dips/",
+   "section": "kids",
+   "cover": "/kids/naamans-seven-dips/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "nehemiahs-wall",
+   "title": "Nehemiah&#x27;s Wall",
+   "url": "/kids/nehemiahs-wall/",
+   "section": "kids",
+   "cover": "/kids/nehemiahs-wall/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -16023,6 +16075,19 @@
    "collection": "kids"
   },
   {
+   "slug": "samuel-hears-god",
+   "title": "Samuel Hears God",
+   "url": "/kids/samuel-hears-god/",
+   "section": "kids",
+   "cover": "/kids/samuel-hears-god/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "saying-sorry-to-god",
    "title": "Saying Sorry to God",
    "url": "/kids/saying-sorry-to-god/",
@@ -16030,6 +16095,19 @@
    "cover": "/kids/saying-sorry-to-god/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "saying-youre-sorry",
+   "title": "Saying You&#x27;re Sorry",
+   "url": "/kids/saying-youre-sorry/",
+   "section": "kids",
+   "cover": "/kids/saying-youre-sorry/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -16069,6 +16147,19 @@
    "cover": "/kids/standing-tall-in-babylon/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "staying-safe-online",
+   "title": "Staying Safe Online",
+   "url": "/kids/staying-safe-online/",
+   "section": "kids",
+   "cover": "/kids/staying-safe-online/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -16166,6 +16257,19 @@
    "collection": "kids"
   },
   {
+   "slug": "the-empty-tomb",
+   "title": "The Empty Tomb",
+   "url": "/kids/the-empty-tomb/",
+   "section": "kids",
+   "cover": "/kids/the-empty-tomb/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-fire-falls",
    "title": "The Fire Falls",
    "url": "/kids/the-fire-falls/",
@@ -16186,6 +16290,19 @@
    "cover": "/kids/the-first-christmas/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "the-first-day-of-school",
+   "title": "The First Day of School",
+   "url": "/kids/the-first-day-of-school/",
+   "section": "kids",
+   "cover": "/kids/the-first-day-of-school/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
