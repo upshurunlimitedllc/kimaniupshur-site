@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1112,
+  "unique_published_titles": 1113,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1112,
-  "carousel_with_covers": 1111,
+  "carousel_entries": 1113,
+  "carousel_with_covers": 1113,
   "missing_covers": []
  },
  "titles": [
@@ -239,7 +239,7 @@
    "section": "books",
    "cover": "/books/adoption-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -430,7 +430,7 @@
    "section": "books",
    "cover": "/books/ai-ethics-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -542,7 +542,7 @@
    "section": "books",
    "cover": "/books/angels-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1713,7 +1713,7 @@
    "section": "books",
    "cover": "/books/chatgpt-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2415,7 +2415,7 @@
    "section": "books",
    "cover": "/books/contentment-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2527,7 +2527,7 @@
    "section": "books",
    "cover": "/books/courage-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3114,7 +3114,7 @@
    "section": "books",
    "cover": "/books/decision-trees-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3460,7 +3460,7 @@
    "section": "books",
    "cover": "/books/discipleship-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3588,7 +3588,7 @@
    "section": "books",
    "cover": "/books/doubt-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4020,7 +4020,7 @@
    "section": "books",
    "cover": "/books/evangelism-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4194,7 +4194,7 @@
    "section": "books",
    "cover": "/books/faithfulness-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4593,7 +4593,7 @@
    "section": "books",
    "cover": "/books/freelancing-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4769,7 +4769,7 @@
    "section": "books",
    "cover": "/books/gentleness-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4882,7 +4882,7 @@
    "section": "books",
    "cover": "/books/goodness-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4898,7 +4898,7 @@
    "section": "books",
    "cover": "/books/gossip-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4943,7 +4943,7 @@
    "section": "books",
    "cover": "/books/grace-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4959,7 +4959,7 @@
    "section": "books",
    "cover": "/books/grandparenting-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -5087,7 +5087,7 @@
    "section": "books",
    "cover": "/books/halcyon-protocol-before-it-is-needed/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -5468,7 +5468,7 @@
    "section": "books",
    "cover": "/books/honesty-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -5500,7 +5500,7 @@
    "section": "books",
    "cover": "/books/hope-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -5516,7 +5516,7 @@
    "section": "books",
    "cover": "/books/hospitality-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -5769,7 +5769,7 @@
    "section": "books",
    "cover": "/books/influence-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6121,7 +6121,7 @@
    "section": "books",
    "cover": "/books/integrity-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6361,7 +6361,7 @@
    "section": "books",
    "cover": "/books/job-search-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6486,7 +6486,7 @@
    "section": "books",
    "cover": "/books/joy-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6605,7 +6605,7 @@
    "section": "books",
    "cover": "/books/kindness-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6986,7 +6986,7 @@
    "section": "books",
    "cover": "/books/love-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -7640,8 +7640,8 @@
    "section": "books",
    "cover": "/books/mercy-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 2,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "faith-doctrine",
@@ -7858,7 +7858,7 @@
    "section": "books",
    "cover": "/books/mnemn-the-harvest/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -8272,7 +8272,7 @@
    "section": "books",
    "cover": "/books/new-manager-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -8426,7 +8426,7 @@
    "section": "books",
    "cover": "/books/nyxari-the-awakening/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -8459,7 +8459,7 @@
    "section": "books",
    "cover": "/books/obedience-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -8792,7 +8792,7 @@
    "section": "books",
    "cover": "/books/peace-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -8936,7 +8936,7 @@
    "section": "books",
    "cover": "/books/perseverance-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -9321,7 +9321,7 @@
    "section": "books",
    "cover": "/books/pride-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -9417,8 +9417,8 @@
    "section": "books",
    "cover": "/books/project-management-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 2,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "business-leadership",
@@ -9577,7 +9577,7 @@
    "section": "books",
    "cover": "/books/purity-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -9990,7 +9990,7 @@
    "section": "books",
    "cover": "/books/repentance-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10083,7 +10083,7 @@
    "section": "books",
    "cover": "/books/restoration-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10243,7 +10243,7 @@
    "section": "books",
    "cover": "/books/risk-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10362,7 +10362,7 @@
    "section": "books",
    "cover": "/books/sacrifice-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10394,7 +10394,7 @@
    "section": "books",
    "cover": "/books/salvation-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10490,7 +10490,7 @@
    "section": "books",
    "cover": "/books/scale-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10618,7 +10618,7 @@
    "section": "books",
    "cover": "/books/self-control-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -11121,7 +11121,7 @@
    "section": "books",
    "cover": "/books/spiritual-warfare-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -11150,8 +11150,8 @@
    "section": "books",
    "cover": "/books/starting-a-business-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 2,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "business-leadership",
@@ -11211,7 +11211,7 @@
    "section": "books",
    "cover": "/books/stewardship-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -11529,7 +11529,7 @@
    "section": "books",
    "cover": "/books/surrender-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -11699,7 +11699,7 @@
    "section": "books",
    "cover": "/books/temptation-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15122,7 +15122,7 @@
    "section": "books",
    "cover": "/books/victory-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15473,7 +15473,7 @@
    "section": "books",
    "cover": "/books/why-you-keep-getting-in-your-own-way/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15489,7 +15489,7 @@
    "section": "books",
    "cover": "/books/why-you-keep-making-bad-decisions/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15683,7 +15683,7 @@
    "section": "books",
    "cover": "/books/worship-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15894,7 +15894,7 @@
    "section": "books",
    "cover": "/books/zero-based-thinking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -16808,6 +16808,19 @@
    "cover": "/teens/everyones-doing-it/cover.jpg",
    "has_cover": true,
    "purchase_links": 4,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "first-job",
+   "title": "First Job",
+   "url": "/teens/first-job/",
+   "section": "teens",
+   "cover": "/teens/first-job/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
