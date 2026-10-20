@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1122,
+  "unique_published_titles": 1123,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1122,
-  "carousel_with_covers": 1122,
+  "carousel_entries": 1123,
+  "carousel_with_covers": 1123,
   "missing_covers": []
  },
  "titles": [
@@ -17042,6 +17042,19 @@
    "cover": "/teens/making-the-team/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "mirror-mirror",
+   "title": "Mirror, Mirror",
+   "url": "/teens/mirror-mirror/",
+   "section": "teens",
+   "cover": "/teens/mirror-mirror/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
