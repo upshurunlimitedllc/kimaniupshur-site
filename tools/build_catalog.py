@@ -74,7 +74,7 @@ def scan_pages():
             og = re.search(r'property="og:image" content="([^"]+)"', html)
             cover = None
             if og:
-                cover = re.sub(r"https://kimaniupshur\.com", "", og.group(1))
+                cover = re.sub(r"https://(?:kimaniupshur\.com|upshurunlimitedllc\.com)", "", og.group(1))
                 if not os.path.isfile(os.path.join(ROOT, cover.lstrip("/"))):
                     cover = None
             nlinks = sum(len(re.findall(p, html)) for p in PURCHASE_PATTERNS)
