@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1119,
+  "unique_published_titles": 1120,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1119,
-  "carousel_with_covers": 1119,
+  "carousel_entries": 1120,
+  "carousel_with_covers": 1120,
   "missing_covers": []
  },
  "titles": [
@@ -16936,6 +16936,19 @@
    "url": "/teens/homesick/",
    "section": "teens",
    "cover": "/teens/homesick/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "hope-anchors",
+   "title": "Hope Anchors",
+   "url": "/teens/hope-anchors/",
+   "section": "teens",
+   "cover": "/teens/hope-anchors/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
