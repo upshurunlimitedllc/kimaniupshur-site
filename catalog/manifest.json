@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1121,
+  "unique_published_titles": 1122,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1121,
-  "carousel_with_covers": 1121,
+  "carousel_entries": 1122,
+  "carousel_with_covers": 1122,
   "missing_covers": []
  },
  "titles": [
@@ -16923,6 +16923,19 @@
    "url": "/teens/freshman-year-survival-guide/",
    "section": "teens",
    "cover": "/teens/freshman-year-survival-guide/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "from-pit-to-palace",
+   "title": "From Pit to Palace",
+   "url": "/teens/from-pit-to-palace/",
+   "section": "teens",
+   "cover": "/teens/from-pit-to-palace/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
