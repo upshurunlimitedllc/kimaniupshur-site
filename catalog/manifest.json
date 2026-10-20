@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1118,
+  "unique_published_titles": 1119,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1118,
-  "carousel_with_covers": 1118,
+  "carousel_entries": 1119,
+  "carousel_with_covers": 1119,
   "missing_covers": []
  },
  "titles": [
@@ -17014,6 +17014,19 @@
    "url": "/teens/money-101-for-teens/",
    "section": "teens",
    "cover": "/teens/money-101-for-teens/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "more-than-music",
+   "title": "More Than Music",
+   "url": "/teens/more-than-music/",
+   "section": "teens",
+   "cover": "/teens/more-than-music/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
