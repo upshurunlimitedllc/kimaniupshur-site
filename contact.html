@@ -74,6 +74,8 @@ main.page h1{font-family:Georgia,serif;font-size:2.1rem;color:#141210;margin-bot
 .details{background:#f4efe0;border-radius:10px;padding:20px 24px;max-width:720px;margin-bottom:30px}
 .details dl{display:grid;grid-template-columns:150px 1fr;gap:6px 14px;font-size:.95rem}
 .details dt{color:#8a7a4a}
+.details dd{overflow-wrap:anywhere}
+@media(max-width:600px){.details dl{grid-template-columns:1fr;gap:2px 0}.details dt{margin-top:12px}.details dt:first-child{margin-top:0}}
 .booklist{columns:3;column-gap:28px;font-size:.95rem}
 .booklist a{display:block;color:#2c4a6f;text-decoration:none;padding:3px 0;break-inside:avoid}
 .booklist a:hover{text-decoration:underline;color:#141210}
@@ -101,8 +103,8 @@ footer.site a:hover{text-decoration:underline}
 <h1>Contact</h1>
 <p class="desc">For questions about the books, reach out — we read everything.</p>
 <div class="details"><dl>
-<dt>Email</dt><dd><a href="mailto:kimani@kimaniupshur.com">kimani@kimaniupshur.com</a></dd>
-<dd><a href="mailto:upshurunlimitedllc@gmail.com">upshurunlimitedllc@gmail.com</a></dd>
+<dt>Email</dt><dd><a href="mailto:kimani@kimaniupshur.com">kimani@kimaniupshur.com</a><br>
+<a href="mailto:upshurunlimitedllc@gmail.com">upshurunlimitedllc@gmail.com</a></dd>
 <dt>Publisher</dt><dd>Upshur Unlimited, LLC</dd>
 <dt>Mailing Address</dt><dd>Upshur Unlimited, LLC<br>201 E Center St, Ste 112-3593<br>Anaheim, CA 92805</dd>
 </dl></div>
