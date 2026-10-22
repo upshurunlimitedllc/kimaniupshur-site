@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1133,
+  "unique_published_titles": 1140,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1133,
-  "carousel_with_covers": 1133,
+  "carousel_entries": 1140,
+  "carousel_with_covers": 1139,
   "missing_covers": []
  },
  "titles": [
@@ -271,7 +271,7 @@
    "section": "books",
    "cover": "/books/agenda-2030-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -365,7 +365,7 @@
    "section": "books",
    "cover": "/books/ai-and-healthcare-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -488,6 +488,45 @@
    "collection": "tech-ai"
   },
   {
+   "slug": "air-fryer-made-simple",
+   "title": "Air Fryer High-Protein Cookbook Made Simple: High-Protein, Low-Calorie Recipes for Weight Loss, Keto, and GLP-1 Users",
+   "url": "/books/air-fryer-made-simple/",
+   "section": "books",
+   "cover": "/books/air-fryer-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
+   "slug": "alabama-penal-code-made-simple",
+   "title": "Alabama Penal Code Made Simple",
+   "url": "/books/alabama-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/alabama-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
+   "slug": "alaska-penal-code-made-simple",
+   "title": "Alaska Penal Code Made Simple",
+   "url": "/books/alaska-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/alaska-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "alignment-made-simple",
    "title": "Alignment Made Simple",
    "url": "/books/alignment-made-simple/",
@@ -510,7 +549,7 @@
    "section": "books",
    "cover": "/books/allergies-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2508,7 +2547,7 @@
    "section": "books",
    "cover": "/books/coping-with-gang-stalking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -7272,7 +7311,7 @@
    "section": "books",
    "cover": "/books/marketing-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -7368,7 +7407,7 @@
    "section": "books",
    "cover": "/books/mastering-ai/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -7576,7 +7615,7 @@
    "section": "books",
    "cover": "/books/mental-models-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -8869,7 +8908,7 @@
    "section": "books",
    "cover": "/books/perception-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -9462,7 +9501,7 @@
    "section": "books",
    "cover": "/books/prompt-engineering-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10256,7 +10295,7 @@
    "section": "books",
    "cover": "/books/risk-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10391,8 +10430,8 @@
    "section": "books",
    "cover": "/books/sales-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "business-leadership",
@@ -10487,8 +10526,8 @@
    "section": "books",
    "cover": "/books/saving-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
+   "purchase_links": 1,
+   "purchasable": true,
    "coming_soon": false,
    "category_links": [
     "money-finance",
@@ -11288,7 +11327,7 @@
    "section": "books",
    "cover": "/books/stop-explaining-yourself/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -14625,7 +14664,7 @@
    "section": "books",
    "cover": "/books/thinking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15406,7 +15445,7 @@
    "section": "books",
    "cover": "/books/why-nobody-takes-you-seriously/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15502,7 +15541,7 @@
    "section": "books",
    "cover": "/books/why-you-keep-making-bad-decisions/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15510,6 +15549,19 @@
     "personal-growth"
    ],
    "collection": "personal-growth"
+  },
+  {
+   "slug": "why-you-keep-quitting",
+   "title": "Why You Keep Quitting",
+   "url": "/books/why-you-keep-quitting/",
+   "section": "books",
+   "cover": "/books/why-you-keep-quitting/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "why-your-decisions-fail",
@@ -15762,7 +15814,7 @@
    "section": "books",
    "cover": "/books/your-brain-is-lying-to-you/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15974,6 +16026,19 @@
    "url": "/kids/dorcas-the-helper/",
    "section": "kids",
    "cover": "/kids/dorcas-the-helper/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "elijahs-fire",
+   "title": "Elijah's Fire",
+   "url": "/kids/elijahs-fire/",
+   "section": "kids",
+   "cover": "/kids/elijahs-fire/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
    "purchasable": true,
@@ -16645,6 +16710,19 @@
    "collection": "kids"
   },
   {
+   "slug": "whats-heaven-like",
+   "title": "What's Heaven Like?",
+   "url": "/kids/whats-heaven-like/",
+   "section": "kids",
+   "cover": "/kids/whats-heaven-like/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "when-thunder-roars",
    "title": "When Thunder Roars",
    "url": "/kids/when-thunder-roars/",
@@ -17055,6 +17133,19 @@
    "cover": "/teens/its-okay-to-ask/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "its-okay-to-fail",
+   "title": "It&#x27;s Okay to Fail",
+   "url": "/teens/its-okay-to-fail/",
+   "section": "teens",
+   "cover": "/teens/its-okay-to-fail/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
