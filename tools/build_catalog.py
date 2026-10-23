@@ -27,6 +27,7 @@ Usage:
   python3 tools/build_catalog.py --check   # validate only; exit 1 on drift
 """
 import json, os, re, sys
+from html import unescape as html_unescape
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,6 +54,34 @@ COLLECTION_LABELS = {  # homepage-search display names per collection id
 def clean_title(h1):
     t = re.sub(r"<[^>]+>", "", h1 or "")
     return re.sub(r"\s+", " ", t).strip()
+
+
+def base_title(title):
+    """Base title for same-book detection: entity-decoded, subtitle
+    (everything after the first ':') dropped, case/punctuation folded.
+    'It&#x27;s Okay to Fail: Failure, Grace, and Getting Back Up' and
+    'It&#x27;s Okay to Fail' share the base 'it s okay to fail'."""
+    t = html_unescape(title or "").split(":", 1)[0]
+    return re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
+
+
+def alias_urls(titles):
+    """URLs of pages that duplicate the SAME book (same slug, same base
+    title) already published in an earlier-scanned section. Scan order is
+    books/ < kids/ < teens/, so the first page of a slug is canonical and
+    any later same-book page is an alias: the page stays live, but it gets
+    no second bookshelf entry. A repeated slug whose base title DIFFERS is
+    a genuine collision (two different books) and is never an alias."""
+    seen, aliases = {}, set()
+    for url in sorted(titles):
+        t = titles[url]
+        slug = t["slug"]
+        if slug in seen:
+            if base_title(seen[slug]["title"]) == base_title(t["title"]):
+                aliases.add(url)
+        else:
+            seen[slug] = t
+    return aliases
 
 
 def scan_pages():
@@ -116,13 +145,50 @@ def main():
 
     # --- add missing titles ---
     have = {b["u"] for b in books.values()}
+    # Canonical page per slug = first in sorted-URL order, which follows
+    # the section scan order (books/ before kids/ before teens/).
+    canon = {}
+    for url in sorted(titles):
+        canon.setdefault(titles[url]["slug"], titles[url])
     added, unmapped = [], []
     for url in sorted(titles):
         t = titles[url]
         if url in have:
             continue
         slug = t["slug"]
-        assert slug not in books, f"slug key collision: {slug}"
+        if slug in books:
+            # Slug already catalogued: either this page is a duplicate of
+            # the SAME book in another section, or a genuinely different
+            # book reuses the slug (a real collision — keep failing loud).
+            entry = books[slug]
+            et = (titles[entry["u"]]["title"] if entry["u"] in titles
+                  else entry["t"])
+            assert base_title(et) == base_title(t["title"]), \
+                f"slug key collision: {slug}"
+            ct = canon[slug]
+            if entry["u"] == ct["url"]:
+                continue  # alias page; the canonical entry already stands
+            # The entry predates the canonical page and points at the
+            # alias: repoint it so the first-section page is the single
+            # bookshelf entry, placed exactly as a fresh add would be.
+            for cid in order:
+                if slug in order[cid]:
+                    order[cid].remove(slug)
+            books[slug] = {"t": ct["title"], "u": ct["url"],
+                           "img": f"/bookshelf/thumbs/{slug}.jpg"
+                                  if ct["has_cover"] else None}
+            if ct["section"] == "books":
+                order["all"].append(slug)
+                cat = next((c for c in ct["category_links"]
+                            if c in coll_ids and c not in ("all", "kids", "teens")), None)
+                if cat:
+                    order[cat].append(slug)
+                else:
+                    unmapped.append(ct["url"])
+            else:
+                order[ct["section"]].append(slug)
+            added.append(ct["url"])
+            continue
         img = f"/bookshelf/thumbs/{slug}.jpg" if t["has_cover"] else None
         books[slug] = {"t": t["title"], "u": url, "img": img}
         if t["section"] == "books":
@@ -284,8 +350,11 @@ def sync_sitemap(stubs):
 def validate(bd, titles, stubs):
     errs = []
     urls = {b["u"] for b in bd["books"].values()}
-    if urls != set(titles):
-        errs.append(f"carousel URL set != title set (diff {urls ^ set(titles)})")
+    # Alias pages (same book in a second section) are covered by their
+    # canonical bookshelf entry; every other title needs its own entry.
+    expect = set(titles) - alias_urls(titles)
+    if urls != expect:
+        errs.append(f"carousel URL set != title set (diff {urls ^ expect})")
     for c in bd["collections"]:
         if c["count"] != len(bd["order"][c["id"]]):
             errs.append(f"collection {c['id']} count mismatch")
