@@ -5,10 +5,7 @@
   "redirect_stubs_excluded": 6,
   "carousel_entries": 1240,
   "carousel_with_covers": 1238,
-  "missing_covers": [
-   "/books/cognitive-clarity-made-simple/",
-   "/books/colorado-penal-code-made-simple/"
-  ]
+  "missing_covers": []
  },
  "titles": [
   {
@@ -2022,8 +2019,8 @@
    "title": "Cognitive Clarity Made Simple",
    "url": "/books/cognitive-clarity-made-simple/",
    "section": "books",
-   "cover": null,
-   "has_cover": false,
+   "cover": "/books/cognitive-clarity-made-simple/cover.jpg",
+   "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
@@ -2230,8 +2227,8 @@
    "title": "Colorado Penal Code Made Simple",
    "url": "/books/colorado-penal-code-made-simple/",
    "section": "books",
-   "cover": null,
-   "has_cover": false,
+   "cover": "/books/colorado-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
