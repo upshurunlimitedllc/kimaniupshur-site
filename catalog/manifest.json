@@ -1,11 +1,21 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1241,
+  "unique_published_titles": 1250,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1240,
+  "carousel_entries": 1249,
   "carousel_with_covers": 1238,
-  "missing_covers": []
+  "missing_covers": [
+   "/books/arkansas-penal-code-made-simple/",
+   "/books/asking-for-a-raise-made-simple/",
+   "/books/bible-memory-made-simple/",
+   "/books/cognitive-behavioral-therapy-made-simple/",
+   "/books/cognitive-empathy-made-simple/",
+   "/books/cognitive-focus-made-simple/",
+   "/books/cognitive-habits-made-simple/",
+   "/books/cognitive-reserve-made-simple/",
+   "/books/connecticut-penal-code-made-simple/"
+  ]
  },
  "titles": [
   {
@@ -791,13 +801,26 @@
    "collection": "bible-people"
   },
   {
+   "slug": "arkansas-penal-code-made-simple",
+   "title": "Arkansas Penal Code Made Simple",
+   "url": "/books/arkansas-penal-code-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "arthritis-made-simple",
    "title": "Arthritis Made Simple",
    "url": "/books/arthritis-made-simple/",
    "section": "books",
    "cover": "/books/arthritis-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -829,7 +852,7 @@
    "section": "books",
    "cover": "/books/artificial-intelligence-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -837,6 +860,22 @@
     "tech-ai"
    ],
    "collection": "tech-ai"
+  },
+  {
+   "slug": "asking-for-a-raise-made-simple",
+   "title": "Asking for a Raise Made Simple",
+   "url": "/books/asking-for-a-raise-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "personal-growth",
+    "personal-growth"
+   ],
+   "collection": "personal-growth"
   },
   {
    "slug": "assertiveness-made-simple",
@@ -861,7 +900,7 @@
    "section": "books",
    "cover": "/books/assurance-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -877,7 +916,7 @@
    "section": "books",
    "cover": "/books/asymmetric-risk-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -957,7 +996,7 @@
    "section": "books",
    "cover": "/books/attention-management-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1146,7 +1185,7 @@
    "section": "books",
    "cover": "/books/behold-the-man/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -1159,7 +1198,7 @@
    "section": "books",
    "cover": "/books/believe/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -1172,7 +1211,7 @@
    "section": "books",
    "cover": "/books/beloved/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -1201,7 +1240,7 @@
    "section": "books",
    "cover": "/books/bezalel-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1226,6 +1265,22 @@
     "cluster-box-set"
    ],
    "collection": "box-sets"
+  },
+  {
+   "slug": "bible-memory-made-simple",
+   "title": "Bible Memory Made Simple",
+   "url": "/books/bible-memory-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "bible-study",
+    "bible-study"
+   ],
+   "collection": "bible-study"
   },
   {
    "slug": "bible-prophecy-made-simple",
@@ -1263,7 +1318,7 @@
    "section": "books",
    "cover": "/books/bible-study-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1327,7 +1382,7 @@
    "section": "books",
    "cover": "/books/blended-families-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1343,7 +1398,7 @@
    "section": "books",
    "cover": "/books/blended-family-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1359,7 +1414,7 @@
    "section": "books",
    "cover": "/books/blessing-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1484,7 +1539,7 @@
    "section": "books",
    "cover": "/books/bottlenecks-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1549,7 +1604,7 @@
    "section": "books",
    "cover": "/books/brokenness-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1597,7 +1652,7 @@
    "section": "books",
    "cover": "/books/caleb-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1630,7 +1685,7 @@
    "section": "books",
    "cover": "/books/california-penal-code-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -1675,7 +1730,7 @@
    "section": "books",
    "cover": "/books/cancer-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1707,7 +1762,7 @@
    "section": "books",
    "cover": "/books/car-maintenance-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1864,7 +1919,7 @@
    "section": "books",
    "cover": "/books/church-history-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -1909,7 +1964,7 @@
    "section": "books",
    "cover": "/books/clear-thinking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1925,7 +1980,7 @@
    "section": "books",
    "cover": "/books/co-parenting-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -1999,13 +2054,29 @@
    "collection": "christian-living"
   },
   {
+   "slug": "cognitive-behavioral-therapy-made-simple",
+   "title": "Cognitive Behavioral Therapy Made Simple",
+   "url": "/books/cognitive-behavioral-therapy-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "personal-growth",
+    "personal-growth"
+   ],
+   "collection": "personal-growth"
+  },
+  {
    "slug": "cognitive-biases-made-simple",
    "title": "Cognitive Biases Made Simple",
    "url": "/books/cognitive-biases-made-simple/",
    "section": "books",
    "cover": "/books/cognitive-biases-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2063,6 +2134,22 @@
    "collection": "christian-living"
   },
   {
+   "slug": "cognitive-empathy-made-simple",
+   "title": "Cognitive Empathy Made Simple",
+   "url": "/books/cognitive-empathy-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "personal-growth",
+    "personal-growth"
+   ],
+   "collection": "personal-growth"
+  },
+  {
    "slug": "cognitive-flexibility-made-simple",
    "title": "Cognitive Flexibility Made Simple",
    "url": "/books/cognitive-flexibility-made-simple/",
@@ -2079,6 +2166,22 @@
    "collection": "christian-living"
   },
   {
+   "slug": "cognitive-focus-made-simple",
+   "title": "Cognitive Focus Made Simple",
+   "url": "/books/cognitive-focus-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "personal-growth",
+    "personal-growth"
+   ],
+   "collection": "personal-growth"
+  },
+  {
    "slug": "cognitive-friction-made-simple",
    "title": "Cognitive Friction Made Simple",
    "url": "/books/cognitive-friction-made-simple/",
@@ -2093,6 +2196,22 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "cognitive-habits-made-simple",
+   "title": "Cognitive Habits Made Simple",
+   "url": "/books/cognitive-habits-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "personal-growth",
+    "personal-growth"
+   ],
+   "collection": "personal-growth"
   },
   {
    "slug": "cognitive-load-made-simple",
@@ -2117,7 +2236,7 @@
    "section": "books",
    "cover": "/books/cognitive-performance-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2141,6 +2260,22 @@
     "health-wellness"
    ],
    "collection": "health-wellness"
+  },
+  {
+   "slug": "cognitive-reserve-made-simple",
+   "title": "Cognitive Reserve Made Simple",
+   "url": "/books/cognitive-reserve-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "personal-growth",
+    "personal-growth"
+   ],
+   "collection": "personal-growth"
   },
   {
    "slug": "cognitive-resilience-made-simple",
@@ -2320,7 +2455,7 @@
    "section": "books",
    "cover": "/books/compassion-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2368,7 +2503,7 @@
    "section": "books",
    "cover": "/books/complexity-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2401,7 +2536,7 @@
    "section": "books",
    "cover": "/books/confession-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2417,7 +2552,7 @@
    "section": "books",
    "cover": "/books/confidence-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2433,7 +2568,7 @@
    "section": "books",
    "cover": "/books/conflict-resolution-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2443,13 +2578,26 @@
    "collection": "family-relationships"
   },
   {
+   "slug": "connecticut-penal-code-made-simple",
+   "title": "Connecticut Penal Code Made Simple",
+   "url": "/books/connecticut-penal-code-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "conscience-made-simple",
    "title": "Conscience Made Simple",
    "url": "/books/conscience-made-simple/",
    "section": "books",
    "cover": "/books/conscience-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -2512,7 +2660,7 @@
    "section": "books",
    "cover": "/books/constraints-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2624,7 +2772,7 @@
    "section": "books",
    "cover": "/books/coordination-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2640,7 +2788,7 @@
    "section": "books",
    "cover": "/books/coordination-problems-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2672,7 +2820,7 @@
    "section": "books",
    "cover": "/books/cornelius-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2704,7 +2852,7 @@
    "section": "books",
    "cover": "/books/court-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -16184,7 +16332,7 @@
    "section": "kids",
    "cover": "/kids/big-feelings-bigger-god/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17718,7 +17866,7 @@
    "section": "teens",
    "cover": "/teens/booth-rules/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17731,7 +17879,7 @@
    "section": "teens",
    "cover": "/teens/calm-in-the-chaos/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17744,7 +17892,7 @@
    "section": "teens",
    "cover": "/teens/cash-rules-for-teens/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17783,7 +17931,7 @@
    "section": "teens",
    "cover": "/teens/class-clown/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17796,7 +17944,7 @@
    "section": "teens",
    "cover": "/teens/clean/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17809,7 +17957,7 @@
    "section": "teens",
    "cover": "/teens/confident/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
