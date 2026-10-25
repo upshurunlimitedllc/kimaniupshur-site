@@ -10585,12 +10585,12 @@
   },
   {
    "slug": "salvation-made-simple",
-   "title": "Salvation Made Simple",
+   "title": "Salvation",
    "url": "/books/salvation-made-simple/",
    "section": "books",
    "cover": "/books/salvation-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
