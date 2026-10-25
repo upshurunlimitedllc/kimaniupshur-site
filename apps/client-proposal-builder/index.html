@@ -19,9 +19,9 @@ header.site{background:#303C4B;color:#F7F8FA;border-bottom:4px solid #D4AF63}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
 .brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#D4AF63;text-decoration:none;font-weight:bold;letter-spacing:.5px}
 .brand small{display:block;font-size:.7rem;color:#9AA5B3;letter-spacing:2px;font-weight:normal}
-nav.main a{color:#F7F8FA;text-decoration:none;margin-left:22px;font-size:.95rem}
+nav.main a{color:#F7F8FA;text-decoration:none;margin-left:0;font-size:.95rem;white-space:nowrap}
 nav.main a:hover{color:#D4AF63}
-@media (max-width:600px){.brand{margin-left:0}.headerlogo{order:2;height:46px;margin-left:auto}nav.main{order:3;flex:1 1 100%;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 14px;margin-top:8px}nav.main a{margin-left:0;white-space:nowrap}}
+header.site .headerlogo{order:2;margin-left:auto}header.site nav.main{order:3;flex:1 1 100%;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 14px;margin-top:8px}@media (max-width:600px){.headerlogo{height:46px}}
 main.app{max-width:960px;margin:0 auto;padding:44px 20px;min-height:50vh}
 main.app h1{font-family:Georgia,serif;font-size:2rem;color:#303C4B;margin-bottom:8px;line-height:1.25}
 main.app .intro{color:#6b6250;font-size:1.05rem;margin-bottom:28px}
