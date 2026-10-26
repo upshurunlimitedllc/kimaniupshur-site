@@ -1,11 +1,13 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1255,
+  "unique_published_titles": 1256,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1254,
+  "carousel_entries": 1255,
   "carousel_with_covers": 1252,
-  "missing_covers": []
+  "missing_covers": [
+   "/books/drone-flying-made-simple/"
+  ]
  },
  "titles": [
   {
@@ -57,7 +59,7 @@
    "section": "books",
    "cover": "/books/abiding-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -281,7 +283,7 @@
    "section": "books",
    "cover": "/books/advocacy-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -575,7 +577,7 @@
    "section": "books",
    "cover": "/books/allergies-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2778,7 +2780,7 @@
    "section": "books",
    "cover": "/books/coordination-problems-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3269,7 +3271,7 @@
    "section": "books",
    "cover": "/books/decision-fatigue-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3942,6 +3944,22 @@
    "collection": "christian-living"
   },
   {
+   "slug": "drone-flying-made-simple",
+   "title": "Drone Flying Made Simple: Fly Legal, Fly Well, Film Beautifully",
+   "url": "/books/drone-flying-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "tech-ai",
+    "tech-ai"
+   ],
+   "collection": "tech-ai"
+  },
+  {
    "slug": "dynamic-thinking-made-simple",
    "title": "Dynamic Thinking Made Simple",
    "url": "/books/dynamic-thinking-made-simple/",
@@ -4489,7 +4507,7 @@
    "section": "books",
    "cover": "/books/failure-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -5461,7 +5479,7 @@
    "section": "books",
    "cover": "/books/halcyon-protocol-the-compliance-problem/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6362,7 +6380,7 @@
    "section": "books",
    "cover": "/books/information-processing-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -7173,7 +7191,7 @@
    "section": "books",
    "cover": "/books/learning-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -9652,7 +9670,7 @@
    "section": "books",
    "cover": "/books/prediction-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -9748,7 +9766,7 @@
    "section": "books",
    "cover": "/books/probability-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -16130,7 +16148,7 @@
    "section": "books",
    "cover": "/books/you-already-know-what-to-do/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
