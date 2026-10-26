@@ -4,12 +4,8 @@
   "unique_published_titles": 1255,
   "redirect_stubs_excluded": 6,
   "carousel_entries": 1254,
-  "carousel_with_covers": 1249,
-  "missing_covers": [
-   "/books/crypto-wealth/",
-   "/books/cyberbullying-made-simple/",
-   "/books/delaware-penal-code-made-simple/"
-  ]
+  "carousel_with_covers": 1252,
+  "missing_covers": []
  },
  "titles": [
   {
@@ -3018,8 +3014,8 @@
    "title": "Crypto Wealth: The Complete Guide to Understanding and Investing in Cryptocurrency",
    "url": "/books/crypto-wealth/",
    "section": "books",
-   "cover": null,
-   "has_cover": false,
+   "cover": "/books/crypto-wealth/cover.jpg",
+   "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
@@ -3082,8 +3078,8 @@
    "title": "Cyberbullying Made Simple",
    "url": "/books/cyberbullying-made-simple/",
    "section": "books",
-   "cover": null,
-   "has_cover": false,
+   "cover": "/books/cyberbullying-made-simple/cover.jpg",
+   "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
@@ -3543,8 +3539,8 @@
    "title": "Delaware Penal Code Made Simple",
    "url": "/books/delaware-penal-code-made-simple/",
    "section": "books",
-   "cover": null,
-   "has_cover": false,
+   "cover": "/books/delaware-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
