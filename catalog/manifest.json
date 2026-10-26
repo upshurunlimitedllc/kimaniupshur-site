@@ -4,10 +4,8 @@
   "unique_published_titles": 1256,
   "redirect_stubs_excluded": 6,
   "carousel_entries": 1255,
-  "carousel_with_covers": 1252,
-  "missing_covers": [
-   "/books/drone-flying-made-simple/"
-  ]
+  "carousel_with_covers": 1253,
+  "missing_covers": []
  },
  "titles": [
   {
