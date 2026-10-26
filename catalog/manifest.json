@@ -1,11 +1,15 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1250,
+  "unique_published_titles": 1255,
   "redirect_stubs_excluded": 6,
-  "carousel_entries": 1249,
-  "carousel_with_covers": 1247,
-  "missing_covers": []
+  "carousel_entries": 1254,
+  "carousel_with_covers": 1249,
+  "missing_covers": [
+   "/books/crypto-wealth/",
+   "/books/cyberbullying-made-simple/",
+   "/books/delaware-penal-code-made-simple/"
+  ]
  },
  "titles": [
   {
@@ -906,7 +910,7 @@
    "section": "books",
    "cover": "/books/asymmetric-risk-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2493,7 +2497,7 @@
    "section": "books",
    "cover": "/books/complexity-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2633,7 +2637,7 @@
    "section": "books",
    "cover": "/books/consistency-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2650,7 +2654,7 @@
    "section": "books",
    "cover": "/books/constraints-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2874,7 +2878,7 @@
    "section": "books",
    "cover": "/books/credit-card-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2890,7 +2894,7 @@
    "section": "books",
    "cover": "/books/credit-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2906,7 +2910,7 @@
    "section": "books",
    "cover": "/books/credit-score-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2922,7 +2926,7 @@
    "section": "books",
    "cover": "/books/crescendo/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2939,7 +2943,7 @@
    "section": "books",
    "cover": "/books/crispr-and-gene-editing-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -2952,7 +2956,7 @@
    "section": "books",
    "cover": "/books/critical-thinking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -2984,7 +2988,7 @@
    "section": "books",
    "cover": "/books/crypto-and-ai-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3000,7 +3004,23 @@
    "section": "books",
    "cover": "/books/crypto-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "money-finance",
+    "money-finance"
+   ],
+   "collection": "money-finance"
+  },
+  {
+   "slug": "crypto-wealth",
+   "title": "Crypto Wealth: The Complete Guide to Understanding and Investing in Cryptocurrency",
+   "url": "/books/crypto-wealth/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3058,13 +3078,29 @@
    "collection": "tech-ai"
   },
   {
+   "slug": "cyberbullying-made-simple",
+   "title": "Cyberbullying Made Simple",
+   "url": "/books/cyberbullying-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "family-relationships",
+    "family-relationships"
+   ],
+   "collection": "family-relationships"
+  },
+  {
    "slug": "daniel-made-simple",
    "title": "Daniel Made Simple",
    "url": "/books/daniel-made-simple/",
    "section": "books",
    "cover": "/books/daniel-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3096,7 +3132,7 @@
    "section": "books",
    "cover": "/books/daughters-of-the-promise/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -3109,7 +3145,7 @@
    "section": "books",
    "cover": "/books/david-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3141,7 +3177,7 @@
    "section": "books",
    "cover": "/books/deborah-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3157,7 +3193,7 @@
    "section": "books",
    "cover": "/books/debt-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3189,7 +3225,7 @@
    "section": "books",
    "cover": "/books/decision-biases-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3237,7 +3273,7 @@
    "section": "books",
    "cover": "/books/decision-fatigue-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3253,7 +3289,7 @@
    "section": "books",
    "cover": "/books/decision-framing-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3285,7 +3321,7 @@
    "section": "books",
    "cover": "/books/decision-making-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3365,7 +3401,7 @@
    "section": "books",
    "cover": "/books/decision-process-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3445,7 +3481,7 @@
    "section": "books",
    "cover": "/books/dedication-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3503,6 +3539,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "delaware-penal-code-made-simple",
+   "title": "Delaware Penal Code Made Simple",
+   "url": "/books/delaware-penal-code-made-simple/",
+   "section": "books",
+   "cover": null,
+   "has_cover": false,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "delegation-made-simple",
    "title": "Delegation Made Simple",
    "url": "/books/delegation-made-simple/",
@@ -3541,7 +3590,7 @@
    "section": "books",
    "cover": "/books/delilah-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -3557,7 +3606,7 @@
    "section": "books",
    "cover": "/books/deliverance-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4364,7 +4413,7 @@
    "section": "books",
    "cover": "/books/execution-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4522,7 +4571,7 @@
    "section": "books",
    "cover": "/books/farlight-the-last-beacon/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -4539,7 +4588,7 @@
    "section": "books",
    "cover": "/books/fast-thinking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -5033,7 +5082,7 @@
    "section": "books",
    "cover": "/books/game-theory-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6077,7 +6126,7 @@
    "section": "books",
    "cover": "/books/influence-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6157,7 +6206,7 @@
    "section": "books",
    "cover": "/books/information-asymmetry-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -6285,7 +6334,7 @@
    "section": "books",
    "cover": "/books/information-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -7000,7 +7049,7 @@
    "section": "books",
    "cover": "/books/knowledge-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -7128,7 +7177,7 @@
    "section": "books",
    "cover": "/books/learning-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -7689,7 +7738,7 @@
    "section": "books",
    "cover": "/books/mastering-ai/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -7897,7 +7946,7 @@
    "section": "books",
    "cover": "/books/mental-models-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -8430,7 +8479,7 @@
    "section": "books",
    "cover": "/books/narrative-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -8526,7 +8575,7 @@
    "section": "books",
    "cover": "/books/network-effects-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -8715,7 +8764,7 @@
    "section": "books",
    "cover": "/books/nonlinear-thinking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 3,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -9956,7 +10005,7 @@
    "section": "books",
    "cover": "/books/questions-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10577,7 +10626,7 @@
    "section": "books",
    "cover": "/books/risk-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -10728,7 +10777,7 @@
    "section": "books",
    "cover": "/books/salvation-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -11311,7 +11360,7 @@
    "section": "books",
    "cover": "/books/sleep-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -11748,7 +11797,7 @@
    "section": "books",
    "cover": "/books/strategic-thinking-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 4,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -11780,7 +11829,7 @@
    "section": "books",
    "cover": "/books/strategy-execution-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 2,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -11796,7 +11845,7 @@
    "section": "books",
    "cover": "/books/stress-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -15416,7 +15465,7 @@
    "section": "books",
    "cover": "/books/value-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 3,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -16085,7 +16134,7 @@
    "section": "books",
    "cover": "/books/you-already-know-what-to-do/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -16374,7 +16423,7 @@
    "section": "kids",
    "cover": "/kids/deborah-leads-the-way/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -16791,6 +16840,19 @@
    "cover": "/kids/ruth-and-naomi/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "salvation",
+   "title": "Salvation",
+   "url": "/kids/salvation/",
+   "section": "kids",
+   "cover": "/kids/salvation/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18461,6 +18523,19 @@
    "collection": "teens"
   },
   {
+   "slug": "salvation",
+   "title": "Salvation",
+   "url": "/teens/salvation/",
+   "section": "teens",
+   "cover": "/teens/salvation/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "senior-year",
    "title": "Senior Year",
    "url": "/teens/senior-year/",
@@ -18623,7 +18698,7 @@
    "section": "teens",
    "cover": "/teens/the-baptism-question/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18662,7 +18737,7 @@
    "section": "teens",
    "cover": "/teens/the-boundaries/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18727,7 +18802,7 @@
    "section": "teens",
    "cover": "/teens/the-deconstruction/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18740,7 +18815,7 @@
    "section": "teens",
    "cover": "/teens/the-fender-bender/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18753,7 +18828,7 @@
    "section": "teens",
    "cover": "/teens/the-group-chat-drama/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18831,7 +18906,7 @@
    "section": "teens",
    "cover": "/teens/the-situationship/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18857,7 +18932,7 @@
    "section": "teens",
    "cover": "/teens/the-tattoo-question/cover.jpg",
    "has_cover": true,
-   "purchase_links": 1,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
