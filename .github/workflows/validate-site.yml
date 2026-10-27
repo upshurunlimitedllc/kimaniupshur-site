@@ -2,6 +2,10 @@ name: Site integrity validation
 # Narrow safeguard (owner directive 2026-10-19): on every push to main and every
 # pull request targeting main, verify the homepage was not truncated and the
 # approved revenue features are intact.
+# Tracker rule (owner directive 2026-10-27): Metricool stays ABSENT. The single
+# permitted tracker is the Cloudflare Web Analytics beacon (free tier, manual
+# JS install, token below) — it must be present exactly once on every page.
+# Any other tracker (Google Analytics / Google Tag Manager / Metricool) fails.
 # This workflow only REPORTS (fails the run loudly). It never edits the site.
 on:
   push:
@@ -31,12 +35,23 @@ jobs:
           need('&copy;' in s and 'Upshur Unlimited, LLC' in s, 'index.html: copyright line missing')
           need("fetch('devotionals.json')" in s and 'getFullYear(), 0, 0' in s, 'index.html: Daily Devotional script incomplete')
           need(s.count('tracker.metricool.com') == 0, 'index.html: Metricool tracker must be absent (owner-directed removal 2026-10-19)')
-          bad = [f for f in glob.glob('**/*.html', recursive=True)
-                 if '</html>' not in open(f, encoding='utf-8', errors='replace').read()]
+          need(s.count('static.cloudflareinsights.com/beacon.min.js') == 1, 'index.html: Cloudflare Web Analytics beacon missing/duplicated (the single permitted tracker, owner directive 2026-10-27)')
+          need(s.count('947dcd8b1b7946e49d6ca6dbe31a1047') == 1, 'index.html: Cloudflare Web Analytics token missing/duplicated')
+          allhtml = {f: open(f, encoding='utf-8', errors='replace').read()
+                     for f in glob.glob('**/*.html', recursive=True)}
+          bad = [f for f, c in allhtml.items() if '</html>' not in c]
           need(not bad, f'truncated HTML files (missing </html>): {bad[:10]}')
+          tracked = [f for f, c in allhtml.items()
+                     if 'tracker.metricool.com' in c or 'googletagmanager.com' in c
+                     or 'google-analytics.com' in c or 'gtag/js' in c]
+          need(not tracked, f'prohibited tracker present in: {tracked[:10]}')
+          nobeacon = [f for f, c in allhtml.items()
+                      if c.count('static.cloudflareinsights.com/beacon.min.js') != 1
+                      or c.count('947dcd8b1b7946e49d6ca6dbe31a1047') != 1]
+          need(not nobeacon, f'Cloudflare Web Analytics beacon missing/duplicated in: {nobeacon[:10]}')
           if errors:
               print('SITE INTEGRITY VALIDATION FAILED:')
               [print(' -', e) for e in errors]
               sys.exit(1)
-          print('Site integrity validation PASSED: homepage complete; Cash App, Automotive, disclosure, footer, devotional intact; Metricool tracker absent.')
+          print('Site integrity validation PASSED: homepage complete; Cash App, Automotive, disclosure, footer, devotional intact; Metricool absent; Cloudflare Web Analytics beacon present exactly once per page; no other trackers.')
           EOF
