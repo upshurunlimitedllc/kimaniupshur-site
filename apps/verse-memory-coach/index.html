@@ -127,5 +127,6 @@ document.getElementById("vnext").addEventListener("click",function(){idx=(idx+1)
 document.getElementById("vmastered").addEventListener("click",function(){var m=load(),v=DECK[idx][0];if(m.indexOf(v)<0){m.push(v);save(m);}idx=(idx+1)%DECK.length;revealed=false;render();});
 render();
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "947dcd8b1b7946e49d6ca6dbe31a1047"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
