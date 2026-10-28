@@ -98,3 +98,36 @@
 @media (prefers-reduced-motion:reduce){
   .uu-scard img{transition:none}
 }
+
+/* ---------- Book pages (Phase 3, Stage D) ----------
+   The prototype's book detail layout (PHASE2_DESIGN_CONCEPT.md §5)
+   applied to the live book pages: breadcrumb, then a two-column
+   layout — the page's own cover (large) beside its own content
+   stream (title, bylines, tags, description, trailer, buybox,
+   details — all carried verbatim, in original order) — then the
+   page's own sections below. Inline cover sizing from the old
+   layout is overridden here so the cover renders large; the cover
+   ASSET itself is never touched. */
+.uu-bookpage{background:#FAF6ED}
+.uu-bookpage a:focus-visible,.uu-bookpage button:focus-visible{
+  outline:3px solid #7A5E1F;outline-offset:2px;border-radius:2px}
+.uu-book-layout{display:grid;grid-template-columns:minmax(15rem,21rem) 1fr;
+  gap:2.6rem;padding:1.4rem 0 2.4rem;align-items:start}
+.uu-book-cover figure.cover{margin:0!important}
+.uu-book-cover img{width:100%!important;max-width:100%!important;height:auto!important;
+  border:0!important;border-radius:.3rem;box-shadow:0 6px 22px rgba(56,97,140,.3)}
+.uu-bookpage .uu-book-meta h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;
+  font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;color:#252B32;margin:.1rem 0 .35rem}
+.uu-book-meta .desc{font-size:1.05rem;line-height:1.65;color:#252B32;max-width:68ch}
+.uu-book-meta .details{background:#fff;border:1px solid #E7DFC9;border-radius:.5rem;
+  padding:1.1rem 1.3rem;max-width:none;margin:1.4rem 0 0}
+.uu-book-meta .details dl{grid-template-columns:auto 1fr;gap:.3rem 1.2rem;font-size:.95rem}
+.uu-book-meta .details dt{font-weight:700;color:#16283F}
+.uu-book-meta .uu-buybox{margin-top:1.4rem}
+@media (max-width:64rem){
+  .uu-book-layout{grid-template-columns:minmax(12rem,16rem) 1fr;gap:1.8rem}
+}
+@media (max-width:40rem){
+  .uu-book-layout{grid-template-columns:1fr}
+  .uu-book-cover{max-width:15rem}
+}
