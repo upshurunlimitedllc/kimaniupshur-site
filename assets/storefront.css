@@ -1,0 +1,100 @@
+/* ============================================================
+   UPSHUR UNLIMITED — Storefront layer (Phase 3, Stage C)
+   The approved Phase 2 bookstore design (PHASE2_DESIGN_CONCEPT.md
+   + owner addenda), scoped under .uu- classes so it loads after
+   /assets/site.css and /assets/design.css without touching any
+   existing page presentation. Homepage first (Stage C); Stages
+   D/E/F extend the same system.
+   Values of record: ivory ground #FAF6ED · ground blue #38618C ·
+   deep blue #2E5079 · gold-bright #F2DFAE (text on blue) · brand
+   gold #D4AF63 (decoration) · gold line #C9A959 · deep gold
+   #7A5E1F (text/focus on light grounds) · ink #252B32 · ink-soft
+   #4A5261 · ink-blue #16283F · white panels, warm border #E7DFC9.
+   Type: Fraunces + Public Sans (self-hosted, via design.css).
+   Carousel rule (owner correction 2026-10-27): native overflow
+   scrolling, no snap points of any kind; touch momentum; prev/next
+   scroll ~85% of the visible width; arrow keys move FOCUS
+   card-to-card.
+   ============================================================ */
+
+.uu-store{background:#FAF6ED;color:#252B32;
+  font-family:"Public Sans",-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.uu-store .uu-wrap{max-width:76rem;margin:0 auto;padding:0 1.25rem}
+.uu-store a:focus-visible,.uu-store button:focus-visible{
+  outline:3px solid #7A5E1F;outline-offset:2px;border-radius:2px}
+
+/* ---------- Hero ---------- */
+.uu-hero{background:linear-gradient(180deg,#38618C 0,#2E5079 100%);color:#fff;
+  padding:2.6rem 0 2.9rem;border-top:1px solid rgba(212,175,99,.35)}
+.uu-hero .uu-kicker{font-size:.72rem;font-weight:700;letter-spacing:.3em;
+  text-transform:uppercase;color:#F2DFAE;margin:0}
+.uu-hero h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;
+  font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.12;margin:.35rem 0 .6rem;max-width:26ch;color:#fff}
+.uu-hero .uu-lede{max-width:56ch;color:#E8E4D8;margin:0 0 1.6rem;font-size:1.05rem;line-height:1.55}
+.uu-hero .searchbox{max-width:44rem;margin:0}
+.uu-hero .uu-quicklinks{margin:1.1rem 0 0;font-size:.92rem;color:#DDE3EC}
+.uu-hero .uu-quicklinks a{color:#fff;margin-right:1.1rem}
+
+/* ---------- Shelves ---------- */
+.uu-shelf{margin:2.4rem 0}
+.uu-shelf-head{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  border-top:2px solid #C9A959;padding-top:1.05rem;margin-bottom:.35rem}
+.uu-shelf-head h2{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;
+  font-size:clamp(1.45rem,3vw,1.9rem);margin:0;color:#252B32;line-height:1.2}
+.uu-shelf-head .uu-note{margin-left:auto;font-size:.85rem;color:#4A5261;text-align:right}
+.uu-shelf-head .uu-note a{color:#16283F}
+.uu-shelf-sub{color:#4A5261;margin:.15rem 0 1rem;max-width:70ch;line-height:1.55}
+.uu-shelf-panel{background:#fff;border:1px solid #E7DFC9;border-radius:.5rem;
+  padding:1.15rem 1.15rem .6rem;box-shadow:0 1px 2px rgba(56,97,140,.05)}
+.uu-track{display:flex;gap:1.3rem;overflow-x:auto;padding:.4rem .2rem 1rem;
+  scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  touch-action:pan-x pan-y;overscroll-behavior-x:contain}
+.uu-scard{flex:0 0 10.5rem}
+.uu-scard a{text-decoration:none;color:inherit;display:block}
+.uu-scard img{width:10.5rem;height:auto;aspect-ratio:5/8;object-fit:cover;border-radius:.25rem;
+  box-shadow:0 2px 6px rgba(56,97,140,.22);transition:transform .25s ease,box-shadow .25s ease}
+.uu-scard a:hover img,.uu-scard a:focus-visible img{transform:translateY(-4px);
+  box-shadow:0 8px 18px rgba(56,97,140,.28)}
+.uu-scard h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-size:1.02rem;
+  font-weight:600;line-height:1.25;margin:.65rem 0 .15rem;color:#252B32}
+.uu-scard .uu-byline{font-size:.82rem;color:#4A5261;margin:0}
+.uu-scard .uu-price{font-size:.88rem;font-weight:650;margin:.3rem 0 0;color:#16283F}
+.uu-scard .uu-price.uu-free-price{color:#7A5E1F;font-weight:750;letter-spacing:.02em}
+.uu-badge{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;
+  padding:.18rem .5rem;border-radius:999px;margin-bottom:.45rem;text-transform:uppercase}
+.uu-badge-free{background:#38618C;color:#fff}
+.uu-shelf-nav{display:flex;gap:.5rem;justify-content:flex-end;margin-top:.15rem}
+.uu-shelf-nav button{width:2.6rem;height:2.6rem;border-radius:50%;border:1.5px solid #16283F;
+  background:#fff;color:#16283F;font-size:1.15rem;cursor:pointer;line-height:1}
+.uu-shelf-nav button:hover{background:#38618C;color:#fff}
+.uu-shelf-nav button:disabled{opacity:.35;cursor:default;background:#fff;color:#16283F}
+
+/* ---------- Framework band ---------- */
+.uu-framework{background:#38618C;color:#fff;border-radius:.5rem;
+  padding:1.5rem 1.4rem;margin:2.4rem 0 .5rem}
+.uu-framework .uu-kicker{font-size:.72rem;font-weight:700;letter-spacing:.3em;
+  text-transform:uppercase;color:#F2DFAE;margin:0}
+.uu-framework .uu-framework-name{font-family:"Fraunces",Georgia,"Times New Roman",serif;
+  letter-spacing:.12em;font-size:1.05rem;color:#F2DFAE;margin:.35rem 0 .4rem}
+.uu-framework p{color:#E8E4D8;max-width:70ch;margin:.2rem 0;line-height:1.55}
+
+/* ---------- Apps band ---------- */
+.uu-appsband{background:#fff;border:1px solid #E7DFC9;border-top:3px solid #C9A959;
+  border-radius:.5rem;padding:1.5rem 1.4rem;margin:2.4rem 0;
+  display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;align-items:center}
+.uu-appsband h2{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;
+  font-size:1.35rem;margin:0;color:#252B32}
+.uu-appsband p{color:#4A5261;margin:.25rem 0;flex:1 1 22rem;line-height:1.55}
+.uu-appsband .uu-btn{display:inline-block;background:#16283F;color:#fff;font-weight:650;
+  text-decoration:none;padding:.8rem 1.3rem;border-radius:.375rem;white-space:nowrap}
+.uu-appsband .uu-btn:hover{background:#0F1D30}
+
+/* ---------- Responsive ---------- */
+@media (max-width:40rem){ /* phones */
+  .uu-scard{flex-basis:8.5rem}
+  .uu-scard img{width:8.5rem}
+  .uu-shelf-head .uu-note{margin-left:0;text-align:left}
+}
+@media (prefers-reduced-motion:reduce){
+  .uu-scard img{transition:none}
+}
