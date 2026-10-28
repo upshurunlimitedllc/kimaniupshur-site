@@ -282,3 +282,37 @@ main.page.uu-section h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;f
   .uu-store .uu-scard a:hover img,.uu-store .uu-scard a:focus-visible img,
   .uu-store .uu-scard a:active img{transform:none}
 }
+
+/* ---------- Phone fit (Phase 3, mobile fix 2026-10-28) ----------
+   Owner iPhone review (2026-10-28): the phone rendering read
+   crowded. Measured at 390px on the shipped bytes: Featured
+   cards at 9.5rem left the second card hard against the shelf
+   panel's edge (its title sheared on the owner's device) with
+   effectively no peek of the third; the free badge stretched
+   the full card width at near-desktop size; general shelves
+   sat just as tight; the hero ran at desktop type. Phones
+   only (max-width:30rem): Featured is sized for two full
+   cards plus a natural peek of the next, general cards step
+   down a notch, panel and wrap side padding step down, the
+   badge scales to the card, and hero type and spacing
+   tighten. Wider widths are untouched - the desktop and iPad
+   depth treatment above stands exactly as approved. The
+   carousel contract is unchanged: native overflow scrolling,
+   no snap points, browser momentum. */
+@media (max-width:30rem){
+  .uu-store .uu-wrap{padding:0 .9rem}
+  .uu-store .uu-hero{padding:1.5rem 0 1.7rem}
+  .uu-store .uu-hero .uu-kicker{font-size:.62rem;letter-spacing:.18em}
+  .uu-store .uu-hero h1{font-size:1.52rem;line-height:1.16;margin:.3rem 0 .5rem}
+  .uu-store .uu-hero .uu-lede{font-size:.96rem;line-height:1.5;margin-bottom:1.15rem}
+  .uu-store .uu-hero .uu-quicklinks{margin-top:.85rem;font-size:.86rem}
+  .uu-store .uu-shelf{margin:1.7rem 0}
+  .uu-store .uu-shelf-panel{padding:.95rem .8rem .4rem}
+  .uu-store .uu-track{gap:1rem}
+  .uu-store .uu-scard{flex-basis:8.25rem}
+  .uu-store .uu-scard img{width:8.25rem}
+  .uu-store .uu-badge{font-size:.56rem;letter-spacing:.07em;padding:.15rem .42rem;line-height:1.3}
+  .uu-store #featured .uu-scard{flex-basis:7.75rem}
+  .uu-store #featured .uu-scard img{width:7.75rem}
+  .uu-store #featured .uu-scard h3{font-size:1rem}
+}

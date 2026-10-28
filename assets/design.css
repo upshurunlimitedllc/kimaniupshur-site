@@ -89,3 +89,19 @@
 @media (prefers-reduced-motion:reduce){
   .uu-buybtn{transition:none}
 }
+
+/* ---------- Phone masthead fit (mobile fix 2026-10-28) ----------
+   Owner iPhone review (2026-10-28): at phone width the nav
+   wrapped to four large-type rows and crowded out the page.
+   Phones only (max-width:30rem): the lockup steps down one notch
+   and the nav type, gaps and side padding tighten so the same
+   eleven entries settle into two rows. No entries removed, no
+   labels changed; the one-lockup spec above is untouched, as are
+   all wider widths. */
+@media (max-width:30rem){
+  .uu-lockup{padding:.6rem 0 .55rem;gap:.2rem}
+  .uu-logo{width:4rem;height:4rem}
+  .uu-head .wrap{padding:0 12px}
+  .uu-nav ul{gap:.15rem .45rem;padding:.35rem 0 .45rem}
+  .uu-nav a{font-size:.65rem;letter-spacing:-.01em;padding:.2rem .1rem}
+}
