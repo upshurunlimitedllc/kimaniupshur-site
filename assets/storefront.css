@@ -131,3 +131,69 @@
   .uu-book-layout{grid-template-columns:1fr}
   .uu-book-cover{max-width:15rem}
 }
+
+/* ---------- Section & index pages (Phase 3, Sections pass) ----------
+   The approved shelf/collection presentation (PHASE2_DESIGN_CONCEPT.md
+   SS4/SS10 + prototype collection pages) applied to the site's section,
+   category, kids/teens and index pages. These pages keep their own
+   markup and content byte-for-byte; the uu-section class on <main>
+   scopes this layer over the legacy .grid/.card/.catgrid/.booklist
+   vocabulary they already use. Same tokens as Stages C/D. */
+.uu-section{background:#FAF6ED;color:#252B32}
+.uu-section a:focus-visible,.uu-section button:focus-visible{
+  outline:3px solid #7A5E1F;outline-offset:2px;border-radius:2px}
+main.page.uu-section h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;
+  font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;color:#252B32;margin:.1rem 0 .35rem}
+.uu-section h2.sec,.uu-section h2.alpha{font-family:"Fraunces",Georgia,"Times New Roman",serif;
+  font-weight:600;font-size:clamp(1.45rem,3vw,1.9rem);line-height:1.2;color:#252B32;
+  display:block;border-bottom:0;border-top:2px solid #C9A959;
+  padding-top:1.05rem;margin:2.2rem 0 .35rem}
+.uu-section .sec-sub{color:#4A5261;margin:.15rem 0 1.2rem;max-width:70ch;line-height:1.55}
+.uu-section .desc{font-size:1.02rem;line-height:1.6;color:#252B32;max-width:70ch}
+.uu-section section.block{margin:2.4rem 0}
+.uu-section .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:1.3rem}
+.uu-section .catgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1.3rem}
+.uu-section a.card{background:#fff;border:1px solid #E7DFC9;border-radius:.5rem;
+  padding:.9rem .9rem 1rem;box-shadow:0 1px 2px rgba(56,97,140,.05);
+  transition:transform .25s ease,box-shadow .25s ease}
+.uu-section a.card:hover{transform:translateY(-4px);border-color:#E7DFC9;
+  box-shadow:0 8px 18px rgba(56,97,140,.16)}
+.uu-section a.card img{width:100%;height:auto;aspect-ratio:5/8;object-fit:cover;
+  border-radius:.25rem;box-shadow:0 2px 6px rgba(56,97,140,.22);margin:0 0 .65rem}
+.uu-section a.card h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-size:1.02rem;
+  font-weight:600;line-height:1.25;margin:0 0 .15rem;color:#252B32}
+.uu-section a.card p{font-size:.88rem;color:#4A5261;line-height:1.45;margin:.15rem 0}
+.uu-section a.card .by{font-size:.82rem;color:#4A5261;margin-top:.3rem}
+.uu-section .soon{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;padding:.18rem .5rem;border-radius:999px;
+  background:#38618C;color:#fff;margin-top:.5rem}
+.uu-section .wrap > a.card{display:inline-block;width:10.5rem;vertical-align:top;
+  margin:0 1.3rem 1.4rem 0}
+.uu-section a.cat{background:#fff;color:#252B32;border:1px solid #E7DFC9;border-radius:.5rem;
+  padding:1.1rem 1.2rem;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.uu-section a.cat:hover{transform:translateY(-3px);border-color:#C9A959;
+  box-shadow:0 8px 18px rgba(56,97,140,.14)}
+.uu-section a.cat h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;
+  font-size:1.1rem;color:#16283F;margin:0 0 .3rem}
+.uu-section a.cat p{font-size:.9rem;color:#4A5261;line-height:1.5;margin:0}
+.uu-section a.cat .n{font-size:.78rem;font-weight:700;letter-spacing:.04em;color:#7A5E1F;margin-top:.5rem}
+.uu-section .booklist a{color:#16283F;padding:.45rem .1rem;border-bottom:1px solid #E7DFC9}
+.uu-section .shelflink{background:#fff;border:1px solid #E7DFC9;border-top:3px solid #C9A959;
+  border-radius:.5rem;padding:1.1rem 1.3rem;margin:1.6rem 0}
+.uu-section .shelflink a{font-weight:650;color:#16283F}
+.uu-section .shelflink p{color:#4A5261;margin:.3rem 0 0;line-height:1.55}
+.uu-section figure.cover img{width:10.5rem;max-width:100%;height:auto;border-radius:.25rem;
+  box-shadow:0 2px 6px rgba(56,97,140,.22)}
+.uu-section .btn{display:inline-block;background:#16283F;color:#fff;font-weight:650;
+  text-decoration:none;padding:.8rem 1.3rem;border-radius:.375rem;font-size:1rem}
+.uu-section .btn:hover{background:#0F1D30}
+.uu-section .btn.ghost{background:transparent;color:#16283F;border:1.5px solid #16283F}
+.uu-section .btn.ghost:hover{background:#38618C;color:#fff}
+@media (max-width:40rem){ /* phones */
+  .uu-section .grid{grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr))}
+  .uu-section .wrap > a.card{width:8.5rem;margin-right:1rem}
+  .uu-section .booklist{columns:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .uu-section a.card,.uu-section a.cat{transition:none}
+}
