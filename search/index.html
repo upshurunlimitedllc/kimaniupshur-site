@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search the Bookstore | Upshur Unlimited, LLC</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="description" content="Search every Upshur Unlimited book by title, author, subject, or series — then narrow by collection, audience, format, or price.">
+<link rel="canonical" href="https://upshurunlimitedllc.com/search/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Search the Bookstore | Upshur Unlimited, LLC">
+<meta property="og:description" content="Search every Upshur Unlimited book by title, author, subject, or series — then narrow by collection, audience, format, or price.">
+<meta property="og:url" content="https://upshurunlimitedllc.com/search/">
+<meta property="og:site_name" content="Kimani Upshur, M.Ed. | Upshur Unlimited, LLC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Search the Bookstore | Upshur Unlimited, LLC">
+<meta name="twitter:description" content="Search every Upshur Unlimited book by title, author, subject, or series — then narrow by collection, audience, format, or price.">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/design.css">
+<link rel="stylesheet" href="/assets/storefront.css">
+</head>
+<body>
+<header class="uu-head"><div class="wrap"><div class="uu-head-top"><a class="uu-lockup" href="/" aria-label="Upshur Unlimited LLC - home"><img class="uu-logo" src="/assets/logo-transparent.png" alt="" width="512" height="512"><span class="uu-name">Upshur Unlimited LLC</span></a></div><nav class="uu-nav" aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/books/">Books</a></li><li><a href="/es/libros/">Español | Spanish Books</a></li><li><a href="/kids-teens/">Kids &amp; Teens</a></li><li><a href="/categories/">Categories</a></li><li><a href="/apps.html">Apps</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="https://www.youtube.com/@KimaniUpshur" target="_blank" rel="noopener">YouTube</a></li></ul></nav></div></header>
+<main class="page uu-section"><div class="wrap">
+<p class="bread"><a href="/">Home</a> / Search</p>
+<h1>Search the Bookstore</h1>
+<p class="byline">by Kimani Upshur, M.Ed. · every book in the store</p>
+<p class="desc">Search by title, author, subject, or series — then narrow by collection, audience, format, or price. Every book here is written from a Christian worldview: Scripture first, Christ at the center.</p>
+<form class="uu-search-form" id="searchForm" role="search">
+<div class="uu-search-field uu-search-q"><label for="q">Search</label>
+<input type="search" id="q" name="q" placeholder="Try &ldquo;Aaron&rdquo;, &ldquo;prayer&rdquo;, &ldquo;Halcyon&rdquo;&hellip;" aria-describedby="count"></div>
+<div class="uu-search-field"><label for="fSection">Collection</label>
+<select id="fSection"><option value="">All collections</option><option value="Through Christ">Through Christ</option><option value="Fiction & Sci-Fi">Fiction & Sci-Fi</option><option value="Kids & Teens">Kids & Teens</option><option value="Audiobooks">Audiobooks</option><option value="Spanish">Spanish</option><option value="Collections">Collections</option></select></div>
+<div class="uu-search-field"><label for="fAudience">Audience</label>
+<select id="fAudience"><option value="">All audiences</option><option>Adult</option><option>Teens</option><option>Children</option></select></div>
+<div class="uu-search-field"><label for="fFormat">Format</label>
+<select id="fFormat"><option value="">Any format</option><option>Ebook</option><option>Audiobook</option></select></div>
+<div class="uu-search-field"><label for="fPrice">Price</label>
+<select id="fPrice"><option value="">Any price</option><option value="free">Free</option><option value="paid">Paid</option></select></div>
+</form>
+<p class="uu-search-count" id="count" role="status" aria-live="polite"></p>
+<div class="grid" id="grid"></div>
+<p class="uu-search-none" id="none" hidden>No books match. Try a different word, or clear a filter.</p>
+</div></main>
+
+<footer class="uu-foot"><div class="wrap"><div class="uu-flink"><a href="https://upshurunlimitedllc.com/privacy">Privacy Policy</a><a href="/apps.html">300+ Free Faith Apps</a><a href="https://www.youtube.com/@KimaniUpshur">YouTube</a><a href="/books/">All Books</a><a href="/categories/">Categories</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="https://upshurunlimitedllc.gumroad.com" rel="nofollow noopener">Gumroad Store</a></div><p class="uu-copy">&copy; 2026 Upshur Unlimited, LLC. All rights reserved. Books by Kimani Upshur, M.Ed.</p><p class="uu-fine">FTC Disclosure: As an Amazon Associate, Upshur Unlimited, LLC earns from qualifying purchases made through Amazon links on this site — at no extra cost to you. Every book is written from a Christian worldview: Scripture first, Christ at the center.</p></div></footer>
+<script src="/assets/search-index.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DATA = window.UU_SEARCH_INDEX || [];
+  var q = document.getElementById("q"), grid = document.getElementById("grid"),
+      count = document.getElementById("count"), none = document.getElementById("none");
+  function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function card(b){
+    var badge = b.free ? '<span class="soon">Free \u2014 complete edition</span>' : "";
+    return '<div class="card"><a href="' + esc(b.u) + '">' +
+      '<img src="' + esc(b.c) + '" alt="' + esc(b.t) + ' book cover by ' + esc(b.a) + '" loading="lazy" width="640" height="1024">' +
+      '<h3>' + esc(b.t) + '</h3></a>' +
+      '<p class="by">by ' + esc(b.a) + '</p>' +
+      '<p class="by">' + esc(b.cat) + ' \u00b7 ' + esc(b.fmt.join(" + ")) + '</p>' + badge + '</div>';
+  }
+  function matches(b, query, section, audience, format, price){
+    if (section && b.sec.indexOf(section) === -1) return false;
+    if (audience && b.aud !== audience) return false;
+    if (format && b.fmt.indexOf(format) === -1) return false;
+    if (price === "free" && !b.free) return false;
+    if (price === "paid" && b.free) return false;
+    if (!query) return true;
+    var hay = [b.t, b.s || "", b.a, b.cat].concat(b.sec, b.sub).join(" ").toLowerCase();
+    return query.split(/\s+/).every(function(w){ return hay.indexOf(w) !== -1; });
+  }
+  function apply(){
+    var query = q.value.trim().toLowerCase(),
+        section = document.getElementById("fSection").value,
+        audience = document.getElementById("fAudience").value,
+        format = document.getElementById("fFormat").value,
+        price = document.getElementById("fPrice").value;
+    var out = DATA.filter(function(b){ return matches(b, query, section, audience, format, price); });
+    grid.innerHTML = out.map(card).join("");
+    none.hidden = out.length !== 0;
+    count.textContent = out.length + (out.length === 1 ? " book" : " books") + " found";
+  }
+  var params = new URLSearchParams(location.search);
+  if (params.get("q")) q.value = params.get("q");
+  q.addEventListener("input", apply);
+  ["fSection","fAudience","fFormat","fPrice"].forEach(function(id){
+    document.getElementById(id).addEventListener("change", apply);
+  });
+  document.getElementById("searchForm").addEventListener("submit", function(e){ e.preventDefault(); apply(); });
+  apply();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "947dcd8b1b7946e49d6ca6dbe31a1047"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
