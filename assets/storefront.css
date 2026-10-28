@@ -226,3 +226,59 @@ main.page.uu-section h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;f
 .uu-section .uu-search-none{font-size:1.02rem;color:#4A5261;line-height:1.6;
   background:#fff;border:1px solid #E7DFC9;border-radius:.5rem;
   padding:1.1rem 1.3rem;margin:0 0 1.4rem}
+
+/* ---------- Depth (Phase 3, depth deployment 2026-10-28) ----------
+   The owner-approved depth treatment (depth-correction prototype,
+   approved by the owner 2026-10-28), ported onto the live shelf
+   vocabulary and scoped under .uu-store so it touches the homepage
+   only: layered cover shadows (tight contact + soft ambient + wide
+   cast), elevated ivory-gradient shelf panels with a hairline border
+   and an inset shelf-ledge shadow at the panel base, an enlarged
+   Featured shelf on a gold-tinted panel, and the Made Simple
+   Through Christ shelf on a deep-navy panel with gold accents.
+   CSS only — no new assets. The carousel contract is unchanged:
+   native overflow scrolling, no snap points, browser momentum. */
+.uu-store{
+  --uu-shadow-cover:0 1px 2px rgba(27,42,66,.30),0 4px 8px rgba(27,42,66,.16),0 16px 30px -10px rgba(38,58,86,.38);
+  --uu-shadow-cover-hover:0 2px 3px rgba(27,42,66,.30),0 7px 13px rgba(27,42,66,.18),0 26px 40px -12px rgba(38,58,86,.45);
+  --uu-shadow-panel:0 1px 2px rgba(56,97,140,.07),0 14px 30px -14px rgba(38,58,86,.30),inset 0 -16px 20px -16px rgba(38,58,86,.25)}
+.uu-store .uu-hero{background:radial-gradient(130% 95% at 50% -10%,rgba(242,223,174,.16),rgba(242,223,174,0) 55%),linear-gradient(180deg,#38618C 0,#2E5079 100%)}
+.uu-store .uu-shelf-panel{background:linear-gradient(180deg,#FFFFFF 0%,#FDFBF5 55%,#FAF4E8 100%);
+  border:1px solid #E3DCC4;padding:1.05rem 1.15rem .45rem;box-shadow:var(--uu-shadow-panel)}
+.uu-store .uu-track{padding:.55rem .25rem .9rem}
+.uu-store .uu-scard img{border:1px solid rgba(27,42,66,.10);box-shadow:var(--uu-shadow-cover)}
+.uu-store .uu-scard a:hover img,.uu-store .uu-scard a:focus-visible img{
+  transform:translateY(-5px);box-shadow:var(--uu-shadow-cover-hover)}
+.uu-store .uu-scard a:active img{transform:translateY(-2px)}
+.uu-store #featured .uu-shelf-panel{background:linear-gradient(180deg,#FFFDF6 0%,#FBF2DC 100%);
+  border:1px solid #DCC488;border-top:3px solid #C9A959;
+  box-shadow:0 2px 3px rgba(122,94,31,.07),0 20px 36px -14px rgba(38,58,86,.32),inset 0 -16px 20px -16px rgba(122,94,31,.22)}
+.uu-store #featured .uu-scard{flex-basis:13rem}
+.uu-store #featured .uu-scard img{width:13rem}
+.uu-store #featured .uu-scard h3{font-size:1.14rem}
+.uu-store #through-christ .uu-shelf-panel{background:linear-gradient(165deg,#37618B 0%,#38618C 38%,#2E5079 100%);
+  border:1px solid #24466B;
+  box-shadow:0 1px 2px rgba(15,29,48,.25),0 18px 34px -14px rgba(15,29,48,.50),inset 0 -16px 20px -16px rgba(8,17,30,.45)}
+.uu-store #through-christ .uu-scard h3{color:#FAF6ED}
+.uu-store #through-christ .uu-scard .uu-byline{color:#DDE3EC}
+.uu-store #through-christ .uu-scard .uu-price{color:#F2DFAE}
+.uu-store #through-christ .uu-scard img{border-color:rgba(242,223,174,.28);
+  box-shadow:0 1px 2px rgba(8,17,30,.50),0 4px 9px rgba(8,17,30,.35),0 18px 32px -10px rgba(8,17,30,.55)}
+.uu-store #through-christ .uu-scard a:hover img,.uu-store #through-christ .uu-scard a:focus-visible img{
+  box-shadow:0 2px 3px rgba(8,17,30,.50),0 7px 13px rgba(8,17,30,.40),0 26px 40px -12px rgba(8,17,30,.60)}
+.uu-store #through-christ .uu-badge-free{background:#D4AF63;color:#221A05}
+.uu-store #through-christ .uu-shelf-nav button{background:transparent;border-color:#F2DFAE;color:#F2DFAE}
+.uu-store #through-christ .uu-shelf-nav button:hover{background:#D4AF63;border-color:#D4AF63;color:#221A05}
+.uu-store #through-christ .uu-shelf-nav button:disabled{background:transparent;color:#F2DFAE}
+@media (max-width:64rem){
+  .uu-store #featured .uu-scard{flex-basis:11rem}
+  .uu-store #featured .uu-scard img{width:11rem}
+}
+@media (max-width:40rem){
+  .uu-store #featured .uu-scard{flex-basis:9.5rem}
+  .uu-store #featured .uu-scard img{width:9.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .uu-store .uu-scard a:hover img,.uu-store .uu-scard a:focus-visible img,
+  .uu-store .uu-scard a:active img{transform:none}
+}
