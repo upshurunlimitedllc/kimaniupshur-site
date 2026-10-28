@@ -115,6 +115,7 @@ footer .fine p,footer .fine a{color:#9AA5B3}
 {"@context": "https://schema.org", "@type": "Person", "name": "Kimani Upshur, M.Ed.", "jobTitle": "Christian Author", "description": "Christian author of 1,000+ Made Simple books — short, Scripture-rooted, practical ebooks published by Upshur Unlimited, LLC.", "url": "https://upshurunlimitedllc.com/", "sameAs": ["https://www.youtube.com/@KimaniUpshur"], "worksFor": {"@type": "Organization", "name": "Upshur Unlimited, LLC"}}
 </script>
 <script src="/assets/search-index.js" defer></script>
+<script src="/assets/price-index.js" defer></script>
 <script>var BOOKS=[];document.addEventListener('DOMContentLoaded',function(){if(window.UU_SEARCH_INDEX){BOOKS=window.UU_SEARCH_INDEX.map(function(r){return [r.t,r.u,r.cat];});}});
 function doSearch(q){var box=document.getElementById('res');q=q.trim().toLowerCase();
 if(q.length<2){box.style.display='none';box.innerHTML='';return;}
@@ -149,9 +150,9 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
 </div></section>
 <div class="uu-wrap">
 <section class="uu-shelf" id="featured" aria-labelledby="featured-h">
-<div class="uu-shelf-head"><h2 id="featured-h">Featured Reads</h2><span class="uu-note">Editor&rsquo;s selection</span></div>
-<p class="uu-shelf-sub">Handpicked by the author &mdash; this shelf leads with the capstone, <em>Overcoming Addiction</em>.</p>
-<div class="uu-shelf-panel"><div class="uu-track"><article class="uu-scard"><a href="/books/overcoming-addiction-made-simple/" aria-label="Overcoming Addiction by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/overcoming-addiction-made-simple.jpg" alt="Overcoming Addiction book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Overcoming Addiction</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/aaron-made-simple/" aria-label="Aaron by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/aaron-made-simple.jpg" alt="Aaron book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Aaron</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99 · Audiobook $9.99</p></a></article><article class="uu-scard"><a href="/books/halcyon-protocol/" aria-label="Halcyon Protocol by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/halcyon-protocol.jpg" alt="Halcyon Protocol book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Halcyon Protocol</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $9.99</p></a></article><article class="uu-scard"><a href="/books/revelation-made-simple/" aria-label="Revelation by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/revelation-made-simple.jpg" alt="Revelation book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Revelation</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/the-fruit-of-the-spirit-made-simple-collection/" aria-label="The Fruit of the Spirit Collection by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/the-fruit-of-the-spirit-made-simple-collection.jpg" alt="The Fruit of the Spirit Collection book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>The Fruit of the Spirit Collection</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $24.99</p></a></article><article class="uu-scard"><span class="uu-badge uu-badge-free">Free — complete edition</span><a href="/books/salvation-made-simple/" aria-label="Salvation by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/salvation-made-simple.jpg" alt="Salvation book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Salvation</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price uu-free-price">Free — complete edition</p></a></article></div>
+<div class="uu-shelf-head"><h2 id="featured-h">Featured Reads</h2><span class="uu-note"><a href="/search/">Browse all books &#8594;</a></span></div>
+<p class="uu-shelf-sub">This shelf leads with <em>Salvation</em> &mdash; free for everyone, by grace through faith &mdash; followed by editorial selections from across the catalog.</p>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="featured"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Featured Reads back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Featured Reads forward">&#8594;</button></div></div>
 </section>
 <div class="uu-framework" role="note" aria-label="About the Made Simple Through Christ Framework">
@@ -160,44 +161,50 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
 <p>Clear, Scripture-first teaching on the people, books, and doctrines of the Bible — titles presented exactly as published, under the framework banner.</p>
 </div>
 <section class="uu-shelf" id="through-christ" aria-labelledby="through-christ-h">
-<div class="uu-shelf-head"><h2 id="through-christ-h">Made Simple Through Christ</h2><span class="uu-note"><a href="/books/">Browse all books &#8594;</a></span></div>
-<div class="uu-shelf-panel"><div class="uu-track"><article class="uu-scard"><a href="/books/aaron-made-simple/" aria-label="Aaron by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/aaron-made-simple.jpg" alt="Aaron book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Aaron</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99 · Audiobook $9.99</p></a></article><article class="uu-scard"><a href="/books/abraham-made-simple/" aria-label="Abraham by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/abraham-made-simple.jpg" alt="Abraham book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Abraham</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/baptism-made-simple/" aria-label="Baptism by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/baptism-made-simple.jpg" alt="Baptism book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Baptism</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/angels-made-simple/" aria-label="Angels by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/angels-made-simple.jpg" alt="Angels book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Angels</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/abiding-made-simple/" aria-label="Abiding by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/abiding-made-simple.jpg" alt="Abiding book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Abiding</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/galatians-made-simple/" aria-label="Galatians by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/galatians-made-simple.jpg" alt="Galatians book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Galatians</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/revelation-made-simple/" aria-label="Revelation by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/revelation-made-simple.jpg" alt="Revelation book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Revelation</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/bible-study-made-simple/" aria-label="Bible Study by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/bible-study-made-simple.jpg" alt="Bible Study book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Bible Study</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article></div>
+<div class="uu-shelf-head"><h2 id="through-christ-h">Made Simple Through Christ</h2><span class="uu-note"><a href="/search/">Browse all 484 books &#8594;</a></span></div>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="through-christ"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Made Simple Through Christ back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Made Simple Through Christ forward">&#8594;</button></div></div>
 </section>
 <section class="uu-shelf" id="fiction" aria-labelledby="fiction-h">
-<div class="uu-shelf-head"><h2 id="fiction-h">Fiction and Science Fiction</h2><span class="uu-note">Novels &amp; science fiction</span></div>
+<div class="uu-shelf-head"><h2 id="fiction-h">Fiction and Science Fiction</h2><span class="uu-note"><a href="/search/">Browse all 19 books &#8594;</a></span></div>
 <p class="uu-shelf-sub">Novels and science fiction written from a Christian worldview &mdash; Scripture first.</p>
-<div class="uu-shelf-panel"><div class="uu-track"><article class="uu-scard"><a href="/books/halcyon-protocol/" aria-label="Halcyon Protocol by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/halcyon-protocol.jpg" alt="Halcyon Protocol book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Halcyon Protocol</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $9.99</p></a></article><article class="uu-scard"><a href="/books/the-eaten-stars/" aria-label="THE EATEN STARS by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/the-eaten-stars.jpg" alt="THE EATEN STARS book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>THE EATEN STARS</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $9.99</p></a></article><article class="uu-scard"><a href="/books/the-last-chart/" aria-label="THE LAST CHART by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/the-last-chart.jpg" alt="THE LAST CHART book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>THE LAST CHART</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $9.99</p></a></article></div>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="fiction"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Fiction and Science Fiction back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Fiction and Science Fiction forward">&#8594;</button></div></div>
 </section>
 <section class="uu-shelf" id="young" aria-labelledby="young-h">
-<div class="uu-shelf-head"><h2 id="young-h">Kids &amp; Teens</h2><span class="uu-note">Young Readers</span></div>
+<div class="uu-shelf-head"><h2 id="young-h">Kids &amp; Teens</h2><span class="uu-note"><a href="/search/">Browse all 221 books &#8594;</a></span></div>
 <p class="uu-shelf-sub">Children&rsquo;s biblical stories, teen fiction, and teen nonfiction &mdash; Scripture-rooted books written for young readers.</p>
-<div class="uu-shelf-panel"><div class="uu-track"><article class="uu-scard"><a href="/kids/brave-like-david/" aria-label="Brave Like David by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/brave-like-david.jpg" alt="Brave Like David book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Brave Like David</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/kids/the-first-christmas/" aria-label="The First Christmas by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/the-first-christmas.jpg" alt="The First Christmas book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>The First Christmas</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/kids/simeon-sees-the-savior/" aria-label="Simeon Sees the Savior by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/simeon-sees-the-savior.jpg" alt="Simeon Sees the Savior book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Simeon Sees the Savior</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/kids/ruth-and-naomi/" aria-label="Ruth and Naomi by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/ruth-and-naomi.jpg" alt="Ruth and Naomi book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Ruth and Naomi</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/kids/the-ten-big-rules/" aria-label="The Ten Big Rules by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/the-ten-big-rules.jpg" alt="The Ten Big Rules book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>The Ten Big Rules</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/kids/the-son-who-came-home/" aria-label="The Son Who Came Home by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/the-son-who-came-home.jpg" alt="The Son Who Came Home book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>The Son Who Came Home</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/teens/stand-alone/" aria-label="Stand Alone by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/stand-alone.jpg" alt="Stand Alone book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Stand Alone</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/teens/what-does-god-want/" aria-label="What Does God Want? by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/what-does-god-want.jpg" alt="What Does God Want? book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>What Does God Want?</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/teens/hope-anchors/" aria-label="Hope Anchors by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/hope-anchors.jpg" alt="Hope Anchors book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Hope Anchors</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/teens/cash-rules-for-teens/" aria-label="Cash Rules for Teens by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/cash-rules-for-teens.jpg" alt="Cash Rules for Teens book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Cash Rules for Teens</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/teens/its-okay-to-fail/" aria-label="It’s Okay to Fail by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/its-okay-to-fail.jpg" alt="It’s Okay to Fail book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>It’s Okay to Fail</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article></div>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="young"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Kids &amp; Teens back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Kids &amp; Teens forward">&#8594;</button></div></div>
 </section>
 <section class="uu-shelf" id="listen" aria-labelledby="listen-h">
-<div class="uu-shelf-head"><h2 id="listen-h">Audiobooks</h2><span class="uu-note">Verified audiobook listings</span></div>
+<div class="uu-shelf-head"><h2 id="listen-h">Audiobooks</h2><span class="uu-note"><a href="/audiobooks/">Browse all 201 audiobooks &#8594;</a></span></div>
 <p class="uu-shelf-sub">Audiobooks appear here only with a verified listing. Availability on any given platform is claimed only where that platform&rsquo;s listing has been verified.</p>
-<div class="uu-shelf-panel"><div class="uu-track"><article class="uu-scard"><a href="/books/aaron-made-simple/" aria-label="Aaron by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/aaron-made-simple.jpg" alt="Aaron book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Aaron</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99 · Audiobook $9.99</p></a></article><article class="uu-scard"><span class="uu-badge uu-badge-free">Free — complete edition</span><a href="/books/salvation-made-simple/" aria-label="Salvation by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/salvation-made-simple.jpg" alt="Salvation book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Salvation</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price uu-free-price">Free — complete edition</p></a></article></div>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="listen"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Audiobooks back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Audiobooks forward">&#8594;</button></div></div>
 </section>
+<section class="uu-shelf" id="spanish" aria-labelledby="spanish-h">
+<div class="uu-shelf-head"><h2 id="spanish-h">Spanish Books</h2><span class="uu-note"><a href="/es/libros/">Browse all 2 books &#8594;</a></span></div>
+<p class="uu-shelf-sub">Spanish editions from Upshur Unlimited &mdash; every title written from a Christian worldview: Scripture first.</p>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="spanish"></div>
+<div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Spanish Books back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Spanish Books forward">&#8594;</button></div></div>
+</section>
 <section class="uu-shelf" id="affordable" aria-labelledby="affordable-h">
-<div class="uu-shelf-head"><h2 id="affordable-h">Affordable Reads</h2><span class="uu-note">Verified prices, no invented discounts</span></div>
+<div class="uu-shelf-head"><h2 id="affordable-h">Affordable Reads</h2><span class="uu-note"><a href="/search/">Browse all 732 books &#8594;</a></span></div>
 <p class="uu-shelf-sub">The $4.99 shelf &mdash; every price shown is the verified current price of record.</p>
-<div class="uu-shelf-panel"><div class="uu-track"><article class="uu-scard"><a href="/books/aaron-made-simple/" aria-label="Aaron by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/aaron-made-simple.jpg" alt="Aaron book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Aaron</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99 · Audiobook $9.99</p></a></article><article class="uu-scard"><a href="/books/revelation-made-simple/" aria-label="Revelation by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/revelation-made-simple.jpg" alt="Revelation book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Revelation</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/angels-made-simple/" aria-label="Angels by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/angels-made-simple.jpg" alt="Angels book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Angels</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/abiding-made-simple/" aria-label="Abiding by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/abiding-made-simple.jpg" alt="Abiding book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Abiding</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/abraham-made-simple/" aria-label="Abraham by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/abraham-made-simple.jpg" alt="Abraham book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Abraham</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/baptism-made-simple/" aria-label="Baptism by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/baptism-made-simple.jpg" alt="Baptism book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Baptism</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/galatians-made-simple/" aria-label="Galatians by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/galatians-made-simple.jpg" alt="Galatians book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Galatians</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/bible-study-made-simple/" aria-label="Bible Study by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/bible-study-made-simple.jpg" alt="Bible Study book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Bible Study</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/kids/brave-like-david/" aria-label="Brave Like David by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/brave-like-david.jpg" alt="Brave Like David book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Brave Like David</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/failure-made-simple/" aria-label="Failure Made Simple by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/failure-made-simple.jpg" alt="Failure Made Simple book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Failure Made Simple</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/grief-made-simple/" aria-label="Grief Made Simple by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/grief-made-simple.jpg" alt="Grief Made Simple book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Grief Made Simple</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/deep-work-made-simple/" aria-label="Deep Work Made Simple by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/deep-work-made-simple.jpg" alt="Deep Work Made Simple book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Deep Work Made Simple</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/discipline-made-simple/" aria-label="Discipline Made Simple by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/discipline-made-simple.jpg" alt="Discipline Made Simple book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Discipline Made Simple</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/communication-made-simple/" aria-label="Communication by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/communication-made-simple.jpg" alt="Communication book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Communication</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/ai-and-education-made-simple/" aria-label="AI and Education Made Simple by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/ai-and-education-made-simple.jpg" alt="AI and Education Made Simple book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>AI and Education Made Simple</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/ai-and-money-made-simple/" aria-label="AI and Money Made Simple by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/ai-and-money-made-simple.jpg" alt="AI and Money Made Simple book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>AI and Money Made Simple</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article><article class="uu-scard"><a href="/books/black-excellence/" aria-label="Black Excellence by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/black-excellence.jpg" alt="Black Excellence book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Black Excellence</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $4.99</p></a></article></div>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="affordable"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Affordable Reads back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Affordable Reads forward">&#8594;</button></div></div>
 </section>
 <section class="uu-shelf" id="collections" aria-labelledby="collections-h">
-<div class="uu-shelf-head"><h2 id="collections-h">Complete Collections</h2><span class="uu-note">Box sets &amp; series sets</span></div>
+<div class="uu-shelf-head"><h2 id="collections-h">Complete Collections</h2><span class="uu-note"><a href="/search/">Browse all 14 books &#8594;</a></span></div>
 <p class="uu-shelf-sub">Whole libraries in one volume, at the collection price of record.</p>
-<div class="uu-shelf-panel"><div class="uu-track"><article class="uu-scard"><a href="/books/bible-characters-the-complete-box-set/" aria-label="Made Simple: Bible Characters — The Complete Box Set by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/bible-characters-the-complete-box-set.jpg" alt="Made Simple: Bible Characters — The Complete Box Set book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Made Simple: Bible Characters — The Complete Box Set</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $39.99</p></a></article><article class="uu-scard"><a href="/books/bible-stories-parables-the-complete-box-set/" aria-label="Made Simple: Bible Stories &amp; Parables — The Complete Box Set by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/bible-stories-parables-the-complete-box-set.jpg" alt="Made Simple: Bible Stories &amp; Parables — The Complete Box Set book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Made Simple: Bible Stories &amp; Parables — The Complete Box Set</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $39.99</p></a></article><article class="uu-scard"><a href="/books/christian-virtues-the-complete-box-set/" aria-label="Made Simple: Christian Virtues — The Complete Box Set by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/christian-virtues-the-complete-box-set.jpg" alt="Made Simple: Christian Virtues — The Complete Box Set book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Made Simple: Christian Virtues — The Complete Box Set</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $39.99</p></a></article><article class="uu-scard"><a href="/books/knowing-god-the-complete-box-set/" aria-label="Made Simple: Knowing God — The Complete Box Set by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/knowing-god-the-complete-box-set.jpg" alt="Made Simple: Knowing God — The Complete Box Set book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Made Simple: Knowing God — The Complete Box Set</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $39.99</p></a></article><article class="uu-scard"><a href="/books/books-of-the-bible-the-complete-box-set/" aria-label="Made Simple: Books of the Bible — The Complete Box Set by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/books-of-the-bible-the-complete-box-set.jpg" alt="Made Simple: Books of the Bible — The Complete Box Set book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Made Simple: Books of the Bible — The Complete Box Set</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $39.99</p></a></article><article class="uu-scard"><a href="/books/prayer-worship-the-complete-box-set/" aria-label="Made Simple: Prayer &amp; Worship — The Complete Box Set by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/prayer-worship-the-complete-box-set.jpg" alt="Made Simple: Prayer &amp; Worship — The Complete Box Set book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Made Simple: Prayer &amp; Worship — The Complete Box Set</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $39.99</p></a></article><article class="uu-scard"><a href="/books/spiritual-warfare-trials-the-complete-box-set/" aria-label="Made Simple: Spiritual Warfare &amp; Trials — The Complete Box Set by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/spiritual-warfare-trials-the-complete-box-set.jpg" alt="Made Simple: Spiritual Warfare &amp; Trials — The Complete Box Set book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Made Simple: Spiritual Warfare &amp; Trials — The Complete Box Set</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $39.99</p></a></article><article class="uu-scard"><a href="/books/the-fruit-of-the-spirit-made-simple-collection/" aria-label="The Fruit of the Spirit Collection by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/the-fruit-of-the-spirit-made-simple-collection.jpg" alt="The Fruit of the Spirit Collection book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>The Fruit of the Spirit Collection</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price">Ebook $24.99</p></a></article></div>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="collections"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Complete Collections back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Complete Collections forward">&#8594;</button></div></div>
 </section>
 <section class="uu-shelf" id="free" aria-labelledby="free-h">
-<div class="uu-shelf-head"><h2 id="free-h">Free Reads</h2><span class="uu-note">Complete editions, verified free</span></div>
+<div class="uu-shelf-head"><h2 id="free-h">Free Reads</h2><span class="uu-note"><a href="/search/">Browse all books &#8594;</a></span></div>
 <p class="uu-shelf-sub">Only books whose <strong>complete edition</strong> is genuinely free appear here. Anything else would be labeled a sample &mdash; never framed as a free book.</p>
-<div class="uu-shelf-panel"><div class="uu-track"><article class="uu-scard"><span class="uu-badge uu-badge-free">Free — complete edition</span><a href="/books/salvation-made-simple/" aria-label="Salvation by Kimani Upshur, M.Ed."><img src="/bookshelf/thumbs/salvation-made-simple.jpg" alt="Salvation book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>Salvation</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price uu-free-price">Free — complete edition</p></a></article><article class="uu-scard"><span class="uu-badge uu-badge-free">Free — complete edition</span><a href="/es/libros/la-salvacion/" aria-label="La Salvación by Kimani Upshur, M.Ed."><img src="/es/libros/la-salvacion/cover.jpg" alt="La Salvación book cover by Kimani Upshur, M.Ed." loading="lazy" width="480" height="768"><h3>La Salvación</h3><p class="uu-byline">by Kimani Upshur, M.Ed.</p><p class="uu-price uu-free-price">Free — complete edition</p></a></article></div>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="free"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Free Reads back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Free Reads forward">&#8594;</button></div></div>
 </section>
 </div>
@@ -263,6 +270,119 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
 </div>
 </div>
 </div></section>
+<script>
+/* Full-catalog shelves — owner authorization 2026-10-28. Every shelf is
+   populated from the ONE shared dataset (/assets/search-index.js — the
+   same records /search/ uses) plus the price-evidence asset
+   (/assets/price-index.js). Cards render in chunks as a shelf is
+   scrolled toward its end, so no shelf eagerly builds its whole
+   catalog; every card in the category is reachable by scrolling. */
+(function(){
+  "use strict";
+  /* FEATURED — the featured list lives here, in one place, so it can
+     be changed without a redesign: reorder or replace the URLs and
+     the shelf rebuilds itself. Position 1 is owner-mandated
+     (2026-10-28): SALVATION leads the store. The remaining positions
+     are editorial selections. FEATURED_PRICES carries those cards'
+     price text from the homepage's verified copy of record —
+     re-verify a price when its title changes. */
+  var FEATURED = [
+    "/books/salvation-made-simple/",
+    "/books/overcoming-addiction-made-simple/",
+    "/books/aaron-made-simple/",
+    "/books/halcyon-protocol/",
+    "/books/revelation-made-simple/",
+    "/books/the-fruit-of-the-spirit-made-simple-collection/"
+  ];
+  var FEATURED_PRICES = {
+    "/books/overcoming-addiction-made-simple/": "Ebook $4.99",
+    "/books/aaron-made-simple/": "Ebook $4.99 \u00b7 Audiobook $9.99",
+    "/books/halcyon-protocol/": "Ebook $9.99",
+    "/books/revelation-made-simple/": "Ebook $4.99",
+    "/books/the-fruit-of-the-spirit-made-simple-collection/": "Ebook $24.99"
+  };
+  var CHUNK = 18;
+  /* Read at init() time: the dataset assets are deferred scripts and
+     execute after this script's own parse-time pass. */
+  var PRICES = {};
+  function esc(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){
+    return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
+  function priceHTML(b, feat){
+    if (b.free) return '<p class="uu-price uu-free-price">Free \u2014 complete edition</p>';
+    if (feat && FEATURED_PRICES[b.u]) return '<p class="uu-price">' + FEATURED_PRICES[b.u] + "</p>";
+    if (PRICES[b.u]) return '<p class="uu-price">Ebook ' + PRICES[b.u] + "</p>";
+    return "";
+  }
+  function card(b, feat){
+    return '<article class="uu-scard">' +
+      (b.free ? '<span class="uu-badge uu-badge-free">Free \u2014 complete edition</span>' : "") +
+      '<a href="' + esc(b.u) + '" aria-label="' + esc(b.t) + " by " + esc(b.a) + '">' +
+      '<img src="' + esc(b.c) + '" alt="' + esc(b.t) + " book cover by " + esc(b.a) +
+      '" loading="lazy" width="480" height="768">' +
+      "<h3>" + esc(b.t) + '</h3><p class="uu-byline">by ' + esc(b.a) + "</p>" +
+      priceHTML(b, feat) + "</a></article>";
+  }
+  function setup(track, items, feat){
+    if (!track || !items.length) return;
+    var rendered = 0, done = false;
+    var sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText = "flex:0 0 2px";
+    track.appendChild(sentinel);
+    function more(){
+      if (done) return;
+      var next = items.slice(rendered, rendered + CHUNK);
+      if (!next.length) { done = true; sentinel.remove(); return; }
+      sentinel.insertAdjacentHTML("beforebegin",
+        next.map(function(b){ return card(b, feat); }).join(""));
+      rendered += next.length;
+      if (rendered >= items.length) { done = true; sentinel.remove(); }
+      track.dispatchEvent(new Event("scroll"));
+    }
+    more();
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function(es){
+        if (es.some(function(e){ return e.isIntersecting; })) more();
+      }, {root: track, rootMargin: "0px 900px 0px 0px"});
+      io.observe(sentinel);
+    }
+    track.addEventListener("scroll", function(){
+      if (track.scrollLeft + track.clientWidth > track.scrollWidth - 900) more();
+    }, {passive: true});
+    track.addEventListener("focusin", function(e){
+      var art = e.target && e.target.closest ? e.target.closest(".uu-scard") : null;
+      if (!art) return;
+      var cards = track.querySelectorAll(".uu-scard");
+      if (Array.prototype.indexOf.call(cards, art) >= rendered - 4) more();
+    });
+  }
+  function init(){
+    PRICES = window.UU_PRICES || {};
+    var DATA = window.UU_SEARCH_INDEX || [];
+    var byU = {};
+    DATA.forEach(function(b){ byU[b.u] = b; });
+    function sec(name){ return DATA.filter(function(b){ return b.sec.indexOf(name) !== -1; }); }
+    var shelves = [
+      {id: "featured", feat: true,
+       items: FEATURED.map(function(u){ return byU[u]; }).filter(Boolean)},
+      {id: "through-christ", items: sec("Through Christ")},
+      {id: "fiction", items: sec("Fiction & Sci-Fi")},
+      {id: "young", items: sec("Kids & Teens")},
+      {id: "listen", items: sec("Audiobooks")},
+      {id: "spanish", items: sec("Spanish")},
+      {id: "affordable", items: DATA.filter(function(b){ return PRICES[b.u] === "$4.99"; })},
+      {id: "collections", items: sec("Collections")},
+      {id: "free", items: DATA.filter(function(b){ return !!b.free; })}
+    ];
+    shelves.forEach(function(s){
+      setup(document.querySelector('#' + s.id + " .uu-track"), s.items, !!s.feat);
+    });
+  }
+  if (document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
 <script>
 (function(){
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
