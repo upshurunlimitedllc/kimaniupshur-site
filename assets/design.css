@@ -1,0 +1,91 @@
+/* ============================================================
+   UPSHUR UNLIMITED — Stage B design layer (Phase 3)
+   Header / footer / buybox partials in the approved Phase 2
+   design system (PHASE2_DESIGN_CONCEPT.md + owner addenda).
+   Every rule is scoped under .uu-* classes so this file can
+   load after /assets/site.css on templated pages without
+   touching body presentation (Stages C/D unify the rest).
+   Values of record: masthead blue #38618C (owner lightening,
+   2026-10-27) · deep blue #2E5079 · gold-bright #F2DFAE for
+   text on blue · brand gold #D4AF63 decoration · gold line
+   #C9A959 · ink-blue #16283F for text/buttons on light
+   grounds · charcoal #2B2F36 footer · deep gold #7A5E1F for
+   focus outlines on light grounds.
+   Type: Fraunces + Public Sans, self-hosted WOFF2 under
+   /assets/fonts/ (SIL Open Font License 1.1 — see
+   /assets/fonts/LICENSES.md).
+   ============================================================ */
+
+@font-face{font-family:"Fraunces";src:url("/assets/fonts/fraunces-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+/* Public Sans ships as one variable font — Google serves the same
+   file for every weight; each declaration pins its instance. */
+@font-face{font-family:"Public Sans";src:url("/assets/fonts/publicsans-var.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Public Sans";src:url("/assets/fonts/publicsans-var.woff2") format("woff2");font-weight:550;font-style:normal;font-display:swap}
+@font-face{font-family:"Public Sans";src:url("/assets/fonts/publicsans-var.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Public Sans";src:url("/assets/fonts/publicsans-var.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+
+/* ---------- Masthead — owner header directive (2026-10-27) ----------
+   ONE brand lockup: the transparent logo centered directly
+   ABOVE the words "Upshur Unlimited LLC", one stacked unit at
+   the upper right. Navigation in a separate row below, links
+   only — no brand text, no second lockup. Kids & Teens stays
+   visible at every width (nav wraps, never hides). */
+.uu-head{background:#38618C;color:#fff;font-family:"Public Sans",-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.uu-head-top{display:flex;justify-content:flex-end}
+.uu-lockup{display:flex;flex-direction:column;align-items:center;gap:.3rem;
+  padding:.85rem 0 .8rem;text-decoration:none;color:#fff}
+.uu-logo{width:5.9rem;height:5.9rem;display:block}
+.uu-name{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;
+  font-size:1.12rem;letter-spacing:.05em;line-height:1.15;color:#fff;white-space:nowrap}
+.uu-nav{border-top:1px solid rgba(212,175,99,.35)}
+.uu-nav ul{display:flex;justify-content:space-between;gap:.4rem 1rem;flex-wrap:wrap;
+  list-style:none;margin:0;padding:.45rem 0 .6rem}
+.uu-nav a{color:#fff;text-decoration:none;font-size:.92rem;font-weight:550;
+  padding:.3rem .25rem;white-space:nowrap}
+.uu-nav a:hover{text-decoration:underline;text-decoration-color:#D4AF63;
+  text-decoration-thickness:2px;text-underline-offset:4px}
+.uu-head a:focus-visible{outline:3px solid #F2DFAE;outline-offset:2px;border-radius:2px}
+
+/* ---------- Footer ---------- */
+.uu-foot{background:#2B2F36;color:#D8DCE3;margin-top:2rem;padding:2.2rem 0 2rem;
+  font-family:"Public Sans",-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.uu-flink{display:flex;flex-wrap:wrap;gap:.45rem 1.4rem;margin-bottom:1rem}
+.uu-flink a{color:#fff;text-decoration:none;font-size:.92rem;font-weight:550}
+.uu-flink a:hover{text-decoration:underline;text-decoration-color:#D4AF63;
+  text-decoration-thickness:2px;text-underline-offset:4px}
+.uu-foot p{margin:0}
+.uu-copy{font-size:.9rem}
+.uu-fine{font-size:.8rem;color:#B7BDC9;max-width:800px;margin-top:1rem;line-height:1.55}
+.uu-foot a:focus-visible{outline:3px solid #F2DFAE;outline-offset:2px;border-radius:2px}
+
+/* ---------- Buybox — the preserved pattern, new presentation ----------
+   One button per verified destination already on the page;
+   links, labels and order are the page's own (byte-diffed at
+   build). Retailer names only — never a price on a button. */
+.uu-buybox{background:#fff;border:1px solid #E7DFC9;border-top:3px solid #C9A959;
+  border-radius:.5rem;padding:1.3rem 1.4rem;margin:0 0 30px;max-width:720px;
+  font-family:"Public Sans",-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.uu-buybox h2{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;
+  font-size:1.3rem;color:#252B32;margin:0 0 .4rem;line-height:1.25}
+.uu-note{font-size:.92rem;color:#4A5261;margin:0 0 1rem}
+.uu-buybtns{display:flex;flex-wrap:wrap;gap:.6rem}
+.uu-buybtn{display:inline-block;padding:.7rem 1.15rem;border-radius:.375rem;
+  border:1.5px solid #16283F;color:#16283F;text-decoration:none;font-weight:600;
+  font-size:.95rem;background:#fff;transition:background .15s ease,color .15s ease}
+.uu-buybtn:hover{background:#16283F;color:#fff}
+.uu-buybtn.primary{background:#16283F;color:#fff}
+.uu-buybtn.primary:hover{background:#0F1D30}
+.uu-buybtn.amz{background:#D4AF63;border-color:#D4AF63;color:#221A05}
+.uu-buybtn.amz:hover{background:#E3C37C;border-color:#E3C37C;color:#221A05}
+.uu-buybtn:focus-visible{outline:3px solid #7A5E1F;outline-offset:2px}
+
+/* ---------- Responsive ---------- */
+@media (max-width:40rem){ /* phones */
+  .uu-logo{width:4.6rem;height:4.6rem}
+  .uu-name{font-size:1rem}
+  .uu-nav ul{justify-content:space-between;gap:.3rem .7rem}
+  .uu-buybox{padding:1.1rem 1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .uu-buybtn{transition:none}
+}
