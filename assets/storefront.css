@@ -164,7 +164,7 @@ main.page.uu-section h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;f
   font-weight:600;line-height:1.25;margin:0 0 .15rem;color:#252B32}
 .uu-section a.card p{font-size:.88rem;color:#4A5261;line-height:1.45;margin:.15rem 0}
 .uu-section a.card .by{font-size:.82rem;color:#4A5261;margin-top:.3rem}
-.uu-section .soon{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;
+.uu-section .soon,.uu-section .bookcard .soon{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;
   text-transform:uppercase;padding:.18rem .5rem;border-radius:999px;
   background:#38618C;color:#fff;margin-top:.5rem}
 .uu-section .wrap > a.card{display:inline-block;width:10.5rem;vertical-align:top;
