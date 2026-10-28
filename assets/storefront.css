@@ -197,3 +197,11 @@ main.page.uu-section h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;f
 @media (prefers-reduced-motion:reduce){
   .uu-section .card,.uu-section a.cat{transition:none}
 }
+
+/* ---------- Audiobooks landing (Phase 3, Stage E) ----------
+   The /audiobooks/ index presents its cards in the section
+   vocabulary above; its Listen buttons size to the card. */
+.uu-section .card a{text-decoration:none;color:inherit}
+.uu-section .card .btn{display:block;text-align:center;padding:.62rem .8rem;
+  font-size:.93rem;margin-top:.65rem}
+.uu-section .card .soon{margin-top:.55rem}
