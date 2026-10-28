@@ -189,11 +189,11 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
 <div class="uu-shelf-panel"><div class="uu-track" data-shelf="spanish"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Spanish Books back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Spanish Books forward">&#8594;</button></div></div>
 </section>
-<section class="uu-shelf" id="affordable" aria-labelledby="affordable-h">
-<div class="uu-shelf-head"><h2 id="affordable-h">Affordable Reads</h2><span class="uu-note"><a href="/search/">Browse all 732 books &#8594;</a></span></div>
-<p class="uu-shelf-sub">The $4.99 shelf &mdash; every price shown is the verified current price of record.</p>
-<div class="uu-shelf-panel"><div class="uu-track" data-shelf="affordable"></div>
-<div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Affordable Reads back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Affordable Reads forward">&#8594;</button></div></div>
+<section class="uu-shelf" id="made-simple" aria-labelledby="made-simple-h">
+<div class="uu-shelf-head"><h2 id="made-simple-h">The Made Simple Collection</h2><span class="uu-note"><a href="/search/">Browse all 521 books &#8594;</a></span></div>
+<p class="uu-shelf-sub">The Made Simple library &mdash; practical books from across the catalog that carry the Made Simple name, distinct from the Made Simple Through Christ collection.</p>
+<div class="uu-shelf-panel"><div class="uu-track" data-shelf="made-simple"></div>
+<div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll The Made Simple Collection back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll The Made Simple Collection forward">&#8594;</button></div></div>
 </section>
 <section class="uu-shelf" id="collections" aria-labelledby="collections-h">
 <div class="uu-shelf-head"><h2 id="collections-h">Complete Collections</h2><span class="uu-note"><a href="/search/">Browse all 14 books &#8594;</a></span></div>
@@ -279,17 +279,22 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
    catalog; every card in the category is reachable by scrolling. */
 (function(){
   "use strict";
-  /* FEATURED — the featured list lives here, in one place, so it can
-     be changed without a redesign: reorder or replace the URLs and
-     the shelf rebuilds itself. Position 1 is owner-mandated
+  /* FEATURED — the featured list lives in /assets/featured.json
+     (externalized in the depth deployment, 2026-10-28, so it can be
+     changed without a redesign — the homepage fetches it at runtime
+     and builds the shelf from it). FEATURED_FALLBACK below is the
+     built-in copy of the same list, used only when the JSON file
+     cannot be fetched or yields no usable entries, so the shelf
+     renders the same either way. Position 1 is owner-mandated
      (2026-10-28): SALVATION leads the store. The remaining positions
      are editorial selections. FEATURED_PRICES carries those cards'
      price text from the homepage's verified copy of record —
-     re-verify a price when its title changes. */
-  var FEATURED = [
+     re-verify a price when its title changes; a "price" field on a
+     featured.json entry overrides it for that card. */
+  var FEATURED_JSON_URL = "/assets/featured.json";
+  var FEATURED_FALLBACK = [
     "/books/salvation-made-simple/",
     "/books/overcoming-addiction-made-simple/",
-    "/books/aaron-made-simple/",
     "/books/halcyon-protocol/",
     "/books/revelation-made-simple/",
     "/books/the-fruit-of-the-spirit-made-simple-collection/"
@@ -362,21 +367,53 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
     var byU = {};
     DATA.forEach(function(b){ byU[b.u] = b; });
     function sec(name){ return DATA.filter(function(b){ return b.sec.indexOf(name) !== -1; }); }
+    function setupFeatured(){
+      var built = false;
+      function build(urls, prices){
+        if (built) return; built = true;
+        if (prices) for (var k in prices)
+          if (Object.prototype.hasOwnProperty.call(prices, k)) FEATURED_PRICES[k] = prices[k];
+        setup(document.querySelector('#featured .uu-track'),
+          urls.map(function(u){ return byU[u]; }).filter(Boolean), true);
+      }
+      if (!("fetch" in window)) { build(FEATURED_FALLBACK, null); return; }
+      var timer = setTimeout(function(){ build(FEATURED_FALLBACK, null); }, 3500);
+      fetch(FEATURED_JSON_URL, {credentials: "same-origin"}).then(function(r){
+        if (!r.ok) throw new Error("featured.json HTTP " + r.status);
+        return r.json();
+      }).then(function(j){
+        clearTimeout(timer);
+        var urls = [], prices = {};
+        var list = (j && Array.isArray(j.featured)) ? j.featured : [];
+        list.forEach(function(e){
+          if (typeof e === "string") urls.push(e);
+          else if (e && typeof e.u === "string") {
+            urls.push(e.u);
+            if (typeof e.price === "string" && e.price) prices[e.u] = e.price;
+          }
+        });
+        urls = urls.filter(function(u){ return !!byU[u]; });
+        build(urls.length ? urls : FEATURED_FALLBACK,
+              urls.length ? prices : null);
+      }).catch(function(){
+        clearTimeout(timer);
+        build(FEATURED_FALLBACK, null);
+      });
+    }
     var shelves = [
-      {id: "featured", feat: true,
-       items: FEATURED.map(function(u){ return byU[u]; }).filter(Boolean)},
       {id: "through-christ", items: sec("Through Christ")},
       {id: "fiction", items: sec("Fiction & Sci-Fi")},
       {id: "young", items: sec("Kids & Teens")},
       {id: "listen", items: sec("Audiobooks")},
       {id: "spanish", items: sec("Spanish")},
-      {id: "affordable", items: DATA.filter(function(b){ return PRICES[b.u] === "$4.99"; })},
+      {id: "made-simple", items: DATA.filter(function(b){ return b.t.indexOf("Made Simple") !== -1 && b.sec.indexOf("Through Christ") === -1; })},
       {id: "collections", items: sec("Collections")},
       {id: "free", items: DATA.filter(function(b){ return !!b.free; })}
     ];
     shelves.forEach(function(s){
       setup(document.querySelector('#' + s.id + " .uu-track"), s.items, !!s.feat);
     });
+    setupFeatured();
   }
   if (document.readyState === "loading")
     document.addEventListener("DOMContentLoaded", init);

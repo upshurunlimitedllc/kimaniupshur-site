@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "note": "Featured Reads list for the upshurunlimitedllc.com homepage. Edit this file to change the shelf: array order is display order. Each entry's \"u\" is a book-page path that must exist in /assets/search-index.js (unknown paths are skipped). \"price\" is an optional verbatim price line for that card; omit it for free titles — free framing comes from the catalog record. If this file is missing or unusable, the homepage falls back to its built-in copy of the same list.",
+  "featured": [
+    {
+      "u": "/books/salvation-made-simple/"
+    },
+    {
+      "u": "/books/overcoming-addiction-made-simple/",
+      "price": "Ebook $4.99"
+    },
+    {
+      "u": "/books/halcyon-protocol/",
+      "price": "Ebook $9.99"
+    },
+    {
+      "u": "/books/revelation-made-simple/",
+      "price": "Ebook $4.99"
+    },
+    {
+      "u": "/books/the-fruit-of-the-spirit-made-simple-collection/",
+      "price": "Ebook $24.99"
+    }
+  ]
+}
