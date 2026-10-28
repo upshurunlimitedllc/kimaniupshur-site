@@ -205,3 +205,24 @@ main.page.uu-section h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;f
 .uu-section .card .btn{display:block;text-align:center;padding:.62rem .8rem;
   font-size:.93rem;margin-top:.65rem}
 .uu-section .card .soon{margin-top:.55rem}
+
+/* ---------- Search surface (Phase 3, Stage F) ----------
+   The /search/ page presents the shared catalog dataset
+   (assets/search-index.js) in the section vocabulary above:
+   one filter form over the results grid. Tokens as Stages C-E. */
+.uu-section .uu-search-form{display:flex;flex-wrap:wrap;gap:.9rem 1.1rem;
+  background:#fff;border:1px solid #E7DFC9;border-top:3px solid #C9A959;
+  border-radius:.5rem;padding:1.1rem 1.2rem;margin:1.4rem 0 .4rem}
+.uu-section .uu-search-field{display:flex;flex-direction:column;gap:.3rem}
+.uu-section .uu-search-field.uu-search-q{flex:1 1 15rem}
+.uu-section .uu-search-field label{font-size:.78rem;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;color:#4A5261}
+.uu-section .uu-search-field input,.uu-section .uu-search-field select{
+  font:inherit;font-size:1rem;color:#252B32;background:#FAF6ED;
+  border:1.5px solid #C9A959;border-radius:.375rem;padding:.6rem .7rem}
+.uu-section .uu-search-field input:focus,.uu-section .uu-search-field select:focus{
+  outline:3px solid #7A5E1F;outline-offset:1px}
+.uu-section .uu-search-count{font-size:.95rem;color:#4A5261;margin:.9rem 0 1.1rem}
+.uu-section .uu-search-none{font-size:1.02rem;color:#4A5261;line-height:1.6;
+  background:#fff;border:1px solid #E7DFC9;border-radius:.5rem;
+  padding:1.1rem 1.3rem;margin:0 0 1.4rem}
