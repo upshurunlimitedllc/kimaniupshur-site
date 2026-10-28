@@ -105,3 +105,36 @@
   .uu-nav ul{gap:.15rem .45rem;padding:.35rem 0 .45rem}
   .uu-nav a{font-size:.65rem;letter-spacing:-.01em;padding:.2rem .1rem}
 }
+
+/* ---------- Phone menu bar — Variant A (owner pick 2026-10-28) ----------
+   From the rendered phone options the owner chose "Slim bar + Menu":
+   at phone widths the masthead compresses (logo 3.1rem, tighter
+   lockup) and the eleven-entry nav collapses behind one full-width
+   Menu bar in deep blue; tapping it opens the entries as a divided
+   vertical list. The bar is a real <button> in every framed page's
+   header. The collapse is JS-gated (html.uu-js, set by
+   /assets/uu-menu.js before the header paints): with scripts off the
+   button stays hidden and the nav renders exactly as the phone
+   masthead fit above left it — nothing is ever hidden without JS.
+   Wider widths are untouched: the button is display:none outside
+   the phone block and every phone rule sits in max-width:30rem. */
+.uu-menubar{display:none}
+@media (max-width:30rem){
+  .uu-lockup{padding:.45rem 0 .4rem;gap:.12rem}
+  .uu-logo{width:3.1rem;height:3.1rem}
+  .uu-name{font-size:.92rem}
+  .uu-js .uu-menubar{display:flex;align-items:center;justify-content:center;gap:.55rem;
+    width:100%;background:#2E5079;border:0;border-radius:0;-webkit-appearance:none;appearance:none;
+    border-top:1px solid rgba(212,175,99,.35);
+    color:#F2DFAE;font-family:"Public Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:.82rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    padding:.68rem 0;cursor:pointer}
+  .uu-js .uu-nav{display:none}
+  .uu-js .uu-head.uu-menu-open .uu-nav{display:block}
+  .uu-js .uu-head.uu-menu-open .uu-nav ul{flex-direction:column;flex-wrap:nowrap;gap:0;
+    justify-content:flex-start;padding:.15rem 0 .35rem}
+  .uu-js .uu-head.uu-menu-open .uu-nav li{border-bottom:1px solid rgba(255,255,255,.13)}
+  .uu-js .uu-head.uu-menu-open .uu-nav li:last-child{border-bottom:0}
+  .uu-js .uu-head.uu-menu-open .uu-nav a{display:block;font-size:.95rem;letter-spacing:0;
+    padding:.66rem .15rem}
+}
