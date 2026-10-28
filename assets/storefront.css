@@ -153,21 +153,21 @@ main.page.uu-section h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;f
 .uu-section section.block{margin:2.4rem 0}
 .uu-section .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:1.3rem}
 .uu-section .catgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1.3rem}
-.uu-section a.card{background:#fff;border:1px solid #E7DFC9;border-radius:.5rem;
+.uu-section .card{background:#fff;border:1px solid #E7DFC9;border-radius:.5rem;
   padding:.9rem .9rem 1rem;box-shadow:0 1px 2px rgba(56,97,140,.05);
   transition:transform .25s ease,box-shadow .25s ease}
-.uu-section a.card:hover{transform:translateY(-4px);border-color:#E7DFC9;
+.uu-section .card:hover{transform:translateY(-4px);border-color:#E7DFC9;
   box-shadow:0 8px 18px rgba(56,97,140,.16)}
-.uu-section a.card img{width:100%;height:auto;aspect-ratio:5/8;object-fit:cover;
+.uu-section .card img{width:100%;height:auto;aspect-ratio:5/8;object-fit:cover;
   border-radius:.25rem;box-shadow:0 2px 6px rgba(56,97,140,.22);margin:0 0 .65rem}
-.uu-section a.card h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-size:1.02rem;
+.uu-section .card h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-size:1.02rem;
   font-weight:600;line-height:1.25;margin:0 0 .15rem;color:#252B32}
-.uu-section a.card p{font-size:.88rem;color:#4A5261;line-height:1.45;margin:.15rem 0}
-.uu-section a.card .by{font-size:.82rem;color:#4A5261;margin-top:.3rem}
+.uu-section .card p{font-size:.88rem;color:#4A5261;line-height:1.45;margin:.15rem 0}
+.uu-section .card .by{font-size:.82rem;color:#4A5261;margin-top:.3rem}
 .uu-section .soon,.uu-section .bookcard .soon{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;
   text-transform:uppercase;padding:.18rem .5rem;border-radius:999px;
   background:#38618C;color:#fff;margin-top:.5rem}
-.uu-section .wrap > a.card{display:inline-block;width:10.5rem;vertical-align:top;
+.uu-section .wrap > .card{display:inline-block;width:10.5rem;vertical-align:top;
   margin:0 1.3rem 1.4rem 0}
 .uu-section a.cat{background:#fff;color:#252B32;border:1px solid #E7DFC9;border-radius:.5rem;
   padding:1.1rem 1.2rem;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
@@ -191,9 +191,9 @@ main.page.uu-section h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;f
 .uu-section .btn.ghost:hover{background:#38618C;color:#fff}
 @media (max-width:40rem){ /* phones */
   .uu-section .grid{grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr))}
-  .uu-section .wrap > a.card{width:8.5rem;margin-right:1rem}
+  .uu-section .wrap > .card{width:8.5rem;margin-right:1rem}
   .uu-section .booklist{columns:1}
 }
 @media (prefers-reduced-motion:reduce){
-  .uu-section a.card,.uu-section a.cat{transition:none}
+  .uu-section .card,.uu-section a.cat{transition:none}
 }
