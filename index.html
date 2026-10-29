@@ -315,12 +315,15 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
   /* Read at init() time: the dataset assets are deferred scripts and
      execute after this script's own parse-time pass. */
   var PRICES = {};
+  var AUDIOP = {};
   function esc(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){
     return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
   function priceHTML(b, feat){
     if (b.free) return '<p class="uu-price uu-free-price">Free \u2014 complete edition</p>';
     if (feat && FEATURED_PRICES[b.u]) return '<p class="uu-price">' + FEATURED_PRICES[b.u] + "</p>";
+    if (PRICES[b.u] && AUDIOP[b.u]) return '<p class="uu-price">Ebook ' + PRICES[b.u] + " \u00b7 Audiobook " + AUDIOP[b.u] + "</p>";
     if (PRICES[b.u]) return '<p class="uu-price">Ebook ' + PRICES[b.u] + "</p>";
+    if (AUDIOP[b.u]) return '<p class="uu-price">Audiobook ' + AUDIOP[b.u] + "</p>";
     return "";
   }
   function card(b, feat){
@@ -368,6 +371,7 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
   }
   function init(){
     PRICES = window.UU_PRICES || {};
+    AUDIOP = window.UU_AUDIO_PRICES || {};
     var DATA = window.UU_SEARCH_INDEX || [];
     var byU = {};
     DATA.forEach(function(b){ byU[b.u] = b; });
