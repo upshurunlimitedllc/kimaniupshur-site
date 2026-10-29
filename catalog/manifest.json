@@ -1,8 +1,8 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1256,
-  "redirect_stubs_excluded": 6,
+  "unique_published_titles": 1255,
+  "redirect_stubs_excluded": 7,
   "carousel_entries": 1255,
   "carousel_with_covers": 1253,
   "missing_covers": []
@@ -225,22 +225,6 @@
     "personal-growth"
    ],
    "collection": "personal-growth"
-  },
-  {
-   "slug": "addiction-made-simple",
-   "title": "Addiction Made Simple",
-   "url": "/books/addiction-made-simple/",
-   "section": "books",
-   "cover": "/books/addiction-made-simple/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": false,
-   "category_links": [
-    "health-wellness",
-    "health-wellness"
-   ],
-   "collection": "health-wellness"
   },
   {
    "slug": "adhd-made-simple",
@@ -19225,6 +19209,11 @@
   }
  ],
  "stubs": [
+  {
+   "url": "/books/addiction-made-simple/",
+   "canonical": "https://upshurunlimitedllc.com/books/overcoming-addiction-made-simple/",
+   "file": "books/addiction-made-simple/index.html"
+  },
   {
    "url": "/books/agi-made-simple/",
    "canonical": "https://upshurunlimitedllc.com/books/artificial-general-intelligence-made-simple/",
