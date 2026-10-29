@@ -111,10 +111,11 @@
 .uu-bookpage{background:#FAF6ED}
 .uu-bookpage a:focus-visible,.uu-bookpage button:focus-visible{
   outline:3px solid #7A5E1F;outline-offset:2px;border-radius:2px}
-.uu-book-layout{display:grid;grid-template-columns:minmax(15rem,21rem) 1fr;
+.uu-book-layout{display:grid;grid-template-columns:minmax(17rem,24rem) 1fr;
   gap:2.6rem;padding:1.4rem 0 2.4rem;align-items:start}
 .uu-book-cover figure.cover{margin:0!important}
 .uu-book-cover img{width:100%!important;max-width:100%!important;height:auto!important;
+  aspect-ratio:auto!important;object-fit:initial!important;cursor:zoom-in;
   border:0!important;border-radius:.3rem;box-shadow:0 6px 22px rgba(56,97,140,.3)}
 .uu-bookpage .uu-book-meta h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;
   font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;color:#252B32;margin:.1rem 0 .35rem}
@@ -125,11 +126,11 @@
 .uu-book-meta .details dt{font-weight:700;color:#16283F}
 .uu-book-meta .uu-buybox{margin-top:1.4rem}
 @media (max-width:64rem){
-  .uu-book-layout{grid-template-columns:minmax(12rem,16rem) 1fr;gap:1.8rem}
+  .uu-book-layout{grid-template-columns:minmax(14rem,18rem) 1fr;gap:1.8rem}
 }
 @media (max-width:40rem){
   .uu-book-layout{grid-template-columns:1fr}
-  .uu-book-cover{max-width:15rem}
+  .uu-book-cover{max-width:20rem;margin-inline:auto}
 }
 
 /* ---------- Section & index pages (Phase 3, Sections pass) ----------
