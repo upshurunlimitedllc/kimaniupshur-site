@@ -40,7 +40,7 @@ price key — its card then returns with working destinations.
 the shelves on 2026-10-30 at its publication wiring — Google Play and Payhip
 live and verified — and is removed from the list below.
 
-## The list (54 URLs)
+## The list (59 URLs)
 
 - /books/adaptive-behavior-made-simple/
 - /books/adaptive-decision-making-made-simple/
@@ -58,6 +58,7 @@ live and verified — and is removed from the list below.
 - /books/competition-made-simple/
 - /books/dating-made-simple/
 - /books/decision-clarity-made-simple/
+- /books/decision-making-made-simple/
 - /books/decision-pressure-made-simple/
 - /books/decision-systems-made-simple/
 - /books/hidden-errors-made-simple/
@@ -71,6 +72,7 @@ live and verified — and is removed from the list below.
 - /books/info-war-made-simple/
 - /books/information-dynamics-made-simple/
 - /books/information-strategy-made-simple/
+- /books/judgement-made-simple/
 - /books/lie-detector-made-simple/
 - /books/lonely-made-simple/
 - /books/machine-learning-made-simple/
@@ -86,11 +88,14 @@ live and verified — and is removed from the list below.
 - /books/relationships-fail-made-simple/
 - /books/resilient-systems-made-simple/
 - /books/resilient-thinking-made-simple/
+- /books/stolen-futures/
 - /books/strategic-judgment-made-simple/
 - /books/strategic-systems-made-simple/
 - /books/strategic-thinking-under-pressure-made-simple/
 - /books/tired-made-simple/
+- /books/the-polite-distance/
 - /books/wheres-my-money-made-simple/
+- /books/why-do-you-feel-stuck/
 - /books/why-your-decisions-fail/
 - /books/you-are-the-bottleneck/
 - /books/your-attention-is-being-sold/
