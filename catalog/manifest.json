@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1255,
-  "redirect_stubs_excluded": 7,
-  "carousel_entries": 1255,
-  "carousel_with_covers": 1253,
+  "unique_published_titles": 1254,
+  "redirect_stubs_excluded": 8,
+  "carousel_entries": 1254,
+  "carousel_with_covers": 1252,
   "missing_covers": []
  },
  "titles": [
@@ -450,22 +450,6 @@
    "collection": "tech-ai"
   },
   {
-   "slug": "ai-intelligence-made-simple",
-   "title": "Artificial Intelligence Made Simple",
-   "url": "/books/ai-intelligence-made-simple/",
-   "section": "books",
-   "cover": "/books/ai-intelligence-made-simple/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": false,
-   "category_links": [
-    "tech-ai",
-    "tech-ai"
-   ],
-   "collection": "tech-ai"
-  },
-  {
    "slug": "ai-safety-made-simple",
    "title": "AI Safety Made Simple",
    "url": "/books/ai-safety-made-simple/",
@@ -826,7 +810,7 @@
    "section": "books",
    "cover": "/books/artificial-intelligence-made-simple/cover.jpg",
    "has_cover": true,
-   "purchase_links": 4,
+   "purchase_links": 5,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [
@@ -19218,6 +19202,11 @@
    "url": "/books/agi-made-simple/",
    "canonical": "https://upshurunlimitedllc.com/books/artificial-general-intelligence-made-simple/",
    "file": "books/agi-made-simple/index.html"
+  },
+  {
+   "url": "/books/ai-intelligence-made-simple/",
+   "canonical": "https://upshurunlimitedllc.com/books/artificial-intelligence-made-simple/",
+   "file": "books/ai-intelligence-made-simple/index.html"
   },
   {
    "url": "/books/crypto-ai-made-simple/",
