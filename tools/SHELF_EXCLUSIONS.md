@@ -36,11 +36,11 @@ list is published for sale, remove it from this list and from
 `SHELF_EXCLUDED_SLUGS` in the same pass that wires its purchase links and
 price key — its card then returns with working destinations.
 
-**Scheduled return:** *Boundaries 2* (`/books/boundaries-2-made-simple/`)
-is fully packaged and returns at its publication wiring as soon as its
-cover banks and the re-embed lands.
+**Returned:** *Boundaries 2* (`/books/boundaries-2-made-simple/`) returned to
+the shelves on 2026-10-30 at its publication wiring — Google Play and Payhip
+live and verified — and is removed from the list below.
 
-## The list (55 URLs)
+## The list (54 URLs)
 
 - /books/adaptive-behavior-made-simple/
 - /books/adaptive-decision-making-made-simple/
@@ -52,7 +52,6 @@ cover banks and the re-embed lands.
 - /books/attention-systems-made-simple/
 - /books/behavioral-economics-made-simple/
 - /books/behavioral-intelligence-made-simple/
-- /books/boundaries-2-made-simple/
 - /books/cognitive-adaptation-made-simple/
 - /books/cognitive-friction-made-simple/
 - /books/cognitive-systems-made-simple/
