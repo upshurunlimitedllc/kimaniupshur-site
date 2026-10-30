@@ -60,7 +60,6 @@ SHELF_EXCLUDED_SLUGS = {  # not for sale in any format — see docstring rule
     "attention-systems-made-simple",
     "behavioral-economics-made-simple",
     "behavioral-intelligence-made-simple",
-    "boundaries-2-made-simple",
     "cognitive-adaptation-made-simple",
     "cognitive-friction-made-simple",
     "cognitive-systems-made-simple",
