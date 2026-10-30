@@ -12,6 +12,16 @@ Everything else is DERIVED from them:
   sitemap.xml               redirect-stub URLs removed
 
 Rules (owner directive 2026-10-15):
+  * SHELF EXCLUSION (owner directive 2026-10-30, storefront shelf cleanup):
+    titles in SHELF_EXCLUDED_SLUGS are published pages whose books are not
+    for sale in any format. Their pages, covers, manifest records, A-Z
+    index entries and sitemap entries are PRESERVED; they are excluded
+    only from shopping-shelf membership (this carousel, the homepage /
+    search dataset in assets/search-index.js, and the static category
+    grids). The same list is recorded in tools/SHELF_EXCLUSIONS.md; the
+    website sync program applies it to the surfaces it regenerates. When
+    an excluded title is published for sale, remove its slug here and
+    from that note in the same pass that wires its purchase links.
   * Redirect stubs (noindex meta-refresh pages) are NOT titles; they are
     recorded in the manifest's "stubs" list with their canonical target.
   * A book with no cover file keeps an honest missing-cover status
@@ -39,6 +49,63 @@ PURCHASE_PATTERNS = [
     r"gumroad\.com/l/[\w\-]+",
     r"amazon\.com/(?:dp|gp/product)/[A-Z0-9]{10}",
 ]
+SHELF_EXCLUDED_SLUGS = {  # not for sale in any format — see docstring rule
+    "adaptive-behavior-made-simple",
+    "adaptive-decision-making-made-simple",
+    "adaptive-leadership-made-simple",
+    "adaptive-thinking-made-simple",
+    "ai-and-business-made-simple",
+    "ai-and-cryptocurrency-made-simple",
+    "attention-control-made-simple",
+    "attention-systems-made-simple",
+    "behavioral-economics-made-simple",
+    "behavioral-intelligence-made-simple",
+    "boundaries-2-made-simple",
+    "cognitive-adaptation-made-simple",
+    "cognitive-friction-made-simple",
+    "cognitive-systems-made-simple",
+    "competition-made-simple",
+    "dating-made-simple",
+    "decision-clarity-made-simple",
+    "decision-pressure-made-simple",
+    "decision-systems-made-simple",
+    "hidden-errors-made-simple",
+    "high-quality-thinking-made-simple",
+    "human-behavior-made-simple",
+    "human-systems-made-simple",
+    "in-laws-made-simple",
+    "inflammatory-made-simple",
+    "info-ecology-made-simple",
+    "info-filtering-made-simple",
+    "info-war-made-simple",
+    "information-dynamics-made-simple",
+    "information-strategy-made-simple",
+    "lie-detector-made-simple",
+    "lonely-made-simple",
+    "machine-learning-made-simple",
+    "mental-clarity-made-simple",
+    "mental-frameworks-made-simple",
+    "mental-recovery-made-simple",
+    "minimalist-made-simple",
+    "nuclear-energy-made-simple",
+    "podcasts-made-simple",
+    "psychological-resilience-made-simple",
+    "quitting-made-simple",
+    "rejection-made-simple",
+    "relationships-fail-made-simple",
+    "resilient-systems-made-simple",
+    "resilient-thinking-made-simple",
+    "strategic-judgment-made-simple",
+    "strategic-systems-made-simple",
+    "strategic-thinking-under-pressure-made-simple",
+    "tired-made-simple",
+    "wheres-my-money-made-simple",
+    "why-your-decisions-fail",
+    "you-are-the-bottleneck",
+    "your-attention-is-being-sold",
+    "youre-not-a-smart-made-simple",
+    "youre-overthinking-everything",
+}
 COLLECTION_LABELS = {  # homepage-search display names per collection id
     "christian-living": "Christian Living", "bible-study": "Bible Study",
     "faith-doctrine": "Faith & Doctrine", "prayer-worship": "Prayer & Worship",
@@ -221,6 +288,16 @@ def main():
         if t["slug"] not in order[cat]:
             order[cat].append(t["slug"])
 
+    # --- shelf exclusion (owner directive 2026-10-30) ---
+    # Not-for-sale titles keep their pages and manifest records but hold
+    # no carousel membership. Applied after every add/primacy pass so a
+    # regeneration can never re-shelve them.
+    for slug in sorted(SHELF_EXCLUDED_SLUGS):
+        books.pop(slug, None)
+        for cid in order:
+            if slug in order[cid]:
+                order[cid].remove(slug)
+
     for cid in order:  # deterministic: slug-sorted lists
         order[cid] = sorted(set(order[cid]))
     books = {k: books[k] for k in sorted(books)}
@@ -351,8 +428,10 @@ def validate(bd, titles, stubs):
     errs = []
     urls = {b["u"] for b in bd["books"].values()}
     # Alias pages (same book in a second section) are covered by their
-    # canonical bookshelf entry; every other title needs its own entry.
-    expect = set(titles) - alias_urls(titles)
+    # canonical bookshelf entry; shelf-excluded titles (owner directive
+    # 2026-10-30) hold no entry by design; every other title needs one.
+    expect = set(titles) - alias_urls(titles) - {
+        t["url"] for t in titles.values() if t["slug"] in SHELF_EXCLUDED_SLUGS}
     if urls != expect:
         errs.append(f"carousel URL set != title set (diff {urls ^ expect})")
     for c in bd["collections"]:

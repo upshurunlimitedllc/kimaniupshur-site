@@ -63,6 +63,7 @@
 .uu-badge{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;
   padding:.18rem .5rem;border-radius:999px;margin-bottom:.45rem;text-transform:uppercase}
 .uu-badge-free{background:#38618C;color:#fff}
+.uu-badge-audio{background:#303C4B;color:#D4AF63}
 .uu-shelf-nav{display:flex;gap:.5rem;justify-content:flex-end;margin-top:.15rem}
 .uu-shelf-nav button{width:2.6rem;height:2.6rem;border-radius:50%;border:1.5px solid #16283F;
   background:#fff;color:#16283F;font-size:1.15rem;cursor:pointer;line-height:1}
