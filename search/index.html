@@ -54,10 +54,10 @@
   function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
   function card(b){
-    var badge = b.free ? '<span class="soon">Free \u2014 complete edition</span>' : "";
+    var ep = (window.UU_PRICES || {})[b.u], ap = (window.UU_AUDIO_PRICES || {})[b.u];
+    var badge = b.free ? '<span class="soon">Free \u2014 complete edition</span>' : ((ap && !ep) ? '<span class="soon">Audiobook Available</span>' : "");
     var price = "";
     if (!b.free) {
-      var ep = (window.UU_PRICES || {})[b.u], ap = (window.UU_AUDIO_PRICES || {})[b.u];
       if (ep && ap) price = '<p class="uu-price">Ebook ' + ep + " \u00b7 Audiobook " + ap + "</p>";
       else if (ep) price = '<p class="uu-price">Ebook ' + ep + "</p>";
       else if (ap) price = '<p class="uu-price">Audiobook ' + ap + "</p>";
