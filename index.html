@@ -344,17 +344,17 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
     if (AUDIOP[b.u]) return '<p class="uu-price">Audiobook ' + AUDIOP[b.u] + "</p>";
     return "";
   }
-  function card(b, feat, seriesName){
+  function card(b, feat, seriesName, shelfLabel){
     return '<article class="uu-scard">' +
       (b.free ? '<span class="uu-badge uu-badge-free">Free \u2014 complete edition</span>' : ((AUDIOP[b.u] && !PRICES[b.u]) ? '<span class="uu-badge uu-badge-audio">Audiobook Available</span>' : "")) +
       '<a href="' + esc(b.u) + '" aria-label="' + esc(b.t) + " by " + esc(b.a) + '">' +
       '<img src="' + esc(b.c) + '" alt="' + esc(b.t) + " book cover by " + esc(b.a) +
       '" loading="lazy" width="480" height="768">' +
       "<h3>" + esc(b.t) + '</h3><p class="uu-byline">by ' + esc(b.a) + "</p>" +
-      (seriesName && b.n ? '<p class="uu-byline">' + esc(seriesName) + " \u00b7 " + esc(b.n) + "</p>" : "") +
+      (shelfLabel ? '<p class="uu-byline">' + esc(shelfLabel) + "</p>" : (seriesName && b.n ? '<p class="uu-byline">' + esc(seriesName) + " \u00b7 " + esc(b.n) + "</p>" : "")) +
       priceHTML(b, feat) + "</a></article>";
   }
-  function setup(track, items, feat, seriesName){
+  function setup(track, items, feat, seriesName, shelfLabel){
     if (!track || !items.length) return;
     var rendered = 0, done = false;
     var sentinel = document.createElement("div");
@@ -366,7 +366,7 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
       var next = items.slice(rendered, rendered + CHUNK);
       if (!next.length) { done = true; sentinel.remove(); return; }
       sentinel.insertAdjacentHTML("beforebegin",
-        next.map(function(b){ return card(b, feat, seriesName); }).join(""));
+        next.map(function(b){ return card(b, feat, seriesName, shelfLabel); }).join(""));
       rendered += next.length;
       if (rendered >= items.length) { done = true; sentinel.remove(); }
       track.dispatchEvent(new Event("scroll"));
@@ -437,7 +437,7 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
       {id: "halcyon", items: byOrder(sec("Halcyon Protocol"), ["/books/halcyon-protocol/","/books/the-empty-chair/","/books/forty-tables/","/books/the-open-archive/","/books/halcyon-protocol-before-it-is-needed/","/books/halcyon-protocol-the-compliance-problem/"]), series: "Halcyon Protocol"},
       {id: "saturn", items: byOrder(sec("Saturn Cycle"), ["/books/vane/","/books/waits-for-morning/","/books/nyxari-the-awakening/","/books/mnemn-the-harvest/","/books/crescendo/","/books/antiphon-the-answering-song/","/books/the-completion/"]), series: "Saturn Cycle"},
       {id: "beacon", items: byOrder(sec("Beacon Saga"), ["/books/farlight-the-last-beacon/","/books/the-moving-dark/","/books/the-last-chart/","/books/the-farther-light/"]), series: "Beacon Saga"},
-      {id: "sf-standalone", items: sec("Standalone Novels")},
+      {id: "sf-standalone", items: sec("Standalone Novels"), label: "A standalone novel"},
       {id: "young", items: sec("Kids & Teens")},
       {id: "listen", items: sec("Audiobooks")},
       {id: "spanish", items: sec("Spanish")},
@@ -446,7 +446,7 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
       {id: "free", items: DATA.filter(function(b){ return !!b.free; })}
     ];
     shelves.forEach(function(s){
-      setup(document.querySelector('#' + s.id + " .uu-track"), s.items, !!s.feat, s.series);
+      setup(document.querySelector('#' + s.id + " .uu-track"), s.items, !!s.feat, s.series, s.label);
     });
     setupFeatured();
   }
