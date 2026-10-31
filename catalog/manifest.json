@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1289,
+  "unique_published_titles": 1297,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1289,
-  "carousel_with_covers": 1288,
+  "carousel_entries": 1297,
+  "carousel_with_covers": 1296,
   "missing_covers": []
  },
  "titles": [
@@ -12572,6 +12572,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "texas-penal-code-made-simple",
+   "title": "Texas Penal Code Made Simple",
+   "url": "/books/texas-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/texas-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "the-ai-age-made-simple",
    "title": "The AI Age Made Simple",
    "url": "/books/the-ai-age-made-simple/",
@@ -15907,6 +15920,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "utah-penal-code-made-simple",
+   "title": "Utah Penal Code Made Simple",
+   "url": "/books/utah-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/utah-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "value-made-simple",
    "title": "Value Made Simple",
    "url": "/books/value-made-simple/",
@@ -15973,6 +15999,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "vermont-penal-code-made-simple",
+   "title": "Vermont Penal Code Made Simple",
+   "url": "/books/vermont-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/vermont-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "victory-made-simple",
    "title": "Victory Made Simple",
    "url": "/books/victory-made-simple/",
@@ -16019,6 +16058,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "virginia-penal-code-made-simple",
+   "title": "Virginia Penal Code Made Simple",
+   "url": "/books/virginia-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/virginia-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "virtue-made-simple",
@@ -16131,6 +16183,19 @@
    "collection": "fiction"
   },
   {
+   "slug": "washington-penal-code-made-simple",
+   "title": "Washington Penal Code Made Simple",
+   "url": "/books/washington-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/washington-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "wealth-made-simple",
    "title": "Wealth Made Simple",
    "url": "/books/wealth-made-simple/",
@@ -16177,6 +16242,19 @@
     "family-relationships"
    ],
    "collection": "family-relationships"
+  },
+  {
+   "slug": "west-virginia-penal-code-made-simple",
+   "title": "West Virginia Penal Code Made Simple",
+   "url": "/books/west-virginia-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/west-virginia-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "where-did-my-money-go",
@@ -16467,6 +16545,19 @@
    "collection": "money-finance"
   },
   {
+   "slug": "wisconsin-penal-code-made-simple",
+   "title": "Wisconsin Penal Code Made Simple",
+   "url": "/books/wisconsin-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/wisconsin-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "wisdom-literature-made-simple",
    "title": "Wisdom Literature Made Simple",
    "url": "/books/wisdom-literature-made-simple/",
@@ -16558,6 +16649,19 @@
     "prayer-worship"
    ],
    "collection": "prayer-worship"
+  },
+  {
+   "slug": "wyoming-penal-code-made-simple",
+   "title": "Wyoming Penal Code Made Simple",
+   "url": "/books/wyoming-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/wyoming-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "you-already-know-what-to-do",
