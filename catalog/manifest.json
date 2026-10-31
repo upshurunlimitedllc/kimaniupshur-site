@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1253,
+  "unique_published_titles": 1254,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1253,
-  "carousel_with_covers": 1251,
+  "carousel_entries": 1254,
+  "carousel_with_covers": 1252,
   "missing_covers": []
  },
  "titles": [
@@ -13328,6 +13328,19 @@
     "cluster-fiction"
    ],
    "collection": "fiction"
+  },
+  {
+   "slug": "the-last-friday",
+   "title": "The Last Friday",
+   "url": "/teens/the-last-friday/",
+   "section": "teens",
+   "cover": "/teens/the-last-friday/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "the-light-of-the-world-made-simple",
