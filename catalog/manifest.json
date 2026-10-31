@@ -10370,7 +10370,7 @@
   },
   {
    "slug": "quantum-computing-made-simple",
-   "title": "Quantum Computing Made Simple",
+   "title": "Quantum Computing",
    "url": "/books/quantum-computing-made-simple/",
    "section": "books",
    "cover": "/books/quantum-computing-made-simple/cover.jpg",
@@ -10379,7 +10379,7 @@
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
-   "collection": "all"
+   "collection": "christian-living"
   },
   {
    "slug": "questions-made-simple",
