@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1262,
+  "unique_published_titles": 1271,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1262,
-  "carousel_with_covers": 1261,
+  "carousel_entries": 1271,
+  "carousel_with_covers": 1270,
   "missing_covers": []
  },
  "titles": [
@@ -7066,6 +7066,32 @@
    "collection": "faith-doctrine"
   },
   {
+   "slug": "kansas-penal-code-made-simple",
+   "title": "Kansas Penal Code Made Simple",
+   "url": "/books/kansas-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/kansas-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
+   "slug": "kentucky-penal-code-made-simple",
+   "title": "Kentucky Penal Code Made Simple",
+   "url": "/books/kentucky-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/kentucky-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "kindness-made-simple",
    "title": "Kindness Made Simple",
    "url": "/books/kindness-made-simple/",
@@ -7447,6 +7473,19 @@
    "collection": "faith-doctrine"
   },
   {
+   "slug": "louisiana-penal-code-made-simple",
+   "title": "Louisiana Penal Code Made Simple",
+   "url": "/books/louisiana-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/louisiana-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "love-made-simple",
    "title": "Love Made Simple",
    "url": "/books/love-made-simple/",
@@ -7640,6 +7679,19 @@
    "collection": "all"
   },
   {
+   "slug": "maine-penal-code-made-simple",
+   "title": "Maine Penal Code Made Simple",
+   "url": "/books/maine-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/maine-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "make-money-with-ai-made-simple",
    "title": "Make Money with Ai Made Simple",
    "url": "/books/make-money-with-ai-made-simple/",
@@ -7800,6 +7852,19 @@
    "collection": "bible-people"
   },
   {
+   "slug": "maryland-penal-code-made-simple",
+   "title": "Maryland Penal Code Made Simple",
+   "url": "/books/maryland-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/maryland-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "masks-made-simple",
    "title": "Masks Made Simple",
    "url": "/books/masks-made-simple/",
@@ -7814,6 +7879,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "massachusetts-penal-code-made-simple",
+   "title": "Massachusetts Penal Code Made Simple",
+   "url": "/books/massachusetts-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/massachusetts-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "mastering-ai",
@@ -8162,6 +8240,19 @@
    "collection": "all"
   },
   {
+   "slug": "michigan-penal-code-made-simple",
+   "title": "Michigan Penal Code Made Simple",
+   "url": "/books/michigan-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/michigan-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "midlife-made-simple",
    "title": "Midlife Made Simple",
    "url": "/books/midlife-made-simple/",
@@ -8255,6 +8346,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "minnesota-penal-code-made-simple",
+   "title": "Minnesota Penal Code Made Simple",
+   "url": "/books/minnesota-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/minnesota-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "miracles-made-simple",
    "title": "Miracles Made Simple",
    "url": "/books/miracles-made-simple/",
@@ -8317,6 +8421,19 @@
     "church-ministry"
    ],
    "collection": "church-ministry"
+  },
+  {
+   "slug": "mississippi-penal-code-made-simple",
+   "title": "Mississippi Penal Code Made Simple",
+   "url": "/books/mississippi-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/mississippi-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "mnemn-the-harvest",
