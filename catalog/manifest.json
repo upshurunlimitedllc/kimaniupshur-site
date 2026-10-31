@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1271,
+  "unique_published_titles": 1280,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1271,
-  "carousel_with_covers": 1270,
+  "carousel_entries": 1280,
+  "carousel_with_covers": 1279,
   "missing_covers": []
  },
  "titles": [
@@ -8436,6 +8436,19 @@
    "collection": "all"
   },
   {
+   "slug": "missouri-penal-code-made-simple",
+   "title": "Missouri Penal Code Made Simple",
+   "url": "/books/missouri-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/missouri-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "mnemn-the-harvest",
    "title": "Mnemn: The Harvest",
    "url": "/books/mnemn-the-harvest/",
@@ -8515,6 +8528,19 @@
     "money-finance"
    ],
    "collection": "money-finance"
+  },
+  {
+   "slug": "montana-penal-code-made-simple",
+   "title": "Montana Penal Code Made Simple",
+   "url": "/books/montana-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/montana-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "mordecai-made-simple",
@@ -8690,6 +8716,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "nebraska-penal-code-made-simple",
+   "title": "Nebraska Penal Code Made Simple",
+   "url": "/books/nebraska-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/nebraska-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "negative-self-talk-made-simple",
    "title": "Negative Self Talk Made Simple",
    "url": "/books/negative-self-talk-made-simple/",
@@ -8818,6 +8857,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "nevada-penal-code-made-simple",
+   "title": "Nevada Penal Code Made Simple",
+   "url": "/books/nevada-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/nevada-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "new-beginnings-made-simple",
    "title": "New Beginnings Made Simple",
    "url": "/books/new-beginnings-made-simple/",
@@ -8850,6 +8902,32 @@
    "collection": "christian-living"
   },
   {
+   "slug": "new-hampshire-penal-code-made-simple",
+   "title": "New Hampshire Penal Code Made Simple",
+   "url": "/books/new-hampshire-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/new-hampshire-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
+   "slug": "new-jersey-penal-code-made-simple",
+   "title": "New Jersey Penal Code Made Simple",
+   "url": "/books/new-jersey-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/new-jersey-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "new-manager-made-simple",
    "title": "New Manager Made Simple",
    "url": "/books/new-manager-made-simple/",
@@ -8866,6 +8944,19 @@
    "collection": "business-leadership"
   },
   {
+   "slug": "new-mexico-penal-code-made-simple",
+   "title": "New Mexico Penal Code Made Simple",
+   "url": "/books/new-mexico-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/new-mexico-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "new-mom-made-simple",
    "title": "New Mom Made Simple",
    "url": "/books/new-mom-made-simple/",
@@ -8880,6 +8971,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "new-york-penal-code-made-simple",
+   "title": "New York Penal Code Made Simple",
+   "url": "/books/new-york-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/new-york-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "news-addiction-made-simple",
@@ -8973,6 +9077,19 @@
     "personal-growth"
    ],
    "collection": "personal-growth"
+  },
+  {
+   "slug": "north-carolina-penal-code-made-simple",
+   "title": "North Carolina Penal Code Made Simple",
+   "url": "/books/north-carolina-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/north-carolina-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "nuclear-energy-made-simple",
