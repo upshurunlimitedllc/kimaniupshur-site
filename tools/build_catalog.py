@@ -105,6 +105,7 @@ SHELF_EXCLUDED_SLUGS = {  # not for sale in any format — see docstring rule
     "the-polite-distance",
     "wheres-my-money-made-simple",
     "why-do-you-feel-stuck",
+    "why-you-cant-focus-made-simple",
     "why-your-decisions-fail",
     "you-are-the-bottleneck",
     "your-attention-is-being-sold",

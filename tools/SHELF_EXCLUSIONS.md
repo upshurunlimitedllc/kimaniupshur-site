@@ -40,7 +40,7 @@ price key — its card then returns with working destinations.
 the shelves on 2026-10-30 at its publication wiring — Google Play and Payhip
 live and verified — and is removed from the list below.
 
-## The list (60 URLs)
+## The list (61 URLs)
 
 - /books/adaptive-behavior-made-simple/
 - /books/adaptive-decision-making-made-simple/
@@ -97,6 +97,7 @@ live and verified — and is removed from the list below.
 - /books/the-polite-distance/
 - /books/wheres-my-money-made-simple/
 - /books/why-do-you-feel-stuck/
+- /books/why-you-cant-focus-made-simple/
 - /books/why-your-decisions-fail/
 - /books/you-are-the-bottleneck/
 - /books/your-attention-is-being-sold/
