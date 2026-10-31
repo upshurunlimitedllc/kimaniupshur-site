@@ -40,7 +40,7 @@ price key — its card then returns with working destinations.
 the shelves on 2026-10-30 at its publication wiring — Google Play and Payhip
 live and verified — and is removed from the list below.
 
-## The list (59 URLs)
+## The list (60 URLs)
 
 - /books/adaptive-behavior-made-simple/
 - /books/adaptive-decision-making-made-simple/
@@ -76,6 +76,7 @@ live and verified — and is removed from the list below.
 - /books/lie-detector-made-simple/
 - /books/lonely-made-simple/
 - /books/machine-learning-made-simple/
+- /books/made-simple-advanced-thinking/
 - /books/mental-clarity-made-simple/
 - /books/mental-frameworks-made-simple/
 - /books/mental-recovery-made-simple/

@@ -84,6 +84,7 @@ SHELF_EXCLUDED_SLUGS = {  # not for sale in any format — see docstring rule
     "lie-detector-made-simple",
     "lonely-made-simple",
     "machine-learning-made-simple",
+    "made-simple-advanced-thinking",
     "mental-clarity-made-simple",
     "mental-frameworks-made-simple",
     "mental-recovery-made-simple",
