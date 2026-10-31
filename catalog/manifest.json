@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1297,
+  "unique_published_titles": 1302,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1297,
-  "carousel_with_covers": 1296,
+  "carousel_entries": 1302,
+  "carousel_with_covers": 1301,
   "missing_covers": []
  },
  "titles": [
@@ -6777,6 +6777,19 @@
    "collection": "bible-people"
   },
   {
+      "slug": "jesus-is-baptized",
+      "title": "Jesus Is Baptized",
+      "url": "/kids/jesus-is-baptized/",
+      "section": "kids",
+      "cover": "/kids/jesus-is-baptized/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
+  },
+  {
    "slug": "job-interviewing-made-simple",
    "title": "Job Interviewing Made Simple",
    "url": "/books/job-interviewing-made-simple/",
@@ -9103,6 +9116,19 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
+  },
+  {
+      "slug": "now-what",
+      "title": "Now What?",
+      "url": "/teens/now-what/",
+      "section": "teens",
+      "cover": "/teens/now-what/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "teens"
   },
   {
    "slug": "nuclear-energy-made-simple",
@@ -11750,6 +11776,19 @@
    "collection": "christian-living"
   },
   {
+      "slug": "sleep-is-a-gift",
+      "title": "Sleep Is a Gift",
+      "url": "/teens/sleep-is-a-gift/",
+      "section": "teens",
+      "cover": "/teens/sleep-is-a-gift/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "teens"
+  },
+  {
    "slug": "sleep-made-simple",
    "title": "Sleep Made Simple",
    "url": "/books/sleep-made-simple/",
@@ -11841,6 +11880,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+      "slug": "solomon-asks-for-wisdom",
+      "title": "Solomon Asks for Wisdom",
+      "url": "/kids/solomon-asks-for-wisdom/",
+      "section": "kids",
+      "cover": "/kids/solomon-asks-for-wisdom/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "solomon-made-simple",
@@ -13683,6 +13735,19 @@
     "faith-doctrine"
    ],
    "collection": "faith-doctrine"
+  },
+  {
+      "slug": "the-house-on-the-rock",
+      "title": "The House on the Rock",
+      "url": "/kids/the-house-on-the-rock/",
+      "section": "kids",
+      "cover": "/kids/the-house-on-the-rock/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "the-house-on-the-rock-made-simple",
