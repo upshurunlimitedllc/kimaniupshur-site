@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1254,
+  "unique_published_titles": 1253,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1254,
-  "carousel_with_covers": 1252,
+  "carousel_entries": 1253,
+  "carousel_with_covers": 1251,
   "missing_covers": []
  },
  "titles": [
@@ -15700,22 +15700,6 @@
    "url": "/books/wedding-planning-made-simple/",
    "section": "books",
    "cover": "/books/wedding-planning-made-simple/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [
-    "family-relationships",
-    "family-relationships"
-   ],
-   "collection": "family-relationships"
-  },
-  {
-   "slug": "weddings-made-simple",
-   "title": "Weddings",
-   "url": "/books/weddings-made-simple/",
-   "section": "books",
-   "cover": "/books/weddings-made-simple/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
