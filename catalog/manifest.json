@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1280,
+  "unique_published_titles": 1289,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1280,
-  "carousel_with_covers": 1279,
+  "carousel_entries": 1289,
+  "carousel_with_covers": 1288,
   "missing_covers": []
  },
  "titles": [
@@ -9092,6 +9092,19 @@
    "collection": "all"
   },
   {
+   "slug": "north-dakota-penal-code-made-simple",
+   "title": "North Dakota Penal Code Made Simple",
+   "url": "/books/north-dakota-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/north-dakota-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "nuclear-energy-made-simple",
    "title": "Nuclear Energy Made Simple",
    "url": "/books/nuclear-energy-made-simple/",
@@ -9184,6 +9197,32 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "ohio-penal-code-made-simple",
+   "title": "Ohio Penal Code Made Simple",
+   "url": "/books/ohio-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/ohio-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
+   "slug": "oklahoma-penal-code-made-simple",
+   "title": "Oklahoma Penal Code Made Simple",
+   "url": "/books/oklahoma-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/oklahoma-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "onboarding-made-simple",
@@ -9296,6 +9335,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "oregon-penal-code-made-simple",
+   "title": "Oregon Penal Code Made Simple",
+   "url": "/books/oregon-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/oregon-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "organizational-intelligence-made-simple",
@@ -9517,6 +9569,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "pennsylvania-penal-code-made-simple",
+   "title": "Pennsylvania Penal Code Made Simple",
+   "url": "/books/pennsylvania-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/pennsylvania-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "pentecost-made-simple",
@@ -10922,6 +10987,19 @@
    "collection": "bible-people"
   },
   {
+   "slug": "rhode-island-penal-code-made-simple",
+   "title": "Rhode Island Penal Code Made Simple",
+   "url": "/books/rhode-island-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/rhode-island-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "righteousness-made-simple",
    "title": "Righteousness Made Simple",
    "url": "/books/righteousness-made-simple/",
@@ -11797,6 +11875,32 @@
    "collection": "faith-doctrine"
   },
   {
+   "slug": "south-carolina-penal-code-made-simple",
+   "title": "South Carolina Penal Code Made Simple",
+   "url": "/books/south-carolina-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/south-carolina-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
+   "slug": "south-dakota-penal-code-made-simple",
+   "title": "South Dakota Penal Code Made Simple",
+   "url": "/books/south-dakota-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/south-dakota-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "speaking-in-tongues-made-simple",
    "title": "Speaking in Tongues Made Simple",
    "url": "/books/speaking-in-tongues-made-simple/",
@@ -12437,6 +12541,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "tennessee-penal-code-made-simple",
+   "title": "Tennessee Penal Code Made Simple",
+   "url": "/books/tennessee-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/tennessee-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "testimony-made-simple",
