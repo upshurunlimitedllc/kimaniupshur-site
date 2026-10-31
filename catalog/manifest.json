@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1254,
+  "unique_published_titles": 1262,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1254,
-  "carousel_with_covers": 1252,
+  "carousel_entries": 1262,
+  "carousel_with_covers": 1261,
   "missing_covers": []
  },
  "titles": [
@@ -757,6 +757,19 @@
     "bible-people"
    ],
    "collection": "bible-people"
+  },
+  {
+   "slug": "arizona-penal-code-made-simple",
+   "title": "Arizona Penal Code Made Simple",
+   "url": "/books/arizona-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/arizona-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "arkansas-penal-code-made-simple",
@@ -4786,6 +4799,19 @@
    "collection": "personal-growth"
   },
   {
+   "slug": "florida-penal-code-made-simple",
+   "title": "Florida Penal Code Made Simple",
+   "url": "/books/florida-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/florida-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "focus-made-simple",
    "title": "Focus Made Simple",
    "url": "/books/focus-made-simple/",
@@ -5118,6 +5144,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "georgia-penal-code-made-simple",
+   "title": "Georgia Penal Code Made Simple",
+   "url": "/books/georgia-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/georgia-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "gethsemane-made-simple",
@@ -5531,6 +5570,19 @@
     "business-leadership"
    ],
    "collection": "business-leadership"
+  },
+  {
+   "slug": "hawaii-penal-code-made-simple",
+   "title": "Hawaii Penal Code Made Simple",
+   "url": "/books/hawaii-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/hawaii-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "healing-made-simple",
@@ -5959,6 +6011,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "idaho-penal-code-made-simple",
+   "title": "Idaho Penal Code Made Simple",
+   "url": "/books/idaho-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/idaho-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
+  },
+  {
    "slug": "identity-made-simple",
    "title": "Identity Made Simple",
    "url": "/books/identity-made-simple/",
@@ -6005,6 +6070,19 @@
     "faith-doctrine"
    ],
    "collection": "faith-doctrine"
+  },
+  {
+   "slug": "illinois-penal-code-made-simple",
+   "title": "Illinois Penal Code Made Simple",
+   "url": "/books/illinois-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/illinois-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "imposter-syndrome-made-simple",
@@ -6066,6 +6144,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "indiana-penal-code-made-simple",
+   "title": "Indiana Penal Code Made Simple",
+   "url": "/books/indiana-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/indiana-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "infertility-made-simple",
@@ -6562,6 +6653,19 @@
     "money-finance"
    ],
    "collection": "money-finance"
+  },
+  {
+   "slug": "iowa-penal-code-made-simple",
+   "title": "Iowa Penal Code Made Simple",
+   "url": "/books/iowa-penal-code-made-simple/",
+   "section": "books",
+   "cover": "/books/iowa-penal-code-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "all"
   },
   {
    "slug": "isaiah-made-simple",
