@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1307,
+  "unique_published_titles": 1317,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1307,
-  "carousel_with_covers": 1306,
+  "carousel_entries": 1317,
+  "carousel_with_covers": 1316,
   "missing_covers": []
  },
  "titles": [
@@ -5534,6 +5534,19 @@
    "collection": "fiction"
   },
   {
+      "slug": "hands-held-high",
+      "title": "Hands Held High",
+      "url": "/kids/hands-held-high/",
+      "section": "kids",
+      "cover": "/kids/hands-held-high/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
+  },
+  {
    "slug": "hannah-made-simple",
    "title": "Hannah Made Simple",
    "url": "/books/hannah-made-simple/",
@@ -7073,6 +7086,19 @@
    "collection": "all"
   },
   {
+      "slug": "just-say-the-word",
+      "title": "Just Say the Word",
+      "url": "/kids/just-say-the-word/",
+      "section": "kids",
+      "cover": "/kids/just-say-the-word/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
+  },
+  {
    "slug": "justice-made-simple",
    "title": "Justice Made Simple",
    "url": "/books/justice-made-simple/",
@@ -7116,6 +7142,19 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
+  },
+  {
+      "slug": "keep-knocking",
+      "title": "Keep Knocking",
+      "url": "/kids/keep-knocking/",
+      "section": "kids",
+      "cover": "/kids/keep-knocking/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "kentucky-penal-code-made-simple",
@@ -7318,6 +7357,19 @@
     "business-leadership"
    ],
    "collection": "business-leadership"
+  },
+  {
+      "slug": "learn-from-the-ants",
+      "title": "Learn from the Ants",
+      "url": "/kids/learn-from-the-ants/",
+      "section": "kids",
+      "cover": "/kids/learn-from-the-ants/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "learning-made-simple",
@@ -9908,6 +9960,19 @@
    "collection": "tech-ai"
   },
   {
+      "slug": "planted-by-the-water",
+      "title": "Planted by the Water",
+      "url": "/kids/planted-by-the-water/",
+      "section": "kids",
+      "cover": "/kids/planted-by-the-water/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
+  },
+  {
    "slug": "podcasting-made-simple",
    "title": "Podcasting Made Simple",
    "url": "/books/podcasting-made-simple/",
@@ -11217,6 +11282,19 @@
     "business-leadership"
    ],
    "collection": "business-leadership"
+  },
+  {
+      "slug": "salt-and-light",
+      "title": "Salt and Light",
+      "url": "/kids/salt-and-light/",
+      "section": "kids",
+      "cover": "/kids/salt-and-light/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "salvation-made-simple",
@@ -12798,6 +12876,19 @@
    "collection": "faith-doctrine"
   },
   {
+      "slug": "the-axe-that-floated",
+      "title": "The Axe That Floated",
+      "url": "/kids/the-axe-that-floated/",
+      "section": "kids",
+      "cover": "/kids/the-axe-that-floated/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
+  },
+  {
    "slug": "the-beatitudes-made-simple",
    "title": "The Beatitudes Made Simple",
    "url": "/books/the-beatitudes-made-simple/",
@@ -13049,6 +13140,19 @@
     "church-ministry"
    ],
    "collection": "church-ministry"
+  },
+  {
+      "slug": "the-coin-in-the-fish",
+      "title": "The Coin in the Fish",
+      "url": "/kids/the-coin-in-the-fish/",
+      "section": "kids",
+      "cover": "/kids/the-coin-in-the-fish/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "the-coin-in-the-fishs-mouth-made-simple",
@@ -13569,6 +13673,19 @@
     "faith-doctrine"
    ],
    "collection": "faith-doctrine"
+  },
+  {
+      "slug": "the-god-who-sings-over-you",
+      "title": "The God Who Sings Over You",
+      "url": "/kids/the-god-who-sings-over-you/",
+      "section": "kids",
+      "cover": "/kids/the-god-who-sings-over-you/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "the-golden-rule-made-simple",
@@ -14866,6 +14983,19 @@
     "faith-doctrine"
    ],
    "collection": "faith-doctrine"
+  },
+  {
+      "slug": "the-seed-that-grows-in-secret",
+      "title": "The Seed That Grows in Secret",
+      "url": "/kids/the-seed-that-grows-in-secret/",
+      "section": "kids",
+      "cover": "/kids/the-seed-that-grows-in-secret/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "the-sermon-on-the-mount-made-simple",
