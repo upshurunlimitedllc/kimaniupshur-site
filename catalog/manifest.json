@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1332,
+  "unique_published_titles": 1342,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1332,
-  "carousel_with_covers": 1331,
+  "carousel_entries": 1342,
+  "carousel_with_covers": 1341,
   "missing_covers": []
  },
  "titles": [
@@ -4500,6 +4500,19 @@
    "collection": "health-wellness"
   },
   {
+   "slug": "eyes-up",
+   "title": "Eyes Up!",
+   "url": "/kids/eyes-up/",
+   "section": "kids",
+   "cover": "/kids/eyes-up/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "ezekiel-made-simple",
    "title": "Ezekiel Made Simple",
    "url": "/books/ezekiel-made-simple/",
@@ -6004,6 +6017,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "how-the-faith-survived",
+   "title": "How the Faith Survived",
+   "url": "/teens/how-the-faith-survived/",
+   "section": "teens",
+   "cover": "/teens/how-the-faith-survived/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "human-behavior-made-simple",
@@ -13105,6 +13131,19 @@
    "collection": "faith-doctrine"
   },
   {
+   "slug": "the-broken-arm",
+   "title": "The Broken Arm",
+   "url": "/kids/the-broken-arm/",
+   "section": "kids",
+   "cover": "/kids/the-broken-arm/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-bronze-serpent-made-simple",
    "title": "The Bronze Serpent Made Simple",
    "url": "/books/the-bronze-serpent-made-simple/",
@@ -13601,6 +13640,19 @@
    "collection": "bible-people"
   },
   {
+   "slug": "the-faith-we-confess",
+   "title": "The Faith We Confess",
+   "url": "/teens/the-faith-we-confess/",
+   "section": "teens",
+   "cover": "/teens/the-faith-we-confess/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-faithfulness-of-god-made-simple",
    "title": "The Faithfulness of God Made Simple",
    "url": "/books/the-faithfulness-of-god-made-simple/",
@@ -14004,6 +14056,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "the-hardest-forgiveness",
+   "title": "The Hardest Forgiveness",
+   "url": "/teens/the-hardest-forgiveness/",
+   "section": "teens",
+   "cover": "/teens/the-hardest-forgiveness/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-high-priestly-prayer-made-simple",
    "title": "The High Priestly Prayer Made Simple",
    "url": "/books/the-high-priestly-prayer-made-simple/",
@@ -14221,6 +14286,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "the-lord-who-watches-over-you",
+   "title": "The Lord Who Watches Over You",
+   "url": "/kids/the-lord-who-watches-over-you/",
+   "section": "kids",
+   "cover": "/kids/the-lord-who-watches-over-you/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
   },
   {
    "slug": "the-lords-prayer-made-simple",
@@ -15497,6 +15575,19 @@
    "collection": "bible-people"
   },
   {
+   "slug": "the-u-turn",
+   "title": "The U-Turn",
+   "url": "/teens/the-u-turn/",
+   "section": "teens",
+   "cover": "/teens/the-u-turn/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-unforgiving-servant-made-simple",
    "title": "The Unforgiving Servant Made Simple",
    "url": "/books/the-unforgiving-servant-made-simple/",
@@ -15636,6 +15727,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "the-voice-in-the-desert",
+   "title": "The Voice in the Desert",
+   "url": "/kids/the-voice-in-the-desert/",
+   "section": "kids",
+   "cover": "/kids/the-voice-in-the-desert/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
   },
   {
    "slug": "the-voice-of-god-made-simple",
@@ -15938,6 +16042,19 @@
     "bible-people"
    ],
    "collection": "bible-people"
+  },
+  {
+   "slug": "three-in-one",
+   "title": "Three in One",
+   "url": "/teens/three-in-one/",
+   "section": "teens",
+   "cover": "/teens/three-in-one/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "thresholds-made-simple",
@@ -16823,6 +16940,19 @@
     "business-leadership"
    ],
    "collection": "business-leadership"
+  },
+  {
+   "slug": "why-why-why",
+   "title": "Why? Why? Why?",
+   "url": "/kids/why-why-why/",
+   "section": "kids",
+   "cover": "/kids/why-why-why/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
   },
   {
    "slug": "why-you-cant-focus-made-simple",
