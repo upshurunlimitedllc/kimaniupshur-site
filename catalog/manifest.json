@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1302,
+  "unique_published_titles": 1307,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1302,
-  "carousel_with_covers": 1301,
+  "carousel_entries": 1307,
+  "carousel_with_covers": 1306,
   "missing_covers": []
  },
  "titles": [
@@ -628,6 +628,19 @@
     "bible-people"
    ],
    "collection": "bible-people"
+  },
+  {
+      "slug": "anna-waited-and-watched",
+      "title": "Anna Waited and Watched",
+      "url": "/kids/anna-waited-and-watched/",
+      "section": "kids",
+      "cover": "/kids/anna-waited-and-watched/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "antifragile-thinking-made-simple",
@@ -2799,6 +2812,19 @@
     "bible-people"
    ],
    "collection": "bible-people"
+  },
+  {
+      "slug": "count-the-stars",
+      "title": "Count the Stars",
+      "url": "/kids/count-the-stars/",
+      "section": "kids",
+      "cover": "/kids/count-the-stars/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "courage-made-simple",
@@ -14065,6 +14091,19 @@
    "collection": "bible-people"
   },
   {
+      "slug": "the-man-who-couldnt-talk",
+      "title": "The Man Who Couldn't Talk",
+      "url": "/kids/the-man-who-couldnt-talk/",
+      "section": "kids",
+      "cover": "/kids/the-man-who-couldnt-talk/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
+  },
+  {
    "slug": "the-man-with-dropsy-made-simple",
    "title": "The Man with Dropsy Made Simple",
    "url": "/books/the-man-with-dropsy-made-simple/",
@@ -14433,6 +14472,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+      "slug": "the-pearl-of-great-price",
+      "title": "The Pearl of Great Price",
+      "url": "/kids/the-pearl-of-great-price/",
+      "section": "kids",
+      "cover": "/kids/the-pearl-of-great-price/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "the-pearl-of-great-price-made-simple",
@@ -15858,6 +15910,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+      "slug": "two-homes-still-loved",
+      "title": "Two Homes, Still Loved",
+      "url": "/kids/two-homes-still-loved/",
+      "section": "kids",
+      "cover": "/kids/two-homes-still-loved/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "two-way-door-decisions-made-simple",
