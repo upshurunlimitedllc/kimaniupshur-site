@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "note": "Published from the Featured Picks Manager",
   "featured": [
     {
@@ -18,10 +18,10 @@
       "u": "/books/the-fruit-of-the-spirit-made-simple-collection/"
     },
     {
-      "u": "/books/no-king-in-israel/"
+      "u": "/books/the-virgin-birth-made-simple/"
     },
     {
-      "u": "/books/the-virgin-birth-made-simple/"
+      "u": "/books/ai-safety-made-simple/"
     }
   ]
 }
