@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1317,
+  "unique_published_titles": 1332,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1317,
-  "carousel_with_covers": 1316,
+  "carousel_entries": 1332,
+  "carousel_with_covers": 1331,
   "missing_covers": []
  },
  "titles": [
@@ -1674,6 +1674,19 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
+  },
+  {
+   "slug": "called-to-build",
+   "title": "Called to Build",
+   "url": "/teens/called-to-build/",
+   "section": "teens",
+   "cover": "/teens/called-to-build/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "calling-made-simple",
@@ -3885,6 +3898,19 @@
    "collection": "family-relationships"
   },
   {
+   "slug": "doomscrolling",
+   "title": "Doomscrolling",
+   "url": "/teens/doomscrolling/",
+   "section": "teens",
+   "cover": "/teens/doomscrolling/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "doomscrolling-made-simple",
    "title": "Doomscrolling Made Simple",
    "url": "/books/doomscrolling-made-simple/",
@@ -4854,6 +4880,19 @@
    "collection": "personal-growth"
   },
   {
+   "slug": "food-is-not-the-enemy",
+   "title": "Food Is Not the Enemy",
+   "url": "/teens/food-is-not-the-enemy/",
+   "section": "teens",
+   "cover": "/teens/food-is-not-the-enemy/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "foolishness-made-simple",
    "title": "Foolishness Made Simple",
    "url": "/books/foolishness-made-simple/",
@@ -5622,6 +5661,19 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
+  },
+  {
+   "slug": "he-saw-heaven-open",
+   "title": "He Saw Heaven Open",
+   "url": "/teens/he-saw-heaven-open/",
+   "section": "teens",
+   "cover": "/teens/he-saw-heaven-open/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "healing-made-simple",
@@ -7155,6 +7207,19 @@
       "coming_soon": false,
       "category_links": [],
       "collection": "kids"
+  },
+  {
+   "slug": "keepers-of-the-earth",
+   "title": "Keepers of the Earth",
+   "url": "/teens/keepers-of-the-earth/",
+   "section": "teens",
+   "cover": "/teens/keepers-of-the-earth/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "kentucky-penal-code-made-simple",
@@ -11223,6 +11288,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "running-from-god",
+   "title": "Running from God",
+   "url": "/teens/running-from-god/",
+   "section": "teens",
+   "cover": "/teens/running-from-god/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "ruth-made-simple",
    "title": "Ruth Made Simple",
    "url": "/books/ruth-made-simple/",
@@ -12481,6 +12559,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "such-a-time-as-this",
+   "title": "Such a Time as This",
+   "url": "/teens/such-a-time-as-this/",
+   "section": "teens",
+   "cover": "/teens/such-a-time-as-this/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "suffering-made-simple",
    "title": "Suffering Made Simple",
    "url": "/books/suffering-made-simple/",
@@ -12620,6 +12711,19 @@
     "money-finance"
    ],
    "collection": "money-finance"
+  },
+  {
+   "slug": "teach-us-to-pray",
+   "title": "Teach Us to Pray",
+   "url": "/teens/teach-us-to-pray/",
+   "section": "teens",
+   "cover": "/teens/teach-us-to-pray/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "teaching-made-simple",
@@ -13142,6 +13246,19 @@
    "collection": "church-ministry"
   },
   {
+   "slug": "the-church-that-wont-hide",
+   "title": "The Church That Won’t Hide",
+   "url": "/teens/the-church-that-wont-hide/",
+   "section": "teens",
+   "cover": "/teens/the-church-that-wont-hide/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
       "slug": "the-coin-in-the-fish",
       "title": "The Coin in the Fish",
       "url": "/kids/the-coin-in-the-fish/",
@@ -13231,6 +13348,19 @@
     "faith-doctrine"
    ],
    "collection": "faith-doctrine"
+  },
+  {
+   "slug": "the-credit-card-offer",
+   "title": "The Credit Card Offer",
+   "url": "/teens/the-credit-card-offer/",
+   "section": "teens",
+   "cover": "/teens/the-credit-card-offer/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "the-cross-made-simple",
@@ -13581,6 +13711,19 @@
    "collection": "bible-people"
   },
   {
+   "slug": "the-first-to-see-him",
+   "title": "The First to See Him",
+   "url": "/teens/the-first-to-see-him/",
+   "section": "teens",
+   "cover": "/teens/the-first-to-see-him/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-friend-at-midnight-made-simple",
    "title": "The Friend at Midnight Made Simple",
    "url": "/books/the-friend-at-midnight-made-simple/",
@@ -13595,6 +13738,19 @@
     "family-relationships"
    ],
    "collection": "family-relationships"
+  },
+  {
+   "slug": "the-friend-who-isnt-real",
+   "title": "The Friend Who Isn’t Real",
+   "url": "/teens/the-friend-who-isnt-real/",
+   "section": "teens",
+   "cover": "/teens/the-friend-who-isnt-real/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "the-fruit-of-the-spirit-made-simple-collection",
@@ -15168,6 +15324,19 @@
    "collection": "christian-living"
   },
   {
+   "slug": "the-temple-you-live-in",
+   "title": "The Temple You Live In",
+   "url": "/teens/the-temple-you-live-in/",
+   "section": "teens",
+   "cover": "/teens/the-temple-you-live-in/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-ten-commandments-made-simple",
    "title": "The Ten Commandments Made Simple",
    "url": "/books/the-ten-commandments-made-simple/",
@@ -16515,6 +16684,32 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
+  },
+  {
+   "slug": "when-a-grandparent-dies",
+   "title": "When a Grandparent Dies",
+   "url": "/teens/when-a-grandparent-dies/",
+   "section": "teens",
+   "cover": "/teens/when-a-grandparent-dies/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "when-your-best-friend-moves",
+   "title": "When Your Best Friend Moves",
+   "url": "/teens/when-your-best-friend-moves/",
+   "section": "teens",
+   "cover": "/teens/when-your-best-friend-moves/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
   },
   {
    "slug": "where-did-my-money-go",
