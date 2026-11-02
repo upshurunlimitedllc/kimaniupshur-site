@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1342,
+  "unique_published_titles": 1343,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1342,
-  "carousel_with_covers": 1341,
+  "carousel_entries": 1343,
+  "carousel_with_covers": 1342,
   "missing_covers": []
  },
  "titles": [
@@ -10748,6 +10748,19 @@
     "money-finance"
    ],
    "collection": "money-finance"
+  },
+  {
+      "slug": "real-or-fake",
+      "title": "Real or Fake?",
+      "url": "/teens/real-or-fake/",
+      "section": "teens",
+      "cover": "/teens/real-or-fake/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 1,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "teens"
   },
   {
    "slug": "reality-testing-made-simple",
