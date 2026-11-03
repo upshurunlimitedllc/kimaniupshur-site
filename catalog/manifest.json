@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1346,
+  "unique_published_titles": 1347,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1346,
-  "carousel_with_covers": 1345,
+  "carousel_entries": 1347,
+  "carousel_with_covers": 1346,
   "missing_covers": []
  },
  "titles": [
@@ -5966,6 +5966,22 @@
     "personal-growth"
    ],
    "collection": "personal-growth"
+  },
+  {
+   "slug": "home-selling-made-simple",
+   "title": "Home Selling Made Simple",
+   "url": "/books/home-selling-made-simple/",
+   "section": "books",
+   "cover": "/books/home-selling-made-simple/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "money-finance",
+    "money-finance"
+   ],
+   "collection": "money-finance"
   },
   {
    "slug": "homeschooling-made-simple",
