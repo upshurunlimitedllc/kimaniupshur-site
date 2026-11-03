@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1347,
+  "unique_published_titles": 1348,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1347,
-  "carousel_with_covers": 1346,
+  "carousel_entries": 1348,
+  "carousel_with_covers": 1347,
   "missing_covers": []
  },
  "titles": [
@@ -14466,6 +14466,22 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+   "slug": "the-made-simple-thinking-system",
+   "title": "The Made Simple Thinking System",
+   "url": "/books/the-made-simple-thinking-system/",
+   "section": "books",
+   "cover": "/books/the-made-simple-thinking-system/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "personal-growth",
+    "personal-growth"
+   ],
+   "collection": "personal-growth"
   },
   {
    "slug": "the-magnificat-made-simple",
