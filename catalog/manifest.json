@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1344,
+  "unique_published_titles": 1345,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1344,
-  "carousel_with_covers": 1343,
+  "carousel_entries": 1345,
+  "carousel_with_covers": 1344,
   "missing_covers": []
  },
  "titles": [
@@ -551,6 +551,19 @@
     "christian-living"
    ],
    "collection": "christian-living"
+  },
+  {
+      "slug": "always-tell-the-truth",
+      "title": "Always Tell the Truth",
+      "url": "/kids/always-tell-the-truth/",
+      "section": "kids",
+      "cover": "/kids/always-tell-the-truth/cover.jpg",
+      "has_cover": true,
+      "purchase_links": 2,
+      "purchasable": true,
+      "coming_soon": false,
+      "category_links": [],
+      "collection": "kids"
   },
   {
    "slug": "ambition-made-simple",
