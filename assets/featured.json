@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "note": "Published from the Featured Picks Manager",
   "featured": [
     {
@@ -12,16 +12,10 @@
       "u": "/books/marriage-made-simple/"
     },
     {
-      "u": "/books/bible-characters-the-complete-box-set/"
+      "u": "/books/ai-safety-made-simple/"
     },
     {
       "u": "/books/the-fruit-of-the-spirit-made-simple-collection/"
-    },
-    {
-      "u": "/books/the-virgin-birth-made-simple/"
-    },
-    {
-      "u": "/books/ai-safety-made-simple/"
     }
   ]
 }
