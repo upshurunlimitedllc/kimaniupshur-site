@@ -1,10 +1,10 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1343,
+  "unique_published_titles": 1344,
   "redirect_stubs_excluded": 9,
-  "carousel_entries": 1343,
-  "carousel_with_covers": 1342,
+  "carousel_entries": 1344,
+  "carousel_with_covers": 1343,
   "missing_covers": []
  },
  "titles": [
@@ -17027,6 +17027,22 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
+  },
+  {
+   "slug": "why-you-still-feel-stuck",
+   "title": "Why You Still Feel Stuck",
+   "url": "/books/why-you-still-feel-stuck/",
+   "section": "books",
+   "cover": "/books/why-you-still-feel-stuck/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "personal-growth",
+    "personal-growth"
+   ],
+   "collection": "personal-growth"
   },
   {
    "slug": "why-your-decisions-fail",
