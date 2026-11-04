@@ -1,11 +1,13 @@
 {
  "generated_from": "published title pages on disk (books/, kids/, teens/)",
  "counts": {
-  "unique_published_titles": 1348,
-  "redirect_stubs_excluded": 9,
-  "carousel_entries": 1348,
-  "carousel_with_covers": 1347,
-  "missing_covers": []
+  "unique_published_titles": 1352,
+  "redirect_stubs_excluded": 12,
+  "carousel_entries": 1352,
+  "carousel_with_covers": 1351,
+  "missing_covers": [
+   "/books/drone-flying-made-simple/"
+  ]
  },
  "titles": [
   {
@@ -553,19 +555,6 @@
    "collection": "christian-living"
   },
   {
-      "slug": "always-tell-the-truth",
-      "title": "Always Tell the Truth",
-      "url": "/kids/always-tell-the-truth/",
-      "section": "kids",
-      "cover": "/kids/always-tell-the-truth/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 2,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
-  },
-  {
    "slug": "ambition-made-simple",
    "title": "Ambition Made Simple",
    "url": "/books/ambition-made-simple/",
@@ -641,19 +630,6 @@
     "bible-people"
    ],
    "collection": "bible-people"
-  },
-  {
-      "slug": "anna-waited-and-watched",
-      "title": "Anna Waited and Watched",
-      "url": "/kids/anna-waited-and-watched/",
-      "section": "kids",
-      "cover": "/kids/anna-waited-and-watched/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "antifragile-thinking-made-simple",
@@ -1595,22 +1571,6 @@
    "collection": "family-relationships"
   },
   {
-   "slug": "brain-lying-made-simple",
-   "title": "Your Brain Is Lying To You",
-   "url": "/books/brain-lying-made-simple/",
-   "section": "books",
-   "cover": "/books/brain-lying-made-simple/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 0,
-   "purchasable": false,
-   "coming_soon": false,
-   "category_links": [
-    "health-wellness",
-    "health-wellness"
-   ],
-   "collection": "health-wellness"
-  },
-  {
    "slug": "brokenness-made-simple",
    "title": "Brokenness Made Simple",
    "url": "/books/brokenness-made-simple/",
@@ -1703,19 +1663,6 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
-  },
-  {
-   "slug": "called-to-build",
-   "title": "Called to Build",
-   "url": "/teens/called-to-build/",
-   "section": "teens",
-   "cover": "/teens/called-to-build/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
   },
   {
    "slug": "calling-made-simple",
@@ -2856,19 +2803,6 @@
    "collection": "bible-people"
   },
   {
-      "slug": "count-the-stars",
-      "title": "Count the Stars",
-      "url": "/kids/count-the-stars/",
-      "section": "kids",
-      "cover": "/kids/count-the-stars/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
-  },
-  {
    "slug": "courage-made-simple",
    "title": "Courage Made Simple",
    "url": "/books/courage-made-simple/",
@@ -3927,19 +3861,6 @@
    "collection": "family-relationships"
   },
   {
-   "slug": "doomscrolling",
-   "title": "Doomscrolling",
-   "url": "/teens/doomscrolling/",
-   "section": "teens",
-   "cover": "/teens/doomscrolling/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "doomscrolling-made-simple",
    "title": "Doomscrolling Made Simple",
    "url": "/books/doomscrolling-made-simple/",
@@ -4529,19 +4450,6 @@
    "collection": "health-wellness"
   },
   {
-   "slug": "eyes-up",
-   "title": "Eyes Up!",
-   "url": "/kids/eyes-up/",
-   "section": "kids",
-   "cover": "/kids/eyes-up/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "kids"
-  },
-  {
    "slug": "ezekiel-made-simple",
    "title": "Ezekiel Made Simple",
    "url": "/books/ezekiel-made-simple/",
@@ -4920,19 +4828,6 @@
     "personal-growth"
    ],
    "collection": "personal-growth"
-  },
-  {
-   "slug": "food-is-not-the-enemy",
-   "title": "Food Is Not the Enemy",
-   "url": "/teens/food-is-not-the-enemy/",
-   "section": "teens",
-   "cover": "/teens/food-is-not-the-enemy/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
   },
   {
    "slug": "foolishness-made-simple",
@@ -5615,19 +5510,6 @@
    "collection": "fiction"
   },
   {
-      "slug": "hands-held-high",
-      "title": "Hands Held High",
-      "url": "/kids/hands-held-high/",
-      "section": "kids",
-      "cover": "/kids/hands-held-high/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
-  },
-  {
    "slug": "hannah-made-simple",
    "title": "Hannah Made Simple",
    "url": "/books/hannah-made-simple/",
@@ -5703,19 +5585,6 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
-  },
-  {
-   "slug": "he-saw-heaven-open",
-   "title": "He Saw Heaven Open",
-   "url": "/teens/he-saw-heaven-open/",
-   "section": "teens",
-   "cover": "/teens/he-saw-heaven-open/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
   },
   {
    "slug": "healing-made-simple",
@@ -6062,19 +5931,6 @@
     "christian-living"
    ],
    "collection": "christian-living"
-  },
-  {
-   "slug": "how-the-faith-survived",
-   "title": "How the Faith Survived",
-   "url": "/teens/how-the-faith-survived/",
-   "section": "teens",
-   "cover": "/teens/how-the-faith-survived/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
   },
   {
    "slug": "human-behavior-made-simple",
@@ -6939,19 +6795,6 @@
    "collection": "bible-people"
   },
   {
-      "slug": "jesus-is-baptized",
-      "title": "Jesus Is Baptized",
-      "url": "/kids/jesus-is-baptized/",
-      "section": "kids",
-      "cover": "/kids/jesus-is-baptized/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
-  },
-  {
    "slug": "job-interviewing-made-simple",
    "title": "Job Interviewing Made Simple",
    "url": "/books/job-interviewing-made-simple/",
@@ -7154,22 +6997,6 @@
    "collection": "bible-people"
   },
   {
-   "slug": "judgement-made-simple",
-   "title": "Judgement Made Simple",
-   "url": "/books/judgement-made-simple/",
-   "section": "books",
-   "cover": "/books/judgement-made-simple/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 2,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [
-    "christian-living",
-    "christian-living"
-   ],
-   "collection": "christian-living"
-  },
-  {
    "slug": "judgment-made-simple",
    "title": "Judgment Made Simple",
    "url": "/books/judgment-made-simple/",
@@ -7207,19 +7034,6 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
-  },
-  {
-      "slug": "just-say-the-word",
-      "title": "Just Say the Word",
-      "url": "/kids/just-say-the-word/",
-      "section": "kids",
-      "cover": "/kids/just-say-the-word/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "justice-made-simple",
@@ -7265,32 +7079,6 @@
    "coming_soon": false,
    "category_links": [],
    "collection": "all"
-  },
-  {
-      "slug": "keep-knocking",
-      "title": "Keep Knocking",
-      "url": "/kids/keep-knocking/",
-      "section": "kids",
-      "cover": "/kids/keep-knocking/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
-  },
-  {
-   "slug": "keepers-of-the-earth",
-   "title": "Keepers of the Earth",
-   "url": "/teens/keepers-of-the-earth/",
-   "section": "teens",
-   "cover": "/teens/keepers-of-the-earth/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
   },
   {
    "slug": "kentucky-penal-code-made-simple",
@@ -7493,19 +7281,6 @@
     "business-leadership"
    ],
    "collection": "business-leadership"
-  },
-  {
-      "slug": "learn-from-the-ants",
-      "title": "Learn from the Ants",
-      "url": "/kids/learn-from-the-ants/",
-      "section": "kids",
-      "cover": "/kids/learn-from-the-ants/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "learning-made-simple",
@@ -9332,19 +9107,6 @@
    "collection": "all"
   },
   {
-      "slug": "now-what",
-      "title": "Now What?",
-      "url": "/teens/now-what/",
-      "section": "teens",
-      "cover": "/teens/now-what/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "teens"
-  },
-  {
    "slug": "nuclear-energy-made-simple",
    "title": "Nuclear Energy Made Simple",
    "url": "/books/nuclear-energy-made-simple/",
@@ -10096,19 +9858,6 @@
    "collection": "tech-ai"
   },
   {
-      "slug": "planted-by-the-water",
-      "title": "Planted by the Water",
-      "url": "/kids/planted-by-the-water/",
-      "section": "kids",
-      "cover": "/kids/planted-by-the-water/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
-  },
-  {
    "slug": "podcasting-made-simple",
    "title": "Podcasting Made Simple",
    "url": "/books/podcasting-made-simple/",
@@ -10795,19 +10544,6 @@
    "collection": "money-finance"
   },
   {
-      "slug": "real-or-fake",
-      "title": "Real or Fake?",
-      "url": "/teens/real-or-fake/",
-      "section": "teens",
-      "cover": "/teens/real-or-fake/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "teens"
-  },
-  {
    "slug": "reality-testing-made-simple",
    "title": "Reality Testing Made Simple",
    "url": "/books/reality-testing-made-simple/",
@@ -11372,19 +11108,6 @@
    "collection": "christian-living"
   },
   {
-   "slug": "running-from-god",
-   "title": "Running from God",
-   "url": "/teens/running-from-god/",
-   "section": "teens",
-   "cover": "/teens/running-from-god/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "ruth-made-simple",
    "title": "Ruth Made Simple",
    "url": "/books/ruth-made-simple/",
@@ -11444,19 +11167,6 @@
     "business-leadership"
    ],
    "collection": "business-leadership"
-  },
-  {
-      "slug": "salt-and-light",
-      "title": "Salt and Light",
-      "url": "/kids/salt-and-light/",
-      "section": "kids",
-      "cover": "/kids/salt-and-light/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "salvation-made-simple",
@@ -12042,19 +11752,6 @@
    "collection": "christian-living"
   },
   {
-      "slug": "sleep-is-a-gift",
-      "title": "Sleep Is a Gift",
-      "url": "/teens/sleep-is-a-gift/",
-      "section": "teens",
-      "cover": "/teens/sleep-is-a-gift/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "teens"
-  },
-  {
    "slug": "sleep-made-simple",
    "title": "Sleep Made Simple",
    "url": "/books/sleep-made-simple/",
@@ -12146,19 +11843,6 @@
     "christian-living"
    ],
    "collection": "christian-living"
-  },
-  {
-      "slug": "solomon-asks-for-wisdom",
-      "title": "Solomon Asks for Wisdom",
-      "url": "/kids/solomon-asks-for-wisdom/",
-      "section": "kids",
-      "cover": "/kids/solomon-asks-for-wisdom/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "solomon-made-simple",
@@ -12643,19 +12327,6 @@
    "collection": "christian-living"
   },
   {
-   "slug": "such-a-time-as-this",
-   "title": "Such a Time as This",
-   "url": "/teens/such-a-time-as-this/",
-   "section": "teens",
-   "cover": "/teens/such-a-time-as-this/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "suffering-made-simple",
    "title": "Suffering Made Simple",
    "url": "/books/suffering-made-simple/",
@@ -12795,19 +12466,6 @@
     "money-finance"
    ],
    "collection": "money-finance"
-  },
-  {
-   "slug": "teach-us-to-pray",
-   "title": "Teach Us to Pray",
-   "url": "/teens/teach-us-to-pray/",
-   "section": "teens",
-   "cover": "/teens/teach-us-to-pray/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
   },
   {
    "slug": "teaching-made-simple",
@@ -13064,19 +12722,6 @@
    "collection": "faith-doctrine"
   },
   {
-      "slug": "the-axe-that-floated",
-      "title": "The Axe That Floated",
-      "url": "/kids/the-axe-that-floated/",
-      "section": "kids",
-      "cover": "/kids/the-axe-that-floated/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
-  },
-  {
    "slug": "the-beatitudes-made-simple",
    "title": "The Beatitudes Made Simple",
    "url": "/books/the-beatitudes-made-simple/",
@@ -13187,19 +12832,6 @@
     "faith-doctrine"
    ],
    "collection": "faith-doctrine"
-  },
-  {
-   "slug": "the-broken-arm",
-   "title": "The Broken Arm",
-   "url": "/kids/the-broken-arm/",
-   "section": "kids",
-   "cover": "/kids/the-broken-arm/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "kids"
   },
   {
    "slug": "the-bronze-serpent-made-simple",
@@ -13343,32 +12975,6 @@
    "collection": "church-ministry"
   },
   {
-   "slug": "the-church-that-wont-hide",
-   "title": "The Church That Won’t Hide",
-   "url": "/teens/the-church-that-wont-hide/",
-   "section": "teens",
-   "cover": "/teens/the-church-that-wont-hide/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
-      "slug": "the-coin-in-the-fish",
-      "title": "The Coin in the Fish",
-      "url": "/kids/the-coin-in-the-fish/",
-      "section": "kids",
-      "cover": "/kids/the-coin-in-the-fish/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
-  },
-  {
    "slug": "the-coin-in-the-fishs-mouth-made-simple",
    "title": "The Coin in the Fish's Mouth Made Simple",
    "url": "/books/the-coin-in-the-fishs-mouth-made-simple/",
@@ -13445,19 +13051,6 @@
     "faith-doctrine"
    ],
    "collection": "faith-doctrine"
-  },
-  {
-   "slug": "the-credit-card-offer",
-   "title": "The Credit Card Offer",
-   "url": "/teens/the-credit-card-offer/",
-   "section": "teens",
-   "cover": "/teens/the-credit-card-offer/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
   },
   {
    "slug": "the-cross-made-simple",
@@ -13634,6 +13227,22 @@
    "collection": "fiction"
   },
   {
+   "slug": "the-empty-chair",
+   "title": "The Empty Chair",
+   "url": "/books/the-empty-chair/",
+   "section": "books",
+   "cover": "/books/the-empty-chair/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [
+    "fiction",
+    "fiction"
+   ],
+   "collection": "fiction"
+  },
+  {
    "slug": "the-empty-tomb-made-simple",
    "title": "The Empty Tomb Made Simple",
    "url": "/books/the-empty-tomb-made-simple/",
@@ -13696,19 +13305,6 @@
     "bible-people"
    ],
    "collection": "bible-people"
-  },
-  {
-   "slug": "the-faith-we-confess",
-   "title": "The Faith We Confess",
-   "url": "/teens/the-faith-we-confess/",
-   "section": "teens",
-   "cover": "/teens/the-faith-we-confess/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
   },
   {
    "slug": "the-faithfulness-of-god-made-simple",
@@ -13821,19 +13417,6 @@
    "collection": "bible-people"
   },
   {
-   "slug": "the-first-to-see-him",
-   "title": "The First to See Him",
-   "url": "/teens/the-first-to-see-him/",
-   "section": "teens",
-   "cover": "/teens/the-first-to-see-him/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "the-friend-at-midnight-made-simple",
    "title": "The Friend at Midnight Made Simple",
    "url": "/books/the-friend-at-midnight-made-simple/",
@@ -13848,19 +13431,6 @@
     "family-relationships"
    ],
    "collection": "family-relationships"
-  },
-  {
-   "slug": "the-friend-who-isnt-real",
-   "title": "The Friend Who Isn’t Real",
-   "url": "/teens/the-friend-who-isnt-real/",
-   "section": "teens",
-   "cover": "/teens/the-friend-who-isnt-real/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
   },
   {
    "slug": "the-fruit-of-the-spirit-made-simple-collection",
@@ -13939,19 +13509,6 @@
     "faith-doctrine"
    ],
    "collection": "faith-doctrine"
-  },
-  {
-      "slug": "the-god-who-sings-over-you",
-      "title": "The God Who Sings Over You",
-      "url": "/kids/the-god-who-sings-over-you/",
-      "section": "kids",
-      "cover": "/kids/the-god-who-sings-over-you/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "the-golden-rule-made-simple",
@@ -14114,19 +13671,6 @@
    "collection": "christian-living"
   },
   {
-   "slug": "the-hardest-forgiveness",
-   "title": "The Hardest Forgiveness",
-   "url": "/teens/the-hardest-forgiveness/",
-   "section": "teens",
-   "cover": "/teens/the-hardest-forgiveness/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "the-high-priestly-prayer-made-simple",
    "title": "The High Priestly Prayer Made Simple",
    "url": "/books/the-high-priestly-prayer-made-simple/",
@@ -14157,19 +13701,6 @@
     "faith-doctrine"
    ],
    "collection": "faith-doctrine"
-  },
-  {
-      "slug": "the-house-on-the-rock",
-      "title": "The House on the Rock",
-      "url": "/kids/the-house-on-the-rock/",
-      "section": "kids",
-      "cover": "/kids/the-house-on-the-rock/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "the-house-on-the-rock-made-simple",
@@ -14285,19 +13816,6 @@
    "collection": "fiction"
   },
   {
-   "slug": "the-last-friday",
-   "title": "The Last Friday",
-   "url": "/teens/the-last-friday/",
-   "section": "teens",
-   "cover": "/teens/the-last-friday/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "the-light-of-the-world-made-simple",
    "title": "The Light of the World Made Simple",
    "url": "/books/the-light-of-the-world-made-simple/",
@@ -14344,19 +13862,6 @@
     "christian-living"
    ],
    "collection": "christian-living"
-  },
-  {
-   "slug": "the-lord-who-watches-over-you",
-   "title": "The Lord Who Watches Over You",
-   "url": "/kids/the-lord-who-watches-over-you/",
-   "section": "kids",
-   "cover": "/kids/the-lord-who-watches-over-you/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "kids"
   },
   {
    "slug": "the-lords-prayer-made-simple",
@@ -14514,19 +14019,6 @@
     "bible-people"
    ],
    "collection": "bible-people"
-  },
-  {
-      "slug": "the-man-who-couldnt-talk",
-      "title": "The Man Who Couldn't Talk",
-      "url": "/kids/the-man-who-couldnt-talk/",
-      "section": "kids",
-      "cover": "/kids/the-man-who-couldnt-talk/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "the-man-with-dropsy-made-simple",
@@ -14897,19 +14389,6 @@
     "christian-living"
    ],
    "collection": "christian-living"
-  },
-  {
-      "slug": "the-pearl-of-great-price",
-      "title": "The Pearl of Great Price",
-      "url": "/kids/the-pearl-of-great-price/",
-      "section": "kids",
-      "cover": "/kids/the-pearl-of-great-price/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "the-pearl-of-great-price-made-simple",
@@ -15293,19 +14772,6 @@
    "collection": "faith-doctrine"
   },
   {
-      "slug": "the-seed-that-grows-in-secret",
-      "title": "The Seed That Grows in Secret",
-      "url": "/kids/the-seed-that-grows-in-secret/",
-      "section": "kids",
-      "cover": "/kids/the-seed-that-grows-in-secret/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
-  },
-  {
    "slug": "the-sermon-on-the-mount-made-simple",
    "title": "The Sermon on the Mount Made Simple",
    "url": "/books/the-sermon-on-the-mount-made-simple/",
@@ -15476,19 +14942,6 @@
    "collection": "christian-living"
   },
   {
-   "slug": "the-temple-you-live-in",
-   "title": "The Temple You Live In",
-   "url": "/teens/the-temple-you-live-in/",
-   "section": "teens",
-   "cover": "/teens/the-temple-you-live-in/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "the-ten-commandments-made-simple",
    "title": "The Ten Commandments Made Simple",
    "url": "/books/the-ten-commandments-made-simple/",
@@ -15649,19 +15102,6 @@
    "collection": "bible-people"
   },
   {
-   "slug": "the-u-turn",
-   "title": "The U-Turn",
-   "url": "/teens/the-u-turn/",
-   "section": "teens",
-   "cover": "/teens/the-u-turn/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "the-unforgiving-servant-made-simple",
    "title": "The Unforgiving Servant Made Simple",
    "url": "/books/the-unforgiving-servant-made-simple/",
@@ -15801,19 +15241,6 @@
     "christian-living"
    ],
    "collection": "christian-living"
-  },
-  {
-   "slug": "the-voice-in-the-desert",
-   "title": "The Voice in the Desert",
-   "url": "/kids/the-voice-in-the-desert/",
-   "section": "kids",
-   "cover": "/kids/the-voice-in-the-desert/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "kids"
   },
   {
    "slug": "the-voice-of-god-made-simple",
@@ -16118,19 +15545,6 @@
    "collection": "bible-people"
   },
   {
-   "slug": "three-in-one",
-   "title": "Three in One",
-   "url": "/teens/three-in-one/",
-   "section": "teens",
-   "cover": "/teens/three-in-one/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "thresholds-made-simple",
    "title": "Thresholds Made Simple",
    "url": "/books/thresholds-made-simple/",
@@ -16400,19 +15814,6 @@
     "christian-living"
    ],
    "collection": "christian-living"
-  },
-  {
-      "slug": "two-homes-still-loved",
-      "title": "Two Homes, Still Loved",
-      "url": "/kids/two-homes-still-loved/",
-      "section": "kids",
-      "cover": "/kids/two-homes-still-loved/cover.jpg",
-      "has_cover": true,
-      "purchase_links": 1,
-      "purchasable": true,
-      "coming_soon": false,
-      "category_links": [],
-      "collection": "kids"
   },
   {
    "slug": "two-way-door-decisions-made-simple",
@@ -16877,32 +16278,6 @@
    "collection": "all"
   },
   {
-   "slug": "when-a-grandparent-dies",
-   "title": "When a Grandparent Dies",
-   "url": "/teens/when-a-grandparent-dies/",
-   "section": "teens",
-   "cover": "/teens/when-a-grandparent-dies/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
-   "slug": "when-your-best-friend-moves",
-   "title": "When Your Best Friend Moves",
-   "url": "/teens/when-your-best-friend-moves/",
-   "section": "teens",
-   "cover": "/teens/when-your-best-friend-moves/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "teens"
-  },
-  {
    "slug": "where-did-my-money-go",
    "title": "Where Did My Money Go?!",
    "url": "/books/where-did-my-money-go/",
@@ -16934,22 +16309,6 @@
     "tech-ai"
    ],
    "collection": "tech-ai"
-  },
-  {
-   "slug": "why-do-you-feel-stuck",
-   "title": "Why Do You Feel Stuck",
-   "url": "/books/why-do-you-feel-stuck/",
-   "section": "books",
-   "cover": "/books/why-do-you-feel-stuck/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [
-    "personal-growth",
-    "personal-growth"
-   ],
-   "collection": "personal-growth"
   },
   {
    "slug": "why-nobody-takes-you-seriously",
@@ -17014,19 +16373,6 @@
     "business-leadership"
    ],
    "collection": "business-leadership"
-  },
-  {
-   "slug": "why-why-why",
-   "title": "Why? Why? Why?",
-   "url": "/kids/why-why-why/",
-   "section": "kids",
-   "cover": "/kids/why-why-why/cover.jpg",
-   "has_cover": true,
-   "purchase_links": 1,
-   "purchasable": true,
-   "coming_soon": false,
-   "category_links": [],
-   "collection": "kids"
   },
   {
    "slug": "why-you-cant-focus-made-simple",
@@ -17563,6 +16909,32 @@
    "collection": "kids"
   },
   {
+   "slug": "always-tell-the-truth",
+   "title": "Always Tell the Truth",
+   "url": "/kids/always-tell-the-truth/",
+   "section": "kids",
+   "cover": "/kids/always-tell-the-truth/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "anna-waited-and-watched",
+   "title": "Anna Waited and Watched",
+   "url": "/kids/anna-waited-and-watched/",
+   "section": "kids",
+   "cover": "/kids/anna-waited-and-watched/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "bartimaeus-sees",
    "title": "Bartimaeus Sees",
    "url": "/kids/bartimaeus-sees/",
@@ -17609,6 +16981,19 @@
    "cover": "/kids/bread-from-the-sky/cover.jpg",
    "has_cover": true,
    "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "count-the-stars",
+   "title": "Count the Stars",
+   "url": "/kids/count-the-stars/",
+   "section": "kids",
+   "cover": "/kids/count-the-stars/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17674,6 +17059,19 @@
    "cover": "/kids/esther-the-brave-queen/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "eyes-up",
+   "title": "Eyes Up!",
+   "url": "/kids/eyes-up/",
+   "section": "kids",
+   "cover": "/kids/eyes-up/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17823,6 +17221,19 @@
    "collection": "kids"
   },
   {
+   "slug": "hands-held-high",
+   "title": "Hands Held High",
+   "url": "/kids/hands-held-high/",
+   "section": "kids",
+   "cover": "/kids/hands-held-high/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "hannahs-prayer",
    "title": "Hannah's Prayer",
    "url": "/kids/hannahs-prayer/",
@@ -17856,6 +17267,19 @@
    "cover": "/kids/jesus-calms-the-storm/cover.jpg",
    "has_cover": true,
    "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "jesus-is-baptized",
+   "title": "Jesus Is Baptized",
+   "url": "/kids/jesus-is-baptized/",
+   "section": "kids",
+   "cover": "/kids/jesus-is-baptized/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -17914,6 +17338,32 @@
    "collection": "kids"
   },
   {
+   "slug": "just-say-the-word",
+   "title": "Just Say the Word",
+   "url": "/kids/just-say-the-word/",
+   "section": "kids",
+   "cover": "/kids/just-say-the-word/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "keep-knocking",
+   "title": "Keep Knocking",
+   "url": "/kids/keep-knocking/",
+   "section": "kids",
+   "cover": "/kids/keep-knocking/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "kindness-online",
    "title": "Kindness Online",
    "url": "/kids/kindness-online/",
@@ -17921,6 +17371,19 @@
    "cover": "/kids/kindness-online/cover.jpg",
    "has_cover": true,
    "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "learn-from-the-ants",
+   "title": "Learn from the Ants",
+   "url": "/kids/learn-from-the-ants/",
+   "section": "kids",
+   "cover": "/kids/learn-from-the-ants/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18044,11 +17507,37 @@
    "collection": "kids"
   },
   {
+   "slug": "planted-by-the-water",
+   "title": "Planted by the Water",
+   "url": "/kids/planted-by-the-water/",
+   "section": "kids",
+   "cover": "/kids/planted-by-the-water/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "ruth-and-naomi",
    "title": "Ruth and Naomi",
    "url": "/kids/ruth-and-naomi/",
    "section": "kids",
    "cover": "/kids/ruth-and-naomi/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "salt-and-light",
+   "title": "Salt and Light",
+   "url": "/kids/salt-and-light/",
+   "section": "kids",
+   "cover": "/kids/salt-and-light/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -18148,6 +17637,19 @@
    "collection": "kids"
   },
   {
+   "slug": "solomon-asks-for-wisdom",
+   "title": "Solomon Asks for Wisdom",
+   "url": "/kids/solomon-asks-for-wisdom/",
+   "section": "kids",
+   "cover": "/kids/solomon-asks-for-wisdom/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "standing-tall-in-babylon",
    "title": "Standing Tall in Babylon",
    "url": "/kids/standing-tall-in-babylon/",
@@ -18207,6 +17709,19 @@
    "cover": "/kids/thank-you-god/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "the-axe-that-floated",
+   "title": "The Axe That Floated",
+   "url": "/kids/the-axe-that-floated/",
+   "section": "kids",
+   "cover": "/kids/the-axe-that-floated/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18291,11 +17806,37 @@
    "collection": "kids"
   },
   {
+   "slug": "the-broken-arm",
+   "title": "The Broken Arm",
+   "url": "/kids/the-broken-arm/",
+   "section": "kids",
+   "cover": "/kids/the-broken-arm/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-class-pet",
    "title": "The Class Pet",
    "url": "/kids/the-class-pet/",
    "section": "kids",
    "cover": "/kids/the-class-pet/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "the-coin-in-the-fish",
+   "title": "The Coin in the Fish",
+   "url": "/kids/the-coin-in-the-fish/",
+   "section": "kids",
+   "cover": "/kids/the-coin-in-the-fish/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -18447,6 +17988,19 @@
    "collection": "kids"
   },
   {
+   "slug": "the-god-who-sings-over-you",
+   "title": "The God Who Sings Over You",
+   "url": "/kids/the-god-who-sings-over-you/",
+   "section": "kids",
+   "cover": "/kids/the-god-who-sings-over-you/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-golden-rule",
    "title": "The Golden Rule",
    "url": "/kids/the-golden-rule/",
@@ -18525,6 +18079,19 @@
    "collection": "kids"
   },
   {
+   "slug": "the-house-on-the-rock",
+   "title": "The House on the Rock",
+   "url": "/kids/the-house-on-the-rock/",
+   "section": "kids",
+   "cover": "/kids/the-house-on-the-rock/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-kindness-club",
    "title": "The Kindness Club",
    "url": "/kids/the-kindness-club/",
@@ -18590,6 +18157,19 @@
    "collection": "kids"
   },
   {
+   "slug": "the-lord-who-watches-over-you",
+   "title": "The Lord Who Watches Over You",
+   "url": "/kids/the-lord-who-watches-over-you/",
+   "section": "kids",
+   "cover": "/kids/the-lord-who-watches-over-you/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-lords-prayer-for-little-hearts",
    "title": "The Lord's Prayer for Little Hearts",
    "url": "/kids/the-lords-prayer-for-little-hearts/",
@@ -18623,6 +18203,19 @@
    "cover": "/kids/the-lunch-that-fed-thousands/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "the-man-who-couldnt-talk",
+   "title": "The Man Who Couldn't Talk",
+   "url": "/kids/the-man-who-couldnt-talk/",
+   "section": "kids",
+   "cover": "/kids/the-man-who-couldnt-talk/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18694,6 +18287,19 @@
    "collection": "kids"
   },
   {
+   "slug": "the-pearl-of-great-price",
+   "title": "The Pearl of Great Price",
+   "url": "/kids/the-pearl-of-great-price/",
+   "section": "kids",
+   "cover": "/kids/the-pearl-of-great-price/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-piggy-bank",
    "title": "The Piggy Bank",
    "url": "/kids/the-piggy-bank/",
@@ -18753,6 +18359,19 @@
    "cover": "/kids/the-sea-that-split/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "the-seed-that-grows-in-secret",
+   "title": "The Seed That Grows in Secret",
+   "url": "/kids/the-seed-that-grows-in-secret/",
+   "section": "kids",
+   "cover": "/kids/the-seed-that-grows-in-secret/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -18876,6 +18495,19 @@
    "collection": "kids"
   },
   {
+   "slug": "the-voice-in-the-desert",
+   "title": "The Voice in the Desert",
+   "url": "/kids/the-voice-in-the-desert/",
+   "section": "kids",
+   "cover": "/kids/the-voice-in-the-desert/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
    "slug": "the-walls-came-down",
    "title": "The Walls Came Down",
    "url": "/kids/the-walls-came-down/",
@@ -18933,6 +18565,19 @@
    "url": "/kids/trying-again/",
    "section": "kids",
    "cover": "/kids/trying-again/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "two-homes-still-loved",
+   "title": "Two Homes, Still Loved",
+   "url": "/kids/two-homes-still-loved/",
+   "section": "kids",
+   "cover": "/kids/two-homes-still-loved/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -19026,6 +18671,19 @@
    "cover": "/kids/who-is-god/cover.jpg",
    "has_cover": true,
    "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "kids"
+  },
+  {
+   "slug": "why-why-why",
+   "title": "Why? Why? Why?",
+   "url": "/kids/why-why-why/",
+   "section": "kids",
+   "cover": "/kids/why-why-why/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -19136,6 +18794,19 @@
    "collection": "teens"
   },
   {
+   "slug": "called-to-build",
+   "title": "Called to Build",
+   "url": "/teens/called-to-build/",
+   "section": "teens",
+   "cover": "/teens/called-to-build/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "calm-in-the-chaos",
    "title": "Calm in the Chaos",
    "url": "/teens/calm-in-the-chaos/",
@@ -19154,6 +18825,19 @@
    "url": "/teens/cash-rules-for-teens/",
    "section": "teens",
    "cover": "/teens/cash-rules-for-teens/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "chapel-on-monday",
+   "title": "Chapel on Monday",
+   "url": "/teens/chapel-on-monday/",
+   "section": "teens",
+   "cover": "/teens/chapel-on-monday/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
    "purchasable": true,
@@ -19227,11 +18911,50 @@
    "collection": "teens"
   },
   {
+   "slug": "couch-to-couch",
+   "title": "Couch to Couch",
+   "url": "/teens/couch-to-couch/",
+   "section": "teens",
+   "cover": "/teens/couch-to-couch/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "crushes",
    "title": "Crushes",
    "url": "/teens/crushes/",
    "section": "teens",
    "cover": "/teens/crushes/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "dont-send-it",
+   "title": "Don't Send It",
+   "url": "/teens/dont-send-it/",
+   "section": "teens",
+   "cover": "/teens/dont-send-it/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "doomscrolling",
+   "title": "Doomscrolling",
+   "url": "/teens/doomscrolling/",
+   "section": "teens",
+   "cover": "/teens/doomscrolling/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -19292,6 +19015,19 @@
    "collection": "teens"
   },
   {
+   "slug": "first-day-again",
+   "title": "First Day, Again",
+   "url": "/teens/first-day-again/",
+   "section": "teens",
+   "cover": "/teens/first-day-again/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "first-job",
    "title": "First Job",
    "url": "/teens/first-job/",
@@ -19325,6 +19061,19 @@
    "cover": "/teens/followers/cover.jpg",
    "has_cover": true,
    "purchase_links": 4,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "food-is-not-the-enemy",
+   "title": "Food Is Not the Enemy",
+   "url": "/teens/food-is-not-the-enemy/",
+   "section": "teens",
+   "cover": "/teens/food-is-not-the-enemy/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -19396,6 +19145,19 @@
    "collection": "teens"
   },
   {
+   "slug": "he-saw-heaven-open",
+   "title": "He Saw Heaven Open",
+   "url": "/teens/he-saw-heaven-open/",
+   "section": "teens",
+   "cover": "/teens/he-saw-heaven-open/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "heartbreak",
    "title": "Heartbreak",
    "url": "/teens/heartbreak/",
@@ -19403,6 +19165,19 @@
    "cover": "/teens/heartbreak/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "his-kids-her-kids",
+   "title": "His Kids, Her Kids",
+   "url": "/teens/his-kids-her-kids/",
+   "section": "teens",
+   "cover": "/teens/his-kids-her-kids/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 2,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -19427,6 +19202,19 @@
    "url": "/teens/hope-anchors/",
    "section": "teens",
    "cover": "/teens/hope-anchors/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "how-the-faith-survived",
+   "title": "How the Faith Survived",
+   "url": "/teens/how-the-faith-survived/",
+   "section": "teens",
+   "cover": "/teens/how-the-faith-survived/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -19492,6 +19280,19 @@
    "url": "/teens/just-five-more-minutes/",
    "section": "teens",
    "cover": "/teens/just-five-more-minutes/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "keepers-of-the-earth",
+   "title": "Keepers of the Earth",
+   "url": "/teens/keepers-of-the-earth/",
+   "section": "teens",
+   "cover": "/teens/keepers-of-the-earth/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -19604,6 +19405,19 @@
    "collection": "teens"
   },
   {
+   "slug": "now-what",
+   "title": "Now What?",
+   "url": "/teens/now-what/",
+   "section": "teens",
+   "cover": "/teens/now-what/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "owning-your-faith",
    "title": "Owning Your Faith",
    "url": "/teens/owning-your-faith/",
@@ -19695,6 +19509,19 @@
    "collection": "teens"
   },
   {
+   "slug": "real-or-fake",
+   "title": "Real or Fake?",
+   "url": "/teens/real-or-fake/",
+   "section": "teens",
+   "cover": "/teens/real-or-fake/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "remember-your-creator",
    "title": "Remember Your Creator",
    "url": "/teens/remember-your-creator/",
@@ -19702,6 +19529,19 @@
    "cover": "/teens/remember-your-creator/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "running-from-god",
+   "title": "Running from God",
+   "url": "/teens/running-from-god/",
+   "section": "teens",
+   "cover": "/teens/running-from-god/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -19786,6 +19626,19 @@
    "collection": "teens"
   },
   {
+   "slug": "sleep-is-a-gift",
+   "title": "Sleep Is a Gift",
+   "url": "/teens/sleep-is-a-gift/",
+   "section": "teens",
+   "cover": "/teens/sleep-is-a-gift/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "stand-alone",
    "title": "Stand Alone",
    "url": "/teens/stand-alone/",
@@ -19851,6 +19704,19 @@
    "collection": "teens"
   },
   {
+   "slug": "such-a-time-as-this",
+   "title": "Such a Time as This",
+   "url": "/teens/such-a-time-as-this/",
+   "section": "teens",
+   "cover": "/teens/such-a-time-as-this/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "talking-stage",
    "title": "Talking Stage",
    "url": "/teens/talking-stage/",
@@ -19871,6 +19737,19 @@
    "cover": "/teens/targeted/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "teach-us-to-pray",
+   "title": "Teach Us to Pray",
+   "url": "/teens/teach-us-to-pray/",
+   "section": "teens",
+   "cover": "/teens/teach-us-to-pray/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -19955,6 +19834,19 @@
    "collection": "teens"
   },
   {
+   "slug": "the-church-that-wont-hide",
+   "title": "The Church That Won’t Hide",
+   "url": "/teens/the-church-that-wont-hide/",
+   "section": "teens",
+   "cover": "/teens/the-church-that-wont-hide/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-comparison-game",
    "title": "The Comparison Game",
    "url": "/teens/the-comparison-game/",
@@ -19975,6 +19867,19 @@
    "cover": "/teens/the-comparison-trap/cover.jpg",
    "has_cover": true,
    "purchase_links": 4,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "the-credit-card-offer",
+   "title": "The Credit Card Offer",
+   "url": "/teens/the-credit-card-offer/",
+   "section": "teens",
+   "cover": "/teens/the-credit-card-offer/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -20020,6 +19925,19 @@
    "collection": "teens"
   },
   {
+   "slug": "the-faith-we-confess",
+   "title": "The Faith We Confess",
+   "url": "/teens/the-faith-we-confess/",
+   "section": "teens",
+   "cover": "/teens/the-faith-we-confess/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-fender-bender",
    "title": "The Fender Bender",
    "url": "/teens/the-fender-bender/",
@@ -20027,6 +19945,32 @@
    "cover": "/teens/the-fender-bender/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "the-first-to-see-him",
+   "title": "The First to See Him",
+   "url": "/teens/the-first-to-see-him/",
+   "section": "teens",
+   "cover": "/teens/the-first-to-see-him/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "the-friend-who-isnt-real",
+   "title": "The Friend Who Isn’t Real",
+   "url": "/teens/the-friend-who-isnt-real/",
+   "section": "teens",
+   "cover": "/teens/the-friend-who-isnt-real/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -20046,6 +19990,19 @@
    "collection": "teens"
   },
   {
+   "slug": "the-hardest-forgiveness",
+   "title": "The Hardest Forgiveness",
+   "url": "/teens/the-hardest-forgiveness/",
+   "section": "teens",
+   "cover": "/teens/the-hardest-forgiveness/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-imposter-feeling",
    "title": "The Imposter Feeling",
    "url": "/teens/the-imposter-feeling/",
@@ -20053,6 +20010,19 @@
    "cover": "/teens/the-imposter-feeling/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "the-last-friday",
+   "title": "The Last Friday",
+   "url": "/teens/the-last-friday/",
+   "section": "teens",
+   "cover": "/teens/the-last-friday/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -20150,6 +20120,45 @@
    "collection": "teens"
   },
   {
+   "slug": "the-temple-you-live-in",
+   "title": "The Temple You Live In",
+   "url": "/teens/the-temple-you-live-in/",
+   "section": "teens",
+   "cover": "/teens/the-temple-you-live-in/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "the-u-turn",
+   "title": "The U-Turn",
+   "url": "/teens/the-u-turn/",
+   "section": "teens",
+   "cover": "/teens/the-u-turn/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "the-wall-builder",
+   "title": "The Wall Builder",
+   "url": "/teens/the-wall-builder/",
+   "section": "teens",
+   "cover": "/teens/the-wall-builder/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 3,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
    "slug": "the-words-they-said",
    "title": "The Words They Said",
    "url": "/teens/the-words-they-said/",
@@ -20157,6 +20166,19 @@
    "cover": "/teens/the-words-they-said/cover.jpg",
    "has_cover": true,
    "purchase_links": 2,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "three-in-one",
+   "title": "Three in One",
+   "url": "/teens/three-in-one/",
+   "section": "teens",
+   "cover": "/teens/three-in-one/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
    "category_links": [],
@@ -20220,6 +20242,19 @@
    "url": "/teens/whats-on-your-playlist/",
    "section": "teens",
    "cover": "/teens/whats-on-your-playlist/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "when-a-grandparent-dies",
+   "title": "When a Grandparent Dies",
+   "url": "/teens/when-a-grandparent-dies/",
+   "section": "teens",
+   "cover": "/teens/when-a-grandparent-dies/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -20311,6 +20346,19 @@
    "url": "/teens/when-you-fast/",
    "section": "teens",
    "cover": "/teens/when-you-fast/cover.jpg",
+   "has_cover": true,
+   "purchase_links": 1,
+   "purchasable": true,
+   "coming_soon": false,
+   "category_links": [],
+   "collection": "teens"
+  },
+  {
+   "slug": "when-your-best-friend-moves",
+   "title": "When Your Best Friend Moves",
+   "url": "/teens/when-your-best-friend-moves/",
+   "section": "teens",
+   "cover": "/teens/when-your-best-friend-moves/cover.jpg",
    "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
@@ -20468,6 +20516,9 @@
    "url": "/books/wheres-my-money-made-simple/",
    "canonical": "https://upshurunlimitedllc.com/books/where-did-my-money-go/",
    "file": "books/wheres-my-money-made-simple/index.html"
-  }
+  },
+  "/books/brain-lying-made-simple/",
+  "/books/judgement-made-simple/",
+  "/books/why-do-you-feel-stuck/"
  ]
 }
