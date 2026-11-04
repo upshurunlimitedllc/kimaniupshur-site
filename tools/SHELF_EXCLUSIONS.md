@@ -68,6 +68,7 @@ live and verified — and is removed from the list below.
 - /books/human-behavior-made-simple/
 - /books/human-systems-made-simple/
 - /books/in-laws-made-simple/
+- /books/info-ecology-made-simple/
 - /books/info-filtering-made-simple/
 - /books/info-war-made-simple/
 - /books/information-dynamics-made-simple/
