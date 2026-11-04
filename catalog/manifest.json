@@ -4,10 +4,8 @@
   "unique_published_titles": 1352,
   "redirect_stubs_excluded": 12,
   "carousel_entries": 1352,
-  "carousel_with_covers": 1351,
-  "missing_covers": [
-   "/books/drone-flying-made-simple/"
-  ]
+  "carousel_with_covers": 1352,
+  "missing_covers": []
  },
  "titles": [
   {
@@ -3929,8 +3927,8 @@
    "title": "Drone Flying Made Simple: Fly Legal, Fly Well, Film Beautifully",
    "url": "/books/drone-flying-made-simple/",
    "section": "books",
-   "cover": null,
-   "has_cover": false,
+   "cover": "/books/drone-flying-made-simple/cover.jpg",
+   "has_cover": true,
    "purchase_links": 1,
    "purchasable": true,
    "coming_soon": false,
