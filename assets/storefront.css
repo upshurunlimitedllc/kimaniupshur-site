@@ -394,3 +394,47 @@ footer .fine p,footer .fine a{color:#9AA5B3}
 .btn.ghost{color:#252B32;border-color:#D8DEE6}
 .hero .btn.ghost{color:#D4AF63;border-color:#D4AF63}
 .cat .btn.ghost{color:#D4AF63;border-color:#D4AF63}
+
+/* ---------- Full-cover shelves (owner directive 2026-11-03) ----------
+   Owner, reviewing the live homepage on his phone: shelf covers came
+   to rest sheared at the panel edges — the first Kids & Teens cover
+   cut to "epers of e Earth", the last cut mid-book — while a middle
+   cover ("Now What?") sat whole. "Make the covers full like now what."
+   Cause, measured on the shipped bytes: the tracks carried no snap
+   points (computed scroll-snap-type: none) and fixed-rem card widths
+   that never tile the track, so (a) at rest a sliver of the next card
+   hung clipped at the right edge (34px of it at a 390px viewport),
+   and (b) any scroll — the arrow buttons page 0.85x clientWidth,
+   never a multiple of the card pitch; a touch scroll; a slight
+   sideways drift during a vertical page scroll — left the track
+   resting mid-card, shearing covers at BOTH edges.
+   Fix, CSS only: (1) mandatory scroll-snap on the track, with
+   scroll-padding equal to the track's own side padding and
+   snap-align:start on the cards, so every resting position aligns a
+   card flush with the track's left inset; (2) cards sized as an exact
+   fraction of the track's content box, so a whole number of covers
+   fills the resting view — no cropped cover at the right edge either,
+   and the end of a shelf tiles exactly from the right. Counts per
+   view sit closest to the card sizes each band already rendered
+   (5 across on desktop, then 4 / 3 / 2 stepping down). Which books
+   appear, their order, the chunk loading, and the arrow paging are
+   unchanged — the snap settles every paged scroll onto a boundary. */
+.uu-track{scroll-snap-type:x mandatory;scroll-padding-left:.2rem;scroll-padding-right:.2rem}
+.uu-store .uu-track{scroll-padding-left:.25rem;scroll-padding-right:.25rem}
+.uu-scard{scroll-snap-align:start;flex-basis:calc((100% - 4*1.3rem)/5)}
+.uu-scard img{width:100%}
+.uu-store #featured .uu-scard{flex-basis:calc((100% - 4*1.3rem)/5)}
+.uu-store #featured .uu-scard img{width:100%}
+@media (max-width:64rem){
+  .uu-scard{flex-basis:calc((100% - 3*1.3rem)/4)}
+  .uu-store #featured .uu-scard{flex-basis:calc((100% - 3*1.3rem)/4)}
+}
+@media (max-width:40rem){
+  .uu-scard{flex-basis:calc((100% - 2*1.3rem)/3)}
+  .uu-store #featured .uu-scard{flex-basis:calc((100% - 2*1.3rem)/3)}
+}
+@media (max-width:30rem){
+  .uu-store .uu-scard{flex-basis:calc((100% - 1rem)/2)}
+  .uu-store .uu-scard img{width:100%}
+  .uu-store #featured .uu-scard{flex-basis:calc((100% - 1rem)/2)}
+}
