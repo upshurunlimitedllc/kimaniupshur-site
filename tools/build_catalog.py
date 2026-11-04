@@ -7,7 +7,9 @@ Everything else is DERIVED from them:
   catalog/manifest.json     the single catalog manifest (this script writes it)
   bookshelf/books-data.js   the 3D bookshelf carousel data (regenerated)
   bookshelf/thumbs/*.jpg    cover thumbnails for carousel entries (generated)
-  index.html                homepage search index (const BOOKS) synced
+  index.html                homepage search wiring verified (the homepage
+                            maps the shared assets/search-index.js dataset;
+                            no inline const BOOKS array remains to sync)
   books/index.html          A-Z index sections regenerated (adult books)
   sitemap.xml               redirect-stub URLs removed
 
@@ -66,7 +68,6 @@ SHELF_EXCLUDED_SLUGS = {  # not for sale in any format — see docstring rule
     "competition-made-simple",
     "dating-made-simple",
     "decision-clarity-made-simple",
-    "decision-making-made-simple",
     "decision-pressure-made-simple",
     "decision-systems-made-simple",
     "hidden-errors-made-simple",
@@ -74,17 +75,13 @@ SHELF_EXCLUDED_SLUGS = {  # not for sale in any format — see docstring rule
     "human-behavior-made-simple",
     "human-systems-made-simple",
     "in-laws-made-simple",
-    "inflammatory-made-simple",
-    "info-ecology-made-simple",
     "info-filtering-made-simple",
     "info-war-made-simple",
     "information-dynamics-made-simple",
     "information-strategy-made-simple",
-    "judgement-made-simple",
     "lie-detector-made-simple",
     "lonely-made-simple",
     "machine-learning-made-simple",
-    "made-simple-advanced-thinking",
     "mental-clarity-made-simple",
     "mental-frameworks-made-simple",
     "mental-recovery-made-simple",
@@ -94,22 +91,17 @@ SHELF_EXCLUDED_SLUGS = {  # not for sale in any format — see docstring rule
     "psychological-resilience-made-simple",
     "quitting-made-simple",
     "rejection-made-simple",
-    "relationships-fail-made-simple",
     "resilient-systems-made-simple",
     "resilient-thinking-made-simple",
-    "stolen-futures",
     "strategic-judgment-made-simple",
     "strategic-systems-made-simple",
     "strategic-thinking-under-pressure-made-simple",
     "tired-made-simple",
-    "the-polite-distance",
     "wheres-my-money-made-simple",
-    "why-do-you-feel-stuck",
     "why-you-cant-focus-made-simple",
     "why-your-decisions-fail",
     "you-are-the-bottleneck",
     "your-attention-is-being-sold",
-    "youre-not-a-smart-made-simple",
     "youre-overthinking-everything",
 }
 COLLECTION_LABELS = {  # homepage-search display names per collection id
@@ -380,6 +372,14 @@ def sync_homepage_search(titles):
     p = os.path.join(ROOT, "index.html")
     html = open(p, encoding="utf-8").read()
     m = re.search(r"const BOOKS=(\[.*?\]);", html, re.S)
+    if m is None:
+        # Homepage search wiring changed 2026-10-28: index.html no longer
+        # carries an inline const BOOKS array; it maps window.UU_SEARCH_INDEX
+        # from assets/search-index.js (the shared dataset) at runtime. There
+        # is no inline array to sync -- the search-index return pass owns
+        # homepage discoverability now. Verify the wiring and move on.
+        assert "UU_SEARCH_INDEX" in html, "index.html lost its search wiring"
+        return
     old = {e[1]: e for e in json.loads(m.group(1))}
     entries = []
     for url in sorted(titles):
@@ -447,9 +447,13 @@ def validate(bd, titles, stubs):
         if b.get("img") and not os.path.isfile(os.path.join(ROOT, b["img"].lstrip("/"))):
             errs.append(f"thumb missing for {s}")
     idx = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
-    n = len(json.loads(re.search(r"const BOOKS=(\[.*?\]);", idx, re.S).group(1)))
-    if n != len(titles):
-        errs.append(f"homepage search has {n} entries, expected {len(titles)}")
+    m = re.search(r"const BOOKS=(\[.*?\]);", idx, re.S)
+    if m is not None:
+        n = len(json.loads(m.group(1)))
+        if n != len(titles):
+            errs.append(f"homepage search has {n} entries, expected {len(titles)}")
+    elif "UU_SEARCH_INDEX" not in idx:
+        errs.append("index.html has neither an inline BOOKS array nor UU_SEARCH_INDEX wiring")
     az = open(os.path.join(ROOT, "books/index.html"), encoding="utf-8").read()
     az_urls = set(re.findall(r'<a href="(/books/[^"]+/)">', az))
     want = {t["url"] for t in titles.values() if t["section"] == "books"}

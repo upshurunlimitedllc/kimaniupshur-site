@@ -40,7 +40,10 @@ price key — its card then returns with working destinations.
 the shelves on 2026-10-30 at its publication wiring — Google Play and Payhip
 live and verified — and is removed from the list below.
 
-## The list (61 URLs)
+
+**Returned 2026-11-04** (bookstore defect-repair pass, owner directive): *Information Ecology* (KDP Select — Amazon link restored), *Decision Making*, *Inflammatory*, *Why Your Relationships Fail*, *Stolen Futures*, *The Polite Distance*, *You're Not As Smart As You Think*, and *Made Simple: Advanced Thinking* returned to the shelves at their verified purchase wiring. *Judgement Made Simple* (/books/judgement-made-simple/) and *Why Do You Feel Stuck* (/books/why-do-you-feel-stuck/) are now redirect stubs to their canonical pages (/books/judgment-made-simple/ and /books/why-you-still-feel-stuck/) and are recorded as stubs, not exclusions.
+
+## The list (51 URLs)
 
 - /books/adaptive-behavior-made-simple/
 - /books/adaptive-decision-making-made-simple/
@@ -58,7 +61,6 @@ live and verified — and is removed from the list below.
 - /books/competition-made-simple/
 - /books/dating-made-simple/
 - /books/decision-clarity-made-simple/
-- /books/decision-making-made-simple/
 - /books/decision-pressure-made-simple/
 - /books/decision-systems-made-simple/
 - /books/hidden-errors-made-simple/
@@ -66,17 +68,13 @@ live and verified — and is removed from the list below.
 - /books/human-behavior-made-simple/
 - /books/human-systems-made-simple/
 - /books/in-laws-made-simple/
-- /books/inflammatory-made-simple/
-- /books/info-ecology-made-simple/
 - /books/info-filtering-made-simple/
 - /books/info-war-made-simple/
 - /books/information-dynamics-made-simple/
 - /books/information-strategy-made-simple/
-- /books/judgement-made-simple/
 - /books/lie-detector-made-simple/
 - /books/lonely-made-simple/
 - /books/machine-learning-made-simple/
-- /books/made-simple-advanced-thinking/
 - /books/mental-clarity-made-simple/
 - /books/mental-frameworks-made-simple/
 - /books/mental-recovery-made-simple/
@@ -86,20 +84,15 @@ live and verified — and is removed from the list below.
 - /books/psychological-resilience-made-simple/
 - /books/quitting-made-simple/
 - /books/rejection-made-simple/
-- /books/relationships-fail-made-simple/
 - /books/resilient-systems-made-simple/
 - /books/resilient-thinking-made-simple/
-- /books/stolen-futures/
 - /books/strategic-judgment-made-simple/
 - /books/strategic-systems-made-simple/
 - /books/strategic-thinking-under-pressure-made-simple/
 - /books/tired-made-simple/
-- /books/the-polite-distance/
 - /books/wheres-my-money-made-simple/
-- /books/why-do-you-feel-stuck/
 - /books/why-you-cant-focus-made-simple/
 - /books/why-your-decisions-fail/
 - /books/you-are-the-bottleneck/
 - /books/your-attention-is-being-sold/
-- /books/youre-not-a-smart-made-simple/
 - /books/youre-overthinking-everything/
