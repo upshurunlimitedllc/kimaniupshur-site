@@ -75,6 +75,7 @@ SHELF_EXCLUDED_SLUGS = {  # not for sale in any format — see docstring rule
     "human-behavior-made-simple",
     "human-systems-made-simple",
     "in-laws-made-simple",
+    "info-ecology-made-simple",
     "info-filtering-made-simple",
     "info-war-made-simple",
     "information-dynamics-made-simple",
