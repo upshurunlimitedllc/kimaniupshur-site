@@ -148,7 +148,7 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
 <input type="search" id="q" placeholder="Search 1,000+ books — try &quot;prayer&quot;, &quot;marriage&quot;, &quot;leadership&quot;…" aria-label="Search books" oninput="doSearch(this.value)">
 <div class="results" id="res"></div>
 </div>
-<p class="uu-quicklinks">Browse: <a href="#through-christ">Made Simple Through Christ</a> <a href="#halcyon">Science Fiction</a> <a href="#listen">Audiobooks</a> <a href="#free">Free Reads</a></p>
+<p class="uu-quicklinks">Browse: <a href="#through-christ">Made Simple Through Christ</a> <a href="#halcyon">Science Fiction</a> <a href="#listen">Audiobooks</a> <a href="/free-books/">Free Books</a></p>
 </div></section>
 
 <section class="uu-freebooks" aria-labelledby="freebooks-h" style="background:#FBF7EE;border-top:3px solid #D4AF63;border-bottom:3px solid #D4AF63;padding:34px 0 30px">
@@ -271,12 +271,6 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
 <p class="uu-shelf-sub">Whole libraries in one volume, at the collection price of record.</p>
 <div class="uu-shelf-panel"><div class="uu-track" data-shelf="collections"></div>
 <div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Complete Collections back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Complete Collections forward">&#8594;</button></div></div>
-</section>
-<section class="uu-shelf" id="free" aria-labelledby="free-h">
-<div class="uu-shelf-head"><h2 id="free-h">Free Reads</h2><span class="uu-note"><a href="/search/">Browse all books &#8594;</a></span></div>
-<p class="uu-shelf-sub">Only books whose <strong>complete edition</strong> is genuinely free appear here. Anything else would be labeled a sample &mdash; never framed as a free book.</p>
-<div class="uu-shelf-panel"><div class="uu-track" data-shelf="free"></div>
-<div class="uu-shelf-nav"><button type="button" data-shelf-prev aria-label="Scroll Free Reads back">&#8592;</button><button type="button" data-shelf-next aria-label="Scroll Free Reads forward">&#8594;</button></div></div>
 </section>
 </div>
 <section class="uu-appsband" aria-labelledby="appsband-h">
@@ -497,8 +491,7 @@ if(!e.target.closest('.searchbox')){box.style.display='none';}});</script>
       {id: "listen", items: sec("Audiobooks")},
       {id: "spanish", items: sec("Spanish")},
       {id: "made-simple", items: DATA.filter(function(b){ return b.t.indexOf("Made Simple") !== -1 && b.sec.indexOf("Through Christ") === -1; })},
-      {id: "collections", items: sec("Collections")},
-      {id: "free", items: DATA.filter(function(b){ return !!b.free; })}
+      {id: "collections", items: sec("Collections")}
     ];
     shelves.forEach(function(s){
       setup(document.querySelector('#' + s.id + " .uu-track"), s.items, !!s.feat, s.series, s.label);
