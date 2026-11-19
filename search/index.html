@@ -84,13 +84,13 @@
         audience = document.getElementById("fAudience").value,
         format = document.getElementById("fFormat").value,
         price = document.getElementById("fPrice").value;
-    var out = DATA.filter(function(b){ return matches(b, query, section, audience, format, price); });
+    var out = DATA.filter(function(b){ return matches(b, query, section, audience, format, price); }); if (window.__uuMS) out = out.filter(function(b){ return b.t.indexOf("Made Simple") !== -1 && b.sec.indexOf("Through Christ") === -1; });
     grid.innerHTML = out.map(card).join("");
     none.hidden = out.length !== 0;
     count.textContent = out.length + (out.length === 1 ? " book" : " books") + " found";
   }
   var params = new URLSearchParams(location.search);
-  if (params.get("q")) q.value = params.get("q");
+  if (params.get("q")) q.value = params.get("q"); if (params.get("sec")) document.getElementById("fSection").value = params.get("sec"); if (params.get("ms") === "1") window.__uuMS = true;
   q.addEventListener("input", apply);
   ["fSection","fAudience","fFormat","fPrice"].forEach(function(id){
     document.getElementById(id).addEventListener("change", apply);
