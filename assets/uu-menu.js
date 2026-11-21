@@ -56,3 +56,44 @@
     }
   });
 })();
+
+/* Homeschool Resources nav item (owner ruling 2026-11-21): the site header
+   markup is inline in every framed page, so the permanent "Homeschool
+   Resources" entry is seated here — the one script every framed page loads —
+   until the repo-wide native markup pass replaces it. Idempotent: if the
+   nav ever carries the link natively, this block adds nothing. With scripts
+   off the nav simply shows without the item, the same graceful degradation
+   as the Menu collapse above. */
+(function () {
+  function seat() {
+    var nav = document.querySelector('nav.uu-nav ul');
+    if (!nav) return;
+    if (nav.querySelector('a[href="/homeschool-resources/"]')) return;
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.setAttribute('href', '/homeschool-resources/');
+    a.textContent = 'Homeschool Resources';
+    li.appendChild(a);
+    var books = nav.querySelector('a[href="/books/"]');
+    if (books && books.parentNode && books.parentNode.nextSibling) {
+      nav.insertBefore(li, books.parentNode.nextSibling);
+      return;
+    }
+    var kids = nav.querySelector('a[href="/kids-teens/"]');
+    if (kids && kids.parentNode && kids.parentNode.nextSibling) {
+      nav.insertBefore(li, kids.parentNode.nextSibling);
+      return;
+    }
+    var search = nav.querySelector('a[href="/search/"]');
+    if (search && search.parentNode) {
+      nav.insertBefore(li, search.parentNode);
+      return;
+    }
+    nav.appendChild(li);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', seat);
+  } else {
+    seat();
+  }
+})();
