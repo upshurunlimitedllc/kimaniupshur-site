@@ -42,6 +42,10 @@ footer.site a{color:#D4AF63}
 .passage{color:#5A6570;font-size:.95rem;margin:0 0 8px}
 .axes{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}
 .chip{border:1px solid #8A93A3;border-radius:14px;padding:3px 12px;font-size:.88rem;background:#fff}
+button.chip{cursor:pointer;font-family:inherit;color:inherit}
+button.chip:hover{border-color:#303C4B}
+.chip[aria-pressed="true"]{background:#303C4B;color:#F7F8FA;border-color:#303C4B}
+.filterline{font-size:.95rem;color:#33475B;margin:10px 0 0;min-height:1.2em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;margin-top:12px}
 .card{background:#fff;border:1px solid #D8DEE6;border-radius:10px;padding:16px 18px;display:block}
 a.card{text-decoration:none;color:#252B32;transition:transform .12s}
@@ -72,23 +76,24 @@ a.card:hover{transform:translateY(-3px);border-color:#D4AF63;box-shadow:0 6px 18
 <h2 class="sec">Browse the lessons</h2>
 <p style="margin:.2em 0">By topic:</p>
 <div class="axes">
-<span class="chip">God&rsquo;s Power</span><span class="chip">God&rsquo;s Faithfulness</span><span class="chip">Jesus the Savior</span><span class="chip">Trust &amp; Courage</span><span class="chip">Mercy &amp; Kindness</span><span class="chip">Giving &amp; Provision</span>
+<button type="button" class="chip" data-filter-topic="all" aria-pressed="true">All lessons</button><button type="button" class="chip" data-filter-topic="God's Power" aria-pressed="false">God&rsquo;s Power</button><button type="button" class="chip" data-filter-topic="God's Faithfulness" aria-pressed="false">God&rsquo;s Faithfulness</button><button type="button" class="chip" data-filter-topic="Jesus the Savior" aria-pressed="false">Jesus the Savior</button><button type="button" class="chip" data-filter-topic="Trust & Courage" aria-pressed="false">Trust &amp; Courage</button><button type="button" class="chip" data-filter-topic="Mercy & Kindness" aria-pressed="false">Mercy &amp; Kindness</button><button type="button" class="chip" data-filter-topic="Giving & Provision" aria-pressed="false">Giving &amp; Provision</button>
 </div>
-<p style="margin:.6em 0 .2em">By age: <span class="chip">6–8</span> <span class="chip">9–12</span> &nbsp;·&nbsp; By passage: the lessons below are listed in Bible order.</p>
+<p style="margin:.6em 0 .2em">By age: <button type="button" class="chip" data-filter-age="6–8" aria-pressed="false">6–8</button> <button type="button" class="chip" data-filter-age="9–12" aria-pressed="false">9–12</button> &nbsp;·&nbsp; By passage: the lessons below are listed in Bible order.</p>
+<p class="filterline" id="lesson-result" role="status" aria-live="polite">12 lessons — all topics, all ages.</p>
 
 <div class="grid">
-<a class="card" href="/homeschool-resources/god-creates-the-world/"><h3>God Creates the World</h3><p class="passage">Genesis 1</p><p class="meta">Ages 6–12 · God&rsquo;s Power</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/noah-obeys-god/"><h3>Noah Obeys God</h3><p class="passage">Genesis 6–9</p><p class="meta">Ages 6–12 · God&rsquo;s Faithfulness</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/joshua-and-jericho/"><h3>Joshua and the Wall of Jericho</h3><p class="passage">Joshua 6</p><p class="meta">Ages 6–12 · God&rsquo;s Power</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/david-and-goliath/"><h3>David and Goliath</h3><p class="passage">1 Samuel 17</p><p class="meta">Ages 6–12 · Trust &amp; Courage</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/daniel-in-the-lions-den/"><h3>Daniel in the Lions&rsquo; Den</h3><p class="passage">Daniel 6</p><p class="meta">Ages 6–12 · God&rsquo;s Faithfulness</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/jesus-calms-the-storm/"><h3>Jesus Calms the Storm</h3><p class="passage">Mark 4:35–41</p><p class="meta">Ages 6–12 · God&rsquo;s Power</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/jesus-is-born/"><h3>Jesus Is Born</h3><p class="passage">Luke 2</p><p class="meta">Ages 6–12 · Jesus the Savior</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/the-good-samaritan/"><h3>The Good Samaritan</h3><p class="passage">Luke 10:25–37</p><p class="meta">Ages 6–12 · Mercy &amp; Kindness</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/the-lost-sheep/"><h3>The Lost Sheep</h3><p class="passage">Luke 15:1–7</p><p class="meta">Ages 6–12 · Mercy &amp; Kindness</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/zacchaeus/"><h3>Zacchaeus</h3><p class="passage">Luke 19:1–10</p><p class="meta">Ages 6–12 · Jesus the Savior</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/the-empty-tomb/"><h3>The Empty Tomb</h3><p class="passage">Luke 24</p><p class="meta">Ages 6–12 · Jesus the Savior</p><p class="state free">Free — available now</p></a>
-<a class="card" href="/homeschool-resources/the-boy-who-shared-his-lunch/"><h3>The Boy Who Shared His Lunch</h3><p class="passage">John 6:1–14</p><p class="meta">Ages 6–12 · Giving &amp; Provision</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/god-creates-the-world/" data-topic="God's Power"><h3>God Creates the World</h3><p class="passage">Genesis 1</p><p class="meta">Ages 6–12 · God&rsquo;s Power</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/noah-obeys-god/" data-topic="God's Faithfulness"><h3>Noah Obeys God</h3><p class="passage">Genesis 6–9</p><p class="meta">Ages 6–12 · God&rsquo;s Faithfulness</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/joshua-and-jericho/" data-topic="God's Power"><h3>Joshua and the Wall of Jericho</h3><p class="passage">Joshua 6</p><p class="meta">Ages 6–12 · God&rsquo;s Power</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/david-and-goliath/" data-topic="Trust & Courage"><h3>David and Goliath</h3><p class="passage">1 Samuel 17</p><p class="meta">Ages 6–12 · Trust &amp; Courage</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/daniel-in-the-lions-den/" data-topic="God's Faithfulness"><h3>Daniel in the Lions&rsquo; Den</h3><p class="passage">Daniel 6</p><p class="meta">Ages 6–12 · God&rsquo;s Faithfulness</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/jesus-calms-the-storm/" data-topic="God's Power"><h3>Jesus Calms the Storm</h3><p class="passage">Mark 4:35–41</p><p class="meta">Ages 6–12 · God&rsquo;s Power</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/jesus-is-born/" data-topic="Jesus the Savior"><h3>Jesus Is Born</h3><p class="passage">Luke 2</p><p class="meta">Ages 6–12 · Jesus the Savior</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/the-good-samaritan/" data-topic="Mercy & Kindness"><h3>The Good Samaritan</h3><p class="passage">Luke 10:25–37</p><p class="meta">Ages 6–12 · Mercy &amp; Kindness</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/the-lost-sheep/" data-topic="Mercy & Kindness"><h3>The Lost Sheep</h3><p class="passage">Luke 15:1–7</p><p class="meta">Ages 6–12 · Mercy &amp; Kindness</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/zacchaeus/" data-topic="Jesus the Savior"><h3>Zacchaeus</h3><p class="passage">Luke 19:1–10</p><p class="meta">Ages 6–12 · Jesus the Savior</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/the-empty-tomb/" data-topic="Jesus the Savior"><h3>The Empty Tomb</h3><p class="passage">Luke 24</p><p class="meta">Ages 6–12 · Jesus the Savior</p><p class="state free">Free — available now</p></a>
+<a class="card" href="/homeschool-resources/the-boy-who-shared-his-lunch/" data-topic="Giving & Provision"><h3>The Boy Who Shared His Lunch</h3><p class="passage">John 6:1–14</p><p class="meta">Ages 6–12 · Giving &amp; Provision</p><p class="state free">Free — available now</p></a>
 </div>
 
 <div class="featured">
@@ -102,6 +107,51 @@ a.card:hover{transform:translateY(-3px);border-color:#D4AF63;box-shadow:0 6px 18
 <p class="sub">The lessons pair with our children&rsquo;s Bible books — browse the <a href="/kids/">Kids shelf</a> at upshurunlimitedllc.com.</p>
 </div></main>
 <footer class="site"><div class="wrap">Lessons by Kimani Upshur, M.Ed. · Scripture quotations are from the King James Version (KJV).<br>&copy; Upshur Unlimited LLC · <a href="https://upshurunlimitedllc.com">upshurunlimitedllc.com</a> · <a href="/">Home</a></div></footer>
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.grid .card'));
+  var topicBtns = Array.prototype.slice.call(document.querySelectorAll('[data-filter-topic]'));
+  var ageBtns = Array.prototype.slice.call(document.querySelectorAll('[data-filter-age]'));
+  var result = document.getElementById('lesson-result');
+  var topic = 'all', age = null;
+  function apply(){
+    var n = 0;
+    cards.forEach(function(c){
+      var show = (topic === 'all' || c.getAttribute('data-topic') === topic);
+      c.style.display = show ? '' : 'none';
+      if (show) n++;
+    });
+    topicBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-filter-topic') === topic ? 'true' : 'false'); });
+    ageBtns.forEach(function(b){ b.setAttribute('aria-pressed', age !== null && b.getAttribute('data-filter-age') === age ? 'true' : 'false'); });
+    var msg;
+    if (age) {
+      msg = n + ' lessons \u2014 every lesson includes ages ' + age + ' material';
+      if (topic !== 'all') msg += ', filtered by topic: ' + topic;
+      msg += '.';
+    } else if (topic !== 'all') {
+      msg = n + (n === 1 ? ' lesson' : ' lessons') + ' on ' + topic + '.';
+    } else {
+      msg = n + ' lessons \u2014 all topics, all ages.';
+    }
+    result.textContent = msg;
+  }
+  topicBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var t = b.getAttribute('data-filter-topic');
+      topic = (t === topic) ? 'all' : t;
+      apply();
+    });
+  });
+  ageBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var a = b.getAttribute('data-filter-age');
+      age = (a === age) ? null : a;
+      apply();
+    });
+  });
+  apply();
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "947dcd8b1b7946e49d6ca6dbe31a1047"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
