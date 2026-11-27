@@ -97,3 +97,44 @@
     seat();
   }
 })();
+
+/* Audio Bible nav item + footer link (Batch 505, owner order 2026-11-26): the site
+   header/footer markup is inline in every framed page, so the permanent "Audio Bible"
+   entries are seated here — the one script every framed page loads — until the
+   repo-wide native markup pass replaces them. Idempotent: pages that carry the links
+   natively (the /audio-bible/ section itself) are left untouched. */
+(function () {
+  function seatNav() {
+    var nav = document.querySelector('nav.uu-nav ul');
+    if (!nav) return;
+    if (nav.querySelector('a[href="/audio-bible/"]')) return;
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.setAttribute('href', '/audio-bible/');
+    a.textContent = 'Audio Bible';
+    li.appendChild(a);
+    var ab = nav.querySelector('a[href="/audiobooks/"]');
+    if (ab && ab.parentNode && ab.parentNode.nextSibling) {
+      nav.insertBefore(li, ab.parentNode.nextSibling);
+      return;
+    }
+    nav.appendChild(li);
+  }
+  function seatFooter() {
+    var fl = document.querySelector('.uu-flink');
+    if (!fl) return;
+    if (fl.querySelector('a[href="/audio-bible/"]')) return;
+    var a = document.createElement('a');
+    a.setAttribute('href', '/audio-bible/');
+    a.textContent = 'Audio Bible';
+    var contact = fl.querySelector('a[href="/contact.html"]');
+    if (contact) { fl.insertBefore(a, contact); return; }
+    fl.appendChild(a);
+  }
+  function seat() { seatNav(); seatFooter(); }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', seat);
+  } else {
+    seat();
+  }
+})();
